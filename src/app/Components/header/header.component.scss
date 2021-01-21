@@ -1,0 +1,78 @@
+/* Start header */
+.navbar1 {
+  font-size: 0.9em;
+  margin-bottom: -1em;
+  background-color: white;
+  z-index: 11;
+}
+
+.navbar1 #navbarDropdownMenuLink,
+.navbar1 .nav-link i,
+.navbar1 .nav-link span {
+  color: #333333;
+}
+.navbar1 .nav-link i {
+  font-size: 1.2em;
+}
+.navbar1 li a {
+  margin-left: 1.5em;
+}
+.navbar1 .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.navbar1 .cntr {
+  text-align: center;
+}
+
+.navbar1 .currency {
+  /* z-index: 100; */
+  width: 50em;
+  overflow: hidden;
+}
+.navbar1 .dropdown-menu {
+  left: -280px;
+}
+.navbar1 .currency .row span,
+.navbar1 .currency .row a {
+  font-size: 0.8em;
+}
+.navbar1 .currency .row a {
+  color: black;
+}
+.navbar1 .currency .row span {
+  color: gray;
+}
+.navbar1 .currency .row a:hover {
+  text-decoration: none;
+}
+.navbar1 .currency .row .eg span {
+  color: #ff5722;
+}
+.navbar1 .app .dropdown-menu {
+  width: 25em;
+}
+.navbar1 .download {
+  left: 10px;
+}
+.navbar1 .cart {
+  margin-right: 1.5em;
+}
+.navbar1 .log {
+  margin-right: -1.5em;
+  color: #ff612f;
+  border: #ff612f solid 0.1em;
+  border-radius: 35%;
+  font-weight: 500;
+}
+.navbar1 .signup {
+  margin-right: 1em;
+}
+.mainLogo {
+  width: 5.8em;
+}
+hr {
+  top: 3em;
+  z-index: 10;
+}
+
+/*End header */

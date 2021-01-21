@@ -1,0 +1,91 @@
+.navbar2 {
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: -1em;
+  background-color: white;
+  top: 3.5em !important;
+  z-index: 2;
+}
+.navbar2 .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.navbar2 #navbarDropdown {
+  margin-left: 1.5em;
+  color: rgb(63, 60, 60);
+}
+.navbar2 #navbarDropdown:hover {
+  color: #ff5722;
+}
+.navbar2 #navbarDropdown:hover .hd1 {
+  color: #ff5722;
+}
+.navbar2 .hd1:hover {
+  color: #ff5722;
+}
+.navbar2 #navbarDropdown:hover i {
+  color: #ff5722;
+}
+.disableHorizontalScroll {
+  overflow: hidden;
+}
+.modal-backdrop {
+  display: none;
+}
+
+.navbar2 .mmain,
+.main {
+  color: #333333;
+}
+#CatModal .sub {
+  color: gray;
+}
+#CatModal {
+  margin-top: 5.7em;
+  margin-left: -5em;
+}
+#CatModal .mmain {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+#CatModal i {
+  font-size: 0.7em;
+}
+#CatModal a:hover,
+i:hover {
+  text-decoration: none;
+  color: #ff5722;
+}
+/* .hd1:hover {
+    z-index: 8000;
+    position: relative;
+  } */
+
+/* .navbar2 #navbarDropdown span:hover {
+    color: #ff5722;
+  } */
+.navbar2 #navbarDropdown i {
+  padding-right: 0.5em;
+}
+
+.navbar2 .home {
+  color: #ff5722;
+}
+.navbar2 ul {
+  height: 2em;
+}
+.navbar2 .line {
+  background-color: #b2b2b2;
+  height: 1em;
+  width: 0.05em;
+  display: block;
+  margin-top: 0.6em;
+  margin-left: 0.5em;
+}
+.navbar2 .cat {
+  width: 55em;
+}
+
+.navbar-collapse {
+  background-color: white;
+  z-index: 5000;
+}

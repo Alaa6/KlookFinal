@@ -1,0 +1,97 @@
+footer {
+  height: 27em;
+  background-color: #333333;
+}
+footer .fOne {
+  width: 90%;
+  margin: auto;
+}
+footer .fOne .firstPr {
+  margin-top: 3em;
+}
+footer .fOne .firstPr i {
+  font-size: 1.7em;
+  color: #999;
+}
+footer .fOne .firstPr i:hover {
+  color: white;
+}
+footer .fOne div a:hover {
+  text-decoration: none;
+}
+footer .fOne .secondPr {
+  margin-top: 1.8em;
+  text-align: end;
+}
+footer .fOne .secondPr .travel {
+  color: white;
+  font-weight: 400;
+}
+footer .fOne .secondPr .click {
+  font-size: 0.9em;
+  color: #999;
+  margin-top: 0.8em;
+}
+footer .fOne .secondPr .click a {
+  color: #999;
+  text-decoration: underline;
+  font-size: 0.95em;
+}
+footer .fOne .thirdPr {
+  margin-top: 2.5em;
+}
+footer .fOne .thirdPr .form-control {
+  border: 0.1em solid #ff5722;
+}
+footer .fOne .thirdPr .input-group-text {
+  background-color: #ff5722;
+  color: white;
+  border: 0.1em solid transparent;
+}
+footer .hl {
+  border-top: 0.1em solid #555;
+  margin-top: 2em;
+}
+footer .fTwo {
+  width: 90%;
+  margin: auto;
+  margin-top: 3em;
+  padding-left: 1em;
+}
+footer .fTwo .one {
+  color: #999;
+  font-size: 0.85em;
+  margin-bottom: 2.5em;
+}
+footer .fTwo .two a {
+  color: #999;
+}
+footer .fTwo .two a:hover {
+  text-decoration: none;
+}
+footer .fTwo h6 {
+  color: white;
+  font-weight: 400;
+}
+footer .fTwo div a {
+  color: #999;
+  line-height: 2em;
+}
+footer .cards {
+  margin-left: 0.7em;
+  margin-top: 1em;
+}
+footer .cards .row img {
+  margin: 0.5em;
+}
+footer .fTwo .btn1:hover {
+  border: 0.05em solid white;
+  background-color: transparent;
+}
+footer .fTwo .btn1:hover span {
+  color: white;
+}
+footer .fTwo .pay {
+  color: #999;
+  margin-top: 2em;
+}
