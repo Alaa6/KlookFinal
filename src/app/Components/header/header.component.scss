@@ -10,9 +10,10 @@
 .navbar1 .nav-link i,
 .navbar1 .nav-link span {
   color: #333333;
+  font-size: 1em;
 }
 .navbar1 .nav-link i {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .navbar1 li a {
   margin-left: 1.5em;
@@ -22,6 +23,9 @@
 }
 .navbar1 .cntr {
   text-align: center;
+}
+.navbar1 .cntr a {
+  font-size: 1em;
 }
 
 .navbar1 .currency {
