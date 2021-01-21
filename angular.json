@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Klook"
+  "defaultProject": "Klook",
+  "cli": {
+    "analytics": "607a442c-443c-41fd-9285-30713c652435"
+  }
 }
