@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { TourComponent } from './tour/tour.component';
+import { AttractionsComponent } from './attractions/attractions.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-  TourComponent
+  TourComponent,
+  AttractionsComponent
 ],
   imports: [
     CommonModule  ,
