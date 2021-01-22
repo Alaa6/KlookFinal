@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
@@ -12,7 +12,6 @@ import { ToursCairoComponent } from './Components/tours-cairo/tours-cairo.compon
 import { RelaxationComponent } from './Components/relaxation/relaxation.component';
 import { CultureComponent } from './Components/culture/culture.component';
 import { FunComponent } from './Components/fun/fun.component';
-import { CarRentalsComponent } from './Components/car-rentals/car-rentals.component';
 import { EuropeTrainsComponent } from './Components/europe-trains/europe-trains.component';
 import { HotelsComponent } from './Components/hotels/hotels.component';
 import { FoodComponent } from './Components/food/food.component';
@@ -26,10 +25,10 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {CarouselModule} from 'ngx-owl-carousel-o'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { RouterModule } from '@angular/router';
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -56,7 +55,6 @@ var firebaseConfig = {
     RelaxationComponent,
     CultureComponent,
     FunComponent,
-    CarRentalsComponent,
     EuropeTrainsComponent,
     HotelsComponent,
     FoodComponent,
@@ -71,16 +69,16 @@ var firebaseConfig = {
     SecondHeaderComponent
   ],
   imports: [
-BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     NgbModule,
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule // firestore
+    AngularFirestoreModule, // firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
- 
+    RouterModule
 ],
   providers: [],
   bootstrap: [AppComponent]
