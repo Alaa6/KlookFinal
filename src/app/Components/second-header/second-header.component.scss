@@ -16,11 +16,18 @@
 .navbar2 #navbarDropdown:hover {
   color: #ff5722;
 }
+.navbar2 .hd1 {
+  color: #333333;
+  font-size: 0.9em;
+}
 .navbar2 #navbarDropdown:hover .hd1 {
   color: #ff5722;
 }
 .navbar2 .hd1:hover {
   color: #ff5722;
+}
+.navbar2 .clr {
+  margin-right: 0.5em;
 }
 .navbar2 #navbarDropdown:hover i {
   color: #ff5722;
