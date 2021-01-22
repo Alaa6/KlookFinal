@@ -25,6 +25,24 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {CarouselModule} from 'ngx-owl-carousel-o'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+
+var firebaseConfig = {
+  apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
+  authDomain: "friendlychat-e399d.firebaseapp.com",
+  databaseURL: "https://friendlychat-e399d-default-rtdb.firebaseio.com",
+  projectId: "friendlychat-e399d",
+  storageBucket: "friendlychat-e399d.appspot.com",
+  messagingSenderId: "402072663413",
+  appId: "1:402072663413:web:b045d045b9b5af218f8f3c",
+  measurementId: "G-SE1DJ8PYYC"
+};
 
 @NgModule({
   declarations: [
@@ -53,9 +71,17 @@ import { SecondHeaderComponent } from './Components/second-header/second-header.
     SecondHeaderComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    CarouselModule,
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule // firestore
+    // AngularFireAuthModule, // auth
+    // AngularFireStorageModule // storage
+ 
+],
   providers: [],
   bootstrap: [AppComponent]
 })
