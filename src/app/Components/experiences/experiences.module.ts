@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { TourComponent } from './tour/tour.component';
 import { RelaxComponent } from './relax/relax.component';
+import { AttractionsComponent } from './attractions/attractions.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
   TourComponent,
-  RelaxComponent
+  RelaxComponent,
+  AttractionsComponent
 ],
   imports: [
     CommonModule  ,
