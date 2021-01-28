@@ -30,8 +30,13 @@ import {CarouselModule} from 'ngx-owl-carousel-o'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PopupComponent } from './Components/popup/popup.component';
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CardComponent } from './Components/card/card.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -68,7 +73,10 @@ var firebaseConfig = {
     LoginComponent,
     SignUpComponent,
     AdminComponent,
-    SecondHeaderComponent
+    SecondHeaderComponent,
+    PopupComponent,
+    CardComponent,
+    NotFoundComponent
   ],
   imports: [
 BrowserModule,
@@ -77,9 +85,10 @@ BrowserModule,
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule // firestore
+    AngularFirestoreModule ,// firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
+    MatDialogModule
  
 ],
   providers: [],

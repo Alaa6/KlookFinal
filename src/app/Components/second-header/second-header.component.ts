@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondHeaderComponent implements OnInit {
 
-  constructor() { }
+
+  subCategoryName : string ;
+  
+  constructor() {
+    this.subCategoryName = "Tour"
+   }
 
   ngOnInit(): void {
+  }
+
+  setsubCategoryName (subCatName :string){
+     localStorage.setItem('experienceCat' ,subCatName)
+
+     console.log(localStorage.getItem('experienceCat'));
+     
   }
 
 }
