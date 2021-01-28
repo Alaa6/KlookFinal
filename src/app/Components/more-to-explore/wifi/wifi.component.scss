@@ -1,0 +1,55 @@
+/* start Header */
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/../assets/wifi/petter-lagson-MSWD-PDMizQ-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+    border-top-color: lightgray !important;
+    
+}
+/* end Header */
+#dropbtn1 {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width:600px;
+  text-align: start;
+  color: #999;
+}
+@media only screen and (max-width: 1000px) {
+  #dropbtn1{
+    width: 300px;
+  }
+}
+#dropbtn2 {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width:300px;
+  text-align: start;
+  color: #999;
+}
+@media only screen and (max-width: 1000px) {
+  #dropbtn2{
+    width: 100px;
+  }
+}
+#dropbtn3 {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width:300px;
+  text-align: start;
+  color: #999;
+}
+@media only screen and (max-width: 1000px) {
+  #dropbtn3{
+    width: 100px;
+  }
+}
