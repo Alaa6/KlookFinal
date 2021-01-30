@@ -13,6 +13,7 @@ export interface Tours {
     Title?:string,
     TourDiscount?:string,
     TourSectionInner?:string,
+    Distance?: number
 
     
 

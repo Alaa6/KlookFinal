@@ -1,9 +1,12 @@
+* {
+  font-size: 14px;
+}
 .navbar2 {
   font-weight: 500;
   font-size: 1em;
   margin-top: -1em;
   background-color: white;
-  top: 3.5em !important;
+  top: 4em !important;
   z-index: 2;
 }
 .navbar2 .dropdown:hover > .dropdown-menu {
@@ -18,7 +21,10 @@
 }
 .navbar2 .hd1 {
   color: #333333;
-  font-size: 0.9em;
+  font-size: 1em;
+}
+.navbar2 .navbar-collapse {
+  padding-bottom: 0.5em;
 }
 .navbar2 #navbarDropdown:hover .hd1 {
   color: #ff5722;
@@ -35,9 +41,9 @@
 .disableHorizontalScroll {
   overflow: hidden;
 }
-.modal-backdrop {
-  display: none;
-}
+// .modal-backdrop {
+//   display: none;
+// }
 
 .navbar2 .mmain,
 .main {
@@ -74,9 +80,10 @@ i:hover {
   padding-right: 0.5em;
 }
 
-.navbar2 .home {
-  color: #ff5722;
-}
+// .navbar2 .home {
+//   // margin-top: -0.2em;
+//   font-size: 1.1em;
+// }
 .navbar2 ul {
   height: 2em;
 }
@@ -95,4 +102,9 @@ i:hover {
 .navbar-collapse {
   background-color: white;
   z-index: 5000;
+}
+@media only screen and (max-width: 479px) {
+  nav {
+    top: 3.7em !important;
+  }
 }
