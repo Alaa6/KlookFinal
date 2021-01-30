@@ -21,7 +21,7 @@ import { BestSellerCairoComponent } from './Components/best-seller-cairo/best-se
 import { AttractionsHongKongMacauComponent } from './Components/attractions-hong-kong-macau/attractions-hong-kong-macau.component';
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
-import { SignUpComponent } from './Components/sign-up/sign-up.component';
+// import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -72,7 +72,7 @@ var firebaseConfig = {
     AttractionsHongKongMacauComponent,
     AttractionsHongKongComponent,
     LoginComponent,
-    SignUpComponent,
+    // SignUpComponent,
     AdminComponent,
     SecondHeaderComponent,
     ModalComponent,
