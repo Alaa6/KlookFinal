@@ -26,12 +26,20 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {CarouselModule} from 'ngx-owl-carousel-o'
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { RouterModule, Routes } from '@angular/router';
+
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from './Components/modal/modal.component';
+import { HelpComponent } from './Components/help/help.component';
+import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -68,7 +76,11 @@ var firebaseConfig = {
     LoginComponent,
     SignUpComponent,
     AdminComponent,
-    SecondHeaderComponent
+    SecondHeaderComponent,
+    ModalComponent,
+    HelpComponent,
+    KlookCreditComponent
+     
   ],
   imports: [
 BrowserModule,
@@ -77,11 +89,12 @@ BrowserModule,
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule // firestore
+    AngularFirestoreModule, // firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
- 
-],
+    RouterModule,
+    MatDialogModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,382 @@
+/*Start main rules */
+* {
+  //   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+  //     Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* line-height: 1.15; */
+  font-size: 14px;
+  box-sizing: border-box;
+}
+/*Start cover */
+.cover .bg {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.cover .tl {
+  position: absolute;
+  top: 17em;
+  left: 8em;
+}
+.cover .tl .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+.cover .tl .attrc {
+  color: white;
+  font-size: 3em;
+  font-weight: 700;
+  margin-left: -0.3em;
+}
+/* .cover .tl .attrc .actv {
+    color: #ff5722;
+  } */
+
+.cover .tl .disc {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.cover .tl .destination {
+  background-color: white;
+  width: 20%;
+  padding: 1em;
+  border-radius: 2em;
+  margin-top: 1.8em;
+}
+/*Search*/
+/*Search*/
+.cover .tl .s007 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 3em;
+  width: 120%;
+}
+
+.cover .tl .s007 form {
+  width: 100%;
+  max-width: 790px;
+  margin: 0;
+}
+
+.cover .tl .s007 form .inner-form .input-field {
+  position: relative;
+}
+
+.cover .tl .s007 form .inner-form .input-field input {
+  height: 100%;
+  border: 0;
+  background: #fff;
+  display: block;
+  width: 100%;
+  padding: 10px 32px 10px 70px;
+  font-size: 18px;
+  color: #666;
+  border-radius: 3px;
+  height: 70px;
+  color: #555;
+}
+
+.cover .tl .s007 form .inner-form .input-field input.placeholder {
+  color: #999;
+  font-size: 18px;
+}
+
+.cover .tl .s007 form .inner-form .input-field input:-moz-placeholder {
+  color: #999;
+  font-size: 18px;
+}
+
+.cover
+  .tl
+  .s007
+  form
+  .inner-form
+  .input-field
+  input::-webkit-input-placeholder {
+  color: #999;
+  font-size: 18px;
+}
+
+.cover .tl .s007 form .inner-form .input-field input:hover,
+.cover .tl .s007 form .inner-form .input-field input:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.cover .tl .s007 form .inner-form .basic-search .input-field .icon-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+}
+
+.cover .tl .s007 form .inner-form .basic-search .input-field .icon-wrap svg {
+  width: 34px;
+  height: 34px;
+  fill: #ccc;
+}
+
+.cover .tl .s007 form .inner-form .basic-search .input-field .result-count {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 110px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  font-weight: bold;
+  color: #555;
+  height: 100%;
+  font-size: 14px;
+}
+/*End cover*/
+/*---------------------*/
+/*Start options*/
+.options {
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+.options .row .col-2 {
+  /* box-shadow: 3px 3px 3px 3px #888888; */
+  margin: 1em;
+  transition: 0.4s;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.options .row {
+  width: 90%;
+}
+.options .row .col-2:hover {
+  text-decoration: none;
+  transform: translateY(-0.6em);
+}
+.options .row .col-2 svg {
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+}
+.options .row .col-2 .word {
+  color: black;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+/*End options*/
+/*Start unmissable things to do */
+.unmissable {
+  margin-bottom: 2em;
+}
+.unmissable h2 {
+  color: #212121;
+  font-weight: 700;
+}
+.unmissable .bestseller {
+  background-color: #fff7f2;
+  height: 26em;
+  margin-top: 3em;
+}
+// .unmissable .fr {
+//   margin-left: 0.5em;
+// }
+.unmissable .bestseller .firstCol i {
+  color: #ff9d26;
+  font-size: 2.5em;
+  margin-bottom: 0.7em;
+  margin-top: 1em;
+}
+.unmissable .bestseller .firstCol .best {
+  color: #ff9d26;
+  font-size: 1.5em;
+  font-weight: 650;
+}
+.unmissable .secondCol {
+  padding-top: 2em;
+}
+.unmissable .carousel-inner {
+  padding-top: 2.5em;
+  padding-bottom: 1em;
+}
+.unmissable .card {
+  /* margin-right: 0.5em; */
+  width: 95%;
+}
+.unmissable .card a {
+  color: #333333;
+}
+.unmissable .card a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+.unmissable .card:hover {
+  transform: translate(0, -10px);
+}
+.unmissable .top_left {
+  position: absolute;
+  top: 8px;
+  left: 2px;
+}
+
+.unmissable .btns {
+  display: flex;
+  justify-content: space-between;
+}
+.unmissable .btn1,
+.btn2 {
+  color: white;
+  height: 1.5em;
+  font-weight: 500;
+  border-radius: 0.2em;
+  margin-top: 4.5em;
+  font-size: 0.9em;
+}
+.unmissable .btn1 {
+  margin-right: 1em;
+  background-color: #ff5722;
+  border: 0.1em solid #ff5722;
+}
+.unmissable .btn2 {
+  background: linear-gradient(to right, #ff9557 0%, #ff6b3d 100%);
+  border: 0.1em solid #ff9557;
+}
+.unmissable .carousel-next-icon {
+  border: 0.15em white solid;
+  border-radius: 50%;
+  padding: 0.5em;
+  color: gray;
+  margin-left: 10em;
+  background-color: white;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 5em;
+}
+.unmissable .carousel-prev-icon {
+  padding: 0.5em;
+  color: gray;
+  margin-right: 8.5em;
+  border: 0.15em white solid !important;
+  border-radius: 55%;
+  background-color: white;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 5em;
+}
+.unmissable .card-title {
+  font-weight: 700 !important;
+  font-size: 0.9em;
+  color: black;
+}
+.unmissable .bg {
+  background-color: #fff7f2;
+}
+.unmissable .sm {
+  font-size: 0.85em;
+}
+.unmissable .black {
+  color: black;
+  font-size: 0.9em;
+  margin-top: -1em;
+}
+.unmissable .card-body2 {
+  margin-top: -2em;
+}
+.unmissable .move {
+  height: 20em;
+}
+/*End unmissable things to do */
+/*Start nearby destinations */
+.must-visit {
+  margin-bottom: 5em;
+}
+.must-visit h2 {
+  color: #212121;
+  font-weight: 700;
+}
+.must-visit .row {
+  margin-left: 0.2em;
+}
+.must-visit .card {
+  margin-top: 2.5em;
+}
+.must-visit .card1 {
+  margin-right: 1.5em;
+  transition: 0.4s;
+}
+.must-visit .card1:hover {
+  transform: translateY(-0.6em);
+}
+/*end nearby destinations*/
+/*--------------------------*/
+/*start recommended*/
+.recommend {
+  margin-top: 4em;
+}
+.recommend h2 {
+  color: #212121;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+}
+.recommend .activities,
+.cities,
+.activitiesIn {
+  margin-bottom: 2em;
+}
+.recommend .activities .spans a,
+span,
+.cities .spans a,
+span,
+.activitiesIn .spans a,
+span {
+  color: #666666;
+}
+.recommend .activities .spans a:hover,
+.cities .spans a:hover,
+.activitiesIn .spans a:hover {
+  color: #3b75d9;
+  text-decoration: none;
+}
+.recommend .activities .spans span {
+  font-weight: 200;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+.recommend .cities .spans span,
+.activitiesIn .spans span {
+  font-weight: 200;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.recommend .activities .spans div,
+.cities .spans div,
+.activitiesIn .spans div {
+  margin-top: 0.6em;
+}
+.recommend .viw {
+  margin-top: 0.6em;
+}
+.recommend .vw {
+  font-weight: 700;
+  color: #3b75d9;
+}
+.recommend .vw:hover {
+  color: #3b75d9;
+  text-decoration: none;
+}
+#hide {
+  display: none;
+}
+/*end recommended*/

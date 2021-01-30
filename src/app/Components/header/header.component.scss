@@ -1,3 +1,6 @@
+* {
+  font-size: 14px;
+}
 /* Start header */
 .navbar1 {
   font-size: 0.9em;
@@ -5,12 +8,11 @@
   background-color: white;
   z-index: 11;
 }
-
 .navbar1 #navbarDropdownMenuLink,
 .navbar1 .nav-link i,
 .navbar1 .nav-link span {
   color: #333333;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 .navbar1 .nav-link i {
   font-size: 1em;
@@ -25,7 +27,7 @@
   text-align: center;
 }
 .navbar1 .cntr a {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .navbar1 .currency {
@@ -58,6 +60,9 @@
 .navbar1 .download {
   left: 10px;
 }
+.navbar1 .download .dropdown-item:hover {
+  background-color: transparent;
+}
 .navbar1 .cart {
   margin-right: 1.5em;
 }
@@ -72,11 +77,56 @@
   margin-right: 1em;
 }
 .mainLogo {
-  width: 5.8em;
+  width: 8.5em;
 }
 hr {
-  top: 4em;
+  top: 4.6em;
   z-index: 10;
 }
 
 /*End header */
+@media only screen and (max-width: 768px) {
+  .header-text h2 {
+    font-size: 1.5em;
+    margin-top: -0.9em;
+  }
+  .carousel-inner .carousel-item img {
+    position: relative;
+    text-align: center;
+  }
+  .header-text .text-center {
+    margin-left: 6em !important;
+  }
+  .result-count button {
+    margin-left: 1.3em;
+  }
+  .text-center {
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translate(-50%, -30%);
+  }
+  .header-text h3 {
+    font-size: 1.3em;
+    margin-top: -1.5em;
+  }
+}
+@media only screen and (max-width: 479px) {
+  img {
+    width: 6.5em !important;
+  }
+
+  .log {
+    margin-left: 1.5em;
+  }
+  .money {
+    margin-left: -3em !important;
+  }
+  nav {
+    width: 29em;
+  }
+  hr {
+    top: 3.9em;
+    z-index: 11;
+  }
+}

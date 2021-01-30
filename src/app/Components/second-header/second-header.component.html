@@ -17,9 +17,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home.html">
-          <i class="fas fa-home" style="color: #ff5722;"></i>
-          <span class="home">Home</span>
+        <a class="nav-link hd1 home" href="home.html">
+          <i class="fas fa-home home clr"></i>
+          <span class="home hd1">Home</span>
         </a>
       </li>
 
@@ -37,8 +37,13 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          (click)="open()"
         >
-          <div class="hd1" onmouseover="show()" onmouseout="hide()">
+          <!-- <div class="hd1" (mouseover)="show()" (mouseout)="hide()">
+          <i class="fas fa-bars clr"></i>
+          <span class="hd1">All Categories</span>
+        </div> -->
+          <div class="hd1">
             <i class="fas fa-bars clr"></i>
             <span class="hd1">All Categories</span>
           </div>
@@ -52,6 +57,7 @@
           tabindex="-1"
           aria-labelledby="staticBackdropLabel"
           aria-hidden="true"
+          #CatModal
         >
           <div class="modal-dialog modal-dialog-scrollable mw-100 w-75">
             <div class="modal-content">
@@ -88,7 +94,11 @@
                     <a href="#" class="sub">Attraction passes & more</a>
                     <br />
                     <br />
-                    <a    routerLink ="/experiences/tour"  routerLinkActive="active" class="main">
+                    <a
+                      routerLink="/experiences/tour"
+                      routerLinkActive="active"
+                      class="main"
+                    >
                       Tours
                       <i class="fas fa-chevron-right"></i>
                     </a>
@@ -309,10 +319,20 @@
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../Attractions/AttractionsHK&Ma.html">
+          <a
+            class="dropdown-item"
+            routerLink="/experiences/attractions"
+            routerLinkActive="active"
+          >
             Attractions
           </a>
-          <a class="dropdown-item"  routerLink ="/experiences/tour"  routerLinkActive="active">Tours</a>
+          <a
+            class="dropdown-item"
+            routerLink="/experiences/tour"
+            routerLinkActive="active"
+          >
+            Tours
+          </a>
           <a class="dropdown-item" href="#">Outdoors & sports</a>
           <a class="dropdown-item" href="../Relax/Relaxx.html">
             Relaxation & beauty
