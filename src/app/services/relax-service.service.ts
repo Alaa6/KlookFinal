@@ -8,6 +8,7 @@ import { ICategory } from '../viewModels/icategory';
 import { filter, map, take, mergeMap, toArray } from 'rxjs/operators'
 import { ICity } from '../viewModels/icity';
 import { IActivity } from '../viewModels/iactivity';
+import { ITour } from '../viewModels/itour';
 
 
 
@@ -30,22 +31,11 @@ export class RelaxServiceService {
 
   }
 
-  getCategoriesByCity(_city: string): Observable<ICategory[]> {
+  getCategoriesByCityAndSecion(_city: string , _section : string): Observable<ICategory[]> {
 
-    // return this.afs.collection<ICategory>('categories').snapshotChanges().pipe(
 
-    //   map(actions => actions.map(a => {
-    //     const data = a.payload.doc.data()
-    //     const id = a.payload.doc.id;
-    //     console.log(data , 'data ');
-    //     console.log(id , 'id ');
 
-        
-    //     return { id, ...data };
-    //   }))
-    // );'
-
-    return this.afs.collection<ICategory>('categories' ,ref => ref.where( 'city', '==', _city)).valueChanges()
+    return this.afs.collection<ICategory>('categories' ,ref => ref.where( 'city', '==', _city).where('section', '==',_section )).valueChanges()
 
   }
 
@@ -55,10 +45,10 @@ export class RelaxServiceService {
     return this.afs.collection<ICity>('Cities').valueChanges()
 
   }
-  getAllActivities(_city : string): Observable<IActivity[]> {
+  getAllActivities(_city : string  , _category : string , _section : string): Observable<ITour[]> {
 
 
-    return this.afs.collection<IActivity>('Activities' ,ref => ref.where( 'City', '==', _city)).valueChanges()
+    return this.afs.collection<ITour>('ToursCollection' ,ref => ref.where( 'City', '==', _city ).where('Categories',  '==', _category).where('Section',  '==', _section)).valueChanges()
 
   }
 

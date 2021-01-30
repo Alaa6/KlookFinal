@@ -48,7 +48,7 @@ export class CultureComponent implements OnInit {
     this.itemService.getallatours('Categories','Section','Culture','BestSeller').subscribe( argg =>{ 
       this.BestSeller=argg
       // console.log(this.BestSeller)
-    } 
+    }
     )
     this.itemService.getallatours('Categories','Section','Culture','AwsomeDeals').subscribe( arg =>{ 
       this.awsomeDeals=arg

@@ -86,8 +86,17 @@
           </path>
         </svg>
 
-        <p class="mr-2 mt-3"> Cairo </p>
+        <p class="mr-2 mt-3" > {{city}} </p>
+        <!-- <input #cityName    [(ngModel)]="city" > -->
+        <!-- <input #cityName   [value]="city"  >  -->
+
+        <!-- <select #cityName class="mt-3 form-control" [(ngModel)]="city">
+          <option *ngFor="let item of cityList " [value]="item.City1">{{item.City1}}</option>
+        </select> -->
+        
       </div>
+      <!-- <input #cityName id="location" type="text" [value]="city"  > -->
+      <!-- <on-changes [city]="city" (click)="openPopup()" ></on-changes> -->
 
 
       <!-- search -->
@@ -128,34 +137,45 @@
 
 
 
-  <!-- start body section  -->
-  <section>
+  <!-- start Categories   section  -->
+  <section class=" row">
 
 
 
 
-    <div id="activitiesCards" class="d-flex m-5 flex-wrap">
+
+
+    <div  class="m-5 col-12 col-sm-12  col-md-9   col-lg-9 col-xl-9">
       <!-- <a id="card-link" href="./walking&biking.html" class="mt-2  col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3" *ngFor="let cat of categoryList"> -->
-      <mat-card id="cat-card" class=" m-1 mt-2 col-12 col-sm-12  col-md-2   col-lg-2 col-xl-2"
-        *ngFor="let cat of categoryList">
+      <owl-carousel-o [options]="customOptions" >
 
-        <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
+        <ng-template carouselSlide *ngFor="let cat of categoryList" class="row">
 
-        <div class="card-body  text-center">
-          <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
-          <img id="card-icon"
-            data-src="https://klook-res.cloudinary.com/image/upload/v1600351708/UED%20Team%EF%BC%88for%20DE%20only%EF%BC%89/category%20icon/L1%20and%20L2/icon_category_walking_bike_tours_xm_colorful.png"
-            src="https://klook-res.cloudinary.com/image/upload/v1600351708/UED%20Team%EF%BC%88for%20DE%20only%EF%BC%89/category%20icon/L1%20and%20L2/icon_category_walking_bike_tours_xm_colorful.png"
-            lazy="loaded">
-          <p class="card-text"> {{cat?.name}}</p>
+          <mat-card id="cat-card" class=" m-1 mt-2   col-12 col-sm-12  col-md-4   col-lg-4 col-xl-4 " routerLink="['/activity/' + city]" routerLinkActive="active" >
 
-        </div>
-        <!-- </mat-card > -->
-      </mat-card>
-      <!-- </a> -->
+            <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
+
+            <div class="card-body  text-center d-flex flex-column align-items-center">
+              <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
+              <img 
+                id="card-icon"
+                class="mb-2"
+]                src={{cat?.image}}
+             
+                >
+              <p class="card-text"> {{cat?.name}}</p>
+
+            </div>
+            <!-- </mat-card > -->
+          </mat-card>
+          <!-- </a> -->
+        </ng-template>
+      </owl-carousel-o>
 
     </div>
-  
+
+
+
     <!-- <input type="text" [(ngModel)]="city" #testCity  name="city" > -->
 
 
@@ -167,15 +187,12 @@
 
   <!-- start Bestsellers section  -->
 
-  <section id="best-sellers" class="m-5">
-
+  <section id="best-sellers" class="m-5 ">
 
 
     <h2 class="font-weight-bold ml-4 mt-1"> Unmissable things to do</h2>
 
-
-
-    <div id="best-backhround" class="m-2 d-flex  rounded-lg flex-wrap ">
+    <div id="best-backhround" class="m-2  rounded-lg  row ">
 
       <div class=" mt-2 col-12 col-sm-12  col-md-12   col-lg-2 col-xl-2">
         <img
@@ -186,37 +203,43 @@
 
 
 
-      <div class="row">
+      <div class="col-12 col-sm-12  col-md-12   col-lg-9 col-xl-9">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let activity of tourList" class="row">
 
-        <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3"
-          *ngFor="let activity of activityList">
+            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12  col-md-12   col-lg-10 col-xl-10">
 
-          <img class="card-img-top" src={{activity.Image}} alt="Card image">
+              <!-- <img class="card-img-top" src={{activity.Image}} alt="Card image"> -->
+              <img
+                src="https://res.klook.com/image/upload/c_fill,w_352,h_470/fl_lossy.progressive,q_85,f_auto/cities/gcxln2u1i804b6ywyf8g.webp">
 
-          <div class="card-img-overlay d-flex flex-column justify-content-between">
+              <div class="card-img-overlay d-flex flex-column justify-content-between">
 
-            <div id="location" class="d-flex   p-2  m-1 col-1 " style="color: #fff;">
-              <i class="fas fa-map-marker-alt mt-1 mr-2 "></i>
-              <p> {{activity.City}} </p>
+                <div id="location" class="d-flex   p-2  m-1 col-1 " style="color: #fff;">
+                  <i class="fas fa-map-marker-alt mt-1 mr-2 "></i>
+                  <p> {{activity.City}} </p>
 
-            </div>
-          </div>
-          <div class="card-body">
-            <h4 class="card-title font-weight-bold" style="font-size: medium;">{{activity.Name}}</h4>
-            <p class="card-text" style="color:  #a0a0a0;"> {{activity.Book}} Booked</p>
-            <div class="d-flex">
-              <h4 class="card-text font-weight-bold" style="font-size: medium;">EGP {{activity.Price}}</h4>
-              <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
-                <path fill="#FF5722" fill-rule="evenodd"
-                  d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z">
-                </path>
-              </svg>
-            </div>
-            <p class="card-text" style="color:  #a0a0a0;"> Book now for {{activity.Date}}</p>
-          </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title font-weight-bold" style="font-size: medium;">{{activity.Title}}</h4>
+                <p class="card-text" style="color:  #a0a0a0;"> {{activity.Booked}} Booked</p>
+                <div class="d-flex">
+                  <h4 class="card-text font-weight-bold" style="font-size: medium;">EGP {{activity.Price}}</h4>
+                  <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#FF5722" fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z">
+                    </path>
+                  </svg>
+                </div>
+                <p class="card-text" style="color:  #a0a0a0;"> Book now for {{activity.Date}}</p>
+              </div>
 
 
-        </mat-card>
+            </mat-card>
+          </ng-template>
+        </owl-carousel-o>
+
 
 
       </div>
@@ -228,85 +251,46 @@
 
   <!-- start nearby section  -->
 
-  <section id="nearby" class="m-5">
+ <section id="nearby" class="m-5 ">
     <h2 class="font-weight-bold ml-4 mt-1">Nearby destinations</h2>
 
-    <div class="d-flex mt-5 flex-wrap " style="width: 70%;">
+    <div class="row">
+      <div class="col-12 col-sm-12  col-md-12   col-lg-9 col-xl-9">
+
+        <!-- <div class="row mt-5 " style="width: 70%;"  style="background-color: #ff5722;"> -->
+
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let tour of Nearby">
+
+            <div class="mt-2 col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3">
+
+              <div id="cat-card" class=" card rounded-lg m-1 ">
+
+                <img id="img-baground" class="card-img-top "
+                  src="https://res.klook.com/image/upload/c_fill,w_352,h_470/fl_lossy.progressive,q_85,f_auto/cities/gcxln2u1i804b6ywyf8g.webp"
+                  alt="Card image">
+
+                <div class=" card-img-overlay d-flex flex-column justify-content-between">
 
 
-      <a id="card-link" href="#" class="mt-2 col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3">
+                  <div>
+                    <p> Distance of </p>
+                    <span class="font-weight-bold" style="font-size: 25px;"> {{tour.Distance }}</span>
 
-        <div id="card" class="card rounded-lg" onmouseover="moreShadow(this)" onmouseout="lessShadow(this)">
-          <img id="img-baground" class="card-img-top"
-            src="https://res.klook.com/image/upload/c_fill,w_352,h_470/fl_lossy.progressive,q_85,f_auto/cities/gcxln2u1i804b6ywyf8g.webp"
-            alt="Card image">
+                  </div>
 
-          <div class="card-img-overlay d-flex flex-column justify-content-between">
-            <div>
-              <p> Distance of </p>
-              <span class="font-weight-bold" style="font-size: 25px;"> 332 </span>
-              <span>Km</span>
+                  <p class="card-text font-weight-bold" style="font-size: 20px;">{{tour.City}}</p>
+                </div>
+              </div>
+
             </div>
+          </ng-template>
+        </owl-carousel-o>
 
-            <p class="card-text font-weight-bold" style="font-size: 20px;">Eilat</p>
-          </div>
-        </div>
-
-      </a>
-
-
-      <a id="card-link" href="#" class="mt-2 col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3">
-
-        <div id="card" class="card rounded-lg" onmouseover="moreShadow(this)" onmouseout="lessShadow(this)">
-          <img id="img-baground" class="card-img-top"
-            src="https://res.klook.com/image/upload/c_fill,w_352,h_470/fl_lossy.progressive,q_85,f_auto/cities/blv9pyt36q7mwu04d6ci.webp"
-            alt="Card image" style="height: 250px;">
-
-          <div class="card-img-overlay d-flex flex-column justify-content-between">
-            <div>
-              <p> Distance of </p>
-              <span class="font-weight-bold" style="font-size: 25px;"> 389 </span>
-              <span>Km</span>
-            </div>
-
-            <p class="card-text font-weight-bold " style="font-size: 20px;">Tel Aviv</p>
-          </div>
-        </div>
-
-
-
-      </a>
-
-
-
-      <a id="card-link" href="#" class="mt-2 col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3">
-
-        <div id="card" class="card rounded-lg" onmouseover="moreShadow(this)" onmouseout="lessShadow(this)">
-
-
-          <img id="img-baground" class="card-img-top"
-            src="https://res.klook.com/image/upload/c_fill,w_352,h_470/fl_lossy.progressive,q_85,f_auto/cities/qtfropnzq88xa2wapviw.webp"
-            alt="Card image" style="height: 250px;">
-
-          <div class="card-img-overlay d-flex flex-column justify-content-between">
-            <div>
-              <p> Distance of </p>
-              <span class="font-weight-bold" style="font-size: 25px;"> 403 </span>
-              <span>Km</span>
-            </div>
-
-            <p class="card-text font-weight-bold" style="font-size: 20px;">Southern Jordan</p>
-          </div>
-        </div>
-
-
-
-
-      </a>
-
-
+      </div>
 
     </div>
+
   </section>
 
   <!-- start nearby section  -->

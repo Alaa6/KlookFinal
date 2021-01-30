@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-second-header',
@@ -7,21 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondHeaderComponent implements OnInit {
 
-
-  subCategoryName : string ;
+    city : string
+  constructor( private router : Router) {
+    this.city ='Cairo'
   
-  constructor() {
-    this.subCategoryName = "Tour"
    }
 
   ngOnInit(): void {
-  }
+    
+  } 
 
   setsubCategoryName (subCatName :string){
-     localStorage.setItem('experienceCat' ,subCatName)
-
-     console.log(localStorage.getItem('experienceCat'));
-     
+     this.router.navigate(['/experiences/cat/' ,this.city, subCatName  ])   
   }
 
 }

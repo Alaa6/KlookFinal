@@ -57,14 +57,8 @@
                     <a href="#" class="sub">Attraction passes & more</a>
                     <br />
                     <br />
-<<<<<<< HEAD
-                    <a    routerLink ="/experiences/sub-cat/{{subCategoryName}}"  routerLinkActive="active" class="main" >
+                    <a     class="main" >
                      Tour
-=======
-                    <a routerLink="/experiences/tour" routerLinkActive="active" class="main">
-                      Tours
->>>>>>> 6d4e3590a07d677b0d564c88b19662b1995f74d9
-                      <i class="fas fa-chevron-right"></i>
                     </a>
                     <br />
                     <a href="../tours/walking&biking.html" class="sub">
@@ -270,19 +264,20 @@
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../Attractions/AttractionsHK&Ma.html">
+          <a class="dropdown-item"(click)="setsubCategoryName('Attractions')" >
             Attractions
           </a>
-          <a class="dropdown-item"  routerLink ="/experiences/sub-cat/{{subCategoryName}}"  routerLinkActive="active">Tours</a>
-          <a class="dropdown-item" routerLink="/experiences/tour" routerLinkActive="active">Tours</a>
-          <a class="dropdown-item" href="#">Outdoors & sports</a>
-          <a class="dropdown-item"  routerLink ="/experiences/relax"  routerLinkActive="active">
-            Relaxation & beauty
+          <a class="dropdown-item"   (click)="setsubCategoryName('Tour')">Tours</a>
+          <a class="dropdown-item"   routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
+            Outdoors & sports</a>
+          <a class="dropdown-item"   routerLinkActive="active " (click)="setsubCategoryName('Relaxation & beauty')">
+          Relaxation & beauty
+          
           </a>
-          <a class="dropdown-item" href="../Relax/culturee.html">
+          <a class="dropdown-item" (click)="setsubCategoryName('Cultural experiences')">
             Cultural experiences
           </a>
-          <a class="dropdown-item" href="../Relax/FunNight.html">
+          <a class="dropdown-item"  routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
             Fun & nightlife
           </a>
         </div>
@@ -339,4 +334,5 @@
       </li>
     </ul>
   </div>
-</nav>
+  </nav>
+
