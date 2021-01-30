@@ -17,13 +17,13 @@
                 check-in date
               </div>
               <div class="col-4" style="
-                              border-radius: 10px;
-                              color: #4985e6;
-                              border: 1px solid #4985e6;
-                              line-height: 1;
-                              
-                              position: relative;
-                              font-size: 12px;">
+                                border-radius: 10px;
+                                color: #4985e6;
+                                border: 1px solid #4985e6;
+                                line-height: 1;
+                                
+                                position: relative;
+                                font-size: 12px;">
                 1 night
               </div>
               <div class="col-4">
@@ -170,6 +170,52 @@
   <h2 class="h2 mt-5 pt-5 pb-3 mb-3">
     Popular stays
   </h2>
+
+  <div class="row ">
+    <div class="col">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let slide of popular">
+          <div class="moves ">
+            <div class="card" style="width: 17rem;">
+              <img src="{{slide.Image}}" class="card-img-top" style="height: 10em;" alt="...">
+              <div class="top_left">
+                <i class="fas fa-map-marker-alt"></i>
+                <span> {{slide.CityHotel}}</span>
+              </div>
+              <div class="card-body">
+                <div class="card-title" style="color: #7d1e00;font-size: 12px;line-height: 12px;font-weight: 400;">
+                  {{slide.Premium}}</div>
+                <p class="card-text" style="font-weight: 600;">{{slide.TitleHotel}}
+                </p>
+
+                <span style="color: #ffa628;font-size: 14px;font-weight: 700;line-height: 14px;">
+                  {{slide.RateHotel}}
+                </span>
+                <span style="color: #ffa628;font-size: 12px;font-weight: 400;line-height: 14px;">
+                  /5
+                </span>
+                <span style="font-size: 12px;line-height: 14px;color: #666;">
+                  {{slide.Degree}}
+                </span>
+
+
+              </div>
+              <div class="card-body">
+                <div>
+                  <span style="color:#999;">
+                    From
+                  </span>
+                  <span class="font-weight-bold">EGP {{slide.PriceHotel}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+  </div>
   <!-- End popular stays -->
 
 
@@ -210,10 +256,67 @@
     </ul>
 
   </div>
+
+
+  <div class="row">
+    <div class="col">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let sl of staycation">
+          <div class="moves">
+            <div class="card" style="width: 17rem;">
+              <img src="{{sl.Image}}" class="card-img-top" style="height: 10em;" alt="...">
+              <div class="top_left">
+                <i class="fas fa-map-marker-alt"></i>
+                <span> {{sl.CityHotel}} </span>
+              </div>
+              <div class="card-body">
+
+                <p class="card-text" style="font-weight: 600;">{{sl.TitleHotel}}
+                </p>
+                <span>
+                  <i class="fas fa-star" style="font-weight: 500;color: #f5a623;"></i>
+                </span>
+                <span style="color: #ffa628;font-size: 14px;font-weight: 700;line-height: 14px;">
+                  {{sl.RateHotel}}
+                </span>
+                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
+                  {{sl.ReviewHotel}} reviews
+                </span>
+                <span style="font-size: 12px;line-height: 14px;color: #666;">
+                  {{sl.BookedHotel}} + Booked
+                </span>
+
+
+              </div>
+
+              <div class="card-body">
+                <div>
+                  <del style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">EGP
+                    {{sl.Oldprice}}</del>
+                </div>
+                <div>
+
+                  <span class="font-weight-bold">EGP {{sl.PriceHotel}}</span>
+                  <span><i class="mt-2 fas fa-bolt" style="color: #ff5722;font-size: 16px;"></i></span>
+                </div>
+                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
+                  Book now for {{sl.DateHotel}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
   <!-- End staycation -->
 
 
-
+  <div class="btnHongKong mt-5 mb-5">
+    <button class="btn">
+      See all deals in Hong Kong & Macau
+    </button>
+  </div>
 
 
 
@@ -240,7 +343,65 @@
     </ul>
 
   </div>
+
+  <div class="row">
+    <div class="col">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let sl of vouchers">
+          <div class="moves">
+            <div class="card" style="width: 17rem;">
+              <img src="{{sl.Image}}" class="card-img-top" style="height: 10em;" alt="...">
+              <div class="top_left">
+                <i class="fas fa-map-marker-alt"></i>
+                <span> {{sl.CityHotel}} </span>
+              </div>
+              <div class="card-body">
+
+                <p class="card-text" style="font-weight: 600;">{{sl.TitleHotel}}
+                </p>
+                <span>
+                  <i class="fas fa-star" style="font-weight: 500;color: #f5a623;"></i>
+                </span>
+                <span style="color: #ffa628;font-size: 14px;font-weight: 700;line-height: 14px;">
+                  {{sl.RateHotel}}
+                </span>
+                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
+                  {{sl.ReviewHotel}} reviews
+                </span>
+                <span style="font-size: 12px;line-height: 14px;color: #666;">
+                  {{sl.BookedHotel}} + Booked
+                </span>
+
+
+              </div>
+
+              <div class="card-body">
+                <div>
+                  <del style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">EGP
+                    {{sl.Oldprice}}</del>
+                </div>
+                <div>
+
+                  <span class="font-weight-bold">EGP {{sl.PriceHotel}}</span>
+                  <span><i class="mt-2 fas fa-bolt" style="color: #ff5722;font-size: 16px;"></i></span>
+                </div>
+                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
+                  Book now for {{sl.DateHotel}}
+                </span>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
   <!-- End vouchers -->
+
+  <div class="btnHongKong mt-5 mb-5">
+    <button class="btn">
+      See all deals in Philippines
+    </button>
+  </div>
 
   <!-- start FAQS section -->
   <div class="shadow pl-2 pt-1">
@@ -258,9 +419,9 @@
           <!-- -----------------------------2------------------------------------------------------------------ -->
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" onclick="h2()">Will I be charged if I cancel my booking?<i
-                  class="fas fa-chevron-down float-right" id="icon2"></i></h2>
-              <div id="demo" style="background-color: #f5f5f5; display: none;">
+              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo">Will I be charged if I cancel my
+                booking?<i class="fas fa-chevron-down float-right" id="icon2"></i></h2>
+              <div id="demo" class="collapse" style="background-color: #f5f5f5;">
                 This depends on the cancellation policy of your booking. Cancelling a
                 non-refundable
                 bookings may result in a full charge of the booking. Free cancellation means
@@ -280,9 +441,9 @@
 
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" onclick="h3()">How will I know if my booking is confirmed?<i
-                  class="fas fa-chevron-down float-right" id="icon3"></i></h2>
-              <div id="demo3" style="background-color: #f5f5f5; display: none;">
+              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo2">How will I know if my booking is
+                confirmed?<i class="fas fa-chevron-down float-right" id="icon3"></i></h2>
+              <div id="demo2" class="collapse" style="background-color: #f5f5f5; ">
                 We’ll send a confirmation email with your booking details within 30 minutes
                 after
                 you’ve made the payment. If you can’t find the email, try checking your
@@ -297,9 +458,9 @@
 
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" onclick="h4()">Where can I find the cancellation policy?<i
-                  class="fas fa-chevron-down float-right" id="icon4"></i></h2>
-              <div id="demo4" style="background-color: #f5f5f5;display: none;">
+              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo3">Where can I find the cancellation
+                policy?<i class="fas fa-chevron-down float-right" id="icon4"></i></h2>
+              <div id="demo3" class="collapse" style="background-color: #f5f5f5;">
                 You can find a room’s cancellation policy listed as either “Free cancellation”
                 or
                 “Non-refundable” near the room rate. To find out more details, go to the booking
@@ -316,10 +477,10 @@
 
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" onclick="h5()">How do I make a booking on Klook？ <i
+              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo4">How do I make a booking on Klook？ <i
                   class="fas fa-chevron-down float-right" id="icon"></i></h2>
 
-              <div id="demo5" style="background-color: #f5f5f5;display: none;">
+              <div id="demo4" class="collapse" style="background-color: #f5f5f5;">
                 1. Log in to your Klook account or create one 2. Select Stays from the main
                 menu,
                 enter your destination and dates, and hit search 3. Choose a property and
@@ -336,14 +497,20 @@
         </div>
 
         <div class="col-5">
-          <img src="images/hotel-1330846_1920.jpg" class="img-fluid" style="height:70%;" alt="">
+          <img src="../../../../assets/Hotel/hotel-1330846_1920.jpg" class="img-fluid">
         </div>
       </div>
 
       <!-- End FAQS Section -->
     </div>
+
+
+
   </div>
+
   <!-- ------------------------------------------------------------------------------- -->
+
+
   <!-- start Terms & conditions -->
   <h2 class="h2 mt-5 pt-5 ">
     Terms & Conditions
@@ -417,7 +584,7 @@
     </div>
 
   </ul>
-  <div class="viewmore mb-4" id="view" onclick="viewMore()" data-toggle="collapse" data-target="#demo6">
+  <div class="viewmore mb-4" id="view" data-toggle="collapse" data-target="#demo6">
     View more
 
   </div>

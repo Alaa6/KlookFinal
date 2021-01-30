@@ -1,0 +1,276 @@
+<!-- start image background header -->
+<header>
+  <div class="container">
+    <p style="padding-top:150px ; font-size: 46px; font-weight: bold; line-height: 1.2;color: white;">WiFi & SIM
+      cards
+    </p>
+    <p style="font-size: 16px;font-weight: normal; color: white;">Compare plans and find a reliable connection
+      for your
+      destination</p>
+    <div class="shadow col-12 bg-white d-flex align-items-center"
+      style=" width: 548px;height: 106px;border-radius: 8px;">
+      <div class="m-3 d-flex align-items-center p-3 " id="border"
+        style="-webkit-box-align: center;;width: 100%;height: 60%;border-radius: 4px;border: solid 1px #f5f5f5; background-color: #f5f5f5;cursor: pointer;">
+        <i class="fas fa-wifi "></i>
+        <p class="mt-3 pl-2">
+          Where are you going
+        </p>
+        <i class="fas fa-chevron-down" style="padding-left: 260px;"></i>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End image background header -->
+
+
+
+
+<!-- Start container -->
+<div class="container-fluid bg-light">
+  <div class="container col-11 p-5" id="cards">
+    <!-- Home > wifi -->
+    <a href="../home/home.html">Home</a>
+    <span style="color: #999;"> > WiFi & SIM cards</span>
+    <!-- End -->
+
+    <!-- start drop down -->
+
+    <div class="row pt-4">
+      <div class="col-md-6 col-3 ">
+        <div class="dropdown">
+          <button type="button" id="dropbtn1" class="btn border " data-toggle="dropdown">
+            Select a pick-up location
+            <i class="fas fa-chevron-down float-right"></i>
+          </button>
+          <ul class="dropdown-menu checkbox-menu allow-focus" style="width: 600px;">
+            <h5 class="dropdown-header">Mainland China Cities</h5>
+            <div class="row">
+              <div class="col-4">
+                <li>
+                  <label>
+                    <input type="checkbox"> Beijing
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox"> Hangzhou
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox"> Guangzhou
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox"> Chongqing
+                  </label>
+                </li>
+
+              </div>
+
+              <div class="col-4">
+                <li>
+                  <label>
+                    <input type="checkbox"> Shanghai
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox"> Xiamen
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox"> Shenzhen
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox"> Chengdu
+                  </label>
+                </li>
+
+              </div>
+              <div class="col-4">
+                <li>
+                  <label>
+                    <input type="checkbox"> Nanjing
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox"> Changsha
+                  </label>
+                </li>
+
+                <li>
+                  <label>
+                    <input type="checkbox"> Zhuhai
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox"> Xi'an
+                  </label>
+                </li>
+              </div>
+            </div>
+            <div class="border col-12"></div>
+            <h5 class="dropdown-header">Dropdown header</h5>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-1 ">
+        <div class="dropdown">
+          <button type="button" id="dropbtn2" class="btn border " data-toggle="dropdown">
+            WiFi/SIM card
+            <i class="fas fa-chevron-down float-right"></i>
+          </button>
+          <ul class="dropdown-menu " style="width: 300px;">
+            <li>
+              All
+            </li>
+
+            <li>
+              Wifi
+            </li>
+
+            <li>
+              Sim Card
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-1 ">
+        <div class="dropdown">
+          <button type="button" id="dropbtn3" class="btn border " data-toggle="dropdown">
+            Pick up/delivery
+            <i class="fas fa-chevron-down float-right"></i>
+          </button>
+          <ul class="dropdown-menu " style="width: 300px;">
+
+
+            <li>
+              All
+            </li>
+
+            <li>
+              Pick Up
+            </li>
+
+            <li>
+              Delivery
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <!-- End drop down -->
+    <!-- ----------------------Australia------------------------------------- -->
+    <div *ngFor="let wi of WifiCards" class="shadow bg-white mt-5">
+      <div class="row">
+        <div class="col-3">
+          <img class="d-flex img-fluid" src="{{wi.Image}}">
+        </div>
+        <div class="col-6">
+          <div class="mt-3 mb-3">
+            <a style="font-size: 18px;font-weight: 500;line-height: 24px;color: #424242;" href="#">{{wi.Title}}</a>
+            <div>
+              Pick-up locations:
+              <span style="color: #009685;">
+                {{wi.Location}}
+              </span>
+              <span>
+                <!-- <a id="tooltip-inner" data-toggle="tooltip" data-placement="top" title="{{wi.Location}}"></a> -->
+                <a class=" mr-2" placement="top">
+                  see more
+                </a>
+              </span>
+            </div>
+            <div class="d-flex">
+              <i class="fas fa-check-circle text-success mt-1 pr-2"></i>
+              <p class="pr-4"> Instant confirmation</p>
+              <i class="fas fa-check-circle text-success mt-1 pr-2"></i>
+              <p> Book now for <span>{{wi.Date}}</span> </p>
+            </div>
+            <div class="mt-3">
+              <div>
+                Validity:
+                <span class="pl-1">
+                  {{wi.Validity}} days
+                </span>
+              </div>
+              <div>
+                Internet speed
+                <span class="pl-1">
+                  {{wi.Internet}}
+                </span>
+              </div>
+              <div>
+                Service type:
+                <span class="pl-1">
+                  {{wi.Service}}
+                </span>
+              </div>
+              <div>
+                Coverage area:
+                <span>
+                  {{wi.Coverage}}
+                </span>
+                <span>
+                  <a class=" mr-2" placement="top">
+                    see more
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="mt-3 float-right">
+            <i class="fas fa-star" style="font-weight: 500;color: #f5a623;"></i>
+            <span style="font-weight: 500;color: #f5a623;">
+              {{wi.Rate}}
+            </span>
+            <span class="pr-4">
+              (
+              <span>{{wi.Reviews}}</span>
+              reviews ) <span>{{wi.Booked}}</span> + Booked
+            </span>
+
+          </div>
+          <div class="float-right">
+            <div class="d-flex justify-content-end mt-4 mr-4 pt-4">
+              <i class="mt-2 fas fa-bolt" style="color: #ff5722;font-size: 16px;"></i>
+              <span class="pl-1" style="font-size: 24px;font-weight: bold;line-height: 1; color: #424242;">
+                EGP
+                <span>{{wi.Price}}</span>
+              </span>
+
+            </div>
+            <div class="d-flex justify-content-end  mr-4">
+              <p style="line-height: 17px;font-size: 14px;color: #888 ;">per SIM card</p>
+            </div>
+            <button class="d-flex align-items-center border-white mr-4"
+              style="min-width: 80px;height: 40px;line-height: 23px;font-size: 18px;font-weight: 500;color: #fff;border-radius: 2px; background-color: #ff5722;">View
+              details</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ------------------------------------------------------------------ -->
+
+
+
+  </div>
+</div>
