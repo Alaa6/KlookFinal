@@ -3,8 +3,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Hotels } from '../viewModels/hotels';
 
-
-
 @Injectable({
   providedIn: 'root'
 })

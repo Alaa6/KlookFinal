@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HotelService } from 'src/app/services/hotel.service';
 import { Hotels } from 'src/app/viewModels/hotels';
 import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
+import { SpinnerActionService } from 'src/app/services/spinner-action.service';
 
 
 @Component({
@@ -11,12 +12,18 @@ import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
 })
 
 
-export class HotelsComponent implements OnInit {
+export class HotelsComponent implements OnInit ,AfterViewInit ,OnChanges {
 
   popular:Hotels[]=[];
   staycation:Hotels[]=[];
   vouchers:Hotels[]=[];
-  constructor( private hotelServ:HotelService) { }
+  show = false;
+  constructor( private hotelServ:HotelService ,private spinnerService:SpinnerActionService , private cdRef:ChangeDetectorRef) { }
+  ngOnChanges(changes: SimpleChanges): void {
+   
+  }
+  ngAfterViewInit(): void {
+  }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -53,6 +60,7 @@ export class HotelsComponent implements OnInit {
     this.hotelServ.getAllVouchersHotels().subscribe((voucher)=>{
       this.vouchers=voucher;
     })
+   
   }
 
 }

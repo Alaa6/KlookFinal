@@ -18,4 +18,5 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ]
 })
+
 export class AccommodationModule { }

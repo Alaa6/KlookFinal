@@ -11,45 +11,114 @@ header{
     
 }
 /* end Header */
+
+
 #dropbtn1 {
   padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  width:600px;
   text-align: start;
   color: #999;
 }
-@media only screen and (max-width: 1000px) {
-  #dropbtn1{
-    width: 300px;
-  }
-}
-#dropbtn2 {
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  width:300px;
-  text-align: start;
-  color: #999;
-}
-@media only screen and (max-width: 1000px) {
-  #dropbtn2{
-    width: 100px;
-  }
-}
+
 #dropbtn3 {
   padding: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  width:300px;
   text-align: start;
   color: #999;
 }
-@media only screen and (max-width: 1000px) {
+
+#dropbtn2 {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: start;
+  color: #999;
+}
+
+
+@media only screen and (max-width: 900px) {
+  #dropbtn1{
+    width: 150px;
+
+  }
+  .a1 {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #424242;
+  }
+  #dropbtn2{
+    width: 100px;
+  }
+
   #dropbtn3{
     width: 100px;
   }
+  .div1 {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    
+  }
+  .div2 {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 18px;
+    
+  }
+  .div3 {
+    font-size: 10px;font-weight: bold;line-height: 1; color: #424242;
+
+  }
+  .div4{
+    font-size: 10px;
+  }
+  .p1 {
+    line-height: 17px;font-size: 10px;color: #888 ;
+
+  }
+  .btnView {
+    min-width: 40px;height: 40px;line-height: 18px;font-size: 10px;font-weight: 500;color: #fff;border-radius: 2px; background-color: #ff5722;
+  }
 }
+
+@media only screen and (min-width: 900px) {
+  #dropbtn1{
+    width: 500px;
+
+  }
+  .a1 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #424242;
+
+  }
+  #dropbtn2{
+    width: 200px;
+  }
+  #dropbtn3{
+    width: 200px;
+  }
+  .div3 {
+    font-size: 24px;font-weight: bold;line-height: 1; color: #424242;
+
+
+  }
+  .p1 {
+    line-height: 17px;font-size: 14px;color: #888 ;
+      }
+  .btnView {
+     min-width: 80px;height: 40px;line-height: 23px;font-size: 18px;font-weight: 500;color: #fff;border-radius: 2px; background-color: #ff5722;
+      }
+}
+
+
+
+
+

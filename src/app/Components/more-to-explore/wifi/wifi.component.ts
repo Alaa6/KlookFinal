@@ -10,6 +10,7 @@ import { Wifi } from 'src/app/viewModels/wifi';
 export class WifiComponent implements OnInit {
 
   WifiCards:Wifi[]=[];
+ 
   constructor(private wifiServ:WifiService) { }
 
   ngOnInit(): void {

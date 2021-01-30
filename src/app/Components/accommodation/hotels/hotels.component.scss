@@ -118,3 +118,11 @@ header{
     color: #4985e6;
     line-height: 16px;
 }
+
+.btn-add{
+  transform: rotate(180deg);
+}
+
+.btn-remove{
+  transform: rotate(360deg);
+}

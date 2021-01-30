@@ -43,13 +43,13 @@
                   </li>
                 </div>
                 <div class="col-2">
-                  <button onclick="incrementrooms()">+</button>
+                  <button >+</button>
                 </div>
                 <div class="col-2">
                   <div id="room">1</div>
                 </div>
                 <div class="col-2">
-                  <button onclick="decrementrooms()">-</button>
+                  <button >-</button>
                 </div>
 
 
@@ -62,13 +62,13 @@
                   </li>
                 </div>
                 <div class="col-2">
-                  <button onclick="incrementadults()">+</button>
+                  <button >+</button>
                 </div>
                 <div class="col-2">
                   <div id="adult">1</div>
                 </div>
                 <div class="col-2">
-                  <button onclick="decrementadults()">-</button>
+                  <button >-</button>
                 </div>
               </div>
               <div class="row">
@@ -78,13 +78,13 @@
                   </li>
                 </div>
                 <div class="col-2">
-                  <button onclick="incrementchild()">+</button>
+                  <button >+</button>
                 </div>
                 <div class="col-2">
                   <div id="child">1</div>
                 </div>
                 <div class="col-2">
-                  <button onclick="decrementchild()">-</button>
+                  <button >-</button>
                 </div>
               </div>
             </ul>
@@ -512,82 +512,83 @@
 
 
   <!-- start Terms & conditions -->
-  <h2 class="h2 mt-5 pt-5 ">
-    Terms & Conditions
-  </h2>
-  <p>
-    Accommodation Terms and Conditions shall apply in addition to our General <a href="#">Terms of use</a>
-    ,our <a href="#">Privacy Policy</a> and the relevantthird party supplier’s terms and conditions and
-    privacy
-    policieswhen accessing or using ourwebsite <a href="#">www.klook.com</a> and/or the Klook App (together,
-    the
-    “Klook Platform”) for anyreservation services for lodging and temporary accommodation, including hotels,
-    hostels,serviced apartments, B&Bs, ryokans, etc. (collectively, the “Accommodation”).
-  </p>
-  <ul>
-    <li>
-      By making an Accommodation reservation on the Klook Platform, you accept and agree tothe relevant
-      Accommodation booking conditions, including cancellation and no-showpolicies. The cancellation and
-      no-show policy of each Accommodation is available on theKlook Platform at the Accommodation
-      information
-      pages. Certain rates, fees or special offerswill not be eligible for cancellation, refund or change.
-    </li>
-    <li>
-      Any cancellation or changes (where applicable) to your reservation must be made throughKlook and not
-      directly with the Accommodation or any third party supplier. Any problems orquestions on your
-      reservation should be directed to our Klook customer service, who willassist you and serve as a
-      point of
-      contact with the Accommodation or third party supplier.
-    </li>
-    <li>
-      Prices for Accommodation are for room reservations only, and for the specified stay datesand number
-      of
-      people, unless expressly indicated otherwise.
-    </li>
-    <div id="more" style="display: none;">
+  <div>
+    <h2 class="h2 mt-5 pt-5">
+      Terms & Conditions
+    </h2>
+    <p>
+      Accommodation Terms and Conditions shall apply in addition to our General <a href="#">Terms of use</a>
+      ,our <a href="#">Privacy Policy</a> and the relevantthird party supplier’s terms and conditions and
+      privacy
+      policieswhen accessing or using ourwebsite <a href="#">www.klook.com</a> and/or the Klook App (together,
+      the
+      “Klook Platform”) for anyreservation services for lodging and temporary accommodation, including hotels,
+      hostels,serviced apartments, B&Bs, ryokans, etc. (collectively, the “Accommodation”).
+    </p>
+    <ul>
       <li>
-        Some Accommodations will charge mandatory service fees, surcharges, and local taxes (e.g.resort
-        or
-        amenity fees, transportation transfers, city tourist tax and festive gala mealsurcharges) that
-        may
-        be
-        collected directly from you by the Accommodation, in addition tothe total reservation price you
-        pay
-        on
-        the Klook Platform.
+        By making an Accommodation reservation on the Klook Platform, you accept and agree tothe relevant
+        Accommodation booking conditions, including cancellation and no-showpolicies. The cancellation and
+        no-show policy of each Accommodation is available on theKlook Platform at the Accommodation
+        information
+        pages. Certain rates, fees or special offerswill not be eligible for cancellation, refund or change.
       </li>
       <li>
-        The total reservation price may include a charge for taxes and fees (“Taxes and Fees”).This
-        includes
-        an
-        estimated amount to recover the amount Klook pays to the Accommodationfor your reservation for
-        taxes
-        owed or required to be collected by the Accommodationincluding, without limitation, sales and
-        use
-        tax,
-        occupancy tax, room tax, excise tax andvalue added tax. The amount paid to the Accommodation for
-        your
-        reservation for taxes mayvary from the estimated amount. The Taxes and Fees may also include a
-        fee
-        retained byKlook as compensation for our services and to cover the costs of your reservation
-        (e.g.customer service costs).
+        Any cancellation or changes (where applicable) to your reservation must be made throughKlook and not
+        directly with the Accommodation or any third party supplier. Any problems orquestions on your
+        reservation should be directed to our Klook customer service, who willassist you and serve as a
+        point of
+        contact with the Accommodation or third party supplier.
       </li>
       <li>
-        Klook is one of many channels Accommodations use to make their inventory available
-        forreservation.
-        When
-        a search result indicates that an Accommodation has no more roomsavailable, that means the room
-        type
-        is
-        not available for reservation through the KlookPlatform.
+        Prices for Accommodation are for room reservations only, and for the specified stay datesand number
+        of
+        people, unless expressly indicated otherwise.
       </li>
+      <ng-container *ngIf="show">
+        <li>
+          Some Accommodations will charge mandatory service fees, surcharges, and local taxes (e.g.resort
+          or
+          amenity fees, transportation transfers, city tourist tax and festive gala mealsurcharges) that
+          may
+          be
+          collected directly from you by the Accommodation, in addition tothe total reservation price you
+          pay
+          on
+          the Klook Platform.
+        </li>
+        <li>
+          The total reservation price may include a charge for taxes and fees (“Taxes and Fees”).This
+          includes
+          an
+          estimated amount to recover the amount Klook pays to the Accommodationfor your reservation for
+          taxes
+          owed or required to be collected by the Accommodationincluding, without limitation, sales and
+          use
+          tax,
+          occupancy tax, room tax, excise tax andvalue added tax. The amount paid to the Accommodation for
+          your
+          reservation for taxes mayvary from the estimated amount. The Taxes and Fees may also include a
+          fee
+          retained byKlook as compensation for our services and to cover the costs of your reservation
+          (e.g.customer service costs).
+        </li>
+        <li>
+          Klook is one of many channels Accommodations use to make their inventory available
+          forreservation.
+          When
+          a search result indicates that an Accommodation has no more roomsavailable, that means the room
+          type
+          is
+          not available for reservation through the KlookPlatform.
+        </li>
+      </ng-container>
+    </ul>
+    <div (click)="show = !show" class="viewmore mb-4" data-toggle="collapse" data-target="#demo6">
+      {{ show ? 'View less': 'View More' }}
+      <i class="iconShow" [ngClass]="{ 'btn-add': show, 'btn-remove': !show  }"
+        class="fas fa-chevron-down viewmore"></i>
     </div>
-
-  </ul>
-  <div class="viewmore mb-4" id="view" data-toggle="collapse" data-target="#demo6">
-    View more
-
   </div>
-  <i class="fas fa-chevron-down viewmore" id="icon1"></i>
 
 </div>
