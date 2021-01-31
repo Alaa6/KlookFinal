@@ -22,7 +22,7 @@ export class SecondHeaderComponent implements OnInit, AfterViewInit {
 
   open() {
     const modalRef = this.modalService.open('Modal');
-    modalRef.componentInstance.name = 'World';
+    // modalRef.componentInstance.name = 'World';
   }
   // show() {
   //   this.Category?.nativeElement.modal({
