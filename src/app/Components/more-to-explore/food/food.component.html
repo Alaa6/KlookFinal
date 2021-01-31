@@ -1,0 +1,224 @@
+<!-- ///////////////////////////////////////////////// carousel ///////////////////////////////////////////// -->
+<div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner " style="height: 350px;">
+          <div class="carousel-item active">
+            <img src="../../../../assets/f5.jpg" class="d-block w-100 img-thumbnail" alt="...">
+            
+          </div>
+          <div class="carousel-item">
+            <img src="../../../../assets/f2.jpg" class="d-block w-100 img-thumbnail" alt="...">
+          </div> 
+          <div class="carousel-item">
+            <img src="../../../../assets/f6.jpg" class="d-block w-100 img-thumbnail" alt="...">
+          </div>        
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <!--Add text on image-->
+      <div class="header-text hidden-xs">
+        <div class="pt-2 col-md-12 text-left ">
+            <h2>
+                <span>Food & Dining</span>
+            </h2>
+            <br>
+            <h3>
+              <span>Discover and book amazing things to do at exclusive prices</span>
+            </h3>
+            <br>
+            <!-- <div class="">
+                <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a></div> -->
+               
+                <!--Start button 'Explore'-->
+              
+        </div>
+      </div>
+    </div>
+      <!-- </div> -->
+      <!--End carousel-->
+<!-- </div> -->
+
+
+<!-- ************************************************ end of carousel ***************************************** -->
+
+<!-- /////////////////////////////////////////////// body //////////////////////////////////////////// -->
+<div class="container-fluid my-5 pt-4">
+    <div class="row mb-4 d-flex flex-wrap">
+         
+
+<!-- ++++++++++++++++++++++++++++++++++++++++ left column +++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3">
+
+      <div class="border border-primary" style="height: auto;">
+        <div class="row-col my-2   pt-5 ">
+          <div class="px-2 mx-2 font-weight-bold py-2" style="font-size: 1.2em;"> selected</div>
+          <div class="input-form py-1 my-1 px-3 mx-3 col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6 " style="background-color: #F5F5F5;">food & dining <i class="fas fa-times ml-4  "></i></div>
+        </div>
+       
+     
+
+      <hr style="border-radius: 0.5em;">
+    </div>        
+</div>
+
+
+
+<div class="vl"></div>
+<!-- +++++++++++++++++++++++++++++++++++++++++ right column +++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div class="col-12 col-sm-12  col-md-12  col-lg-8 col-xl-8">
+    <div  style="height:auto;">
+      <div class="row ml-4 pt-4 ">
+        <h3>96 activites found </h3>
+      </div>
+      <div class="row ml-2 pt-4 ">
+        <div class="input-group col-md-4">
+          <input class="form-control " type="search" placeholder="search filtered results" id="example-search-input">
+          <span class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+          </span>
+    </div>
+      </div>
+
+
+      <div class="row   d-inline">
+        <div class="form-group d-flex flex-wrap justify-content-between mx-4 pt-4">
+         
+          <select class="form-control col-12 col-sm-12  col-md-12  col-lg-2 col-xl-2 " id="sel1" name="sellist1">
+            <option>Availability</option>
+            
+          </select>
+
+          <select class="form-control col-12 col-sm-12  col-md-12  col-lg-2 col-xl-2" id="sel2" name="sellist2">
+            <option>price Range</option>
+            
+          </select>
+
+          <span class="form-control col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3" style="width: 13 em;">
+          Instant confirmation <i class="fas fa-info-circle mt-1"></i>
+          <span class="form-check-inline ml-4  pl-3">
+            <label class="form-check-label justify-content-end">
+              <input type="checkbox" class="form-check-input " value="">
+            </label>
+          </span>
+          </span>
+
+          <span class=" col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3 d-inline-flex">
+           <label class="mt-1">sort by:</label> &nbsp;  &nbsp; 
+           <select class="form-control col-12 col-sm-12  col-md-12  col-lg-8 col-xl-8 " id="sel3" name="sellist3">
+            <option>most relevant</option>
+            <option>most popular</option>
+            <option>Best reviewed</option>
+            <option>price (low to high)</option>
+            <option>Recently added </option>
+          </select>
+          </span>
+
+
+
+          </div>
+      </div>
+    <!-- row 1 -->
+      <div class="row-col ml-4 pt-4 mr-4" >
+        <div class="row " >
+          <div class="col-12 col-sm-12  col-md-5  col-lg-4 col-xl-4 " 
+           *ngFor="let i of FoodList 
+           | paginate: {  id: 'pp',
+           itemsPerPage: 12,
+           currentPage: page,
+           totalItems: totalRecords }"
+
+    
+         style="height: 30em;">
+           <a href="#" class="crd">
+            <div class="crd1 card text-left">
+              <img class="card-img-top" src="{{i.Image}}" alt="">
+              <div class="text-upon-img hidden-xs">
+                <i class="fas fa-map-marker-alt"></i> {{i.City}} </div>
+              <div class="text-down-img hidden-xs p-1">Bestseller</div>
+              <div class="card-body">
+                <h5 class="card-title" style="overflow: hidden; font-size: 1.2em; height: 3.8em;">{{i.Title}}</h5><i class="flag-hot" style="color:#FF5746;"></i>
+                <div class="card-text">
+                  <div class="mb-5">
+                    <span style="color: #f5a623;"><i class="fas fa-star"></i>{{i.Rate}}</span>
+                  <span style="color: #999999;" style="font-size: 0.7em;"> {{i.Review}} {{i.Booked}}</span> 
+                </div>
+                <div class="mb-1" style="text-decoration: line-through;font-size: 0.7em; color: #999999;">
+                    
+                   <h6 class="font-weight-bold d-inline-block" style="text-decoration: line-through;">{{i.OldPrice | currency:'EGP'}}</h6> 
+                  </div>
+
+                <div class="mb-1">
+
+                  <span style="font-size: 1em;">From </span> <h6 class="font-weight-bold d-inline-block">{{i.Price | currency:'EGP'}}</h6> &nbsp; <i class="fas fa-bolt" style="color:#FF5746;"></i>
+                </div>
+               <a href="#" class="lnk mb-0">Book Now for {{i.Date}}</a>
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+      
+        </div>
+      
+
+
+      </div>
+
+    
+    
+ 
+
+
+
+      <!-- row6 -->
+  
+      <!-- row7 -->
+     
+      <!-- row8 -->
+           <!-- end of cards -->
+
+      <div class="row mt-5  mb-4 mx-2">
+        <div class="container d-flex justify-content-end">
+          <!-- (pageChange)="page($event)"
+            (pageBoundsCorrection)="page($event)" -->
+            <pagination-controls 
+            id="pp"
+            
+            maxSize="2"
+            directionLinks="true"
+            autoHide="true"
+            responsive="true"
+            previousLabel="Previous"
+            nextLabel="Next"
+            screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page"
+            screenReaderCurrentLabel="You're on page">
+               </pagination-controls>
+
+         
+          <!-- <ul class="pagination ">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>       
+</div>
+
+
+
+<!-- **************************************** end of body ******************************************* -->
+</div>
+</div>

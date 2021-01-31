@@ -1,0 +1,195 @@
+.header {
+  // background-image: url("99.webp");
+  background-image: url("../../../../assets/99.webp");
+  background-position: center;
+  background-size: cover;
+  height: 445px;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.header .tx{
+
+}
+
+.header .tx h1{
+  font-size: 46px;
+  color: #FFFFFF;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  line-height: 55px;
+  font-weight: 700;
+}
+.header .tx button{
+  background-color:  #FFFFFF;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+/*.header .carousel slide .carousel-inner .carousel-item{
+ 
+
+} */
+
+.cardb{
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  margin-left: -5px;
+  /* display: -webkit-box; */
+  /* display: flex; */
+
+  /* justify-content: space-around; */
+}
+.cardb .plat{
+  display: flex;
+  flex-basis: 200%;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  margin: 0 5px;
+  /* position: relative; */
+  -webkit-box-align: center;
+  align-items: center;
+  width: 35%;
+}
+.cardb .plat span{
+  height: 58px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+  border: none;
+
+}
+.cardb .plat i{
+  color: #FF5722;
+  background-color:#f5f5f5 ;
+border-radius: 50%;
+padding: 10px;
+/* margin: 3px; */
+}
+.cardb .plat span .key{
+  font-size: 12px;
+  line-height: 1;
+  color: #212121;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  background-color: #f5f5f5;
+}
+
+.cardb .plat span input{
+  background-color: #f5f5f5;
+  font-weight: 700;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding-top: 30px;
+  padding-left: 16px;
+  padding-bottom: 12px;
+  line-height: 1;
+  border: 1px solid #ced4da;
+  
+}
+
+.cardb .plat span input.source2{
+  background-color: #fff;
+border: none;
+  border: 3px solid #ff5722;
+  font-weight: 700;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding-top: 30px;
+  padding-left: 16px;
+  padding-bottom: 12px;
+  line-height: 1;
+}
+
+.cardb button{
+  margin-left: 5px;
+  border-radius: 6px;
+  flex: none;
+  color: #fff;
+  background-color: #ff5722;
+  border: 1px solid #ff5722;
+  min-width: 86px;
+  display: inline-block;
+  font-size: 16px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 600;
+  padding: 10px 20px;
+  margin: 0;
+  text-align: center;
+  line-height: 22px;
+  outline: none;
+  text-transform: none;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100px;
+}
+
+
+/* ************************************* header ******************************************************************* */
+
+
+
+/* //////////////////////////////////////////////////// cards ////////////////////////////////////////////////// */
+.crd1{
+/* border: 1px solid #c5c5c5   ; */
+box-shadow: 2px 2px 2px 2px #c5c5c5 ;
+}
+.crd{
+ color: #333333;
+
+}
+
+.text-upon-img{
+ position: absolute;
+ top: 2%;
+ left: 3.8%;
+ right: auto;
+ color: #ff5722;
+}
+.text-down-img {
+ position: absolute;
+ top: 31%;
+ left: 3.8%;
+ right: auto;
+ background-color: #ff5722;
+ color: white;
+
+}
+
+.trips{
+  font-size: 1em;
+}
+
+
+
+/* ************************************************ cards ******************************************************* */
+
+
+
+
+/* ///////////////////////////////////////////////reviews ///////////////////////////////////////////////////////////// */
+
+.revRate{
+  float: right;
+}
+
+
+/* ********************************************* reviews ********************************************************** */
+
+/* /////////////////////////////////////////// Questions ////////////////////////////////////////////////////////////////// */
+
+
+
+/* *****************************************Questions **************************************************************** */
+

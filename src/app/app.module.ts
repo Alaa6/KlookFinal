@@ -12,9 +12,9 @@ import { ToursCairoComponent } from './Components/tours-cairo/tours-cairo.compon
 import { RelaxationComponent } from './Components/relaxation/relaxation.component';
 import { CultureComponent } from './Components/culture/culture.component';
 import { FunComponent } from './Components/fun/fun.component';
-import { EuropeTrainsComponent } from './Components/europe-trains/europe-trains.component';
+
 import { HotelsComponent } from './Components/hotels/hotels.component';
-import { FoodComponent } from './Components/food/food.component';
+
 import { WiFiComponent } from './Components/wi-fi/wi-fi.component';
 import { WalkingComponent } from './Components/walking/walking.component';
 import { BestSellerCairoComponent } from './Components/best-seller-cairo/best-seller-cairo.component';
@@ -29,6 +29,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {HttpClientModule} from '@angular/common/http';
+// import { JwPaginationComponent } from 'jw-angular-pagination';
+
+
+import { from } from 'rxjs';
+
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
 
@@ -55,9 +64,9 @@ var firebaseConfig = {
     RelaxationComponent,
     CultureComponent,
     FunComponent,
-    EuropeTrainsComponent,
+   
     HotelsComponent,
-    FoodComponent,
+   
     WiFiComponent,
     WalkingComponent,
     BestSellerCairoComponent,
@@ -66,7 +75,8 @@ var firebaseConfig = {
     LoginComponent,
     SignUpComponent,
     AdminComponent,
-    SecondHeaderComponent
+    SecondHeaderComponent,
+    // JwPaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +88,11 @@ var firebaseConfig = {
     AngularFirestoreModule, // firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    HttpClientModule
 ],
   providers: [],
   bootstrap: [AppComponent]
