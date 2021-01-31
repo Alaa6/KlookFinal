@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'food&dining',component:FoodComponent}
   
 ];
-
+ 
 @NgModule({
   declarations: [WifiComponent, FoodComponent],
   imports: [

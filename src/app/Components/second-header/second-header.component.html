@@ -94,6 +94,7 @@
                     <a href="#" class="sub">Attraction passes & more</a>
                     <br />
                     <br />
+                  
                     <a
                       routerLink="/experiences/tour"
                       routerLinkActive="active"
@@ -319,32 +320,29 @@
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a
+          <a class="dropdown-item"(click)="setsubCategoryName('Attractions')" >
+            Attractions
+          </a>
+          <a class="dropdown-item"   (click)="setsubCategoryName('Tour')">Tours</a>
+          <a class="dropdown-item"   routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
+            Outdoors & sports</a>
+          <a class="dropdown-item"   routerLinkActive="active " (click)="setsubCategoryName('Relaxation & beauty')">
+          Relaxation & beauty 
+          </a>
+          <!-- <a
             class="dropdown-item"
             routerLink="/experiences/attractions"
             routerLinkActive="active"
           >
             Attractions
-          </a>
-          <a
-            class="dropdown-item"
-            routerLink="/experiences/tour"
-            routerLinkActive="active"
-          >
-            Tours
-          </a>
-          <a class="dropdown-item" href="#">Outdoors & sports</a>
-          <a
-            class="dropdown-item"
-            routerLink="/experiences/relax"
-            routerLinkActive="active"
-          >
-            Relaxation & beauty
-          </a>
-          <a class="dropdown-item" href="../Relax/culturee.html">
+          </a> -->
+       
+      
+        
+          <a class="dropdown-item" (click)="setsubCategoryName('Cultural experiences')">
             Cultural experiences
           </a>
-          <a class="dropdown-item" href="../Relax/FunNight.html">
+          <a class="dropdown-item"  routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
             Fun & nightlife
           </a>
         </div>
@@ -440,4 +438,5 @@
       <!-- </li> -->
     </ul>
   </div>
-</nav>
+  </nav>
+

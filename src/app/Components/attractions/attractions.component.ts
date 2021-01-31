@@ -75,7 +75,7 @@ export class AttractionsComponent implements OnInit {
       },
       940: {
         items: 5
-      }
+      } 
     },
     nav: true
   }
