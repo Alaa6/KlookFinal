@@ -15,7 +15,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
   styleUrls: ['./home.component.scss']
 })
 
-
+ 
 
 export class HomeComponent implements OnInit, AfterViewInit {
 

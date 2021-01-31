@@ -10,7 +10,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './second-header.component.html',
   styleUrls: ['./second-header.component.scss']
 })
-export class SecondHeaderComponent implements OnInit, AfterViewInit {
+export class SecondHeaderComponent implements OnInit {
   @ViewChild('CatModal') Category: ElementRef | undefined;
     city : string ;
 
@@ -19,10 +19,7 @@ export class SecondHeaderComponent implements OnInit, AfterViewInit {
     this.city ='Cairo'
   
    }
-  ngAfterViewInit(): void {
-    throw new Error("Method not implemented.");
-  }
-
+ 
 
 
   ngOnInit(): void {
@@ -35,7 +32,7 @@ export class SecondHeaderComponent implements OnInit, AfterViewInit {
 
   open() {
     const modalRef = this.modalService.open('Modal');
-    modalRef.componentInstance.name = 'World';
+    // modalRef.componentInstance.name = 'World';
   }
   // show() {
   //   this.Category?.nativeElement.modal({

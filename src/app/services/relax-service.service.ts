@@ -9,6 +9,7 @@ import { filter, map, take, mergeMap, toArray } from 'rxjs/operators'
 import { ICity } from '../viewModels/icity';
 import { IActivity } from '../viewModels/iactivity';
 import { ITour } from '../viewModels/itour';
+import { ISubCategory } from '../viewModels/isub-category';
 
 
 
@@ -42,13 +43,19 @@ export class RelaxServiceService {
   getAllCities(): Observable<ICity[]> {
 
 
+
     return this.afs.collection<ICity>('Cities').valueChanges()
 
   }
-  getAllActivities(_city : string  , _category : string , _section : string): Observable<ITour[]> {
+  getAllTours(_city : string  , _category : string , _section : string): Observable<ITour[]> {
 
 
     return this.afs.collection<ITour>('ToursCollection' ,ref => ref.where( 'City', '==', _city ).where('Categories',  '==', _category).where('Section',  '==', _section)).valueChanges()
+
+  }
+
+  getSubCategory (_catName : string) :  Observable<ISubCategory[]>  {
+    return this.afs.collection <ISubCategory> ('SubCategories' ,ref => ref.where( 'Name' , '==', _catName )).valueChanges();
 
   }
 

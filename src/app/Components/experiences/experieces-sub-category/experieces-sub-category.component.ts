@@ -4,11 +4,12 @@ import { Observable, Subscription } from 'rxjs';
 import { IActivity } from 'src/app/viewModels/iactivity';
 import { PopupComponent } from '../../popup/popup.component';
 import { RelaxServiceService } from 'src/app/services/relax-service.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
 import { ITour } from 'src/app/viewModels/itour';
 import { ICity } from 'src/app/viewModels/icity';
+import { ISubCategory } from 'src/app/viewModels/isub-category';
 
 @Component({
   selector: 'app-experieces-sub-category',
@@ -30,11 +31,12 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
  
 
   // @Input() city: string =''; 
-   tourList: ITour[] = [] ;
+   bestSellerList: ITour[] = [] ;
   subCatName: string = 'Experience';
-  Nearby : ITour [] = [] 
+  nearbyList : ITour [] = [] 
   testCity: string = 'Cairo'
   cityList: ICity[] = [];
+  subCategory : ISubCategory [] =[]
 
 
 
@@ -75,6 +77,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
       this.cityName = 'Cairo'
 
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     console.log('on change' ,changes);
     
@@ -118,7 +121,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
 
 
     //   this.relaxService.getAllActivities(this.cityName.nativeElement.value , this.subCatName, "BestSeller").subscribe((res) => {
-    //     this.tourList = res
+    //     this.bestSellerList = res
     //   }, (err) => console.log(err))
 
 
@@ -159,15 +162,6 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
       this.subCatName = String(params.get('supCatName'))
       this.city = String(params.get('city')).split('%20').join(" ")
 
-     let  clearCity = this.city.split('%20').join(" ")
-
-      console.log(this.city , "city on init");
-      console.log(this.subCatName , "sup cat init");
-      console.log(clearCity , " clearCity  in init");
-      
-      
-      
-
       this.category$ = this.relaxService.getCategoriesByCityAndSecion(this.city, this.subCatName);
 
       this.category$.subscribe((res) => {
@@ -177,14 +171,23 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
       }, (err) => console.log(err))
 
 
-      this.relaxService.getAllActivities(this.city, this.subCatName, "BestSeller").subscribe((res) => {
-        this.tourList = res
+      this.relaxService.getAllTours(this.city, this.subCatName, "BestSeller").subscribe((res) => {
+        this.bestSellerList = res
       }, (err) => console.log(err))
 
 
-      this.relaxService.getAllActivities(this.city, this.subCatName, "Nearby").subscribe((res) => {
-        this.Nearby = res
+      this.relaxService.getAllTours(this.city, this.subCatName, "Nearby").subscribe((res) => {
+        this.nearbyList = res
       }, (err) => console.log(err))
+
+      this.relaxService.getSubCategory(this.subCatName).subscribe((res) => {
+        this.subCategory = res
+        console.log(res);
+       
+        
+        
+      }, (err) => console.log(err))
+
 
     },
       (err) => console.log(err)
@@ -198,13 +201,12 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
   openPopup( ) {
    
 
-    const dialogRef = this.dialog.open(PopupComponent);
+    const dialogRef = this.dialog.open(PopupComponent , { disableClose: true } );
+
+  
     dialogRef.afterClosed().subscribe(city => {
-
-      console.log(this.city);
-      console.log(city);
+      
       this.router.navigateByUrl(this.router.url.replace(this.city.split(" ").join("%20") , city));
-
       this.city = city
       // this.router.navigateByUrl(this.router.url.replace(this.city , city));
      

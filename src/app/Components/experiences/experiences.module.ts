@@ -16,6 +16,7 @@ import { RelaxComponent } from './relax/relax.component';
 const routes: Routes = [
 
   { path  : 'cat/:city/:supCatName'  , component : ExperiecesSubCategoryComponent},
+  
   { path  : 'sub-cat/:supCatName/activity/:activityCatName'  , component : ActivitiesComponent},
   { path  : 'sub-cat/:supCatName/activity/:activityCatName/activityDetails/:id'  , component : ActivitiesComponent},
   { path  : 'attractions' , component : AttractionsComponent},
