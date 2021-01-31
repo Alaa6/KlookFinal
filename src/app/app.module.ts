@@ -29,12 +29,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { PopupComponent } from './Components/popup/popup.component';
+
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CardComponent } from './Components/card/card.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
 
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
-import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
@@ -75,6 +81,9 @@ var firebaseConfig = {
     // SignUpComponent,
     AdminComponent,
     SecondHeaderComponent,
+    PopupComponent,
+    CardComponent,
+    NotFoundComponent ,
     ModalComponent,
     HelpComponent,
     KlookCreditComponent
@@ -87,7 +96,10 @@ var firebaseConfig = {
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule, // firestore
+    AngularFirestoreModule ,// firestore
+    // AngularFireAuthModule, // auth
+    // AngularFireStorageModule // storage
+    MatDialogModule ,
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,

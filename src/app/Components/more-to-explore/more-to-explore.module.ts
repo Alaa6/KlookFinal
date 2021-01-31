@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'wifi&simcards' , component:WifiComponent},
   
 ];
-
+ 
 @NgModule({
   declarations: [WifiComponent],
   imports: [
