@@ -21,14 +21,15 @@ import { BestSellerCairoComponent } from './Components/best-seller-cairo/best-se
 import { AttractionsHongKongMacauComponent } from './Components/attractions-hong-kong-macau/attractions-hong-kong-macau.component';
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
-import { SignUpComponent } from './Components/sign-up/sign-up.component';
+// import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule }   from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -38,8 +39,16 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { from } from 'rxjs';
 
+import { RouterModule, Routes } from '@angular/router';
+
+
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from './Components/modal/modal.component';
+import { HelpComponent } from './Components/help/help.component';
+import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -73,10 +82,14 @@ var firebaseConfig = {
     AttractionsHongKongMacauComponent,
     AttractionsHongKongComponent,
     LoginComponent,
-    SignUpComponent,
+    // SignUpComponent,
     AdminComponent,
     SecondHeaderComponent,
     // JwPaginationComponent
+    ModalComponent,
+    HelpComponent,
+    KlookCreditComponent
+     
   ],
   imports: [
     BrowserModule,
@@ -92,8 +105,12 @@ var firebaseConfig = {
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    HttpClientModule
+    HttpClientModule,    
+    MatDialogModule
 ],
+
+  // ],
+    
   providers: [],
   bootstrap: [AppComponent]
 })

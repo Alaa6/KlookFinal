@@ -1,0 +1,16 @@
+<ol>
+  <!-- <li>
+      <mat-form-field>
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name" />
+      </mat-form-field>
+    </li> -->
+  <li>
+    <i class="fas fa-chevron-circle-right" (click)="openDialog()"></i>
+    <!-- <button mat-raised-button (click)="openDialog()">Pick one</button> -->
+  </li>
+  <li *ngIf="video">
+    You chose:
+    <i>{{ video }}</i>
+  </li>
+</ol>

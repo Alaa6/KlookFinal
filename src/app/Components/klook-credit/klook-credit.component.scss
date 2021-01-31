@@ -1,0 +1,185 @@
+.cover {
+  background-image: url(./../../../assets/credit/credit.jpg);
+  background-size: cover;
+  height: 28em;
+}
+.cover .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 340px;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  margin: auto;
+}
+.cover .text h1 {
+  font-size: 2.2em;
+  font-weight: 500;
+}
+.cover .text .find {
+  font-size: 1.3em;
+  font-weight: 500;
+  width: 80%;
+}
+.cover .text .check {
+  border: #d3d6c8 0.1em solid;
+  padding: 0.8em;
+  background-color: #d3d6c8;
+  font-size: 1.5em;
+  width: 12em;
+  margin-top: 2em;
+  font-weight: 600;
+}
+//Start klook credits
+.credits {
+  width: 60%;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.credits h1 {
+  font-size: 2em;
+  text-align: center;
+}
+.credits p {
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+.credits p span {
+  color: #ff5722;
+  font-weight: 500;
+}
+//End klook credits
+//Start get credits
+.get {
+  background-color: #f5f5f5;
+  height: 34em;
+}
+.get h1 {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 2em;
+  margin-bottom: 2em;
+}
+.get .row {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+.get .row img {
+  width: 14em;
+}
+.get .row .first {
+  margin-right: 4em;
+}
+.get .row .main {
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 1em;
+}
+.get .row .sub {
+  text-align: left;
+  font-size: 1.1em;
+  width: 93%;
+  margin-left: 3em;
+}
+//End get credits
+//Start use credits
+.use h1 {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 2em;
+  margin-bottom: 1em;
+}
+.use .collect {
+  width: 57%;
+  margin: auto;
+  margin-bottom: 3em;
+  font-size: 1.15em;
+}
+.use .collect span {
+  color: #ff5622;
+  font-weight: 600;
+}
+//End use credits
+@media only screen and (max-width: 768px) {
+  .get {
+    background-color: #f5f5f5;
+    height: 55em;
+  }
+  .get .row .first {
+    margin-bottom: 2em;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .cover .text h1 {
+    font-size: 1.1em;
+    width: 150%;
+  }
+  .cover .text .find {
+    font-size: 0.9em;
+    width: 120%;
+  }
+  .cover .text .check {
+    padding: 0.5em;
+    font-size: 1.1em;
+    width: 10em;
+  }
+  //Start klook credits
+  .credits {
+    width: 80%;
+  }
+  .credits h1 {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  .credits p {
+    font-size: 1em;
+  }
+  //End klook credits
+  //Start get credits
+  .get {
+    height: 45em;
+  }
+  .get h1 {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  .get .row {
+    width: 80%;
+    margin-left: 4em;
+  }
+  .get .row img {
+    width: 8em;
+  }
+  .get .row .second {
+    margin-right: 4em;
+  }
+  .get .row .main {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 1em;
+  }
+  .get .row .sub {
+    text-align: left;
+    font-size: 0.9em;
+    width: 120%;
+    margin-left: 0em;
+    line-height: 1.5em;
+  }
+  //End get credits
+  //Start use credits
+  .use h1 {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+  .use .collect {
+    width: 75%;
+    font-size: 1em;
+    line-height: 2em;
+  }
+
+  //End use credits
+}
