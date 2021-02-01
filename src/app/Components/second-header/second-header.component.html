@@ -7,9 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="home.html">
-          <i class="fas fa-home" style="color: #ff5722;"></i>
-          <span class="home">Home</span>
+        <a class="nav-link hd1 home" routerLink="home" routerLinkActive="active">
+          <i class="fas fa-home home clr"></i>
+          <span class="home hd1">Home</span>
         </a>
       </li>
 
@@ -18,8 +18,12 @@
       <!--1-->
       <li class="nav-item dropdown">
         <a id="b1" data-toggle="modal" data-target="#CatModal" class="nav-link" href="#" role="button"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <div class="hd1" onmouseover="show()" onmouseout="hide()">
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="open()">
+          <!-- <div class="hd1" (mouseover)="show()" (mouseout)="hide()">
+          <i class="fas fa-bars clr"></i>
+          <span class="hd1">All Categories</span>
+        </div> -->
+          <div class="hd1">
             <i class="fas fa-bars clr"></i>
             <span class="hd1">All Categories</span>
           </div>
@@ -27,7 +31,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="CatModal" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-          aria-hidden="true">
+          aria-hidden="true" #CatModal>
           <div class="modal-dialog modal-dialog-scrollable mw-100 w-75">
             <div class="modal-content">
               <div class="modal-body disableHorizontalScroll">
@@ -141,7 +145,7 @@
                     <a href="#" class="sub">Taiwan trains</a>
                     <br />
                     <br />
-                    <a href="../hotel/carRentel.html" class="main">
+                    <a href="../hotel/carRental.html" class="main">
                       Car rentals
                       <i class="fas fa-chevron-right"></i>
                       <br />
@@ -265,12 +269,14 @@
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="../Attractions/AttractionsHK&Ma.html">
+          <a class="dropdown-item" routerLink="/experiences/attractions" routerLinkActive="active">
             Attractions
           </a>
-          <a class="dropdown-item" routerLink="/experiences/tour" routerLinkActive="active">Tours</a>
+          <a class="dropdown-item" routerLink="/experiences/tour" routerLinkActive="active">
+            Tours
+          </a>
           <a class="dropdown-item" href="#">Outdoors & sports</a>
-          <a class="dropdown-item"  routerLink ="/experiences/relax"  routerLinkActive="active">
+          <a class="dropdown-item" routerLink="/experiences/relax" routerLinkActive="active">
             Relaxation & beauty
           </a>
           <a class="dropdown-item" href="../Relax/culturee.html">
@@ -311,7 +317,9 @@
           <span class="hd1">Accommodation</span>
         </a>
         <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/accommodation/hotels&more" routerLinkActive="active">Hotels & more</a>
+          <a class="dropdown-item" routerLink="/accommodation/hotels&more" routerLinkActive="active">
+            Hotels & more
+          </a>
           <a class="dropdown-item" href="#">Staycations</a>
         </div>
       </li>

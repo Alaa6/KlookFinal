@@ -49,7 +49,7 @@ footer .fOne .thirdPr .input-group {
   width: 92%;
 }
 footer .fOne .thirdPr .input-group-append {
-  height: 2.35em;
+  height: 2.7em;
 }
 footer .fOne .thirdPr .input-group-text {
   background-color: #ff5722;
@@ -120,4 +120,50 @@ footer .titles a:hover {
 }
 footer .ask {
   font-size: 1em;
+}
+@media only screen and (max-width: 768px) {
+  footer {
+    height: 20em;
+  }
+  footer .fOne .thirdPr,
+  footer .fOne .secondPr {
+    display: none;
+  }
+  footer .travel,
+  .click {
+    display: none;
+  }
+  footer .fOne .firstPr {
+    text-align: center;
+    margin-top: 1.5em;
+  }
+
+  footer .fTwo .one {
+    margin-top: 0.4em;
+  }
+  footer .fTwo .pay,
+  .cards {
+    display: none;
+  }
+}
+@media only screen and (max-width: 479px) {
+  footer {
+    height: 30em;
+   // width: 112%;
+  }
+  footer .d-sm-none {
+    display: none;
+  }
+  footer .fTwo .col-lg-3 .one {
+    margin-bottom: 0.5em;
+  }
+  footer .btn {
+    margin-top: 1em;
+    width: 10em !important;
+  }
+  footer .btn .mx-5 {
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+    font-size: 1em !important;
+  }
 }
