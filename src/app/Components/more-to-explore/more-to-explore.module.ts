@@ -9,7 +9,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 const routes: Routes = [
 
   {path:'wifi&simcards' , component:WifiComponent},
-  {path:'food&dining',component:FoodComponent}
+  {path:'food&dining' ,component:FoodComponent}
   
 ];
  
