@@ -11,9 +11,9 @@ const routes: Routes = [
   {  path: 'experiences', 
     loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
   },
-  {path :'**' , component : NotFoundComponent} ,
+ 
 
-  
+ 
 
   {  path: 'accommodation', 
     loadChildren: () => import('./Components/accommodation/accommodation.module').then(m => m.AccommodationModule)
@@ -24,6 +24,7 @@ const routes: Routes = [
   {  path: 'transport', 
     loadChildren: () => import('./Components/transport/transport.module').then(m => m.TransportModule)
   },
+  {path :'**' , component : NotFoundComponent} ,
 ];
 
 @NgModule({
