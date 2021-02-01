@@ -162,6 +162,9 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
       this.subCatName = String(params.get('supCatName'))
       this.city = String(params.get('city')).split('%20').join(" ")
 
+      console.log(this.subCatName , this.city  , "data");
+      
+
       this.category$ = this.relaxService.getCategoriesByCityAndSecion(this.city, this.subCatName);
 
       this.category$.subscribe((res) => {
@@ -203,6 +206,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
 
     const dialogRef = this.dialog.open(PopupComponent , { disableClose: true } );
 
+  console.log(this.city.split(" ").join("%20") ," on popup");
   
     dialogRef.afterClosed().subscribe(city => {
       
