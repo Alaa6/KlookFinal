@@ -1,4 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild , Input} from '@angular/core';
+import { Router } from '@angular/router';
+
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 // var $: any;
@@ -8,21 +10,29 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './second-header.component.html',
   styleUrls: ['./second-header.component.scss']
 })
-export class SecondHeaderComponent implements OnInit, AfterViewInit {
-
+export class SecondHeaderComponent implements OnInit {
   @ViewChild('CatModal') Category: ElementRef | undefined;
-  constructor(private modalService: NgbModal) { }
-  ngAfterViewInit(): void {
-    // console.log(this.Category)
-    
-  }
+    city : string ;
+
+  constructor( private router : Router ,
+    private modalService: NgbModal) {
+    this.city ='Cairo'
+  
+   }
+ 
+
 
   ngOnInit(): void {
+    
+  } 
+
+  setsubCategoryName (subCatName :string){
+     this.router.navigate(['/experiences/cat/' ,this.city, subCatName  ])   
   }
 
   open() {
     const modalRef = this.modalService.open('Modal');
-    modalRef.componentInstance.name = 'World';
+    // modalRef.componentInstance.name = 'World';
   }
   // show() {
   //   this.Category?.nativeElement.modal({

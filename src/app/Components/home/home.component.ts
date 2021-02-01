@@ -15,7 +15,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./home.component.scss']
 })
 
-
+ 
 
 export class HomeComponent implements OnInit, AfterViewInit {
 
