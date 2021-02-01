@@ -33,7 +33,7 @@ article {
 
     #tour-header {
         //background-image: url('https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,,w_1920,/v1606978293/ued/ttd/banner/ttd_veritcal_page_banner_tours.jpg');
-        background-image: url('../../../../assets/Tour/tour_banner.jpg');
+        // background-image: url('../../../../assets/Tour/tour_banner.jpg');
        
         
     
@@ -253,25 +253,18 @@ article {
 
   /*Start cover */
 
-  .bg {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    text-align: center;
-    color: white;
-
-  }
+  
 
 .cover .bg {
     width: 100%;
-    height: auto;
+    height: 100%;
     position: absolute;
-
     text-align: center;
     color: white;
     z-index: 1;
     top:0 ;
     left: 0;
+    filter: brightness(65%)
 
   }
   .cover .tl {
