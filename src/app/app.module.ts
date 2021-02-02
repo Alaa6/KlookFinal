@@ -55,6 +55,18 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import { SignComponent } from './Components/sign/sign.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -97,7 +109,10 @@ var firebaseConfig = {
     NotFoundComponent ,
     ModalComponent,
     HelpComponent,
-    KlookCreditComponent
+    KlookCreditComponent,
+    SignComponent,
+    DashboardComponent,
+    DetailsDashboardComponent
      
   ],
   imports: [
@@ -118,7 +133,15 @@ var firebaseConfig = {
     ReactiveFormsModule,
     NgxPaginationModule,
     HttpClientModule,    
-    MatDialogModule
+   
+    MatCardModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatSelectModule
 ],
 
   // ],

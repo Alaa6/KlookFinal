@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { SignComponent } from './Components/sign/sign.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
+  { path  : 'sign/:subsign'  , component : SignComponent},
+  {path :'dash' , component : DashboardComponent} ,
+
+
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
 
   // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
