@@ -1,4 +1,42 @@
-// * {
+.h3 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.h4 {
+  display: block;
+  font-size: 1.1em;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.h5 {
+  display: block;
+  font-size: 0.83em;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.h6 {
+  display: block;
+  font-size: 0.67em;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+//  * {
 //   font-size: 14px;
 // }
 
@@ -30,7 +68,7 @@ a:hover {
   color: white;
 }
 
-.header-text h3 span {
+.header-text .h3 span {
   color: white;
   font-size: 0.8em;
 }
@@ -210,7 +248,7 @@ a:hover {
 /*End after slider*/
 /*Start near you */
 .near_container {
-  height: 40em;
+  height: 44em;
   background-color: #eceff3;
   overflow: hidden;
   // font-size: 14px;
@@ -220,7 +258,7 @@ a:hover {
   margin: auto;
   margin-top: 5em;
 }
-.near_container h3 {
+.near_container .h3 {
   font-weight: bold;
   color: #333333;
 }
@@ -297,10 +335,11 @@ a:hover {
   width: 11em;
   height: 16em;
 }
-.incred_container h3 {
+.incred_container .h3 {
   padding-top: 2em;
   font-weight: bold;
   color: #333333;
+  margin-block-start: 0em;
 }
 // .incred_container .row {
 //   margin-left: 0.2em;
@@ -365,7 +404,7 @@ a:hover {
   overflow: hidden;
   transition: 0.3s;
 }
-.incred .things h3 {
+.incred .things .h3 {
   font-weight: bold;
   color: #333333;
   margin-top: 3em;
@@ -566,7 +605,7 @@ a:hover {
   // font-size: 14px;
   margin-bottom: 4em;
 }
-.incred .recommend h3 {
+.incred .recommend .h3 {
   font-weight: bold;
   color: #333333;
   margin-left: 2.7em;
@@ -770,7 +809,7 @@ a:hover {
   margin: auto;
   margin-bottom: 5em;
 }
-.partener h3 {
+.partener .h3 {
   font-weight: bold;
   color: #333333;
 }
@@ -797,7 +836,7 @@ a:hover {
   margin: auto;
   /* margin-bottom: 1em; */
 }
-.media h3 {
+.media .h3 {
   font-weight: bold;
   color: #333333;
 }
@@ -1163,7 +1202,7 @@ span {
     left: 40%;
     transform: translate(-50%, -30%);
   }
-  .header-text h3 {
+  .header-text .h3 {
     font-size: 1.3em;
     margin-top: -1.5em;
   }
@@ -1220,7 +1259,7 @@ span {
     height: 65em;
     /* width: 80%; */
   }
-  .near_container h3 {
+  .near_container .h3 {
     margin-left: 1.3em;
   }
   .near_container .exp {
@@ -1240,7 +1279,7 @@ span {
     margin-bottom: 3em;
   }
   .firstview {
-    margin-top: 68em !important;
+    margin-top: 70em !important;
   }
   /*End near to you*/
   /*Start incredible destinations*/
@@ -1248,7 +1287,7 @@ span {
   .incred_container {
     width: 100%;
   }
-  .incred_container h3 {
+  .incred_container .h3 {
     margin-left: 1.2em;
   }
   .incred_container .row .bt_lf {
@@ -1281,7 +1320,7 @@ span {
   }
   /*End incredible destinations*/
   /*Start things to do*/
-  .things .contain h3 {
+  .things .contain .h3 {
     margin-left: 1.2em;
   }
   .things .row {
@@ -1301,7 +1340,7 @@ span {
     padding-right: 5em;
   }
   .things .view3 {
-    margin-top: 158em !important;
+    margin-top: 160em !important;
     margin-left: 8em;
     padding-left: 1em;
     padding-right: 1em;
@@ -1342,7 +1381,7 @@ span {
 
   /*End get inspired*/
   /*Start Klook recommended*/
-  .recommend .contain h3 {
+  .recommend .contain .h3 {
     margin-left: 1.2em;
   }
   .recommend .contain .inc {
@@ -1409,7 +1448,7 @@ span {
   .more .row2 .card-text {
     display: none;
   }
-  .more .row2 h4 {
+  .more .row2 .h4 {
     font-size: 1em;
   }
   .more .row2 .card-text:last-child {
@@ -1430,7 +1469,7 @@ span {
   }
   /*End partner*/
   /*Start in the media*/
-  .media h3 {
+  .media .h3 {
     width: 40%;
   }
   .media .logos {
@@ -1492,7 +1531,7 @@ span {
   .header-text .text-center h2 span {
     margin-left: -3em !important;
   }
-  .header-text .text-center h3 span {
+  .header-text .text-center .h3 span {
     margin-left: -7em;
     font-size: 0.65em;
   }
@@ -1555,7 +1594,7 @@ span {
   .near_container .contain {
     margin-top: 1.2em;
   }
-  .near_container h3 {
+  .near_container .h3 {
     font-size: 1.2em;
   }
   .near_container .exp {
@@ -1581,7 +1620,7 @@ span {
   /*End near you*/
   /*Start incredible destinations*/
 
-  .incred .incred_container h3 {
+  .incred .incred_container .h3 {
     padding-top: 1em;
     font-size: 1.2em;
   }
@@ -1598,7 +1637,7 @@ span {
     margin-left: -1em;
   }
   .view2 {
-    margin-top: 160em !important;
+    margin-top: 161em !important;
     font-size: 0.8em;
     width: 15em;
     margin-left: 4em !important;
@@ -1607,7 +1646,7 @@ span {
 
   /*End incredible destinations*/
   /*Start top things to do*/
-  .things .contain h3 {
+  .things .contain .h3 {
     font-size: 1.2em;
     margin-top: 5em;
     margin-left: 1em;
@@ -1657,13 +1696,13 @@ span {
     width: 70%;
     bottom: 1.7em;
   }
-  .incred .inspired .ins_container .row .fsCol h4 {
+  .incred .inspired .ins_container .row .fsCol .h4 {
     font-size: 1.2em;
   }
 
   /*End get inspired*/
   /*Start klook recommended*/
-  .incred .recommend h3 {
+  .incred .recommend .h3 {
     font-size: 1.2em;
   }
   .incred .recommend .inc {
