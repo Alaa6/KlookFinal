@@ -1,0 +1,476 @@
+<div class="tab-content" id="v-pills-tabContent">
+  <!--1-->
+  <div class="tab-pane fade show active" id="v-pills-dashboard dash" role="tabpanel"
+    aria-labelledby="v-pills-dashboard-tab">
+    dashboard tab
+    <!-- <div id="dash" class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9"> -->
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Dashboard</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm">Share</button>
+        </div>
+        <button type="button" class="btn btn-sm dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <!--2-->
+  <div class="tab-pane fade" id="v-pills-customers" role="tabpanel" aria-labelledby="v-pills-customers-tab">
+    <div class="container mt-4">
+      
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      
+      
+      
+          <ng-container matColumnDef="Email">
+              <th mat-header-cell *matHeaderCellDef> Emaill </th>
+              <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="JoinDate">
+              <th  mat-header-cell *matHeaderCellDef> Date </th>
+              <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Delete">
+              <th  mat-header-cell *matHeaderCellDef> Delete </th>
+              <td mat-cell *matCellDef="let element"> 
+        <button mat-flat-button class=" btndelet" (click)="delete(element.id)" >Delete</button>
+      </td>
+            </ng-container>
+
+           
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+      </div>
+  </div>
+  <!--3-->
+  <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
+    Reports tab
+  </div>
+  <!--4-->
+  <div class="tab-pane fade" id="v-pills-update" role="tabpanel" aria-labelledby="v-pills-update-tab">
+    <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+      <!--Cities-->
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="city-tab" data-toggle="tab" href="#city" role="tab" aria-controls="city"
+          aria-selected="true">
+          Cities
+        </a>
+      </li>
+      <!--Categories-->
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="category-tab" data-toggle="tab" href="#category" role="tab"
+          aria-controls="category" aria-selected="false">
+          Categories
+        </a>
+      </li>
+      <!--Tours-->
+      <li class="nav-item" role="presentation" >
+        <a class="nav-link" id="tours-tab" data-toggle="tab" href="#tours" role="tab" aria-controls="tours"
+          aria-selected="false">
+          Tours
+        </a>
+      </li>
+      <!--Activities-->
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab"
+          aria-controls="activity" aria-selected="false">
+          Activities
+        </a>
+      </li>
+      <!--Hotels-->
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel"
+          aria-selected="false">
+          Hotels
+        </a>
+      </li>
+      <!--SIM Card-->
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="SIMCard-tab" data-toggle="tab" href="#SIMCard" role="tab"
+          aria-controls="SIMCard" aria-selected="false">
+          SIM Card
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!--Cities tab-->
+      <div class="tab-pane fade show active" id="city" role="tabpanel" aria-labelledby="city-tab">
+        Cities tab
+      </div>
+      <!--Categories tab-->
+      <div class="tab-pane fade" id="category" role="tabpanel" aria-labelledby="category-tab">
+        Categories tab
+      </div>
+      <!--Tours tab-->
+      <div class="tab-pane fade" id="tours" role="tabpanel" aria-labelledby="tours-tab">
+        <!-- Tours tab -->
+        <form [formGroup]="loginFrm" >
+                      <div class="form-group row">
+          <label for="TourID" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-10">
+              <input  type="text" formControlName="id" class="form-control"  > 
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourTitle" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-10">
+              <input type="text" formControlName="Title" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourDate" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-10">
+              <input type="text" formControlName="Date" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourDistance" class="col-sm-2 col-form-label">Distance</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="TourDistance" placeholder="Distance">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourImage" class="col-sm-2 col-form-label">Image</label>
+          <div class="col-10">
+              <input type="text" formControlName="Image" class="form-control"  >
+          </div>
+        </div>
+        
+        <div class="form-group row">
+          <label for="TourRate" class="col-sm-2 col-form-label">Rate</label>
+          <div class="col-10">
+              <input type="text" formControlName="Rate" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourReviews" class="col-sm-2 col-form-label">Reviews</label>
+          <div class="col-10">
+              <input type="text" formControlName="Review" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourBooked" class="col-sm-2 col-form-label">Booked</label>
+          <div class="col-10">
+              <input type="text" formControlName="Booked" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourPrice" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-10">
+              <input type="text" formControlName="Price" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourOldPrice" class="col-sm-2 col-form-label">Old Price</label>
+          <div class="col-10">
+              <input type="text" formControlName="OldPrice" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourDiscount" class="col-sm-2 col-form-label">Discount</label>
+          <div class="col-10">
+              <input type="text" formControlName="TourDiscount" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="TourSectionInner" class="col-sm-2 col-form-label">Section Inner</label>
+          <div class="col-10">
+              <input type="text" formControlName="TourSectionInner" class="form-control"  >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="TourCity">City</label>
+          <div class="col-10">City
+          <select class="form-control" formControlName="City" id="City">
+            <option></option>
+            <option>Hong Kong</option>
+            <option>Macau</option>
+            <option>Cairo</option>
+            <option>Alex</option>
+            <option>Shar El Sheikh</option>
+            <option>Hurghada</option>
+            <option>Taipei</option>
+            <option>Singapore</option>
+            <option>Bangkok</option>
+            <option>Pattaya</option>
+            <option>New York</option>
+            <option>Hokkaido</option>
+            <option>Cape Town</option>
+            <option>Rotorua</option>
+            <option>Siem Reap</option>
+            <option>Beijing</option>
+            <option>Barcelona</option>
+            <option>Hurghada</option>
+
+
+
+          </select>
+        </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="TourCategories">Categories</label>
+          <div class="col-10">
+              <select class="form-control" formControlName="Categories" id="Categories">
+                  <option>Home</option>
+            <option>Relaxation & beauty</option>
+            <option>Cultural experiences</option>
+            <option>FunNight</option>
+            <option>Tours</option>
+            <option>Europe Train</option>
+            <option>Food</option>
+            <option>Experience</option>
+
+
+          </select>
+        </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label" for="TourSection">Section</label>
+          <div class="col-10">
+              <select class="form-control" formControlName="Section" id="Section">
+                  <option>Get Inspired</option>
+
+            <option>Top thing to do</option>
+
+            <option>BestSeller</option>
+            <option>AwsomeDeals</option>
+            <option>Date Ideas</option>
+            <option>ForKids</option>
+            <option>For Tommowrow</option>
+            <option>Klook Recommended</option>
+            <option>Near in cairo</option>
+            <option>Other</option>
+
+
+          </select>
+        </div>
+        </div>
+      </form>
+        <input type="submit" value="Add" id="TourAdd" (click)="add()" class="btn"
+          style="background-color:  #ff5722;color: white;" />
+        <hr>
+        <table id="Tourdata" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Date</th>
+              <th scope="col">Distance</th>
+              <th scope="col">Image</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Reviews</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Price</th>
+              <th scope="col">OldPrice</th>
+              <th scope="col">TourSectionInner</th>
+              <th scope="col">TourDiscount</th>
+                
+
+              <th scope="col">City</th>
+              <th scope="col">Categories</th>
+              <th scope="col">Section</th>
+
+
+
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        
+      </div>
+      
+      <!--Activities tab-->
+      <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+        Activities tab
+      </div>
+      <!--Hotels tab-->
+      <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
+        Hotels tab
+      </div>
+
+      <!--SIM Card tab-->
+      <div class="tab-pane fade" id="SIMCard" role="tabpanel" aria-labelledby="SIMCard-tab">
+        SIM Card tab
+        <div class="form-group row">
+          <label for="ID" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-10">
+            <input readonly type="text" class="form-control" id="id">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="title" placeholder="Title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Location</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="location" placeholder="Location">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="date" placeholder="Date">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Validity</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="validity" placeholder="Validity">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Internet</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="internet" placeholder="Internet">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Service</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="service" placeholder="Service">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Coverage</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="coverage" placeholder="Coverage">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Rate</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="rate" placeholder="Rate">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Reviews</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="reviews" placeholder="Reviews">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Booked</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="booked" placeholder="Booked">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-10">
+            <input type="text" class="form-control" id="price" placeholder="Price">
+          </div>
+        </div>
+
+        <input type="button" value="Add" id="Add" onclick="Add()" class="btn"
+          style="background-color:  #ff5722;color: white;" />
+        <hr>
+        <table id="data" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Location</th>
+              <th scope="col">Date</th>
+              <th scope="col">Validity</th>
+              <th scope="col">Internet</th>
+              <th scope="col">Service</th>
+              <th scope="col">Coverage</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Reviews</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!--5-->
+  <div class="tab-pane fade" id="v-pills-month" role="tabpanel" aria-labelledby="v-pills-month-tab">
+    Current month tab
+  </div>
+  <!--6-->
+  <div class="tab-pane fade" id="v-pills-quarter" role="tabpanel" aria-labelledby="v-pills-quarter-tab">
+    last quarter tab
+  </div>
+  <!--7-->
+  <div class="tab-pane fade" id="v-pills-social" role="tabpanel" aria-labelledby="v-pills-social-tab">
+    socail engagement tab
+  </div>
+  <!--8-->
+  <div class="tab-pane fade" id="v-pills-year" role="tabpanel" aria-labelledby="v-pills-year-tab">
+    year-end sale tab
+  </div> 
+  <!--9-->
+  <div class="tab-pane fade" id="v-pills-admin" role="tabpanel" aria-labelledby="v-pills-admin-tab">
+
+    <div>
+      <button mat-flat-button class="ml-4 container btnchange" (click)="sign()" >{{btnAdmiText}}</button>
+
+      <div class="container mt-4" *ngIf="!signBool">
+      <br>
+      <br>
+        <table mat-table [dataSource]="dataSourceadmin" class="mat-elevation-z8">
+        
+        
+        
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef> Emaill </th>
+                <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="JoinDate">
+                <th  mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Delete">
+                <th  mat-header-cell *matHeaderCellDef> Delete </th>
+                <td mat-cell *matCellDef="let element"> 
+          <button mat-flat-button class=" btndelet" (click)="delete(element.id)" >Delete</button>
+        </td>
+              </ng-container>
+
+             
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsadmin"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsadmin;"></tr>
+          </table>
+        
+        </div>
+    </div>
+  <div *ngIf="signBool">
+        <mat-form-field appearance="outline" class="w-75" >
+          <input matInput placeholder="Email Address" class="mb-2" [formControl]="Email" required>
+  <mat-error *ngIf="Email.invalid && (Email.dirty || Email.touched)">{{getErrorMessage()}}</mat-error>
+          <!-- <input matInput placeholder="Email Address" class="mb-2"> -->
+          <mat-icon matSuffix class=""><i class="far fa-envelope faico"></i></mat-icon>
+        </mat-form-field>
+      
+      
+        <mat-form-field appearance="outline" class="w-75 ">
+          <input matInput placeholder="Password"  class="mb-2" [formControl]="Password" required>
+          <mat-error *ngIf="Password.invalid && (Password.dirty || Password.touched)">{{getErrorMessage()}}</mat-error>
+          <!-- <input matInput placeholder="Password" class="mb-2"> -->
+          <mat-icon matSuffix ><i class="far fa-eye-slash faico"></i>
+          </mat-icon>
+        </mat-form-field>
+        <button mat-flat-button class="ml-4 container btnsign" (click)="signupp()" >SignUp</button>
+
+  </div>
+  </div>
+</div>

@@ -11,13 +11,13 @@ import firebase from "firebase/app"
   providedIn: 'root'
 })
 export class AuthService {
-  itemss: Observable<User[]>;
+  // itemss: Observable<User[]>;
   user:Observable<firebase.User|null>
 
   // user:Observable<firebase.>
   constructor(private afAuth : AngularFireAuth,private fb:AngularFirestore) { 
     this.user = afAuth.user
-    this.itemss=this.fb.collection<User>('user').valueChanges();
+    // this.itemss=this.fb.collection<User>('user').valueChanges();
 
   }
 
@@ -33,15 +33,19 @@ export class AuthService {
 
   checkforAdmin(email:string,password:string){
 
-    // this.itemss=this.fb.collection<User>('user').valueChanges();
-    return this.itemss
+    return this.fb.collection<User>('user', ref => ref.where('Email', '==', email).where('Password', '==', password))
+    .valueChanges();
+        // this.itemss=this.fb.collection<User>('user').valueChanges();
+
+    // return this.itemss
   }
-  addUser(id:any,Name:string,Email:string,type:string){
+  addUser(id:any,Email:string,Password:string,type:string){
 
     return this.fb.doc('user/'+id).set({
-      Name : Name,
+      Password : Password,
       Email : Email,
-      Type:type
+      Type:type,
+      JoinDate:Date.now()
 
     })
 
@@ -51,5 +55,23 @@ export class AuthService {
     return this.afAuth.signOut();
   }
 
+  getalluser(){
+    
+    return this.fb.collection<User>('user' ,ref => ref.where( 'Type' , '==', 'user' ))
+    .snapshotChanges();
+
+  }
+
+  getalladmin(){
+    
+    return this.fb.collection<User>('user' ,ref => ref.where( 'Type' , '==', 'admin' ))
+    .snapshotChanges();
+
+  }
+
+  deleteCoffeeOrder(id:string) {
+    return this.fb.collection("user").doc(id).delete();
+    this.afAuth.currentUser
+  }
 
 }

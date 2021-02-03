@@ -7,22 +7,14 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ExperiencesComponent } from './Components/experiences/experiences.component';
-import { AttractionsCairoComponent } from './Components/attractions-cairo/attractions-cairo.component';
-import { ToursCairoComponent } from './Components/tours-cairo/tours-cairo.component';
-import { RelaxationComponent } from './Components/relaxation/relaxation.component';
-import { CultureComponent } from './Components/culture/culture.component';
-import { FunComponent } from './Components/fun/fun.component';
 
-import { HotelsComponent } from './Components/hotels/hotels.component';
 
-import { WiFiComponent } from './Components/wi-fi/wi-fi.component';
-import { WalkingComponent } from './Components/walking/walking.component';
-import { BestSellerCairoComponent } from './Components/best-seller-cairo/best-seller-cairo.component';
-import { AttractionsHongKongMacauComponent } from './Components/attractions-hong-kong-macau/attractions-hong-kong-macau.component';
+
+
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
 // import { SignUpComponent } from './Components/sign-up/sign-up.component';
-import { AdminComponent } from './Components/admin/admin.component';
+// import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,8 +27,6 @@ import { ReactiveFormsModule }   from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {HttpClientModule} from '@angular/common/http';
 // import { JwPaginationComponent } from 'jw-angular-pagination';
-
-
 import { from } from 'rxjs';
 
 import { PopupComponent } from './Components/popup/popup.component';
@@ -44,7 +34,7 @@ import { PopupComponent } from './Components/popup/popup.component';
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
 import {MatDialogModule} from '@angular/material/dialog';
-import { CardComponent } from './Components/card/card.component';
+
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -54,6 +44,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
+import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {MatCardModule} from '@angular/material/card';
@@ -64,9 +55,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
-import { SignComponent } from './Components/sign/sign.component';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
+// import { SignComponent } from './Components/sign/sign.component';
+// import { DashboardComponent } from './Components/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
+// import { SignComponent } from './admin/sign/sign.component';
+// import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
+// import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -86,32 +80,27 @@ var firebaseConfig = {
     FooterComponent,
     HomeComponent,
     ExperiencesComponent,
-    AttractionsCairoComponent,
-    ToursCairoComponent,
-    RelaxationComponent,
-    CultureComponent,
-    FunComponent,
    
-    HotelsComponent,
    
-    WiFiComponent,
-    WalkingComponent,
-    BestSellerCairoComponent,
-    AttractionsHongKongMacauComponent,
+    
     AttractionsHongKongComponent,
     LoginComponent,
     // SignUpComponent,
-    AdminComponent,
+    // AdminComponent,
     SecondHeaderComponent,
     // JwPaginationComponent
     PopupComponent,
-    CardComponent,
+ 
     NotFoundComponent ,
     ModalComponent,
     HelpComponent,
     KlookCreditComponent,
-    SignComponent,
-    DashboardComponent,
+    // SignComponent,
+    // DashboardComponent,
+    ActivityDetailsComponent,
+   
+    // // SignComponent,
+    // DashboardComponent,
     // DetailsDashboardComponent
      
   ],
@@ -129,11 +118,12 @@ var firebaseConfig = {
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,
+     BrowserAnimationsModule,
+  
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    HttpClientModule,    
-   
+    HttpClientModule,       
     MatCardModule,
     MatTabsModule,
     MatFormFieldModule,

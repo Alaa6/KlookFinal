@@ -1,0 +1,124 @@
+<div class="bodyy ">
+
+    <mat-card class="container cardd">
+      <h2 >{{Signn}}</h2>
+      
+      <span class="h4" >Signing up with a registered phone number or social account will log you into your Klook account</span ><br>
+    <br>
+        <div class='row'>
+    
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-3 ml-sm-1 ml-xs-1">
+            <i class="fab fa-facebook-square"></i><br>
+          <span class="icoText">Facebook</span>
+        
+        </div>
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-xs-1 ml-3 ml-sm-1  ">
+            <i class="fab fa-google"></i><br>
+            <span class="icoText">Google</span>
+          
+          </div>
+        </div>
+    <br>
+        <div class='row'>
+    
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-xs-1 ml-3 ml-sm-1">
+            <i class="fab fa-weixin"></i><br>
+          <span class="icoText">WeChat</span>
+        
+        </div>
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-xs-1 ml-3 ml-sm-1">
+            <i class="fab fa-apple"></i><br>
+            <span class="icoText">Apple</span>
+          
+          </div>
+        </div>
+    
+        <div class="log">
+     <br>
+        <span class="h4">or log in with</span ><br>
+        
+          <mat-tab-group>
+            <mat-tab >
+              <ng-template mat-tab-label>
+                <i class="far fa-envelope"></i>
+               <span class="ml-2 icospan ">Email Address</span>
+            </ng-template>
+            
+              <mat-form-field appearance="outline" class="w-75">
+                <input matInput placeholder="Email Address" class="mb-2" [formControl]="Email" required>
+        <mat-error *ngIf="Email.invalid && (Email.dirty || Email.touched)">{{getErrorMessage()}}</mat-error>
+                <!-- <input matInput placeholder="Email Address" class="mb-2"> -->
+                <mat-icon matSuffix class=""><i class="far fa-envelope faico"></i></mat-icon>
+              </mat-form-field>
+            
+            
+              <mat-form-field appearance="outline" class="w-75 ">
+                <input matInput placeholder="Password"  class="mb-2" [formControl]="Password" required>
+                <mat-error *ngIf="Password.invalid && (Password.dirty || Password.touched)">{{getErrorMessage()}}</mat-error>
+                <!-- <input matInput placeholder="Password" class="mb-2"> -->
+                <mat-icon matSuffix ><i class="far fa-eye-slash faico"></i>
+                </mat-icon>
+              </mat-form-field>
+          </mat-tab>
+    
+           
+    
+            <!-- //////////////////////////////////// -->
+    
+            <mat-tab label="Second">  
+              <ng-template mat-tab-label>
+              <i class="fas fa-phone-alt icospan"></i> 
+              <span class="ml-2 icospan"> Phone Number </span>
+    
+            </ng-template> 
+            
+            <div class="rowflex">
+      <mat-form-field appearance="fill" class="drop w-25 ml-4">
+        <mat-label class="drop w-50">State</mat-label>
+        <mat-select>
+          <mat-option>Arizona</mat-option>
+          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="w-75 mr-4">
+          <input matInput placeholder="Phone" class="w-75 mr-4">
+          <mat-icon matSuffix class=""><i class="fas fa-phone-alt"></i></mat-icon>
+        </mat-form-field>
+    
+    
+            </div>
+          </mat-tab>
+          </mat-tab-group>
+    
+        </div>
+        <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+
+      <button *ngIf="signbool" mat-flat-button class="ml-4 container btnsign" (click)="signupp()" >SignUp</button>
+      <button *ngIf="loginBool" mat-flat-button class="ml-4 container btnsign" (click)="login()" >login</button>
+    
+     
+            <mat-checkbox
+                class="example-margin"
+               >
+             <h5>Yes! I would like to receive special offers,<br> promotion and other information from Klook.<br> I understand I can unsubscribe at any time.</h5>
+            </mat-checkbox>
+        
+            <div class="absspan"> 
+    
+              <span>Already have a Klook account?</span>
+              <button mat-stroked-button class="ml-4">log in</button>
+    
+            </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </mat-card>
+    
+    </div>
+    

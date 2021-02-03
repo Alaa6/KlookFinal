@@ -1,0 +1,160 @@
+.bodyy{
+    height: 900px;
+    background-image: url('../../../../assets/signupbck.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-color: #c0e2e6;
+    background-size: 100% auto;
+    // text-align: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.mat-card{
+    width: 90%;
+    margin-top:20px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 30%;
+    position: absolute;
+    left: 32%;
+}
+
+
+
+h2{
+    font-weight: bold;
+}
+
+.h4{
+
+    font-weight: lighter;
+    font-size: 14px;
+    color: rgb(121, 112, 112);
+}
+
+.col-5{
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(212, 208, 208);
+    text-align: center;
+    
+}
+
+.fab{
+    font-size: 30px;
+}
+
+.fa-facebook-square{
+    color: #3C5A99;
+
+}
+
+.fa-weixin{
+    color: #2DC100;
+}
+
+.fa-apple{
+    color: #333333;
+}
+
+.fa-google{
+
+    color: #F14336;
+}
+
+.icoText{
+    color: grey;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.log{
+    text-align: center;
+}
+
+
+.fas , .far, .icospan{
+   
+    color:#E64A19;
+    font-size: 15px;
+    // font-weight: lighter;
+
+}
+
+.btnsign{
+    
+    position: absolute;
+    left: 35px;
+    background-color: #E64A19;
+    color: white;
+    width: 70%;
+}
+
+mat-checkbox{
+    position: absolute;
+    left: 35px;
+    bottom: 40px;
+    color: grey;
+    
+}
+
+
+.faico{
+
+    color: rgb(66, 64, 64);
+    // padding-top: 12px;
+    font-size: 30px;
+}
+
+.absspan{
+
+    // margin-right: 30px;
+    width: 90%;
+    // background-color: grey;
+    position: absolute;
+    left: 35px;
+    bottom: 15px;
+}
+
+.drop{
+    width: 50%;
+
+}
+
+*{
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+
+}
+
+.rowflex{
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    
+.mat-card{
+    width: 60%;
+    position: absolute;
+    left: 22%;
+}
+
+
+}
+
+
+@media only screen and (max-width: 479px) {
+    .mat-card{
+        width:90%;
+        position: absolute;
+        left: 5%;
+    }
+    .h4{
+display: none;
+    }
+}
+
