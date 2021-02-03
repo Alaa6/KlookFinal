@@ -4,26 +4,22 @@
     <p id="p1">Hotels & more</p>
     <p id="p2">Save on amazing places to stay and explore unique experiences </p>
     <div class="shadow col-12 bg-white" style="height:150px; border-radius: 8px;">
-      <div class="borderContet">
+      <form [formGroup]="HotelForm" class="borderContet">
         <div class="row pt-4 pl-3">
-          <div class="col-3 border border-light bg-light pt-2 mr-2" style="height: 50px;">
+          <div class="col-3 border border-light bg-light pt-2 mr-2" style="height: 75px;">
             <div>
               Where are you going?
             </div>
+            <select class="mt-2 form-control" id="city" name="name" formControlName="City">
+              <option *ngFor="let c of Cities" [value]="c.City1">{{c.City1}}</option>
+            </select>
           </div>
           <div class="col-4 border border-light bg-light pt-2 mr-1">
             <div class="row">
               <div class="col-4">
                 check-in date
               </div>
-              <div class="col-4" style="
-                                border-radius: 10px;
-                                color: #4985e6;
-                                border: 1px solid #4985e6;
-                                line-height: 1;
-                                
-                                position: relative;
-                                font-size: 12px;">
+              <div class="days">
                 1 night
               </div>
               <div class="col-4">
@@ -33,9 +29,9 @@
 
           </div>
 
-          <div class="col-md-3 dropdown col-2 border border-light bg-light pt-2" id="rooms" data-toggle="dropdown">
+          <div class="col-md-3 col-2 border border-light bg-light pt-2 " id="rooms">
             Rooms & guests
-            <ul class="dropdown-menu " style="width: 300px; ">
+            <!-- <ul class="dropdown-menu" style="width: 400px;">
               <div class="row">
                 <div class="col-6">
                   <li>
@@ -43,18 +39,16 @@
                   </li>
                 </div>
                 <div class="col-2">
-                  <button onclick="incrementrooms()">+</button>
+                  <button class="btn">+</button>
                 </div>
                 <div class="col-2">
                   <div id="room">1</div>
                 </div>
                 <div class="col-2">
-                  <button onclick="decrementrooms()">-</button>
+                  <button class="btn">-</button>
                 </div>
-
-
               </div>
-
+              <hr>
               <div class="row">
                 <div class="col-6">
                   <li>
@@ -62,15 +56,17 @@
                   </li>
                 </div>
                 <div class="col-2">
-                  <button onclick="incrementadults()">+</button>
+                  <button class="btn">+</button>
                 </div>
                 <div class="col-2">
                   <div id="adult">1</div>
                 </div>
                 <div class="col-2">
-                  <button onclick="decrementadults()">-</button>
+                  <button class="btn">-</button>
                 </div>
               </div>
+              <hr>
+
               <div class="row">
                 <div class="col-6">
                   <li>
@@ -78,23 +74,28 @@
                   </li>
                 </div>
                 <div class="col-2">
-                  <button onclick="incrementchild()">+</button>
+                  <button class="btn">+</button>
                 </div>
                 <div class="col-2">
                   <div id="child">1</div>
                 </div>
                 <div class="col-2">
-                  <button onclick="decrementchild()">-</button>
+                  <button class="btn">-</button>
                 </div>
               </div>
-            </ul>
+
+
+            </ul> -->
+            <input class="form-control mt-2" data-spm-item="__default" formControlName="NumOfRooms" type="text"
+              name="rooms" id="guests" placeholder="Enter number of rooms" autocomplete="off" />
           </div>
           <div class="col-1 mt-1">
-            <button class="btn" style="background-color: #ff5722; color:white">Search</button>
+            <button (click)="hotelBooking()" class="btn mt-2"
+              style="background-color: #ff5722; color:white">Search</button>
           </div>
         </div>
 
-      </div>
+      </form>
       <div class="form-check mt-4">
         <label class="form-check-label">
           <input type="checkbox" class="form-check-input" value="">I'm travelling for work
@@ -412,16 +413,19 @@
           <div class="row">
             <div class="col-12">
               <h2 class="h2header">FAQS</h2>
-              <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"></div>
+              <hr class="mb-5 mt-5">
+
             </div>
 
           </div>
           <!-- -----------------------------2------------------------------------------------------------------ -->
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo">Will I be charged if I cancel my
+              <h2 class="h2toggle" (click)="isCollapsed1 = !isCollapsed1" [attr.aria-expanded]="!isCollapsed1"
+                aria-controls="navbarContent" aria-expanded="false">Will I be charged if
+                I cancel my
                 booking?<i class="fas fa-chevron-down float-right" id="icon2"></i></h2>
-              <div id="demo" class="collapse" style="background-color: #f5f5f5;">
+              <div class="collapse " [ngbCollapse]="isCollapsed1" style="background-color: #f5f5f5;">
                 This depends on the cancellation policy of your booking. Cancelling a
                 non-refundable
                 bookings may result in a full charge of the booking. Free cancellation means
@@ -436,14 +440,16 @@
             </div>
 
           </div>
-          <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"></div>
+          <hr class="mb-5 mt-5">
+
           <!-- 3-------------------------------------------------------------------------- -->
 
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo2">How will I know if my booking is
+              <h2 class="h2toggle" (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2"
+                aria-controls="navbarContent" aria-expanded="false">How will I know if my booking is
                 confirmed?<i class="fas fa-chevron-down float-right" id="icon3"></i></h2>
-              <div id="demo2" class="collapse" style="background-color: #f5f5f5; ">
+              <div class="collapse" [ngbCollapse]="isCollapsed2" style="background-color: #f5f5f5; ">
                 We’ll send a confirmation email with your booking details within 30 minutes
                 after
                 you’ve made the payment. If you can’t find the email, try checking your
@@ -453,14 +459,16 @@
             </div>
           </div>
 
-          <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"></div>
+          <hr class="mb-5 mt-5">
+
           <!-- 4-------------------------------------------------------------------------- -->
 
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo3">Where can I find the cancellation
+              <h2 class="h2toggle" (click)="isCollapsed3 = !isCollapsed3" [attr.aria-expanded]="!isCollapsed2"
+                aria-controls="navbarContent" aria-expanded="false">Where can I find the cancellation
                 policy?<i class="fas fa-chevron-down float-right" id="icon4"></i></h2>
-              <div id="demo3" class="collapse" style="background-color: #f5f5f5;">
+              <div class="collapse" [ngbCollapse]="isCollapsed3" style="background-color: #f5f5f5;">
                 You can find a room’s cancellation policy listed as either “Free cancellation”
                 or
                 “Non-refundable” near the room rate. To find out more details, go to the booking
@@ -472,15 +480,17 @@
             </div>
           </div>
 
-          <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"></div>
+          <hr class="mb-5 mt-5">
+
           <!-- 5-------------------------------------------------------------------------- -->
 
           <div class="row">
             <div class="col-12">
-              <h2 class="h2toggle" data-toggle="collapse" data-target="#demo4">How do I make a booking on Klook？ <i
+              <h2 class="h2toggle" (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4"
+                aria-controls="navbarContent" aria-expanded="false">How do I make a booking on Klook？ <i
                   class="fas fa-chevron-down float-right" id="icon"></i></h2>
 
-              <div id="demo4" class="collapse" style="background-color: #f5f5f5;">
+              <div class="collapse" [ngbCollapse]="isCollapsed4" style="background-color: #f5f5f5;">
                 1. Log in to your Klook account or create one 2. Select Stays from the main
                 menu,
                 enter your destination and dates, and hit search 3. Choose a property and
@@ -489,7 +499,7 @@
               </div>
             </div>
           </div>
-          <div class="border border-top-0 border-left-0 border-right-0 mb-4 mt-5"></div>
+          <hr class="mb-5 mt-5">
 
           <button class="klookbtn mb-2">
             Klook help center
@@ -512,82 +522,83 @@
 
 
   <!-- start Terms & conditions -->
-  <h2 class="h2 mt-5 pt-5 ">
-    Terms & Conditions
-  </h2>
-  <p>
-    Accommodation Terms and Conditions shall apply in addition to our General <a href="#">Terms of use</a>
-    ,our <a href="#">Privacy Policy</a> and the relevantthird party supplier’s terms and conditions and
-    privacy
-    policieswhen accessing or using ourwebsite <a href="#">www.klook.com</a> and/or the Klook App (together,
-    the
-    “Klook Platform”) for anyreservation services for lodging and temporary accommodation, including hotels,
-    hostels,serviced apartments, B&Bs, ryokans, etc. (collectively, the “Accommodation”).
-  </p>
-  <ul>
-    <li>
-      By making an Accommodation reservation on the Klook Platform, you accept and agree tothe relevant
-      Accommodation booking conditions, including cancellation and no-showpolicies. The cancellation and
-      no-show policy of each Accommodation is available on theKlook Platform at the Accommodation
-      information
-      pages. Certain rates, fees or special offerswill not be eligible for cancellation, refund or change.
-    </li>
-    <li>
-      Any cancellation or changes (where applicable) to your reservation must be made throughKlook and not
-      directly with the Accommodation or any third party supplier. Any problems orquestions on your
-      reservation should be directed to our Klook customer service, who willassist you and serve as a
-      point of
-      contact with the Accommodation or third party supplier.
-    </li>
-    <li>
-      Prices for Accommodation are for room reservations only, and for the specified stay datesand number
-      of
-      people, unless expressly indicated otherwise.
-    </li>
-    <div id="more" style="display: none;">
+  <div>
+    <h2 class="h2 mt-5 pt-5">
+      Terms & Conditions
+    </h2>
+    <p>
+      Accommodation Terms and Conditions shall apply in addition to our General <a href="#">Terms of use</a>
+      ,our <a href="#">Privacy Policy</a> and the relevantthird party supplier’s terms and conditions and
+      privacy
+      policieswhen accessing or using ourwebsite <a href="#">www.klook.com</a> and/or the Klook App (together,
+      the
+      “Klook Platform”) for anyreservation services for lodging and temporary accommodation, including hotels,
+      hostels,serviced apartments, B&Bs, ryokans, etc. (collectively, the “Accommodation”).
+    </p>
+    <ul>
       <li>
-        Some Accommodations will charge mandatory service fees, surcharges, and local taxes (e.g.resort
-        or
-        amenity fees, transportation transfers, city tourist tax and festive gala mealsurcharges) that
-        may
-        be
-        collected directly from you by the Accommodation, in addition tothe total reservation price you
-        pay
-        on
-        the Klook Platform.
+        By making an Accommodation reservation on the Klook Platform, you accept and agree tothe relevant
+        Accommodation booking conditions, including cancellation and no-showpolicies. The cancellation and
+        no-show policy of each Accommodation is available on theKlook Platform at the Accommodation
+        information
+        pages. Certain rates, fees or special offerswill not be eligible for cancellation, refund or change.
       </li>
       <li>
-        The total reservation price may include a charge for taxes and fees (“Taxes and Fees”).This
-        includes
-        an
-        estimated amount to recover the amount Klook pays to the Accommodationfor your reservation for
-        taxes
-        owed or required to be collected by the Accommodationincluding, without limitation, sales and
-        use
-        tax,
-        occupancy tax, room tax, excise tax andvalue added tax. The amount paid to the Accommodation for
-        your
-        reservation for taxes mayvary from the estimated amount. The Taxes and Fees may also include a
-        fee
-        retained byKlook as compensation for our services and to cover the costs of your reservation
-        (e.g.customer service costs).
+        Any cancellation or changes (where applicable) to your reservation must be made throughKlook and not
+        directly with the Accommodation or any third party supplier. Any problems orquestions on your
+        reservation should be directed to our Klook customer service, who willassist you and serve as a
+        point of
+        contact with the Accommodation or third party supplier.
       </li>
       <li>
-        Klook is one of many channels Accommodations use to make their inventory available
-        forreservation.
-        When
-        a search result indicates that an Accommodation has no more roomsavailable, that means the room
-        type
-        is
-        not available for reservation through the KlookPlatform.
+        Prices for Accommodation are for room reservations only, and for the specified stay datesand number
+        of
+        people, unless expressly indicated otherwise.
       </li>
+      <ng-container *ngIf="show">
+        <li>
+          Some Accommodations will charge mandatory service fees, surcharges, and local taxes (e.g.resort
+          or
+          amenity fees, transportation transfers, city tourist tax and festive gala mealsurcharges) that
+          may
+          be
+          collected directly from you by the Accommodation, in addition tothe total reservation price you
+          pay
+          on
+          the Klook Platform.
+        </li>
+        <li>
+          The total reservation price may include a charge for taxes and fees (“Taxes and Fees”).This
+          includes
+          an
+          estimated amount to recover the amount Klook pays to the Accommodationfor your reservation for
+          taxes
+          owed or required to be collected by the Accommodationincluding, without limitation, sales and
+          use
+          tax,
+          occupancy tax, room tax, excise tax andvalue added tax. The amount paid to the Accommodation for
+          your
+          reservation for taxes mayvary from the estimated amount. The Taxes and Fees may also include a
+          fee
+          retained byKlook as compensation for our services and to cover the costs of your reservation
+          (e.g.customer service costs).
+        </li>
+        <li>
+          Klook is one of many channels Accommodations use to make their inventory available
+          forreservation.
+          When
+          a search result indicates that an Accommodation has no more roomsavailable, that means the room
+          type
+          is
+          not available for reservation through the KlookPlatform.
+        </li>
+      </ng-container>
+    </ul>
+    <div (click)="show = !show" class="viewmore mb-4">
+      {{ show ? 'View less': 'View More' }}
+      <i class="iconShow" [ngClass]="{ 'btn-add': show, 'btn-remove': !show  }"
+        class="fas fa-chevron-down viewmore"></i>
     </div>
-
-  </ul>
-  <div class="viewmore mb-4" id="view" data-toggle="collapse" data-target="#demo6">
-    View more
-
   </div>
-  <i class="fas fa-chevron-down viewmore" id="icon1"></i>
 
 </div>

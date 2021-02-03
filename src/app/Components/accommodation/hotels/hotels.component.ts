@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HotelService } from 'src/app/services/hotel.service';
 import { Hotels } from 'src/app/viewModels/hotels';
 import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
-
+import { FormBuilder, Validators } from '@angular/forms';
+import { IHotelBooking } from 'src/app/viewModels/ihotel-booking';
+import { HomeService } from 'src/app/services/home.service';
+import { ICity } from 'src/app/viewModels/i-city';
 
 @Component({
   selector: 'app-hotels',
@@ -11,13 +14,37 @@ import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
 })
 
 
-export class HotelsComponent implements OnInit {
+export class HotelsComponent implements OnInit ,AfterViewInit ,OnChanges {
 
+  //Data
   popular:Hotels[]=[];
   staycation:Hotels[]=[];
   vouchers:Hotels[]=[];
-  constructor( private hotelServ:HotelService) { }
+  Cities:ICity[]=[];
 
+  //collapse
+  show = false;
+  isCollapsed1 = true;
+  isCollapsed2 = true;
+  isCollapsed3 = true;
+  isCollapsed4 = true;
+
+//Form
+  HotelForm = this.fb.group({
+    City: ['', Validators.required],
+    Date: ['', Validators.required],
+    NumOfRooms: ['', Validators.required]
+  });
+
+
+  constructor( private hotelServ:HotelService ,private city : HomeService,private fb: FormBuilder , private cdRef:ChangeDetectorRef) { }
+  ngOnChanges(changes: SimpleChanges): void {
+   
+  }
+  ngAfterViewInit(): void {
+  }
+
+  //For carosel
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -42,6 +69,8 @@ export class HotelsComponent implements OnInit {
     },
     nav: true
   }
+
+
   ngOnInit(): void {
 
     this.hotelServ.getAllPopularHotels().subscribe((pop)=>{
@@ -53,6 +82,26 @@ export class HotelsComponent implements OnInit {
     this.hotelServ.getAllVouchersHotels().subscribe((voucher)=>{
       this.vouchers=voucher;
     })
+   this.city.getAllCities().subscribe((city)=>{
+    this.Cities=city;
+   })
+
   }
 
+  hotelBooking(){
+    console.log("city : "+this.HotelForm.controls['City'].value);
+    console.log("NumOfRooms : "+this.HotelForm.controls['NumOfRooms'].value);
+
+    let hotel:IHotelBooking={
+     City:this.HotelForm.controls['City'].value,
+      NumOfRooms:this.HotelForm.controls['NumOfRooms'].value,
+   
+    }
+    this.hotelServ.hotelBooking(hotel).then(
+     (res)=>{    console.log("Done")
+    },
+     (err)=>{console.log("error : "+err)} 
+    )
+
+  }
 }

@@ -4,7 +4,7 @@ import { ICity } from 'src/app/viewModels/i-city';
 import { Tours } from 'src/app/viewModels/tours';
 // import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
 

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { HotelsComponent } from './hotels/hotels.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,7 +17,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     CarouselModule,
+    NgbModule,
+    ReactiveFormsModule ,
     RouterModule.forChild(routes)
   ]
 })
+
 export class AccommodationModule { }

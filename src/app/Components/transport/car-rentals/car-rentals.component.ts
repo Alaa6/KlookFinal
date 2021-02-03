@@ -10,6 +10,10 @@ import { CarRental } from 'src/app/viewModels/car-rental';
 export class CarRentalsComponent implements OnInit {
 
   carServivedImage:CarRental[]=[];
+  isCollapsed1 = true;
+  isCollapsed2 = true;
+  isCollapsed3 = true;
+  isCollapsed4 = true;
   constructor( private carServ:CarsService) { }
 
   ngOnInit(): void {
