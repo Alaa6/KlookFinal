@@ -263,8 +263,17 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          routerLinkActive="active" 
+          (click)="setsubCategoryName('Experiences')"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+
           <i class="fas fa-parachute-box"></i>
           <span class="hd1">Experiences</span>
           <!-- <span></span> -->
@@ -273,8 +282,8 @@
           <a class="dropdown-item" (click)="setsubCategoryName('Attractions')">
             Attractions
           </a>
-          <a class="dropdown-item" (click)="setsubCategoryName('Tour')">Tours</a>
-          <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
+          <a class="dropdown-item"   (click)="setsubCategoryName('Tours')">Tours</a>
+          <a class="dropdown-item"   routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
             Outdoors & sports</a>
           <a class="dropdown-item" routerLinkActive="active " (click)="setsubCategoryName('Relaxation & beauty')">
             Relaxation & beauty
@@ -292,7 +301,7 @@
           <a class="dropdown-item" (click)="setsubCategoryName('Cultural experiences')">
             Cultural experiences
           </a>
-          <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
+          <a class="dropdown-item"  routerLinkActive="active" (click)="setsubCategoryName('Fun & nightlife')">
             Fun & nightlife
           </a>
         </div>
