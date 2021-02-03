@@ -11,6 +11,8 @@ import { ActivitiesComponent } from './activities/activities.component';
 import { ActivityDetailsComponent } from './activity-details/activity-details.component';
 import { AttractionsComponent } from '../attractions/attractions.component';
 import { RelaxComponent } from './relax/relax.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 const routes: Routes = [
@@ -19,9 +21,9 @@ const routes: Routes = [
   
   { path  : 'sub-cat/:supCatName/activity/:activityCatName'  , component : ActivitiesComponent},
   { path  : 'sub-cat/:supCatName/activity/:activityCatName/activityDetails/:id'  , component : ActivitiesComponent},
-  { path  : 'attractions' , component : AttractionsComponent},
+  // { path  : 'attractions' , component : AttractionsComponent},
 
-  {path:'relax', component:RelaxComponent},
+  {path:'relax', component:RelaxComponent}
   
 
 ]
@@ -31,7 +33,6 @@ const routes: Routes = [
   AttractionsComponent,
   ExperiecesSubCategoryComponent ,
   RelaxComponent,
-  AttractionsComponent,
   ActivitiesComponent,
   ActivityDetailsComponent
 ],
@@ -41,7 +42,9 @@ const routes: Routes = [
     MatDialogModule ,
     FormsModule ,
     MatCardModule  ,
-    CarouselModule 
+    CarouselModule ,
+    MatProgressSpinnerModule,
+    NgxSkeletonLoaderModule
   ]
 })
 export class ExperiencesModule { }

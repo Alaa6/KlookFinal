@@ -68,14 +68,8 @@
               <div class="modal-body disableHorizontalScroll">
                 <div class="row">
                   <div class="col-3">
-                    <a
-                      href="../Experience/Experience/experience.html"
-                      class="mmain"
-                    >
-                      <i
-                        class="fas fa-parachute-box mr-1"
-                        style="font-size: 1.1em;"
-                      ></i>
+                    <a href="../Experience/Experience/experience.html" class="mmain">
+                      <i class="fas fa-parachute-box mr-1" style="font-size: 1.1em;"></i>
                       Experiences
                     </a>
                     <br />
@@ -98,12 +92,8 @@
                     <a href="#" class="sub">Attraction passes & more</a>
                     <br />
                     <br />
-                  
-                    <a
-                      routerLink="/experiences/tour"
-                      routerLinkActive="active"
-                      class="main"
-                    >
+
+                    <a routerLink="/experiences/tour" routerLinkActive="active" class="main">
                       Tours
                       <i class="fas fa-chevron-right"></i>
                     </a>
@@ -174,10 +164,7 @@
                     </a>
                     <br />
                     <br />
-                    <a
-                      href="../Europe train/Europe train/train.html"
-                      class="sub"
-                    >
+                    <a href="../Europe train/Europe train/train.html" class="sub">
                       Trains
                     </a>
                     <br />
@@ -264,10 +251,7 @@
                     </a>
                     <br />
                     <br />
-                    <a
-                      href="../food & dining/food & dining/food.html"
-                      class="main"
-                    >
+                    <a routerLink="/moreToExplore/moreToExplore/food&dining" routerLinkActive="active" class="main">
                       Food & dinning
                       <i class="fas fa-chevron-right"></i>
                     </a>
@@ -312,7 +296,8 @@
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
+          routerLinkActive="active"
+          (click)="setsubCategoryName('Experiences')"
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
@@ -327,7 +312,7 @@
           <a class="dropdown-item" (click)="setsubCategoryName('Attractions')">
             Attractions
           </a>
-          <a class="dropdown-item" (click)="setsubCategoryName('Tour')">
+          <a class="dropdown-item" (click)="setsubCategoryName('Tours')">
             Tours
           </a>
           <a
@@ -361,7 +346,7 @@
           <a
             class="dropdown-item"
             routerLinkActive="active"
-            (click)="setsubCategoryName(' Fun & nightlife')"
+            (click)="setsubCategoryName('Fun & nightlife')"
           >
             Fun & nightlife
           </a>
@@ -392,10 +377,17 @@
           <a class="dropdown-item" href="#">Mainland China trains</a>
           <a
             class="dropdown-item"
-            href="../Europe train/Europe train/train.html"
+            routerLink="/transport/europeTrains"
+            routerLinkActive="active"
           >
             Europe trains
           </a>
+          <!-- <a
+            class="dropdown-item"
+            href="../Europe train/Europe train/train.html"
+          >
+            
+          </a> -->
           <a class="dropdown-item" href="#">Japan trains</a>
           <a class="dropdown-item" href="#">Taiwan intercity buses</a>
           <a class="dropdown-item" href="#">Europe intercity buses</a>
@@ -432,7 +424,6 @@
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
-          href="#"
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
@@ -445,10 +436,12 @@
         <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
           <a
             class="dropdown-item"
-            href="../food & dining/food & dining/food.html"
+            routerLink="/moreToExplore/food&dining"
+            routerLinkActive="active"
           >
             Food & dining
           </a>
+
           <a
             class="dropdown-item"
             routerLink="/moreToExplore/wifi&simcards"
@@ -458,6 +451,7 @@
           </a>
         </div>
       </li>
+      <!-- </li> -->
     </ul>
   </div>
 </nav>

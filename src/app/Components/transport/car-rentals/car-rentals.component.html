@@ -24,9 +24,7 @@
             Pick-up date & time
           </div>
 
-          <div class="col-md-3 col-2 border border-light bg-light pt-2">
-            Drop-off date & time
-          </div>
+          <div class="col-md-3 col-2 border border-light bg-light pt-2"></div>
           <div class="col-1 mt-1">
             <button
               class="btn"
@@ -42,7 +40,6 @@
           Driver's age:
           <a class="far fa-question-circle text-secondary">:</a>
         </span>
-        <span>between 30-65</span>
         <select
           class="text-secondary"
           id="btn"
@@ -248,13 +245,13 @@
       FAQS
     </h2>
 
-    <div
-      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
-    ></div>
+    <hr class="mb-5 mt-5" />
 
     <h2
-      data-toggle="collapse"
-      data-target="#demo"
+      (click)="isCollapsed1 = !isCollapsed1"
+      [attr.aria-expanded]="!isCollapsed1"
+      aria-controls="navbarContent"
+      aria-expanded="false"
       style="
         font-size: 16px;
         font-weight: 700;
@@ -269,7 +266,7 @@
       <i class="fas fa-chevron-down float-right"></i>
     </h2>
 
-    <div id="demo" class="collapse">
+    <div class="collapse" [ngbCollapse]="isCollapsed1">
       You can book your car using most credit cards and a few debit cards. You
       will be informed about the payment options that are accepted while you're
       booking. It is strongly suggested to fulfill the payment with a credit
@@ -287,13 +284,14 @@
       the vehicle. In these instances, no refunds can be made.
     </div>
     <!-- ------------------------------------------------------------------------------------------------------------ -->
-    <div
-      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
-    ></div>
+    <hr class="mb-5 mt-5" />
 
     <h2
-      data-toggle="collapse"
-      data-target="#demo2"
+      class="h2toggle"
+      (click)="isCollapsed2 = !isCollapsed2"
+      [attr.aria-expanded]="!isCollapsed2"
+      aria-controls="navbarContent"
+      aria-expanded="false"
       style="
         font-size: 16px;
         font-weight: 700;
@@ -307,18 +305,19 @@
       Where can I find my rental car's insurance coverage?
       <i class="fas fa-chevron-down float-right"></i>
     </h2>
-    <div id="demo2" class="collapse">
+    <div class="collapse" [ngbCollapse]="isCollapsed2">
       The details of your rental car's insurance coverage can be viewed upon
       booking and on the day of pick up.
     </div>
-    <div
-      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
-    ></div>
+    <hr class="mb-5 mt-5" />
 
     <!-- -------------------------------------------------------------------------------------------------------- -->
     <h2
-      data-toggle="collapse"
-      data-target="#demo3"
+      class="h2toggle"
+      (click)="isCollapsed3 = !isCollapsed3"
+      [attr.aria-expanded]="!isCollapsed2"
+      aria-controls="navbarContent"
+      aria-expanded="false"
       style="
         font-size: 16px;
         font-weight: 700;
@@ -332,7 +331,7 @@
       What do I need to bring when picking up the car?
       <i class="fas fa-chevron-down float-right"></i>
     </h2>
-    <div id="demo3" class="collapse">
+    <div class="collapse" [ngbCollapse]="isCollapsed3">
       When picking up your car, you'll need: (1) Driver's License: The main
       driver's license needs to have been held for at least 1 or 2 years
       (depending on the rental company's policy). Additional drivers must also
@@ -355,14 +354,14 @@
       staff may refuse to release the car. In these instances, no refunds can be
       made.
     </div>
-    <div
-      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
-    ></div>
+    <hr class="mb-5 mt-5" />
 
     <!-- -------------------------------------------------------------------------------------------------------- -->
     <h2
-      data-toggle="collapse"
-      data-target="#demo4"
+      (click)="isCollapsed4 = !isCollapsed4"
+      [attr.aria-expanded]="!isCollapsed4"
+      aria-controls="navbarContent"
+      aria-expanded="false"
       style="
         font-size: 16px;
         font-weight: 700;
@@ -376,11 +375,11 @@
       What is the cancellation policy?
       <i class="fas fa-chevron-down float-right"></i>
     </h2>
-    <div id="demo4" class="collapse">
+    <div class="collapse" [ngbCollapse]="isCollapsed4">
       In most cases, you will receive a full refund as long as you cancel the
       booking before pick up. However, some suppliers may offer free
       cancellation up to a certain hour before pick up. If you cancel past the
-      free cancellation period, you'll receive ax refund less than the full
+      free cancellation period, you'll receive a refund less than the full
       prepaid amount or no refund at all. If you cancel after your rental is due
       to start, no refunds will be given. If you do not pick up the car (usually
       counted as a 'no-show'), no refunds will be given. Car rental companies
@@ -392,9 +391,7 @@
       Conditions of your booking.
     </div>
     <!-- -------------------------------------------------------------------------------------------------------------- -->
-    <div
-      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
-    ></div>
+    <hr class="mb-5 mt-5" />
     <div
       class="mb-5"
       style="cursor: pointer; font-size: 16px; line-height: 19px;"

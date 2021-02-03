@@ -12,9 +12,9 @@ import { ToursCairoComponent } from './Components/tours-cairo/tours-cairo.compon
 import { RelaxationComponent } from './Components/relaxation/relaxation.component';
 import { CultureComponent } from './Components/culture/culture.component';
 import { FunComponent } from './Components/fun/fun.component';
-import { EuropeTrainsComponent } from './Components/europe-trains/europe-trains.component';
+
 import { HotelsComponent } from './Components/hotels/hotels.component';
-import { FoodComponent } from './Components/food/food.component';
+
 import { WiFiComponent } from './Components/wi-fi/wi-fi.component';
 import { WalkingComponent } from './Components/walking/walking.component';
 import { BestSellerCairoComponent } from './Components/best-seller-cairo/best-seller-cairo.component';
@@ -29,6 +29,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {HttpClientModule} from '@angular/common/http';
+// import { JwPaginationComponent } from 'jw-angular-pagination';
+import { from } from 'rxjs';
+
 import { PopupComponent } from './Components/popup/popup.component';
 
 // import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -45,8 +53,18 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 
- 
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import { SignComponent } from './Components/sign/sign.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -71,9 +89,9 @@ var firebaseConfig = {
     RelaxationComponent,
     CultureComponent,
     FunComponent,
-    EuropeTrainsComponent,
+   
     HotelsComponent,
-    FoodComponent,
+   
     WiFiComponent,
     WalkingComponent,
     BestSellerCairoComponent,
@@ -83,12 +101,16 @@ var firebaseConfig = {
     // SignUpComponent,
     AdminComponent,
     SecondHeaderComponent,
+    // JwPaginationComponent
     PopupComponent,
     CardComponent,
     NotFoundComponent ,
     ModalComponent,
     HelpComponent,
-    KlookCreditComponent
+    KlookCreditComponent,
+    SignComponent,
+    DashboardComponent,
+    DetailsDashboardComponent
      
   ],
   imports: [
@@ -105,8 +127,23 @@ var firebaseConfig = {
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,
-    MatDialogModule, BrowserAnimationsModule,
-  ],
+     BrowserAnimationsModule,
+  
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    HttpClientModule,       
+    MatCardModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatSelectModule
+],
+
+  // ],
     
   providers: [],
   bootstrap: [AppComponent]

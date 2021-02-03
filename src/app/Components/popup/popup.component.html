@@ -1,9 +1,10 @@
 <mat-dialog-content>
 
-    <a *ngFor="let city of cityList" class="m-2" (click) = "getCityName(city.City1)" mat-dialog-close> {{city.City1}} </a>
+    <a *ngFor="let city of cityList" class="m-2" (click) = "getCityName(city.City1)" mat-dialog-close>
+         {{city.City1}}
+     </a>
 
 </mat-dialog-content>
 <mat-dialog-actions>
-    <!-- <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button> -->
+  
 </mat-dialog-actions>

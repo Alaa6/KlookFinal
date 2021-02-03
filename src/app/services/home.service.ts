@@ -24,6 +24,9 @@ export class HomeService {
     ).valueChanges()
   }
 
+  getAllCities():Observable<ICity[]>{
+    return this.fs.collection <ICity>('Cities').valueChanges();
+  }
   
   getTopThings():Observable<Tours[]>{
     return this.fs.collection<Tours>('ToursCollection',
