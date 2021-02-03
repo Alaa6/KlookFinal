@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
-
-  // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
+{path:'activityDetails/:id' ,component:ActivityDetailsComponent},
   {  path: 'experiences', 
     loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
   },
- 
-
- 
-
   {  path: 'accommodation', 
     loadChildren: () => import('./Components/accommodation/accommodation.module').then(m => m.AccommodationModule)
   },

@@ -54,6 +54,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
+import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 
 
 var firebaseConfig = {
@@ -97,7 +98,9 @@ var firebaseConfig = {
     NotFoundComponent ,
     ModalComponent,
     HelpComponent,
-    KlookCreditComponent
+    KlookCreditComponent,
+    ActivityDetailsComponent,
+   
      
   ],
   imports: [
