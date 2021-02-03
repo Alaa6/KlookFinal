@@ -87,6 +87,8 @@ users:User[]=[]
         this.errorMsg='';
         this.authSer.checkforAdmin(this.Email.value,this.Password.value).subscribe(items => {
         this.users=items
+        console.log(items)
+        console.log(items[0].Type)
         if(items[0].Type=="user"){
         this.router.navigate(['/']);
         console.log("user  "+ items[0].Type)
@@ -95,7 +97,7 @@ users:User[]=[]
         else
         {
           console.log("admin")
-        this.router.navigate(['sign/admin/dash']);
+        this.router.navigate(['/sign/admin/dash']);
 
         }
       });
