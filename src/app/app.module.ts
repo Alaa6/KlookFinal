@@ -22,7 +22,7 @@ import { AttractionsHongKongMacauComponent } from './Components/attractions-hong
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
 // import { SignUpComponent } from './Components/sign-up/sign-up.component';
-import { AdminComponent } from './Components/admin/admin.component';
+// import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -64,9 +64,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
-import { SignComponent } from './Components/sign/sign.component';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
+// import { SignComponent } from './admin/sign/sign.component';
+// import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
+// import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -101,7 +101,7 @@ var firebaseConfig = {
     AttractionsHongKongComponent,
     LoginComponent,
     // SignUpComponent,
-    AdminComponent,
+    // AdminComponent,
     SecondHeaderComponent,
     // JwPaginationComponent
     PopupComponent,
@@ -110,9 +110,9 @@ var firebaseConfig = {
     ModalComponent,
     HelpComponent,
     KlookCreditComponent,
-    SignComponent,
-    DashboardComponent,
-    DetailsDashboardComponent
+    // // SignComponent,
+    // DashboardComponent,
+    // DetailsDashboardComponent
      
   ],
   imports: [

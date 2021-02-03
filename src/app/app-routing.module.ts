@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 import { HomeComponent } from './Components/home/home.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
-import { SignComponent } from './Components/sign/sign.component';
+// import { SignComponent } from './Components/admins/sign/sign.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
-  { path  : 'sign/:subsign'  , component : SignComponent},
-  {path :'dash' , component : DashboardComponent} ,
+  // { path  : 'sign/:subsign'  , component : SignComponent},
+  // {path :'dash' , component : DashboardComponent} ,
 
 
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
@@ -18,7 +18,9 @@ const routes: Routes = [
     loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
   },
  
-
+  {  path: 'sign', 
+  loadChildren: () => import('./Components/admins/admins.module').then(m => m.AdminsModule)
+},
  
 
   {  path: 'accommodation', 
@@ -35,6 +37,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

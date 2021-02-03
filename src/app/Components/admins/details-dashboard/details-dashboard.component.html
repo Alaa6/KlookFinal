@@ -21,7 +21,36 @@
     </div>
     <!--2-->
     <div class="tab-pane fade" id="v-pills-customers" role="tabpanel" aria-labelledby="v-pills-customers-tab">
-      Customers tab
+      <div class="container mt-4">
+        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        
+        
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef> Emaill </th>
+                <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="JoinDate">
+                <th  mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Delete">
+                <th  mat-header-cell *matHeaderCellDef> Delete </th>
+                <td mat-cell *matCellDef="let element"> 
+          <button mat-flat-button class=" btndelet" (click)="delete(element.id)" >Delete</button>
+        </td>
+              </ng-container>
+
+             
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        
+        </div>
     </div>
     <!--3-->
     <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
@@ -388,5 +417,63 @@
     <!--8-->
     <div class="tab-pane fade" id="v-pills-year" role="tabpanel" aria-labelledby="v-pills-year-tab">
       year-end sale tab
+    </div> 
+    <!--9-->
+    <div class="tab-pane fade" id="v-pills-admin" role="tabpanel" aria-labelledby="v-pills-admin-tab">
+  
+      <div>
+        <button mat-flat-button class="ml-4 container btnchange" (click)="sign()" >{{btnAdmiText}}</button>
+
+        <div class="container mt-4" *ngIf="!signBool">
+        <br>
+        <br>
+          <table mat-table [dataSource]="dataSourceadmin" class="mat-elevation-z8">
+          
+          
+          
+              <ng-container matColumnDef="Email">
+                  <th mat-header-cell *matHeaderCellDef> Emaill </th>
+                  <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+                </ng-container>
+          
+                <ng-container matColumnDef="JoinDate">
+                  <th  mat-header-cell *matHeaderCellDef> Date </th>
+                  <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="Delete">
+                  <th  mat-header-cell *matHeaderCellDef> Delete </th>
+                  <td mat-cell *matCellDef="let element"> 
+            <button mat-flat-button class=" btndelet" (click)="delete(element.id)" >Delete</button>
+          </td>
+                </ng-container>
+  
+               
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumnsadmin"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumnsadmin;"></tr>
+            </table>
+          
+          </div>
+      </div>
+    <div *ngIf="signBool">
+          <mat-form-field appearance="outline" class="w-75" >
+            <input matInput placeholder="Email Address" class="mb-2" [formControl]="Email" required>
+    <mat-error *ngIf="Email.invalid && (Email.dirty || Email.touched)">{{getErrorMessage()}}</mat-error>
+            <!-- <input matInput placeholder="Email Address" class="mb-2"> -->
+            <mat-icon matSuffix class=""><i class="far fa-envelope faico"></i></mat-icon>
+          </mat-form-field>
+        
+        
+          <mat-form-field appearance="outline" class="w-75 ">
+            <input matInput placeholder="Password"  class="mb-2" [formControl]="Password" required>
+            <mat-error *ngIf="Password.invalid && (Password.dirty || Password.touched)">{{getErrorMessage()}}</mat-error>
+            <!-- <input matInput placeholder="Password" class="mb-2"> -->
+            <mat-icon matSuffix ><i class="far fa-eye-slash faico"></i>
+            </mat-icon>
+          </mat-form-field>
+          <button mat-flat-button class="ml-4 container btnsign" (click)="signupp()" >SignUp</button>
+
+    </div>
     </div>
   </div>

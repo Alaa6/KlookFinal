@@ -125,7 +125,8 @@
           </mat-tab-group>
     
         </div>
-    
+        <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+
       <button *ngIf="signbool" mat-flat-button class="ml-4 container btnsign" (click)="signupp()" >SignUp</button>
       <button *ngIf="loginBool" mat-flat-button class="ml-4 container btnsign" (click)="login()" >login</button>
     
