@@ -98,7 +98,10 @@
           class="destination d-flex p-2 m-1 mt-3 col-1 justify-content-center align-items-center"
           (click)="openPopup()"
         >
-          <i class="fas fa-map-marker-alt pr-1" style="font-size: 1.2em;"></i>
+          <i
+            class="fas fa-map-marker-alt pr-1"
+            style="font-size: 1.2em; color: gray;"
+          ></i>
           <span>{{ city }}</span>
         </div>
 
@@ -276,15 +279,19 @@
         </div>
       </div>
 
-      <div class="container col-lg-9 col-xl-9 col-9 carsolCard  col-md-12  ">
-        <owl-carousel-o [options]="customOptions" >
-
-          <ng-template carouselSlide  *ngFor="let slide of awsomeDealsList">
-
+      <div class="container col-lg-9 col-xl-9 col-9 carsolCard col-md-12">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let slide of awsomeDealsList">
             <div class="card mb-2 ml-3 owlheight">
-              <img class=" card-img-top carsimg" src={{slide.Image}} alt="Card image cap">
-              <span class="container-fluid card-img-overlay cardover "><i class="fas fa-map-marker-alt mr-2"></i>
-                {{slide.City}}</span>
+              <img
+                class="card-img-top carsimg"
+                src="{{ slide.Image }}"
+                alt="Card image cap"
+              />
+              <span class="container-fluid card-img-overlay cardover">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                {{ slide.City }}
+              </span>
               <div class="card-body">
                 <h6 class="card-title fontCard">{{ slide.Title }}</h6>
                 <div class="StarCart">
@@ -326,11 +333,16 @@
       <div class="container col-lg-9 col-xl-9 col-9 carsolCard col-md-12">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let slide of forKidsList">
-
             <div class="card mb-2 ml-3 owlheight">
-              <img class=" card-img-top carsimg" src={{slide.Image}} alt="Card image cap">
-              <span class="container-fluid card-img-overlay cardover "><i class="fas fa-map-marker-alt mr-2"></i>
-                {{slide.City}}</span>
+              <img
+                class="card-img-top carsimg"
+                src="{{ slide.Image }}"
+                alt="Card image cap"
+              />
+              <span class="container-fluid card-img-overlay cardover">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                {{ slide.City }}
+              </span>
               <div class="card-body">
                 <h6 class="card-title fontCard">{{ slide.Title }}</h6>
                 <div class="StarCart">
