@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HelpComponent } from './Components/help/help.component';
 import { HomeComponent } from './Components/home/home.component';
+import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
+  {path :'help' , component : HelpComponent} ,
+  {path: 'credits', component: KlookCreditComponent},
+
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
 
   {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
+  // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
+
   {  path: 'experiences', 
     loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
   },
-  {path :'**' , component : NotFoundComponent} ,
 
   
 
@@ -24,6 +30,8 @@ const routes: Routes = [
   {  path: 'transport', 
     loadChildren: () => import('./Components/transport/transport.module').then(m => m.TransportModule)
   },
+  {path :'**' , component : NotFoundComponent} ,
+
 ];
 
 @NgModule({

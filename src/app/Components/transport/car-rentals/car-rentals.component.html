@@ -1,13 +1,16 @@
 <header>
   <div class="container">
     <p id="p1">Car Rentals</p>
-    <p id="p2">Explore all your favorite destinations in style with selection from top car suppliers
-      worldwide at the best prices</p>
-    <div class="shadow col-12 bg-white" style=" border-radius: 8px;">
+    <p id="p2">
+      Explore all your favorite destinations in style with selection from top
+      car suppliers worldwide at the best prices
+    </p>
+    <div class="shadow col-12 bg-white" style="border-radius: 8px;">
       <div class="borderContet">
         <div class="form-check pt-3">
           <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" value="">Return car to a different location
+            <input type="checkbox" class="form-check-input" value="" />
+            Return car to a different location
           </label>
         </div>
         <div class="row pt-4 pl-3">
@@ -18,28 +21,33 @@
             </div>
           </div>
           <div class="col-4 border border-light bg-light pt-2 mr-1">
-
             Pick-up date & time
-
           </div>
 
           <div class="col-md-3 col-2 border border-light bg-light pt-2">
             Drop-off date & time
-
-
           </div>
           <div class="col-1 mt-1">
-            <button class="btn" style="background-color: #ff5722; color:white">Search</button>
+            <button
+              class="btn"
+              style="background-color: #ff5722; color: white;"
+            >
+              Search
+            </button>
           </div>
         </div>
       </div>
       <div class="mt-3 pt-3 mb-2 pb-2">
         <span class="pt-3">
           Driver's age:
-          <a class="far fa-question-circle text-secondary"> :</a>
+          <a class="far fa-question-circle text-secondary">:</a>
         </span>
-        <span> between 30-65 </span>
-        <select class="text-secondary" id="btn" style="background-color: white;">
+        <span>between 30-65</span>
+        <select
+          class="text-secondary"
+          id="btn"
+          style="background-color: white;"
+        >
           <option value="18">18</option>
           <option value="19">19</option>
           <option value="20">21</option>
@@ -84,98 +92,142 @@
           <option value="97">97</option>
           <option value="98">98</option>
           <option value="99">99</option>
-
-
-
-
         </select>
-
       </div>
-
     </div>
   </div>
 </header>
-
 
 <div class="container">
   <ngb-carousel class="mt-5">
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img src="../../../../assets/carRental/jdpcwuesbdi7jyv11qzk.jpg" alt="" class="img-fluid">
+        <img
+          src="../../../../assets/carRental/jdpcwuesbdi7jyv11qzk.jpg"
+          alt=""
+          class="img-fluid"
+        />
       </div>
     </ng-template>
     <ng-template ngbSlide>
       <div class="picsum-img-wrapper">
-        <img src="../../../../assets/carRental/jdpcwuesbdi7jyv11qzk.jpg" alt="" class="img-fluid">
+        <img
+          src="../../../../assets/carRental/jdpcwuesbdi7jyv11qzk.jpg"
+          alt=""
+          class="img-fluid"
+        />
       </div>
     </ng-template>
   </ngb-carousel>
-
 
   <h2 id="servived" class="mt-5 mb-4">
     SERVICED BY TOP-RATED SUPPLIERS
   </h2>
 
   <div class="row align-items-center justify-content-center">
-    <div *ngFor="let car of carServivedImage" class="col mt-3 ml-3 border ">
-      <img src="{{car.Image}}" class="img-fluid ">
+    <div *ngFor="let car of carServivedImage" class="col mt-3 ml-3 border">
+      <img src="{{ car.Image }}" class="img-fluid" />
     </div>
   </div>
 
-  <hr>
+  <hr />
 
   <!-- start  -->
-  <div class="row ">
+  <div class="row">
     <div class="col-md-4 mt-5">
       <div class="row">
-        <div class="col-md-2 ">
-          <i class="fas fa-globe-europe" style="font-size: 30px; color:#FF5722  ;"></i>
+        <div class="col-md-2">
+          <i
+            class="fas fa-globe-europe"
+            style="font-size: 30px; color: #ff5722;"
+          ></i>
         </div>
         <div class="col-md-10">
           <div
-            style="font-weight: 700;
-          line-height: 22px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;">
-            Worldwide Coverage</div>
+            style="
+              font-weight: 700;
+              line-height: 22px;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            "
+          >
+            Worldwide Coverage
+          </div>
           <div
-            style="font-size: 12px;
-          color: #666;
-          line-height: 1.5;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;">
-            Get to your destination in 8200+ cities across 140+ countries and regions with 400+ suppliers</div>
+            style="
+              font-size: 12px;
+              color: #666;
+              line-height: 1.5;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            "
+          >
+            Get to your destination in 8200+ cities across 140+ countries and
+            regions with 400+ suppliers
+          </div>
         </div>
       </div>
-
     </div>
     <div class="col-md-4 mt-5">
       <div class="row">
         <div class="col-md-2">
-          <i class="fas fa-award" style="color:#FF5722; font-size: 30px;"></i>
+          <i class="fas fa-award" style="color: #ff5722; font-size: 30px;"></i>
         </div>
         <div class="col-md-10">
           <div
-            style="font-weight: 700;
-          line-height: 22px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;">
-            Top Brands at Competitive Prices</div>
+            style="
+              font-weight: 700;
+              line-height: 22px;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            "
+          >
+            Top Brands at Competitive Prices
+          </div>
           <div
-            style="font-size: 12px;
-          color: #666;
-          line-height: 1.5;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;">
-            Choose from a wide selection of affordable cars from your preferred brands</div>
+            style="
+              font-size: 12px;
+              color: #666;
+              line-height: 1.5;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            "
+          >
+            Choose from a wide selection of affordable cars from your preferred
+            brands
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4  mt-5">
+    <div class="col-md-4 mt-5">
       <div class="row">
         <div class="col-md-2">
-          <i class="fas fa-language" style="color:#FF5722; font-size: 30px;"></i>
+          <i
+            class="fas fa-language"
+            style="color: #ff5722; font-size: 30px;"
+          ></i>
         </div>
         <div class="col-md-10">
           <div
-            style="font-weight: 700;
-          line-height: 22px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;">
-            Multi-Language Customer Service</div>
-          <div style=" font-size: 12px; color: #666; line-height:
-            1.5;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica
-            Neue,Helvetica,Arial,sans-serif;">Reach out to our reliable help line at any time of the day FAQs
+            style="
+              font-weight: 700;
+              line-height: 22px;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            "
+          >
+            Multi-Language Customer Service
+          </div>
+          <div
+            style="
+              font-size: 12px;
+              color: #666;
+              line-height: 1.5;
+              font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            "
+          >
+            Reach out to our reliable help line at any time of the day FAQs
           </div>
         </div>
       </div>
@@ -183,123 +235,173 @@
   </div>
 
   <!-- start FAQS Section -->
-  <div class="mt-5 mb-4 ">
+  <div class="mt-5 mb-4">
     <h2
-      style=" font-size: 28px;
-    line-height: 30px;
-    font-weight: 700;;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; ;">
-      FAQS</h2>
-
-    <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5">
-    </div>
-
-    <h2 data-toggle="collapse" data-target="#demo"
-      style="font-size: 16px;
-      font-weight: 700;
-      line-height: 19px;
-      color: #212121;
-      cursor: pointer;
-     font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; ;">
-      What payment options are accepted?
-      <i class="fas fa-chevron-down float-right"></i>
-
+      style="
+        font-size: 28px;
+        line-height: 30px;
+        font-weight: 700;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      "
+    >
+      FAQS
     </h2>
 
-    <div id="demo" class="collapse">
-      You can book your car using most credit cards and a few debit cards. You will be informed about the payment
-      options that are accepted while you're booking. It is strongly suggested to fulfill the payment with a
-      credit card in the name of the lead driver. If your reservation is paid by someone other than the lead
-      driver, you may need to present supplementary documents when the booking is reviewed for some security
-      reasons. However, you don't have to use the same card to book your rental car on Klook and pay the deposit
-      at the counter desk. IMPORTANT NOTE: When you pick up your car at the counter, a valid credit card in the
-      name of the lead driver must be presented at the rental desk to pre-authorize or charge the deposit. The
-      credit card(s) must be embossed and a PIN number may be required. In case you fail to present a valid credit
-      card, there is a lack of sufficient funds available on the credit card, or the credit card is not in the
-      lead driver's name, the car rental agent may refuse to release the vehicle. In these instances, no refunds
-      can be made.
-    </div>
-    <!-- ------------------------------------------------------------------------------------------------------------ -->
-    <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5">
-    </div>
+    <div
+      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
+    ></div>
 
-    <h2 data-toggle="collapse" data-target="#demo2"
-      style="font-size: 16px;
-    font-weight: 700;
-    line-height: 19px;
-    color: #212121;
-    cursor: pointer;
-   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; ;">
-      Where can I find my rental car's insurance coverage?
-      <i class="fas fa-chevron-down float-right"></i>
-
-    </h2>
-    <div id="demo2" class="collapse">
-      The details of your rental car's insurance coverage can be viewed upon booking and on the day of pick up.
-    </div>
-    <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5">
-    </div>
-
-    <!-- -------------------------------------------------------------------------------------------------------- -->
-    <h2 data-toggle="collapse" data-target="#demo3" style="font-size: 16px;
-  font-weight: 700;
-  line-height: 19px;
-  color: #212121;
-  cursor: pointer;
- font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; ;">
-      What do I need to bring when picking up the car?
-      <i class="fas fa-chevron-down float-right"></i>
-
-    </h2>
-    <div id="demo3" class="collapse">
-      When picking up your car, you'll need: (1) Driver's License: The main driver's license needs to have been
-      held for at least 1 or 2 years (depending on the rental company's policy). Additional drivers must also
-      present their driver's license. If your driver's license is not written using English characters (i.e. if it
-      is in Arabic, Greek, Russian or Chinese), you must bring an International Driving Permit along with your
-      original license. For more information, please refer to the Terms and Conditions at the time of booking. (2)
-      Credit Card: A valid credit card in the name of the main driver and with sufficient funds must be presented
-      at the rental desk to pre-authorize or charge the deposit. (3) Valid ID: A valid photo ID (passport or
-      national ID) or any other forms of identification must be presented to the car rental company. (4) Printed
-      Voucher: A printed version of your voucher must be presented when you pick up your car. Failure to present
-      it may incur an additional charge. IMPORTANT NOTE: Payments for any additional drivers and extra equipment
-      need to be settled when you arrive to pick up the car. Please bear those costs in mind when using your
-      credit card. If you fail to present a valid credit card, or there is a lack of sufficient funds available on
-      the credit card, or the credit card is not in the main driver's name, the staff may refuse to release the
-      car. In these instances, no refunds can be made.
-    </div>
-    <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5">
-    </div>
-
-    <!-- -------------------------------------------------------------------------------------------------------- -->
-    <h2 data-toggle="collapse" data-target="#demo4"
-      style="font-size: 16px;
+    <h2
+      data-toggle="collapse"
+      data-target="#demo"
+      style="
+        font-size: 16px;
         font-weight: 700;
         line-height: 19px;
         color: #212121;
         cursor: pointer;
-        font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif; ;">
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      "
+    >
+      What payment options are accepted?
+      <i class="fas fa-chevron-down float-right"></i>
+    </h2>
+
+    <div id="demo" class="collapse">
+      You can book your car using most credit cards and a few debit cards. You
+      will be informed about the payment options that are accepted while you're
+      booking. It is strongly suggested to fulfill the payment with a credit
+      card in the name of the lead driver. If your reservation is paid by
+      someone other than the lead driver, you may need to present supplementary
+      documents when the booking is reviewed for some security reasons. However,
+      you don't have to use the same card to book your rental car on Klook and
+      pay the deposit at the counter desk. IMPORTANT NOTE: When you pick up your
+      car at the counter, a valid credit card in the name of the lead driver
+      must be presented at the rental desk to pre-authorize or charge the
+      deposit. The credit card(s) must be embossed and a PIN number may be
+      required. In case you fail to present a valid credit card, there is a lack
+      of sufficient funds available on the credit card, or the credit card is
+      not in the lead driver's name, the car rental agent may refuse to release
+      the vehicle. In these instances, no refunds can be made.
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+    <div
+      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
+    ></div>
+
+    <h2
+      data-toggle="collapse"
+      data-target="#demo2"
+      style="
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: #212121;
+        cursor: pointer;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      "
+    >
+      Where can I find my rental car's insurance coverage?
+      <i class="fas fa-chevron-down float-right"></i>
+    </h2>
+    <div id="demo2" class="collapse">
+      The details of your rental car's insurance coverage can be viewed upon
+      booking and on the day of pick up.
+    </div>
+    <div
+      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
+    ></div>
+
+    <!-- -------------------------------------------------------------------------------------------------------- -->
+    <h2
+      data-toggle="collapse"
+      data-target="#demo3"
+      style="
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: #212121;
+        cursor: pointer;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      "
+    >
+      What do I need to bring when picking up the car?
+      <i class="fas fa-chevron-down float-right"></i>
+    </h2>
+    <div id="demo3" class="collapse">
+      When picking up your car, you'll need: (1) Driver's License: The main
+      driver's license needs to have been held for at least 1 or 2 years
+      (depending on the rental company's policy). Additional drivers must also
+      present their driver's license. If your driver's license is not written
+      using English characters (i.e. if it is in Arabic, Greek, Russian or
+      Chinese), you must bring an International Driving Permit along with your
+      original license. For more information, please refer to the Terms and
+      Conditions at the time of booking. (2) Credit Card: A valid credit card in
+      the name of the main driver and with sufficient funds must be presented at
+      the rental desk to pre-authorize or charge the deposit. (3) Valid ID: A
+      valid photo ID (passport or national ID) or any other forms of
+      identification must be presented to the car rental company. (4) Printed
+      Voucher: A printed version of your voucher must be presented when you pick
+      up your car. Failure to present it may incur an additional charge.
+      IMPORTANT NOTE: Payments for any additional drivers and extra equipment
+      need to be settled when you arrive to pick up the car. Please bear those
+      costs in mind when using your credit card. If you fail to present a valid
+      credit card, or there is a lack of sufficient funds available on the
+      credit card, or the credit card is not in the main driver's name, the
+      staff may refuse to release the car. In these instances, no refunds can be
+      made.
+    </div>
+    <div
+      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
+    ></div>
+
+    <!-- -------------------------------------------------------------------------------------------------------- -->
+    <h2
+      data-toggle="collapse"
+      data-target="#demo4"
+      style="
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: #212121;
+        cursor: pointer;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      "
+    >
       What is the cancellation policy?
       <i class="fas fa-chevron-down float-right"></i>
-
     </h2>
     <div id="demo4" class="collapse">
-      In most cases, you will receive a full refund as long as you cancel the booking before pick up. However,
-      some suppliers may offer free cancellation up to a certain hour before pick up. If you cancel past the free
-      cancellation period, you'll receive a refund less than the full prepaid amount or no refund at all. If you
-      cancel after your rental is due to start, no refunds will be given. If you do not pick up the car (usually
-      counted as a 'no-show'), no refunds will be given. Car rental companies call it a 'no-show' when you do not
-      pick the car up (e.g. you do not arrive at the arranged date and time, you do not have the right documents,
-      you're not eligible for the rental, or the main driver does not have a credit card with enough credit for
-      the deposit.) Some car rental companies may have their own cancellation policy, which you'll find in the
-      Terms and Conditions of your booking.
+      In most cases, you will receive a full refund as long as you cancel the
+      booking before pick up. However, some suppliers may offer free
+      cancellation up to a certain hour before pick up. If you cancel past the
+      free cancellation period, you'll receive ax refund less than the full
+      prepaid amount or no refund at all. If you cancel after your rental is due
+      to start, no refunds will be given. If you do not pick up the car (usually
+      counted as a 'no-show'), no refunds will be given. Car rental companies
+      call it a 'no-show' when you do not pick the car up (e.g. you do not
+      arrive at the arranged date and time, you do not have the right documents,
+      you're not eligible for the rental, or the main driver does not have a
+      credit card with enough credit for the deposit.) Some car rental companies
+      may have their own cancellation policy, which you'll find in the Terms and
+      Conditions of your booking.
     </div>
     <!-- -------------------------------------------------------------------------------------------------------------- -->
-    <div class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5">
-    </div>
-    <div class="mb-5" style="cursor: pointer; font-size: 16px;line-height: 19px;">
+    <div
+      class="border border-top-0 border-left-0 border-right-0 mb-5 mt-5"
+    ></div>
+    <div
+      class="mb-5"
+      style="cursor: pointer; font-size: 16px; line-height: 19px;"
+    >
       View all FAQS
     </div>
   </div>
-
 </div>
 
 <!-- --------------------------------End section-------------------------------------------------------------------- -->

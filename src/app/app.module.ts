@@ -45,6 +45,8 @@ import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 
+ 
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -103,7 +105,7 @@ var firebaseConfig = {
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,
-    MatDialogModule
+    MatDialogModule, BrowserAnimationsModule,
   ],
     
   providers: [],

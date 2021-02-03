@@ -17,7 +17,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link hd1 home" href="home.html">
+        <a
+          class="nav-link hd1 home"
+          routerLink="/home"
+          routerLinkActive="active"
+        >
           <i class="fas fa-home home clr"></i>
           <span class="home hd1">Home</span>
         </a>
@@ -50,7 +54,7 @@
         </a>
 
         <!-- Modal -->
-        <div
+        <!-- <div
           class="modal fade"
           id="CatModal"
           data-keyboard="false"
@@ -301,7 +305,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--2-->
       </li>
 
@@ -320,14 +324,25 @@
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item"(click)="setsubCategoryName('Attractions')" >
+          <a class="dropdown-item" (click)="setsubCategoryName('Attractions')">
             Attractions
           </a>
-          <a class="dropdown-item"   (click)="setsubCategoryName('Tour')">Tours</a>
-          <a class="dropdown-item"   routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
-            Outdoors & sports</a>
-          <a class="dropdown-item"   routerLinkActive="active " (click)="setsubCategoryName('Relaxation & beauty')">
-          Relaxation & beauty 
+          <a class="dropdown-item" (click)="setsubCategoryName('Tour')">
+            Tours
+          </a>
+          <a
+            class="dropdown-item"
+            routerLinkActive="active"
+            (click)="setsubCategoryName('Outdoors & sports')"
+          >
+            Outdoors & sports
+          </a>
+          <a
+            class="dropdown-item"
+            routerLinkActive="active "
+            (click)="setsubCategoryName('Relaxation & beauty')"
+          >
+            Relaxation & beauty
           </a>
           <!-- <a
             class="dropdown-item"
@@ -336,13 +351,18 @@
           >
             Attractions
           </a> -->
-       
-      
-        
-          <a class="dropdown-item" (click)="setsubCategoryName('Cultural experiences')">
-            Cultural experiences
+
+          <a
+            class="dropdown-item"
+            (click)="setsubCategoryName('Cultural experiences')"
+          >
+            Culture & workshops
           </a>
-          <a class="dropdown-item"  routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
+          <a
+            class="dropdown-item"
+            routerLinkActive="active"
+            (click)="setsubCategoryName(' Fun & nightlife')"
+          >
             Fun & nightlife
           </a>
         </div>
@@ -440,5 +460,4 @@
       </li>
     </ul>
   </div>
-  </nav>
-
+</nav>
