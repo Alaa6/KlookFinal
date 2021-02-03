@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { ExperiencesComponent } from './Components/experiences/experiences.component';
+import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { HomeComponent } from './Components/home/home.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { SignComponent } from './Components/sign/sign.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
+ 
   { path  : 'sign/:subsign'  , component : SignComponent},
   {path :'dash' , component : DashboardComponent} ,
-
+  {path:'experiences',component:ExperiencesComponent},
 
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
+
 
   // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
   {  path: 'experiences', 

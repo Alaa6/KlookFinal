@@ -66,7 +66,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import { SignComponent } from './Components/sign/sign.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
+// import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -112,7 +112,7 @@ var firebaseConfig = {
     KlookCreditComponent,
     SignComponent,
     DashboardComponent,
-    DetailsDashboardComponent
+    // DetailsDashboardComponent
      
   ],
   imports: [

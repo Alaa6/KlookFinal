@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
     "@ng-bootstrap/ng-bootstrap": "^9.0.1",
+    "angular-carousel": "^1.1.0",
     "bootstrap": "^4.5.0",
     "firebase": "^8.2.4",
     "jw-angular-pagination": "^1.2.0",
