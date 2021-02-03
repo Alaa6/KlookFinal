@@ -1,13 +1,27 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light navbar2" style="top: 4.1em; z-index: 2;">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav
+  class="navbar sticky-top navbar-expand-lg navbar-light navbar2"
+  style="top: 4.1em; z-index: 2;"
+>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link hd1 home" href="home.html">
+        <a
+          class="nav-link hd1 home"
+          routerLink="/home"
+          routerLinkActive="active"
+        >
           <i class="fas fa-home home clr"></i>
           <span class="home hd1">Home</span>
         </a>
@@ -17,8 +31,18 @@
 
       <!--1-->
       <li class="nav-item dropdown">
-        <a id="b1" data-toggle="modal" data-target="#CatModal" class="nav-link" href="#" role="button"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="open()">
+        <a
+          id="b1"
+          data-toggle="modal"
+          data-target="#CatModal"
+          class="nav-link"
+          href="#"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          (click)="open()"
+        >
           <!-- <div class="hd1" (mouseover)="show()" (mouseout)="hide()">
           <i class="fas fa-bars clr"></i>
           <span class="hd1">All Categories</span>
@@ -30,8 +54,15 @@
         </a>
 
         <!-- Modal -->
-        <div class="modal fade" id="CatModal" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
-          aria-hidden="true" #CatModal>
+        <!-- <div
+          class="modal fade"
+          id="CatModal"
+          data-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+          #CatModal
+        >
           <div class="modal-dialog modal-dialog-scrollable mw-100 w-75">
             <div class="modal-content">
               <div class="modal-body disableHorizontalScroll">
@@ -258,13 +289,21 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--2-->
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          routerLinkActive="active"
+          (click)="setsubCategoryName('Experiences')"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           <i class="fas fa-parachute-box"></i>
           <span class="hd1">Experiences</span>
           <!-- <span></span> -->
@@ -273,10 +312,21 @@
           <a class="dropdown-item" (click)="setsubCategoryName('Attractions')">
             Attractions
           </a>
-          <a class="dropdown-item" (click)="setsubCategoryName('Tour')">Tours</a>
-          <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
-            Outdoors & sports</a>
-          <a class="dropdown-item" routerLinkActive="active " (click)="setsubCategoryName('Relaxation & beauty')">
+          <a class="dropdown-item" (click)="setsubCategoryName('Tours')">
+            Tours
+          </a>
+          <a
+            class="dropdown-item"
+            routerLinkActive="active"
+            (click)="setsubCategoryName('Outdoors & sports')"
+          >
+            Outdoors & sports
+          </a>
+          <a
+            class="dropdown-item"
+            routerLinkActive="active "
+            (click)="setsubCategoryName('Relaxation & beauty')"
+          >
             Relaxation & beauty
           </a>
           <!-- <a
@@ -287,29 +337,51 @@
             Attractions
           </a> -->
 
-
-
-          <a class="dropdown-item" (click)="setsubCategoryName('Cultural experiences')">
-            Cultural experiences
+          <a
+            class="dropdown-item"
+            (click)="setsubCategoryName('Cultural experiences')"
+          >
+            Culture & workshops
           </a>
-          <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
+          <a
+            class="dropdown-item"
+            routerLinkActive="active"
+            (click)="setsubCategoryName('Fun & nightlife')"
+          >
             Fun & nightlife
           </a>
         </div>
       </li>
       <!--3-->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           <i class="fas fa-subway"></i>
           <span class="hd1">Transport</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/transport/carRental" routerLinkActive="active">
+          <a
+            class="dropdown-item"
+            routerLink="/transport/carRental"
+            routerLinkActive="active"
+          >
             Car rentals
           </a>
           <a class="dropdown-item" href="#">Mainland China trains</a>
-          <a class="dropdown-item" routerLink="/transport/europeTrains" routerLinkActive="active">Europe trains</a>
+          <a
+            class="dropdown-item"
+            routerLink="/transport/europeTrains"
+            routerLinkActive="active"
+          >
+            Europe trains
+          </a>
           <!-- <a
             class="dropdown-item"
             href="../Europe train/Europe train/train.html"
@@ -325,13 +397,24 @@
       </li>
       <!--4-->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           <i class="fas fa-hotel"></i>
           <span class="hd1">Accommodation</span>
         </a>
         <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/accommodation/hotels&more" routerLinkActive="active">
+          <a
+            class="dropdown-item"
+            routerLink="/accommodation/hotels&more"
+            routerLinkActive="active"
+          >
             Hotels & more
           </a>
           <a class="dropdown-item" href="#">Staycations</a>
@@ -339,15 +422,31 @@
       </li>
       <!--5-->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a
+          class="nav-link dropdown-toggle"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           <i class="far fa-circle"></i>
           <span class="hd1">More to explore</span>
         </a>
         <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="/moreToExplore/food&dining" routerLinkActive="active"> Food & dining</a>
+          <a
+            class="dropdown-item"
+            routerLink="/moreToExplore/food&dining"
+            routerLinkActive="active"
+          >
+            Food & dining
+          </a>
 
-          <a class="dropdown-item" routerLink="/moreToExplore/wifi&simcards" routerLinkActive="active">
+          <a
+            class="dropdown-item"
+            routerLink="/moreToExplore/wifi&simcards"
+            routerLinkActive="active"
+          >
             WiFi & SIM cards
           </a>
         </div>

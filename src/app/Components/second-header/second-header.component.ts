@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild , Input} from '
 import { Router } from '@angular/router';
 
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from '../modal/modal.component';
 
 // var $: any;
 
@@ -31,7 +32,7 @@ export class SecondHeaderComponent implements OnInit {
   }
 
   open() {
-    const modalRef = this.modalService.open('Modal');
+    const modalRef = this.modalService.open(ModalComponent);
     // modalRef.componentInstance.name = 'World';
   }
   // show() {

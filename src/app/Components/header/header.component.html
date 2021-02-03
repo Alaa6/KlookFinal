@@ -2,7 +2,7 @@
   class="navbar fixed-top navbar-expand-lg navbar-light justify-content-between navbar1"
 >
   <div class="left">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/home">
       <img
         class="mainLogo"
         src="./../../../assets/Navbar/Klook_Logo.jpg"
@@ -365,7 +365,7 @@
 
         <!--3-->
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" routerLink="/help" routerLinkActive="active">
             <i class="far fa-question-circle mr-1"></i>
             <span>Help</span>
           </a>
@@ -378,19 +378,24 @@
           </a>
         </li>
         <!--5-->
-        <form class="form-inline">
-          <button class="btn btn-sm btn-outline-secondary log" type="button">
+        <form *ngIf="isuser" class="form-inline">
+          <button class="btn btn-sm btn-outline-secondary log" type="button" routerLink ="/sign/login"  routerLinkActive="active">
             Log in
           </button>
         </form>
+        <form  *ngIf="!isuser" class="form-inline">
+          <button class="btn btn-sm btn-outline-secondary log"(click)="logout()" type="button">
+            log out
+          </button>
+        </form>
         <!--6-->
-        <li class="nav-item signup">
-          <a class="nav-link" href="#">
+        <li *ngIf="isuser" class="nav-item signup">
+          <a class="nav-link" routerLink ="/sign/signup"  routerLinkActive="active">
             <span>Sign up</span>
           </a>
         </li>
       </ul>
-    </div>
+    </div> 
   </div>
 </nav>
 <hr class="sticky-top" />

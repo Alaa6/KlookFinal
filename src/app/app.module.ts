@@ -22,7 +22,7 @@ import { AttractionsHongKongMacauComponent } from './Components/attractions-hong
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
 // import { SignUpComponent } from './Components/sign-up/sign-up.component';
-import { AdminComponent } from './Components/admin/admin.component';
+// import { AdminComponent } from './Components/admin/admin.component';
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,8 +35,6 @@ import { ReactiveFormsModule }   from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {HttpClientModule} from '@angular/common/http';
 // import { JwPaginationComponent } from 'jw-angular-pagination';
-
-
 import { from } from 'rxjs';
 
 import { PopupComponent } from './Components/popup/popup.component';
@@ -56,6 +54,18 @@ import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+// import { SignComponent } from './admin/sign/sign.component';
+// import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
+// import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -90,7 +100,7 @@ var firebaseConfig = {
     AttractionsHongKongComponent,
     LoginComponent,
     // SignUpComponent,
-    AdminComponent,
+    // AdminComponent,
     SecondHeaderComponent,
     // JwPaginationComponent
     PopupComponent,
@@ -101,6 +111,9 @@ var firebaseConfig = {
     KlookCreditComponent,
     ActivityDetailsComponent,
    
+    // // SignComponent,
+    // DashboardComponent,
+    // DetailsDashboardComponent
      
   ],
   imports: [
@@ -117,11 +130,20 @@ var firebaseConfig = {
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,
+     BrowserAnimationsModule,
+  
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    HttpClientModule,    
-    MatDialogModule
+    HttpClientModule,       
+    MatCardModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatSelectModule
 ],
 
   // ],

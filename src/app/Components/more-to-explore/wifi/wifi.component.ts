@@ -38,6 +38,7 @@ export class WifiComponent implements OnInit {
   }
   viewDetails(wID:string | undefined){
     this.router.navigate(['/activityDetails' , wID]);
+    //this.router.navigate(['/activityDetails'])
   }
   
 }
