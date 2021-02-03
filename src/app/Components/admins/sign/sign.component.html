@@ -1,51 +1,17 @@
 <div class="bodyy ">
 
-    <!-- <h1> Sign Up</h1>
-    
-    
-    <form class="container" [formGroup]="loginFrm" #heroForm="ngForm">
-    
-        <div class="form-group">
-          <label for="">Name</label>
-          <input type="text" formControlName="Name" class="form-control" [class.is-valid]="loginFrm.controls['Name'].valid" [class.is-invalid]="loginFrm.controls['Name'].invalid" >
-          <div *ngIf="loginFrm.controls['Name'].invalid && (loginFrm.controls['Name'].dirty || loginFrm.controls['Name'].touched)"  id="emailHelpId" class="alert alert-danger">Wrong Name</div>
-        </div>
-    
-        <div class="form-group">
-            <label for="">Email</label>
-            <input  type="text" formControlName="Email" [class.is-valid]="loginFrm.controls['Email'].valid" [class.is-invalid]="loginFrm.controls['Email'].invalid"  class="form-control">
-            <div *ngIf="loginFrm.controls['Email'].invalid && (loginFrm.controls['Email'].dirty || loginFrm.controls['Email'].touched)"  id="emailHelpId" class="alert alert-danger">wrong Email</div>
-      
-          </div>
-    
-        <div class="form-group">
-          <label for="">Password</label>
-          <input  type="text" formControlName="Password" [class.is-valid]="loginFrm.controls['Password'].valid" [class.is-invalid]="loginFrm.controls['Password'].invalid"  class="form-control">
-          <div *ngIf="loginFrm.controls['Password'].invalid && (loginFrm.controls['Password'].dirty || loginFrm.controls['Password'].touched)"  id="emailHelpId" class="alert alert-danger">wrong Password</div>
-    
-        </div>
-    
-        <button type="submit" [disabled]="loginFrm.invalid" (click)="signup()" class="btn btn-primary btn-lg btn-block">Add</button>
-    <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
-    
-    </form>
-     -->
-    
-    
-    <!-- <hr> -->
-    <!-- <div class="card"> -->
-    <mat-card class="container">
+    <mat-card class="container cardd">
       <h2> Sign up</h2>
-      <span class="h4">Signing up with a registered phone number or social account will log you into your Klook account</span ><br>
+      <span class="h4" >Signing up with a registered phone number or social account will log you into your Klook account</span ><br>
     <br>
         <div class='row'>
     
-          <div class="col-5 ml-3">
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-3 ml-sm-1 ml-xs-1">
             <i class="fab fa-facebook-square"></i><br>
           <span class="icoText">Facebook</span>
         
         </div>
-          <div class="col-5 ml-4">
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-xs-1 ml-3 ml-sm-1  ">
             <i class="fab fa-google"></i><br>
             <span class="icoText">Google</span>
           
@@ -54,12 +20,12 @@
     <br>
         <div class='row'>
     
-          <div class="col-5 ml-3">
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-xs-1 ml-3 ml-sm-1">
             <i class="fab fa-weixin"></i><br>
           <span class="icoText">WeChat</span>
         
         </div>
-          <div class="col-5 ml-4">
+          <div class="col-5 col-lg-5 col-md-5 col-sm-5 col-xs-5 ml-xs-1 ml-3 ml-sm-1">
             <i class="fab fa-apple"></i><br>
             <span class="icoText">Apple</span>
           
@@ -125,7 +91,8 @@
           </mat-tab-group>
     
         </div>
-    
+        <div class="alert alert-danger" *ngIf="errorMsg">{{errorMsg}}</div>
+
       <button *ngIf="signbool" mat-flat-button class="ml-4 container btnsign" (click)="signupp()" >SignUp</button>
       <button *ngIf="loginBool" mat-flat-button class="ml-4 container btnsign" (click)="login()" >login</button>
     

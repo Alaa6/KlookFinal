@@ -32,6 +32,9 @@ export class RelaxServiceService {
 
   }
 
+  getall(){
+    return this.afs.collection<Tours>('ToursCollection').valueChanges();
+  }
   getCategoriesByCityAndSecion(_city: string , _section : string): Observable<ICategory[]> {
 
 
@@ -58,6 +61,17 @@ export class RelaxServiceService {
     return this.afs.collection <ISubCategory> ('SubCategories' ,ref => ref.where( 'Name' , '==', _catName )).valueChanges();
 
   }
+
+  addToTours(itemm:Tours){
+
+    console.log(itemm)
+    this.afs.collection('ToursCollection').add(itemm).then(function (docRef) {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+      }
 
 }
 

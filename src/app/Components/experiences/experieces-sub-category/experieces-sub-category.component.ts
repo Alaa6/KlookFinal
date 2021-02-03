@@ -67,7 +67,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
         items: 3
       },
       940: {
-        items: 4
+        items: 3
       }
      
 

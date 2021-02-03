@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { User } from './../../viewModels/user';
+import { User } from '../../../viewModels/user';
 import { FormGroup, FormBuilder ,FormControl, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
 
@@ -34,13 +34,9 @@ users:User[]=[]
       Email= new FormControl('',[Validators.required,Validators.minLength(6),Validators.email,Validators.maxLength(100)]);
 
   getErrorMessage() {
-    if (this.Email.hasError('')||this.Password.hasError('')) {
-      return 'You must enter a value';
-    }
-
-    return this.Email.hasError('email') ? 'Not a valid email' : '';
+      return 'You must enter the right value';
+    
   }
-  // list:Iuser={}
   listadd:User={Email:'',Password:'',Type:''}
   signupp(){
  
@@ -74,11 +70,7 @@ users:User[]=[]
   constructor(private router:Router,private authSer: AuthService,private fb: FormBuilder,private activatedRoute: ActivatedRoute) {
     this.loginFrm=this.fb.group({
      
-      // Name:['',[Validators.required,Validators.minLength(5)]]
-      // ,Email:['',[Validators.required,Validators.minLength(6),Validators.email,Validators.maxLength(100)]]
-      // ,Password:['',[Validators.required,Validators.minLength(5)]]
-
-
+     
     });
    }
 
@@ -95,11 +87,17 @@ users:User[]=[]
         this.errorMsg='';
         this.authSer.checkforAdmin(this.Email.value,this.Password.value).subscribe(items => {
         this.users=items
-        if(items[0].Type=="user")
+        if(items[0].Type=="user"){
         this.router.navigate(['/']);
-        else
-        this.router.navigate(['dash']);
+        console.log("user  "+ items[0].Type)
 
+        }
+        else
+        {
+          console.log("admin")
+        this.router.navigate(['sign/admin/dash']);
+
+        }
       });
         console.log(result)
         
@@ -124,7 +122,6 @@ users:User[]=[]
     this.loginBool=true
     this.signbool=false
     }
-    // console.log(this.subCatName)
     else 
     {
       this.loginBool=false
@@ -132,28 +129,5 @@ users:User[]=[]
       }
 
   })
-  // signup(){
-  //   this.list=this.loginFrm.value
-  //   console.log(this.loginFrm.value)
-  //   console.log(this.list)
-  //   this.authSer.signup(this.list.Email,this.list.Password)
-  //   .then(result => {
-  //     console.log(result.user?.uid)
-  //     this.errorMsg='';
-  //     this.authSer.addUser(result.user?.uid,this.list.Name,this.list.Email)
-  //     .then(()=>{
-  //       this.router.navigate(['/']);
-  //     }).catch(errr=>console.log(errr))
-
-  //     console.log(result)
-    
-  //   })
-  //   .catch(err => {
-      
-  //     // console.log(err)
-  //     this.errorMsg=err.message
-    
-  //   } )
-  // }
 }
 
