@@ -294,9 +294,9 @@ article {
   line-height: 20px;
   font-size: 12px;
 }
-.search {
+// .search {
   // width: 79em;
-}
+// }
 
 /*Search*/
 
@@ -443,4 +443,14 @@ font-weight: 700;
 
 .cardMob{
   display:none;
+}
+
+.fontCard{
+  font-size:.8rem ;
+  font-weight: 700;
+
+}
+
+.owlheight{
+  height: 350px !important;
 }

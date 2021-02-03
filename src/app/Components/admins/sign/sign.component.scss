@@ -16,11 +16,12 @@
     margin-top:20px;
     margin-bottom: 20px;
     align-items: center;
-    // background-color: lightcoral;
     width: 30%;
     position: absolute;
     left: 32%;
 }
+
+
 
 h2{
     font-weight: bold;
@@ -132,5 +133,28 @@ mat-checkbox{
 
 .rowflex{
     display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    
+.mat-card{
+    width: 60%;
+    position: absolute;
+    left: 22%;
+}
+
+
+}
+
+
+@media only screen and (max-width: 479px) {
+    .mat-card{
+        width:90%;
+        position: absolute;
+        left: 5%;
+    }
+    .h4{
+display: none;
+    }
 }
 
