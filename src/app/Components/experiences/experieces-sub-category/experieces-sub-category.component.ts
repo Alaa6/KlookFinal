@@ -5,11 +5,12 @@ import { IActivity } from 'src/app/viewModels/iactivity';
 import { PopupComponent } from '../../popup/popup.component';
 import { RelaxServiceService } from 'src/app/services/relax-service.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
 import { ITour } from 'src/app/viewModels/itour';
 import { ICity } from 'src/app/viewModels/icity';
 import { ISubCategory } from 'src/app/viewModels/isub-category';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-experieces-sub-category',
@@ -37,6 +38,10 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
   testCity: string = 'Cairo'
   cityList: ICity[] = [];
   subCategory : ISubCategory [] =[]
+  awsomeDealsList : ITour [] = []
+  forKidsList : ITour [] =[] 
+  loading : boolean = true
+  count : number = 5
 
 
 
@@ -169,26 +174,37 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
 
       this.category$.subscribe((res) => {
         this.categoryList = res
-        console.log(res ,"cat" );
+        this.loading = false
         
       }, (err) => console.log(err))
 
-
+      
       this.relaxService.getAllTours(this.city, this.subCatName, "BestSeller").subscribe((res) => {
         this.bestSellerList = res
       }, (err) => console.log(err))
 
-
+      
       this.relaxService.getAllTours(this.city, this.subCatName, "Nearby").subscribe((res) => {
         this.nearbyList = res
+        this.loading = false
       }, (err) => console.log(err))
+
+      this.relaxService.getAllTours(this.city, this.subCatName, "AwsomeDeals").subscribe((res) => {
+        this.awsomeDealsList = res
+        this.loading = false
+      }, (err) => console.log(err))
+
+      this.relaxService.getAllTours(this.city, this.subCatName, "ForKids").subscribe((res) => {
+        this.forKidsList = res
+        this.loading = false
+      }, (err) => console.log(err))
+
+
 
       this.relaxService.getSubCategory(this.subCatName).subscribe((res) => {
         this.subCategory = res
-        console.log(res);
-       
-        
-        
+
+          this.loading = false  
       }, (err) => console.log(err))
 
 
@@ -198,11 +214,12 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
     )   // return 7aga mn no3 subscription
 
 
+   
+
 
   }
 
   openPopup( ) {
-   
 
     const dialogRef = this.dialog.open(PopupComponent , { disableClose: true } );
 
@@ -218,6 +235,18 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
     });
 
   }
+
+  setsubCategoryName (subCatName :string){
+    this.router.navigate(['/experiences/cat/' ,this.city, subCatName  ])  
+    
+ 
+ }
+ setCityName (cityName : string) {
+  this.router.navigate(['/experiences/cat/' ,cityName, this.subCatName  ])  
+
+
+ }
+
 
 
 

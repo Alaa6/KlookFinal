@@ -1,6 +1,12 @@
 * {
   font-size: 14px;
 }
+
+a {
+
+  cursor: pointer;
+}
+
 .navbar2 {
 
   font-weight: 500;
@@ -10,17 +16,21 @@
   top: 4em !important;
  z-index: 2;
 }
+
 .navbar2 .dropdown:hover > .dropdown-menu {
   display: block;
-
-
-
-  
  
 }
+
+.navbar2 .dropdown:hover > .dropdown-menu > .dropdown-item:hover{ 
+  color: #ff5722;
+}
+
+
 .navbar2 #navbarDropdown {
   margin-left: 1.5em;
   color: rgb(63, 60, 60);
+ 
 }
 .navbar2 #navbarDropdown:hover {
   color: #ff5722;

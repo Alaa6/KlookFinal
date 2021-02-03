@@ -1,0 +1,34 @@
+
+a {
+    background-color: #fff;
+    color: #212121;
+
+    text-decoration: none;
+    padding: 10px;
+    border:  2px solid   #ff5722;
+}
+
+
+
+
+a:link, a:visited {
+    background-color: #ff5722;;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    text-decoration: none;
+    border:  2px solid   #fff;
+
+
+  }
+  
+  a:hover, a:active {
+    background-color :#ff5722;
+    text-decoration: none;
+    color: white;
+    border:  2px solid   #fff;
+
+
+  }
