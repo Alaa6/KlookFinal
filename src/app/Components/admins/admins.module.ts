@@ -28,7 +28,7 @@ import {MatTableModule} from '@angular/material/table';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsDashboardComponent } from './details-dashboard/details-dashboard.component'
-import { AuthService } from 'src/app/services/auth.service';
+// import { AuthService } from 'src/app/services/auth.service';
 import { AuthGuardGuard } from 'src/app/services/auth-guard.guard';
 
 const routes: Routes = [

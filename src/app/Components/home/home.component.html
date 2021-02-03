@@ -235,7 +235,11 @@
       <h3>Top things to do</h3>
     </div>
     <!--Carousel-->
-    <owl-carousel-o [options]="TopThingsIn" class="row" style="width: 90em;">
+    <owl-carousel-o
+      [options]="TopThingsIn"
+      class="row owlOne"
+      style="width: 90em;"
+    >
       <ng-container *ngFor="let thing of TopThings">
         <ng-template carouselSlide>
           <a href="#">
@@ -284,6 +288,7 @@
         </ng-template>
       </ng-container>
     </owl-carousel-o>
+
     <!--Button-->
     <div class="container">
       <div class="row">
@@ -601,12 +606,13 @@
           class="fas fa-chevron-circle-right"
           id="mybtn"
           data-toggle="modal"
-          data-src="./../../../assets/Home/klook.mp4"
+          data-src=""
           data-target="#myModal"
+          (click)="play()"
         ></i>
       </div>
       <!-- Modal -->
-      <!-- <div
+      <div
         class="modal fade"
         id="myModal"
         data-backdrop="static"
@@ -623,7 +629,7 @@
                 class="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                (click)="document.getElementById('demoVideo').pause()"
+                (click)="pause()"
               >
                 <span aria-hidden="true" style="font-size: 1em;">
                   <i class="fas fa-times"></i>
@@ -635,15 +641,14 @@
                   src=""
                   id="video"
                   allowscriptaccess="always"
-                  allow="autoplay"
+                  #demoVideo
                 ></iframe>
               </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
-
     <div class="row row2">
       <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="card text-white">
@@ -661,7 +666,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <a class="col-lg-4 col-md-4 col-sm-12" routerLink="/credits">
         <div class="card text-white">
           <img
             src="./../../../assets/Home/coins.jpg"
@@ -678,7 +683,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </a>
       <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="card text-white">
           <img

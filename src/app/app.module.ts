@@ -35,8 +35,6 @@ import { ReactiveFormsModule }   from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {HttpClientModule} from '@angular/common/http';
 // import { JwPaginationComponent } from 'jw-angular-pagination';
-
-
 import { from } from 'rxjs';
 
 import { PopupComponent } from './Components/popup/popup.component';
@@ -129,11 +127,12 @@ var firebaseConfig = {
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,
+     BrowserAnimationsModule,
+  
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    HttpClientModule,    
-   
+    HttpClientModule,       
     MatCardModule,
     MatTabsModule,
     MatFormFieldModule,

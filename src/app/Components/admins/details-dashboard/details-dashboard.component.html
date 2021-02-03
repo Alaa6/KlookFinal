@@ -1,21 +1,25 @@
 <div class="tab-content" id="v-pills-tabContent">
-    <!--1-->
-    <div class="tab-pane fade show active" id="v-pills-dashboard dash" role="tabpanel"
-      aria-labelledby="v-pills-dashboard-tab">
-      dashboard tab
-      <!-- <div id="dash" class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9"> -->
-      <div
-        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm">Share</button>
-          </div>
-          <button type="button" class="btn btn-sm dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
+  <!--1-->
+  <div
+    class="tab-pane fade show active"
+    id="v-pills-dashboard dash"
+    role="tabpanel"
+    aria-labelledby="v-pills-dashboard-tab"
+  >
+    dashboard tab
+    <!-- <div id="dash" class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9"> -->
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+    >
+      <h1 class="h2">Dashboard</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm">Share</button>
         </div>
+        <button type="button" class="btn btn-sm dropdown-toggle">
+          <span data-feather="calendar"></span>
+          This week
+        </button>
       </div>
 
     </div>
@@ -56,65 +60,146 @@
     <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
       Reports tab
     </div>
-    <!--4-->
-    <div class="tab-pane fade" id="v-pills-update" role="tabpanel" aria-labelledby="v-pills-update-tab">
-      <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
-        <!--Cities-->
-        <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="city-tab" data-toggle="tab" href="#city" role="tab" aria-controls="city"
-            aria-selected="true">
-            Cities
-          </a>
-        </li>
-        <!--Categories-->
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="category-tab" data-toggle="tab" href="#category" role="tab"
-            aria-controls="category" aria-selected="false">
-            Categories
-          </a>
-        </li>
-        <!--Tours-->
-        <li class="nav-item" role="presentation" >
-          <a class="nav-link" id="tours-tab" data-toggle="tab" href="#tours" role="tab" aria-controls="tours"
-            aria-selected="false">
-            Tours
-          </a>
-        </li>
-        <!--Activities-->
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab"
-            aria-controls="activity" aria-selected="false">
-            Activities
-          </a>
-        </li>
-        <!--Hotels-->
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="hotel-tab" data-toggle="tab" href="#hotel" role="tab" aria-controls="hotel"
-            aria-selected="false">
-            Hotels
-          </a>
-        </li>
-        <!--SIM Card-->
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="SIMCard-tab" data-toggle="tab" href="#SIMCard" role="tab"
-            aria-controls="SIMCard" aria-selected="false">
-            SIM Card
-          </a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <!--Cities tab-->
-        <div class="tab-pane fade show active" id="city" role="tabpanel" aria-labelledby="city-tab">
-          Cities tab
-        </div>
-        <!--Categories tab-->
-        <div class="tab-pane fade" id="category" role="tabpanel" aria-labelledby="category-tab">
-          Categories tab
-        </div>
-        <!--Tours tab-->
-        <div class="tab-pane fade" id="tours" role="tabpanel" aria-labelledby="tours-tab">
-          <!-- Tours tab -->
-          <form [formGroup]="loginFrm" >
+  </div>
+  <!--2-->
+  <div
+    class="tab-pane fade"
+    id="v-pills-customers"
+    role="tabpanel"
+    aria-labelledby="v-pills-customers-tab"
+  >
+    Customers tab
+  </div>
+  <!--3-->
+  <div
+    class="tab-pane fade"
+    id="v-pills-reports"
+    role="tabpanel"
+    aria-labelledby="v-pills-reports-tab"
+  >
+    Reports tab
+  </div>
+  <!--4-->
+  <div
+    class="tab-pane fade"
+    id="v-pills-update"
+    role="tabpanel"
+    aria-labelledby="v-pills-update-tab"
+  >
+    <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+      <!--Cities-->
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link active"
+          id="city-tab"
+          data-toggle="tab"
+          href="#city"
+          role="tab"
+          aria-controls="city"
+          aria-selected="true"
+        >
+          Cities
+        </a>
+      </li>
+      <!--Categories-->
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="category-tab"
+          data-toggle="tab"
+          href="#category"
+          role="tab"
+          aria-controls="category"
+          aria-selected="false"
+        >
+          Categories
+        </a>
+      </li>
+      <!--Tours-->
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="tours-tab"
+          data-toggle="tab"
+          href="#tours"
+          role="tab"
+          aria-controls="tours"
+          aria-selected="false"
+        >
+          Tours
+        </a>
+      </li>
+      <!--Activities-->
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="activity-tab"
+          data-toggle="tab"
+          href="#activity"
+          role="tab"
+          aria-controls="activity"
+          aria-selected="false"
+        >
+          Activities
+        </a>
+      </li>
+      <!--Hotels-->
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="hotel-tab"
+          data-toggle="tab"
+          href="#hotel"
+          role="tab"
+          aria-controls="hotel"
+          aria-selected="false"
+        >
+          Hotels
+        </a>
+      </li>
+      <!--SIM Card-->
+      <li class="nav-item" role="presentation">
+        <a
+          class="nav-link"
+          id="SIMCard-tab"
+          data-toggle="tab"
+          href="#SIMCard"
+          role="tab"
+          aria-controls="SIMCard"
+          aria-selected="false"
+        >
+          SIM Card
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <!--Cities tab-->
+      <div
+        class="tab-pane fade show active"
+        id="city"
+        role="tabpanel"
+        aria-labelledby="city-tab"
+      >
+        Cities tab
+      </div>
+      <!--Categories tab-->
+      <div
+        class="tab-pane fade"
+        id="category"
+        role="tabpanel"
+        aria-labelledby="category-tab"
+      >
+        Categories tab
+      </div>
+      <!--Tours tab-->
+      <div
+        class="tab-pane fade"
+        id="tours"
+        role="tabpanel"
+        aria-labelledby="tours-tab"
+      >
+        <!-- Tours tab -->
+        <!-- <form [formGroup]="loginFrm" >
                         <div class="form-group row">
             <label for="TourID" class="col-sm-2 col-form-label">ID</label>
             <div class="col-10">
@@ -260,146 +345,216 @@
             </select>
           </div>
           </div>
-        </form>
-          <input type="submit" value="Add" id="TourAdd" (click)="add()" class="btn"
-            style="background-color:  #ff5722;color: white;" />
-          <hr>
-          <table id="Tourdata" class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Date</th>
-                <th scope="col">Distance</th>
-                <th scope="col">Image</th>
-                <th scope="col">Rate</th>
-                <th scope="col">Reviews</th>
-                <th scope="col">Booked</th>
-                <th scope="col">Price</th>
-                <th scope="col">OldPrice</th>
-                <th scope="col">TourSectionInner</th>
-                <th scope="col">TourDiscount</th>
-                  
+        </form> -->
+        <!-- <input type="submit" value="Add" id="TourAdd" (click)="add()" class="btn" 
+            style="background-color:  #ff5722;color: white;" />-->
+        <hr />
+        <table id="Tourdata" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Date</th>
+              <th scope="col">Distance</th>
+              <th scope="col">Image</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Reviews</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Price</th>
+              <th scope="col">OldPrice</th>
+              <th scope="col">TourSectionInner</th>
+              <th scope="col">TourDiscount</th>
 
-                <th scope="col">City</th>
-                <th scope="col">Categories</th>
-                <th scope="col">Section</th>
+              <th scope="col">City</th>
+              <th scope="col">Categories</th>
+              <th scope="col">Section</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
 
+      <!--Activities tab-->
+      <div
+        class="tab-pane fade"
+        id="activity"
+        role="tabpanel"
+        aria-labelledby="activity-tab"
+      >
+        Activities tab
+      </div>
+      <!--Hotels tab-->
+      <div
+        class="tab-pane fade"
+        id="hotel"
+        role="tabpanel"
+        aria-labelledby="hotel-tab"
+      >
+        Hotels tab
+      </div>
 
-
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-          
+      <!--SIM Card tab-->
+      <div
+        class="tab-pane fade"
+        id="SIMCard"
+        role="tabpanel"
+        aria-labelledby="SIMCard-tab"
+      >
+        SIM Card tab
+        <div class="form-group row">
+          <label for="ID" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-10">
+            <input readonly type="text" class="form-control" id="id" />
+          </div>
         </div>
-        
-        <!--Activities tab-->
-        <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
-          Activities tab
+        <div class="form-group row">
+          <label for="Title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Title"
+            />
+          </div>
         </div>
-        <!--Hotels tab-->
-        <div class="tab-pane fade" id="hotel" role="tabpanel" aria-labelledby="hotel-tab">
-          Hotels tab
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Location</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="location"
+              placeholder="Location"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="date"
+              placeholder="Date"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Validity</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="validity"
+              placeholder="Validity"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Internet</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="internet"
+              placeholder="Internet"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Service</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="service"
+              placeholder="Service"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Coverage</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="coverage"
+              placeholder="Coverage"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Rate</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="rate"
+              placeholder="Rate"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Reviews</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="reviews"
+              placeholder="Reviews"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Booked</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="booked"
+              placeholder="Booked"
+            />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Content" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-10">
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              placeholder="Price"
+            />
+          </div>
         </div>
 
-        <!--SIM Card tab-->
-        <div class="tab-pane fade" id="SIMCard" role="tabpanel" aria-labelledby="SIMCard-tab">
-          SIM Card tab
-          <div class="form-group row">
-            <label for="ID" class="col-sm-2 col-form-label">ID</label>
-            <div class="col-10">
-              <input readonly type="text" class="form-control" id="id">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Title" class="col-sm-2 col-form-label">Title</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="title" placeholder="Title">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Location</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="location" placeholder="Location">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Date</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="date" placeholder="Date">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Validity</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="validity" placeholder="Validity">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Internet</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="internet" placeholder="Internet">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Service</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="service" placeholder="Service">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Coverage</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="coverage" placeholder="Coverage">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Rate</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="rate" placeholder="Rate">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Reviews</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="reviews" placeholder="Reviews">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Booked</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="booked" placeholder="Booked">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="Content" class="col-sm-2 col-form-label">Price</label>
-            <div class="col-10">
-              <input type="text" class="form-control" id="price" placeholder="Price">
-            </div>
-          </div>
-
-          <input type="button" value="Add" id="Add" onclick="Add()" class="btn"
-            style="background-color:  #ff5722;color: white;" />
-          <hr>
-          <table id="data" class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Location</th>
-                <th scope="col">Date</th>
-                <th scope="col">Validity</th>
-                <th scope="col">Internet</th>
-                <th scope="col">Service</th>
-                <th scope="col">Coverage</th>
-                <th scope="col">Rate</th>
-                <th scope="col">Reviews</th>
-                <th scope="col">Booked</th>
-                <th scope="col">Price</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+        <input
+          type="button"
+          value="Add"
+          id="Add"
+          onclick="Add()"
+          class="btn"
+          style="background-color: #ff5722; color: white;"
+        />
+        <hr />
+        <table id="data" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Title</th>
+              <th scope="col">Location</th>
+              <th scope="col">Date</th>
+              <th scope="col">Validity</th>
+              <th scope="col">Internet</th>
+              <th scope="col">Service</th>
+              <th scope="col">Coverage</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Reviews</th>
+              <th scope="col">Booked</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
     </div>
     <!--5-->

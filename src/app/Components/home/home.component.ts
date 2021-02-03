@@ -4,8 +4,8 @@ import { ICity } from 'src/app/viewModels/i-city';
 import { Tours } from 'src/app/viewModels/tours';
 // import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
- import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
  
   @ViewChild('hid') hid: any;
   @ViewChild('hid2') hid2: any;
+  @ViewChild('demoVideo') demoVideo: any;
 
   constructor(private homeService: HomeService) { }
 
@@ -112,6 +113,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
     let view = this.hid2.nativeElement;
     view.style.display ='none'
   }
+
+  play(){
+    console.log('play video')
+    let video = this.demoVideo.nativeElement;
+    video.src ='./../../../assets/Home/klook.mp4'
+  }
+
+  pause(){
+    console.log('Pause video')
+    let video = this.demoVideo.nativeElement;
+    video.src =''
+
+
+  }
+  
   
 
+ 
 }

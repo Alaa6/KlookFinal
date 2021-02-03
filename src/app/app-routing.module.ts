@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
+// import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
+import { HelpComponent } from './Components/help/help.component';
+// import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { HomeComponent } from './Components/home/home.component';
+import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
+  // { path  : 'sign/:subsign'  , component : SignComponent},
+  // {path :'dash' , component : DashboardComponent} ,
+  {path :'help' , component : HelpComponent} ,
+  {path: 'credits', component: KlookCreditComponent},
+
+  {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
+
+  {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
+  // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
+
+  {  path: 'experiences', 
+    loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
+  },
   // { path  : 'sign/:subsign'  , component : SignComponent},
   // {path :'dash' , component : DashboardComponent} ,
 
@@ -33,6 +49,7 @@ const routes: Routes = [
     loadChildren: () => import('./Components/transport/transport.module').then(m => m.TransportModule)
   },
   {path :'**' , component : NotFoundComponent} ,
+
 ];
 
 @NgModule({
