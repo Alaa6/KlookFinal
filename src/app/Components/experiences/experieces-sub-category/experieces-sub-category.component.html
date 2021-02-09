@@ -5,82 +5,45 @@
     class="d-flex flex-column p-5 justify-content-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
     *ngFor="let subCat of subCategory"
   > -->
-  <section
-    id="tour-header"
-    *ngFor="let subCat of subCategory"
-    class="d-flex flex-column justify-content-center align-items-center row"
-  >
+  <section id="tour-header" *ngFor="let subCat of subCategory"
+    class="d-flex flex-column justify-content-center align-items-center row">
     <div class="cover row">
-      <img class="bg" src="{{ subCat.Background }}" width="6em" alt="" />
+      <img class="bg" src="{{ subCat.Background }}" class="img-fluid" alt="" />
 
       <div class="tl ml-5 col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12">
         <div class="dropdown">
-          <button
-            class="btn dropdown-toggle attrc"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <button class="btn dropdown-toggle attrc" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
             {{ subCatName }}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="setsubCategoryName('Experiences')"
-            >
+            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Experiences')">
               Experiences
               <i class="fas fa-check ml-5"></i>
             </a>
-            <a
-              class="dropdown-item actv"
-              routerLinkActive="active"
-              (click)="setsubCategoryName('Attractions')"
-            >
+            <a class="dropdown-item actv" routerLinkActive="active" (click)="setsubCategoryName('Attractions')">
               Attractions
               <i class="fas fa-check ml-5"></i>
             </a>
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="setsubCategoryName('Tours')"
-            >
+            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Tours')">
               Tours
               <i class="fas fa-check ml-5"></i>
             </a>
 
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="setsubCategoryName('Outdoors & sports')"
-            >
+            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
               Outdoors & sports
               <i class="fas fa-check ml-5"></i>
             </a>
 
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="setsubCategoryName('Relaxation & beauty')"
-            >
+            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Relaxation & beauty')">
               Relaxation & beauty
               <i class="fas fa-check ml-5"></i>
             </a>
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="setsubCategoryName('Cultural experiences')"
-            >
+            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Cultural experiences')">
               Culture & workshops
               <i class="fas fa-check ml-5"></i>
             </a>
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="setsubCategoryName(' Fun & nightlife')"
-            >
+            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
               Fun & nightlife
               <i class="fas fa-check ml-5"></i>
             </a>
@@ -94,14 +57,9 @@
 
         <!-- location -->
 
-        <div
-          class="destination d-flex p-2 m-1 mt-3 col-1 justify-content-center align-items-center"
-          (click)="openPopup()"
-        >
-          <i
-            class="fas fa-map-marker-alt pr-1"
-            style="font-size: 1.2em; color: gray;"
-          ></i>
+        <div class="destination d-flex p-2 m-1 mt-3 col-1 justify-content-center align-items-center"
+          (click)="openPopup()">
+          <i class="fas fa-map-marker-alt pr-1" style="font-size: 1.2em; color: gray;"></i>
           <span>{{ city }}</span>
         </div>
 
@@ -110,25 +68,16 @@
         <!-- search -->
 
         <div class="row ml-2 mt-3">
-          <div
-            id="search"
-            class="mt-3 rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7"
-          >
+          <div id="search" class="mt-3 rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
             <div class="input-group mr-3 rounded pl-3">
               <svg class="mt-2" viewBox="0 0 24 24" width="24" height="24">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.5 2a8.5 8.5 0 016.4 14.095l3.842 3.843a.6.6 0 01-.766.918l-.083-.07-3.845-3.846A8.5 8.5 0 1110.5 2zm0 1.2a7.3 7.3 0 100 14.6 7.3 7.3 0 000-14.6z"
-                ></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M10.5 2a8.5 8.5 0 016.4 14.095l3.842 3.843a.6.6 0 01-.766.918l-.083-.07-3.845-3.846A8.5 8.5 0 1110.5 2zm0 1.2a7.3 7.3 0 100 14.6 7.3 7.3 0 000-14.6z">
+                </path>
               </svg>
 
-              <input
-                class="form-control rounded pt-2 mr-3"
-                type="search"
-                placeholder="what do you want to do in cairo ?"
-                id="tour-search"
-              />
+              <input class="form-control rounded pt-2 mr-3" type="search"
+                placeholder="what do you want to do in cairo ?" id="tour-search" />
             </div>
 
             <button class="rounded ml-2">Search</button>
@@ -143,43 +92,35 @@
 
   <!-- end section -->
 
-  <ngx-skeleton-loader
-    *ngIf="loading && subCategory.length == 0"
-    [theme]="{ height: '300px', margin: '10px' }"
-    animation="pulse"
-  ></ngx-skeleton-loader>
+  <ngx-skeleton-loader *ngIf="loading && subCategory.length == 0" [theme]="{ height: '300px', margin: '10px' }"
+    animation="pulse"></ngx-skeleton-loader>
 
   <!-- start Categories   section  -->
-  <section class="row">
-    <div class="m-5 col-12 col-sm-12 col-md-9 col-lg-5 col-xl-5">
-      <!-- <a id="card-link" href="./walking&biking.html" class="mt-2  col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3" *ngFor="let cat of categoryList"> -->
-      <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide *ngFor="let cat of categoryList" class="row">
-          <mat-card
-            id="cat-card"
-            class="m-1 mt-2 col-12 col-sm-12 col-md-9 col-lg-4 col-xl-9"
-            routerLink="['/activity/' + city]"
-            routerLinkActive="active"
-            style="height: 150px; width: 150;"
-          >
-            <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
+  <div class="options container">
+    <section class="row">
+      <div class="m-5 col-12">
+        <!-- <a id="card-link" href="./walking&biking.html" class="mt-2  col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3" *ngFor="let cat of categoryList"> -->
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let cat of categoryList" class="row">
+            <mat-card class="m-1 mt-2 col-10" routerLink="['/activity/' + city]" routerLinkActive="active"
+              style="height: 12em">
+              <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
 
-            <div
-              class="card-body text-center d-flex flex-column align-items-center"
-            >
-              <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
-              <img id="card-icon" class="mb-2" src="{{ cat?.image }}" />
-              <p class="card-text">{{ cat?.name }}</p>
-            </div>
-            <!-- </mat-card > -->
-          </mat-card>
-          <!-- </a> -->
-        </ng-template>
-      </owl-carousel-o>
-    </div>
+              <div class="card-body text-center d-flex flex-column align-items-center">
+                <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
+                <img id="card-icon" class="mb-2" src="{{ cat?.image }}" />
+                <p class="card-text">{{ cat?.name }}</p>
+              </div>
+              <!-- </mat-card > -->
+            </mat-card>
+            <!-- </a> -->
+          </ng-template>
+        </owl-carousel-o>
+      </div>
 
-    <!-- <input type="text" [(ngModel)]="city" #testCity  name="city" > -->
-  </section>
+      <!-- <input type="text" [(ngModel)]="city" #testCity  name="city" > -->
+    </section>
+  </div>
 
   <!-- end body section -->
 
@@ -192,64 +133,38 @@
       <div class="mt-2 col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
         <img
           src="https://res.klook.com/image/upload/v1604053241/ued/ttd/recommended%20section/icon_ttd_recommend_bestseller_fill_sxl_colorful.png"
-          style="width: 46px;"
-        />
+          style="width: 46px;" />
         <p id="best-title" class="font-weight-bold pt-3">Bestsellers</p>
       </div>
 
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
-          <ng-template
-            carouselSlide
-            *ngFor="let tour of bestSellerList"
-            class="row"
-          >
-            <mat-card
-              id="cat-card"
-              class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
-              style="height: 350px;"
-            >
-              <img
-                class="card-img-top"
-                src="{{ tour.Image }}"
-                alt="Card image"
-              />
+          <ng-template carouselSlide *ngFor="let tour of bestSellerList" class="row">
+            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+              style="height: 350px;">
+              <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
-              <div
-                class="card-img-overlay d-flex flex-column justify-content-between"
-              >
-                <div
-                  id="location"
-                  class="d-flex p-2 m-1 col-1"
-                  style="color: #fff;"
-                >
+              <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <div id="location" class="d-flex p-2 m-1 col-1" style="color: #fff;">
                   <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
                   <p>{{ tour.City }}</p>
                 </div>
               </div>
               <div class="card-body">
-                <h4
-                  class="card-title font-weight-bold"
-                  style="font-size: medium;"
-                >
+                <h4 class="card-title font-weight-bold" style="font-size: medium;">
                   {{ tour.Title }}
                 </h4>
                 <p class="card-text" style="color: #a0a0a0;">
                   {{ tour.Booked }}+ Booked
                 </p>
                 <div class="d-flex">
-                  <h4
-                    class="card-text font-weight-bold"
-                    style="font-size: medium;"
-                  >
+                  <h4 class="card-text font-weight-bold" style="font-size: medium;">
                     EGP {{ tour.Price }}
                   </h4>
                   <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
-                    <path
-                      fill="#FF5722"
-                      fill-rule="evenodd"
-                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z"
-                    ></path>
+                    <path fill="#FF5722" fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z">
+                    </path>
                   </svg>
                 </div>
                 <p class="card-text" style="color: #a0a0a0;">
@@ -268,10 +183,7 @@
   <!-- //////////////////////////// awsome /////////////// -->
 
   <section id="awsomeDeals" class="m-5" *ngIf="awsomeDealsList.length > 0">
-    <div
-      class="row rounded-lg m-2"
-      style="background-color: rgba(255, 244, 237, 0.7);"
-    >
+    <div class="row rounded-lg m-2" style="background-color: rgba(255, 244, 237, 0.7);">
       <div class="col-2 col-lg-2 col-xl-2 col-md-0 icoTextCars">
         <div class="mt-4 ml-4">
           <img src="../../../assets/realax/aws.png" />
@@ -283,11 +195,7 @@
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let slide of awsomeDealsList">
             <div class="card mb-2 ml-3 owlheight">
-              <img
-                class="card-img-top carsimg"
-                src="{{ slide.Image }}"
-                alt="Card image cap"
-              />
+              <img class="card-img-top carsimg" src="{{ slide.Image }}" alt="Card image cap" />
               <span class="container-fluid card-img-overlay cardover">
                 <i class="fas fa-map-marker-alt mr-2"></i>
                 {{ slide.City }}
@@ -319,10 +227,7 @@
 
   <!-- //////////////////////////// for Kids /////////////// -->
   <section id="forKids" class="m-5" *ngIf="forKidsList.length > 0">
-    <div
-      class="row rounded-lg m-2"
-      style="background-color: rgba(255, 244, 237, 0.7);"
-    >
+    <div class="row rounded-lg m-2" style="background-color: rgba(255, 244, 237, 0.7);">
       <div class="col-2 col-lg-2 col-xl-2 col-md-0 icoTextCars">
         <div class="mt-4 ml-4">
           <img src="../../../assets/realax/for.png" />
@@ -334,11 +239,7 @@
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let slide of forKidsList">
             <div class="card mb-2 ml-3 owlheight">
-              <img
-                class="card-img-top carsimg"
-                src="{{ slide.Image }}"
-                alt="Card image cap"
-              />
+              <img class="card-img-top carsimg" src="{{ slide.Image }}" alt="Card image cap" />
               <span class="container-fluid card-img-overlay cardover">
                 <i class="fas fa-map-marker-alt mr-2"></i>
                 {{ slide.City }}
@@ -381,16 +282,9 @@
           <ng-template carouselSlide *ngFor="let tour of nearbyList">
             <div class="mt-2 card mb-2 ml-3" (click)="setCityName(tour.Title)">
               <div id="cat-card" class="card rounded-lg m-1">
-                <img
-                  id="img-baground"
-                  class="card-img-top"
-                  src="{{ tour.Image }}"
-                  alt="Card image"
-                />
+                <img id="img-baground" class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
-                <div
-                  class="card-img-overlay d-flex flex-column justify-content-between"
-                >
+                <div class="card-img-overlay d-flex flex-column justify-content-between">
                   <div>
                     <p>Distance of</p>
 
@@ -399,10 +293,7 @@
                     </span>
                   </div>
 
-                  <p
-                    class="card-text font-weight-bold"
-                    style="font-size: 20px;"
-                  >
+                  <p class="card-text font-weight-bold" style="font-size: 20px;">
                     {{ tour.Title }}
                   </p>
                 </div>
@@ -417,23 +308,16 @@
   <!-- start nearby section  -->
   <!-- <mat-spinner *ngIf="loading"></mat-spinner> -->
 
-  <ngx-skeleton-loader
-    *ngIf="loading"
-    [theme]="{ height: '30px', margin: '10px' }"
-    animation="pulse"
-    [count]="count"
-  ></ngx-skeleton-loader>
+  <ngx-skeleton-loader *ngIf="loading" [theme]="{ height: '30px', margin: '10px' }" animation="pulse" [count]="count">
+  </ngx-skeleton-loader>
 
-  <div
-    class="ml-4 mt-1 p-2 d-flex flex-column align-items-center"
-    *ngIf="
+  <div class="ml-4 mt-1 p-2 d-flex flex-column align-items-center" *ngIf="
       bestSellerList.length == 0 &&
       nearbyList.length == 0 &&
       forKidsList.length == 0 &&
       awsomeDealsList.length == 0 &&
       !loading
-    "
-  >
+    ">
     <img src="../../../assets/NotFound/search_noResult.webp" />
 
     <p class="font-weight-bold not-available">
@@ -509,10 +393,7 @@
       </a>
     </div>
 
-    <div
-      class="font-weight-bold ml-4 mt-4"
-      style="font-size: 14px; color: #4985e6;"
-    >
+    <div class="font-weight-bold ml-4 mt-4" style="font-size: 14px; color: #4985e6;">
       View More
     </div>
   </section>

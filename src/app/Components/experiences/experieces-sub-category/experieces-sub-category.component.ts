@@ -48,7 +48,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
 
 
   customOptions: OwlOptions = {
-    loop: false,
+    loop: true,
     rewind: true,
     mouseDrag: true,
     touchDrag: true,
@@ -67,7 +67,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
         items: 3
       },
       940: {
-        items: 3
+        items: 4
       }
      
 

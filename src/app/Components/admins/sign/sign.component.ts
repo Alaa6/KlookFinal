@@ -29,6 +29,7 @@ signbool:boolean = false;
 userType:string='user'
 users:User[]=[]
 
+Signn:string='Sign Up'
 
     Password=new FormControl('',[Validators.required,Validators.minLength(5)]);
       Email= new FormControl('',[Validators.required,Validators.minLength(6),Validators.email,Validators.maxLength(100)]);
@@ -121,14 +122,16 @@ users:User[]=[]
     this.subsign = String(params.get('subsign'))
 
     if(this.subsign=='login'){
-    this.loginBool=true
-    this.signbool=false
-    }
-    else 
-    {
-      this.loginBool=false
-      this.signbool=true
+      this.loginBool=true
+      this.signbool=false
+      this.Signn ='Log In'
       }
+      else 
+      {
+        this.loginBool=false
+        this.signbool=true
+        this.Signn ='Sign Up'
+        }
 
   })
 }

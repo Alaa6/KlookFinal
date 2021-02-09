@@ -24,7 +24,11 @@
     "@angular/platform-browser-dynamic": "~11.0.6",
     "@angular/router": "~11.0.6",
     "@ng-bootstrap/ng-bootstrap": "^9.0.1",
+<<<<<<< HEAD
     "@ngu/carousel": "^3.0.2",
+=======
+    "angular-carousel": "^1.1.0",
+>>>>>>> aa631da38224b5bbfb889c5b68e2796d58126758
     "bootstrap": "^4.5.0",
     "firebase": "^8.2.4",
     "hammerjs": "^2.0.8",
@@ -34,7 +38,7 @@
     "ngx-skeleton-loader": "^2.6.2",
     "primeicons": "^4.1.0",
     "primeng": "^11.2.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.3",
     "tslib": "^2.1.0",
     "zone.js": "~0.10.2"
   },
