@@ -22,35 +22,35 @@
   <!--2-->
   <div class="tab-pane fade" id="v-pills-customers" role="tabpanel" aria-labelledby="v-pills-customers-tab">
     <div class="container mt-4">
-      
+
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      
-      
-      
-          <ng-container matColumnDef="Email">
-              <th mat-header-cell *matHeaderCellDef> Emaill </th>
-              <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
-            </ng-container>
-      
-            <ng-container matColumnDef="JoinDate">
-              <th  mat-header-cell *matHeaderCellDef> Date </th>
-              <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
-            </ng-container>
 
-            <ng-container matColumnDef="Delete">
-              <th  mat-header-cell *matHeaderCellDef> Delete </th>
-              <td mat-cell *matCellDef="let element"> 
-        <button mat-flat-button class=" btndelet" (click)="delete(element.id)" >Delete</button>
-      </td>
-            </ng-container>
 
-           
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      
-      </div>
+
+        <ng-container matColumnDef="Email">
+          <th mat-header-cell *matHeaderCellDef> Emaill </th>
+          <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="JoinDate">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef> Delete </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-flat-button class=" btndelet" (click)="delete(element.id)">Delete</button>
+          </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
   </div>
   <!--3-->
   <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
@@ -68,13 +68,13 @@
       </li>
       <!--Categories-->
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="category-tab" data-toggle="tab" href="#category" role="tab"
-          aria-controls="category" aria-selected="false">
+        <a class="nav-link" id="category-tab" data-toggle="tab" href="#category" role="tab" aria-controls="category"
+          aria-selected="false">
           Categories
         </a>
       </li>
       <!--Tours-->
-      <li class="nav-item" role="presentation" >
+      <li class="nav-item" role="presentation">
         <a class="nav-link" id="tours-tab" data-toggle="tab" href="#tours" role="tab" aria-controls="tours"
           aria-selected="false">
           Tours
@@ -82,8 +82,8 @@
       </li>
       <!--Activities-->
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab"
-          aria-controls="activity" aria-selected="false">
+        <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab" aria-controls="activity"
+          aria-selected="false">
           Activities
         </a>
       </li>
@@ -96,8 +96,8 @@
       </li>
       <!--SIM Card-->
       <li class="nav-item" role="presentation">
-        <a class="nav-link" id="SIMCard-tab" data-toggle="tab" href="#SIMCard" role="tab"
-          aria-controls="SIMCard" aria-selected="false">
+        <a class="nav-link" id="SIMCard-tab" data-toggle="tab" href="#SIMCard" role="tab" aria-controls="SIMCard"
+          aria-selected="false">
           SIM Card
         </a>
       </li>
@@ -114,153 +114,150 @@
       <!--Tours tab-->
       <div class="tab-pane fade" id="tours" role="tabpanel" aria-labelledby="tours-tab">
         <!-- Tours tab -->
-        <form [formGroup]="loginFrm" >
-                      <div class="form-group row">
-          <label for="TourID" class="col-sm-2 col-form-label">ID</label>
-          <div class="col-10">
-              <input  type="text" formControlName="id" class="form-control"  > 
+        <form [formGroup]="loginFrm">
+          <div class="form-group row">
+            <label for="TourID" class="col-sm-2 col-form-label">ID</label>
+            <div class="col-10">
+              <input type="text" formControlName="id" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourTitle" class="col-sm-2 col-form-label">Title</label>
-          <div class="col-10">
-              <input type="text" formControlName="Title" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourTitle" class="col-sm-2 col-form-label">Title</label>
+            <div class="col-10">
+              <input type="text" formControlName="Title" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourDate" class="col-sm-2 col-form-label">Date</label>
-          <div class="col-10">
-              <input type="text" formControlName="Date" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourDate" class="col-sm-2 col-form-label">Date</label>
+            <div class="col-10">
+              <input type="text" formControlName="Date" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourDistance" class="col-sm-2 col-form-label">Distance</label>
-          <div class="col-10">
-            <input type="text" class="form-control" id="TourDistance" placeholder="Distance">
+          <div class="form-group row">
+            <label for="TourDistance" class="col-sm-2 col-form-label">Distance</label>
+            <div class="col-10">
+              <input type="text" class="form-control" id="TourDistance" placeholder="Distance">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourImage" class="col-sm-2 col-form-label">Image</label>
-          <div class="col-10">
-              <input type="text" formControlName="Image" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourImage" class="col-sm-2 col-form-label">Image</label>
+            <div class="col-10">
+              <input type="text" formControlName="Image" class="form-control">
+            </div>
           </div>
-        </div>
-        
-        <div class="form-group row">
-          <label for="TourRate" class="col-sm-2 col-form-label">Rate</label>
-          <div class="col-10">
-              <input type="text" formControlName="Rate" class="form-control"  >
+
+          <div class="form-group row">
+            <label for="TourRate" class="col-sm-2 col-form-label">Rate</label>
+            <div class="col-10">
+              <input type="text" formControlName="Rate" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourReviews" class="col-sm-2 col-form-label">Reviews</label>
-          <div class="col-10">
-              <input type="text" formControlName="Review" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourReviews" class="col-sm-2 col-form-label">Reviews</label>
+            <div class="col-10">
+              <input type="text" formControlName="Review" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourBooked" class="col-sm-2 col-form-label">Booked</label>
-          <div class="col-10">
-              <input type="text" formControlName="Booked" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourBooked" class="col-sm-2 col-form-label">Booked</label>
+            <div class="col-10">
+              <input type="text" formControlName="Booked" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourPrice" class="col-sm-2 col-form-label">Price</label>
-          <div class="col-10">
-              <input type="text" formControlName="Price" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourPrice" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-10">
+              <input type="text" formControlName="Price" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourOldPrice" class="col-sm-2 col-form-label">Old Price</label>
-          <div class="col-10">
-              <input type="text" formControlName="OldPrice" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourOldPrice" class="col-sm-2 col-form-label">Old Price</label>
+            <div class="col-10">
+              <input type="text" formControlName="OldPrice" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourDiscount" class="col-sm-2 col-form-label">Discount</label>
-          <div class="col-10">
-              <input type="text" formControlName="TourDiscount" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourDiscount" class="col-sm-2 col-form-label">Discount</label>
+            <div class="col-10">
+              <input type="text" formControlName="TourDiscount" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="TourSectionInner" class="col-sm-2 col-form-label">Section Inner</label>
-          <div class="col-10">
-              <input type="text" formControlName="TourSectionInner" class="form-control"  >
+          <div class="form-group row">
+            <label for="TourSectionInner" class="col-sm-2 col-form-label">Section Inner</label>
+            <div class="col-10">
+              <input type="text" formControlName="TourSectionInner" class="form-control">
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label class="col-sm-2 col-form-label" for="TourCity">City</label>
-          <div class="col-10">City
-          <select class="form-control" formControlName="City" id="City">
-            <option></option>
-            <option>HongKong</option>
-            <option>Macau</option>
-            <option>Cairo</option>
-            <option>Alex</option>
-            <option>Shar El Sheikh</option>
-            <option>Hurghada</option>
-            <option>Taipei</option>
-            <option>Singapore</option>
-            <option>Bangkok</option>
-            <option>Pattaya</option>
-            <option>New York</option>
-            <option>Hokkaido</option>
-            <option>Cape Town</option>
-            <option>Rotorua</option>
-            <option>Siem Reap</option>
-            <option>Beijing</option>
-            <option>Barcelona</option>
-            <option>Hurghada</option>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="TourCity">City</label>
+            <div class="col-10">City
+              <select class="form-control" formControlName="City" id="City">
+                <option></option>
+                <option>Hong Kong</option>
+                <option>Macau</option>
+                <option>Cairo</option>
+                <option>Alex</option>
+                <option>Shar El Sheikh</option>
+                <option>Hurghada</option>
+                <option>Taipei</option>
+                <option>Singapore</option>
+                <option>Bangkok</option>
+                <option>Pattaya</option>
+                <option>New York</option>
+                <option>Hokkaido</option>
+                <option>Cape Town</option>
+                <option>Rotorua</option>
+                <option>Siem Reap</option>
+                <option>Beijing</option>
+                <option>Barcelona</option>
+                <option>Hurghada</option>
 
 
 
-          </select>
-        </div>
-        </div>
+              </select>
+            </div>
+          </div>
 
-        <div class="form-group row">
-          <label class="col-sm-2 col-form-label" for="TourCategories">Categories</label>
-          <div class="col-10">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="TourCategories">Categories</label>
+            <div class="col-10">
               <select class="form-control" formControlName="Categories" id="Categories">
-                  <option>Home</option>
-            <option>Relax</option>
-            <option>Culture</option>
-            <option>FunNight</option>
-            <option>Tours</option>
-            <option>Europe Train</option>
-            <option>Food</option>
-            <option>Experience</option>
+                <option>Home</option>
+                <option>Relaxation & beauty</option>
+                <option>Cultural experiences</option>
+                <option>FunNight</option>
+                <option>Tours</option>
+                <option>Europe Train</option>
+                <option>Food</option>
+                <option>Experience</option>
 
 
+              </select>
+            </div>
+          </div>
 
-            <option>c3</option>
-            <option>c4</option>
-          </select>
-        </div>
-        </div>
-
-        <div class="form-group row">
-          <label class="col-sm-2 col-form-label" for="TourSection">Section</label>
-          <div class="col-10">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="TourSection">Section</label>
+            <div class="col-10">
               <select class="form-control" formControlName="Section" id="Section">
-                  <option>Get Inspired</option>
+                <option>Get Inspired</option>
 
-            <option>Top thing to do</option>
+                <option>Top thing to do</option>
 
-            <option>BestSeller</option>
-            <option>AwsomeDeals</option>
-            <option>Date Ideas</option>
-            <option>ForKids</option>
-            <option>For Tommowrow</option>
-            <option>Klook Recommended</option>
-            <option>Near in cairo</option>
-            <option>Other</option>
+                <option>BestSeller</option>
+                <option>AwsomeDeals</option>
+                <option>Date Ideas</option>
+                <option>ForKids</option>
+                <option>For Tommowrow</option>
+                <option>Klook Recommended</option>
+                <option>Near in cairo</option>
+                <option>Other</option>
 
 
-          </select>
-        </div>
-        </div>
-      </form>
+              </select>
+            </div>
+          </div>
+        </form>
         <input type="submit" value="Add" id="TourAdd" (click)="add()" class="btn"
           style="background-color:  #ff5722;color: white;" />
         <hr>
@@ -278,7 +275,7 @@
               <th scope="col">OldPrice</th>
               <th scope="col">TourSectionInner</th>
               <th scope="col">TourDiscount</th>
-                
+
 
               <th scope="col">City</th>
               <th scope="col">Categories</th>
@@ -290,9 +287,9 @@
           </thead>
           <tbody></tbody>
         </table>
-        
+
       </div>
-      
+
       <!--Activities tab-->
       <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
         Activities tab
@@ -417,63 +414,63 @@
   <!--8-->
   <div class="tab-pane fade" id="v-pills-year" role="tabpanel" aria-labelledby="v-pills-year-tab">
     year-end sale tab
-  </div> 
+  </div>
   <!--9-->
   <div class="tab-pane fade" id="v-pills-admin" role="tabpanel" aria-labelledby="v-pills-admin-tab">
 
     <div>
-      <button mat-flat-button class="ml-4 container btnchange" (click)="sign()" >{{btnAdmiText}}</button>
+      <button mat-flat-button class="ml-4 container btnchange" (click)="sign()">{{btnAdmiText}}</button>
 
       <div class="container mt-4" *ngIf="!signBool">
-      <br>
-      <br>
+        <br>
+        <br>
         <table mat-table [dataSource]="dataSourceadmin" class="mat-elevation-z8">
-        
-        
-        
-            <ng-container matColumnDef="Email">
-                <th mat-header-cell *matHeaderCellDef> Emaill </th>
-                <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
-              </ng-container>
-        
-              <ng-container matColumnDef="JoinDate">
-                <th  mat-header-cell *matHeaderCellDef> Date </th>
-                <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
-              </ng-container>
 
-              <ng-container matColumnDef="Delete">
-                <th  mat-header-cell *matHeaderCellDef> Delete </th>
-                <td mat-cell *matCellDef="let element"> 
-          <button mat-flat-button class=" btndelet" (click)="delete(element.id)" >Delete</button>
-        </td>
-              </ng-container>
 
-             
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumnsadmin"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumnsadmin;"></tr>
-          </table>
-        
-        </div>
+
+          <ng-container matColumnDef="Email">
+            <th mat-header-cell *matHeaderCellDef> Emaill </th>
+            <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="JoinDate">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.JoinDate | date :'fullDate' }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="Delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-flat-button class=" btndelet" (click)="delete(element.id)">Delete</button>
+            </td>
+          </ng-container>
+
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsadmin"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsadmin;"></tr>
+        </table>
+
+      </div>
     </div>
-  <div *ngIf="signBool">
-        <mat-form-field appearance="outline" class="w-75" >
-          <input matInput placeholder="Email Address" class="mb-2" [formControl]="Email" required>
-  <mat-error *ngIf="Email.invalid && (Email.dirty || Email.touched)">{{getErrorMessage()}}</mat-error>
-          <!-- <input matInput placeholder="Email Address" class="mb-2"> -->
-          <mat-icon matSuffix class=""><i class="far fa-envelope faico"></i></mat-icon>
-        </mat-form-field>
-      
-      
-        <mat-form-field appearance="outline" class="w-75 ">
-          <input matInput placeholder="Password"  class="mb-2" [formControl]="Password" required>
-          <mat-error *ngIf="Password.invalid && (Password.dirty || Password.touched)">{{getErrorMessage()}}</mat-error>
-          <!-- <input matInput placeholder="Password" class="mb-2"> -->
-          <mat-icon matSuffix ><i class="far fa-eye-slash faico"></i>
-          </mat-icon>
-        </mat-form-field>
-        <button mat-flat-button class="ml-4 container btnsign" (click)="signupp()" >SignUp</button>
+    <div *ngIf="signBool">
+      <mat-form-field appearance="outline" class="w-75">
+        <input matInput placeholder="Email Address" class="mb-2" [formControl]="Email" required>
+        <mat-error *ngIf="Email.invalid && (Email.dirty || Email.touched)">{{getErrorMessage()}}</mat-error>
+        <!-- <input matInput placeholder="Email Address" class="mb-2"> -->
+        <mat-icon matSuffix class=""><i class="far fa-envelope faico"></i></mat-icon>
+      </mat-form-field>
 
-  </div>
+
+      <mat-form-field appearance="outline" class="w-75 ">
+        <input matInput placeholder="Password" class="mb-2" [formControl]="Password" required>
+        <mat-error *ngIf="Password.invalid && (Password.dirty || Password.touched)">{{getErrorMessage()}}</mat-error>
+        <!-- <input matInput placeholder="Password" class="mb-2"> -->
+        <mat-icon matSuffix><i class="far fa-eye-slash faico"></i>
+        </mat-icon>
+      </mat-form-field>
+      <button mat-flat-button class="ml-4 container btnsign" (click)="signupp()">SignUp</button>
+
+    </div>
   </div>
 </div>
