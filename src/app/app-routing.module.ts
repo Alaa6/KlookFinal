@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-<<<<<<< HEAD
 import { DetailsComponent } from './Components/details/details.component';
-=======
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ExperiencesComponent } from './Components/experiences/experiences.component';
 import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
->>>>>>> aa631da38224b5bbfb889c5b68e2796d58126758
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 import { HelpComponent } from './Components/help/help.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
