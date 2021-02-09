@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DetailsComponent } from './Components/details/details.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 import { HelpComponent } from './Components/help/help.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -7,13 +8,13 @@ import { HomeComponent } from './Components/home/home.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
-
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
   // { path  : 'sign/:subsign'  , component : SignComponent},
   // {path :'dash' , component : DashboardComponent} ,
   {path :'help' , component : HelpComponent} ,
   {path: 'credits', component: KlookCreditComponent},
+  {path: 'details', component: DetailsComponent},
 
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
 
