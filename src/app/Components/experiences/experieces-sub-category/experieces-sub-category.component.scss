@@ -7,6 +7,36 @@ $simple-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
 $more-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
 $txt-color: #333;
 
+/*Start options*/
+.options {
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+.options .row .col-2 {
+  /* box-shadow: 3px 3px 3px 3px #888888; */
+  margin: 1em;
+  transition: 0.4s;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.options .row {
+  width: 90%;
+}
+.options .row .col-10:hover {
+  text-decoration: none;
+  transform: translateY(-0.6em);
+}
+
+.options .row .col-10 .word {
+  color: black;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+/*End options*/
+
 @mixin icon-size($id) {
   @if ($id == 'arrow-down') {
     font-size: 40px;
@@ -283,7 +313,7 @@ article {
   font-size: 12px;
 }
 // .search {
-  // width: 79em;
+// width: 79em;
 // }
 
 /*Search*/
@@ -433,12 +463,11 @@ article {
   display: none;
 }
 
-.fontCard{
-  font-size:.8rem ;
+.fontCard {
+  font-size: 0.8rem;
   font-weight: 700;
-
 }
 
-.owlheight{
+.owlheight {
   height: 350px !important;
 }

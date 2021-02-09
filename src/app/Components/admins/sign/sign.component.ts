@@ -122,16 +122,16 @@ Signn:string='Sign Up'
     this.subsign = String(params.get('subsign'))
 
     if(this.subsign=='login'){
-    this.loginBool=true
-    this.signbool=false
-    this.Signn ='Log In'
-    }
-    else 
-    {
-      this.loginBool=false
-      this.signbool=true
-      this.Signn ='Sign Up'
+      this.loginBool=true
+      this.signbool=false
+      this.Signn ='Log In'
       }
+      else 
+      {
+        this.loginBool=false
+        this.signbool=true
+        this.Signn ='Sign Up'
+        }
 
   })
 }

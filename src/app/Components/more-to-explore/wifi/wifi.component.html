@@ -186,7 +186,7 @@
         </div>
         <div class="col-6">
           <div class="mt-3 mb-3">
-            <a class="a1" href="#">{{wi.Title}}</a>
+            <a class="a1" (click)="viewDetails(wi.id)">{{wi.Title}}</a>
             <div class="div1">
               Pick-up locations:
               <span style="color: #009685;">
@@ -255,8 +255,8 @@
             <div class="d-flex justify-content-end mt-4 mr-4 pt-4">
               <i class="mt-2 fas fa-bolt" style="color: #ff5722;font-size: 16px;"></i>
               <span class="pl-1 div3">
-                EGP
-                <span>{{wi.Price}}</span>
+
+                <span>{{wi.Price| currency:'EGP'}}</span>
               </span>
 
             </div>

@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { ExperiencesComponent } from './Components/experiences/experiences.component';
+import { ExperiencesModule } from './Components/experiences/experiences.module';
+import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 import { HelpComponent } from './Components/help/help.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -10,12 +14,19 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
+ 
+  
+  {path:'experiences',component:ExperiencesComponent},
   // { path  : 'sign/:subsign'  , component : SignComponent},
   // {path :'dash' , component : DashboardComponent} ,
   {path :'help' , component : HelpComponent} ,
   {path: 'credits', component: KlookCreditComponent},
 
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
+{path:'activityDetails/:id' ,component:ActivityDetailsComponent},
+  {  path: 'experiences', 
+    loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
+  },
 
   {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
   // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
@@ -28,6 +39,7 @@ const routes: Routes = [
 
 
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
+
 
   // {path :"" , redirectTo :'home' , pathMatch : 'full'} , 
   {  path: 'experiences', 

@@ -1,2 +1,288 @@
-<p>experiences works!</p>
-  
+
+ <!--Start carousel-->
+
+ <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner ">
+        <div class="carousel-item active">
+            <img src="cover.jpg" class="d-block w-100" alt="...">
+
+        </div>
+        <div class="carousel-item">
+            <img src="c3.jpg" class="d-block w-100" alt="...">
+        </div>
+
+        <div class="carousel-item">
+            <img src="c4.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div> -->
+
+<!-- <owl-carousel-o [options]="customOptions"> -->
+    <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper slider img-fluid"  style="height: 40em;">
+            <img src="../../../assets/cover.jpg" alt="first slide" />
+          </div>
+          <div class="carousel-caption firstSlider"></div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper slider img-fluid" style="height: 40em;">
+            <img src="../../../assets/c3.jpg" alt="second slide" />
+          </div>
+          <div class="carousel-caption"></div>
+        </ng-template>
+        <ng-template ngbSlide>
+            <div class="picsum-img-wrapper slider img-fluid"  style="height: 40em;">
+              <img src="../../../assets/c4.jpg" alt="second slide" />
+            </div>
+            <div class="carousel-caption"></div>
+          </ng-template>
+      </ngb-carousel>
+<!--Add text on image-->
+
+<div class="header-text hidden-xs   ">
+    <div class="col-sm-6 col-m-8 col-lg-10 col-xl-12  text-left mt-5 mb-3 ">
+        <h2 class="mb-2">
+            <span>Experience</span>
+        </h2>
+
+        <div class="pb-3 pt-1">
+            <span style="font-size: 1.5em;">Explore attractions, tours and more in Cairo
+            </span>
+        </div>
+        <br>
+        <div class=" btn rounded-pill border border-secondary py-3 mt-5 mb-1 px-3 mx-3"
+            style="background-color: white; font-size: 1em;">
+            <i class="fas fa-map-marker-alt"></i> <span class="px-2">Cairo</span>
+        </div>
+        <!-- <div class="">
+        <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a><a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a></div> -->
+        <!--Add search-->
+        <div class="s007 d-flex justify-content-start align-item-center mt-2 mb-5 col-sm-6 col-m-8 col-lg-10 col-xl-12">
+            <form>
+                <div class="inner-form">
+                    <div class="basic-search">
+                        <div class="input-field">
+                            <div class="icon-wrap">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <input id="search" type="text" placeholder="Search destinations or activities"
+                                style="border-radius: 0.5em;" />
+                            <div class="result-count">
+                                <!-- <span>108 </span>results</div> -->
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                    style="background-color: #FF5722; color: white; border: 0.1em solid; font-size: 1.5em; width: 5em; border-radius: 0.5em;height: auto;">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--Start button 'Explore'-->
+
+    </div>
+</div>
+
+
+<!--End carousel-->
+
+
+<!-- /////////////////////////////////// cards //////////////////////////////////////////////////////////////////////////////// -->
+<div class="container mb-0 mt-3 pb-1 pt-5">
+    <div class="row mb-2" >
+        <div class="w-100">
+        <owl-carousel-o [options]="customOptions">
+
+            <ng-container *ngFor="let i of smallCard">
+                
+              <ng-template carouselSlide  >
+                <div  class="">
+               <div class=" my-1 rounded-3 mx-2 d-flex flex-wrap justify-content-start align-items-center" >
+                                    <a href="#" class="crd mx-2">
+                                        <div class="crd1 card text-center"   >
+                                            <div class="card-body p-1 align-items-center" style="height: 8em; width: 8em;">
+                                                <img class="img-fluid text-center w-60 mx-4 " src="{{i.image}}"  style="height:4em !important;width: 3em !important;"   >
+                                                <h4 class="card-title py-1" style="font-size: 1.1em;">{{i.name}}</h4>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+              </ng-template>
+            </ng-container>
+          
+          </owl-carousel-o>
+        </div>
+          
+    </div>
+</div>
+
+<!-- ************************************************ end of cards ****************************************************************************************** -->
+
+
+<!-- /////////////////////////// bestseller ////////////////////////// -->
+<div class="container my-2 py-3">
+    <div class="row mb-5">
+        <div class="col-sm-12">
+            <span class="font-weight-bold" style="font-size: 2.3em;">Unmissable things to do</span>
+
+        </div>
+    </div>
+    <div class="row mb-5   ">
+        <!-- <div class="col-sm-12"> -->
+        <div style="background-color: #faede5;"
+            class=" d-flex flex-wrap justify-content-start align-items-centerd-flex flex-wrap justify-content-start align-items-center">
+            <div class="col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3 p-5">
+                <img src="../../../assets/bsicon.png" width="50em">
+                <div class="font-weight-bold py-4" style="color: #FFB526;font-size: 2.3em;"> Bestsellers</div>
+            </div>
+            <!-- carousel cards -->
+            <!-- <div class="col-12 col-sm-12  col-md-12  col-lg-9 col-xl-9"> -->
+                <!-- <div class="container"> -->
+                    <div class="row " >
+                        <!-- <div class="col-sm-12"> -->
+                            <owl-carousel-o [options]="customOptions">
+
+                                <ng-container *ngFor="let i of bestsellerCard">
+                                  <ng-template carouselSlide class="d-flex flex-wrap justify-content-start align-items-center" >
+                                    <div class="col-12 col-sm-12  col-md-12  col-lg-4 col-xl-4 my-5">
+                                        <a href="#" class="crd">
+                                            <div class="crd1 card text-left">
+                                                <img class="card-img-top" src="{{i.Image}}" alt="">
+                                                <div class="text-upon-img hidden-xs">
+                                                    <i class="fas fa-map-marker-alt"></i> {{i.City}}
+                                                </div>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">{{i.Title}}</h4>
+                                                    <i class="flag-hot" style="color:#FF5746;"></i>
+                                                    <div class="card-text">
+                                                    <div class="mb-5">
+
+                                                        <span style="color: #999999;"> {{i.Booked}}+ Booked</span>
+                                                    </div>
+
+                                                    <div class="mb-1">
+                                                        <h4 class="font-weight-bold d-inline-block">{{i.Price | currency:"EGP"}}</h4>
+                                                        <i class="fas fa-bolt" style="color:#FF5746;"></i>
+                                                    </div>
+                                                    <a href="#" class="lnk mb-0">Book Now for {{i.Date}}</a>
+                                                    </div>
+                                                    <!-- </p> -->
+                                                </div>
+                                            </div>
+
+
+
+                                        </a>
+
+                                    </div>
+                                  </ng-template>
+                                </ng-container>
+                              
+                              </owl-carousel-o>
+
+                              <!--  -->
+                   
+                    </div>
+                    <!-- <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a> -->
+                <!-- </div> -->
+
+
+           
+            <!-- </div> -->
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- ******************** end of bestseller ******************************************* -->
+
+
+
+
+
+<!-- //////////////////////////// nearby /////////////////////////////////////// -->
+ <!-- <div class="container my-2 py-3">
+    <div class="row mb-5">
+        <div class="col-sm-12">
+            <span class="font-weight-bold" style="font-size: 2.3em;">Nearby destinations
+            </span>
+
+        </div>
+    </div>
+    <div class="row mb-5 ">
+        <div  class="border-secondary col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3 nd mx-3 " style="background-image: url(nd1.webp); height: 25em; border-radius: 1em; background-position: center; background-repeat: no-repeat; background-size: cover;">
+           <div class="pt-3">Distancee of</div>
+           <div class="font-weight-bold pb-5 " style="font-size: 2.5em;">230 Km</div>
+           <div class="font-weight-bold pt-5 mt-5" style="font-size: 2.8em;line-height: 1.3 em;">Sharm El Sheikh</div>
+        </div>
+        <div  class="border-secondary col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3 nd mx-3 " style="background-image: url(nd2.webp); height: 25em; border-radius: 1em;background-position: center; background-repeat: no-repeat; background-size: cover;">
+            <div class="pt-3">Distancee of</div>
+            <div class="font-weight-bold pb-5 mb-5 " style="font-size: 2.5em;">230 Km</div>
+            <div class="font-weight-bold pt-5 mt-5" style="font-size: 2.8em;line-height: 3.9em;">Elait</div>
+         </div>
+         <div  class="border-secondary col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3 nd mx-3 " style="background-image: url(nd3.webp); height: 25em; border-radius: 1em;background-position: center; background-repeat: no-repeat; background-size: cover;">
+            <div class="pt-3">Distancee of</div>
+            <div class="font-weight-bold pb-5 mb-5 " style="font-size: 2.5em;">230 Km</div>
+            <div class="font-weight-bold pt-5 mt-5" style="font-size: 2.8em;line-height: 3.9em;">Gouna</div>
+         </div>
+    </div>
+ </div> -->
+
+<!-- ********* end of nearby ****************************************************************************************************** -->
+  <!-- /////////////////////////////////// recommended //////////////////////////////////////////////////////////////////////// -->
+  <div class="container my-2 py-3">
+    <div class="row mb-5">
+        <div class="col-sm-12">
+            <span class="font-weight-bold" style="font-size: 2.3em;">Recommended
+            </span>
+
+        </div>
+    </div>
+    <div class="row mb-5">
+        <p class="px-3">
+            <a href="#" style="color: black;">Attractions & shows</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+            <a href="#" style="color: black;">Tours & Sightings</a> | &nbsp;
+
+        </p>
+        </div>
+</div>
+  <!-- ******************************************************* end of recommended ********************************************************************* -->
+

@@ -73,5 +73,13 @@ export class RelaxServiceService {
     });
       }
 
+
+      searchForTours(_city : string  , _category : string ): Observable<ITour[]> {
+
+
+        return this.afs.collection<ITour>('ToursCollection' ,ref => ref.where( 'City', '==', _city ).where('Categories',  '==', _category)).valueChanges()
+    
+      }
+
 }
 

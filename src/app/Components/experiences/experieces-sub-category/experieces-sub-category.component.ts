@@ -11,6 +11,7 @@ import { ITour } from 'src/app/viewModels/itour';
 import { ICity } from 'src/app/viewModels/icity';
 import { ISubCategory } from 'src/app/viewModels/isub-category';
 import { filter } from 'rxjs/operators';
+import { User } from './../../../viewModels/user';
 
 @Component({
   selector: 'app-experieces-sub-category',
@@ -29,7 +30,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
   categoryList: ICategory[] = []
   category$: Observable<ICategory[]> | undefined
   city: string = 'Cairo'
- 
+  searchTerm:string=''
 
   // @Input() city: string =''; 
    bestSellerList: ITour[] = [] ;
@@ -67,7 +68,7 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
         items: 3
       },
       940: {
-        items: 3
+        items: 4
       }
      
 
@@ -247,7 +248,20 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
 
  }
 
+toursSearch:ITour[]=[]
+ search(){
+  this.relaxService.searchForTours(this.city,this.subCatName).subscribe(res=>{
 
+    this.toursSearch=res
+    // console.log(this.toursSearch)
+    console.log(this.toursSearch)
 
+  })
+   console.log(this.searchTerm)
+  this.toursSearch=this.toursSearch.filter(res=>{
+    return res.Title.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase());
+  })
+    console.log(this.toursSearch)
+ }
 
 }
