@@ -1,0 +1,223 @@
+.cover img {
+  height: 34em;
+}
+.h3 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.h4 {
+  display: block;
+  font-size: 1.1em;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+ul {
+  padding-inline-start: 20px;
+}
+.blue {
+  color: blue;
+}
+.blue:hover {
+  text-decoration: none;
+}
+.highlight:hover {
+  color: #f44f1b;
+  cursor: pointer;
+}
+// Start package
+.vl {
+  border-left: 6px solid #ff5722;
+  border-radius: 20%;
+}
+.package {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+.options .row {
+  line-height: 3em;
+}
+.list ul {
+  line-height: 2.5em;
+}
+
+// .available {
+//   background-color: #f44f1b;
+//   color: white;
+// }
+// Start booking
+.book {
+  background-color: #f0f6f9;
+  height: 50em;
+}
+.book .selectDate {
+  font-size: 1.4em;
+  font-weight: 600;
+  padding-top: 1em;
+}
+.book .clear {
+  margin-top: 3em;
+  border: #346bda 0.1em solid;
+  color: #346bda;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.book .date {
+  color: #666666;
+}
+.firstbtn {
+  background-color: #fff4ed;
+  border: #f44f1b solid 0.1em;
+  font-weight: 600;
+  color: #f44f1b;
+}
+.scndBtn {
+  background-color: white;
+  border: 0.1em solid gray;
+  font-weight: 600;
+}
+.bg {
+  background-color: white;
+  padding: 1em;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.fa-plus,
+.fa-minus {
+  background-color: #f5f5f5;
+}
+.orange {
+  background-color: #ff5722;
+}
+.warn,
+.orange {
+  color: white;
+  font-weight: 600;
+}
+.price {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+// End booking
+// End package
+// Start help
+.help {
+  color: gray;
+  font-weight: 700;
+  border: 0.05em solid #888a8f;
+  font-size: 0.9em;
+}
+// End help
+// Start you might also like
+.cities {
+  position: relative;
+  text-align: center;
+}
+.city {
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+.title {
+  font-size: 1.2em;
+  font-weight: 550;
+}
+.fire {
+  width: 0.5em !important;
+}
+.Date {
+  color: #24b9a5;
+  font-size: 0.8em;
+  float: right;
+}
+// End you might also like
+// Start right section
+.rightSection {
+  line-height: 2em;
+}
+// .bestPrice {
+//   border: 0.1em solid gray;
+// }
+.bld {
+  font-size: 1.5em;
+  font-weight: 750;
+}
+.select {
+  background-color: #f55421;
+  border: 0.1em solid #f55421;
+  font-size: 1em;
+  font-weight: 700;
+}
+// .app {
+//   border: 0.1em solid gray;
+// }
+.mobile {
+  color: #25b885;
+  font-size: 2em;
+}
+.box {
+  box-shadow: 2px 2px 2px 2px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+//start selected package
+//start selected package
+.selectedPackage {
+  background-color: #f0f6f9;
+}
+.details {
+  font-size: 1.05em;
+  font-weight: 700;
+  margin-top: 11.8em;
+}
+.white {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+}
+//end selected package
+//Start package description
+.inc {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.view {
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+a:hover {
+  text-decoration: none;
+}
+//End package description
+
+// End right section
+@media only screen and (max-width: 479px) {
+  .pyramids {
+    font-size: 1.1em;
+  }
+  .clear {
+    display: none;
+  }
+  // .thirdBtn {
+  //   font-size: 0.7em;
+  //   width: 57% !important;
+  //   color: #f44f1b;
+  // }
+  .book {
+    height: 60em;
+  }
+  .card {
+    width: 20.7rem !important;
+    margin-bottom: 2em;
+  }
+  .details {
+    margin-top: 2em !important;
+  }
+}

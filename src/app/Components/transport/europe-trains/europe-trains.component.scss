@@ -1,6 +1,6 @@
 .header {
   // background-image: url("99.webp");
-  background-image: url("../../../../assets/99.webp");
+  background-image: url('../../../../assets/99.webp');
   background-position: center;
   background-size: cover;
   height: 445px;
@@ -8,13 +8,10 @@
   display: flex;
   justify-content: space-around;
 }
-.header .tx{
 
-}
-
-.header .tx h1{
+.header .tx h1 {
   font-size: 46px;
-  color: #FFFFFF;
+  color: #ffffff;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -22,8 +19,8 @@
   line-height: 55px;
   font-weight: 700;
 }
-.header .tx button{
-  background-color:  #FFFFFF;
+.header .tx button {
+  background-color: #ffffff;
   border-radius: 30px;
   margin-bottom: 30px;
   margin-left: 20px;
@@ -33,7 +30,7 @@
 
 } */
 
-.cardb{
+.cardb {
   border-radius: 8px;
   padding: 20px;
   background-color: #fff;
@@ -43,7 +40,7 @@
 
   /* justify-content: space-around; */
 }
-.cardb .plat{
+.cardb .plat {
   display: flex;
   flex-basis: 200%;
   -webkit-box-flex: 1;
@@ -54,7 +51,7 @@
   align-items: center;
   width: 35%;
 }
-.cardb .plat span{
+.cardb .plat span {
   height: 58px;
   display: -webkit-box;
   display: flex;
@@ -65,16 +62,15 @@
   position: relative;
   border-radius: 4px;
   border: none;
-
 }
-.cardb .plat i{
-  color: #FF5722;
-  background-color:#f5f5f5 ;
-border-radius: 50%;
-padding: 10px;
-/* margin: 3px; */
+.cardb .plat i {
+  color: #ff5722;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  padding: 10px;
+  /* margin: 3px; */
 }
-.cardb .plat span .key{
+.cardb .plat span .key {
   font-size: 12px;
   line-height: 1;
   color: #212121;
@@ -84,7 +80,7 @@ padding: 10px;
   background-color: #f5f5f5;
 }
 
-.cardb .plat span input{
+.cardb .plat span input {
   background-color: #f5f5f5;
   font-weight: 700;
   -webkit-box-flex: 1;
@@ -94,12 +90,11 @@ padding: 10px;
   padding-bottom: 12px;
   line-height: 1;
   border: 1px solid #ced4da;
-  
 }
 
-.cardb .plat span input.source2{
+.cardb .plat span input.source2 {
   background-color: #fff;
-border: none;
+  border: none;
   border: 3px solid #ff5722;
   font-weight: 700;
   -webkit-box-flex: 1;
@@ -110,7 +105,7 @@ border: none;
   line-height: 1;
 }
 
-.cardb button{
+.cardb button {
   margin-left: 5px;
   border-radius: 6px;
   flex: none;
@@ -135,61 +130,47 @@ border: none;
   width: 100px;
 }
 
-
 /* ************************************* header ******************************************************************* */
 
-
-
 /* //////////////////////////////////////////////////// cards ////////////////////////////////////////////////// */
-.crd1{
-/* border: 1px solid #c5c5c5   ; */
-box-shadow: 2px 2px 2px 2px #c5c5c5 ;
+.crd1 {
+  /* border: 1px solid #c5c5c5   ; */
+  box-shadow: 2px 2px 2px 2px #c5c5c5;
 }
-.crd{
- color: #333333;
-
+.crd {
+  color: #333333;
 }
 
-.text-upon-img{
- position: absolute;
- top: 2%;
- left: 3.8%;
- right: auto;
- color: #ff5722;
+.text-upon-img {
+  position: absolute;
+  top: 2%;
+  left: 3.8%;
+  right: auto;
+  color: #ff5722;
 }
 .text-down-img {
- position: absolute;
- top: 31%;
- left: 3.8%;
- right: auto;
- background-color: #ff5722;
- color: white;
-
+  position: absolute;
+  top: 31%;
+  left: 3.8%;
+  right: auto;
+  background-color: #ff5722;
+  color: white;
 }
 
-.trips{
+.trips {
   font-size: 1em;
 }
 
-
-
 /* ************************************************ cards ******************************************************* */
-
-
-
 
 /* ///////////////////////////////////////////////reviews ///////////////////////////////////////////////////////////// */
 
-.revRate{
+.revRate {
   float: right;
 }
-
 
 /* ********************************************* reviews ********************************************************** */
 
 /* /////////////////////////////////////////// Questions ////////////////////////////////////////////////////////////////// */
 
-
-
 /* *****************************************Questions **************************************************************** */
-

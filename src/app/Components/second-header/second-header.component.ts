@@ -33,7 +33,6 @@ export class SecondHeaderComponent implements OnInit {
 
   open() {
     const modalRef = this.modalService.open(ModalComponent);
-    // modalRef.componentInstance.name = 'World';
   }
   // show() {
   //   this.Category?.nativeElement.modal({

@@ -1,0 +1,381 @@
+<div class="container">
+  <div class="cover mb-3">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper slider">
+          <img src="../../assets/Home/slider1.jpg" alt="first slide" />
+        </div>
+        <div class="carousel-caption firstSlider"></div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper slider">
+          <img src="../../assets/Home/slider2.jpg" alt="second slide" />
+        </div>
+        <div class="carousel-caption"></div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div>
+    <a class="blue" href="">Klook Travel</a>
+    <i
+      class="fas fa-chevron-right blue ml-2 mr-2"
+      style="font-size: 0.8em;"
+    ></i>
+    <a class="blue" href="">Cairo</a>
+  </div>
+  <!--Start spliting-->
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="h3 pyramids">
+        Giza Pyramids and Sphinx Half Day Tour from Cairo with River Nile
+        Felucca Cruise
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="text-muted">100+ Booked</div>
+        <div class="highlight">
+          <i class="far fa-heart mr-2" style="font-size: 1.2em;"></i>
+          <span>Wishlist</span>
+        </div>
+      </div>
+      <hr />
+      <!--Start options-->
+      <div class="options">
+        <div class="row">
+          <div class="col-lg-5 col-sm-12">
+            <i class="fas fa-dollar-sign mr-1"></i>
+            <span>Free cancellation - 24 hours notice</span>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <i class="fas fa-print mr-1"></i>
+            <span>Show mobile or printed voucher</span>
+          </div>
+          <div class="col-lg-3 col-sm-12">
+            <i class="far fa-clock mr-1"></i>
+            <span>4 Hrs - 5 Hrs Duration</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+            <i class="fas fa-globe-europe mr-1"></i>
+            <span>English</span>
+          </div>
+          <div class="col-lg-3 col-sm-12">
+            <i class="far fa-flag mr-1"></i>
+            <span>Join In Group</span>
+          </div>
+          <div class="col-lg-3 col-sm-12">
+            <i class="fas fa-car mr-1"></i>
+            <span>Hotel Pick Up</span>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <i class="fas fa-users"></i>
+            <span>1-20 Travelers Per Group</span>
+          </div>
+        </div>
+      </div>
+      <!--End options-->
+      <hr />
+      <!--Start list-->
+      <div class="list">
+        <ul>
+          <li>
+            Immerse yourself Egypt's great ancient wonders and history on this
+            exciting half day tour of Giza from Cairo
+          </li>
+          <li style="font-size: 0.95em;">
+            Admire the breathtaking pyramids of Giza and colossal statue of a
+            Sphinx – a mythical creature of Egyptian legends
+          </li>
+          <li>
+            Travel to the historic Valley Temple and enjoy a look at the
+            mummified remains of the ancient kings buried there
+          </li>
+          <li>
+            Hop aboard a traditional Felucca boat and cruise down one of the
+            world’s longest waterways – the Nile River
+          </li>
+          <li>
+            Listen to exciting stories of Egypt’s rich history, heritage, and
+            culture from the tour’s expert guide as you explore
+          </li>
+          <li>
+            Travel with ease from location to location with a convenient round
+            trip transfer service from your hotel in the city
+          </li>
+        </ul>
+      </div>
+      <!--End list-->
+      <hr />
+      <!--Start package-->
+      <div class="mt-4 mb-4">
+        <span class="vl mr-2"></span>
+        <span class="package">Package options</span>
+      </div>
+      <!--Start booking-->
+      <div class="book mt-4">
+        <div style="width: 90%; margin: auto;">
+          <div class="d-flex justify-content-between">
+            <div class="selectDate">Select date and package options</div>
+            <button type="button" class="btn btn-light clear">Clear all</button>
+          </div>
+          <div class="date">Please select a tour date</div>
+          <!--Datepicker-->
+          <mat-form-field>
+            <input
+              class="btn available"
+              matInput
+              [matDatepicker]="myDatePicker"
+              value="Check availability"
+            />
+            <!--Add check-->
+            <mat-datepicker-toggle
+              [for]="myDatePicker"
+              matSuffix
+            ></mat-datepicker-toggle>
+            <mat-datepicker #myDatePicker></mat-datepicker>
+          </mat-form-field>
+          <!--End check-->
+          <div class="date">Package Type</div>
+          <button type="button" class="btn btn-light mb-2 mt-2 firstbtn">
+            Great Pyramids and Sphinx Tour with River Nile Felucca Cruise
+          </button>
+          <button type="button" class="btn btn-light mb-2 scndBtn">
+            Great Pyramids and Sphinx Tour with River Nile Felucca Cruise and
+            Lunch
+          </button>
+          <button type="button" class="btn btn-light mb-2 scndBtn thirdBtn">
+            Add on: Great Pyramids and Solar Boat Museum Fees
+          </button>
+          <div class="date mt-3">Quantity</div>
+          <div class="bg mt-2 d-flex justify-content-between">
+            <div>Adult</div>
+            <div>
+              <i class="fas fa-minus p-2 mr-3"></i>
+              <span>0</span>
+              <i class="fas fa-plus p-2 ml-3"></i>
+            </div>
+          </div>
+          <div class="bg mt-2 d-flex justify-content-between">
+            <div>Child(6-11)</div>
+            <div>
+              <i class="fas fa-minus p-2 mr-3"></i>
+              <span>0</span>
+              <i class="fas fa-plus p-2 ml-3"></i>
+            </div>
+          </div>
+          <div class="bg mt-2 d-flex justify-content-between">
+            <div>Add on: 30 Minutes Camel Ride</div>
+            <div>
+              <i class="fas fa-minus p-2 mr-3"></i>
+              <span>0</span>
+              <i class="fas fa-plus p-2 ml-3"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mt-4">
+            <div>
+              <div class="price">EGP 589</div>
+              <div>Complete all required fields to continue</div>
+            </div>
+            <div>
+              <button type="button" class="btn btn-warning warn mr-2 p-2 mb-2">
+                Add to cart
+              </button>
+              <button type="button" class="btn orange p-2">Book now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 mb-4" />
+      <!--End booking-->
+      <!--End package-->
+      <!--Start expect-->
+      <div class="expect mb-4" style="width: 90%;">
+        <span class="vl mr-2"></span>
+        <span class="package">What to expect</span>
+      </div>
+      <img
+        src="./../../../assets/Home/slider1.jpg"
+        style="width: 100%;"
+        class="mb-3"
+      />
+      <div>
+        <i class="fas fa-caret-up mb-3"></i>
+        <span class="mb-3">
+          Experience the ancient wonders and history of Egypt on an exciting
+          half day adventure to Giza from Cairo
+        </span>
+      </div>
+      <hr class="mb-5" />
+      <!--End expect-->
+      <!--Start location-->
+      <div class="location mb-4">
+        <span class="vl mr-2"></span>
+        <span class="package mb-5">Location</span>
+      </div>
+      <img
+        src="./../../../assets/details/maps.gif"
+        style="width: 100%;"
+        class="mb-3"
+      />
+      <hr class="mb-5" />
+      <div class="FAQs">
+        <span class="vl mr-2"></span>
+        <span class="package mb-5">FAQs</span>
+      </div>
+      <button type="button" class="btn help mt-3 mb-3">
+        Klook Help Center
+      </button>
+      <hr class="mb-5" />
+      <!--End location-->
+      <!--Start like-->
+      <div class="like mb-4">
+        <span class="vl mr-2"></span>
+        <span class="package mb-5">You might also like...</span>
+      </div>
+      <div class="card" style="width: 23rem;">
+        <img
+          class="card-img-top cities"
+          src="./../../../assets/Home/sapporo.jpg"
+          alt="Card image cap"
+        />
+        <div class="city">
+          <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em;"></i>
+          <span>Cairo</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title title">Cairo Tower & Egyptian Museum</h5>
+          <div class="text-muted">100+ Booked</div>
+        </div>
+        <div class="card-body">
+          <del class="text-muted">EGP 1,018</del>
+          <br />
+          <span class="title">EGP 626</span>
+          <i class="fas fa-fire ml-1" style="width: 0.8em; color: #ff5722;"></i>
+          <br />
+          <div class="Date">Book now for tomorrow</div>
+        </div>
+      </div>
+      <!--End like-->
+    </div>
+    <div class="col-lg-4 rightSection">
+      <div class="bestPrice p-3 box">
+        <div class="text-muted">
+          <span>Best Price Guarantee</span>
+          <i class="fas fa-info-circle ml-1"></i>
+        </div>
+        <div>
+          <span>From</span>
+          <Span class="bld">EGP 589</Span>
+        </div>
+        <div>
+          <i class="far fa-clock mr-1"></i>
+          <span>Book now for 10 Feb 2021</span>
+        </div>
+        <div>
+          <i class="fas fa-fire mr-1" style="width: 0.8em; color: #ff5722;"></i>
+          <span>Instant Confirmation</span>
+        </div>
+        <div>
+          <img
+            src="./../../../assets/details/secure_connection.png"
+            width="18px"
+          />
+          <span>
+            Add
+            <u>Klook Flex</u>
+            at checkout for more cancellation flexibility
+          </span>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block select">
+          Select options
+        </button>
+        <hr />
+        <div class="row">
+          <div class="col-10">
+            Get Klook credits when you complete an experience
+          </div>
+          <div class="col-2">
+            <i class="fas fa-chevron-right mt-2"></i>
+          </div>
+        </div>
+      </div>
+      <div class="app mt-4 box">
+        <div class="row p-2">
+          <div class="col-2">
+            <i class="fas fa-mobile-alt mobile mt-3 ml-2 mr-2"></i>
+          </div>
+          <div class="col-10" style="font-size: 0.9em;">
+            Get EGP20.3 off your first booking in the app with promo code
+            <span style="color: #ff5722;">mobile10</span>
+          </div>
+        </div>
+      </div>
+      <div class="selectedPackage">
+        <div class="details p-3">Selected package details</div>
+        <div class="pl-3">
+          <a href="">Package Description</a>
+          <span class="mr-2 ml-2">|</span>
+          <a href="">Terms & Conditions</a>
+          <span class="mr-2 ml-2">|</span>
+          <br />
+          <a href="">How To Use</a>
+        </div>
+        <div class="white pl-3 mt-3 mb-2">
+          <div class="p-2">
+            <!--1-->
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-fire" style="color: #ff5722;"></i>
+              </div>
+              <div class="col-10">Instant Confirmation</div>
+            </div>
+            <!--2-->
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-dollar-sign mr-1"></i>
+              </div>
+              <div class="col-10">Free cancellation - 24 hours notice</div>
+            </div>
+            <!--3-->
+            <div class="row">
+              <div class="col-1">
+                <i class="fas fa-print mr-1"></i>
+              </div>
+              <div class="col-10">Show mobile or printed voucher</div>
+            </div>
+            <!--4-->
+            <div class="row">
+              <div class="col-1">
+                <img
+                  src="./../../../assets/details/secure_connection.png"
+                  width="18px"
+                />
+              </div>
+              <div class="col-10">
+                Cancellation flexibility with
+                <u>Klook Flex</u>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr style="width: 90%; margin: auto;" />
+        <div class="inclusive p-3">
+          <span class="vl mr-2"></span>
+          <span class="mb-5" style="font-size: 1.1em; font-weight: 700;">
+            Package Description
+          </span>
+          <div class="inc">Inclusive Of</div>
+          <ul>
+            <li>1-hour Felluca ride on the River Nile</li>
+            <li>English-speaking guide</li>
+          </ul>
+          <a href="" class="view">
+            View all
+            <i class="fas fa-expand-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End spliting-->
+</div>

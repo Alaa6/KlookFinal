@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DetailsComponent } from './Components/details/details.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { ExperiencesComponent } from './Components/experiences/experiences.component';
 import { ExperiencesModule } from './Components/experiences/experiences.module';
@@ -11,7 +12,6 @@ import { HomeComponent } from './Components/home/home.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
-
 const routes: Routes = [
   {path :'home' , component : HomeComponent} ,
  
@@ -21,6 +21,7 @@ const routes: Routes = [
   // {path :'dash' , component : DashboardComponent} ,
   {path :'help' , component : HelpComponent} ,
   {path: 'credits', component: KlookCreditComponent},
+  {path: 'details', component: DetailsComponent},
 
   {path:'', redirectTo:'/home', pathMatch:'full'}, //Default Path
 {path:'activityDetails/:id' ,component:ActivityDetailsComponent},

@@ -55,6 +55,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
+import { DetailsComponent } from './Components/details/details.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
@@ -95,6 +98,7 @@ var firebaseConfig = {
     ModalComponent,
     HelpComponent,
     KlookCreditComponent,
+    DetailsComponent,
     // SignComponent,
     // DashboardComponent,
     ActivityDetailsComponent,
@@ -131,7 +135,10 @@ var firebaseConfig = {
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    
 ],
 
   // ],
