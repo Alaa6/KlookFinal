@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FoodServiceService } from 'src/app/services/food-service.service';
 import { IFood } from 'src/app/viewModels/ifood';
@@ -8,7 +8,7 @@ import { IFood } from 'src/app/viewModels/ifood';
   templateUrl: './food.component.html',
   styleUrls: ['./food.component.scss']
 })
-export class FoodComponent implements OnInit {
+export class FoodComponent implements OnInit,OnDestroy {
   FoodList:IFood[]=[];
   subscribtion: Subscription|null=null;
   totalRecords:number=0;
@@ -29,4 +29,8 @@ export class FoodComponent implements OnInit {
     
   }
 
+
+  ngOnDestroy(): void {
+    this.subscribtion?.unsubscribe();
+  }
 }
