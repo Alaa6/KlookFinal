@@ -17,7 +17,7 @@ ngOnInit() {
   this.authser.user.subscribe(user => {
     if(user){
     this.isuser=false
-    console.log(user)
+    // console.log(user)s
     }
     else
     this.isuser=true;

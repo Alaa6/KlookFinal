@@ -30,12 +30,14 @@ btnAdmiText='Add Admin'
     this.authSer.getalluser().subscribe(data => {
       
       this.dataSource=data.map(elementt =>{
+      console.log(elementt.payload.doc.id)
+
         return {
           id:elementt.payload.doc.id,
           ...elementt.payload.doc.data()
         }
       })
-      // console.log(this.dataSource)
+     
 
     });
 
@@ -50,6 +52,7 @@ btnAdmiText='Add Admin'
       // console.log(this.dataSource)
 
     });
+    // this.authSer.getbyID(id)
    
     this.loginFrm=fb.group({
    

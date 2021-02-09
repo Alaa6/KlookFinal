@@ -41,18 +41,18 @@ Signn:string='Sign Up'
   listadd:User={Email:'',Password:'',Type:''}
   signupp(){
  
-    console.log(this.list.Password)
-    console.log(this.list.Email)
+    // console.log(this.list.Password)
+    // console.log(this.list.Email)
     this.authSer.signup(this.Email.value,this.Password.value)
       .then(result => {
-        console.log(result.user?.uid)
+        // console.log(result.user?.uid)
         this.errorMsg='';
         this.authSer.addUser(result.user?.uid,this.Email.value,this.Password.value,"user")
         .then(()=>{
           this.router.navigate(['/']);
         }).catch(errr=>console.log(errr))
   
-        console.log(result)
+        // console.log(result)
       
       })
       .catch(err => {
@@ -62,9 +62,9 @@ Signn:string='Sign Up'
       
       } )
   
-    console.log(this.listadd)
-    console.log(this.Password.value)
-    console.log(this.Email.value)
+    // console.log(this.listadd)
+    // console.log(this.Password.value)
+    // console.log(this.Email.value)
     // this.userSer.adduser(this.listadd)
     
   }
@@ -88,21 +88,21 @@ Signn:string='Sign Up'
         this.errorMsg='';
         this.authSer.checkforAdmin(this.Email.value,this.Password.value).subscribe(items => {
         this.users=items
-        console.log(items)
-        console.log(items[0].Type)
+        // console.log(items)
+        // console.log(items[0].Type)
         if(items[0].Type=="user"){
         this.router.navigate(['/']);
-        console.log("user  "+ items[0].Type)
+        // console.log("user  "+ items[0].Type)
 
         }
         else
         {
-          console.log("admin")
+          // console.log("admin")
         this.router.navigate(['/sign/admin/dash']);
 
         }
       });
-        console.log(result)
+        // console.log(result)
         
       })
     .catch(err=>
@@ -134,5 +134,7 @@ Signn:string='Sign Up'
         }
 
   })
+
+
 }
 
