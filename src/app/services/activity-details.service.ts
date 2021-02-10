@@ -10,7 +10,7 @@ export class ActivityDetailsService {
   constructor(private fs: AngularFirestore) {}
 
   getAllWifi(){
-   
+    console.log(this.fs.collection <Wifi>('Wifi_&_SimCards').snapshotChanges());
     return this.fs.collection <Wifi>('Wifi_&_SimCards').snapshotChanges();
    }
    

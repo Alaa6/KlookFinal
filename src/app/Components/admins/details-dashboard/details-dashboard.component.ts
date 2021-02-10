@@ -15,62 +15,65 @@ import { User } from 'src/app/viewModels/user';
 })
 export class DetailsDashboardComponent implements OnInit {
 
-  loginFrm:FormGroup;
-  list:Tours={};
-dataSource :User[] = [];
-dataSourceadmin:User[] = [];
-displayedColumns: string[] = ['Email','JoinDate','Delete'];
-displayedColumnsadmin: string[] = ['Email','JoinDate','Delete'];
+  loginFrm: FormGroup;
+  list: Tours = {};
+  dataSource: User[] = [];
+  dataSourceadmin: User[] = [];
+  displayedColumns: string[] = ['Email', 'JoinDate', 'Delete'];
+  displayedColumnsadmin: string[] = ['Email', 'JoinDate', 'Delete'];
 
-signBool:boolean = false;
-btnAdmiText='Add Admin'
+  signBool: boolean = false;
+  btnAdmiText = 'Add Admin'
 
-  constructor(private router:Router,private authSer: AuthService,private activatedRoute: ActivatedRoute,private fb: FormBuilder,private TourServies : RelaxServiceService) { 
-  
+  constructor(private router: Router, private authSer: AuthService, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private TourServies: RelaxServiceService) {
+
     this.authSer.getalluser().subscribe(data => {
-      
-      this.dataSource=data.map(elementt =>{
+
+      this.dataSource = data.map(elementt => {
+        console.log(elementt.payload.doc.id)
+
         return {
-          id:elementt.payload.doc.id,
+          id: elementt.payload.doc.id,
           ...elementt.payload.doc.data()
         }
       })
-      // console.log(this.dataSource)
+
 
     });
 
     this.authSer.getalladmin().subscribe(data => {
-      
-      this.dataSourceadmin=data.map(elementt =>{
+
+      this.dataSourceadmin = data.map(elementt => {
         return {
-          id:elementt.payload.doc.id,
+          id: elementt.payload.doc.id,
           ...elementt.payload.doc.data()
         }
       })
       // console.log(this.dataSource)
 
     });
-   
-    this.loginFrm=fb.group({
-   
-      id:['']
-        ,Booked:['']
-        ,Categories:['']
-        ,City:['']
-        ,Date:['']
-        ,Image:['']
-        ,OldPrice:['']
-        ,Price:['']
-        ,Rate:['']
-        ,Review:['']
-        ,Section:['']
-        ,Title:['']
-        ,TourDiscount:['']
-        ,TourSectionInner:['']
-  
-  
-  
-      });
+    // this.authSer.getbyID(id)
+
+    this.loginFrm = fb.group({
+
+      id: ['']
+      , Booked: ['']
+      , Categories: ['']
+      , City: ['']
+      , Date: ['']
+      , Image: ['']
+      , OldPrice: ['']
+      , Price: ['']
+      , Rate: ['']
+      , Review: ['']
+      , Section: ['']
+      , Title: ['']
+      , TourDiscount: ['']
+      , TourSectionInner: ['']
+
+
+
+    });
   }
 
   ngOnInit(): void {
@@ -78,8 +81,8 @@ btnAdmiText='Add Admin'
   }
 
 
-  add(){
-    this.list=this.loginFrm.value
+  add() {
+    this.list = this.loginFrm.value
     console.log(this.loginFrm.value)
     console.log(this.list)
     this.TourServies.addToTours(this.list)
@@ -88,82 +91,79 @@ btnAdmiText='Add Admin'
 
   //////////////////////////////////// admin signup ////////////////////
 
-listUser:User={Password:'',Email:'',Type:''}
-errorMsg:string=''
-userType:string='user'
-users:User[]=[]
+  listUser: User = { Password: '', Email: '', Type: '' }
+  errorMsg: string = ''
+  userType: string = 'user'
+  users: User[] = []
 
-// users: Iuser[] =[]
+  // users: Iuser[] =[]
 
 
-    Password=new FormControl('',[Validators.required,Validators.minLength(5)]);
-      Email= new FormControl('',[Validators.required,Validators.minLength(6),Validators.email,Validators.maxLength(100)]);
+  Password = new FormControl('', [Validators.required, Validators.minLength(5)]);
+  Email = new FormControl('', [Validators.required, Validators.minLength(6), Validators.email, Validators.maxLength(100)]);
 
   getErrorMessage() {
-    if (this.Email.hasError('')||this.Password.hasError('')) {
+    if (this.Email.hasError('') || this.Password.hasError('')) {
       return 'You must enter a value';
     }
 
     return this.Email.hasError('email') ? 'Not a valid email' : '';
   }
   // list:Iuser={}
-  listadd:User={Email:'',Password:'',Type:''}
+  listadd: User = { Email: '', Password: '', Type: '' }
 
-  signupp(){
- 
+  signupp() {
+
     // console.log(this.listUser.Password)
     // console.log(this.listUser.Email)
-    this.authSer.signup(this.Email.value,this.Password.value)
+    this.authSer.signup(this.Email.value, this.Password.value)
       .then(result => {
         console.log(result.user?.uid)
-        this.errorMsg='';
-        this.authSer.addUser(result.user?.uid,this.Email.value,this.Password.value,"admin")
-        .then(()=>{
-          // this.router.navigate(['/']);
-          console.log('doneeee')
-        }).catch(errr=>console.log(errr))
-  
+        this.errorMsg = '';
+        this.authSer.addUser(result.user?.uid, this.Email.value, this.Password.value, "admin")
+          .then(() => {
+            // this.router.navigate(['/']);
+            console.log('doneeee')
+          }).catch(errr => console.log(errr))
+
         console.log(result)
-      
+
       })
       .catch(err => {
-        
+
         // console.log(err)
-        this.errorMsg=err.message
-      
-      } )
-  
+        this.errorMsg = err.message
+
+      })
+
     // console.log(this.listadd)
     // console.log(this.Password.value)
     // console.log(this.Email.value)
     // this.userSer.adduser(this.listadd)
-    
+
   }
- 
 
 
 
-    //////////////////////////////////// admin signup end ////////////////////
 
-    ///////////////////////// coustmer ////////////////
+  //////////////////////////////////// admin signup end ////////////////////
+
+  ///////////////////////// coustmer ////////////////
 
 
-    delete(id:string){
-      this.authSer.deleteCoffeeOrder(id);
-      console.log(this.dataSource)
-      // console.log('delete'+c)
+  delete(id: string) {
+    this.authSer.deleteCoffeeOrder(id);
+    console.log(this.dataSource)
+    // console.log('delete'+c)
+  }
+  ///////////////////////// coustmer end ////////////////
+
+
+  sign() {
+    this.signBool = !this.signBool
+    if (this.signBool == true) {
+      this.btnAdmiText = 'Show Admin'
     }
-    ///////////////////////// coustmer end ////////////////
-
-
-    sign(){
-      this.signBool =! this.signBool
-      if(this.signBool==true){
-        this.btnAdmiText='Show Admin'
-      }
-      else this.btnAdmiText='Add Admins'
-    }
+    else this.btnAdmiText = 'Add Admins'
+  }
 }
-
-
-

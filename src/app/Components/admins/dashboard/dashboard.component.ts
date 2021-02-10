@@ -9,16 +9,16 @@ import { Tours } from '../../../viewModels/tours';
 })
 export class DashboardComponent implements OnInit {
 
-  name:Tours[]=[]
-  constructor(private afth:RelaxServiceService) {
+  name: Tours[] = []
+  constructor(private afth: RelaxServiceService) {
 
-  this.afth.getall().subscribe( argg =>{ 
+    this.afth.getall().subscribe(argg => {
       // this.BestSeller=argg
       // this.name=argg
       // console.log(argg)
     }
     )
-   }
+  }
 
   ngOnInit(): void {
     console.log(new Date)
