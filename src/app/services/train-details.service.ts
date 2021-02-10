@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { ITrainDetails } from '../viewModels/itrain-details';
 import { ITrainDetailsReview } from '../viewModels/itrain-details-review';
 
 @Injectable({
@@ -23,4 +24,16 @@ export class TrainDetailsService {
 //     res.status(200).json(data);
 // })
 //   }
+
+getReviews():Observable <ITrainDetailsReview []>
+{
+  return this.fs.collection <ITrainDetailsReview>('train-reviews').valueChanges();
+}
+
+
+bookTrip(data:ITrainDetails){
+  return this.fs.collection<any>('train-book').add(data).then
+  ((res)=>{console.log("trip is booked "+res)},
+  (err)=>{console.log(err)})
+  }
 }
