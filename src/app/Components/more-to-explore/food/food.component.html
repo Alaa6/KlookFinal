@@ -130,7 +130,11 @@
         <!-- row 1 -->
         <div class="row-col ml-4 pt-4 mr-4">
           <div class="row ">
-            <div class="col-12 col-sm-12  col-md-5  col-lg-4 col-xl-4 " *ngFor="let i of FoodList "
+            <div class="col-12 col-sm-12  col-md-5  col-lg-4 col-xl-4 " *ngFor="let i of FoodList 
+            | paginate: { id: 'pp',
+                                                      itemsPerPage: 12,
+                                                      currentPage: page,
+                                                      totalItems: 24 }"
               style="height: 30em;">
               <a href="#" class="crd">
                 <div class="crd1 card text-left">
@@ -188,7 +192,7 @@
           <div class="container d-flex justify-content-end">
             <!-- (pageChange)="page($event)"
             (pageBoundsCorrection)="page($event)" -->
-            <!-- <pagination-controls 
+            <pagination-controls 
             id="pp"
             
             maxSize="2"
@@ -200,7 +204,7 @@
             screenReaderPaginationLabel="Pagination"
             screenReaderPageLabel="page"
             screenReaderCurrentLabel="You're on page">
-               </pagination-controls> -->
+               </pagination-controls>
 
 
             <!-- <ul class="pagination ">
