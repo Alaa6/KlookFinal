@@ -11,33 +11,38 @@ export class HomeService {
 
   constructor(private fs: AngularFirestore) { }
 
-  getNearYou():Observable<Tours[]>{
+  getNearYou() {
     return this.fs.collection<Tours>('ToursCollection',
-     ref=> ref.where('City', '==' ,'Cairo' )
-              .where('Categories', '==' , 'Home')
-              .where('Section', '==', 'Near in cairo')).valueChanges();
+      ref => ref.where('City', '==', 'Cairo')
+        .where('Categories', '==', 'Home')
+        .where('Section', '==', 'Near in cairo')).snapshotChanges();
   }
 
-  getIncredibleDestinations():Observable<ICity[]>{
+  // getNearYou() {
+  //   return this.fs.collection<Tours>('ToursCollection',
+  //     ref => ref.where('City', '==', 'Cairo')).snapshotChanges;
+  // }
+
+  getIncredibleDestinations() {
     return this.fs.collection<ICity>('Cities',
-    ref=> ref.where ('Section', '==', 'HomeIncDes')
-    ).valueChanges()
+      ref => ref.where('Section', '==', 'HomeIncDes')
+    ).snapshotChanges();
   }
 
-  getAllCities():Observable<ICity[]>{
-    return this.fs.collection <ICity>('Cities').valueChanges();
-  }
-  
-  getTopThings():Observable<Tours[]>{
-    return this.fs.collection<Tours>('ToursCollection',
-     ref=> ref.where('Categories', '==' , 'Home')
-              .where('Section', '==', 'Top thing to do')
-              .where('City', '==', 'Cairo')).valueChanges();
+  getAllCities() {
+    return this.fs.collection<ICity>('Cities').snapshotChanges();
   }
 
-  getKlookRecommended():Observable<Tours[]>{
+  getTopThings() {
     return this.fs.collection<Tours>('ToursCollection',
-     ref=> ref.where('Categories', '==' , 'Home')
-              .where('Section', '==', 'Klook Recommended')).valueChanges();
+      ref => ref.where('Categories', '==', 'Home')
+        .where('Section', '==', 'Top thing to do')
+        .where('City', '==', 'Cairo')).snapshotChanges();
+  }
+
+  getKlookRecommended() {
+    return this.fs.collection<Tours>('ToursCollection',
+      ref => ref.where('Categories', '==', 'Home')
+        .where('Section', '==', 'Klook Recommended')).snapshotChanges();
   }
 }
