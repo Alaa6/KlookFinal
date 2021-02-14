@@ -1,0 +1,403 @@
+.navbar {
+  font-size: 0.95em;
+  top: 3.5em;
+  background-color: white;
+}
+.nav-item {
+  margin-left: 1em;
+}
+a.active {
+  color: #f44f1b !important;
+  font-weight: 600;
+  text-decoration: underline #f44f1b;
+}
+.cover img {
+  height: 35em;
+}
+a:hover {
+  text-decoration: none;
+}
+.blue {
+  color: #4985e6;
+}
+//Start left section
+.h3 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.h4 {
+  display: block;
+  font-size: 1.1em;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.star {
+  color: #ffb433;
+}
+.rate {
+  color: #ffb433;
+  font-weight: 500;
+}
+.review {
+  color: #4985e6;
+}
+.highlight:hover {
+  color: #f44f1b;
+  cursor: pointer;
+}
+.options .row {
+  line-height: 3em;
+}
+.list li {
+  margin-bottom: 0.5em;
+  font-size: 0.92em;
+}
+.vl {
+  border-left: 6px solid #ff5722;
+  border-radius: 20%;
+}
+.package {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+// Start booking
+.book {
+  background-color: #f0f6f9;
+  height: 63em;
+}
+.book .selectDate {
+  font-size: 1.4em;
+  font-weight: 600;
+  padding-top: 1em;
+}
+.book .clear {
+  margin-top: 3em;
+  border: #346bda 0.1em solid;
+  color: #346bda;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.book .date {
+  color: #666666;
+}
+.firstbtn {
+  background-color: #fff4ed;
+  border: #f44f1b solid 0.1em;
+  font-weight: 600;
+  color: #f44f1b;
+}
+.scndBtn {
+  background-color: white;
+  border: 0.1em solid gray;
+  font-weight: 600;
+}
+.bg {
+  background-color: white;
+  padding: 1em;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.fa-plus,
+.fa-minus {
+  background-color: #f5f5f5;
+}
+.orange {
+  background-color: #ff5722;
+}
+.warn,
+.orange {
+  color: white;
+  font-weight: 600;
+}
+.price {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+.first {
+  background-color: white;
+  font-weight: 700;
+  border: 0.1em solid gray;
+  font-size: 0.9em;
+}
+.second {
+  color: #f44f1b;
+  background-color: #fff4ed;
+  border: 0.1em solid #f44f1b;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+.flexible {
+  background-color: white;
+  color: gray;
+  border: 0.1em dashed gray;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+// End booking
+// start recent review
+.letter {
+  background-color: #63a794;
+  color: white;
+  width: 1.5em;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 3px;
+  font-size: 2em;
+  border: 2px solid #63a794;
+  text-align: center;
+}
+.name {
+  font-size: 0.95em;
+  font-weight: 600;
+}
+.recommend {
+  background-color: #f5f5f5;
+}
+.high {
+  font-size: 0.95em;
+  font-weight: 650;
+}
+.allReviews {
+  float: right;
+  margin-top: 1em;
+}
+.hl {
+  margin-top: 4em;
+}
+// End recent review
+//Start things to note
+.subtitle {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: 1em;
+}
+.note ul {
+  margin-left: -1.5em;
+  margin-top: 1em;
+}
+.note li {
+  margin-top: 1em;
+}
+//End things to note
+// Start Swiss Travel
+.number {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.SwissTravel .star {
+  font-size: 1.5em;
+}
+.numOfRev {
+  font-size: 1.2em;
+}
+.gallery {
+  background-color: #e4f3fd;
+}
+.photo {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.more {
+  background-color: #e4f3fd;
+  border-radius: 20%;
+  font-size: 0.8em;
+  margin-top: 2em;
+}
+.more:hover {
+  background-color: #f44f1b;
+  color: white;
+}
+.imag img {
+  border-radius: 1em;
+  margin-right: 0.5em;
+  height: 7.5em;
+}
+.rating {
+  border: 0.1em solid gray;
+  color: gray;
+}
+.dropdown-toggle {
+  width: 8em !important;
+}
+.starsm {
+  color: #ffa628;
+}
+.nameofRev {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+// End Swiss Travel
+// Start reviews
+.helpful {
+  border: 0.1em solid gray;
+  font-size: 0.8em;
+}
+.helpful i {
+  color: gray;
+}
+// End reviews
+// Start FAQs
+.ttl {
+  font-size: 1.1em;
+  font-weight: 700;
+}
+.help {
+  color: gray;
+  font-weight: 700;
+  border: 0.05em solid #888a8f;
+  font-size: 0.9em;
+}
+// End FAQs
+// Start you might also like
+.cities {
+  position: relative;
+  text-align: center;
+}
+.city {
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+.card-body .title {
+  font-size: 1.2em;
+  font-weight: 550;
+}
+.fire {
+  width: 0.5em !important;
+}
+.Date {
+  color: gray;
+  font-size: 0.8em;
+  float: right;
+}
+// End you might also like
+
+//End left section
+// Start right section
+.rightSection {
+  line-height: 2em;
+}
+// .bestPrice {
+//   border: 0.1em solid gray;
+// }
+.bld {
+  font-size: 1.5em;
+  font-weight: 750;
+}
+.select {
+  background-color: #f55421;
+  border: 0.1em solid #f55421;
+  font-size: 1em;
+  font-weight: 700;
+}
+// .app {
+//   border: 0.1em solid gray;
+// }
+.mobile {
+  color: #25b885;
+  font-size: 2em;
+}
+.box {
+  box-shadow: 2px 2px 2px 2px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+//start selected package
+//start selected package
+.selectedPackage {
+  background-color: #f0f6f9;
+}
+.details {
+  font-size: 1.05em;
+  font-weight: 700;
+  margin-top: 4em;
+}
+.white {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+}
+//end selected package
+//Start package description
+.inc {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.view {
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+a:hover {
+  text-decoration: none;
+}
+//End package description
+
+// End right section
+@media only screen and (max-width: 768px) {
+  .bestPrice {
+    margin-top: 2em;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .swiss {
+    font-size: 1.2em;
+  }
+  .clear {
+    display: none;
+  }
+  .package {
+    font-size: 1.3em;
+  }
+  .book {
+    height: 80em;
+  }
+  .btn {
+    margin-bottom: 1em !important;
+  }
+  .first {
+    width: 7em;
+  }
+  .second {
+    width: 9em;
+  }
+  //   .flexible {
+  //     width: 12em;
+  //   }
+  .flexble {
+    width: 9em;
+  }
+  .four {
+    margin-left: 0em !important;
+  }
+  .three {
+    margin-left: 0em !important;
+  }
+  .fifteen {
+    margin-left: 0em !important;
+  }
+  .more {
+    width: 10em;
+  }
+  .imag {
+    margin: 0.5em;
+  }
+  .bld {
+    font-size: 1em;
+  }
+  .helpful {
+    margin-left: 1em;
+  }
+  .card {
+    width: 20rem !important;
+  }
+}
