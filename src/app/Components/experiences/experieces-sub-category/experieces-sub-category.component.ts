@@ -250,18 +250,9 @@ export class ExperiecesSubCategoryComponent implements OnInit  , OnChanges{
 
 toursSearch:ITour[]=[]
  search(){
-  this.relaxService.searchForTours(this.city,this.subCatName).subscribe(res=>{
+  
+    this.router.navigate(['/experiences/search/',this.city,this.subCatName,this.searchTerm])  
 
-    this.toursSearch=res
-    // console.log(this.toursSearch)
-    console.log(this.toursSearch)
-
-  })
-   console.log(this.searchTerm)
-  this.toursSearch=this.toursSearch.filter(res=>{
-    return res.Title.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase());
-  })
-    console.log(this.toursSearch)
  }
 
 }

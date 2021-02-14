@@ -15,10 +15,11 @@ export class WifiComponent implements OnInit {
 
   WifiCards:Wifi[]=[];
   Cities:ICity[]=[];
-  wifiDetail:Wifi[]=[];
-  constructor(private router:Router,private wifiServ:WifiService,private wifiDetailService:ActivityDetailsService , private city : HomeService) {
-    this.wifiDetailService.getAllWifi().subscribe(data=>{
-      this.wifiDetail=data.map(element=>{
+  //wifiDetail:Wifi[]=[];
+  constructor(private router:Router,private wifiServ:WifiService , private city : HomeService) {
+    this.wifiServ.getAllWifi().subscribe(data=>{
+      this.WifiCards=data.map(element=>{
+        //console.log(element.payload.doc.data());
         return{
           id:element.payload.doc.id,
           ...element.payload.doc.data()
@@ -30,7 +31,12 @@ export class WifiComponent implements OnInit {
   ngOnInit(): void {
 
     this.wifiServ.getAllWifi().subscribe((wifi)=>{
-      this.WifiCards=wifi;
+      this.WifiCards=wifi.map(data=>{
+        return{
+          id:data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
     })
     this.city.getAllCities().subscribe((city)=>{
       this.Cities=city;
