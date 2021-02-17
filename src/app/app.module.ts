@@ -58,6 +58,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { BookTrainComponent } from './Components/book-train/book-train.component';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
@@ -102,6 +103,7 @@ var firebaseConfig = {
     // SignComponent,
     // DashboardComponent,
     ActivityDetailsComponent,
+    BookTrainComponent,
    
     // // SignComponent,
     // DashboardComponent,

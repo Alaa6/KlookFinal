@@ -13,38 +13,34 @@ import { Wifi } from 'src/app/viewModels/wifi';
 })
 export class WifiComponent implements OnInit {
 
-  WifiCards:Wifi[]=[];
-  Cities:ICity[]=[];
+  WifiCards: Wifi[] = [];
+  Cities: ICity[] = [];
   //wifiDetail:Wifi[]=[];
-  constructor(private router:Router,private wifiServ:WifiService , private city : HomeService) {
-    this.wifiServ.getAllWifi().subscribe(data=>{
-      this.WifiCards=data.map(element=>{
-        //console.log(element.payload.doc.data());
-        return{
-          id:element.payload.doc.id,
-          ...element.payload.doc.data()
-        }
-      })
-    })
-   }
+  constructor(private router: Router, private wifiServ: WifiService, private activityDetails: ActivityDetailsService, private city: HomeService) { }
 
   ngOnInit(): void {
 
-    this.wifiServ.getAllWifi().subscribe((wifi)=>{
-      this.WifiCards=wifi.map(data=>{
-        return{
-          id:data.payload.doc.id,
+    this.wifiServ.getAllWifi().subscribe((wifi) => {
+      this.WifiCards = wifi.map(data => {
+        return {
+          id: data.payload.doc.id,
           ...data.payload.doc.data()
         }
       });
     })
-    this.city.getAllCities().subscribe((city)=>{
-      this.Cities=city;
-    })
+
+    // this.city.getAllCities().subscribe((city) => {
+    //   this.Cities = city.map(data => {
+    //     return {
+    //       id: data.payload.doc.id,
+    //       ...data.payload.doc.data()
+    //     }
+    //   });
+    // })
   }
-  viewDetails(wID:string | undefined){
-    this.router.navigate(['/activityDetails' , wID]);
+  viewDetails(wID: string | undefined) {
+    this.router.navigate(['/activityDetails', wID]);
     //this.router.navigate(['/activityDetails'])
   }
-  
+
 }
