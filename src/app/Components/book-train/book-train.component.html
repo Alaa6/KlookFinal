@@ -1,4 +1,4 @@
-<body data-spy="scroll" data-target=".navbar" data-offset="10">
+<body data-spy="scroll" data-target=".navbar" data-offset="0">
   <nav class="navbar fixed-top navbar-expand-lg navbar-light" ng-app="myApp">
     <button
       class="navbar-toggler"
@@ -11,83 +11,41 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav" ng-controller="MyCtrl">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a
-            class="nav-link ml-5"
-            href="#section-1"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link ml-5" href="#section1">
             Package options
             <!-- <span class="sr-only">(current)</span> -->
           </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#section-2"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link" href="#section2">
             Most recent review
           </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#section-3"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link" href="#section3">
             What to expect
           </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#section-4"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link" href="#section4">
             Things to Note
           </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#section-5"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link" href="#section5">
             Location
           </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#section-6"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link" href="#section6">
             Review
           </a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            href="#section-7"
-            du-smooth-scroll
-            du-scrollspy
-            offset="30"
-          >
+          <a class="nav-link" href="#section7">
             FAQs
           </a>
         </li>
@@ -157,15 +115,15 @@
         <!--Start options-->
         <div class="options">
           <div class="row">
-            <div class="col-lg-4 col-sm -12">
+            <div class="col-lg-4 col-sm -12" style="font-size: 0.95em;">
               <i class="fas fa-dollar-sign mr-1"></i>
               <span>Conditional cancellation*</span>
             </div>
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-4 col-sm-12" style="font-size: 0.9em;">
               <i class="fas fa-print mr-1"></i>
               <span>Show mobile or printed voucher</span>
             </div>
-            <div class="col-lg-4 col-sm-12">
+            <div class="col-lg-4 col-sm-12" style="font-size: 0.95em;">
               <i class="fas fa-globe-europe mr-1"></i>
               <span>English/French/German/Italian</span>
             </div>
@@ -206,176 +164,181 @@
         <hr />
         <!--End list-->
         <!--Start package-->
-        <div class="mt-4 mb-4">
-          <span class="vl mr-2"></span>
-          <span class="package" id="section-1">
-            Swiss Travel Pass Package Options
-          </span>
-        </div>
-        <!--End package-->
-        <!--Start booking-->
-        <div class="book mt-4">
-          <div style="width: 90%; margin: auto;">
-            <div class="d-flex justify-content-between">
-              <div class="selectDate">Select date and package options</div>
-              <button type="button" class="btn btn-light clear">
-                Clear all
-              </button>
+        <div id="section1" class="container">
+          <div class="row">
+            <div class="col-12 mt-4 mb-4">
+              <span class="vl mr-2"></span>
+              <span class="package">
+                Swiss Travel Pass Package Options
+              </span>
             </div>
-            <div class="date">Please select your departure date</div>
-            <!--Datepicker-->
-            <mat-form-field>
-              <input
-                class="btn available"
-                matInput
-                [matDatepicker]="myDatePicker"
-                value="Check availability"
-              />
-              <!--Add check-->
-              <mat-datepicker-toggle
-                [for]="myDatePicker"
-                matSuffix
-              ></mat-datepicker-toggle>
-              <mat-datepicker #myDatePicker></mat-datepicker>
-            </mat-form-field>
-            <!--End check-->
-            <!--Start class-->
-            <div class="text-muted">Class</div>
-            <div class="row mt-2 ml-1">
-              <button
-                type="button"
-                class="btn first col-lg-2 col-md-2 col-sm-5 mr-2"
-              >
-                First Class
-              </button>
-              <button
-                type="button"
-                class="btn second col-lg-2 col-md-2 col-2"
-                style="font-size: 0.8em;"
-              >
-                Second Class
-              </button>
-            </div>
-            <!--End class-->
-            <!--Start pass type-->
-            <div class="pass mt-3">
-              <div class="text-muted">Pass Type</div>
+          </div>
+          <!--End package-->
+          <!--Start booking-->
+          <div class="book mt-4">
+            <div style="width: 90%; margin: auto;">
+              <div class="d-flex justify-content-between">
+                <div class="selectDate">Select date and package options</div>
+                <button type="button" class="btn btn-light clear">
+                  Clear all
+                </button>
+              </div>
+              <div class="date">Please select your departure date</div>
+              <!--Datepicker-->
+              <mat-form-field>
+                <input
+                  class="btn available"
+                  matInput
+                  [matDatepicker]="myDatePicker"
+                  value="Check availability"
+                />
+                <!--Add check-->
+                <mat-datepicker-toggle
+                  [for]="myDatePicker"
+                  matSuffix
+                ></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+              </mat-form-field>
+              <!--End check-->
+              <!--Start class-->
+              <div class="text-muted">Class</div>
               <div class="row mt-2 ml-1">
-                <button type="button" class="btn second col-lg-2 col-md-2">
-                  Consecutive
+                <button
+                  type="button"
+                  class="btn first col-lg-2 col-md-2 col-sm-5 mr-2"
+                >
+                  First Class
                 </button>
                 <button
                   type="button"
-                  class="btn flexible flexble ml-2 col-lg-2 col-md-2"
+                  class="btn second col-lg-2 col-md-3 col-sm-5"
+                  style="font-size: 0.8em;"
                 >
-                  Flexible
+                  Second Class
                 </button>
               </div>
-            </div>
-            <!--End pass type-->
-            <!--Start Validity-->
-            <div class="valid mt-3">
-              <div class="text-muted">Validity</div>
-              <div class="row ml-2 mt-2">
+              <!--End class-->
+              <!--Start pass type-->
+              <div class="pass mt-3">
+                <div class="text-muted">Pass Type</div>
+                <div class="row mt-2 ml-1">
+                  <button type="button" class="btn second col-lg-2 col-md-2">
+                    Consecutive
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible flexble ml-2 col-lg-2 col-md-2"
+                  >
+                    Flexible
+                  </button>
+                </div>
+              </div>
+              <!--End pass type-->
+              <!--Start Validity-->
+              <div class="valid mt-3">
+                <div class="text-muted">Validity</div>
+                <div class="row ml-2 mt-2">
+                  <!--col-sm-8-->
+                  <button
+                    type="button"
+                    class="btn flexible col-lg-3 col-md-3 col-8"
+                  >
+                    8 Days in 1 Month
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible ml-2 col-lg-3 col-md-3 col-8 four"
+                  >
+                    4 Days in 1 Month
+                  </button>
+                  <button
+                    type="button"
+                    class="btn second ml-2 col-lg-2 col-md-2 col-5 three"
+                  >
+                    3 Days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn first ml-2 col-lg-2 col-md-2 col-5 mr-2"
+                  >
+                    4 Days
+                  </button>
+                </div>
+                <div class="row ml-2 mt-2">
+                  <button
+                    type="button"
+                    class="btn first col-lg-2 col-md-2 col-5 mr-2"
+                  >
+                    8 Days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn first col-lg-2 col-md-2 col-5 mr-2"
+                  >
+                    15 Days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible col-lg-3 col-md-3 col-8"
+                  >
+                    3 Days in 1 Month
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible ml-2 col-lg-3 col-md-3 col-8 fifteen"
+                  >
+                    15 Days in 1 Month
+                  </button>
+                </div>
+              </div>
+              <!--End Validity-->
+              <!--Start Collection Options-->
+              <div class="collection mt-3">
+                <div class="text-muted">Collection Options</div>
                 <button
                   type="button"
-                  class="btn flexible col-lg-3 col-md-3 col-8"
+                  class="btn second ml-2 mt-2 mb-2 col-lg-2 col-md-2"
                 >
-                  8 Days in 1 Month
-                </button>
-                <button
-                  type="button"
-                  class="btn flexible ml-2 col-lg-3 col-md-3 col-8 four"
-                >
-                  4 Days in 1 Month
-                </button>
-                <button
-                  type="button"
-                  class="btn second ml-2 col-lg-2 col-md-2 col-5 three"
-                >
-                  3 Days
-                </button>
-                <button
-                  type="button"
-                  class="btn first ml-2 col-lg-2 col-md-2 col-5 mr-2"
-                >
-                  4 Days
+                  E-Ticket
                 </button>
               </div>
-              <div class="row ml-2 mt-2">
-                <button
-                  type="button"
-                  class="btn first col-lg-2 col-md-2 col-5 mr-2"
-                >
-                  8 Days
-                </button>
-                <button
-                  type="button"
-                  class="btn first col-lg-2 col-md-2 col-5 mr-2"
-                >
-                  15 Days
-                </button>
-                <button
-                  type="button"
-                  class="btn flexible col-lg-3 col-md-3 col-8"
-                >
-                  3 Days in 1 Month
-                </button>
-                <button
-                  type="button"
-                  class="btn flexible ml-2 col-lg-3 col-md-3 col-8 fifteen"
-                >
-                  15 Days in 1 Month
-                </button>
+              <!--End Collection Options-->
+              <div class="date mt-3">Quantity</div>
+              <div class="bg mt-2 d-flex justify-content-between">
+                <div>Adult</div>
+                <div>
+                  <i class="fas fa-minus p-2 mr-3"></i>
+                  <span>0</span>
+                  <i class="fas fa-plus p-2 ml-3"></i>
+                </div>
               </div>
-            </div>
-            <!--End Validity-->
-            <!--Start Collection Options-->
-            <div class="collection mt-3">
-              <div class="text-muted">Collection Options</div>
-              <button
-                type="button"
-                class="btn second ml-2 mt-2 mb-2 col-lg-2 col-md-2"
-              >
-                E-Ticket
-              </button>
-            </div>
-            <!--End Collection Options-->
-            <div class="date mt-3">Quantity</div>
-            <div class="bg mt-2 d-flex justify-content-between">
-              <div>Adult</div>
-              <div>
-                <i class="fas fa-minus p-2 mr-3"></i>
-                <span>0</span>
-                <i class="fas fa-plus p-2 ml-3"></i>
+              <div class="bg mt-2 d-flex justify-content-between">
+                <div>Youth(16-25)</div>
+                <div>
+                  <i class="fas fa-minus p-2 mr-3"></i>
+                  <span>0</span>
+                  <i class="fas fa-plus p-2 ml-3"></i>
+                </div>
               </div>
-            </div>
-            <div class="bg mt-2 d-flex justify-content-between">
-              <div>Youth(16-25)</div>
-              <div>
-                <i class="fas fa-minus p-2 mr-3"></i>
-                <span>0</span>
-                <i class="fas fa-plus p-2 ml-3"></i>
+              <div class="bg mt-2 d-flex justify-content-between">
+                <div>Child(6-15)</div>
+                <div>
+                  <i class="fas fa-minus p-2 mr-3"></i>
+                  <span>0</span>
+                  <i class="fas fa-plus p-2 ml-3"></i>
+                </div>
               </div>
-            </div>
-            <div class="bg mt-2 d-flex justify-content-between">
-              <div>Child(6-15)</div>
-              <div>
-                <i class="fas fa-minus p-2 mr-3"></i>
-                <span>0</span>
-                <i class="fas fa-plus p-2 ml-3"></i>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between mt-4">
-              <div>
-                <div class="price">EGP 4,043</div>
-                <div>Complete all required fields to continue</div>
-              </div>
-              <div>
-                <button type="button" class="btn btn-warning warn mr-2 p-2">
-                  Add to cart
-                </button>
-                <button type="button" class="btn orange p-2">Book now</button>
+              <div class="d-flex justify-content-between mt-4">
+                <div>
+                  <div class="price">EGP 4,043</div>
+                  <div>Complete all required fields to continue</div>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-warning warn mr-2 p-2">
+                    Add to cart
+                  </button>
+                  <button type="button" class="btn orange p-2">Book now</button>
+                </div>
               </div>
             </div>
           </div>
@@ -385,7 +348,7 @@
         <!--Start recent reviews-->
         <div class="reviews">
           <span class="vl mr-2"></span>
-          <span class="package" id="section-2">Most recent review</span>
+          <span class="package" id="section2">Most recent review</span>
           <div class="row mt-3">
             <div class="col-lg-2 col-md-2">
               <div class="letter">L</div>
@@ -415,7 +378,7 @@
         <!--Start what to expect-->
         <div class="expect mt-4">
           <span class="vl mr-2"></span>
-          <span class="package" id="section-3">What to expect</span>
+          <span class="package" id="section3">What to expect</span>
           <div class="mt-4">
             Use the Swiss Travel Pass and get access to unlimited rides on
             trains, boats, buses, and premium panorama trains across the country
@@ -461,7 +424,7 @@
         <!--Start things to note-->
         <div class="note">
           <span class="vl mr-2"></span>
-          <span class="package" id="section-4">Things to Note</span>
+          <span class="package" id="section4">Things to Note</span>
           <!--Confirmation-->
           <div class="subtitle">
             Confirmation
@@ -560,7 +523,7 @@
         <!--End things to note-->
         <!--Start Location-->
         <span class="vl mr-2"></span>
-        <span class="package" id="section-5">Location</span>
+        <span class="package" id="section5">Location</span>
         <img
           src="./../../../assets/train_details/maps.webp"
           style="width: 100%;"
@@ -571,7 +534,7 @@
         <!--Start Swiss Travel Pass Reviews-->
         <div class="SwissTravel">
           <span class="vl mr-2"></span>
-          <span class="package" id="section-6">Swiss Travel Pass Reviews</span>
+          <span class="package" id="section6">Swiss Travel Pass Reviews</span>
           <div class="mt-4">
             <span class="number mr-3">4.9</span>
             <i class="fas fa-star star mr-1"></i>
@@ -714,7 +677,7 @@
         <!--Start FAQs-->
         <div class="faqs mt-4">
           <span class="vl mr-2"></span>
-          <span class="package mb-5" id="section-7">FAQs</span>
+          <span class="package mb-5" id="section7">FAQs</span>
           <div class="package mt-4">Activity Q&A</div>
           <div class="ttl mt-2">Q: Can the booking be cancelled?</div>
           <div class="mt-2 mb-2">
