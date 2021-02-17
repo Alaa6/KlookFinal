@@ -6,6 +6,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { IHotelBooking } from 'src/app/viewModels/ihotel-booking';
 import { HomeService } from 'src/app/services/home.service';
 import { ICity } from 'src/app/viewModels/i-city';
+import { Router } from '@angular/router';
+import { ActivityDetailsService } from 'src/app/services/activity-details.service';
 
 @Component({
   selector: 'app-hotels',
@@ -14,13 +16,13 @@ import { ICity } from 'src/app/viewModels/i-city';
 })
 
 
-export class HotelsComponent implements OnInit ,AfterViewInit ,OnChanges {
+export class HotelsComponent implements OnInit, AfterViewInit, OnChanges {
 
   //Data
-  popular:Hotels[]=[];
-  staycation:Hotels[]=[];
-  vouchers:Hotels[]=[];
-  Cities:ICity[]=[];
+  popular: Hotels[] = [];
+  staycation: Hotels[] = [];
+  vouchers: Hotels[] = [];
+  Cities: ICity[] = [];
 
   //collapse
   show = false;
@@ -29,7 +31,7 @@ export class HotelsComponent implements OnInit ,AfterViewInit ,OnChanges {
   isCollapsed3 = true;
   isCollapsed4 = true;
 
-//Form
+  //Form
   HotelForm = this.fb.group({
     City: ['', Validators.required],
     Date: ['', Validators.required],
@@ -37,9 +39,9 @@ export class HotelsComponent implements OnInit ,AfterViewInit ,OnChanges {
   });
 
 
-  constructor( private hotelServ:HotelService ,private city : HomeService,private fb: FormBuilder , private cdRef:ChangeDetectorRef) { }
+  constructor(private activityDetails: ActivityDetailsService, private hotelService: HotelService, private router: Router, private city: HomeService, private fb: FormBuilder, private cdRef: ChangeDetectorRef) { }
   ngOnChanges(changes: SimpleChanges): void {
-   
+
   }
   ngAfterViewInit(): void {
   }
@@ -73,35 +75,58 @@ export class HotelsComponent implements OnInit ,AfterViewInit ,OnChanges {
 
   ngOnInit(): void {
 
-    this.hotelServ.getAllPopularHotels().subscribe((pop)=>{
-      this.popular=pop;
+    this.hotelService.getAllPopularHotels().subscribe((pop) => {
+      this.popular = pop.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
     })
-    this.hotelServ.getAllSatycationHotels().subscribe((stay)=>{
-      this.staycation=stay;
+    this.hotelService.getAllSatycationHotels().subscribe((stay) => {
+      this.staycation = stay.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
     })
-    this.hotelServ.getAllVouchersHotels().subscribe((voucher)=>{
-      this.vouchers=voucher;
+    this.hotelService.getAllVouchersHotels().subscribe((voucher) => {
+      this.vouchers = voucher.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
     })
-   this.city.getAllCities().subscribe((city)=>{
-    this.Cities=city;
-   })
-
+    this.city.getAllCities().subscribe((city) => {
+      this.Cities = city.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+    })
   }
 
-  hotelBooking(){
-    console.log("city : "+this.HotelForm.controls['City'].value);
-    console.log("NumOfRooms : "+this.HotelForm.controls['NumOfRooms'].value);
+  hotelBooking() {
+    console.log("city : " + this.HotelForm.controls['City'].value);
+    console.log("NumOfRooms : " + this.HotelForm.controls['NumOfRooms'].value);
 
-    let hotel:IHotelBooking={
-     City:this.HotelForm.controls['City'].value,
-      NumOfRooms:this.HotelForm.controls['NumOfRooms'].value,
-   
+    let hotel: IHotelBooking = {
+      City: this.HotelForm.controls['City'].value,
+      NumOfRooms: this.HotelForm.controls['NumOfRooms'].value,
+
     }
-    this.hotelServ.hotelBooking(hotel).then(
-     (res)=>{    console.log("Done")
-    },
-     (err)=>{console.log("error : "+err)} 
+    this.hotelService.hotelBooking(hotel).then(
+      (res) => {
+        console.log("Done")
+      },
+      (err) => { console.log("error : " + err) }
     )
 
+  }
+  viewDetails(ID: string | undefined) {
+    this.router.navigate(['/activityDetails', ID]);
   }
 }

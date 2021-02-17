@@ -177,7 +177,7 @@
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let slide of popular">
           <div class="moves ">
-            <div class="card" style="width: 17rem;">
+            <div (click)="viewDetails(slide.id)" class="card" style="width: 17rem;">
               <img src="{{slide.Image}}" class="card-img-top" style="height: 10em;" alt="...">
               <div class="top_left">
                 <i class="fas fa-map-marker-alt"></i>
@@ -264,7 +264,7 @@
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let sl of staycation">
           <div class="moves">
-            <div class="card" style="width: 17rem;">
+            <div (click)="viewDetails(sl.id)" class="card" style="width: 17rem;">
               <img src="{{sl.Image}}" class="card-img-top" style="height: 10em;" alt="...">
               <div class="top_left">
                 <i class="fas fa-map-marker-alt"></i>
@@ -350,7 +350,7 @@
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let sl of vouchers">
           <div class="moves">
-            <div class="card" style="width: 17rem;">
+            <div (click)="viewDetails(sl.id)" class="card" style="width: 17rem;">
               <img src="{{sl.Image}}" class="card-img-top" style="height: 10em;" alt="...">
               <div class="top_left">
                 <i class="fas fa-map-marker-alt"></i>
