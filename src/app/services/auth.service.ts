@@ -69,9 +69,16 @@ export class AuthService {
 
   }
 
+  getbyID(idd:string){
+    // const [userDetails, setUserDetails] = useState('')
+return this.fb.collection('users').doc(idd).get()
+        // .then(snapshot => setUserDetails(snapshot.data()))
+
+  }
+
   deleteCoffeeOrder(id:string) {
     return this.fb.collection("user").doc(id).delete();
-    this.afAuth.currentUser
+    // this.afAuth.currentUser
   }
 
 }

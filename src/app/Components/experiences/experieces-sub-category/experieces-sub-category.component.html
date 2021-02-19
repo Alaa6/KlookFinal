@@ -49,11 +49,12 @@
                 </path>
               </svg>
 
-              <input class="form-control rounded pt-2 mr-3" type="search"
+              <input class="form-control rounded pt-2 mr-3" [(ngModel)]="searchTerm"
+               type="search"
                 placeholder="what do you want to do in cairo ?" id="tour-search" />
             </div>
 
-            <button class="rounded ml-2">Search</button>
+            <button class="rounded ml-2" (click)="search()">Search</button>
           </div>
         </div>
 

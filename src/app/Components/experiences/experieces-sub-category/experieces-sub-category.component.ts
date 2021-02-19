@@ -11,6 +11,7 @@ import { ITour } from 'src/app/viewModels/itour';
 import { ICity } from 'src/app/viewModels/icity';
 import { ISubCategory } from 'src/app/viewModels/isub-category';
 import { filter } from 'rxjs/operators';
+import { User } from './../../../viewModels/user';
 
 @Component({
   selector: 'app-experieces-sub-category',
@@ -26,7 +27,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   categoryList: ICategory[] = []
   category$: Observable<ICategory[]> | undefined
   city: string = 'Cairo'
-
+  searchTerm:string=''
 
   // @Input() city: string =''; 
   bestSellerList: ITour[] = [];
@@ -243,7 +244,11 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   }
 
 
+toursSearch:ITour[]=[]
+ search(){
+  
+    this.router.navigate(['/experiences/search/',this.city,this.subCatName,this.searchTerm])  
 
-
+ }
 
 }

@@ -11,18 +11,27 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 // import { CardDirective } from '../../Directives/card.directive';
 
+import { SearchExperienceComponent } from './search-experience/search-experience.component';
 
 
 const routes: Routes = [
-  { path  : 'cat/:city/:supCatName'  , component : ExperiecesSubCategoryComponent},  
+
+  { path  : 'cat/:city/:supCatName'  , component : ExperiecesSubCategoryComponent},
+  { path  : 'search/:city/:supCatName/:searchKey'  , component : SearchExperienceComponent},
+  
+  
+  // { path  : 'attractions' , component : AttractionsComponent},
+
+  
 ]
+
 
 @NgModule({
   declarations: [
   AttractionsComponent,
   ExperiecesSubCategoryComponent ,
   // CardDirective,
- 
+  SearchExperienceComponent ,
 
   
 ],
