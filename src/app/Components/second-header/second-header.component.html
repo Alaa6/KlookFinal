@@ -297,7 +297,7 @@
         <a
           class="nav-link dropdown-toggle"
           routerLinkActive="active"
-          (click)="setsubCategoryName('Experiences')"
+          (click)="goToExperiencesSubCategory('Experiences')"
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
@@ -305,17 +305,19 @@
           aria-expanded="false"
         >
           <i class="fas fa-parachute-box"></i>
-          <span class="hd1"> <a routerLink="/experiences" routerLinkActive="active"  class="mmain">
-           
+          <span class="hd1"> <a class="mmain"> 
             Experiences
           </a> </span>
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="setsubCategoryName('Attractions')">
-            Attractions
+          <div *ngFor="let subCat of allSubCategorey">
+          <a  class="dropdown-item" routerLinkActive="active" (click)="goToExperiencesSubCategory(subCat.Name)"
+          [ngClass]="{'display-none': subCat.Name === 'Experiences'} " >
+            {{subCat.Name}}
           </a>
-          <a class="dropdown-item" (click)="setsubCategoryName('Tours')">
+          </div>
+          <!-- <a class="dropdown-item" (click)="setsubCategoryName('Tours')"  >
             Tours
           </a>
           <a
@@ -331,7 +333,7 @@
             (click)="setsubCategoryName('Relaxation & beauty')"
           >
             Relaxation & beauty
-          </a>
+          </a> -->
           <!-- <a
             class="dropdown-item"
             routerLink="/experiences/attractions"
@@ -340,7 +342,7 @@
             Attractions
           </a> -->
 
-          <a
+          <!-- <a
             class="dropdown-item"
             (click)="setsubCategoryName('Cultural experiences')"
           >
@@ -352,7 +354,7 @@
             (click)="setsubCategoryName('Fun & nightlife')"
           >
             Fun & nightlife
-          </a>
+          </a> -->
         </div>
       </li>
       <!--3-->

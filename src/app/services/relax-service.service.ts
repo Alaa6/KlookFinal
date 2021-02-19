@@ -32,46 +32,46 @@ export class RelaxServiceService {
 
   }
 
-  getall(){
+  getall() {
     return this.afs.collection<Tours>('ToursCollection').valueChanges();
   }
-  getCategoriesByCityAndSecion(_city: string , _section : string): Observable<ICategory[]> {
 
-
-
-    return this.afs.collection<ICategory>('categories' ,ref => ref.where( 'city', '==', _city).where('section', '==',_section )).valueChanges()
-
+  getCategories(_city: string, _section?: string): Observable<ICategory[]> {
+    if (_section == undefined)
+      return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city)).valueChanges()
+      return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).valueChanges()
   }
 
   getAllCities(): Observable<ICity[]> {
-
-
-
     return this.afs.collection<ICity>('Cities').valueChanges()
-
-  }
-  getAllTours(_city : string  , _category : string , _section : string): Observable<ITour[]> {
-
-
-    return this.afs.collection<ITour>('ToursCollection' ,ref => ref.where( 'City', '==', _city ).where('Categories',  '==', _category).where('Section',  '==', _section)).valueChanges()
-
   }
 
-  getSubCategory (_catName : string) :  Observable<ISubCategory[]>  {
-    return this.afs.collection <ISubCategory> ('SubCategories' ,ref => ref.where( 'Name' , '==', _catName )).valueChanges();
+  getAllTours(_city: string, _section: string, _category?: string): Observable<ITour[]> {
+
+    if (_category == undefined)
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).valueChanges()
+    return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).valueChanges()
 
   }
 
-  addToTours(itemm:Tours){
+  getSubCategory(_catName?: string): Observable<ISubCategory[]> {
+    if (_catName == undefined) {
+      return this.afs.collection<ISubCategory>('SubCategories').valueChanges();
+    }
+    else
+      return this.afs.collection<ISubCategory>('SubCategories', ref => ref.where('Name', '==', _catName)).valueChanges();
+  }
+
+  addToTours(itemm: Tours) {
 
     console.log(itemm)
     this.afs.collection('ToursCollection').add(itemm).then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
     })
-    .catch(function (error) {
-      console.error("Error adding document: ", error);
-    });
-      }
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+  }
 
 }
 

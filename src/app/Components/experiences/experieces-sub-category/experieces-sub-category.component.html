@@ -1,63 +1,36 @@
 <!-- start first section (header of page )   -->
 <article>
-  <!-- <section
-    id="tour-header"
-    class="d-flex flex-column p-5 justify-content-center col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
-    *ngFor="let subCat of subCategory"
-  > -->
-  <section id="tour-header" *ngFor="let subCat of subCategory"
-    class="d-flex flex-column justify-content-center align-items-center row">
-    <div class="cover row">
-      <img class="bg" src="{{ subCat.Background }}" class="img-fluid" alt="" />
 
-      <div class="tl ml-5 col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12">
+  <section id="tour-header" *ngFor="let subCat of subCategory"
+    class="d-flex flex-column align-items-center row">
+    <div class="cover row">
+      <img class="bg  " src="{{ subCat.Background }}" alt="" />
+     
+
+      <div class="tl ml-5 col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12 d-flex flex-column  justify-content-center" >
         <div class="dropdown">
           <button class="btn dropdown-toggle attrc" type="button" id="dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             {{ subCatName }}
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Experiences')">
-              Experiences
-              <i class="fas fa-check ml-5"></i>
-            </a>
-            <a class="dropdown-item actv" routerLinkActive="active" (click)="setsubCategoryName('Attractions')">
-              Attractions
-              <i class="fas fa-check ml-5"></i>
-            </a>
-            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Tours')">
-              Tours
-              <i class="fas fa-check ml-5"></i>
-            </a>
-
-            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Outdoors & sports')">
-              Outdoors & sports
-              <i class="fas fa-check ml-5"></i>
-            </a>
-
-            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Relaxation & beauty')">
-              Relaxation & beauty
-              <i class="fas fa-check ml-5"></i>
-            </a>
-            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName('Cultural experiences')">
-              Culture & workshops
-              <i class="fas fa-check ml-5"></i>
-            </a>
-            <a class="dropdown-item" routerLinkActive="active" (click)="setsubCategoryName(' Fun & nightlife')">
-              Fun & nightlife
-              <i class="fas fa-check ml-5"></i>
-            </a>
+            <div *ngFor="let subCat of allSubCategorey">
+              <a routerLinkActive="active" class=" dropdown-item mt-2 p-3" (click)="goToSubCategory(subCat.Name)"
+                 [ngClass]="{'checkedSubCat':subCatName === subCat.Name }">
+                {{subCat.Name}}
+                <i class="fas fa-check  ml-5"  [ngClass]="{'checkedSubCat':subCatName === subCat.Name }" ></i>
+              </a>
+            </div>
           </div>
         </div>
 
         <div class="disc mt-3">
-          Discover the best theme parks, museums and more must-sees in Hong Kong
-          & Macau
+          Discover the best theme parks, museums and more must-sees in  {{city}}
         </div>
 
         <!-- location -->
 
-        <div class="destination d-flex p-2 m-1 mt-3 col-1 justify-content-center align-items-center"
+        <div class="destination d-flex p-2  mt-3 col-1 justify-content-center align-items-center"
           (click)="openPopup()">
           <i class="fas fa-map-marker-alt pr-1" style="font-size: 1.2em; color: gray;"></i>
           <span>{{ city }}</span>
@@ -67,8 +40,8 @@
 
         <!-- search -->
 
-        <div class="row ml-2 mt-3">
-          <div id="search" class="mt-3 rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+        <div class="row ml-2 ">
+          <div id="search" class="rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
             <div class="input-group mr-3 rounded pl-3">
               <svg class="mt-2" viewBox="0 0 24 24" width="24" height="24">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -130,7 +103,7 @@
     <h2 class="font-weight-bold ml-4 mt-1">Unmissable things to do</h2>
 
     <div id="best-backhround" class="m-2 rounded-lg row">
-      <div class="mt-2 col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <div class="mt-2 col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2" >
         <img
           src="https://res.klook.com/image/upload/v1604053241/ued/ttd/recommended%20section/icon_ttd_recommend_bestseller_fill_sxl_colorful.png"
           style="width: 46px;" />
@@ -140,7 +113,7 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of bestSellerList" class="row">
-            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+            <mat-card appCard id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
               style="height: 350px;">
               <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
@@ -190,32 +163,41 @@
           <h4 class="mt-3" style="color: #ff5722;">Awesome deals</h4>
         </div>
       </div>
-
-      <div class="container col-lg-9 col-xl-9 col-9 carsolCard col-md-12">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide *ngFor="let slide of awsomeDealsList">
-            <div class="card mb-2 ml-3 owlheight">
-              <img class="card-img-top carsimg" src="{{ slide.Image }}" alt="Card image cap" />
-              <span class="container-fluid card-img-overlay cardover">
-                <i class="fas fa-map-marker-alt mr-2"></i>
-                {{ slide.City }}
-              </span>
-              <div class="card-body">
-                <h6 class="card-title fontCard">{{ slide.Title }}</h6>
-                <div class="StarCart">
-                  <i class="fas fa-star" style="color: #ff9d26;"></i>
-                  <span style="color: #ff9d26;">{{ slide.Rate }}</span>
-                  <!-- <span>{{slide.Booked+slide.Review}}</span> -->
-                </div>
-                <div>
-                  <div class="mt-3">
-                    <b>{{ slide.Price }}</b>
-                    <i class="fas fa-bolt ml-2" style="color: #ff5722;"></i>
-                  </div>
-                  <span class="StarCart">{{ slide.Date }}</span>
+          <ng-template carouselSlide *ngFor="let tour of awsomeDealsList" class="row">
+            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+              style="height: 350px;">
+              <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
+
+              <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <div id="location" class="d-flex p-2 m-1 col-1" style="color: #fff;">
+                  <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                  <p>{{ tour.City }}</p>
                 </div>
               </div>
-            </div>
+              <div class="card-body">
+                <h4 class="card-title font-weight-bold" style="font-size: medium;">
+                  {{ tour.Title }}
+                </h4>
+                <p class="card-text" style="color: #a0a0a0;">
+                  {{ tour.Booked }}+ Booked
+                </p>
+                <div class="d-flex">
+                  <h4 class="card-text font-weight-bold" style="font-size: medium;">
+                    EGP {{ tour.Price }}
+                  </h4>
+                  <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#FF5722" fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z">
+                    </path>
+                  </svg>
+                </div>
+                <p class="card-text" style="color: #a0a0a0;">
+                  Book now for {{ tour.Date }}
+                </p>
+              </div>
+            </mat-card>
           </ng-template>
         </owl-carousel-o>
       </div>
@@ -235,31 +217,41 @@
         </div>
       </div>
 
-      <div class="container col-lg-9 col-xl-9 col-9 carsolCard col-md-12">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
-          <ng-template carouselSlide *ngFor="let slide of forKidsList">
-            <div class="card mb-2 ml-3 owlheight">
-              <img class="card-img-top carsimg" src="{{ slide.Image }}" alt="Card image cap" />
-              <span class="container-fluid card-img-overlay cardover">
-                <i class="fas fa-map-marker-alt mr-2"></i>
-                {{ slide.City }}
-              </span>
-              <div class="card-body">
-                <h6 class="card-title fontCard">{{ slide.Title }}</h6>
-                <div class="StarCart">
-                  <i class="fas fa-star" style="color: #ff9d26;"></i>
-                  <span style="color: #ff9d26;">{{ slide.Rate }}</span>
-                  <!-- <span>{{slide.Booked+slide.Review}}</span> -->
-                </div>
-                <div>
-                  <div class="mt-3">
-                    <b>{{ slide.Price }}</b>
-                    <i class="fas fa-bolt ml-2" style="color: #ff5722;"></i>
-                  </div>
-                  <span class="StarCart">{{ slide.Date }}</span>
+          <ng-template carouselSlide *ngFor="let tour of forKidsList" class="row">
+            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+              style="height: 350px;">
+              <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
+
+              <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <div id="location" class="d-flex p-2 m-1 col-1" style="color: #fff;">
+                  <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                  <p>{{ tour.City }}</p>
                 </div>
               </div>
-            </div>
+              <div class="card-body">
+                <h4 class="card-title font-weight-bold" style="font-size: medium;">
+                  {{ tour.Title }}
+                </h4>
+                <p class="card-text" style="color: #a0a0a0;">
+                  {{ tour.Booked }}+ Booked
+                </p>
+                <div class="d-flex">
+                  <h4 class="card-text font-weight-bold" style="font-size: medium;">
+                    EGP {{ tour.Price }}
+                  </h4>
+                  <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
+                    <path fill="#FF5722" fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z">
+                    </path>
+                  </svg>
+                </div>
+                <p class="card-text" style="color: #a0a0a0;">
+                  Book now for {{ tour.Date }}
+                </p>
+              </div>
+            </mat-card>
           </ng-template>
         </owl-carousel-o>
       </div>
@@ -288,9 +280,9 @@
                   <div>
                     <p>Distance of</p>
 
-                    <span class="font-weight-bold" style="font-size: 25px;">
+                    <span class="font-weight-bold" >
                       {{ tour.Distance }}
-                    </span>
+                    </span>  km
                   </div>
 
                   <p class="card-text font-weight-bold" style="font-size: 20px;">
@@ -327,7 +319,7 @@
 
   <section class="m-5">
     <h2 class="font-weight-bold ml-4 mt-1">Recommended</h2>
-    <p class="font-weight-bold ml-4 mt-4" style="font-size: 16px;">Cairo</p>
+    <p class="font-weight-bold ml-4 mt-4" style="font-size: 16px;">{{city}}</p>
 
     <div class="d-flex flex-wrap ml-3 mt-4">
       <a id="recomended-txt" class="mb-2 mr-2 p-2">
