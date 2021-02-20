@@ -20,8 +20,6 @@ import { User } from './../../../viewModels/user';
 })
 export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
-
-  // @ViewChild('testCity') testCity: ElementRef = new ElementRef('input')
   @ViewChild(PopupComponent) popupComponent: any;
   // @Input() cityName : string = 'Cairo'
   // @ViewChild ('cityName') cityName : ElementRef  = new ElementRef('input')
@@ -39,6 +37,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   testCity: string = 'Cairo'
   cityList: ICity[] = [];
   subCategory: ISubCategory[] = []
+  allSubCategorey: ISubCategory[] = []
   awsomeDealsList: ITour[] = []
   forKidsList: ITour[] = []
   loading: boolean = true
@@ -82,6 +81,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     private router: Router) {
     this.cityName = 'Cairo'
 
+
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -98,11 +99,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   }
 
-  //huhuhu
 
-  ngAfterViewInit(): void {
 
-  }
 
   ngOnInit(): void {
 
@@ -112,6 +110,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
     console.log(test, "onInit");
 
+
+    
     this.relaxService.getAllCities().subscribe((wifi) => {
       this.cityList = wifi.map(data => {
         return {
@@ -132,74 +132,172 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
       console.log(this.subCatName, this.city, "data");
 
 
-      // this.category$ = this.relaxService.getCategoriesByCityAndSecion(this.city, this.subCatName);
 
-      // this.relaxService.getCategoriesByCityAndSecion(this.city, this.subCatName).subscribe((wifi) => {
-      //   this.categoryList = wifi.map(data => {
-      //     return {
-      //       id: data.payload.doc.id,
-      //       ...data.payload.doc.data()
-      //     }
-      //   });
-      // })
+      if (this.subCatName == 'Experiences') {
+        this.relaxService.getCategories(this.city).subscribe((res) => {
+          this.categoryList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+        }, (err) => console.log(err))
+
+      } else {
+        this.relaxService.getCategories(this.city, this.subCatName).subscribe((wifi) => {
+          this.categoryList = wifi.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+
+        })
+
+      }
 
 
-      this.relaxService.getAllTours(this.city, this.subCatName, "BestSeller").subscribe((wifi) => {
-        this.bestSellerList = wifi.map(data => {
+      if (this.subCatName == 'Experiences') {
+        this.relaxService.getAllTours(this.city, "BestSeller").subscribe((res) => {
+         
+          this.bestSellerList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+
+        }, (err) => console.log(err))
+
+
+        this.relaxService.getAllTours(this.city, "Nearby").subscribe((res) => {
+
+          this.nearbyList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+        }, (err) => console.log(err))
+
+        this.relaxService.getAllTours(this.city, "AwsomeDeals").subscribe((res) => {
+         
+          this.awsomeDealsList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+        }, (err) => console.log(err))
+
+        this.relaxService.getAllTours(this.city, "ForKids").subscribe((res) => {
+          
+          this.forKidsList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+        }, (err) => console.log(err))
+
+
+      } else {
+        this.relaxService.getAllTours(this.city, "BestSeller", this.subCatName).subscribe((res) => {
+        
+          this.bestSellerList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          
+        }, (err) => console.log(err))
+
+
+        this.relaxService.getAllTours(this.city, "Nearby", this.subCatName).subscribe((res) => {
+         
+          this.nearbyList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          
+          this.loading = false
+        }, (err) => console.log(err))
+
+        this.relaxService.getAllTours(this.city, "AwsomeDeals", this.subCatName).subscribe((res) => {
+         
+          this.awsomeDealsList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+        }, (err) => console.log(err))
+
+        this.relaxService.getAllTours(this.city, "ForKids", this.subCatName).subscribe((res) => {
+      
+          this.forKidsList = res.map(data => {
+            return {
+              id: data.payload.doc.id,
+              ...data.payload.doc.data()
+            }
+          });
+          this.loading = false
+        }, (err) => console.log(err))
+
+
+      }
+
+  // ngAfterViewInit(): void {
+
+      
+
+
+
+
+      this.relaxService.getSubCategory(this.subCatName).subscribe((res) => {
+      
+        this.subCategory = res.map(data => {
           return {
             id: data.payload.doc.id,
             ...data.payload.doc.data()
           }
         });
-      })
+        this.loading = false
+      }, (err) => console.log(err))
 
-
-      this.relaxService.getAllTours(this.city, this.subCatName, "Nearby").subscribe((wifi) => {
-        this.nearbyList = wifi.map(data => {
+      this.relaxService.getSubCategory().subscribe((res) => {
+       
+        this.allSubCategorey = res.map(data => {
           return {
             id: data.payload.doc.id,
             ...data.payload.doc.data()
           }
         });
-      })
+        this.loading = false
+      }, (err) => console.log(err))
 
-      this.relaxService.getAllTours(this.city, this.subCatName, "AwsomeDeals").subscribe((wifi) => {
-        this.awsomeDealsList = wifi.map(data => {
-          return {
-            id: data.payload.doc.id,
-            ...data.payload.doc.data()
-          }
-        });
-      })
-
-      this.relaxService.getAllTours(this.city, this.subCatName, "ForKids").subscribe((wifi) => {
-        this.forKidsList = wifi.map(data => {
-          return {
-            id: data.payload.doc.id,
-            ...data.payload.doc.data()
-          }
-        });
-      })
-
-
-
-      this.relaxService.getSubCategory(this.subCatName).subscribe((wifi) => {
-        this.subCategory = wifi.map(data => {
-          return {
-            id: data.payload.doc.id,
-            ...data.payload.doc.data()
-          }
-        });
-      })
 
     },
       (err) => console.log(err)
 
     )   // return 7aga mn no3 subscription
 
+      // this.router.navigateByUrl(this.router.url.replace(this.city.split(" ").join("%20"), city));
+      // this.city = city
+      // this.router.navigateByUrl(this.router.url.replace(this.city , city));
 
 
-    //ehduehdhe
+    // });
 
   }
 
@@ -214,10 +312,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
       this.router.navigateByUrl(this.router.url.replace(this.city.split(" ").join("%20"), city));
       this.city = city
       // this.router.navigateByUrl(this.router.url.replace(this.city , city));
-
-
-    });
-
+    })
   }
 
   setsubCategoryName(subCatName: string) {
@@ -233,7 +328,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   search() {
 
     this.router.navigate(['/experiences/search/', this.city, this.subCatName, this.searchTerm])
-
   }
   goToSubCategory(subCatName?: string) {
     if (subCatName != undefined) {
