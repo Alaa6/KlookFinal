@@ -80,7 +80,8 @@
               style="height: 12em">
               <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
 
-              <div class="card-body text-center d-flex flex-column align-items-center">
+              <div (click)="viewDetails(cat.id,'Cities')"
+                class="card-body text-center d-flex flex-column align-items-center">
                 <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
                 <img id="card-icon" class="mb-2" src="{{ cat?.image }}" />
                 <p class="card-text">{{ cat?.name }}</p>
@@ -114,8 +115,8 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of bestSellerList" class="row">
-            <mat-card appCard id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
-              style="height: 350px;">
+            <mat-card (click)="viewDetails(tour.id,'ToursCollection')" id="cat-card"
+              class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10" style="height: 350px;">
               <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
               <div class="card-img-overlay d-flex flex-column justify-content-between">
@@ -167,7 +168,7 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of awsomeDealsList" class="row">
-            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+            <mat-card id="cat-card" (click)="viewDetails(slide.id,'ToursCollection')" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
               style="height: 350px;">
               <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
@@ -221,7 +222,7 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of forKidsList" class="row">
-            <mat-card id="cat-card" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+            <mat-card id="cat-card" (click)="viewDetails(slide.id,'ToursCollection')"  class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
               style="height: 350px;">
               <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
@@ -273,7 +274,8 @@
 
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of nearbyList">
-            <div class="mt-2 card mb-2 ml-3" (click)="setCityName(tour.Title)">
+            <div (click)="viewDetails(tour.id,'ToursCollection')" class="mt-2 card mb-2 ml-3"
+              (click)="setCityName(tour.Title)">
               <div id="cat-card" class="card rounded-lg m-1">
                 <img id="img-baground" class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 

@@ -24,47 +24,67 @@ export class RelaxServiceService {
     // this.tt=
   }
 
-  getallatours(item1: string, item2: string, value1: string, value2: string): Observable<Tours[]> {
+  getallatours(item1: string, item2: string, value1: string, value2: string) {
 
     // return this.afs.collection<Tours>('ToursCollection', ref => ref.where('Categories', '==', 'Relax').where('Section','==','BestSeller'))
     return this.afs.collection<Tours>('ToursCollection', ref => ref.where(item1, '==', value1).where(item2, '==', value2))
-      .valueChanges();
+      .snapshotChanges();
 
 
   }
 
   getall() {
-    return this.afs.collection<City>('Cities').valueChanges();
+    return this.afs.collection<Tours>('ToursCollection').snapshotChanges();
   }
 
-  getCategories(_city: string, _section?: string): Observable<ICategory[]> {
+  // getCategoriesByCityAndSecion(_city: string, _section: string) { 
+  //   return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).snapshotChanges();
+
+
+  // }
+
+
+
+
+  getCategories(_city: string, _section?: string) {
     if (_section == undefined)
-      return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city)).valueChanges()
-    return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).valueChanges()
+      return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city)).snapshotChanges()
+    return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).snapshotChanges()
   }
 
-  getAllCities(): Observable<ICity[]> {
-    return this.afs.collection<ICity>('Cities').valueChanges()
+  getAllCities() {
+    return this.afs.collection<ICity>('Cities').snapshotChanges()
   }
 
-  getAllTours(_city: string, _section?: string, _category?: string): Observable<ITour[]> {
+  // getAllTours(_city: string, _category: string, _section: string) {
+
+  getAllTours(_city: string, _section?: string, _category?: string){
 
     if (_category == undefined)
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).valueChanges()
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).snapshotChanges()
     if (_section == undefined)
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category)).valueChanges()
-    else
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).valueChanges()
-
-  }
-
-  getSubCategory(_catName?: string): Observable<ISubCategory[]> {
-    if (_catName == undefined) {
-      return this.afs.collection<ISubCategory>('SubCategories').valueChanges();
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category)).snapshotChanges()
+    else{
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).snapshotChanges()
     }
-    else
-      return this.afs.collection<ISubCategory>('SubCategories', ref => ref.where('Name', '==', _catName)).valueChanges();
+
+
   }
+
+  getSubCategory(_catName?: string) {
+    if (_catName == undefined) {
+      return this.afs.collection<ISubCategory>('SubCategories').snapshotChanges();
+    }
+    else{
+      return this.afs.collection<ISubCategory>('SubCategories', ref => ref.where('Name', '==', _catName)).snapshotChanges();
+
+
+    }
+
+
+  }
+
+  
 
   addToTours(itemm: Tours) {
 

@@ -19,13 +19,11 @@ const routes: Routes = [
   { path: 'credits', component: KlookCreditComponent },
   { path: 'details', component: DetailsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //Default Path
-  { path: 'activityDetails/:id', component: ActivityDetailsComponent },
+  { path: 'activityDetails/:collectionName/:id', component: ActivityDetailsComponent },
   {
     path: 'experiences',
     loadChildren: () => import('./Components/experiences/experiences.module').then(m => m.ExperiencesModule)
   },
-  // { path  : 'sign/:subsign'  , component : SignComponent},
-  // {path :'dash' , component : DashboardComponent} ,
   {
     path: 'sign',
     loadChildren: () => import('./Components/admins/admins.module').then(m => m.AdminsModule)

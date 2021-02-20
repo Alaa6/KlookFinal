@@ -29,18 +29,17 @@ export class WifiComponent implements OnInit {
       });
     })
 
-    // this.city.getAllCities().subscribe((city) => {
-    //   this.Cities = city.map(data => {
-    //     return {
-    //       id: data.payload.doc.id,
-    //       ...data.payload.doc.data()
-    //     }
-    //   });
-    // })
+    this.city.getAllCities().subscribe((city) => {
+      this.Cities = city.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+    })
   }
-  viewDetails(wID: string | undefined) {
-    this.router.navigate(['/activityDetails', wID]);
-    //this.router.navigate(['/activityDetails'])
+  viewDetails(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/activityDetails', collectionName, ID]);
   }
 
 }
