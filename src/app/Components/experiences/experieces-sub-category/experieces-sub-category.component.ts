@@ -111,7 +111,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     console.log(test, "onInit");
 
 
-
     this.relaxService.getAllCities().subscribe((wifi) => {
       this.cityList = wifi.map(data => {
         return {
@@ -161,7 +160,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
       if (this.subCatName == 'Experiences') {
         this.relaxService.getAllTours(this.city, "BestSeller").subscribe((res) => {
-
           this.bestSellerList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -185,7 +183,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
         this.relaxService.getAllTours(this.city, "AwsomeDeals").subscribe((res) => {
-
           this.awsomeDealsList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -196,7 +193,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
         this.relaxService.getAllTours(this.city, "ForKids").subscribe((res) => {
-
           this.forKidsList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -276,7 +272,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
       }, (err) => console.log(err))
 
       this.relaxService.getSubCategory().subscribe((res) => {
-
         this.allSubCategorey = res.map(data => {
           return {
             id: data.payload.doc.id,
