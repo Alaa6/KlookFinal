@@ -34,7 +34,12 @@ export class SecondHeaderComponent implements OnInit {
   ngOnInit(): void {
 
     this.relaxService.getSubCategory().subscribe((res) => {
-      this.allSubCategorey = res
+      this.allSubCategorey = res.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
       // this.loading = false
     }, (err) => console.log(err))
 
