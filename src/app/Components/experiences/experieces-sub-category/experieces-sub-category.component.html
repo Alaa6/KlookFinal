@@ -80,7 +80,7 @@
               style="height: 12em">
               <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
 
-              <div (click)="viewDetails(cat.id,'Cities')"
+              <div (click)="search()"
                 class="card-body text-center d-flex flex-column align-items-center">
                 <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
                 <img id="card-icon" class="mb-2" src="{{ cat?.image }}" />
@@ -168,7 +168,7 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of awsomeDealsList" class="row">
-            <mat-card id="cat-card" (click)="viewDetails(slide.id,'ToursCollection')" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+            <mat-card id="cat-card" (click)="viewDetails(tour.id,'ToursCollection')" class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
               style="height: 350px;">
               <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
@@ -222,7 +222,7 @@
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let tour of forKidsList" class="row">
-            <mat-card id="cat-card" (click)="viewDetails(slide.id,'ToursCollection')"  class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+            <mat-card id="cat-card" (click)="viewDetails(tour.id,'ToursCollection')"  class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
               style="height: 350px;">
               <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
 
