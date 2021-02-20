@@ -10,6 +10,7 @@ import { ICity } from '../viewModels/icity';
 import { IActivity } from '../viewModels/iactivity';
 import { ITour } from '../viewModels/itour';
 import { ISubCategory } from '../viewModels/isub-category';
+import { City } from './../viewModels/city';
 
 
 
@@ -70,6 +71,13 @@ export class RelaxServiceService {
       .catch(function (error) {
         console.error("Error adding document: ", error);
       });
+  }
+
+  searchForTours(_city: string, _category: string): Observable<ITour[]> {
+
+    return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city)
+      .where('Categories', '==', _category)).valueChanges()
+
   }
 
 }

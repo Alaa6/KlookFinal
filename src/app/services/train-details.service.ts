@@ -5,13 +5,12 @@ import { ITrainDetails } from '../viewModels/itrain-details';
 import { ITrainDetailsReview } from '../viewModels/itrain-details-review';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TrainDetailsService {
-
   constructor(public fs: AngularFirestore) { }
 
-  //   getAllReviews() 
+  //   getAllReviews()
   //   {
   //     this.fs.collection("train-reviwes").where("type", "==", "book")
   // .get()
@@ -26,13 +25,24 @@ export class TrainDetailsService {
   //   }
 
   getReviews(): Observable<ITrainDetailsReview[]> {
-    return this.fs.collection<ITrainDetailsReview>('train-reviews').valueChanges();
+    return this.fs
+      .collection<ITrainDetailsReview>('train-reviews', (ref) =>
+        ref.where('type', '==', 'book')
+      )
+      .valueChanges();
   }
 
-
   bookTrip(data: ITrainDetails) {
-    return this.fs.collection<any>('train-book').add(data).then
-      ((res) => { console.log("trip is booked " + res) },
-        (err) => { console.log(err) })
+    return this.fs
+      .collection<any>('train-book')
+      .add(data)
+      .then(
+        (res) => {
+          console.log('trip is booked ' + res);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 }
