@@ -44,7 +44,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   count: number = 5
 
 
-
+// ay 7aga bngrb 3shan a7na bwzna l code 3nd dena
 
 
   customOptions: OwlOptions = {
@@ -334,7 +334,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
       this.router.navigateByUrl(this.router.url.replace(this.subCatName.split(" ").join("%20"), subCatName));
     }
   }
-  
+
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
