@@ -245,8 +245,9 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
 toursSearch:ITour[]=[]
+
  search(){
-  
+
     this.router.navigate(['/experiences/search/',this.city,this.subCatName,this.searchTerm])  
 
  }

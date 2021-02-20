@@ -9,6 +9,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AttractionsComponent } from '../attractions/attractions.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import {MatSliderModule} from '@angular/material/slider';
 // import { CardDirective } from '../../Directives/card.directive';
 
 import { SearchExperienceComponent } from './search-experience/search-experience.component';
@@ -43,7 +44,9 @@ const routes: Routes = [
     MatCardModule  ,
     CarouselModule ,
     MatProgressSpinnerModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule ,
+    MatSliderModule
+    
   ] ,
 })
 export class ExperiencesModule { }

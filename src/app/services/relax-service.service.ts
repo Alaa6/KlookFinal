@@ -33,25 +33,28 @@ export class RelaxServiceService {
 
   }
 
-  getall(){
+  getall() {
     return this.afs.collection<City>('Cities').valueChanges();
   }
 
   getCategories(_city: string, _section?: string): Observable<ICategory[]> {
     if (_section == undefined)
       return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city)).valueChanges()
-      return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).valueChanges()
+    return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).valueChanges()
   }
 
   getAllCities(): Observable<ICity[]> {
     return this.afs.collection<ICity>('Cities').valueChanges()
   }
 
-  getAllTours(_city: string, _section: string, _category?: string): Observable<ITour[]> {
+  getAllTours(_city: string, _section?: string, _category?: string): Observable<ITour[]> {
 
     if (_category == undefined)
       return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).valueChanges()
-    return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).valueChanges()
+    if (_section == undefined)
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category)).valueChanges()
+    else
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).valueChanges()
 
   }
 
@@ -74,12 +77,12 @@ export class RelaxServiceService {
       });
   }
 
-      searchForTours(_city : string  , _category : string ): Observable<ITour[]> {
+  searchForTours(_city: string, _category: string): Observable<ITour[]> {
 
-        return this.afs.collection<ITour>('ToursCollection',ref => ref.where( 'City', '==', _city )
-        .where('Categories',  '==', _category)).valueChanges()
-    
-      }
+    return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city)
+      .where('Categories', '==', _category)).valueChanges()
+
+  }
 
 }
 
