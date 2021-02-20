@@ -58,13 +58,13 @@ export class RelaxServiceService {
 
   // getAllTours(_city: string, _category: string, _section: string) {
 
-  getAllTours(_city: string, _section?: string, _category?: string){
+  getAllTours(_city: string, _section?: string, _category?: string) {
 
     if (_category == undefined)
       return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).snapshotChanges()
     if (_section == undefined)
       return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category)).snapshotChanges()
-    else{
+    else {
       return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).snapshotChanges()
     }
 
@@ -75,7 +75,7 @@ export class RelaxServiceService {
     if (_catName == undefined) {
       return this.afs.collection<ISubCategory>('SubCategories').snapshotChanges();
     }
-    else{
+    else {
       return this.afs.collection<ISubCategory>('SubCategories', ref => ref.where('Name', '==', _catName)).snapshotChanges();
 
 
@@ -84,7 +84,7 @@ export class RelaxServiceService {
 
   }
 
-  
+
 
   addToTours(itemm: Tours) {
 
@@ -105,4 +105,3 @@ export class RelaxServiceService {
   }
 
 }
-
