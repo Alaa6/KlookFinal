@@ -138,7 +138,7 @@
         <div class="card-title" style="color: #d22320; font-weight: 600; font-size: 0.9em;">
           {{ near.Distance }}
         </div>
-        <p (click)="viewDetails(near.id)" class="card-text" style="font-weight: 600; font-size: 1em;">
+        <p (click)="viewDetails(near.id,'ToursCollection')" class="card-text" style="font-weight: 600; font-size: 1em;">
           {{ near.Title }}
         </p>
       </div>
@@ -174,7 +174,7 @@
         <ng-template carouselSlide>
           <div class="col-2">
             <div class="txt">
-              <a (click)="viewDetails(destination.id)">
+              <a (click)="viewDetails(destination.id ,'Cities')">
                 <img src="{{ destination.Image1 }}" class="rounded" alt="..." />
               </a>
               <div class="bt_lf">{{ destination.City1 }}</div>
@@ -218,7 +218,7 @@
                   {{ thing.City }}
                 </span>
               </div>
-              <div (click)="viewDetails(thing.id)" class="card-body">
+              <div (click)="viewDetails(thing.id ,'ToursCollection')" class="card-body">
                 <div class="card-title" style="font-weight: 600;">
                   {{ thing.Title }}
                 </div>
@@ -455,7 +455,7 @@
                   </div>
                 </div> -->
               </div>
-              <div (click)="viewDetails(recommend.id)" class="card-body">
+              <div (click)="viewDetails(recommend.id ,'ToursCollection')" class="card-body">
                 <div class="card-title" style="font-weight: 600;">
                   {{ recommend.Title }}
                 </div>

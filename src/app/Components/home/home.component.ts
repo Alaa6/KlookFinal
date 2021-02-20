@@ -47,7 +47,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       });
     })
 
-
     this.homeService.getIncredibleDestinations().subscribe((dis) => {
       this.IncredibleDestinations = dis.map(data => {
         return {
@@ -158,8 +157,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
-  viewDetails(ID: string | undefined) {
-    this.router.navigate(['/activityDetails', ID]);
+  viewDetails(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/activityDetails', collectionName, ID]);
   }
 
 

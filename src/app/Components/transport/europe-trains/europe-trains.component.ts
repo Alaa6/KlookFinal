@@ -18,93 +18,97 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./europe-trains.component.scss']
 })
 export class EuropeTrainsComponent implements OnInit {
-trainTrips:IEuropeTrains[]=[];
-subscribtion: Subscription|null=null;
-trainReviews:ITrainReview []=[];
-f:IDestination[];
-t:ISource[];
+  trainTrips: IEuropeTrains[] = [];
+  subscribtion: Subscription | null = null;
+  trainReviews: ITrainReview[] = [];
+  f: IDestination[];
+  t: ISource[];
 
-// pass:IPassenger[];
+  // pass:IPassenger[];
 
 
-bookForm = this.fb.group({
-  from: ['', Validators.required],
-  to: ['', Validators.required],
-depDate: ['', Validators.required],
-  depTime: ['', Validators.required],
- NOfPassenger:['',Validators.required]
-});
+  bookForm = this.fb.group({
+    from: ['', Validators.required],
+    to: ['', Validators.required],
+    depDate: ['', Validators.required],
+    depTime: ['', Validators.required],
+    NOfPassenger: ['', Validators.required]
+  });
 
-customOptions: OwlOptions = {
-  loop: false,
-  mouseDrag: false,
-  touchDrag: false,
-  pullDrag: false,
-  dots: false,
-  navSpeed: 700,
-  navText: ['', ''],
-  responsive: {
-    0: {
-      items: 1
+  customOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
     },
-    400: {
-      items: 2
-    },
-    740: {
-      items: 3
-    },
-    940: {
-      items: 4
-    }
-  },
-  nav: true
-}
-  constructor(private eTrainService : EuropeTrainService, private router:Router,private fb: FormBuilder)
-   {
-     this.f=[{id:0,from:"LONDON"},
-    {id:1,from:"Germany"}]
-    this.t=[{id:0,to:"PARIS"}]
+    nav: true
+  }
+  constructor(private eTrainService: EuropeTrainService, private router: Router, private fb: FormBuilder) {
+    this.f = [{ id: 0, from: "LONDON" },
+    { id: 1, from: "Germany" }]
+    this.t = [{ id: 0, to: "PARIS" }]
 
     // this.pass=[{typeOfPassenger:"senior",}]
-    }
-
-  ngOnInit(): void {
-    this.subscribtion=this.eTrainService.getAllTrips().subscribe(
-      (res)=>{
-        console.log ("trips gotten "+res)
-        this.trainTrips=res;
-      },
-      (err)=>{console.log("cant get trips "+err)}
-    )
-
-    this.subscribtion=this.eTrainService.getReviews().subscribe(
-      (res)=>{
-        this.trainReviews=res;
-      },
-      (err)=>{console.log("cant get any review "+err)}
-    )
   }
 
-  bookTrip(){
+  ngOnInit(): void {
+    this.eTrainService.getAllTrips().subscribe((dis) => {
+      this.trainTrips = dis.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+    })
+    this.eTrainService.getReviews().subscribe((wifi) => {
+      this.trainReviews = wifi.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+    })
+  }
+
+
+
+  bookTrip() {
 
     console.log("button clicked")
 
-    console.log("1 "+this.bookForm.controls['from'].value);
-    console.log("1 "+this.bookForm.controls['NOfPassenger'].value);
+    console.log("1 " + this.bookForm.controls['from'].value);
+    console.log("1 " + this.bookForm.controls['NOfPassenger'].value);
 
-    let p:ITrainBook={
-     from:this.bookForm.controls['from'].value,
-      to:this.bookForm.controls['to'].value,
-      depDate:this.bookForm.controls['depDate'].value,
-      depTime:this.bookForm.controls['depTime'].value,
-      NOfPassenger:this.bookForm.controls['NOfPassenger'].value,
+    let p: ITrainBook = {
+      from: this.bookForm.controls['from'].value,
+      to: this.bookForm.controls['to'].value,
+      depDate: this.bookForm.controls['depDate'].value,
+      depTime: this.bookForm.controls['depTime'].value,
+      NOfPassenger: this.bookForm.controls['NOfPassenger'].value,
 
 
     }
     this.eTrainService.bookTrip(p).then(
-     (res)=>{    console.log("data "+res)
-    },
-     (err)=>{console.log("errr here "+err)} 
+      (res) => {
+        console.log("data " + res)
+      },
+      (err) => { console.log("errr here " + err) }
     )
 
   }
@@ -113,5 +117,7 @@ customOptions: OwlOptions = {
     this.subscribtion?.unsubscribe();
   }
 
-
+  viewDetails(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/activityDetails', collectionName, ID]);
+  }
 }

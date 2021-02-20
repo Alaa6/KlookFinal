@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { WifiService } from 'src/app/services/wifi.service';
-import { Wifi } from 'src/app/viewModels/wifi';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivityDetailsService } from 'src/app/services/activity-details.service';
 
@@ -17,6 +15,7 @@ export class ActivityDetailsComponent implements OnInit {
   WifiCards: any = [];
   Card: any = "";
   WifiID: string = "";
+  section: string = "";
   //wifi: Observable<Wifi[]>;
   constructor(private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService, private wiService: WifiService) {
 
@@ -77,11 +76,11 @@ export class ActivityDetailsComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe((params) => {
       let wifiDetail: string | null = params.get('id');
+      let sectioName: string | null = params.get('collectionName');
+      this.section = (sectioName) ? sectioName : "";
       this.WifiID = (wifiDetail) ? wifiDetail : "";
-      this.getWifiById(this.WifiID, "Wifi_&_SimCards");
-      this.getHotelById(this.WifiID, "Hotel-");
-      this.getHomeById(this.WifiID, "ToursCollection");
-      this.getHomeById(this.WifiID, "Cities");
+
+      this.getHotelById(this.WifiID, this.section);
 
       console.log("id " + this.WifiID);
     },

@@ -20,20 +20,23 @@ export class PopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.relaxServiceService.getAllCities().subscribe((cities) => {
-      this.cityList = cities
-
-    }, (err) => console.log(err)
-    )
+    this.relaxServiceService.getAllCities().subscribe((wifi) => {
+      this.cityList = wifi.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+    })
   }
 
   getCityName(city: string) {
 
 
     this.city = city
-    localStorage.setItem("city" , city)
+    localStorage.setItem("city", city)
     this.dialogRef.close(city);
-    
+
 
 
   }
