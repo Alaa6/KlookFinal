@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
-import { ExperiencesComponent } from './Components/experiences/experiences.component';
+
 
 
 
@@ -59,13 +59,14 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
+import { CardDirective } from './Directives/card.directive';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
 // import { SignComponent } from './admin/sign/sign.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
-
+import {ExperiencesModule} from './Components/experiences/experiences.module'
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
   authDomain: "friendlychat-e399d.firebaseapp.com",
@@ -82,11 +83,7 @@ var firebaseConfig = {
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    ExperiencesComponent,
-   
-   
-    
+    HomeComponent, 
     AttractionsHongKongComponent,
     LoginComponent,
     // SignUpComponent,
@@ -94,7 +91,6 @@ var firebaseConfig = {
     SecondHeaderComponent,
     // JwPaginationComponent
     PopupComponent,
- 
     NotFoundComponent ,
     ModalComponent,
     HelpComponent,
@@ -104,12 +100,13 @@ var firebaseConfig = {
     // DashboardComponent,
     ActivityDetailsComponent,
     BookTrainComponent,
-   
+    CardDirective,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
      
   ],
+  exports: [CardDirective]  ,
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -140,6 +137,7 @@ var firebaseConfig = {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    ExperiencesModule
     
 ],
 

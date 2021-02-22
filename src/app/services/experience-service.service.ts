@@ -10,7 +10,7 @@ import { ITour } from '../viewModels/itour';
 export class ExperienceServiceService {
 
   constructor(public fs:AngularFirestore) { }
-
+ 
   getSmallCards(i1:string,v1:string,i2:string,v2:string):Observable <IExperiencexs[]>
   {
     console.log("from categories collection")

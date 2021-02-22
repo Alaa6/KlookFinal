@@ -8,7 +8,7 @@ import { ITrainDetailsReview } from '../viewModels/itrain-details-review';
   providedIn: 'root',
 })
 export class TrainDetailsService {
-  constructor(public fs: AngularFirestore) {}
+  constructor(public fs: AngularFirestore) { }
 
   //   getAllReviews()
   //   {
