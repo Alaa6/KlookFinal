@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild , Input} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RelaxServiceService } from 'src/app/services/relax-service.service';
+import { ISubCategory } from 'src/app/viewModels/isub-category';
 import { ModalComponent } from '../modal/modal.component';
 
 // var $: any;
@@ -12,28 +14,49 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./second-header.component.scss']
 })
 export class SecondHeaderComponent implements OnInit {
-  @ViewChild('CatModal') Category: ElementRef | undefined;
-    city : string ;
 
-  constructor( private router : Router ,
-    private modalService: NgbModal) {
-    this.city ='Cairo'
-  
-   }
- 
+
+  @ViewChild('CatModal') Category: ElementRef | undefined;
+  city: string;
+  allSubCategorey: ISubCategory[] = []
+
+
+  constructor(private router: Router,
+    private modalService: NgbModal,
+    private relaxService: RelaxServiceService
+  ) {
+    this.city = 'Cairo'
+
+  }
+
 
 
   ngOnInit(): void {
-    
-  } 
 
-  setsubCategoryName (subCatName :string){
-     this.router.navigate(['/experiences/cat/' ,this.city, subCatName  ])   
+    this.relaxService.getSubCategory().subscribe((res) => {
+      this.allSubCategorey = res.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+      // this.loading = false
+    }, (err) => console.log(err))
+
+  }
+
+
+  goToExperiencesSubCategory(subCatName?: string) {
+
+    if (subCatName != undefined) {
+      this.router.navigate(['/experiences/cat/', this.city,subCatName])
+    }
   }
 
   open() {
     const modalRef = this.modalService.open(ModalComponent);
   }
+
   // show() {
   //   this.Category?.nativeElement.modal({
   //     show: true,
@@ -47,15 +70,15 @@ export class SecondHeaderComponent implements OnInit {
   //   console.log('Hide')
   // }
 
-  
+
   // showModal():void {
   //   // $("#CatModal").modal('show');
   //   this.Category?.nativeElement.modal('show')
   // }
-//   showModal(): void {   
-//     this.displayService.setShowModal(true); 
-//     // communication to show the modal, I use a behaviour subject from a service layer here
-// }
+  //   showModal(): void {   
+  //     this.displayService.setShowModal(true); 
+  //     // communication to show the modal, I use a behaviour subject from a service layer here
+  // }
 
   // show() {
   //   $('#CatModal').modal({
@@ -66,6 +89,6 @@ export class SecondHeaderComponent implements OnInit {
   // hide() {
   //   $('#CatModal').modal('hide')
   // }
-  
+
 
 }

@@ -7,6 +7,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageServiceService } from 'src/app/services/language-service.service';
 
 
 
@@ -29,7 +31,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('hid2') hid2: any;
   @ViewChild('demoVideo') demoVideo: any;
 
-  constructor(private homeService: HomeService, private router: Router) { }
+  constructor(private homeService: HomeService, private router: Router, private translate: TranslateService, private languageService: LanguageServiceService) {
+    this.translate.use(languageService.getLanguage());
+  }
 
 
   ngAfterViewInit(): void {
@@ -46,7 +50,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }
       });
     })
-
 
     this.homeService.getIncredibleDestinations().subscribe((dis) => {
       this.IncredibleDestinations = dis.map(data => {
@@ -158,8 +161,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
-  viewDetails(ID: string | undefined) {
-    this.router.navigate(['/activityDetails', ID]);
+  viewDetails(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/activityDetails', collectionName, ID]);
   }
 
 
