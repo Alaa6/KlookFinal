@@ -29,17 +29,6 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-<<<<<<< HEAD
-changeLang(lang:any){
-  // console.log(lang);
-  localStorage.setItem('lang', lang);
-  window.location.reload();
-}
-
-logout(){
-  this.authser.logout()
-}
-=======
   logout() {
     this.authser.logout()
   }
@@ -48,6 +37,5 @@ logout(){
     this.languageService.setLanguage(this.languageService.getLanguage() == 'ar' ? 'en' : 'ar');
     this.translate.use(this.languageService.getLanguage());
   }
->>>>>>> 07aaf41603d8dc0e7f86e626b11d78ba9c07f6c8
 
 }
