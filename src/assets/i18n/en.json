@@ -1,6 +1,8 @@
 {
     "home":{
-        "title":"Yours To Explore"
+        "title":"Yours To Explore",
+        "discover":"Discover and book amazing things to do at exclusive prices",
+        "search":"Search destinations or activities"
     },
     
     "shared":{

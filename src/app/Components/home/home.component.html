@@ -18,17 +18,12 @@
 <div class="header-text hidden-xs">
   <div class="col-md-12 text-center">
     <h2>
-<<<<<<< HEAD
-      <span>Yours To Explore</span>
-      <!-- <span>{{ 'Yours To Explore' | translate }}</span> -->
-=======
-      <span>{{'home.title'|translate}}</span>
->>>>>>> 07aaf41603d8dc0e7f86e626b11d78ba9c07f6c8
+      <span>{{ 'home.title' | translate }}</span>
     </h2>
     <br />
     <div class="h3">
       <span>
-        Discover and book amazing things to do at exclusive prices
+        {{ 'home.discover' | translate }}
       </span>
     </div>
     <br />
@@ -55,7 +50,7 @@
               <input
                 id="search"
                 type="text"
-                placeholder="Search destinations or activities"
+                placeholder="{{ 'home.search' | translate }}"
                 style="border-radius: 0.5em;"
               />
               <div class="result-count">
@@ -174,15 +169,12 @@
         >
           {{ near.Distance }}
         </div>
-<<<<<<< HEAD
+
         <p
-          (click)="viewDetails(near.id)"
+          (click)="viewDetails(near.id, 'ToursCollection')"
           class="card-text"
           style="font-weight: 600; font-size: 1em;"
         >
-=======
-        <p (click)="viewDetails(near.id,'ToursCollection')" class="card-text" style="font-weight: 600; font-size: 1em;">
->>>>>>> 07aaf41603d8dc0e7f86e626b11d78ba9c07f6c8
           {{ near.Title }}
         </p>
       </div>
@@ -221,7 +213,7 @@
         <ng-template carouselSlide>
           <div class="col-2">
             <div class="txt">
-              <a (click)="viewDetails(destination.id ,'Cities')">
+              <a (click)="viewDetails(destination.id, 'Cities')">
                 <img src="{{ destination.Image1 }}" class="rounded" alt="..." />
               </a>
               <div class="bt_lf">{{ destination.City1 }}</div>
@@ -282,7 +274,10 @@
                   {{ thing.City }}
                 </span>
               </div>
-              <div (click)="viewDetails(thing.id ,'ToursCollection')" class="card-body">
+              <div
+                (click)="viewDetails(thing.id, 'ToursCollection')"
+                class="card-body"
+              >
                 <div class="card-title" style="font-weight: 600;">
                   {{ thing.Title }}
                 </div>
@@ -548,7 +543,10 @@
                   </div>
                 </div> -->
               </div>
-              <div (click)="viewDetails(recommend.id ,'ToursCollection')" class="card-body">
+              <div
+                (click)="viewDetails(recommend.id, 'ToursCollection')"
+                class="card-body"
+              >
                 <div class="card-title" style="font-weight: 600;">
                   {{ recommend.Title }}
                 </div>

@@ -19,13 +19,15 @@ $Klook-warn: mat-palette($mat-red);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Klook-theme: mat-light-theme((
-  color: (
-    primary: $Klook-primary,
-    accent: $Klook-accent,
-    warn: $Klook-warn,
+$Klook-theme: mat-light-theme(
+  (
+    color: (
+      primary: $Klook-primary,
+      accent: $Klook-accent,
+      warn: $Klook-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -107,5 +109,15 @@ body {
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+#search:lang(ar) {
+  text-align: center;
+}
