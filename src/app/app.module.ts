@@ -25,7 +25,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule }   from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 // import { JwPaginationComponent } from 'jw-angular-pagination';
 import { from } from 'rxjs';
 
@@ -65,6 +65,10 @@ import { BookTrainComponent } from './Components/book-train/book-train.component
 // import { SignComponent } from './admin/sign/sign.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
+import { ScrollSpyModule } from 'ngx-scrollspy';
+import { LanguageInterceptor } from './interceptors/language.interceptor';
+import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+
 
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
@@ -92,7 +96,7 @@ var firebaseConfig = {
     // SignUpComponent,
     // AdminComponent,
     SecondHeaderComponent,
-    // JwPaginationComponent
+    // JwPaginationComponent,
     PopupComponent,
  
     NotFoundComponent ,
@@ -104,6 +108,7 @@ var firebaseConfig = {
     // DashboardComponent,
     ActivityDetailsComponent,
     BookTrainComponent,
+    ScrollSpyDirective,
    
     // // SignComponent,
     // DashboardComponent,
@@ -111,7 +116,7 @@ var firebaseConfig = {
      
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     NgbModule,
     CarouselModule,
@@ -140,12 +145,20 @@ var firebaseConfig = {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+   ScrollSpyModule.forRoot(),
+ 
     
 ],
 
   // ],
     
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LanguageInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

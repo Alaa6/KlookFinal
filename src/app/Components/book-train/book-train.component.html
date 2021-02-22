@@ -1,4 +1,4 @@
-<body data-spy="scroll" data-target=".navbar" data-offset="0">
+<div>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light" ng-app="myApp">
     <button
       class="navbar-toggler"
@@ -14,38 +14,66 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link ml-5" href="#section1">
+          <a
+            class="nav-link ml-5"
+            (click)="scrollTo('section1')"
+            [ngClass]="{ 'current-section': currentSection === 'section1' }"
+          >
             Package options
             <!-- <span class="sr-only">(current)</span> -->
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section2">
+          <a
+            class="nav-link"
+            (click)="scrollTo('section2')"
+            [ngClass]="{ 'current-section': currentSection === 'section2' }"
+          >
             Most recent review
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section3">
+          <a
+            class="nav-link"
+            (click)="scrollTo('section3')"
+            [ngClass]="{ 'current-section': currentSection === 'section3' }"
+          >
             What to expect
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section4">
+          <a
+            class="nav-link"
+            (click)="scrollTo('section4')"
+            [ngClass]="{ 'current-section': currentSection === 'section4' }"
+          >
             Things to Note
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section5">
+          <a
+            class="nav-link"
+            (click)="scrollTo('section5')"
+            [ngClass]="{ 'current-section': currentSection === 'section5' }"
+          >
             Location
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section6">
+          <a
+            class="nav-link"
+            (click)="scrollTo('section6')"
+            [ngClass]="{ 'current-section': currentSection === 'section6' }"
+          >
             Review
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#section7">
+          <a
+            class="nav-link"
+            (click)="scrollTo('section7')"
+            [ngClass]="{ 'current-section': currentSection === 'section7' }"
+          >
             FAQs
           </a>
         </li>
@@ -58,13 +86,25 @@
       <ngb-carousel>
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper slider">
-            <img src="../../assets/Home/slider1.jpg" alt="first slide" />
+            <img src="../../assets/train_details/1.jpg" alt="first slide" />
           </div>
           <div class="carousel-caption firstSlider"></div>
         </ng-template>
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper slider">
-            <img src="../../assets/Home/slider2.jpg" alt="second slide" />
+            <img
+              src="../../assets/train_details/bookSlider.webp"
+              alt="second slide"
+            />
+          </div>
+          <div class="carousel-caption"></div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper slider">
+            <img
+              src="../../assets/train_details/reedemSlider.webp"
+              alt="second slide"
+            />
           </div>
           <div class="carousel-caption"></div>
         </ng-template>
@@ -163,629 +203,606 @@
         </ul>
         <hr />
         <!--End list-->
-        <!--Start package-->
-        <div id="section1" class="container">
-          <div class="row">
-            <div class="col-12 mt-4 mb-4">
-              <span class="vl mr-2"></span>
-              <span class="package">
-                Swiss Travel Pass Package Options
-              </span>
-            </div>
-          </div>
-          <!--End package-->
-          <!--Start booking-->
-          <div class="book mt-4">
-            <div style="width: 90%; margin: auto;">
-              <div class="d-flex justify-content-between">
-                <div class="selectDate">Select date and package options</div>
-                <button type="button" class="btn btn-light clear">
-                  Clear all
-                </button>
-              </div>
-              <div class="date">Please select your departure date</div>
-              <!--Datepicker-->
-              <mat-form-field>
-                <input
-                  class="btn available"
-                  matInput
-                  [matDatepicker]="myDatePicker"
-                  value="Check availability"
-                />
-                <!--Add check-->
-                <mat-datepicker-toggle
-                  [for]="myDatePicker"
-                  matSuffix
-                ></mat-datepicker-toggle>
-                <mat-datepicker #myDatePicker></mat-datepicker>
-              </mat-form-field>
-              <!--End check-->
-              <!--Start class-->
-              <div class="text-muted">Class</div>
-              <div class="row mt-2 ml-1">
-                <button
-                  type="button"
-                  class="btn first col-lg-2 col-md-2 col-sm-5 mr-2"
-                >
-                  First Class
-                </button>
-                <button
-                  type="button"
-                  class="btn second col-lg-2 col-md-3 col-sm-5"
-                  style="font-size: 0.8em;"
-                >
-                  Second Class
-                </button>
-              </div>
-              <!--End class-->
-              <!--Start pass type-->
-              <div class="pass mt-3">
-                <div class="text-muted">Pass Type</div>
-                <div class="row mt-2 ml-1">
-                  <button type="button" class="btn second col-lg-2 col-md-2">
-                    Consecutive
-                  </button>
-                  <button
-                    type="button"
-                    class="btn flexible flexble ml-2 col-lg-2 col-md-2"
-                  >
-                    Flexible
-                  </button>
-                </div>
-              </div>
-              <!--End pass type-->
-              <!--Start Validity-->
-              <div class="valid mt-3">
-                <div class="text-muted">Validity</div>
-                <div class="row ml-2 mt-2">
-                  <!--col-sm-8-->
-                  <button
-                    type="button"
-                    class="btn flexible col-lg-3 col-md-3 col-8"
-                  >
-                    8 Days in 1 Month
-                  </button>
-                  <button
-                    type="button"
-                    class="btn flexible ml-2 col-lg-3 col-md-3 col-8 four"
-                  >
-                    4 Days in 1 Month
-                  </button>
-                  <button
-                    type="button"
-                    class="btn second ml-2 col-lg-2 col-md-2 col-5 three"
-                  >
-                    3 Days
-                  </button>
-                  <button
-                    type="button"
-                    class="btn first ml-2 col-lg-2 col-md-2 col-5 mr-2"
-                  >
-                    4 Days
-                  </button>
-                </div>
-                <div class="row ml-2 mt-2">
-                  <button
-                    type="button"
-                    class="btn first col-lg-2 col-md-2 col-5 mr-2"
-                  >
-                    8 Days
-                  </button>
-                  <button
-                    type="button"
-                    class="btn first col-lg-2 col-md-2 col-5 mr-2"
-                  >
-                    15 Days
-                  </button>
-                  <button
-                    type="button"
-                    class="btn flexible col-lg-3 col-md-3 col-8"
-                  >
-                    3 Days in 1 Month
-                  </button>
-                  <button
-                    type="button"
-                    class="btn flexible ml-2 col-lg-3 col-md-3 col-8 fifteen"
-                  >
-                    15 Days in 1 Month
-                  </button>
-                </div>
-              </div>
-              <!--End Validity-->
-              <!--Start Collection Options-->
-              <div class="collection mt-3">
-                <div class="text-muted">Collection Options</div>
-                <button
-                  type="button"
-                  class="btn second ml-2 mt-2 mb-2 col-lg-2 col-md-2"
-                >
-                  E-Ticket
-                </button>
-              </div>
-              <!--End Collection Options-->
-              <div class="date mt-3">Quantity</div>
-              <div class="bg mt-2 d-flex justify-content-between">
-                <div>Adult</div>
-                <div>
-                  <i class="fas fa-minus p-2 mr-3"></i>
-                  <span>0</span>
-                  <i class="fas fa-plus p-2 ml-3"></i>
-                </div>
-              </div>
-              <div class="bg mt-2 d-flex justify-content-between">
-                <div>Youth(16-25)</div>
-                <div>
-                  <i class="fas fa-minus p-2 mr-3"></i>
-                  <span>0</span>
-                  <i class="fas fa-plus p-2 ml-3"></i>
-                </div>
-              </div>
-              <div class="bg mt-2 d-flex justify-content-between">
-                <div>Child(6-15)</div>
-                <div>
-                  <i class="fas fa-minus p-2 mr-3"></i>
-                  <span>0</span>
-                  <i class="fas fa-plus p-2 ml-3"></i>
-                </div>
-              </div>
-              <div class="d-flex justify-content-between mt-4">
-                <div>
-                  <div class="price">EGP 4,043</div>
-                  <div>Complete all required fields to continue</div>
-                </div>
-                <div>
-                  <button type="button" class="btn btn-warning warn mr-2 p-2">
-                    Add to cart
-                  </button>
-                  <button type="button" class="btn orange p-2">Book now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="mt-4 mb-4" />
-        <!--End booking-->
-        <!--Start recent reviews-->
-        <div class="reviews">
-          <span class="vl mr-2"></span>
-          <span class="package" id="section2">Most recent review</span>
-          <div class="row mt-3">
-            <div class="col-lg-2 col-md-2">
-              <div class="letter">L</div>
-              <div class="name">LING HING</div>
-            </div>
-            <div class="col-lg-10 col-md-10 recommend p-4">
-              <i class="fas fa-star star mr-1"></i>
-              <i class="fas fa-star star mr-1"></i>
-              <i class="fas fa-star star mr-1"></i>
-              <i class="fas fa-star star mr-1"></i>
-              <i class="fas fa-star star mr-1"></i>
-              <span class="high ml-2">Highly recommended</span>
-              <div>
-                It was very convenience to use and highly recommended to anyone
-                going to Swiss. Good value for money pass.
-              </div>
-              <div>4 Feb 2021</div>
-            </div>
-          </div>
-          <a href="" class="allReviews">
-            Read all 3,881 reviews
-            <i class="fas fa-chevron-down"></i>
-          </a>
-        </div>
-        <hr class="hl" />
-        <!--End recent reviews-->
-        <!--Start what to expect-->
-        <div class="expect mt-4">
-          <span class="vl mr-2"></span>
-          <span class="package" id="section3">What to expect</span>
-          <div class="mt-4">
-            Use the Swiss Travel Pass and get access to unlimited rides on
-            trains, boats, buses, and premium panorama trains across the country
-            for 3, 4, 8, or 15 consecutive or non-consecutive days! Choose
-            between printing out your pass yourself on an A4 paper or receive
-            your paper pass via courier with free delivery. Once you're in
-            Switzerland, just present your pass at the station to begin visits
-            to Switzerland's most popular destinations like the lively city of
-            Zurich or the Matterhorn Mountain in Zermatt, which inspired the
-            now-iconic logo of Toberlone. Swiss Travel Passes also come with a
-            complimentary Swiss Family Card for groups with children aged 6-15
-            plus free access to 500+ museums and galleries and discounts on
-            other means of transportation!
-          </div>
-          <img
-            src="./../../../assets/train_details/train.webp"
-            style="width: 100%;"
-            class="mt-4"
-          />
-          <img
-            src="./../../../assets/train_details/pass.webp"
-            style="width: 100%;"
-            class="mt-4"
-          />
-          <img
-            src="./../../../assets/train_details/book.webp"
-            style="width: 100%;"
-            class="mt-4"
-          />
-          <img
-            src="./../../../assets/train_details/redeem.webp"
-            style="width: 100%;"
-            class="mt-4"
-          />
-          <img
-            src="./../../../assets/train_details/flexible.webp"
-            style="width: 100%;"
-            class="mt-4"
-          />
-        </div>
-        <hr />
-        <!--End what to expect-->
-        <!--Start things to note-->
-        <div class="note">
-          <span class="vl mr-2"></span>
-          <span class="package" id="section4">Things to Note</span>
-          <!--Confirmation-->
-          <div class="subtitle">
-            Confirmation
-          </div>
-          <ul>
-            <li>
-              You will receive confirmation of your booking instantly via email.
-              In the event that you do not receive an email from us, please
-              check your Spam folder or notify us via email
-            </li>
-          </ul>
-          <!--Booking Guidelines-->
-          <div class="subtitle">
-            Booking Guidelines
-          </div>
-          <ul>
-            <li>
-              Important: Make sure to input the correct information. Once
-              confirmed, no changes to the booking (e.g. activation date, ticket
-              type, & traveler information) can be made
-            </li>
-            <li>
-              If you’ve resided in country A for over 6 months but are a
-              passport holder of country B, either fill in A as your country of
-              residence at checkout and provide your passport and proof of
-              residence while on the train or fill in B as your country of
-              residence at checkout and present your passport while on the train
-            </li>
-            <li>
-              This pass is for non-Liechtenstein/Switzerland residents only. You
-              must currently be staying in a different country for 6+ months and
-              provide proof of residence (visa/residence card) and proof of
-              citizenship (passport)
-            </li>
-          </ul>
-          <!--Pass Eligibility-->
-          <div class="subtitle">
-            Pass Eligibility
-          </div>
-          <ul>
-            <li>
-              Children aged 0-5 can travel free of charge provided they will not
-              occupy separate seats
-            </li>
-            <li>
-              Please indicate the total number of adults, youths, and children
-              aged 6-15 when booking
-            </li>
-            <li>
-              Costs of children's seat reservations are additional to the Swiss
-              Family Card
-            </li>
-            <li>
-              Children aged 6-15 with at least 1 parent (including step/foster
-              parent)/legal guardian are free of charge with the complimentary
-              Swiss Family Card
-            </li>
-          </ul>
-          <!--Additional Information-->
-          <div class="subtitle">
-            Additional Information
-          </div>
-          <ul>
-            <li>
-              Important: Swiss Travel Passes have character limits ⁠- names will
-              be truncated if they are too long
-            </li>
-            <li>
-              Please note: Mountain Excursion discounts will be available until
-              31 Dec 2020 only. Discounts will be renewed and announced every
-              year
-            </li>
-            <li>
-              Routes with Free Travel: No need to purchase a separate ticket in
-              advance - just show your pass and passport/proof of residence when
-              the conductor checks your ticket on the train
-            </li>
-            <li>
-              Routes with Discounted Travels: Purchase tickets individually
-              (online/ticket booths) and present your pass for the discount
-            </li>
-          </ul>
-          <!--Insider Tips-->
-          <div class="subtitle">
-            Insider Tips:
-          </div>
-          <ul>
-            <li>
-              If you’re staying for a month in Switzerland, you can book the
-              <a href="">Swiss Half Fare Card</a>
-              for your travel needs instead!
-            </li>
-          </ul>
-        </div>
-        <hr class="mt-4 mb-4" />
-        <!--End things to note-->
-        <!--Start Location-->
-        <span class="vl mr-2"></span>
-        <span class="package" id="section5">Location</span>
-        <img
-          src="./../../../assets/train_details/maps.webp"
-          style="width: 100%;"
-          class="mt-3"
-        />
-        <hr class="mt-4 mb-4" />
-        <!--End Location-->
-        <!--Start Swiss Travel Pass Reviews-->
-        <div class="SwissTravel">
-          <span class="vl mr-2"></span>
-          <span class="package" id="section6">Swiss Travel Pass Reviews</span>
-          <div class="mt-4">
-            <span class="number mr-3">4.9</span>
-            <i class="fas fa-star star mr-1"></i>
-            <i class="fas fa-star star mr-1"></i>
-            <i class="fas fa-star star mr-1"></i>
-            <i class="fas fa-star star mr-1"></i>
-            <i class="fas fa-star star mr-1"></i>
-            <span class="text-muted numOfRev ml-2">3,881 reviews</span>
-          </div>
-          <div class="gallery p-3 mt-4">
+        <div
+          id="parentDiv"
+          appScrollSpy
+          [spiedTags]="['DIV']"
+          (sectionChange)="onSectionChange($event)"
+          style="height: 500px; overflow-y: scroll;"
+        >
+          <!--Start package-->
+          <div id="section1" class="container">
             <div class="row">
-              <div class="col-lg-3 col-md-3">
-                <div class="photo">Photo Gallery</div>
-                <div>6,204 Photos</div>
-
-                <button type="button" class="btn first mr-2 more">
-                  <i class="far fa-images"></i>
-                  See more
-                </button>
-              </div>
-              <div class="imag col-lg-2 col-md-2 col-5">
-                <img
-                  src="./../../../assets/train_details/review1.jpeg"
-                  style="width: 8em;"
-                />
-              </div>
-              <div class="imag col-lg-2 col-md-2 col-5">
-                <img
-                  src="./../../../assets/train_details/review2.jpeg"
-                  style="width: 8em;"
-                />
-              </div>
-              <div class="imag col-lg-2 col-md-2 col-5">
-                <img
-                  src="./../../../assets/train_details/review3.jpeg"
-                  style="width: 8em;"
-                />
-              </div>
-              <div class="imag col-lg-2 col-md-2 col-5">
-                <img
-                  src="./../../../assets/train_details/review4.jpeg"
-                  style="height: 7.5em; width: 8em;"
-                />
+              <div class="col-12 mt-4 mb-4">
+                <span class="vl mr-2"></span>
+                <span class="package">
+                  Swiss Travel Pass Package Options
+                </span>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-2 col-md-2 mt-3">
-              <div class="dropdown">
-                <button
-                  class="btn dropdown-toggle rating"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Rating
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-star starsm mr-1"></i>
-                    <i class="fas fa-star starsm mr-1"></i>
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-star starsm mr-1"></i>
-                  </a>
+            <!--End package-->
+            <!--Start booking-->
+            <div class="book mt-4">
+              <div style="width: 90%; margin: auto;">
+                <div class="d-flex justify-content-between">
+                  <div class="selectDate">Select date and package options</div>
+                  <button type="button" class="btn btn-light clear">
+                    Clear all
+                  </button>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="actualReviews">
-            <div class="row mt-3">
-              <div class="col-lg-1 col-md-1">
-                <div class="letter">H</div>
-              </div>
-              <div class="col-lg-11 col-md-11">
-                <div class="nameofRev mb-2">Harjyot Harbhajansingh</div>
-                <div class="float-right text-muted">31 Aug 2020</div>
-                <div>
-                  <i class="fas fa-star starsm mr-1"></i>
-                  <i class="fas fa-star starsm mr-1"></i>
-                  <i class="fas fa-star starsm mr-1"></i>
-                  <i class="fas fa-star starsm mr-1"></i>
-                  <i class="fas fa-star starsm mr-1"></i>
-                  <span class="bld">
-                    Highly recommended
-                  </span>
-                </div>
-                <div class="mt-3">
-                  Swiss rail pass is a boom in case you are travelling to
-                  switzerland want to explore switzerland easily. This pass
-                  allows you to travel on any train, bus or ferry services. you
-                  also get discounted tickets to many attractions.
-                </div>
-                <div class="row">
-                  <img
-                    src="./../../../assets/train_details/review1.jpeg"
-                    class="col-lg-2 col-md-2"
+                <div class="date">Please select your departure date</div>
+                <!--Datepicker-->
+                <mat-form-field>
+                  <input
+                    class="btn available"
+                    matInput
+                    [matDatepicker]="myDatePicker"
+                    value="Check availability"
                   />
-                  <img
-                    src="./../../../assets/train_details/review2.jpeg"
-                    class="col-lg-2 col-md-2"
-                  />
-                </div>
-                <div class="row">
+                  <!--Add check-->
+                  <mat-datepicker-toggle
+                    [for]="myDatePicker"
+                    matSuffix
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #myDatePicker></mat-datepicker>
+                </mat-form-field>
+                <!--End check-->
+                <!--Start class-->
+                <div class="text-muted">Class</div>
+                <div class="row mt-2 ml-1">
                   <button
                     type="button"
-                    class="btn helpful col-lg-2 col-md-2 col-4 mt-3 mb-3"
+                    class="btn first col-lg-2 col-md-2 col-sm-5 mr-2"
                   >
-                    <i class="far fa-thumbs-up"></i>
-                    Helpful
+                    First Class
                   </button>
-                  <span class="mt-4 ml-2">2 people found this helpful</span>
+                  <button
+                    type="button"
+                    class="btn second col-lg-2 col-md-3 col-sm-5"
+                    style="font-size: 0.8em;"
+                  >
+                    Second Class
+                  </button>
+                </div>
+                <!--End class-->
+                <!--Start pass type-->
+                <div class="pass mt-3">
+                  <div class="text-muted">Pass Type</div>
+                  <div class="row mt-2 ml-1">
+                    <button type="button" class="btn second col-lg-2 col-md-2">
+                      Consecutive
+                    </button>
+                    <button
+                      type="button"
+                      class="btn flexible flexble ml-2 col-lg-2 col-md-2"
+                    >
+                      Flexible
+                    </button>
+                  </div>
+                </div>
+                <!--End pass type-->
+                <!--Start Validity-->
+                <div class="valid mt-3">
+                  <div class="text-muted">Validity</div>
+                  <div class="row ml-2 mt-2">
+                    <!--col-sm-8-->
+                    <button
+                      type="button"
+                      class="btn flexible col-lg-3 col-md-3 col-8"
+                    >
+                      8 Days in 1 Month
+                    </button>
+                    <button
+                      type="button"
+                      class="btn flexible ml-2 col-lg-3 col-md-3 col-8 four"
+                    >
+                      4 Days in 1 Month
+                    </button>
+                    <button
+                      type="button"
+                      class="btn second ml-2 col-lg-2 col-md-2 col-5 three"
+                    >
+                      3 Days
+                    </button>
+                    <button
+                      type="button"
+                      class="btn first ml-2 col-lg-2 col-md-2 col-5 mr-2"
+                    >
+                      4 Days
+                    </button>
+                  </div>
+                  <div class="row ml-2 mt-2">
+                    <button
+                      type="button"
+                      class="btn first col-lg-2 col-md-2 col-5 mr-2"
+                    >
+                      8 Days
+                    </button>
+                    <button
+                      type="button"
+                      class="btn first col-lg-2 col-md-2 col-5 mr-2"
+                    >
+                      15 Days
+                    </button>
+                    <button
+                      type="button"
+                      class="btn flexible col-lg-3 col-md-3 col-8"
+                    >
+                      3 Days in 1 Month
+                    </button>
+                    <button
+                      type="button"
+                      class="btn flexible ml-2 col-lg-3 col-md-3 col-8 fifteen"
+                    >
+                      15 Days in 1 Month
+                    </button>
+                  </div>
+                </div>
+                <!--End Validity-->
+                <!--Start Collection Options-->
+                <div class="collection mt-3">
+                  <div class="text-muted">Collection Options</div>
+                  <button
+                    type="button"
+                    class="btn second ml-2 mt-2 mb-2 col-lg-2 col-md-2"
+                  >
+                    E-Ticket
+                  </button>
+                </div>
+                <!--End Collection Options-->
+                <div class="date mt-3">Quantity</div>
+                <div class="bg mt-2 d-flex justify-content-between">
+                  <div>Adult</div>
+                  <div>
+                    <i class="fas fa-minus p-2 mr-3"></i>
+                    <span>0</span>
+                    <i class="fas fa-plus p-2 ml-3"></i>
+                  </div>
+                </div>
+                <div class="bg mt-2 d-flex justify-content-between">
+                  <div>Youth(16-25)</div>
+                  <div>
+                    <i class="fas fa-minus p-2 mr-3"></i>
+                    <span>0</span>
+                    <i class="fas fa-plus p-2 ml-3"></i>
+                  </div>
+                </div>
+                <div class="bg mt-2 d-flex justify-content-between">
+                  <div>Child(6-15)</div>
+                  <div>
+                    <i class="fas fa-minus p-2 mr-3"></i>
+                    <span>0</span>
+                    <i class="fas fa-plus p-2 ml-3"></i>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                  <div>
+                    <div class="price">EGP 4,043</div>
+                    <div>Complete all required fields to continue</div>
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-warning warn mr-2 p-2">
+                      Add to cart
+                    </button>
+                    <button type="button" class="btn orange p-2">
+                      Book now
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+          <hr class="mt-4 mb-4" />
+          <!--End booking-->
+          <!--Start recent reviews-->
+          <div class="reviews" id="section2">
+            <span class="vl mr-2"></span>
+            <span class="package">Most recent review</span>
+            <div class="row mt-3">
+              <div class="col-lg-2 col-md-2">
+                <div class="letter">L</div>
+                <div class="name">LING HING</div>
+              </div>
+              <div class="col-lg-10 col-md-10 recommend p-4">
+                <i class="fas fa-star star mr-1"></i>
+                <i class="fas fa-star star mr-1"></i>
+                <i class="fas fa-star star mr-1"></i>
+                <i class="fas fa-star star mr-1"></i>
+                <i class="fas fa-star star mr-1"></i>
+                <span class="high ml-2">Highly recommended</span>
+                <div>
+                  It was very convenience to use and highly recommended to
+                  anyone going to Swiss. Good value for money pass.
+                </div>
+                <div>4 Feb 2021</div>
+              </div>
+            </div>
+            <a href="" class="allReviews">
+              Read all 1 reviews
+              <i class="fas fa-chevron-down"></i>
+            </a>
+          </div>
+          <hr class="hl" />
+          <!--End recent reviews-->
+          <!--Start what to expect-->
+          <div class="expect mt-4" id="section3">
+            <span class="vl mr-2"></span>
+            <span class="package">What to expect</span>
+            <div class="mt-4">
+              Use the Swiss Travel Pass and get access to unlimited rides on
+              trains, boats, buses, and premium panorama trains across the
+              country for 3, 4, 8, or 15 consecutive or non-consecutive days!
+              Choose between printing out your pass yourself on an A4 paper or
+              receive your paper pass via courier with free delivery. Once
+              you're in Switzerland, just present your pass at the station to
+              begin visits to Switzerland's most popular destinations like the
+              lively city of Zurich or the Matterhorn Mountain in Zermatt, which
+              inspired the now-iconic logo of Toberlone. Swiss Travel Passes
+              also come with a complimentary Swiss Family Card for groups with
+              children aged 6-15 plus free access to 500+ museums and galleries
+              and discounts on other means of transportation!
+            </div>
+            <img
+              src="./../../../assets/train_details/train.webp"
+              style="width: 100%;"
+              class="mt-4"
+            />
+            <img
+              src="./../../../assets/train_details/pass.webp"
+              style="width: 100%;"
+              class="mt-4"
+            />
+            <img
+              src="./../../../assets/train_details/book.webp"
+              style="width: 100%;"
+              class="mt-4"
+            />
+            <img
+              src="./../../../assets/train_details/redeem.webp"
+              style="width: 100%;"
+              class="mt-4"
+            />
+            <img
+              src="./../../../assets/train_details/flexible.webp"
+              style="width: 100%;"
+              class="mt-4"
+            />
           </div>
           <hr />
-        </div>
-        <!--End Swiss Travel Pass Reviews-->
-        <!--Start FAQs-->
-        <div class="faqs mt-4">
-          <span class="vl mr-2"></span>
-          <span class="package mb-5" id="section7">FAQs</span>
-          <div class="package mt-4">Activity Q&A</div>
-          <div class="ttl mt-2">Q: Can the booking be cancelled?</div>
-          <div class="mt-2 mb-2">
-            A: Cancellation Policy For Consecutive Pass: Full refunds are only
-            possible one day prior to the date selected during booking.
-            Thereafter, no refunds will be issued if the pass is already in use.
+          <!--End what to expect-->
+          <!--Start things to note-->
+          <div class="note" id="section4">
+            <span class="vl mr-2"></span>
+            <span class="package">Things to Note</span>
+            <!--Confirmation-->
+            <div class="subtitle">
+              Confirmation
+            </div>
+            <ul>
+              <li>
+                You will receive confirmation of your booking instantly via
+                email. In the event that you do not receive an email from us,
+                please check your Spam folder or notify us via email
+              </li>
+            </ul>
+            <!--Booking Guidelines-->
+            <div class="subtitle">
+              Booking Guidelines
+            </div>
+            <ul>
+              <li>
+                Important: Make sure to input the correct information. Once
+                confirmed, no changes to the booking (e.g. activation date,
+                ticket type, & traveler information) can be made
+              </li>
+              <li>
+                If you’ve resided in country A for over 6 months but are a
+                passport holder of country B, either fill in A as your country
+                of residence at checkout and provide your passport and proof of
+                residence while on the train or fill in B as your country of
+                residence at checkout and present your passport while on the
+                train
+              </li>
+              <li>
+                This pass is for non-Liechtenstein/Switzerland residents only.
+                You must currently be staying in a different country for 6+
+                months and provide proof of residence (visa/residence card) and
+                proof of citizenship (passport)
+              </li>
+            </ul>
+            <!--Pass Eligibility-->
+            <div class="subtitle">
+              Pass Eligibility
+            </div>
+            <ul>
+              <li>
+                Children aged 0-5 can travel free of charge provided they will
+                not occupy separate seats
+              </li>
+              <li>
+                Please indicate the total number of adults, youths, and children
+                aged 6-15 when booking
+              </li>
+              <li>
+                Costs of children's seat reservations are additional to the
+                Swiss Family Card
+              </li>
+              <li>
+                Children aged 6-15 with at least 1 parent (including step/foster
+                parent)/legal guardian are free of charge with the complimentary
+                Swiss Family Card
+              </li>
+            </ul>
+            <!--Additional Information-->
+            <div class="subtitle">
+              Additional Information
+            </div>
+            <ul>
+              <li>
+                Important: Swiss Travel Passes have character limits ⁠- names
+                will be truncated if they are too long
+              </li>
+              <li>
+                Please note: Mountain Excursion discounts will be available
+                until 31 Dec 2020 only. Discounts will be renewed and announced
+                every year
+              </li>
+              <li>
+                Routes with Free Travel: No need to purchase a separate ticket
+                in advance - just show your pass and passport/proof of residence
+                when the conductor checks your ticket on the train
+              </li>
+              <li>
+                Routes with Discounted Travels: Purchase tickets individually
+                (online/ticket booths) and present your pass for the discount
+              </li>
+            </ul>
+            <!--Insider Tips-->
+            <div class="subtitle">
+              Insider Tips:
+            </div>
+            <ul>
+              <li>
+                If you’re staying for a month in Switzerland, you can book the
+                <a href="">Swiss Half Fare Card</a>
+                for your travel needs instead!
+              </li>
+            </ul>
           </div>
-          <div class="mb-2">
-            Cancellation Policy Flexible Pass: Full refunds are only possible
-            one day prior to the first travel date selected upon manual
-            activation. Thereafter, a 15% penalty applies to unused, unactivated
-            passes. No refunds will be issued if travel days are already
-            activated and used. Make sure all activated days are deactivated
-            before proceeding with the refund.
+          <hr class="mt-4 mb-4" />
+          <!--End things to note-->
+          <!--Start Location-->
+          <div id="section5">
+            <span class="vl mr-2"></span>
+            <span class="package">Location</span>
+            <img
+              src="./../../../assets/train_details/maps.webp"
+              style="width: 100%;"
+              class="mt-3"
+            />
           </div>
-          <div class="mb-2">
-            Special Policy for Promotional Passes: Request an 85% refund at
-            least one day prior to the date selected during booking. Passes
-            cannot be refunded after this date.
+          <hr class="mt-4 mb-4" />
+          <!--End Location-->
+          <!--Start Swiss Travel Pass Reviews-->
+          <div class="SwissTravel" id="section6">
+            <span class="vl mr-2"></span>
+            <span class="package">Swiss Travel Pass Reviews</span>
+            <div class="mt-4">
+              <span class="number mr-3">4.9</span>
+              <i class="fas fa-star star mr-1"></i>
+              <i class="fas fa-star star mr-1"></i>
+              <i class="fas fa-star star mr-1"></i>
+              <i class="fas fa-star star mr-1"></i>
+              <i class="fas fa-star star mr-1"></i>
+              <span class="text-muted numOfRev ml-2">3,881 reviews</span>
+            </div>
+            <div class="gallery p-3 mt-4">
+              <div class="row">
+                <div class="col-lg-3 col-md-3">
+                  <div class="photo">Photo Gallery</div>
+                  <div>6,204 Photos</div>
+
+                  <button type="button" class="btn first mr-2 more">
+                    <i class="far fa-images"></i>
+                    See more
+                  </button>
+                </div>
+                <div class="imag col-lg-2 col-md-2 col-5">
+                  <img
+                    src="./../../../assets/train_details/review1.jpeg"
+                    style="width: 8em;"
+                  />
+                </div>
+                <div class="imag col-lg-2 col-md-2 col-5">
+                  <img
+                    src="./../../../assets/train_details/review2.jpeg"
+                    style="width: 8em;"
+                  />
+                </div>
+                <div class="imag col-lg-2 col-md-2 col-5">
+                  <img
+                    src="./../../../assets/train_details/review3.jpeg"
+                    style="width: 8em;"
+                  />
+                </div>
+                <div class="imag col-lg-2 col-md-2 col-5">
+                  <img
+                    src="./../../../assets/train_details/review4.jpeg"
+                    style="height: 7.5em; width: 8em;"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-2 col-md-2 mt-3">
+                <div class="dropdown">
+                  <button
+                    class="btn dropdown-toggle rating"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Rating
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-star starsm mr-1"></i>
+                      <i class="fas fa-star starsm mr-1"></i>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="fas fa-star starsm mr-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="actualReviews">
+              <div class="row mt-3">
+                <div class="col-lg-1 col-md-1">
+                  <div class="letter">H</div>
+                </div>
+                <div class="col-lg-11 col-md-11">
+                  <div class="nameofRev mb-2">Harjyot Harbhajansingh</div>
+                  <div class="float-right text-muted">31 Aug 2020</div>
+                  <div>
+                    <i class="fas fa-star starsm mr-1"></i>
+                    <i class="fas fa-star starsm mr-1"></i>
+                    <i class="fas fa-star starsm mr-1"></i>
+                    <i class="fas fa-star starsm mr-1"></i>
+                    <i class="fas fa-star starsm mr-1"></i>
+                    <span class="bld">
+                      Highly recommended
+                    </span>
+                  </div>
+                  <div class="mt-3">
+                    Swiss rail pass is a boom in case you are travelling to
+                    switzerland want to explore switzerland easily. This pass
+                    allows you to travel on any train, bus or ferry services.
+                    you also get discounted tickets to many attractions.
+                  </div>
+                  <div class="row">
+                    <img
+                      src="./../../../assets/train_details/review1.jpeg"
+                      class="col-lg-2 col-md-2"
+                    />
+                    <img
+                      src="./../../../assets/train_details/review2.jpeg"
+                      class="col-lg-2 col-md-2"
+                    />
+                  </div>
+                  <div class="row">
+                    <button
+                      type="button"
+                      class="btn helpful col-lg-2 col-md-2 col-4 mt-3 mb-3"
+                    >
+                      <i class="far fa-thumbs-up"></i>
+                      Helpful
+                    </button>
+                    <span class="mt-4 ml-2">2 people found this helpful</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
           </div>
-          <div class="ttl mt-3">Q: Can I amend the departure date?</div>
-          <div class="mt-2 mb-2">
-            A: If any amendments are required after booking is confirmed, you
-            must first request for a refund and re-book with the correct
-            information.
+          <!--End Swiss Travel Pass Reviews-->
+          <!--Start FAQs-->
+          <div class="faqs mt-4" id="section7">
+            <span class="vl mr-2"></span>
+            <span class="package mb-5">FAQs</span>
+            <div class="package mt-4">Activity Q&A</div>
+            <div class="ttl mt-2">Q: Can the booking be cancelled?</div>
+            <div class="mt-2 mb-2">
+              A: Cancellation Policy For Consecutive Pass: Full refunds are only
+              possible one day prior to the date selected during booking.
+              Thereafter, no refunds will be issued if the pass is already in
+              use.
+            </div>
+            <div class="mb-2">
+              Cancellation Policy Flexible Pass: Full refunds are only possible
+              one day prior to the first travel date selected upon manual
+              activation. Thereafter, a 15% penalty applies to unused,
+              unactivated passes. No refunds will be issued if travel days are
+              already activated and used. Make sure all activated days are
+              deactivated before proceeding with the refund.
+            </div>
+            <div class="mb-2">
+              Special Policy for Promotional Passes: Request an 85% refund at
+              least one day prior to the date selected during booking. Passes
+              cannot be refunded after this date.
+            </div>
+            <div class="ttl mt-3">Q: Can I amend the departure date?</div>
+            <div class="mt-2 mb-2">
+              A: If any amendments are required after booking is confirmed, you
+              must first request for a refund and re-book with the correct
+              information.
+            </div>
+            <div class="ttl mt-3">
+              Q: Can the passenger passport details be amended?
+            </div>
+            <div class="mt-2 mb-2">
+              A: Cancellation Policy For Consecutive Pass: Full refunds are only
+              possible one day prior to the date selected during booking.
+              Thereafter, no refunds will be issued if the pass is already in
+              use.
+            </div>
+            <div class="ttl mt-3">
+              Q: How to reserve a seat?
+            </div>
+            <div class="mt-2 mb-2">
+              A: Timetables and reservations are available on Klook’s Europe
+              train ticket booking page up to 3 months before departure and at
+              local train stations.
+            </div>
+            <div class="mb-2">
+              Local and regional trains do not require reservations.
+              Reservations are required on most high speed, international,
+              scenic, and night trains for additional fees
+            </div>
+            <div class="ttl mt-3">
+              Q: When will I receive the voucher?
+            </div>
+            <div class="mt-2 mb-2">
+              A: It will be sent via email as a PDF attachment. In the event
+              that you do not receive an email from us, please check your Spam
+              folder or notify us via email.
+            </div>
+            <div class="ttl mt-3">
+              Q: How long does it take to deliver the Exchange Order?
+            </div>
+            <div class="mt-2 mb-2">
+              A: Please allow up to 7 business days for the delivery
+            </div>
+            <button type="button" class="btn help mt-3 mb-3">
+              Klook Help Center
+            </button>
           </div>
-          <div class="ttl mt-3">
-            Q: Can the passenger passport details be amended?
-          </div>
-          <div class="mt-2 mb-2">
-            A: Cancellation Policy For Consecutive Pass: Full refunds are only
-            possible one day prior to the date selected during booking.
-            Thereafter, no refunds will be issued if the pass is already in use.
-          </div>
-          <div class="ttl mt-3">
-            Q: How to reserve a seat?
-          </div>
-          <div class="mt-2 mb-2">
-            A: Timetables and reservations are available on Klook’s Europe train
-            ticket booking page up to 3 months before departure and at local
-            train stations.
-          </div>
-          <div class="mb-2">
-            Local and regional trains do not require reservations. Reservations
-            are required on most high speed, international, scenic, and night
-            trains for additional fees
-          </div>
-          <div class="ttl mt-3">
-            Q: When will I receive the voucher?
-          </div>
-          <div class="mt-2 mb-2">
-            A: It will be sent via email as a PDF attachment. In the event that
-            you do not receive an email from us, please check your Spam folder
-            or notify us via email.
-          </div>
-          <div class="ttl mt-3">
-            Q: How long does it take to deliver the Exchange Order?
-          </div>
-          <div class="mt-2 mb-2">
-            A: Please allow up to 7 business days for the delivery
-          </div>
-          <button type="button" class="btn help mt-3 mb-3">
-            Klook Help Center
-          </button>
         </div>
         <hr />
         <!--End FAQs-->
-        <!--Start You might also like-->
-        <div class="like mb-4">
-          <span class="vl mr-2"></span>
-          <span class="package mb-5">You might also like...</span>
-        </div>
-        <div class="card" style="width: 23rem;">
-          <img
-            class="card-img-top cities"
-            src="./../../../assets/Home/sapporo.jpg"
-            alt="Card image cap"
-          />
-          <div class="city">
-            <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em;"></i>
-            <span>Europe Rail Pass</span>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title title">
-              Eurail Pass for Austria (3, 4, 5, 6 or 8 Days)
-            </h5>
-            <div>
-              <span class="starsm">
-                <i class="fas fa-star starsm mr-1"></i>
-                4.7
-              </span>
-              <span class="text-muted">20 reviews</span>
-              <span class="mr-1 ml-1 text-muted">|</span>
-              <span class="text-muted">100+ Booked</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <span class="mr-1">From</span>
-            <span class="title">EGP 626</span>
-            <i
-              class="fas fa-fire ml-1"
-              style="width: 0.8em; color: #ff5722;"
-            ></i>
-            <br />
-            <div class="Date">Book now for tomorrow</div>
-          </div>
-        </div>
-        <!--End You might also like-->
       </div>
       <div class="col-lg-4 col-md-7 rightSection">
         <div class="bestPrice p-3 box">
@@ -911,5 +928,109 @@
       </div>
     </div>
     <!--End spliting-->
+    <!--Start You might also like-->
+    <div class="like mb-4">
+      <span class="vl mr-2"></span>
+      <span class="package mb-5">You might also like...</span>
+    </div>
+    <div class="row d-flex justify-content-between">
+      <div class="card" style="width: 20rem;">
+        <img
+          class="card-img-top cities"
+          src="https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_375,h_210/activities/kl0s9rlccweqgcbaon5s.webp"
+          alt="Card image cap"
+        />
+        <div class="city">
+          <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em;"></i>
+          <span>Europe Rail Pass</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title title">
+            Eurail Pass for Austria (3, 4, 5, 6 or 8 Days)
+          </h5>
+          <div>
+            <span class="starsm">
+              <i class="fas fa-star starsm mr-1"></i>
+              4.7
+            </span>
+            <span class="text-muted">20 reviews</span>
+            <span class="mr-1 ml-1 text-muted">|</span>
+            <span class="text-muted">100+ Booked</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="mr-1">From</span>
+          <span class="title">EGP 626</span>
+          <i class="fas fa-fire ml-1" style="width: 0.8em; color: #ff5722;"></i>
+          <br />
+          <div class="Date mt-2">Book now for tomorrow</div>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img
+          class="card-img-top cities"
+          src="https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_375,h_210/activities/peivuwurgesf3dfif6dv.webp"
+          alt="Card image cap"
+        />
+        <div class="city">
+          <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em;"></i>
+          <span>Europe Rail Pass</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title title">
+            Eurail Pass for France (Second Class, 1-8 Days)
+          </h5>
+          <div>
+            <span class="starsm">
+              <i class="fas fa-star starsm mr-1"></i>
+              4.5
+            </span>
+            <span class="text-muted">62 reviews</span>
+            <span class="mr-1 ml-1 text-muted">|</span>
+            <span class="text-muted">800+ Booked</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="mr-1">From</span>
+          <span class="title">EGP 1,450</span>
+          <i class="fas fa-fire ml-1" style="width: 0.8em; color: #ff5722;"></i>
+          <br />
+          <div class="Date mt-2">Book now for tomorrow</div>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img
+          class="card-img-top cities"
+          src="https://res.klook.com/image/upload/fl_lossy.progressive,q_65/c_fill,w_375,h_210/activities/n9mrufxqgpuvrhckg7ch.webp"
+          alt="Card image cap"
+        />
+        <div class="city">
+          <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em;"></i>
+          <span>Europe Rail Pass</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title title">
+            Eurail Global Pass
+          </h5>
+          <div>
+            <span class="starsm">
+              <i class="fas fa-star starsm mr-1"></i>
+              4.6
+            </span>
+            <span class="text-muted">650 reviews</span>
+            <span class="mr-1 ml-1 text-muted">|</span>
+            <span class="text-muted">9K+ Booked</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="mr-1">From</span>
+          <span class="title">EGP 4,633</span>
+          <i class="fas fa-fire ml-1" style="width: 0.8em; color: #ff5722;"></i>
+          <br />
+          <div class="Date mt-2">Book now for 23 Apr 2021</div>
+        </div>
+      </div>
+    </div>
+    <!--End You might also like-->
   </div>
-</body>
+</div>

@@ -24,6 +24,12 @@ ngOnInit() {
   })
 }
 
+changeLang(lang:any){
+  // console.log(lang);
+  localStorage.setItem('lang', lang);
+  window.location.reload();
+}
+
 logout(){
   this.authser.logout()
 }
