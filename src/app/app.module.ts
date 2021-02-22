@@ -7,10 +7,6 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { HomeComponent } from './Components/home/home.component';
 
-
-
-
-
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
 // import { SignUpComponent } from './Components/sign-up/sign-up.component';
@@ -23,9 +19,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule }   from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
 // import { JwPaginationComponent } from 'jw-angular-pagination';
 import { from } from 'rxjs';
 
@@ -33,7 +29,7 @@ import { PopupComponent } from './Components/popup/popup.component';
 
 // import { AngularFireStorageModule } from '@angular/fire/storage';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -47,26 +43,35 @@ import { KlookCreditComponent } from './Components/klook-credit/klook-credit.com
 import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import {MatCardModule} from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
 import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
 import { CardDirective } from './Directives/card.directive';
+import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
 // import { SignComponent } from './admin/sign/sign.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
-import {ExperiencesModule} from './Components/experiences/experiences.module'
+import { ExperiencesModule } from './Components/experiences/experiences.module'
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
+
 var firebaseConfig = {
   apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
   authDomain: "friendlychat-e399d.firebaseapp.com",
@@ -78,12 +83,13 @@ var firebaseConfig = {
   measurementId: "G-SE1DJ8PYYC"
 };
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent, 
+    HomeComponent,
     AttractionsHongKongComponent,
     LoginComponent,
     // SignUpComponent,
@@ -91,7 +97,7 @@ var firebaseConfig = {
     SecondHeaderComponent,
     // JwPaginationComponent
     PopupComponent,
-    NotFoundComponent ,
+    NotFoundComponent,
     ModalComponent,
     HelpComponent,
     KlookCreditComponent,
@@ -104,29 +110,37 @@ var firebaseConfig = {
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
-     
+
   ],
-  exports: [CardDirective]  ,
+  exports: [CardDirective],
   imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule ,// firestore
+    AngularFirestoreModule,// firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
-    MatDialogModule ,
+    MatDialogModule,
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     RouterModule,
-     BrowserAnimationsModule,
-  
+    BrowserAnimationsModule,
+    TranslateModule,
+
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    HttpClientModule,       
+    HttpClientModule,
     MatCardModule,
     MatTabsModule,
     MatFormFieldModule,
@@ -138,11 +152,11 @@ var firebaseConfig = {
     MatDatepickerModule,
     MatNativeDateModule,
     ExperiencesModule
-    
-],
+
+  ],
 
   // ],
-    
+
   providers: [],
   bootstrap: [AppComponent]
 })
