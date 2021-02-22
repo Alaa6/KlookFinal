@@ -55,6 +55,42 @@
   <!--3-->
   <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
     Reports tab
+    <table id="Tourdata" class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">title</th>
+          <th scope="col">section</th>
+          <th scope="col">categ</th>
+          
+          <th scope="col">City</th>
+
+          <th scope="col">Booked</th>
+
+          <th scope="col">Date</th>
+          <th scope="col">Review</th>
+          <th scope="col">sub</th>
+          <th scope="col">update</th>
+        </tr>
+        
+        <tr *ngFor="let c of tourupdate">
+          <td>{{c.Title}}</td>
+          <td>{{c.Section}}</td>
+          <!-- <td>{{c.City}}</td> -->
+          <td>{{c.Categories}}</td>
+                   <!-- <td>{{c.SubCategories}}</td> -->
+          <td><input type="text" (focusout)="Editt4($event)"  value={{c.City}} /></td>
+          <td><input type="text" (focusout)="Editt1($event)"  value={{c.Booked}} /></td>
+          <td><input type="text" (focusout)="Editt2($event)"  value={{c.Date}} /></td>
+
+          <td><input type="text" (focusout)="Editt3($event)"  value={{c.Review}} /></td>
+             <td><input type="text" (focusout)="Editt($event)" value={{c.SubCategories}} /></td>
+
+
+        <button (click)="editItem(c)">update</button>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </div>
   <!--4-->
   <div class="tab-pane fade" id="v-pills-update" role="tabpanel" aria-labelledby="v-pills-update-tab">

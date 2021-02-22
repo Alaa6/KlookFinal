@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 // import { Observable } from 'rxjs/ajax';
 
@@ -20,6 +20,7 @@ import { City } from './../viewModels/city';
 })
 export class RelaxServiceService {
   // tt:Observable<Tours[]>
+
   constructor(public afs: AngularFirestore) {
     // this.tt=
   }
@@ -79,6 +80,23 @@ export class RelaxServiceService {
         return this.afs.collection<ITour>('ToursCollection',ref => ref.where( 'City', '==', _city )
         .where('Categories',  '==', _category)).valueChanges()
     
+      }
+
+      updatetour(){
+        const tutorialsRef = this.afs.collection('ToursCollection');
+tutorialsRef.doc('id').set({ title: 'zkoder Tut#1', url: 'bezkoder.com/zkoder-tut-1' });
+      }
+
+      gettour(){
+    return this.afs.collection<Tours>('ToursCollection').snapshotChanges()
+
+      }
+  itemDoc?: AngularFirestoreDocument<Tours>;
+
+      updateItem(item: Tours){
+        
+        this.itemDoc = this.afs.doc(`ToursCollection/${item.id}`);
+        this.itemDoc.update(item);
       }
 
 }

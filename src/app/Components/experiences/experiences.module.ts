@@ -18,7 +18,7 @@ const routes: Routes = [
 
   { path  : 'cat/:city/:supCatName'  , component : ExperiecesSubCategoryComponent},
   { path  : 'search/:city/:supCatName/:searchKey'  , component : SearchExperienceComponent},
-  
+
   
   // { path  : 'attractions' , component : AttractionsComponent},
 

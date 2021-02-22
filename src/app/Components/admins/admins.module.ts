@@ -34,6 +34,7 @@ const routes: Routes = [
 
   { path: ':subsign', component: SignComponent },
   { path: 'admin/dash', component: DashboardComponent, canActivate: [AuthGuardGuard] },
+  { path  : 'admin'  , component : DashboardComponent},
 
 
 

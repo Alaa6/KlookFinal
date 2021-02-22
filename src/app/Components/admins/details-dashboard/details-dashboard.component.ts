@@ -7,6 +7,7 @@ import { RelaxServiceService } from 'src/app/services/relax-service.service';
 import { Tours } from 'src/app/viewModels/tours';
 import { User } from 'src/app/viewModels/user';
 // import { User } from './../../../viewModels/user';
+// import { Tours } from './../../../viewModels/tours';
 
 @Component({
   selector: 'app-details-dashboard',
@@ -19,18 +20,37 @@ export class DetailsDashboardComponent implements OnInit {
   list: Tours = {};
   dataSource: User[] = [];
   dataSourceadmin: User[] = [];
+  tourupdate: Tours[] = [];
+  tourupdatedispaly: Tours[] = [];
   displayedColumns: string[] = ['Email', 'JoinDate', 'Delete'];
   displayedColumnsadmin: string[] = ['Email', 'JoinDate', 'Delete'];
+  searchkey:string='egy'
+  itemToEdit: Tours={};
 
   signBool: boolean = false;
   btnAdmiText = 'Add Admin'
 
-  constructor(private router: Router, private authSer: AuthService, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private TourServies: RelaxServiceService) {
+  constructor(private router: Router, private authSer: AuthService,private relser: RelaxServiceService, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private TourServies: RelaxServiceService) {
+
+    this.relser.gettour().subscribe(data =>{
+
+      this.tourupdate=data.map(elementt =>{
+        // console.log(...elementt.payload.doc.id)
+  
+          return {
+            id: elementt.payload.doc.id,
+            ...elementt.payload.doc.data()
+          }
+        }) 
+      
+        // console.log(this.tourupdate)
+       
+      })
 
     this.authSer.getalluser().subscribe(data => {
       
       this.dataSource=data.map(elementt =>{
-      console.log(elementt.payload.doc.id)
+      // console.log(elementt.payload.doc.id)
 
         return {
           id: elementt.payload.doc.id,
@@ -49,7 +69,7 @@ export class DetailsDashboardComponent implements OnInit {
           ...elementt.payload.doc.data()
         }
       })
-      console.log(this.dataSourceadmin)
+      // console.log(this.dataSourceadmin)
 
     });
     // this.authSer.getbyID(id)
@@ -166,4 +186,62 @@ export class DetailsDashboardComponent implements OnInit {
     }
     else this.btnAdmiText = 'Add Admins'
   }
+
+/////////////////////////////////////////////
+inprice:string=''
+inprice1:string=''
+inprice2:string=''
+inprice3:string=''
+inprice4:string=''
+  editItem(item: Tours){
+    // this.editState = true;
+    // this.itemToEdit = item;
+    item.SubCategories=this.inprice
+    item.Booked=this.inprice1
+    item.Review=this.inprice3
+    item.Date=this.inprice2
+    item.City=this.inprice4
+    console.log(this.inprice,this.inprice1,this.inprice2,this.inprice3)
+    this.relser.updateItem(item)
+
+    // console.log(item)
+  }
+
+  Editt(event:any) { // without type info
+    console.log(event.target.value)
+    this.inprice=event.target.value
+    // console.log(this.inprice)
+
+  }
+
+  Editt1(event:any) { // without type info
+    console.log(event.target.value)
+    this.inprice1=event.target.value
+    console.log(this.inprice1)
+
+  }
+
+  Editt2(event:any)
+  { // without type info
+    console.log(event.target.value)
+    this.inprice2=event.target.value
+    console.log(this.inprice2)
+
+  }
+
+  Editt3(event:any) { // without type info
+    console.log(event.target.value)
+    this.inprice3=event.target.value
+    console.log(this.inprice3)
+
+  }
+
+  Editt4(event:any) { // without type info
+    console.log(event.target.value)
+    this.inprice4=event.target.value
+    // console.log(this.inprice3)
+
+  }
+
+
 }
