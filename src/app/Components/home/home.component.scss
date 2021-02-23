@@ -489,6 +489,9 @@ a:hover {
 .ffCol .card {
   height: 22em;
 }
+.incred .inspired .card-title {
+  color: #212529;
+}
 .incred .inspired .scCol i,
 .thCol i,
 .frCol i,
@@ -1756,4 +1759,38 @@ span {
   }
 
   /*Start top cities to visit*/
+}
+/*Start translation*/
+*:lang(ar) {
+  text-align: right;
+}
+#title:lang(ar),
+#titleDiscover:lang(ar) {
+  display: block !important;
+  margin: auto !important;
+  text-align: center;
+}
+#search:lang(ar) {
+  text-align: center;
+}
+.searchBtn:lang(ar) {
+  text-align: center !important;
+}
+.brdr i:lang(ar) {
+  text-align: center;
+}
+// .afterSlider:lang(ar) {
+//   text-align: right;
+// }
+.near_container .contain h3:lang(ar) {
+  text-align: right !important;
+}
+.things .contain .h3:lang(ar) {
+  text-align: right !important;
+}
+.inspired .h3:lang(ar) {
+  margin-right: 2.5em;
+}
+.recommend .contain:lang(ar) {
+  margin-right: 5em;
 }

@@ -18,11 +18,11 @@
 <div class="header-text hidden-xs">
   <div class="col-md-12 text-center">
     <h2>
-      <span>{{ 'home.title' | translate }}</span>
+      <span id="title">{{ 'home.title' | translate }}</span>
     </h2>
     <br />
     <div class="h3">
-      <span>
+      <span id="titleDiscover">
         {{ 'home.discover' | translate }}
       </span>
     </div>
@@ -53,10 +53,10 @@
                 placeholder="{{ 'home.search' | translate }}"
                 style="border-radius: 0.5em;"
               />
-              <div class="result-count">
+              <div class="result-count searchBtn">
                 <!-- <span>108 </span>results</div> -->
                 <button
-                  class="btn btn-outline-success my-2 my-sm-0"
+                  class="btn btn-outline-success my-2 my-sm-0 searchBtn"
                   type="submit"
                   style="
                     background-color: #ff5722;
@@ -68,7 +68,7 @@
                     height: 3em;
                   "
                 >
-                  Search
+                  {{ 'home.searchBtn' | translate }}
                 </button>
               </div>
             </div>
@@ -78,9 +78,9 @@
     </div>
     <!--Start button 'Explore'-->
     <div class="explore">
-      <span class="ex">Explore more in Cairo</span>
+      <span class="ex">{{ 'home.more' | translate }}</span>
       <span class="brdr">
-        <span class="go">Go</span>
+        <span class="go">{{ 'home.go' | translate }}</span>
         <i class="fas fa-chevron-right ml-1"></i>
       </span>
     </div>
@@ -88,18 +88,18 @@
 </div>
 <!-- End Carousel -->
 <!--Start after slider-->
-<div class="afterSlider">
-  <div class="row row1">
-    <!--1-->
-    <div class="grd1">
+<!-- <div class="afterSlider">
+  <div class="row row1"> -->
+<!--1-->
+<!-- <div class="grd1">
       <div><i class="fas fa-parachute-box"></i></div>
       <div class="grdf">
         <div class="b">A world of possibilities</div>
         <div class="s">Discover activities across the globe</div>
       </div>
-    </div>
-    <!--2-->
-    <div class="grd2">
+    </div> -->
+<!--2-->
+<!-- <div class="grd2">
       <div>
         <i class="fas fa-tags"></i>
       </div>
@@ -107,9 +107,9 @@
         <div class="b">Best price guaranteed</div>
         <div class="s">On over 10,000 things to do and more</div>
       </div>
-    </div>
-    <!--3-->
-    <div class="grd3">
+    </div> -->
+<!--3-->
+<!-- <div class="grd3">
       <div>
         <i class="fas fa-passport"></i>
       </div>
@@ -119,16 +119,16 @@
           Easy e-voucher entry and safe booking
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </div> -->
+<!-- </div>
+</div> -->
 <!--End after slider-->
 <!--Start near you-->
 <div class="near_container">
   <div class="contain d-flex justify-content-between">
-    <div class="h3">Near you in Cairo</div>
+    <div class="h3">{{ 'home.near' | translate }}</div>
     <div class="exp">
-      <a href="#">Explore Cairo</a>
+      <a href="#">{{ 'home.explore' | translate }}</a>
       <i class="fas fa-chevron-right"></i>
     </div>
   </div>
@@ -198,7 +198,9 @@
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <button type="button" class="btn view firstview">View all</button>
+        <button type="button" class="btn view firstview">
+          {{ 'home.view' | translate }}
+        </button>
       </div>
     </div>
   </div>
@@ -207,7 +209,7 @@
 <!--Start incredible destinations-->
 <div class="incred">
   <div class="incred_container">
-    <div class="h3">Incredible destinations</div>
+    <div class="h3">{{ 'home.incredible' | translate }}</div>
     <owl-carousel-o [options]="customOptions">
       <ng-container *ngFor="let destination of IncredibleDestinations">
         <ng-template carouselSlide>
@@ -228,7 +230,7 @@
     <div class="row">
       <div class="col text-center">
         <button type="button" class="btn view view2">
-          Explore all destinations
+          {{ 'home.exploreAll' | translate }}
         </button>
       </div>
     </div>
@@ -237,7 +239,7 @@
   <!--Start things to do-->
   <div class="things">
     <div class="contain d-flex justify-content-between">
-      <div class="h3">Top things to do</div>
+      <div class="h3">{{ 'home.top' | translate }}</div>
     </div>
     <!--Carousel-->
     <owl-carousel-o
@@ -302,7 +304,7 @@
       <div class="row">
         <div class="col text-center">
           <button type="button" class="btn view view3">
-            View all
+            {{ 'home.viewAll' | translate }}
           </button>
         </div>
       </div>
@@ -311,15 +313,16 @@
   <!--End things to do-->
   <!--Start Get inspired-->
   <div class="inspired">
-    <div class="mleft h3">Get Inspired</div>
+    <div class="mleft h3">{{ 'home.inspired' | translate }}</div>
     <div class="ins_container">
       <div class="row">
         <!--1-->
         <div class="fsCol">
-          <div class="font-weight-bold h4">For the Bucketlist</div>
+          <div class="font-weight-bold h4">
+            {{ 'home.bucketlist' | translate }}
+          </div>
           <div style="font-size: 0.9em;">
-            Travel is on hold, but the dreaming continues! Build your wishlist
-            for your next adventure
+            {{ 'home.travel' | translate }}
           </div>
         </div>
         <!--2-->
@@ -333,33 +336,40 @@
               />
               <div class="top_left col-10">
                 <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">Taipei</span>
+                <span style="color: white;">
+                  {{ 'home.TaipeiCity' | translate }}
+                </span>
                 <div class="btns">
                   <div class="btn1 px-1">
-                    Best Seller
+                    {{ 'home.bestSeller' | translate }}
                   </div>
                   <div class="btn2 px-1">
-                    62% OFF
+                    {{ 'home.off' | translate }}
                   </div>
                 </div>
               </div>
               <div class="card-body">
                 <div class="card-title" style="font-weight: 600;">
-                  Maokong Gondola Combo Tickets in Taipei
+                  {{ 'home.taipei' | translate }}
                 </div>
                 <div>
                   <i class="fas fa-star" style="color: #ff9d26;"></i>
                   <span style="color: #ff9d26;">4.7</span>
-                  <span>6,019 reviews | 70K+ B...</span>
+                  <span>
+                    {{ 'home.review' | translate }}
+                    {{ 'home.booked' | translate }}
+                  </span>
                 </div>
               </div>
               <div class="card-body">
                 <div>
-                  <span class="font-weight-bold">EGP 134</span>
+                  <span class="font-weight-bold">
+                    {{ 'home.price' | translate }}
+                  </span>
                   <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                 </div>
                 <a href="#" class="card-link text-muted">
-                  Book now for tomorrow
+                  {{ 'home.date' | translate }}
                 </a>
               </div>
             </div>
@@ -376,30 +386,37 @@
               />
               <div class="top_left">
                 <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">Hong Kong</span>
+                <span style="color: white;">
+                  {{ 'home.Hong Kong City' | translate }}
+                </span>
                 <div class="btns">
                   <div class="btn1 px-1">
-                    Best Seller
+                    {{ 'home.bestSeller' | translate }}
                   </div>
                 </div>
               </div>
               <div class="card-body">
                 <div class="card-title" style="font-weight: 600;">
-                  Peak Tram and Sky Terrace 428 Tour Combo Package...
+                  {{ 'home.tram' | translate }}
                 </div>
                 <div>
                   <i class="fas fa-star" style="color: #ff9d26;"></i>
                   <span style="color: #ff9d26;">4.5</span>
-                  <span>52,367 reviews | 1M+ B...</span>
+                  <span>
+                    {{ 'home.tram review' | translate }}
+                    {{ 'home.tram booked' | translate }}
+                  </span>
                 </div>
               </div>
               <div class="card-body">
                 <div>
-                  <span class="font-weight-bold">EGP 184</span>
+                  <span class="font-weight-bold">
+                    {{ 'home.tram price' | translate }}
+                  </span>
                   <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                 </div>
                 <a href="#" class="card-link text-muted">
-                  Book now for tomorrow
+                  {{ 'home.tram date' | translate }}
                 </a>
               </div>
             </div>
@@ -416,33 +433,40 @@
               />
               <div class="top_left col-10">
                 <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">Singapore</span>
+                <span style="color: white;">
+                  {{ 'home.Singapore City' | translate }}
+                </span>
                 <div class="btns">
                   <div class="btn1 px-1">
-                    Best Seller
+                    {{ 'home.bestSeller' | translate }}
                   </div>
                   <div class="btn2 px-1">
-                    15% OFF
+                    {{ 'home.SingaporeOff' | translate }}
                   </div>
                 </div>
               </div>
               <div class="card-body">
                 <div class="card-title" style="font-weight: 600;">
-                  ArtScience Museum at Marina Bay Sands Ticket
+                  {{ 'home.ArtScience' | translate }}
                 </div>
                 <div>
                   <i class="fas fa-star" style="color: #ff9d26;"></i>
                   <span style="color: #ff9d26;">4.6</span>
-                  <span>7,339 reviews | 99K+ B...</span>
+                  <span>
+                    {{ 'home.Singapore review' | translate }}
+                    {{ 'home.Singapore booked' | translate }}
+                  </span>
                 </div>
               </div>
               <div class="card-body">
                 <div>
-                  <span class="font-weight-bold">EGP 141</span>
+                  <span class="font-weight-bold">
+                    {{ 'home.Singapore price' | translate }}
+                  </span>
                   <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                 </div>
                 <a href="#" class="card-link text-muted">
-                  Book now for tomorrow
+                  {{ 'home.date' | translate }}
                 </a>
               </div>
             </div>
@@ -459,19 +483,21 @@
               />
               <div class="top_left col-10">
                 <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">Bangkok</span>
+                <span style="color: white;">
+                  {{ 'home.Bangkok City' | translate }}
+                </span>
                 <div class="btns">
                   <div class="btn1 px-1">
-                    Best Seller
+                    {{ 'home.bestSeller' | translate }}
                   </div>
                   <div class="btn2 px-1">
-                    6% OFF
+                    {{ 'home.BangkokOff' | translate }}
                   </div>
                 </div>
               </div>
               <div class="card-body">
                 <div class="card-title" style="font-weight: 600;">
-                  Jeh O Chula in Siam (Michelin Guide 2021)
+                  {{ 'home.Bangkok food' | translate }}
                 </div>
                 <div>
                   <i class="fas fa-star" style="color: #ff9d26;"></i>
@@ -481,11 +507,13 @@
               </div>
               <div class="card-body">
                 <div>
-                  <span class="font-weight-bold">EGP 337</span>
+                  <span class="font-weight-bold">
+                    {{ 'home.Bangkok price' | translate }}
+                  </span>
                   <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                 </div>
                 <a href="#" class="card-link text-muted">
-                  Book now for tomorrow
+                  {{ 'home.date' | translate }}
                 </a>
               </div>
             </div>
@@ -498,9 +526,9 @@
   <!--Start Klook Recommended-->
   <div class="recommend">
     <div class="contain">
-      <div class="h3">Klook Recommended</div>
+      <div class="h3">{{ 'home.recommend' | translate }}</div>
       <div class="inc">
-        Incredible experiences wherever you are chosen by our travel curators
+        {{ 'home.incredible experience' | translate }}
       </div>
     </div>
     <div class="images cont">
@@ -553,8 +581,9 @@
                 <div>
                   <i class="fas fa-star mr-1" style="color: #ff9d26;"></i>
                   <span style="color: #ff9d26;">{{ recommend.Rate }}</span>
+                  <span class="text-muted pl-1">{{ recommend.Review }}</span>
                   <span class="text-muted pl-1">
-                    {{ recommend.Review }} | {{ recommend.Booked }}
+                    {{ recommend.Booked }}
                   </span>
                 </div>
               </div>
@@ -579,13 +608,12 @@
   <!--End Klook Recommended-->
   <!--Start more to explore-->
   <div class="more">
-    <div class="ttl h3">More to explore</div>
+    <div class="ttl h3">{{ 'home.more to explore' | translate }}</div>
     <div class="row row1">
       <div class="col-lg-4 col-md-4 col-sm-12 col1">
-        <div class="artc h3">Get EGP20.2 off your first app booking!</div>
+        <div class="artc h3">{{ 'home.appBooking' | translate }}</div>
         <div class="txt">
-          Use promo code "mobile 10" at the checkout and book something amazing
-          - anytime, anywhere
+          {{ 'home.promo code' | translate }}
         </div>
         <div class="grd">
           <img
@@ -669,10 +697,9 @@
             alt="blog"
           />
           <div class="card-img-overlay card-mt">
-            <div class="card-title h4">Check out the Klook blog</div>
+            <div class="card-title h4">{{ 'home.blog' | translate }}</div>
             <p class="card-text">
-              Follow the team's musings on trends in travel, itinerary ideas and
-              travel tips
+              {{ 'home.follow' | translate }}
             </p>
           </div>
         </div>
@@ -686,11 +713,10 @@
           />
           <div class="card-img-overlay card-mt2">
             <div class="card-title h4">
-              Get free credits when you complete an experience
+              {{ 'home.credit' | translate }}
             </div>
             <p class="card-text bld">
-              Find out how to get extra discounts on your next booking by
-              completing klook activities and leaving...
+              {{ 'home.discount' | translate }}
             </p>
           </div>
         </div>
@@ -703,10 +729,11 @@
             alt="blog"
           />
           <div class="card-img-overlay card-mt3">
-            <div class="card-title h4">Earn credit for inviting friends</div>
+            <div class="card-title h4">
+              {{ 'home.earn credit' | translate }}
+            </div>
             <p class="card-text">
-              After your friend signs up and completes an activity you'll get a
-              EGP 50.5 reward!
+              {{ 'home.friends' | translate }}
             </p>
           </div>
         </div>
@@ -719,7 +746,7 @@
   <!------------------------->
   <!--Start partenership-->
   <div class="partener">
-    <div class="h3">Partnerships</div>
+    <div class="h3">{{ 'home.partnership' | translate }}</div>
     <div class="logos d-flex justify-content-between">
       <!--1-->
       <a href="#">
@@ -1581,31 +1608,31 @@
   <!--Start top cities to visit-->
   <div class="city">
     <div class="h4">
-      Top Cities To Visit
+      {{ 'home.cities' | translate }}
     </div>
     <div class="spans">
       <div>
-        <a href="#">Things To Do In San Diego</a>
+        <a href="#">{{ 'home.sanDiego' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Chicago</a>
+        <a href="#">{{ 'home.chicago' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Amesterdam</a>
+        <a href="#">{{ 'home.amesterdam' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Boston</a>
+        <a href="#">{{ 'home.boston' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Las Vegas</a>
+        <a href="#">{{ 'home.lasVegas' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Barcelona</a>
-        <span>|</span>
+        <a href="#">{{ 'home.barcelona' | translate }}</a>
+        <!-- <span>|</span> -->
       </div>
       <div class="scnd">
-        <a href="#">Things To Do In Prague</a>
+        <a href="#">{{ 'home.prague' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Berlin</a>
+        <a href="#">{{ 'home.berlin' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Rome</a>
+        <a href="#">{{ 'home.rome' | translate }}</a>
         <span>|</span>
-        <a href="#">Things To Do In Budapest</a>
+        <a href="#">{{ 'home.budapest' | translate }}</a>
       </div>
     </div>
   </div>
@@ -1613,25 +1640,25 @@
   <!-------------------------------------->
   <!--Start top things to do-->
   <div class="dothings">
-    <div class="h4">Top Things To Do</div>
+    <div class="h4">{{ 'home.things' | translate }}</div>
     <div class="spans">
       <div>
-        <a href="#">Las Vegas Shows</a>
+        <a href="#">{{ 'home.las vegas show' | translate }}</a>
         <span>|</span>
-        <a href="#">Las Vegas Attractions</a>
+        <a href="#">{{ 'home.las vegas attractions' | translate }}</a>
         <span>|</span>
-        <a href="#">Washington Dc Tours</a>
+        <a href="#">{{ 'home.washington tours' | translate }}</a>
         <span>|</span>
-        <a href="#">Rome Attractions</a>
+        <a href="#">{{ 'home.rome attractions' | translate }}</a>
         <span>|</span>
-        <a href="#">San Diego Attractions</a>
+        <a href="#">{{ 'home.san diego attractions' | translate }}</a>
         <span>|</span>
-        <a href="#">Shows In Chicago</a>
+        <a href="#">{{ 'home.chicago shows' | translate }}</a>
         <span>|</span>
-        <a href="#">Chicago Attractions</a>
+        <a href="#">{{ 'home.chicago attractions' | translate }}</a>
         <span>|</span>
-        <a href="#">Chicago Tour</a>
-        <span>|</span>
+        <a href="#">{{ 'home.chicago tours' | translate }}</a>
+        <!-- <span>|</span> -->
       </div>
     </div>
     <p>
@@ -1646,27 +1673,27 @@
         id="hid"
         #hid
       >
-        View more
+        {{ 'home.view more' | translate }}
       </a>
     </p>
 
     <div class="collapse" id="collapseExample">
       <div class="spans">
-        <a href="#">Rome Tours</a>
+        <a href="#">{{ 'home.rome tours' | translate }}</a>
         <span>|</span>
-        <a href="#">Barcelona Attractions</a>
+        <a href="#">{{ 'home.barcelona attractions' | translate }}</a>
         <span>|</span>
-        <a href="#">San Diego Zoo</a>
+        <a href="#">{{ 'home.san diego zoo' | translate }}</a>
         <span>|</span>
-        <a href="#">Zoo Berlin</a>
+        <a href="#">{{ 'home.berlin zoo' | translate }}</a>
         <span>|</span>
-        <a href="#">Amesterdam Museum</a>
+        <a href="#">{{ 'home.Amesterdam Museum' | translate }}</a>
         <span>|</span>
-        <a href="#">Boston Aquarium</a>
+        <a href="#">{{ 'home.boston aquarium' | translate }}</a>
         <span>|</span>
-        <a href="#">Chicago Museums</a>
+        <a href="#">{{ 'home.Chicago Museums' | translate }}</a>
         <span>|</span>
-        <a href="#">Concerts In Chicago</a>
+        <a href="#">{{ 'home.chicago concerts' | translate }}</a>
       </div>
     </div>
   </div>
@@ -1674,23 +1701,22 @@
   <!------------------------->
   <!--Start top activities-->
   <div class="activity">
-    <div class="h4">Top Activities</div>
+    <div class="h4">{{ 'home.activities' | translate }}</div>
     <div class="spans">
       <div>
-        <a href="#">San Diego Zoo</a>
+        <a href="#">{{ 'home.san diego zoo' | translate }}</a>
         <span>|</span>
-        <a href="#">Empire State Building</a>
+        <a href="#">{{ 'home.empire state' | translate }}</a>
+        <a href="#">{{ 'home.seaworld san diego' | translate }}</a>
         <span>|</span>
-        <a href="#">Seaworld San Diego</a>
+        <a href="#">{{ 'home.top of the rock' | translate }}</a>
         <span>|</span>
-        <a href="#">Top Of The Rock</a>
+        <a href="#">{{ 'home.magic mountain' | translate }}</a>
         <span>|</span>
-        <a href="#">Six Flags Magic Mountain</a>
+        <a href="#">{{ 'home.legoland' | translate }}</a>
         <span>|</span>
-        <a href="#">Legoland California</a>
-        <span>|</span>
-        <a href="#">Neushwanstein Castle</a>
-        <span>|</span>
+        <a href="#">{{ 'home.Neushwanstein' | translate }}</a>
+        <!-- <span>|</span> -->
       </div>
     </div>
     <p>
@@ -1705,28 +1731,28 @@
         id="hid2"
         #hid2
       >
-        View more
+        {{ 'home.view more' | translate }}
       </a>
     </p>
     <div class="collapse" id="collapseExample2">
       <div class="spans">
-        <a href="#">Disneyland Paris</a>
+        <a href="#">{{ 'home.disney' | translate }}</a>
         <span>|</span>
-        <a href="#">Great Barrier Reef</a>
+        <a href="#">{{ 'home.barrier' | translate }}</a>
         <span>|</span>
-        <a href="#">Angkor Wat</a>
+        <a href="#">{{ 'home.angkor' | translate }}</a>
         <span>|</span>
-        <a href="#">Met Museum</a>
+        <a href="#">{{ 'home.met' | translate }}</a>
         <span>|</span>
-        <a href="#">San Francisco Zoo</a>
+        <a href="#">{{ 'home.san francisco zoo' | translate }}</a>
         <span>|</span>
-        <a href="#">Mont Saint Michel</a>
+        <a href="#">{{ 'home.mont Michel' | translate }}</a>
         <span>|</span>
-        <a href="#">Chicago City Pass</a>
+        <a href="#">{{ 'home.chicago city' | translate }}</a>
         <span>|</span>
-        <a href="#">High Roller Las Vegas</a>
+        <a href="#">{{ 'home.roller' | translate }}</a>
         <span>|</span>
-        <a href="#">Shanghi Tower</a>
+        <a href="#">{{ 'home.shanghi' | translate }}</a>
       </div>
     </div>
   </div>
@@ -1734,23 +1760,23 @@
   <!-------------------------->
   <!--Start travel categories-->
   <div class="catg">
-    <div class="h4">Travel Categories</div>
+    <div class="h4">{{ 'home.categories' | translate }}</div>
     <div class="spans">
-      <a href="#">Europe Train Tickets</a>
+      <a href="#">{{ 'home.europe train' | translate }}</a>
       <span>|</span>
-      <a href="#">China Train Tickets</a>
+      <!-- <a href="#">China Train Tickets</a>
       <span>|</span>
       <a href="#">Airport Transfers</a>
       <span>|</span>
       <a href="#">Japan Rail Pass</a>
       <span>|</span>
       <a href="#">Taiwan Rail</a>
+      <span>|</span> -->
+      <!-- <a href="#">Vietnam Rail</a>
+      <span>|</span> -->
+      <a href="#">{{ 'home.hotel' | translate }}</a>
       <span>|</span>
-      <a href="#">Vietnam Rail</a>
-      <span>|</span>
-      <a href="#">Hotel</a>
-      <span>|</span>
-      <a href="#">Wifi & Sim Card</a>
+      <a href="#">{{ 'home.wifi' | translate }}</a>
     </div>
   </div>
   <!--End travel categories-->
