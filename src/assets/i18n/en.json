@@ -102,6 +102,9 @@
         "hotel":"Hotel",
         "wifi":"Wifi & Sim Card"
     },
+    "header":{
+
+    },
     
     "shared":{
         "language":"en"
