@@ -55,7 +55,7 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
-import { CardDirective } from './Directives/card.directive';
+import { CardDirective } from './directives/card.directive';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -63,6 +63,10 @@ import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-transla
 // import { SignComponent } from './admin/sign/sign.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
+import { ScrollSpyModule } from 'ngx-scrollspy';
+import { LanguageInterceptor } from './interceptors/language.interceptor';
+import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+
 import { ExperiencesModule } from './Components/experiences/experiences.module'
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -95,7 +99,7 @@ var firebaseConfig = {
     // SignUpComponent,
     // AdminComponent,
     SecondHeaderComponent,
-    // JwPaginationComponent
+    // JwPaginationComponent,
     PopupComponent,
     NotFoundComponent,
     ModalComponent,
@@ -106,6 +110,8 @@ var firebaseConfig = {
     // DashboardComponent,
     ActivityDetailsComponent,
     BookTrainComponent,
+    ScrollSpyDirective,
+   
     CardDirective,
     // // SignComponent,
     // DashboardComponent,
@@ -152,11 +158,7 @@ var firebaseConfig = {
     MatDatepickerModule,
     MatNativeDateModule,
     ExperiencesModule
-
-  ],
-
-  // ],
-
+  ],  // ],
   providers: [],
   bootstrap: [AppComponent]
 })
