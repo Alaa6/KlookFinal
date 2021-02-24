@@ -116,31 +116,29 @@
       <a class="blue" href="">Klook Travel</a>
       <i
         class="fas fa-chevron-right blue ml-2 mr-2"
-        style="font-size: 0.8em;"
+        style="font-size: 0.8em"
       ></i>
       <a class="blue" href="">Europe Rail Pass</a>
       <i
         class="fas fa-chevron-right blue ml-2 mr-2"
-        style="font-size: 0.8em;"
+        style="font-size: 0.8em"
       ></i>
       <a class="blue" href="">Transport</a>
       <i
         class="fas fa-chevron-right blue ml-2 mr-2"
-        style="font-size: 0.8em;"
+        style="font-size: 0.8em"
       ></i>
       <a class="blue" href="">Public transport</a>
       <i
         class="fas fa-chevron-right blue ml-2 mr-2"
-        style="font-size: 0.8em;"
+        style="font-size: 0.8em"
       ></i>
       <a class="blue" href="">Transport passes</a>
     </div>
     <!--Start spliting-->
     <div class="row">
       <div class="col-lg-8">
-        <div class="h3 swiss">
-          Swiss Travel Pass
-        </div>
+        <div class="h3 swiss">Swiss Travel Pass</div>
         <div class="d-flex justify-content-between">
           <div>
             <i class="fas fa-star star mr-1"></i>
@@ -149,7 +147,7 @@
             <span class="text-muted">| 40K+ Booked</span>
           </div>
           <div class="highlight">
-            <i class="far fa-heart mr-2" style="font-size: 1.2em;"></i>
+            <i class="far fa-heart mr-2" style="font-size: 1.2em"></i>
             <span>Wishlist</span>
           </div>
         </div>
@@ -215,169 +213,173 @@
         <!--End package-->
         <!--Start booking-->
         <div class="book mt-4">
-          <div style="width: 90%; margin: auto;">
-            <div class="d-flex justify-content-between">
-              <div class="selectDate">Select date and package options</div>
-              <button type="button" class="btn btn-light clear">
-                Clear all
-              </button>
-            </div>
-            <div class="date">Please select your departure date</div>
-            <!--Datepicker-->
-            <mat-form-field>
-              <input
-                class="btn available"
-                matInput
-                [matDatepicker]="myDatePicker"
-                value="Check availability"
-              />
-              <!--Add check-->
-              <mat-datepicker-toggle
-                [for]="myDatePicker"
-                matSuffix
-              ></mat-datepicker-toggle>
-              <mat-datepicker #myDatePicker></mat-datepicker>
-            </mat-form-field>
-            <!--End check-->
-            <!--Start class-->
-            <div class="text-muted">Class</div>
-            <div class="row mt-2 ml-1">
-              <button
-                type="button"
-                class="btn first col-lg-2 col-md-2 col-sm-5 mr-2"
-              >
-                First Class
-              </button>
-              <button
-                type="button"
-                class="btn second col-lg-2 col-md-2 col-2"
-                style="font-size: 0.8em;"
-              >
-                Second Class
-              </button>
-            </div>
-            <!--End class-->
-            <!--Start pass type-->
-            <div class="pass mt-3">
-              <div class="text-muted">Pass Type</div>
+          <div style="width: 90%; margin: auto">
+            <!-- //////////////////////// reactive form /////////////////////////// -->
+            <form [formGroup]="bookForm">
+              <div class="d-flex justify-content-between">
+                <div class="selectDate">Select date and package options</div>
+                <button type="button" class="btn btn-light clear">
+                  Clear all
+                </button>
+              </div>
+
+              <div class="date">Please select your departure date</div>
+              <!--Datepicker-->
+              <mat-form-field>
+                <input
+                  class="btn available"
+                  matInput
+                  [matDatepicker]="myDatePicker"
+                  value="Check availability"
+                />
+                <!--Add check-->
+                <mat-datepicker-toggle
+                  [for]="myDatePicker"
+                  matSuffix
+                ></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker></mat-datepicker>
+              </mat-form-field>
+              <!--End check-->
+              <!--Start class-->
+              <div class="text-muted">Class</div>
               <div class="row mt-2 ml-1">
-                <button type="button" class="btn second col-lg-2 col-md-2">
-                  Consecutive
+                <button
+                  type="button"
+                  class="btn first col-lg-2 col-md-2 col-sm-5 mr-2"
+                >
+                  First Class
                 </button>
                 <button
                   type="button"
-                  class="btn flexible flexble ml-2 col-lg-2 col-md-2"
+                  class="btn second col-lg-2 col-md-2 col-2"
+                  style="font-size: 0.8em"
                 >
-                  Flexible
+                  Second Class
                 </button>
               </div>
-            </div>
-            <!--End pass type-->
-            <!--Start Validity-->
-            <div class="valid mt-3">
-              <div class="text-muted">Validity</div>
-              <div class="row ml-2 mt-2">
+              <!--End class-->
+              <!--Start pass type-->
+              <div class="pass mt-3">
+                <div class="text-muted">Pass Type</div>
+                <div class="row mt-2 ml-1">
+                  <button type="button" class="btn second col-lg-2 col-md-2">
+                    Consecutive
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible flexble ml-2 col-lg-2 col-md-2"
+                  >
+                    Flexible
+                  </button>
+                </div>
+              </div>
+              <!--End pass type-->
+              <!--Start Validity-->
+              <div class="valid mt-3">
+                <div class="text-muted">Validity</div>
+                <div class="row ml-2 mt-2">
+                  <button
+                    type="button"
+                    class="btn flexible col-lg-3 col-md-3 col-8"
+                  >
+                    8 Days in 1 Month
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible ml-2 col-lg-3 col-md-3 col-8 four"
+                  >
+                    4 Days in 1 Month
+                  </button>
+                  <button
+                    type="button"
+                    class="btn second ml-2 col-lg-2 col-md-2 col-5 three"
+                  >
+                    3 Days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn first ml-2 col-lg-2 col-md-2 col-5 mr-2"
+                  >
+                    4 Days
+                  </button>
+                </div>
+                <div class="row ml-2 mt-2">
+                  <button
+                    type="button"
+                    class="btn first col-lg-2 col-md-2 col-5 mr-2"
+                  >
+                    8 Days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn first col-lg-2 col-md-2 col-5 mr-2"
+                  >
+                    15 Days
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible col-lg-3 col-md-3 col-8"
+                  >
+                    3 Days in 1 Month
+                  </button>
+                  <button
+                    type="button"
+                    class="btn flexible ml-2 col-lg-3 col-md-3 col-8 fifteen"
+                  >
+                    15 Days in 1 Month
+                  </button>
+                </div>
+              </div>
+              <!--End Validity-->
+              <!--Start Collection Options-->
+              <div class="collection mt-3">
+                <div class="text-muted">Collection Options</div>
                 <button
                   type="button"
-                  class="btn flexible col-lg-3 col-md-3 col-8"
+                  class="btn second ml-2 mt-2 mb-2 col-lg-2 col-md-2"
                 >
-                  8 Days in 1 Month
-                </button>
-                <button
-                  type="button"
-                  class="btn flexible ml-2 col-lg-3 col-md-3 col-8 four"
-                >
-                  4 Days in 1 Month
-                </button>
-                <button
-                  type="button"
-                  class="btn second ml-2 col-lg-2 col-md-2 col-5 three"
-                >
-                  3 Days
-                </button>
-                <button
-                  type="button"
-                  class="btn first ml-2 col-lg-2 col-md-2 col-5 mr-2"
-                >
-                  4 Days
+                  E-Ticket
                 </button>
               </div>
-              <div class="row ml-2 mt-2">
-                <button
-                  type="button"
-                  class="btn first col-lg-2 col-md-2 col-5 mr-2"
-                >
-                  8 Days
-                </button>
-                <button
-                  type="button"
-                  class="btn first col-lg-2 col-md-2 col-5 mr-2"
-                >
-                  15 Days
-                </button>
-                <button
-                  type="button"
-                  class="btn flexible col-lg-3 col-md-3 col-8"
-                >
-                  3 Days in 1 Month
-                </button>
-                <button
-                  type="button"
-                  class="btn flexible ml-2 col-lg-3 col-md-3 col-8 fifteen"
-                >
-                  15 Days in 1 Month
-                </button>
+              <!--End Collection Options-->
+              <div class="date mt-3">Quantity</div>
+              <div class="bg mt-2 d-flex justify-content-between">
+                <div>Adult</div>
+                <div>
+                  <i class="fas fa-minus p-2 mr-3"></i>
+                  <span>0</span>
+                  <i class="fas fa-plus p-2 ml-3"></i>
+                </div>
               </div>
-            </div>
-            <!--End Validity-->
-            <!--Start Collection Options-->
-            <div class="collection mt-3">
-              <div class="text-muted">Collection Options</div>
-              <button
-                type="button"
-                class="btn second ml-2 mt-2 mb-2 col-lg-2 col-md-2"
-              >
-                E-Ticket
-              </button>
-            </div>
-            <!--End Collection Options-->
-            <div class="date mt-3">Quantity</div>
-            <div class="bg mt-2 d-flex justify-content-between">
-              <div>Adult</div>
-              <div>
-                <i class="fas fa-minus p-2 mr-3"></i>
-                <span>0</span>
-                <i class="fas fa-plus p-2 ml-3"></i>
+              <div class="bg mt-2 d-flex justify-content-between">
+                <div>Youth(16-25)</div>
+                <div>
+                  <i class="fas fa-minus p-2 mr-3"></i>
+                  <span>0</span>
+                  <i class="fas fa-plus p-2 ml-3"></i>
+                </div>
               </div>
-            </div>
-            <div class="bg mt-2 d-flex justify-content-between">
-              <div>Youth(16-25)</div>
-              <div>
-                <i class="fas fa-minus p-2 mr-3"></i>
-                <span>0</span>
-                <i class="fas fa-plus p-2 ml-3"></i>
+              <div class="bg mt-2 d-flex justify-content-between">
+                <div>Child(6-15)</div>
+                <div>
+                  <i class="fas fa-minus p-2 mr-3"></i>
+                  <span>0</span>
+                  <i class="fas fa-plus p-2 ml-3"></i>
+                </div>
               </div>
-            </div>
-            <div class="bg mt-2 d-flex justify-content-between">
-              <div>Child(6-15)</div>
-              <div>
-                <i class="fas fa-minus p-2 mr-3"></i>
-                <span>0</span>
-                <i class="fas fa-plus p-2 ml-3"></i>
+              <div class="d-flex justify-content-between mt-4">
+                <div>
+                  <div class="price">EGP 4,043</div>
+                  <div>Complete all required fields to continue</div>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-warning warn mr-2 p-2">
+                    Add to cart
+                  </button>
+                  <button type="button" class="btn orange p-2">Book now</button>
+                </div>
               </div>
-            </div>
-            <div class="d-flex justify-content-between mt-4">
-              <div>
-                <div class="price">EGP 4,043</div>
-                <div>Complete all required fields to continue</div>
-              </div>
-              <div>
-                <button type="button" class="btn btn-warning warn mr-2 p-2">
-                  Add to cart
-                </button>
-                <button type="button" class="btn orange p-2">Book now</button>
-              </div>
-            </div>
+            </form>
           </div>
         </div>
         <hr class="mt-4 mb-4" />
@@ -432,27 +434,27 @@
           </div>
           <img
             src="./../../../assets/train_details/train.webp"
-            style="width: 100%;"
+            style="width: 100%"
             class="mt-4"
           />
           <img
             src="./../../../assets/train_details/pass.webp"
-            style="width: 100%;"
+            style="width: 100%"
             class="mt-4"
           />
           <img
             src="./../../../assets/train_details/book.webp"
-            style="width: 100%;"
+            style="width: 100%"
             class="mt-4"
           />
           <img
             src="./../../../assets/train_details/redeem.webp"
-            style="width: 100%;"
+            style="width: 100%"
             class="mt-4"
           />
           <img
             src="./../../../assets/train_details/flexible.webp"
-            style="width: 100%;"
+            style="width: 100%"
             class="mt-4"
           />
         </div>
@@ -463,9 +465,7 @@
           <span class="vl mr-2"></span>
           <span class="package" id="section-4">Things to Note</span>
           <!--Confirmation-->
-          <div class="subtitle">
-            Confirmation
-          </div>
+          <div class="subtitle">Confirmation</div>
           <ul>
             <li>
               You will receive confirmation of your booking instantly via email.
@@ -474,9 +474,7 @@
             </li>
           </ul>
           <!--Booking Guidelines-->
-          <div class="subtitle">
-            Booking Guidelines
-          </div>
+          <div class="subtitle">Booking Guidelines</div>
           <ul>
             <li>
               Important: Make sure to input the correct information. Once
@@ -498,9 +496,7 @@
             </li>
           </ul>
           <!--Pass Eligibility-->
-          <div class="subtitle">
-            Pass Eligibility
-          </div>
+          <div class="subtitle">Pass Eligibility</div>
           <ul>
             <li>
               Children aged 0-5 can travel free of charge provided they will not
@@ -521,9 +517,7 @@
             </li>
           </ul>
           <!--Additional Information-->
-          <div class="subtitle">
-            Additional Information
-          </div>
+          <div class="subtitle">Additional Information</div>
           <ul>
             <li>
               Important: Swiss Travel Passes have character limits ⁠- names will
@@ -545,9 +539,7 @@
             </li>
           </ul>
           <!--Insider Tips-->
-          <div class="subtitle">
-            Insider Tips:
-          </div>
+          <div class="subtitle">Insider Tips:</div>
           <ul>
             <li>
               If you’re staying for a month in Switzerland, you can book the
@@ -563,7 +555,7 @@
         <span class="package" id="section-5">Location</span>
         <img
           src="./../../../assets/train_details/maps.webp"
-          style="width: 100%;"
+          style="width: 100%"
           class="mt-3"
         />
         <hr class="mt-4 mb-4" />
@@ -595,25 +587,25 @@
               <div class="imag col-lg-2 col-md-2 col-5">
                 <img
                   src="./../../../assets/train_details/review1.jpeg"
-                  style="width: 8em;"
+                  style="width: 8em"
                 />
               </div>
               <div class="imag col-lg-2 col-md-2 col-5">
                 <img
                   src="./../../../assets/train_details/review2.jpeg"
-                  style="width: 8em;"
+                  style="width: 8em"
                 />
               </div>
               <div class="imag col-lg-2 col-md-2 col-5">
                 <img
                   src="./../../../assets/train_details/review3.jpeg"
-                  style="width: 8em;"
+                  style="width: 8em"
                 />
               </div>
               <div class="imag col-lg-2 col-md-2 col-5">
                 <img
                   src="./../../../assets/train_details/review4.jpeg"
-                  style="height: 7.5em; width: 8em;"
+                  style="height: 7.5em; width: 8em"
                 />
               </div>
             </div>
@@ -675,9 +667,7 @@
                   <i class="fas fa-star starsm mr-1"></i>
                   <i class="fas fa-star starsm mr-1"></i>
                   <i class="fas fa-star starsm mr-1"></i>
-                  <span class="bld">
-                    Highly recommended
-                  </span>
+                  <span class="bld"> Highly recommended </span>
                 </div>
                 <div class="mt-3">
                   Swiss rail pass is a boom in case you are travelling to
@@ -749,9 +739,7 @@
             possible one day prior to the date selected during booking.
             Thereafter, no refunds will be issued if the pass is already in use.
           </div>
-          <div class="ttl mt-3">
-            Q: How to reserve a seat?
-          </div>
+          <div class="ttl mt-3">Q: How to reserve a seat?</div>
           <div class="mt-2 mb-2">
             A: Timetables and reservations are available on Klook’s Europe train
             ticket booking page up to 3 months before departure and at local
@@ -762,9 +750,7 @@
             are required on most high speed, international, scenic, and night
             trains for additional fees
           </div>
-          <div class="ttl mt-3">
-            Q: When will I receive the voucher?
-          </div>
+          <div class="ttl mt-3">Q: When will I receive the voucher?</div>
           <div class="mt-2 mb-2">
             A: It will be sent via email as a PDF attachment. In the event that
             you do not receive an email from us, please check your Spam folder
@@ -787,14 +773,14 @@
           <span class="vl mr-2"></span>
           <span class="package mb-5">You might also like...</span>
         </div>
-        <div class="card" style="width: 23rem;">
+        <div class="card" style="width: 23rem">
           <img
             class="card-img-top cities"
             src="./../../../assets/Home/sapporo.jpg"
             alt="Card image cap"
           />
           <div class="city">
-            <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em;"></i>
+            <i class="fas fa-map-marker-alt mr-1" style="font-size: 0.9em"></i>
             <span>Europe Rail Pass</span>
           </div>
           <div class="card-body">
@@ -816,7 +802,7 @@
             <span class="title">EGP 626</span>
             <i
               class="fas fa-fire ml-1"
-              style="width: 0.8em; color: #ff5722;"
+              style="width: 0.8em; color: #ff5722"
             ></i>
             <br />
             <div class="Date">Book now for tomorrow</div>
@@ -841,7 +827,7 @@
           <div>
             <i
               class="fas fa-fire mr-1"
-              style="width: 0.8em; color: #ff5722;"
+              style="width: 0.8em; color: #ff5722"
             ></i>
             <span>Instant Confirmation</span>
           </div>
@@ -874,9 +860,9 @@
             <div class="col-2">
               <i class="fas fa-mobile-alt mobile mt-3 ml-2 mr-2"></i>
             </div>
-            <div class="col-10" style="font-size: 0.9em;">
+            <div class="col-10" style="font-size: 0.9em">
               Get EGP20.3 off your first booking in the app with promo code
-              <span style="color: #ff5722;">mobile10</span>
+              <span style="color: #ff5722">mobile10</span>
             </div>
           </div>
         </div>
@@ -895,7 +881,7 @@
               <!--1-->
               <div class="row">
                 <div class="col-1">
-                  <i class="fas fa-fire" style="color: #ff5722;"></i>
+                  <i class="fas fa-fire" style="color: #ff5722"></i>
                 </div>
                 <div class="col-10">Instant Confirmation</div>
               </div>
@@ -928,10 +914,10 @@
               </div>
             </div>
           </div>
-          <hr style="width: 90%; margin: auto;" />
+          <hr style="width: 90%; margin: auto" />
           <div class="inclusive p-3">
             <span class="vl mr-2"></span>
-            <span class="mb-5" style="font-size: 1.1em; font-weight: 700;">
+            <span class="mb-5" style="font-size: 1.1em; font-weight: 700">
               Package Description
             </span>
             <div class="inc">Inclusive Of</div>

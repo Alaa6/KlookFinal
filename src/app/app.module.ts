@@ -140,6 +140,7 @@ var firebaseConfig = {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    // hammerjs,
     
 ],
 
