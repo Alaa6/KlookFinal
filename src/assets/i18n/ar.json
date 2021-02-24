@@ -101,9 +101,33 @@
         "europe train":"قطار أوروبا",
         "hotel":"فندق",
         "wifi":"واي فاي و شريحة اتصال"
+    },
+    "header":{
+        "help":"مساعدة",
+        "cart":"السلة",
+        "log in":"تسجيل الدخول",
+        "log out":"تسجيل الخروج",
+        "sign up":"التسجيل"
+    },
+    "secondHeader":{
+        "home":"الصفحة الرئيسية",
+        "categories":"التصنيفات",
+        "experience":"الأقسام",
+        "transport":"التنقل و المواصلات",
+        "accommodation":"الإقامة",
+        "more":"المزيد",
+        "car rental":"تأجير سيارات",
+        "europe trains":"قطارات أوروبا",
+        "hotel":"فنادق",
+        "staycation":"استضافة",
+        "food":"طعام",
+        "wifi":"واي فاي و شريحة اتصال"
 
     },
-   
+    "footer":{
+        "discount":"خصومات تصل إلى %60",
+        "subscribe":"عند الضغط على اشتراك تكون موافق على "
+    },
 
     "shared":{
         "language":"عربي"

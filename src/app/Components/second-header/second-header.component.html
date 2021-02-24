@@ -23,7 +23,7 @@
           routerLinkActive="active"
         >
           <i class="fas fa-home home clr"></i>
-          <span class="home hd1">Home</span>
+          <span class="home hd1">{{ 'secondHeader.home' | translate }}</span>
         </a>
       </li>
 
@@ -49,7 +49,7 @@
         </div> -->
           <div class="hd1">
             <i class="fas fa-bars clr"></i>
-            <span class="hd1">All Categories</span>
+            <span class="hd1">{{ 'secondHeader.categories' | translate }}</span>
           </div>
         </a>
       </li>
@@ -66,17 +66,23 @@
           aria-expanded="false"
         >
           <i class="fas fa-parachute-box"></i>
-          <span class="hd1"> <a class="mmain"> 
-            Experiences
-          </a> </span>
+          <span class="hd1">
+            <a class="mmain experience">
+              {{ 'secondHeader.experience' | translate }}
+            </a>
+          </span>
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <div *ngFor="let subCat of allSubCategorey">
-          <a  class="dropdown-item" routerLinkActive="active" (click)="goToExperiencesSubCategory(subCat.Name)"
-          [ngClass]="{'display-none': subCat.Name === 'Experiences'} " >
-            {{subCat.Name}}
-          </a>
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              (click)="goToExperiencesSubCategory(subCat.Name)"
+              [ngClass]="{ 'display-none': subCat.Name === 'Experiences' }"
+            >
+              {{ subCat.Name }}
+            </a>
           </div>
           <!-- <a class="dropdown-item" (click)="setsubCategoryName('Tours')"  >
             Tours
@@ -130,7 +136,7 @@
           aria-expanded="false"
         >
           <i class="fas fa-subway"></i>
-          <span class="hd1">Transport</span>
+          <span class="hd1">{{ 'secondHeader.transport' | translate }}</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a
@@ -138,15 +144,15 @@
             routerLink="/transport/carRental"
             routerLinkActive="active"
           >
-            Car rentals
+            {{ 'secondHeader.car rental' | translate }}
           </a>
-          <a class="dropdown-item" href="#">Mainland China trains</a>
+          <!-- <a class="dropdown-item" href="#">Mainland China trains</a> -->
           <a
             class="dropdown-item"
             routerLink="/transport/europeTrains"
             routerLinkActive="active"
           >
-            Europe trains
+            {{ 'secondHeader.europe trains' | translate }}
           </a>
           <!-- <a
             class="dropdown-item"
@@ -154,11 +160,11 @@
           >
             
           </a> -->
-          <a class="dropdown-item" href="#">Japan trains</a>
+          <!-- <a class="dropdown-item" href="#">Japan trains</a>
           <a class="dropdown-item" href="#">Taiwan intercity buses</a>
           <a class="dropdown-item" href="#">Europe intercity buses</a>
           <a class="dropdown-item" href="#">Thailand intercity buses</a>
-          <a class="dropdown-item" href="#">Thailand ferries</a>
+          <a class="dropdown-item" href="#">Thailand ferries</a> -->
         </div>
       </li>
       <!--4-->
@@ -173,17 +179,24 @@
           aria-expanded="false"
         >
           <i class="fas fa-hotel"></i>
-          <span class="hd1">Accommodation</span>
+          <span class="hd1">
+            {{ 'secondHeader.accommodation' | translate }}
+          </span>
         </a>
-        <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
+        <div
+          class="dropdown-menu ml-5 accommodation"
+          aria-labelledby="navbarDropdown"
+        >
           <a
             class="dropdown-item"
             routerLink="/accommodation/hotels&more"
             routerLinkActive="active"
           >
-            Hotels & more
+            {{ 'secondHeader.hotel' | translate }}
           </a>
-          <a class="dropdown-item" href="#">Staycations</a>
+          <!-- <a class="dropdown-item" href="#">
+            {{ 'secondHeader.staycation' | translate }}
+          </a> -->
         </div>
       </li>
       <!--5-->
@@ -197,15 +210,18 @@
           aria-expanded="false"
         >
           <i class="far fa-circle"></i>
-          <span class="hd1">More to explore</span>
+          <span class="hd1">{{ 'secondHeader.more' | translate }}</span>
         </a>
-        <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
+        <div
+          class="dropdown-menu ml-5 foodWifi"
+          aria-labelledby="navbarDropdown"
+        >
           <a
             class="dropdown-item"
             routerLink="/moreToExplore/food&dining"
             routerLinkActive="active"
           >
-            Food & dining
+            {{ 'secondHeader.food' | translate }}
           </a>
 
           <a
@@ -213,7 +229,7 @@
             routerLink="/moreToExplore/wifi&simcards"
             routerLinkActive="active"
           >
-            WiFi & SIM cards
+            {{ 'secondHeader.wifi' | translate }}
           </a>
         </div>
       </li>
