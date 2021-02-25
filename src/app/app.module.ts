@@ -70,6 +70,7 @@ import { ScrollSpyDirective } from './directives/scroll-spy.directive';
 import { ExperiencesModule } from './Components/experiences/experiences.module'
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ConditionsComponent } from './Components/conditions/conditions.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -113,6 +114,8 @@ var firebaseConfig = {
     ScrollSpyDirective,
    
     CardDirective,
+   
+    ConditionsComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
