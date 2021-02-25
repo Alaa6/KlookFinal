@@ -5,6 +5,14 @@ header{
     background-size: cover;
     height: 480px;
 }
+header:lang(ar){
+  background-image: url("/../assets/wifi/wifi.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 480px;
+  direction: rtl;
+}
+
 
 .tooltip.bs-tooltip-top .arrow:before {
     border-top-color: lightgray !important;
@@ -38,6 +46,35 @@ header{
   cursor: pointer;
   text-align: start;
   color: #999;
+}
+#dropbtn1:lang(ar) {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: start;
+  color: #999;
+  direction: rtl;
+}
+
+#dropbtn3:lang(ar) {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: start;
+  color: #999;
+  direction: rtl;
+}
+
+#dropbtn2:lang(ar) {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: start;
+  color: #999;
+  direction: rtl;
 }
 
 
