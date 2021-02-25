@@ -20,9 +20,11 @@
       </div>
       <div class="click">
         {{ 'footer.subscribe' | translate }}
-        <a href="#" class="terms">Terms & Conditions</a>
+        <a routerLink="/conditions" routerLinkActive="active" class="terms">
+          Terms & Conditions
+        </a>
         and
-        <a href="#">Privacy Policy</a>
+        <a routerLink="/conditions" routerLinkActive="active">Privacy Policy</a>
       </div>
     </div>
     <div class="col-4 thirdPr">

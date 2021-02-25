@@ -10,6 +10,7 @@ import { HelpComponent } from './Components/help/help.component';
 import { HomeComponent } from './Components/home/home.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ConditionsComponent } from './Components/conditions/conditions.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'help', component: HelpComponent },
   { path: 'credits', component: KlookCreditComponent },
   { path: 'details', component: DetailsComponent },
+  { path: 'conditions', component: ConditionsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //Default Path
   { path: 'activityDetails/:collectionName/:id', component: ActivityDetailsComponent },
   {
@@ -46,6 +48,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }
