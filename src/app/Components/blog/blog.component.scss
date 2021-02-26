@@ -61,7 +61,23 @@
   margin-top: 2em;
   font-size: 1.1em;
 }
-
+@media only screen and (max-width: 768px) {
+  .cover .text h1 {
+    font-size: 2em;
+  }
+  .cover .text .find {
+    font-size: 0.9em;
+    width: 120%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .cover .text h1 {
+    font-size: 1.1em;
+  }
+  .cover .text .find {
+    font-size: 0.9em;
+  }
+}
 // End inspiration
 .blog:lang(ar) {
   direction: rtl;
