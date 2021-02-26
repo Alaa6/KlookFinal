@@ -343,5 +343,19 @@
         "post":"Accordingly, Klook may amend these Terms and/or its policies at any time by posting a revised version on Klook's website. You accept the modified Terms if you continue to participate in the Bug Bounty Program after changes are made to the Terms.",
         "language":"The other language versions of this Agreement have been prepared solely for reference. If there is any conflict or inconsistency between the English version and the other language versions, the English text shall prevail."
 
+    },
+    "blog":{
+        "guide":"Travel Guide to the world",
+        "discover":"Discover holiday ideas, guides, and stories unique to your next getaway",
+        "latest":"Latest Travel Inspiration",
+        "best":"Best Chinese New Year Goodies In Singapore.",
+        "find":"Find some of the best snacks in KELE.",
+        "bubble":"Hong Kong-Singapore Travel Bubble Confirmed To Start On Nov 22",
+        "residents":"Hong Kong and Singapore residents will be able to travel freely for any reason.",
+        "marina bay":"See The Best Of Singapore's Marina Bay In A Day!",
+        "central area":"There's just so much to do at the central area of Singapore - Marina Bay.",
+        "iSquare":"iSQUARE",
+        "situated":"Situated at the intersection of Nathan Road and Peking Road."
+
     }
 }

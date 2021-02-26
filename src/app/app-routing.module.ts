@@ -11,6 +11,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
+import { BlogComponent } from './Components/blog/blog.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: 'help', component: HelpComponent },
   { path: 'credits', component: KlookCreditComponent },
   { path: 'details', component: DetailsComponent },
+  { path: 'blog', component: BlogComponent },
+
   { path: 'conditions', component: ConditionsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //Default Path
   { path: 'activityDetails/:collectionName/:id', component: ActivityDetailsComponent },
