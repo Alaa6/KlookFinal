@@ -12,6 +12,7 @@ import { KlookCreditComponent } from './Components/klook-credit/klook-credit.com
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
+import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'credits', component: KlookCreditComponent },
   { path: 'details', component: DetailsComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'invite', component: InviteFriendsComponent },
+
 
   { path: 'conditions', component: ConditionsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //Default Path

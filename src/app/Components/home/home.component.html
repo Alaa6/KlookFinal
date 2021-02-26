@@ -696,8 +696,10 @@
             class="card-img"
             alt="blog"
           />
-          <div class="card-img-overlay card-mt">
-            <div class="card-title h4">{{ 'home.blog' | translate }}</div>
+          <div class="card-img-overlay card-mt blog">
+            <div class="card-title h4">
+              {{ 'home.blog' | translate }}
+            </div>
             <p class="card-text">
               {{ 'home.follow' | translate }}
             </p>
@@ -721,7 +723,7 @@
           </div>
         </div>
       </a>
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12" routerLink="/invite">
         <div class="card text-white">
           <img
             src="./../../../assets/Home/friends.jpg"

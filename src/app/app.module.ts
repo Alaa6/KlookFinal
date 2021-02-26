@@ -72,6 +72,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
+import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -119,6 +120,8 @@ var firebaseConfig = {
     ConditionsComponent,
    
     BlogComponent,
+   
+    InviteFriendsComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
