@@ -1,13 +1,20 @@
-header{
-   
-    background-position: center;
-    background-size: cover;
-    height: 500px;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)),url("/../assets/Hotel/hotel.jpg");
-
+header {
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  background-image: url('/../assets/Hotel/hotel.jpg');
 }
-
-.days{
+header :lang(ar) {
+  // background-position: center;
+  // background-size: cover;
+  // height: 500px;
+  // background-image: url('/../assets/Hotel/hotel.jpg');
+  direction: rtl;
+}
+.rows:lang(ar){
+  direction: rtl !important;
+}
+.days {
   border-radius: 10px;
   color: #4985e6;
   border: 1px solid #4985e6;
@@ -15,121 +22,203 @@ header{
   position: relative;
   font-size: 12px;
 }
-.borderContet{
-    color: #999;
-    font-size: 12px;
-    line-height: 14px;
+
+.days:lang(ar) {
+  direction: rtl;
+}
+.borderContet {
+  color: #999;
+  font-size: 12px;
+  line-height: 14px;
 }
 
-#p1{
-    padding-top:150px ; font-size: 46px; font-weight: bold; line-height: 1.2;color: white;
+#p1 {
+  padding-top: 150px;
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1.2;
+  color: white;
 }
-#p2{
-    font-size: 16px;font-weight: normal; color: white;
+#p2 {
+  font-size: 16px;
+  font-weight: normal;
+  color: white;
 }
 
-.titles{
-    font-weight: 700;
-    line-height: 22px;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+.titles {
+  font-weight: 700;
+  line-height: 22px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
     Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .description {
-    font-size: 12px; color: #666; line-height:
-    1.5;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica
-    Neue,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
-.h2{
-    font-size: 28px;
-    line-height: 34px;
-    font-weight: 600;
-    font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica
-    Neue,Helvetica,Arial,sans-serif;
+.h2 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .top_left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    color: #fff;
-    font-size: 12px;
-  }
- .moves:hover {
-    transform: translate(0, -10px);
-    cursor: pointer;
- } 
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color: #fff;
+  font-size: 12px;
+}
+.moves:hover {
+  transform: translate(0, -10px);
+  cursor: pointer;
+}
 .navs {
   list-style: none;
 }
-.navs li{
+.navs li {
   display: inline-block;
   margin-right: 20px;
   padding-right: 20px;
   justify-content: center;
 }
-
-#hongKong{
-    color: #ff5722;
-    border-bottom: 2px solid #ff5722;
-    font-weight: 600;
+.navs:lang(ar){
+  direction: rtl;
 }
-.navs li:hover{
+
+
+#hongKong {
+  color: #ff5722;
+  border-bottom: 2px solid #ff5722;
+  font-weight: 600;
+}
+.navs li:hover {
   color: #ff5722;
   cursor: pointer;
 }
 
-.btnHongKong{
+.btnHongKong {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  
 }
-.btn{
+.btn {
   color: #ff5722;
   background-color: #fff;
   border: 1px solid #ff5722;
 }
-.btn:hover{
+.btn:hover {
   color: #ff5722;
   background-color: rgb(245, 194, 202);
   border: 1px solid #ff5722;
 }
-.h2header{
+.h2header {
   font-size: 28px;
   line-height: 30px;
   font-weight: 700;
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-.h2toggle{
+.h2header:lang(ar){
+  direction: rtl;
+}
+.h2toggle:lang(ar){
+  direction: rtl;
+}
+.h2toggle {
   font-size: 16px;
   font-weight: 700;
   line-height: 19px;
   color: #212121;
   cursor: pointer;
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-.klookbtn{
+.klookbtn:lang(ar){
+  direction: rtl;
+}
+.icon1:lang(ar){
+  float: left !important;
+  
+}
+.img1:lang(ar){
+  direction: rtl;
+}
+.dir:lang(ar){
+  direction: rtl;
+}
+.klookbtn {
   color: black;
   background-color: #fff;
   border: 1px solid black;
   font-size: 14px;
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+    Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-.viewmore{
+.viewmore {
   display: inline-block;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 24px;
-    color: #4985e6;
-    line-height: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 24px;
+  color: #4985e6;
+  line-height: 16px;
 }
 
-.btn-add{
+.btn-add {
   transform: rotate(180deg);
 }
 
-.btn-remove{
+.btn-remove {
   transform: rotate(360deg);
+}
+
+
+
+
+
+
+#p1:lang(ar){
+  // padding-top: 150px;
+  // font-size: 46px;
+  // font-weight: bold;
+  // line-height: 1.2;
+  // color: white;
+direction: rtl;
+}
+#p2:lang(ar){
+  // font-size: 16px;
+  // font-weight: normal;
+  //color: white;
+  direction: rtl;
+}
+
+.titles:lang(ar){
+  // font-weight: 700;
+  // line-height: 22px;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+  //   Helvetica Neue, Helvetica, Arial, sans-serif;
+  direction: rtl;
+}
+.descriptio:lang(ar) {
+  // font-size: 12px;
+  // color: #666;
+  // line-height: 1.5;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+  //   Helvetica Neue, Helvetica, Arial, sans-serif;
+  direction: rtl;
+}
+
+.h2 {
+  // font-size: 28px;
+  // line-height: 34px;
+  // font-weight: 600;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
+  //   Helvetica Neue, Helvetica, Arial, sans-serif;
+  direction: rtl;
 }

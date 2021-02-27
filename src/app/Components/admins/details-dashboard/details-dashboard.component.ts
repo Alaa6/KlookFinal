@@ -28,16 +28,16 @@ export class DetailsDashboardComponent implements OnInit {
   constructor(private router: Router, private authSer: AuthService, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private TourServies: RelaxServiceService) {
 
     this.authSer.getalluser().subscribe(data => {
-
-      this.dataSource = data.map(elementt => {
-        console.log(elementt.payload.doc.id)
+      
+      this.dataSource=data.map(elementt =>{
+      console.log(elementt.payload.doc.id)
 
         return {
           id: elementt.payload.doc.id,
           ...elementt.payload.doc.data()
         }
       })
-
+     
 
     });
 
@@ -49,31 +49,31 @@ export class DetailsDashboardComponent implements OnInit {
           ...elementt.payload.doc.data()
         }
       })
-      // console.log(this.dataSource)
+      console.log(this.dataSourceadmin)
 
     });
     // this.authSer.getbyID(id)
-
-    this.loginFrm = fb.group({
-
-      id: ['']
-      , Booked: ['']
-      , Categories: ['']
-      , City: ['']
-      , Date: ['']
-      , Image: ['']
-      , OldPrice: ['']
-      , Price: ['']
-      , Rate: ['']
-      , Review: ['']
-      , Section: ['']
-      , Title: ['']
-      , TourDiscount: ['']
-      , TourSectionInner: ['']
-
-
-
-    });
+   
+    this.loginFrm=fb.group({
+   
+      id:['']
+        ,Booked:['']
+        ,Categories:['']
+        ,City:['']
+        ,Date:['']
+        ,Image:['']
+        ,OldPrice:['']
+        ,Price:['']
+        ,Rate:['']
+        ,Review:['']
+        ,Section:['']
+        ,Title:['']
+        ,TourDiscount:['']
+        ,TourSectionInner:['']
+  
+  
+  
+      });
   }
 
   ngOnInit(): void {

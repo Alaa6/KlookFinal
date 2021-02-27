@@ -9,10 +9,10 @@
 a.active {
   color: #f44f1b !important;
   font-weight: 600;
-  text-decoration: underline #f44f1b;
+  // text-decoration: underline #f44f1b;
 }
 .cover img {
-  height: 35em;
+  height: 31em;
 }
 a:hover {
   text-decoration: none;
@@ -319,7 +319,7 @@ a:hover {
 .details {
   font-size: 1.05em;
   font-weight: 700;
-  margin-top: 4em;
+  margin-top: 9.8em;
 }
 .white {
   background-color: white;
@@ -400,4 +400,8 @@ a:hover {
   .card {
     width: 20rem !important;
   }
+}
+.current-section {
+  color: #f44f1b !important;
+  font-weight: bold !important;
 }

@@ -25,6 +25,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        <li class="nav-item mt-2">
+          <a (click)="changeLanguage()">
+            {{ 'shared.language' | translate }}
+          </a>
+        </li>
         <!--1-->
         <li class="nav-item dropdown cntr">
           <a
@@ -367,14 +372,14 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/help" routerLinkActive="active">
             <i class="far fa-question-circle mr-1"></i>
-            <span>Help</span>
+            <span>{{ 'header.help' | translate }}</span>
           </a>
         </li>
         <!--4-->
         <li class="nav-item">
           <a class="nav-link cart" href="#">
             <i class="fas fa-shopping-cart mr-1"></i>
-            <span>Cart</span>
+            <span>{{ 'header.cart' | translate }}</span>
           </a>
         </li>
         <!--5-->
@@ -385,7 +390,7 @@
             routerLink="/sign/login"
             routerLinkActive="active"
           >
-            Log in
+            {{ 'header.log in' | translate }}
           </button>
         </form>
         <form *ngIf="!isuser" class="form-inline">
@@ -394,7 +399,7 @@
             (click)="logout()"
             type="button"
           >
-            log out
+            {{ 'header.log out' | translate }}
           </button>
         </form>
         <!--6-->
@@ -404,7 +409,7 @@
             routerLink="/sign/signup"
             routerLinkActive="active"
           >
-            <span>Sign up</span>
+            <span>{{ 'header.sign up' | translate }}</span>
           </a>
         </li>
       </ul>

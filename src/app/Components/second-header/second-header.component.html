@@ -23,7 +23,7 @@
           routerLinkActive="active"
         >
           <i class="fas fa-home home clr"></i>
-          <span class="home hd1">Home</span>
+          <span class="home hd1">{{ 'secondHeader.home' | translate }}</span>
         </a>
       </li>
 
@@ -49,255 +49,16 @@
         </div> -->
           <div class="hd1">
             <i class="fas fa-bars clr"></i>
-            <span class="hd1">All Categories</span>
+            <span class="hd1">{{ 'secondHeader.categories' | translate }}</span>
           </div>
         </a>
-
-        <!-- Modal -->
-        <!-- <div
-          class="modal fade"
-          id="CatModal"
-          data-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-          #CatModal
-        >
-          <div class="modal-dialog modal-dialog-scrollable mw-100 w-75">
-            <div class="modal-content">
-              <div class="modal-body disableHorizontalScroll">
-                <div class="row">
-                  <div class="col-3">
-                    <a routerLink="/experiences" routerLinkActive="active"  class="mmain">
-                      <i class="fas fa-parachute-box mr-1" style="font-size: 1.1em;"></i>
-                      Experiences
-                    </a>
-                    <br />
-                    <br />
-                    <a href="../Attractions/AttractionsHK&Ma.html" class="main">
-                      Attractions
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Theme & water parks</a>
-                    <br />
-                    <a href="#" class="sub">Museums & exhibitions</a>
-                    <br />
-                    <a href="#" class="sub">Nature & anomals</a>
-                    <br />
-                    <a href="#" class="sub">Observation & cable cars</a>
-                    <br />
-                    <a href="#" class="sub">Historical sights</a>
-                    <br />
-                    <a href="#" class="sub">Attraction passes & more</a>
-                    <br />
-                    <br />
-
-                    <a routerLink="/experiences/tour" routerLinkActive="active" class="main">
-                      Tours
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="../tours/walking&biking.html" class="sub">
-                      Walking & biking
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Sightseeing</a>
-                    <a href="#" class="sub">Private tours</a>
-                    <br />
-                    <a href="#" class="sub">In the air</a>
-                    <br />
-                    <a href="#" class="sub">Cruises & island tours</a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">
-                      Outdoors & sports
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Water activities</a>
-                    <br />
-                    <a href="#" class="sub">Outdoor activities</a>
-                    <br />
-                    <a href="#" class="sub">Skiing & snowboarding</a>
-                    <br />
-                    <a href="#" class="sub">Camping & glamping</a>
-                    <br />
-                    <br />
-
-                    <a href="../Relax/Relaxx.html" class="main">
-                      Relaxation & beauty
-                      <i class="fas fa-chevron-right"></i>
-                      <br />
-                    </a>
-                    <a href="#" class="sub">Spa & massages</a>
-                    <br />
-                    <a href="#" class="sub">Salons & beauty</a>
-                    <br />
-                    <a href="../Relax/FunNight.html" class="sub">
-                      Fun & nightlife
-                    </a>
-                    <br />
-                    <br />
-                    <a href="../Relax/culturee.html" class="main">
-                      Culture & workshops
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Classes & workshops</a>
-                    <br />
-                    <a href="#" class="sub">Traditional activities</a>
-                    <br />
-                    <br />
-                    <a href="../Relax/FunNight.html" class="main">
-                      Fun & nightlife
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Games & VR</a>
-                    <a href="#" class="sub">Nightlide &</a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="mmain">
-                      <i class="fas fa-subway mr-1" style="font-size: 1em;"></i>
-                      Transport
-                    </a>
-                    <br />
-                    <br />
-                    <a href="../Europe train/Europe train/train.html" class="sub">
-                      Trains
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Mainland China trains</a>
-                    <br />
-                    <a href="#" class="sub">Vietnam trains</a>
-                    <a href="#" class="sub">Japan trains</a>
-                    <br />
-                    <a href="#" class="sub">Europe trains</a>
-                    <a href="#" class="sub">Taiwan trains</a>
-                    <br />
-                    <br />
-                    <a href="../hotel/carRental.html" class="main">
-                      Car rentals
-                      <i class="fas fa-chevron-right"></i>
-                      <br />
-                    </a>
-                    <a href="#" class="sub">Thailand car rentals</a>
-                    <br />
-                    <a href="#" class="sub">Taiwan car rentals</a>
-                    <br />
-                    <a href="#" class="sub">South Korea car rentals</a>
-                    <br />
-                    <a href="#" class="sub">Malaysia car rentals</a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">Buses & ferries</a>
-                    <br />
-                    <a href="#" class="sub">Taiwan intercity buses</a>
-                    <br />
-                    <a href="#" class="sub">Europe intercity buses</a>
-                    <br />
-                    <a href="#" class="sub">Thailand ferries</a>
-                    <br />
-                    <a href="#" class="sub">Thailand intercity buses</a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">Private transport</a>
-                    <br />
-                    <a href="#" class="sub">Private cars</a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">Public transport</a>
-                    <br />
-                    <a href="#" class="sub">Transport passes</a>
-                    <br />
-                    <a href="#" class="sub">Shared transfers</a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">
-                      Scooter & motorbike rentals
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">Airport transfer</a>
-                    <a href="#" class="sub">Private airport transfers</a>
-                    <br />
-                    <a href="#" class="sub">Airport trains & buses</a>
-                  </div>
-
-                  <div class="col-3">
-                    <a href="#" class="mmain">
-                      <i class="fas fa-hotel mr-1" style="font-size: 1em;"></i>
-                      Accommodation
-                    </a>
-                    <br />
-                    <br />
-                    <a href="../hotel/Hotel.html" class="main">
-                      Hotels & more
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="#" class="main">
-                      Staycations
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a href="#" class="mmain">
-                      <i class="far fa-circle mr-1" style="font-size: 1em;"></i>
-
-                      More to explore
-                    </a>
-                    <br />
-                    <br />
-                    <a routerLink="/moreToExplore/moreToExplore/food&dining" routerLinkActive="active" class="main">
-                      Food & dinning
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <a href="#" class="sub">Hong Kong</a>
-                    <a href="#" class="sub">Taipei</a>
-                    <br />
-                    <a href="#" class="sub">Bangkok</a>
-                    <a href="#" class="sub">Kuala Lumpur</a>
-                    <br />
-                    <a href="#" class="sub">Singapore</a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">
-                      Shopping
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <br />
-                    <br />
-                    <a href="../hotel/Wifi&Simcard.html" class="main">
-                      WiFi & SIM cards
-                      <i class="fas fa-chevron-right"></i>
-                      <br />
-                    </a>
-                    <br />
-                    <br />
-                    <a href="#" class="main">Traveler essentials</a>
-                    <br />
-                    <a href="#" class="sub">Services</a>
-                    <a href="#" class="sub">Travel gear rental</a>
-                    <br />
-                    <a href="#" class="sub">Travel insurance</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!--2-->
       </li>
 
       <li class="nav-item dropdown">
         <a
           class="nav-link dropdown-toggle"
           routerLinkActive="active"
-          (click)="setsubCategoryName('Experiences')"
+          (click)="goToExperiencesSubCategory('Experiences')"
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
@@ -305,17 +66,25 @@
           aria-expanded="false"
         >
           <i class="fas fa-parachute-box"></i>
-          <span class="hd1"> <a routerLink="/experiences" routerLinkActive="active"  class="mmain">
-           
-            Experiences
-          </a> </span>
+          <span class="hd1">
+            <a class="mmain experience">
+              {{ 'secondHeader.experience' | translate }}
+            </a>
+          </span>
           <!-- <span></span> -->
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" (click)="setsubCategoryName('Attractions')">
-            Attractions
-          </a>
-          <a class="dropdown-item" (click)="setsubCategoryName('Tours')">
+          <div *ngFor="let subCat of allSubCategorey">
+            <a
+              class="dropdown-item"
+              routerLinkActive="active"
+              (click)="goToExperiencesSubCategory(subCat.Name)"
+              [ngClass]="{ 'display-none': subCat.Name === 'Experiences' }"
+            >
+              {{ subCat.Name }}
+            </a>
+          </div>
+          <!-- <a class="dropdown-item" (click)="setsubCategoryName('Tours')"  >
             Tours
           </a>
           <a
@@ -331,7 +100,7 @@
             (click)="setsubCategoryName('Relaxation & beauty')"
           >
             Relaxation & beauty
-          </a>
+          </a> -->
           <!-- <a
             class="dropdown-item"
             routerLink="/experiences/attractions"
@@ -340,7 +109,7 @@
             Attractions
           </a> -->
 
-          <a
+          <!-- <a
             class="dropdown-item"
             (click)="setsubCategoryName('Cultural experiences')"
           >
@@ -352,7 +121,7 @@
             (click)="setsubCategoryName('Fun & nightlife')"
           >
             Fun & nightlife
-          </a>
+          </a> -->
         </div>
       </li>
       <!--3-->
@@ -367,7 +136,7 @@
           aria-expanded="false"
         >
           <i class="fas fa-subway"></i>
-          <span class="hd1">Transport</span>
+          <span class="hd1">{{ 'secondHeader.transport' | translate }}</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a
@@ -375,15 +144,15 @@
             routerLink="/transport/carRental"
             routerLinkActive="active"
           >
-            Car rentals
+            {{ 'secondHeader.car rental' | translate }}
           </a>
-          <a class="dropdown-item" href="#">Mainland China trains</a>
+          <!-- <a class="dropdown-item" href="#">Mainland China trains</a> -->
           <a
             class="dropdown-item"
             routerLink="/transport/europeTrains"
             routerLinkActive="active"
           >
-            Europe trains
+            {{ 'secondHeader.europe trains' | translate }}
           </a>
           <!-- <a
             class="dropdown-item"
@@ -391,11 +160,11 @@
           >
             
           </a> -->
-          <a class="dropdown-item" href="#">Japan trains</a>
+          <!-- <a class="dropdown-item" href="#">Japan trains</a>
           <a class="dropdown-item" href="#">Taiwan intercity buses</a>
           <a class="dropdown-item" href="#">Europe intercity buses</a>
           <a class="dropdown-item" href="#">Thailand intercity buses</a>
-          <a class="dropdown-item" href="#">Thailand ferries</a>
+          <a class="dropdown-item" href="#">Thailand ferries</a> -->
         </div>
       </li>
       <!--4-->
@@ -410,17 +179,24 @@
           aria-expanded="false"
         >
           <i class="fas fa-hotel"></i>
-          <span class="hd1">Accommodation</span>
+          <span class="hd1">
+            {{ 'secondHeader.accommodation' | translate }}
+          </span>
         </a>
-        <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
+        <div
+          class="dropdown-menu ml-5 accommodation"
+          aria-labelledby="navbarDropdown"
+        >
           <a
             class="dropdown-item"
             routerLink="/accommodation/hotels&more"
             routerLinkActive="active"
           >
-            Hotels & more
+            {{ 'secondHeader.hotel' | translate }}
           </a>
-          <a class="dropdown-item" href="#">Staycations</a>
+          <!-- <a class="dropdown-item" href="#">
+            {{ 'secondHeader.staycation' | translate }}
+          </a> -->
         </div>
       </li>
       <!--5-->
@@ -434,15 +210,18 @@
           aria-expanded="false"
         >
           <i class="far fa-circle"></i>
-          <span class="hd1">More to explore</span>
+          <span class="hd1">{{ 'secondHeader.more' | translate }}</span>
         </a>
-        <div class="dropdown-menu ml-5" aria-labelledby="navbarDropdown">
+        <div
+          class="dropdown-menu ml-5 foodWifi"
+          aria-labelledby="navbarDropdown"
+        >
           <a
             class="dropdown-item"
             routerLink="/moreToExplore/food&dining"
             routerLinkActive="active"
           >
-            Food & dining
+            {{ 'secondHeader.food' | translate }}
           </a>
 
           <a
@@ -450,7 +229,7 @@
             routerLink="/moreToExplore/wifi&simcards"
             routerLinkActive="active"
           >
-            WiFi & SIM cards
+            {{ 'secondHeader.wifi' | translate }}
           </a>
         </div>
       </li>
