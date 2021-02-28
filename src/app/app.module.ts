@@ -55,7 +55,7 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
-import { CardDirective } from './directives/card.directive';
+// import { CardDirective } from './directives/card.directive';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -117,7 +117,7 @@ var firebaseConfig = {
     BookTrainComponent,
     ScrollSpyDirective,
    
-    CardDirective,
+    // CardDirective,
    
     ConditionsComponent,
    
@@ -129,11 +129,7 @@ var firebaseConfig = {
     // DetailsDashboardComponent
 
   ],
-<<<<<<< HEAD
-  exports: [CardDirective , NotFoundComponent]  ,
-=======
-  exports: [CardDirective],
->>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
+  exports: [  NotFoundComponent]  ,
   imports: [
     SimpleScrollSpyModule,
     TranslateModule.forRoot({
