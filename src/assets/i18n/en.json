@@ -356,6 +356,9 @@
         "central area":"There's just so much to do at the central area of Singapore - Marina Bay.",
         "iSquare":"iSQUARE",
         "situated":"Situated at the intersection of Nathan Road and Peking Road."
-
+    },
+    "invite":{        
+        "friends":"Invite your friends to Klook",
+        "travel":"Invite your friends and travel together"
     }
 }

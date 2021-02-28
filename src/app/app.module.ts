@@ -73,6 +73,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
 import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
+import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -129,6 +131,7 @@ var firebaseConfig = {
   ],
   exports: [CardDirective],
   imports: [
+    SimpleScrollSpyModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
