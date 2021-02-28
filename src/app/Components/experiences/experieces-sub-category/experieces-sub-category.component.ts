@@ -127,7 +127,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     console.log(test, "onInit");
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
     this.relaxService.getAllCities().subscribe((wifi) => {
       this.cityList = wifi.map(data => {
         return {
@@ -177,7 +180,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
       if (this.subCatName == 'Experiences') {
         this.relaxService.getAllTours(this.city, "BestSeller").subscribe((res) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
           this.bestSellerList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -208,7 +214,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
         this.relaxService.getAllTours(this.city, "AwsomeDeals").subscribe((res) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
           this.awsomeDealsList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -225,7 +234,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
         this.relaxService.getAllTours(this.city, "ForKids").subscribe((res) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
           this.forKidsList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -250,10 +262,13 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
               ...data.payload.doc.data()
             }
           });
+<<<<<<< HEAD
           this.bestSellerList.map((tour) => {
             this.TourListName.push(tour.Title)
 
           })
+=======
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
 
         }, (err) => console.log(err))
 
@@ -301,8 +316,13 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           })
 
 
+<<<<<<< HEAD
           this.loading = false
         }, (err) => console.log(err))
+=======
+      // ngAfterViewInit(): void {
+
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
 
 
       }
@@ -321,7 +341,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
       }, (err) => console.log(err))
 
       this.relaxService.getSubCategory().subscribe((res) => {
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6fd0b2cac4155a5b17c6565a18a1a026d816b40
         this.allSubCategorey = res.map(data => {
           return {
             id: data.payload.doc.id,

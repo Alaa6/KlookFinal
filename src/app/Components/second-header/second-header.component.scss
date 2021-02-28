@@ -60,6 +60,10 @@ a {
 .main {
   color: #333333;
 }
+.experience:hover {
+  color: #ff5722 !important;
+  text-decoration: none;
+}
 #CatModal .sub {
   color: gray;
 }
@@ -123,13 +127,23 @@ i:hover {
   }
 }
 
-// on link active style  
+// on link active style
 
 .active {
   color: #ff5722;
-
 }
 
 .display-none {
   display: none;
+}
+
+*:lang(ar) {
+  direction: rtl;
+}
+.foodWifi:lang(ar),
+.accommodation:lang(ar) {
+  margin-left: 0em !important;
+}
+.navbar :lang(ar) {
+  margin-right: 0em !important;
 }

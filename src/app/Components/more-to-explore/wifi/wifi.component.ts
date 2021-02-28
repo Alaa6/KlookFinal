@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ActivityDetailsService } from 'src/app/services/activity-details.service';
 import { HomeService } from 'src/app/services/home.service';
+import { LanguageServiceService } from 'src/app/services/language-service.service';
 import { WifiService } from 'src/app/services/wifi.service';
 import { ICity } from 'src/app/viewModels/i-city';
 import { Wifi } from 'src/app/viewModels/wifi';
@@ -16,7 +18,9 @@ export class WifiComponent implements OnInit {
   WifiCards: Wifi[] = [];
   Cities: ICity[] = [];
   //wifiDetail:Wifi[]=[];
-  constructor(private router: Router, private wifiServ: WifiService, private activityDetails: ActivityDetailsService, private city: HomeService) { }
+  constructor(private router: Router, private languageService: LanguageServiceService, private translate: TranslateService, private wifiServ: WifiService, private activityDetails: ActivityDetailsService, private city: HomeService) {
+    this.translate.use(languageService.getLanguage());
+  }
 
   ngOnInit(): void {
 

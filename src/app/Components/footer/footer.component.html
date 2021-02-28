@@ -16,13 +16,13 @@
     </div>
     <div class="col-5 secondPr">
       <div class="travel">
-        Travel discounts up to 60% off sent straight to your inbox
+        {{ 'footer.discount' | translate }}
       </div>
       <div class="click">
-        By clicking subscribe, you have agreed to our
-        <a href="#" class="terms">Terms & Conditions</a>
-        and
-        <a href="#">Privacy Policy</a>
+        {{ 'footer.subscribe' | translate }}
+        <a routerLink="/conditions" routerLinkActive="active" class="terms">
+          {{ 'footer.terms' | translate }}
+        </a>
       </div>
     </div>
     <div class="col-4 thirdPr">
