@@ -11,19 +11,21 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import {MatSliderModule} from '@angular/material/slider';
 // import { CardDirective } from '../../Directives/card.directive';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { SearchExperienceComponent } from './search-experience/search-experience.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatRadioModule} from '@angular/material/radio';
+// import { NotFoundComponent } from '../../app.module';
 
 
 const routes: Routes = [
 
   { path  : 'cat/:city/:supCatName'  , component : ExperiecesSubCategoryComponent},
-  { path  : 'search/:city/:supCatName/:searchKey'  , component : SearchExperienceComponent},
-  
-  
-  // { path  : 'attractions' , component : AttractionsComponent},
-
-  
+  { path  : 'activities/:city/:supCatName'  , component : SearchExperienceComponent},
+  // { path  : 'attractions' , component : AttractionsComponent},  
 ]
 
 
@@ -33,6 +35,7 @@ const routes: Routes = [
   ExperiecesSubCategoryComponent ,
   // CardDirective,
   SearchExperienceComponent ,
+
 
   
 ],
@@ -45,7 +48,15 @@ const routes: Routes = [
     CarouselModule ,
     MatProgressSpinnerModule,
     NgxSkeletonLoaderModule ,
-    MatSliderModule
+    MatSliderModule ,
+    MatCheckboxModule ,
+    MatAutocompleteModule ,
+    MatFormFieldModule ,
+    MatTreeModule ,
+    MatIconModule ,
+    MatRadioModule ,
+    // NotFoundComponent
+  
     
   ] ,
 })

@@ -5,7 +5,7 @@ import { RelaxServiceService } from './relax-service.service';
 describe('RelaxServiceService', () => {
   let service: RelaxServiceService;
 
-  beforeEach(() => {
+  beforeEach(() => {n
     TestBed.configureTestingModule({});
     service = TestBed.inject(RelaxServiceService);
   });

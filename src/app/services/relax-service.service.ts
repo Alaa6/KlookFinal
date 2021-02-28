@@ -11,6 +11,7 @@ import { IActivity } from '../viewModels/iactivity';
 import { ITour } from '../viewModels/itour';
 import { ISubCategory } from '../viewModels/isub-category';
 import { City } from './../viewModels/city';
+import { IContinent } from '../viewModels/icontinent';
 
 
 
@@ -52,20 +53,28 @@ export class RelaxServiceService {
     return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).snapshotChanges()
   }
 
-  getAllCities() {
-    return this.afs.collection<ICity>('Cities').snapshotChanges()
+  getAllCities(continent?: string) {
+    if (continent == undefined)
+      return this.afs.collection<ICity>('Cities').snapshotChanges()
+      return this.afs.collection<ICity>('Cities', ref => ref.where('continent', '==', continent)).snapshotChanges()
+
+
   }
 
   // getAllTours(_city: string, _category: string, _section: string) {
 
-  getAllTours(_city: string, _section?: string, _category?: string){
+  getAllTours(_city: string, _section?: string, _subCategory?: string, _activitiesCat?: string) {
 
-    if (_category == undefined)
+    if (_subCategory == undefined)
       return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).snapshotChanges()
-    if (_section == undefined)
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category)).snapshotChanges()
-    else{
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).snapshotChanges()
+    if (_section == undefined) {
+         if(_activitiesCat == undefined)
+         return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _subCategory)).snapshotChanges()
+         return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _subCategory).where('SubCategories', '==', _activitiesCat)).snapshotChanges()
+
+    }
+    else {
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _subCategory).where('Section', '==', _section)).snapshotChanges()
     }
 
 
@@ -75,7 +84,7 @@ export class RelaxServiceService {
     if (_catName == undefined) {
       return this.afs.collection<ISubCategory>('SubCategories').snapshotChanges();
     }
-    else{
+    else {
       return this.afs.collection<ISubCategory>('SubCategories', ref => ref.where('Name', '==', _catName)).snapshotChanges();
 
 
@@ -84,7 +93,7 @@ export class RelaxServiceService {
 
   }
 
-  
+
 
   addToTours(itemm: Tours) {
 
@@ -102,6 +111,10 @@ export class RelaxServiceService {
     return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city)
       .where('Categories', '==', _category)).valueChanges()
 
+  }
+
+  getContinentList() {
+    return this.afs.collection<IContinent>('Continents').snapshotChanges();
   }
 
 }

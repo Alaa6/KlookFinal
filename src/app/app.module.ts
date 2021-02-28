@@ -106,7 +106,7 @@ var firebaseConfig = {
     // DetailsDashboardComponent
      
   ],
-  exports: [CardDirective]  ,
+  exports: [CardDirective , NotFoundComponent]  ,
   imports: [
     BrowserModule,
     AppRoutingModule,
