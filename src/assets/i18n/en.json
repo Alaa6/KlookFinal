@@ -18,12 +18,11 @@
         "travel":"Travel is on hold, but the dreaming continues! Build your wishlist for your next adventure",
         "TaipeiCity":"Taipei",
         "bestSeller":"Best Seller",
-        "off":"62% OFF",
         "taipei":"Maokong Gondola Combo Tickets in Taipei",
-        "review":"6,019 reviews ",
+        "review":"reviews ",
         "booked":"| 70K+ B...",
         "price":"EGP 134",
-        "date":"Book now for tomorrow",
+        "date":"Book now for",
         "Hong Kong City":"Hong Kong",
         "tram":"Peak Tram and Sky Terrace 428 Tour Combo Package...",
         "tram review":"52,367 reviews",
@@ -100,7 +99,9 @@
         "categories":"Travel Categories",
         "europe train":"Europe Train Tickets",
         "hotel":"Hotel",
-        "wifi":"Wifi & Sim Card"
+        "wifi":"Wifi & Sim Card",
+        "egp":"EGP",
+        "off":"OFF"
     },
     "header":{
         "help":"Help",

@@ -514,42 +514,27 @@ a:hover {
   border-radius: 0.3em;
   position: relative;
 }
-.incred .inspired .ins_container .row {
+.incred .inspired .ins_container .row1 {
   margin: auto;
-  display: grid;
-  grid-template-columns: 19% 19% 19% 19% 19%;
+  // display: grid;
+  // grid-template-columns: 19% 78%;
   grid-gap: 0.7em;
 }
-.incred .inspired .ins_container .row .fsCol {
-  grid-column-start: 1;
-  grid-column-end: 2;
+.incred .inspired .ins_container .row1 .fsCol {
   color: white;
-  position: absolute;
-  bottom: 4em;
-  left: 2em;
-  width: 15%;
+  // position: absolute;
+  // bottom: 1em;
+  // left: 2em;
+  // width: 15%;
+  margin-top: 18em;
+  margin-left: 1em;
   font-size: 0.95em;
 }
-.incred .inspired .ins_container .row .scCol {
+.incred .inspired .ins_container .row2 .scCol {
   grid-column-start: 2;
   grid-column-end: 3;
-  margin-top: 2em;
 }
-.incred .inspired .ins_container .row .thCol {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  margin-top: 2em;
-}
-.incred .inspired .ins_container .row .frCol {
-  grid-column-start: 4;
-  grid-column-end: 5;
-  margin-top: 2em;
-}
-.incred .inspired .ins_container .row .ffCol {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  margin-top: 2em;
-}
+
 .incred .inspired .ins_container .row {
   overflow: hidden;
   margin-top: 2em;
@@ -1285,7 +1270,7 @@ span {
     margin-bottom: 3em;
   }
   .firstview {
-    margin-top: 70em !important;
+    margin-top: 60em !important;
   }
   /*End near to you*/
   /*Start incredible destinations*/
@@ -1319,7 +1304,7 @@ span {
     height: 16em;
   }
   .incred .view2 {
-    margin-top: 114em;
+    margin-top: 104em;
     padding-right: 1em;
     padding-left: 1em;
     margin-left: 9em;
@@ -1346,7 +1331,7 @@ span {
     padding-right: 5em;
   }
   .things .view3 {
-    margin-top: 160em !important;
+    margin-top: 150em !important;
     margin-left: 8em;
     padding-left: 1em;
     padding-right: 1em;
@@ -1365,10 +1350,13 @@ span {
   .incred .inspired .mleft {
     margin-left: 1.2em;
   }
-  .incred .inspired .ins_container .row .scCol,
-  .thCol {
-    display: none;
+  .incred .inspired .ins_container {
+    height: 52em;
   }
+  // .incred .inspired .ins_container .row .scCol,
+  // .thCol {
+  //   display: none;
+  // }
   .incred .inspired .ins_container .move {
     margin-left: -10em;
     width: 95% !important;
@@ -1383,6 +1371,14 @@ span {
   }
   .incred .inspired .ins_container .row .fsCol {
     bottom: 9em;
+  }
+  .incred .inspired .ins_container .row .scCol {
+    display: block;
+    // margin-left: 2em !important;
+  }
+  .incred .inspired .ins_container .row .scCol .card {
+    width: 100%;
+    margin-left: 0em !important;
   }
 
   /*End get inspired*/
@@ -1626,7 +1622,7 @@ span {
     font-size: 1em;
   }
   .near_container .firstview {
-    margin-top: 150em !important;
+    margin-top: 125em !important;
     margin-left: 5em !important;
   }
   /*End near you*/
@@ -1649,7 +1645,7 @@ span {
     margin-left: -1em;
   }
   .view2 {
-    margin-top: 161em !important;
+    margin-top: 143em !important;
     font-size: 0.8em;
     width: 15em;
     margin-left: 4em !important;
@@ -1682,7 +1678,7 @@ span {
   // }
 
   .things .view3 {
-    margin-top: 240em !important;
+    margin-top: 215em !important;
     padding-left: 1em !important;
     padding-right: 1em !important;
     font-size: 1em;
@@ -1706,7 +1702,8 @@ span {
   }
   .incred .inspired .ins_container .row .fsCol {
     width: 70%;
-    bottom: 1.7em;
+    margin-top: 8.5em !important;
+    margin: auto;
   }
   .incred .inspired .ins_container .row .fsCol .h4 {
     font-size: 1.2em;
@@ -1773,6 +1770,7 @@ span {
 *:lang(ar) {
   text-align: right;
 }
+
 // *:lang(ar) {
 //   direction: rtl;
 // }
