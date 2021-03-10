@@ -10,7 +10,11 @@ import { ICity } from '../viewModels/icity';
 import { IActivity } from '../viewModels/iactivity';
 import { ITour } from '../viewModels/itour';
 import { ISubCategory } from '../viewModels/isub-category';
+import { ITrainDetails } from '../viewModels/itrain-details';
+import { ITrainBook } from '../viewModels/itrain-book';
 import { City } from './../viewModels/city';
+import { IEuropeTrains } from './../viewModels/ieurope-trains';
+
 
 
 
@@ -35,7 +39,7 @@ export class RelaxServiceService {
   }
 
   getall() {
-    return this.afs.collection<Tours>('ToursCollection').snapshotChanges();
+    return this.afs.collection<IEuropeTrains>('train-sights').valueChanges();
   }
 
   // getCategoriesByCityAndSecion(_city: string, _section: string) { 
@@ -89,7 +93,7 @@ export class RelaxServiceService {
 
   addToTours(itemm: Tours) {
 
-    console.log(itemm)
+    // console.log(itemm)
     this.afs.collection('ToursCollection').add(itemm).then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
     })

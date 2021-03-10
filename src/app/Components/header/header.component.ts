@@ -11,14 +11,37 @@ export class HeaderComponent implements OnInit {
   isuser:boolean=true
 
   constructor(private authser : AuthService,
-) { }
+) { 
+
+  if(this.authser.userLogin==true){
+    console.log("trueeeee")
+  }
+  else
+  {
+    console.log("falseee")
+
+  }
+}
 
 ngOnInit() {
+  
+  if(this.authser.userLogin==true){
+    console.log("trueeeee")
+    this.isuser=true
+
+  }
+  else
+  {
+    console.log("falseee")
+    this.isuser=false;
+
+
+  }
   this.authser.user.subscribe(user => {
     if(user){
     this.isuser=false
-    // console.log(user)s
-    }
+
+  }
     else
     this.isuser=true;
   })

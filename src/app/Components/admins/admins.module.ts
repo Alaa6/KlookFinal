@@ -29,12 +29,19 @@ import { DashboardComponent } from './dashboard/dashboard.component'
 import { DetailsDashboardComponent } from './details-dashboard/details-dashboard.component'
 // import { AuthService } from 'src/app/services/auth.service';
 import { AuthGuardGuard } from 'src/app/services/auth-guard.guard';
+import { DialogAdminComponent } from './dialog-admin/dialog-admin.component';
+import { AdminSignComponent } from './admin-sign/admin-sign.component';
+import { DashboardControlCardsComponent } from './dashboard-control-cards/dashboard-control-cards.component';
+// import { DashboardParentComponent } from './dashboardPages/';
 
 const routes: Routes = [
 
   { path: ':subsign', component: SignComponent },
   { path: 'admin/dash', component: DashboardComponent, canActivate: [AuthGuardGuard] },
-  { path  : 'admin'  , component : DashboardComponent},
+  { path: 'admin/adminlogin', component: AdminSignComponent },
+  { path: 'admin/dash2', component: DashboardComponent },
+  
+  // { path  : 'admin'  , component : DashboardComponent},
 
 
 
@@ -44,7 +51,11 @@ const routes: Routes = [
   declarations: [
     SignComponent,
     DashboardComponent,
-    DetailsDashboardComponent
+    DetailsDashboardComponent,
+    DialogAdminComponent,
+    AdminSignComponent,
+    DashboardControlCardsComponent,
+    // DashboardParentComponent
 
   ],
   imports: [

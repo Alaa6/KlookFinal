@@ -1,0 +1,27 @@
+.frm{
+
+    height: 200px;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#EA562C ;
+  
+    width: 100%;
+}
+
+.divfrm{
+    
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+    width: 100%;
+    // background-color: brown;
+}
+
+.btn{
+    background-color: #EA562C;
+    width: 75%;
+}

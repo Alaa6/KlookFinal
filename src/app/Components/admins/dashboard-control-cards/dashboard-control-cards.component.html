@@ -1,0 +1,115 @@
+<div *ngIf="cardsBool" class="content">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div *ngFor="let c of Cards" class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header {{c.ColorBck}} card-header-icon">
+              <div class="card-icon">
+                <!-- <i class="material-icons">globe-americas</i> -->
+                <i class="{{c.Icon}}"></i>
+                <!-- <i class="fas fa-hotel material-icons"></i> -->
+              </div>
+              <p class="card-category">{{c.title}}</p>
+              <h3 class="card-title">{{c.NoDocument}}
+                <!-- <small>GB</small> -->
+              </h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <button mat-flat-button class="ml-4 container btnsign" >View</button>
+                <button mat-flat-button class="ml-4 container btnsign" >Add</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+       
+
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-warning card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">content_copy</i>
+              </div>
+              <p class="card-category">Tours</p>
+              <h3 class="card-title">50 Cards
+                <!-- <small>GB</small> -->
+              </h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <button mat-flat-button class="ml-4 container btnsign" >View</button>
+                <button mat-flat-button class="ml-4 container btnsign" >Add</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-success card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">store</i>
+              </div>
+              <p class="card-category">Cities</p>
+              <h3 class="card-title">50 Cards
+                <!-- <small>GB</small> -->
+              </h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <button mat-flat-button class="ml-4 container btnsign" >View</button>
+                <button mat-flat-button class="ml-4 container btnsign" >Add</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+              <div class="card-icon">
+                <i class="material-icons">info_outline</i>
+              </div>
+              <p class="card-category">Activites</p>
+              <h3 class="card-title">50 Cards
+                <!-- <small>GB</small> -->
+              </h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <button mat-flat-button class="ml-4 container btnsign" >View</button>
+                <button mat-flat-button class="ml-4 container btnsign" >Add</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="card card-stats">
+            <div class="card-header card-header-info card-header-icon">
+              <div class="card-icon">
+                <i class="fa fa-twitter"></i>
+              </div>
+              <p class="card-category">Hotel</p>
+              <h3 class="card-title">50 Cards
+                <!-- <small>GB</small> -->
+              </h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats">
+                <button mat-flat-button class="ml-4 container btnsign" >View</button>
+                <button mat-flat-button class="ml-4 container btnsign" >Add</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
