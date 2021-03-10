@@ -74,6 +74,14 @@ import { ConditionsComponent } from './Components/conditions/conditions.componen
 import { BlogComponent } from './Components/blog/blog.component';
 import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
 import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
+import { KlookCreditsComponent } from './Components/klook-credits/klook-credits.component';
+import { FindBookedComponent } from './Components/find-booked/find-booked.component';
+import { CancelComponentComponent } from './Components/cancel-component/cancel-component.component';
+import { ParticipantsComponent } from './Components/participants/participants.component';
+import { AmendComponent } from './Components/amend/amend.component';
+import { VoucherComponent } from './Components/voucher/voucher.component';
+import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
+import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
 
 
 
@@ -124,6 +132,22 @@ var firebaseConfig = {
     BlogComponent,
    
     InviteFriendsComponent,
+   
+    KlookCreditsComponent,
+   
+    FindBookedComponent,
+   
+    CancelComponentComponent,
+   
+    ParticipantsComponent,
+   
+    AmendComponent,
+   
+    VoucherComponent,
+   
+    OpenTicketComponent,
+   
+    BookBehalfComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent

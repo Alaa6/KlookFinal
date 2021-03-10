@@ -5,22 +5,29 @@
   <button
     class="navbar-toggler"
     type="button"
-    data-toggle="collapse"
     data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent"
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
-    <span class="navbar-toggler-icon"></span>
+    <span
+      class="navbar-toggler-icon"
+      (click)="isMenuCollapsed = !isMenuCollapsed"
+    ></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div
+    class="collapse navbar-collapse"
+    [ngbCollapse]="isMenuCollapsed"
+    id="navbarSupportedContent"
+  >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a
           class="nav-link hd1 home"
           routerLink="/home"
           routerLinkActive="active"
+          (click)="isMenuCollapsed = true"
         >
           <i class="fas fa-home home clr"></i>
           <span class="home hd1">{{ 'secondHeader.home' | translate }}</span>
@@ -42,6 +49,7 @@
           aria-haspopup="true"
           aria-expanded="false"
           (click)="open()"
+          (click)="isMenuCollapsed = true"
         >
           <!-- <div class="hd1" (mouseover)="show()" (mouseout)="hide()">
           <i class="fas fa-bars clr"></i>
@@ -64,6 +72,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          (click)="isMenuCollapsed = true"
         >
           <i class="fas fa-parachute-box"></i>
           <span class="hd1">
@@ -134,6 +143,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          (click)="isMenuCollapsed = true"
         >
           <i class="fas fa-subway"></i>
           <span class="hd1">{{ 'secondHeader.transport' | translate }}</span>
@@ -177,6 +187,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          (click)="isMenuCollapsed = true"
         >
           <i class="fas fa-hotel"></i>
           <span class="hd1">
@@ -208,6 +219,7 @@
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
+          (click)="isMenuCollapsed = true"
         >
           <i class="far fa-circle"></i>
           <span class="hd1">{{ 'secondHeader.more' | translate }}</span>

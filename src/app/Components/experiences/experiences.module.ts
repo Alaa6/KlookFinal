@@ -12,6 +12,12 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { MatSliderModule } from '@angular/material/slider';
 // import { CardDirective } from '../../Directives/card.directive';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
+
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
 import { SearchExperienceComponent } from './search-experience/search-experience.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -20,6 +26,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 // import { NotFoundComponent } from '../../app.module';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
 
 const routes: Routes = [
 
@@ -46,6 +55,13 @@ const routes: Routes = [
   
 ],
   imports: [
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     CommonModule,
     RouterModule.forChild(routes),
     MatDialogModule,

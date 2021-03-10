@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 // import { Observable } from 'rxjs/ajax';
 
@@ -10,8 +10,12 @@ import { ICity } from '../viewModels/icity';
 import { IActivity } from '../viewModels/iactivity';
 import { ITour } from '../viewModels/itour';
 import { ISubCategory } from '../viewModels/isub-category';
+import { ITrainDetails } from '../viewModels/itrain-details';
+import { ITrainBook } from '../viewModels/itrain-book';
 import { City } from './../viewModels/city';
 import { IContinent } from '../viewModels/icontinent';
+import { IEuropeTrains } from './../viewModels/ieurope-trains';
+
 
 
 
@@ -21,6 +25,7 @@ import { IContinent } from '../viewModels/icontinent';
 })
 export class RelaxServiceService {
   // tt:Observable<Tours[]>
+
   constructor(public afs: AngularFirestore) {
     // this.tt=
   }
@@ -35,7 +40,7 @@ export class RelaxServiceService {
   }
 
   getall() {
-    return this.afs.collection<Tours>('ToursCollection').snapshotChanges();
+    return this.afs.collection<IEuropeTrains>('train-sights').valueChanges();
   }
 
   // getCategoriesByCityAndSecion(_city: string, _section: string) { 
@@ -97,7 +102,7 @@ export class RelaxServiceService {
 
   addToTours(itemm: Tours) {
 
-    console.log(itemm)
+    // console.log(itemm)
     this.afs.collection('ToursCollection').add(itemm).then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
     })
@@ -112,10 +117,29 @@ export class RelaxServiceService {
       .where('Categories', '==', _category)).valueChanges()
 
   }
+      updatetour(){
+        const tutorialsRef = this.afs.collection('ToursCollection');
+tutorialsRef.doc('id').set({ title: 'zkoder Tut#1', url: 'bezkoder.com/zkoder-tut-1' });
+      }
 
-  getContinentList() {
-    return this.afs.collection<IContinent>('Continents').snapshotChanges();
-  }
+      gettour(){
+    return this.afs.collection<Tours>('ToursCollection').snapshotChanges()
+
+      }
+  itemDoc?: AngularFirestoreDocument<Tours>;
+
+      updateItem(item: Tours){
+        
+        this.itemDoc = this.afs.doc(`ToursCollection/${item.id}`);
+        this.itemDoc.update(item);
+      }
+      getContinentList() {
+        return this.afs.collection<IContinent>('Continents').snapshotChanges();
+      }
 
 }
+
+ 
+
+
 

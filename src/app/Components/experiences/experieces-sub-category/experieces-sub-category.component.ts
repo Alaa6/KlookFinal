@@ -15,6 +15,9 @@ import { User } from './../../../viewModels/user';
 import { FormControl } from '@angular/forms';
 
 import { map, startWith } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageServiceService } from 'src/app/services/language-service.service';
+
 
 @Component({
   selector: 'app-experieces-sub-category',
@@ -86,7 +89,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   constructor(private relaxService: RelaxServiceService,
     public dialog: MatDialog,
     private activatedRoute: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private translate: TranslateService,
+    private languageService: LanguageServiceService
+    ) {
     this.cityName = 'Cairo'
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -95,6 +101,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
 
+    this.translate.use(languageService.getLanguage());
 
   }
 

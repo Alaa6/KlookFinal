@@ -26,6 +26,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   IncredibleDestinations: ICity[] = []
   TopThings: Tours[] = []
   Recommended: Tours[] = []
+  InspiredTaipei: Tours[] = []
+  InspiredHong: Tours[] = []
+  Inspired:Tours[] = []
 
   @ViewChild('hid') hid: any;
   @ViewChild('hid2') hid2: any;
@@ -69,6 +72,36 @@ export class HomeComponent implements OnInit, AfterViewInit {
           }
         });
       })
+
+      this.homeService.getInspired()
+      .subscribe((top) => {
+        this.Inspired = top.map(data => {
+          return {
+            id: data.payload.doc.id,
+            ...data.payload.doc.data()
+          }
+        });
+      })
+
+      // this.homeService.getInspiredTaipei()
+      // .subscribe((top) => {
+      //   this.InspiredTaipei = top.map(data => {
+      //     return {
+      //       id: data.payload.doc.id,
+      //       ...data.payload.doc.data()
+      //     }
+      //   });
+      // })
+
+      // this.homeService.getInspiredHongKong()
+      // .subscribe((top) => {
+      //   this.InspiredHong = top.map(data => {
+      //     return {
+      //       id: data.payload.doc.id,
+      //       ...data.payload.doc.data()
+      //     }
+      //   });
+      // })
 
     this.homeService.getKlookRecommended()
       .subscribe((rec) => {
