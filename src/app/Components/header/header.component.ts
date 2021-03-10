@@ -10,6 +10,7 @@ import { LanguageServiceService } from 'src/app/services/language-service.servic
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public isMenuCollapsed = true;
 
   isuser: boolean = true
 

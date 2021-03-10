@@ -361,5 +361,82 @@
     "invite":{        
         "friends":"Invite your friends to Klook",
         "travel":"Invite your friends and travel together"
+    },
+    "experiences":{
+        "discover":"Discover the best theme parks, museums and more must-sees in"
+    },
+    "food":{
+        "previous":"Previous",
+        "food":"Food & dining"
+    },
+    "help":{
+        "how":"Hello. How can we help you?",
+        "faqs":"FAQs",
+        "credits":"How can I use Klook credits?",
+        "find":" Where can I find the directions to my booked activity?",
+        "cancel":"How can I cancel my booking and get a refund?",
+        "participants":"How do I add / remove participants from my booking?",
+        "amend":"How can I amend a booking?",
+        "voucher":"After I make a booking, when will I get the voucher?",
+        "ticket":"What is an 'Open ticket'?",
+        "book":"Can I book on behalf of my family and friends?"
+    },
+    "credits":{
+        "use":"How can I use Klook credits?",
+        "earn":" Once you've earned at least 10 credits, you can use them at the checkout page of any booking to get money off. And the more credits you have, the more discount you get!",
+        "payment":" When you're about to make the payment, select your credits to use them."
+    },
+    "find":{
+        "where":"Where can I find the directions to my booked activity?",
+        "find":"You can find the meeting point details under 'How to use' on the activity's page.",
+        "before":"Before booking",
+        "after":"After booking",
+        "details":" You can find the meeting point details on your voucher. Find this in the Bookings page on Klook or in your email inbox.",
+        "unsure":"If you're still unsure, feel free to directly contact the operator to find out more details (their contact info is on your voucher)."
+    },
+    "cancel":{
+        "how":"How can I cancel my booking and get a refund?",
+        "depend":" This depends on your activity's cancellation policy.",
+        "free":"Free cancellation",
+        "time":" You can cancel the booking yourself until the specified time listed in the cancellation policy by following these steps:",
+        "go":"Go to the Bookings page on Klook",
+        "find":"Find the booking you want to cancel and select 'View more'",
+        "select":"Select 'Apply for refund' under Booking details",
+        "conditional":"Conditional cancellation",
+        "check":" Please check the cancellation policy listed on the activity's page for details.",
+        "no":"No cancellatio",
+        "sorry":"Sorry, this activity cannot be refunded."
+    },
+    "participants":{
+        "how":"How do I add/remove participants from my booking?",
+        "add":"To add participants",
+        "sorry":"Sorry, participants cannot be added after a booking is confirmed.",
+        "refundable":"If the activity is refundable and still within the free-cancellation period, you can cancel your booking and book again. Please check the actvitiy's cancellation and refund policy first.",
+        "remove":"To remove participants",
+        "within free":"If the activity is refundable and still within the free-cancellation period, you can change your booking and apply for a partial refund for any participants you want to remove. Please check the actvitiy's cancellation and refund policy first.",
+        "contact":"If your booking is still within the free-cancellation period but you are unable to cancel, please contact Klook customer support."
+    },
+    "amend":{
+        "how":"How can I amend a booking?",
+        "activities":"For some activities, you can amend the booking details (e.g. participation date, passenger information, special requirements, etc.).",
+        "go":"Go to the Bookings page on Klook",
+        "find":"Find the booking you want to amend and select 'View more'",
+        "select":"Select 'Amend booking' under Booking details and make your changes",
+        "update":"You will get an updated voucher once your amendments are confirmed.",
+        "not applicable":"However, if 'Amendments not applicable' appears under your booking, it means that the booking cannot be amended.",
+        "help":" Still need help to amend a booking? Please contact us using Ask Klook and select 'Amend booking'."
+    },
+    "voucher":{
+        "book":"After I make a booking, when will I get the voucher?",
+        "depends":"This depends on the activity you've booked. You can find out whether your booking has instant confirmation or 24-48 hours confirmation on the activity's page.",
+        "confirm":"For activities with 'Instant confirmation', that means your booking will be confirmed within 5 minutes."
+    },
+    "ticket":{
+        "open":"What is an 'Open ticket'?",
+        "use":"Open tickets can be used any time before the expiration date. You can find the expiration date in the activity page or in the activity's terms and conditions."
+    },
+    "book":{
+        "can":"Can I book on behalf of my family and friends?",
+        "remember":"Yes, you can. But please remember to enter their details carefully when booking."
     }
 }

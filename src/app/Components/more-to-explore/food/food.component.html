@@ -171,43 +171,79 @@
         <!-- row 1 -->
         <div class="row-col ml-4 pt-4 mr-4">
           <div class="row">
-            <!-- <div class="col-12 col-sm-12  col-md-5  col-lg-4 col-xl-4 " *ngFor="let i of FoodList 
-            | paginate: { id: 'pp',
-                                                      itemsPerPage: 12,
-                                                      currentPage: page,
-                                                      totalItems: 24 }" style="height: 30em;">
+            <div
+              class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4"
+              *ngFor="
+                let i of FoodList
+                  | paginate
+                    : {
+                        id: 'pp',
+                        itemsPerPage: 12,
+                        currentPage: page,
+                        totalItems: 24
+                      }
+              "
+              style="height: 30em;"
+            >
               <a class="crd">
-                <div (click)="viewDetails(i.id ,'ToursCollection')" class="crd1 card text-left">
-                  <img class="card-img-top" src="{{i.Image}}" alt="">
+                <div
+                  (click)="viewDetails(i.id, 'ToursCollection')"
+                  class="crd1 card text-left"
+                >
+                  <img class="card-img-top" src="{{ i.Image }}" alt="" />
                   <div class="text-upon-img hidden-xs">
-                    <i class="fas fa-map-marker-alt"></i> {{i.City}} </div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ i.City }}
+                  </div>
                   <div class="text-down-img hidden-xs p-1">Bestseller</div>
                   <div class="card-body">
-                    <h5 class="card-title" style="overflow: hidden; font-size: 1.2em; height: 3.8em;">{{i.Title}}</h5><i
-                      class="flag-hot" style="color:#FF5746;"></i>
+                    <h5
+                      class="card-title"
+                      style="overflow: hidden; font-size: 1.2em; height: 3.8em;"
+                    >
+                      {{ i.Title }}
+                    </h5>
+                    <i class="flag-hot" style="color: #ff5746;"></i>
                     <div class="card-text">
                       <div class="mb-5">
-                        <span style="color: #f5a623;"><i class="fas fa-star"></i>{{i.Rate}}</span>
-                        <span style="color: #999999;" style="font-size: 0.7em;"> {{i.Review}} {{i.Booked}}</span>
+                        <span style="color: #f5a623;">
+                          <i class="fas fa-star"></i>
+                          {{ i.Rate }}
+                        </span>
+                        <span style="color: #999999;" style="font-size: 0.7em;">
+                          {{ i.Review }} {{ i.Booked }}
+                        </span>
                       </div>
-                      <div class="mb-1" style="text-decoration: line-through;font-size: 0.7em; color: #999999;">
-
-                        <h6 class="font-weight-bold d-inline-block" style="text-decoration: line-through;">
-                          {{i.OldPrice | currency:'EGP'}}</h6>
+                      <div
+                        class="mb-1"
+                        style="
+                          text-decoration: line-through;
+                          font-size: 0.7em;
+                          color: #999999;
+                        "
+                      >
+                        <h6
+                          class="font-weight-bold d-inline-block"
+                          style="text-decoration: line-through;"
+                        >
+                          {{ i.OldPrice | currency: 'EGP' }}
+                        </h6>
                       </div>
 
                       <div class="mb-1">
-
-                        <span style="font-size: 1em;">From </span>
-                        <h6 class="font-weight-bold d-inline-block">{{i.Price | currency:'EGP'}}</h6> &nbsp; <i
-                          class="fas fa-bolt" style="color:#FF5746;"></i>
+                        <span style="font-size: 1em;">From</span>
+                        <h6 class="font-weight-bold d-inline-block">
+                          {{ i.Price | currency: 'EGP' }}
+                        </h6>
+                        &nbsp;
+                        <i class="fas fa-bolt" style="color: #ff5746;"></i>
                       </div>
-                      <a href="#" class="lnk mb-0">Book Now for {{i.Date}}</a>
+                      <a href="#" class="lnk mb-0">Book Now for {{ i.Date }}</a>
                     </div>
                   </div>
                 </div>
               </a>
-            </div> -->
+            </div>
           </div>
         </div>
 
@@ -220,7 +256,7 @@
 
         <div class="row mt-5 mb-4 mx-2">
           <div class="container d-flex justify-content-end">
-            (pageChange)="page($event)" (pageBoundsCorrection)="page($event)"
+            <!-- (pageChange)="page($event)" (pageBoundsCorrection)="page($event)" -->
             <!-- <pagination-controls
               id="pp"
               maxSize="2"
