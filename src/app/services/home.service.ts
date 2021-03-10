@@ -39,6 +39,18 @@ export class HomeService {
         .where('Section', '==', 'Top thing to do')
         .where('City', '==', 'Cairo')).snapshotChanges();
   }
+  getInspired(){
+    return this.fs.collection<Tours>('ToursCollection',
+      ref => ref.where('Section','==','Get Inspired')).snapshotChanges();
+  }
+  // getInspiredTaipei(){
+  //   return this.fs.collection<Tours>('ToursCollection',
+  //   ref => ref.where('Title', '==', 'Maokong Gondola Combo Tickets in Taipei')).snapshotChanges();
+  // }
+  // getInspiredHongKong(){
+  //   return this.fs.collection<Tours>('ToursCollection',
+  //   ref => ref.where('Title', '==', 'Peak Tram and Sky Terrace 428 Tour Combo Package...')).snapshotChanges();
+  // }
 
   getKlookRecommended() {
     return this.fs.collection<Tours>('ToursCollection',

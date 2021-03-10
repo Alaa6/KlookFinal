@@ -8,6 +8,8 @@ import { HomeService } from 'src/app/services/home.service';
 import { ICity } from 'src/app/viewModels/i-city';
 import { Router } from '@angular/router';
 import { ActivityDetailsService } from 'src/app/services/activity-details.service';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageServiceService } from 'src/app/services/language-service.service';
 
 @Component({
   selector: 'app-hotels',
@@ -39,7 +41,9 @@ export class HotelsComponent implements OnInit, AfterViewInit, OnChanges {
   });
 
 
-  constructor(private activityDetails: ActivityDetailsService, private hotelService: HotelService, private router: Router, private city: HomeService, private fb: FormBuilder, private cdRef: ChangeDetectorRef) { }
+  constructor(private activityDetails: ActivityDetailsService, private languageService: LanguageServiceService, private translate: TranslateService, private hotelService: HotelService, private router: Router, private city: HomeService, private fb: FormBuilder, private cdRef: ChangeDetectorRef) {
+    this.translate.use(languageService.getLanguage());
+  }
   ngOnChanges(changes: SimpleChanges): void {
 
   }
