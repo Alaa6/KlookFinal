@@ -1181,6 +1181,9 @@ span {
 
 //   /*End top cities to visit*/
 // }
+.blog {
+  margin-top: 8em !important;
+}
 @media only screen and (max-width: 768px) {
   body {
     height: 1000em;
@@ -1504,6 +1507,9 @@ span {
     margin-left: 0.4em;
     margin-right: 0.4em;
   }
+  .blog {
+    margin-top: 1em !important;
+  }
 
   /*End top cities to visit*/
 }
@@ -1519,6 +1525,9 @@ span {
   /*Start carousel*/
   .header-text .explore {
     display: none;
+  }
+  .blog {
+    margin-top: 1em !important;
   }
 
   /*End carousel*/

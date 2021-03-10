@@ -1,0 +1,84 @@
+.cover {
+  background-image: url(./../../../assets/blog/cover.jpg);
+  background-size: cover;
+  height: 28em;
+}
+.cover .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 340px;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  margin: auto;
+}
+.cover .text h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+.cover .text .find {
+  font-size: 1.3em;
+  //   width: 90%;
+}
+.cover .text .check {
+  border: #d3d6c8 0.1em solid;
+  padding: 0.8em;
+  background-color: #d3d6c8;
+  font-size: 1.5em;
+  width: 12em;
+  margin-top: 2em;
+  font-weight: 600;
+}
+// Start inspiration
+.inspiration {
+  margin-top: 3em !important;
+  //   background-color: yellow;
+  width: 90%;
+  margin: auto;
+}
+.left {
+  //   background-color: darkblue;
+  padding-top: 2em;
+}
+.left .latest {
+  font-size: 2em;
+  font-weight: 600;
+}
+.left .hr {
+  border: 1px solid #333333;
+  border-radius: 5px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.left .text {
+  margin-top: 2em;
+}
+.left .title {
+  font-size: 1.3em;
+}
+.left .details {
+  margin-top: 2em;
+  font-size: 1.1em;
+}
+@media only screen and (max-width: 768px) {
+  .cover .text h1 {
+    font-size: 2em;
+  }
+  .cover .text .find {
+    font-size: 0.9em;
+    width: 120%;
+  }
+}
+@media only screen and (max-width: 479px) {
+  .cover .text h1 {
+    font-size: 1.1em;
+  }
+  .cover .text .find {
+    font-size: 0.9em;
+  }
+}
+// End inspiration
+.blog:lang(ar) {
+  direction: rtl;
+}
