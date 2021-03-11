@@ -24,7 +24,7 @@
   <!--Start spliting-->
   <div class="row">
     <div class="col-lg-8">
-      <div class="h3 pyramids">
+      <div class="h3 pyramids" [(ngModel)]="Card.Title" ngDefaultControl name="title" id="tit">
         {{Card.Title}}
       </div>
       <div class="d-flex justify-content-between">
@@ -165,7 +165,7 @@
 
           <div class="d-flex justify-content-between mt-4">
             <div>
-              <div class="price" name="price" id="pr">EGP 589</div>
+              <div class="price" [(ngModel)]="Card.Price" ngDefaultControl name="price" id="pr">{{Card.Price}}</div>
               <div>Complete all required fields to continue</div>
             </div>
             <div>

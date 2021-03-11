@@ -7,6 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { IBooking } from 'src/app/viewModels/ibooking';
 import { MatDialog } from '@angular/material/dialog';
 import { BookingDialogComponent } from '../booking-dialog/booking-dialog.component';
+// import { CardDirective } from 'src/app/Directives/card.directive';
 
 
 @Component({
@@ -24,7 +25,6 @@ export class ActivityDetailsComponent implements OnInit {
   Children: number = 0;
   Olders: number = 0;
   totalPrice: number = 0;
-
   constructor(public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
 
   }
@@ -95,7 +95,7 @@ export class ActivityDetailsComponent implements OnInit {
 
       (err) => { console.log(err) }
     );
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * 589;
+    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
   }
 
 
@@ -146,9 +146,10 @@ export class ActivityDetailsComponent implements OnInit {
       Adults: this.Adults,
       Children: this.Children,
       Olders: this.Olders,
-      Price: this.totalPrice
+      Price: this.totalPrice,
+      Title: this.Card.Title
     }
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * 589;
+    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
 
     this.activityDetails.Booking(activity).then(
       (res) => {
@@ -157,8 +158,8 @@ export class ActivityDetailsComponent implements OnInit {
       (err) => { console.log("error : " + err) }
     )
     this.dialog.open(BookingDialogComponent, {
-      width: '300px',
-      data: { Name: this.Name, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
+      width: '350px',
+      data: { Name: this.Name, Title: this.Card.Title, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
     });
   }
 }
