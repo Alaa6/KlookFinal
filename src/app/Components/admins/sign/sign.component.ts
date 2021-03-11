@@ -12,6 +12,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sign.component.scss']
 })
 export class SignComponent implements OnInit {
+  insertForm: any;
+
+  
   states: string[] = [
     'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
     'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
@@ -87,7 +90,12 @@ userId:string=''
     });
    }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.insertForm = this.fb.group({
+      email:["", Validators.required],
+      password:["", [Validators.required, Validators.minLength(4)]]
+    });
+  }
   
   login(){
 
