@@ -14,6 +14,8 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./second-header.component.scss']
 })
 export class SecondHeaderComponent implements OnInit {
+  public isMenuCollapsed = true;
+
 
 
   @ViewChild('CatModal') Category: ElementRef | undefined;

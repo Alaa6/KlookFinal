@@ -16,8 +16,8 @@
         <li class="nav-item">
           <a
             class="nav-link ml-5"
-            (click)="scrollTo('section1')"
-            [ngClass]="{ 'current-section': currentSection === 'section1' }"
+            scrollSpyMenu="menu1"
+            [ssmCurrentContent]="currentMenuId"
           >
             Package options
             <!-- <span class="sr-only">(current)</span> -->
@@ -26,8 +26,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="scrollTo('section2')"
-            [ngClass]="{ 'current-section': currentSection === 'section2' }"
+            scrollSpyMenu="menu2"
+            [ssmCurrentContent]="currentMenuId"
           >
             Most recent review
           </a>
@@ -35,8 +35,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="scrollTo('section3')"
-            [ngClass]="{ 'current-section': currentSection === 'section3' }"
+            scrollSpyMenu="menu3"
+            [ssmCurrentContent]="currentMenuId"
           >
             What to expect
           </a>
@@ -44,8 +44,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="scrollTo('section4')"
-            [ngClass]="{ 'current-section': currentSection === 'section4' }"
+            scrollSpyMenu="menu4"
+            [ssmCurrentContent]="currentMenuId"
           >
             Things to Note
           </a>
@@ -53,8 +53,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="scrollTo('section5')"
-            [ngClass]="{ 'current-section': currentSection === 'section5' }"
+            scrollSpyMenu="menu5"
+            [ssmCurrentContent]="currentMenuId"
           >
             Location
           </a>
@@ -62,8 +62,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="scrollTo('section6')"
-            [ngClass]="{ 'current-section': currentSection === 'section6' }"
+            scrollSpyMenu="menu6"
+            [ssmCurrentContent]="currentMenuId"
           >
             Review
           </a>
@@ -71,8 +71,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            (click)="scrollTo('section7')"
-            [ngClass]="{ 'current-section': currentSection === 'section7' }"
+            scrollSpyMenu="menu7"
+            [ssmCurrentContent]="currentMenuId"
           >
             FAQs
           </a>
@@ -203,17 +203,11 @@
         </ul>
         <hr />
         <!--End list-->
-        <div
-          id="parentDiv"
-          appScrollSpy
-          [spiedTags]="['DIV']"
-          (sectionChange)="onSectionChange($event)"
-          style="height: 500px; overflow-y: scroll;"
-        >
+        <div scrollSpyContent="DIV" [(sscCurrentContent)]="currentMenuId">
           <!--Start package-->
           <div id="section1" class="container">
             <div class="row">
-              <div class="col-12 mt-4 mb-4">
+              <div class="col-12 mt-4 mb-4" id="menu1">
                 <span class="vl mr-2"></span>
                 <span class="package">
                   Swiss Travel Pass Package Options
@@ -395,7 +389,7 @@
           <hr class="mt-4 mb-4" />
           <!--End booking-->
           <!--Start recent reviews-->
-          <div class="reviews" id="section2">
+          <div class="reviews" id="section2" id="menu2">
             <span class="vl mr-2"></span>
             <span class="package">Most recent review</span>
             <div class="row mt-3">
@@ -425,7 +419,7 @@
           <hr class="hl" />
           <!--End recent reviews-->
           <!--Start what to expect-->
-          <div class="expect mt-4" id="section3">
+          <div class="expect mt-4" id="section3" id="menu3">
             <span class="vl mr-2"></span>
             <span class="package">What to expect</span>
             <div class="mt-4">
@@ -471,7 +465,7 @@
           <hr />
           <!--End what to expect-->
           <!--Start things to note-->
-          <div class="note" id="section4">
+          <div class="note" id="section4" id="menu4">
             <span class="vl mr-2"></span>
             <span class="package">Things to Note</span>
             <!--Confirmation-->
@@ -572,7 +566,7 @@
           <hr class="mt-4 mb-4" />
           <!--End things to note-->
           <!--Start Location-->
-          <div id="section5">
+          <div id="section5" id="menu5">
             <span class="vl mr-2"></span>
             <span class="package">Location</span>
             <img
@@ -584,7 +578,7 @@
           <hr class="mt-4 mb-4" />
           <!--End Location-->
           <!--Start Swiss Travel Pass Reviews-->
-          <div class="SwissTravel" id="section6">
+          <div class="SwissTravel" id="section6" id="menu5">
             <span class="vl mr-2"></span>
             <span class="package">Swiss Travel Pass Reviews</span>
             <div class="mt-4">
@@ -730,7 +724,7 @@
           </div>
           <!--End Swiss Travel Pass Reviews-->
           <!--Start FAQs-->
-          <div class="faqs mt-4" id="section7">
+          <div class="faqs mt-4" id="section7" id="menu7">
             <span class="vl mr-2"></span>
             <span class="package mb-5">FAQs</span>
             <div class="package mt-4">Activity Q&A</div>

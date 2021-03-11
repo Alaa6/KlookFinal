@@ -3,63 +3,56 @@
   <div class="firstPart">
     <div class="cover">
       <div class="text text-center">
-        <h1>Hello. How can we help you?</h1>
-
-        <div class="input-group mb-3 search">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter a keyword or search term here"
-            aria-label="Recipient's username"
-            aria-describedby="basic-addon2"
-          />
-          <div class="input-group-append">
-            <span class="input-group-text icon" id="basic-addon2">
-              <i class="fas fa-search"></i>
-            </span>
-          </div>
-        </div>
+        <h1>{{ 'help.how' | translate }}</h1>
       </div>
     </div>
 
     <!-- Start FAQs -->
     <div class="faqs container">
-      <h1>FAQs</h1>
+      <h1>{{ 'help.faqs' | translate }}</h1>
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-10 how">
           <div>
-            <a href="">How can I use Klook credits?</a>
+            <a routerLink="/credit">{{ 'help.credits' | translate }}</a>
           </div>
           <div>
-            <a href="">
-              Where can I find the directions to my booked activity?
+            <a routerLink="/booked">
+              {{ 'help.find' | translate }}
             </a>
           </div>
           <div>
-            <a href="">How can I cancel my booking and get a refund?</a>
+            <a routerLink="/cancel">
+              {{ 'help.cancel' | translate }}
+            </a>
           </div>
           <div>
-            <a href="">How do I add / remove participants from my booking?</a>
+            <a routerLink="/participants">
+              {{ 'help.participants' | translate }}
+            </a>
           </div>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 arrow">
-          <div><i class="fas fa-chevron-right"></i></div>
+          <div><i class="fas fa-chevron-right"></i> </div>
           <div><i class="fas fa-chevron-right"></i></div>
           <div><i class="fas fa-chevron-right"></i></div>
           <div><i class="fas fa-chevron-right"></i></div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-10 how">
           <div>
-            <a href="">How can I amend a booking?</a>
+            <a routerLink="/amend">{{ 'help.amend' | translate }}</a>
           </div>
           <div>
-            <a href="">After I make a booking, when will I get the voucher?</a>
+            <a routerLink="/voucher">
+              {{ 'help.voucher' | translate }}
+            </a>
           </div>
           <div>
-            <a href="">What is an "Open ticket"?</a>
+            <a routerLink="/openTicket">{{ 'help.ticket' | translate }}</a>
           </div>
           <div>
-            <a href="">Can I book on behalf of my family and friends?</a>
+            <a routerLink="/bookBehalf">
+              {{ 'help.book' | translate }}
+            </a>
           </div>
         </div>
         <div class="col-lg-1 col-md-1 col-sm-1 arrow">
@@ -73,11 +66,10 @@
     <!-- End FAQs -->
   </div>
   <!-- Start Browse by category -->
-  <div class="browse">
+  <!-- <div class="browse">
     <h1>Browse by category</h1>
     <div class="category container">
       <div class="row">
-        <!--1-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/reservation.jpg"
@@ -93,7 +85,6 @@
             </p>
           </div>
         </div>
-        <!--2-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/payment.jpg"
@@ -109,7 +100,6 @@
             </p>
           </div>
         </div>
-        <!--3-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/amendment.jpg"
@@ -125,7 +115,6 @@
             </p>
           </div>
         </div>
-        <!--4-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/travelDay.jpg"
@@ -143,7 +132,6 @@
         </div>
       </div>
       <div class="row">
-        <!--5-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/promoCode.jpg"
@@ -159,7 +147,6 @@
             </p>
           </div>
         </div>
-        <!--6-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/account.jpg"
@@ -175,7 +162,6 @@
             </p>
           </div>
         </div>
-        <!--7-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/trip.jpg"
@@ -191,7 +177,6 @@
             </p>
           </div>
         </div>
-        <!--8-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/train.jpg"
@@ -209,7 +194,6 @@
         </div>
       </div>
       <div class="row">
-        <!--9-->
         <div class="card col-lg-3 col-md-6 col-sm-12" style="width: 20rem;">
           <img
             src="./../../../assets/Help/hotels.jpg"
@@ -228,15 +212,15 @@
       </div>
       <hr />
     </div>
-  </div>
+  </div> -->
   <!-- End Browse by category -->
   <!-- start find -->
-  <div class="helpFind text-center">
+  <!-- <div class="helpFind text-center">
     <div class="find">Can't find what you're looking for?</div>
     <div class="ask">
       <i class="far fa-comment-dots pr-2"></i>
       <span>Ask Klook</span>
     </div>
-  </div>
+  </div> -->
   <!-- end find -->
 </div>

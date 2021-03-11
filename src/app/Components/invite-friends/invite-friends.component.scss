@@ -1,0 +1,47 @@
+.cover {
+  background-image: url(./../../../assets/friends/friends.jpg);
+  background-size: cover;
+  height: 28em;
+}
+.cover .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 340px;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  margin: auto;
+}
+.cover .text h1 {
+  font-size: 3em;
+  font-weight: 600;
+}
+.cover .text .find {
+  font-size: 1.5em;
+  width: 85%;
+  font-weight: 600;
+  line-height: 2em;
+}
+.cover .text .check {
+  border: #d3d6c8 0.1em solid;
+  padding: 0.8em;
+  background-color: #d3d6c8;
+  font-size: 1.5em;
+  width: 12em;
+  margin-top: 2em;
+  font-weight: 600;
+}
+.rewards {
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
+}
+.get {
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+}
+.invite:lang(ar) {
+  direction: rtl;
+}

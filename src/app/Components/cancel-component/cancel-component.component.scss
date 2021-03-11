@@ -1,0 +1,74 @@
+.firstPart {
+  background-color: #fafafa;
+}
+
+// Start cover
+.cover {
+  background-image: url(./../../../assets/Help/faq-banner.jpg);
+  height: 340px;
+  background-size: cover;
+}
+.cover .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 340px;
+  flex-direction: column;
+}
+.cover h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: 500;
+}
+.cover .search {
+  width: 50%;
+  height: 3em;
+}
+.cover .search input {
+  height: 3em;
+}
+.cover .icon {
+  background-color: #ff5722;
+  width: 8em;
+}
+.cover .icon i {
+  margin-left: 1.5em;
+  color: white;
+  font-size: 1.5em;
+}
+//End cover
+//--------------------------
+//Start FAQs
+.faqs {
+  width: 80%;
+  margin: auto;
+  line-height: 2.5em;
+  height: 18em;
+}
+.faqs h1 {
+  font-weight: 600;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.faqs .how a {
+  color: #4f4b4b;
+  font-size: 1.1em;
+}
+.faqs .how a:hover {
+  color: #f44f1b;
+  text-decoration: none;
+}
+.faqs .arrow i {
+  color: gray;
+}
+//End FAQs
+.secondPart {
+  margin: auto;
+  width: 65%;
+}
+
+.all:lang(ar) {
+  direction: rtl;
+}

@@ -4,23 +4,45 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTr
 // import { promise } from 'protractor';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+// import { AuthService } from 'src/app/services/auth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuardGuard implements CanActivate {
 
   constructor(private auth:AuthService,private router:Router) { }
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean> | Promise<boolean> {
-  
-  //  dd:new promise
-    return new Promise(resolve => {
-    this.auth.user.subscribe(user => {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-      if(user) resolve(true);
-      else this.router.navigate(['/sign/signup'])
+    if (this.auth.userLogin) {
+      return true;
+    } else {
+      this.router.navigate(['/sign/admin/adminlogin'])
 
-    })
-   })
-    
+      return false;
+    }
+
   }
+
+
+
+
+
+
+
+
+  // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean> | Promise<boolean> {
+  
+  // //  dd:new promise
+  //   return new Promise(resolve => {
+  //   this.auth.user.subscribe(user => {
+
+  //     if(user) resolve(true);
+  //     else this.router.navigate(['/sign/signup'])
+
+  //   })
+  //  })
+    
+  // }
+
+  
 }

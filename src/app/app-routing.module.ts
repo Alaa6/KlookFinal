@@ -10,6 +10,17 @@ import { HelpComponent } from './Components/help/help.component';
 import { HomeComponent } from './Components/home/home.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { ConditionsComponent } from './Components/conditions/conditions.component';
+import { BlogComponent } from './Components/blog/blog.component';
+import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
+import { KlookCreditsComponent } from './Components/klook-credits/klook-credits.component';
+import { FindBookedComponent } from './Components/find-booked/find-booked.component';
+import { CancelComponentComponent } from './Components/cancel-component/cancel-component.component';
+import { ParticipantsComponent } from './Components/participants/participants.component';
+import { AmendComponent } from './Components/amend/amend.component';
+import { VoucherComponent } from './Components/voucher/voucher.component';
+import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
+import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +29,24 @@ const routes: Routes = [
   { path: 'help', component: HelpComponent },
   { path: 'credits', component: KlookCreditComponent },
   { path: 'details', component: DetailsComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'invite', component: InviteFriendsComponent },
+
+
+  { path: 'conditions', component: ConditionsComponent },
+  { path: 'credit', component: KlookCreditsComponent },
+  { path: 'booked', component: FindBookedComponent },
+  { path: 'cancel', component: CancelComponentComponent },
+  { path: 'participants', component: ParticipantsComponent },
+  { path: 'amend', component: AmendComponent },
+  { path: 'voucher', component: VoucherComponent },
+  { path: 'openTicket', component: OpenTicketComponent },
+  { path: 'bookBehalf', component: BookBehalfComponent },
+
+
+
+
+
   { path: '', redirectTo: '/home', pathMatch: 'full' }, //Default Path
   { path: 'activityDetails/:collectionName/:id', component: ActivityDetailsComponent },
   {
@@ -46,6 +75,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

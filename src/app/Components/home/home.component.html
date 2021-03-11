@@ -181,7 +181,7 @@
       <div class="card-body">
         <div>
           <span class="font-weight-bold" style="font-size: 0.9em;">
-            {{ near.Price }}
+            {{ 'home.egp' | translate }} {{ near.Price }}
           </span>
           <i
             class="fas fa-fire ml-2"
@@ -286,7 +286,9 @@
               </div>
               <div class="card-body">
                 <div>
-                  <span class="font-weight-bold">{{ thing.Price }}</span>
+                  <span class="font-weight-bold">
+                    {{ 'home.egp' | translate }} {{ thing.Price }}
+                  </span>
                   <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                 </div>
                 <a href="#" class="card-link text-muted">
@@ -315,9 +317,9 @@
   <div class="inspired">
     <div class="mleft h3">{{ 'home.inspired' | translate }}</div>
     <div class="ins_container">
-      <div class="row">
+      <div class="row row1">
         <!--1-->
-        <div class="fsCol">
+        <div class="fsCol col-lg-2 col-md-2 col-sm-12">
           <div class="font-weight-bold h4">
             {{ 'home.bucketlist' | translate }}
           </div>
@@ -326,198 +328,59 @@
           </div>
         </div>
         <!--2-->
-        <div class="scCol">
-          <a>
-            <div class="card move" style="width: 100%; font-size: 14px;">
-              <img
-                src="./../../../assets/Home/getInspiredTaipei.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="top_left col-10">
-                <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">
-                  {{ 'home.TaipeiCity' | translate }}
-                </span>
-                <div class="btns">
-                  <div class="btn1 px-1">
-                    {{ 'home.bestSeller' | translate }}
-                  </div>
-                  <div class="btn2 px-1">
-                    {{ 'home.off' | translate }}
-                  </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
-                  {{ 'home.taipei' | translate }}
-                </div>
-                <div>
-                  <i class="fas fa-star" style="color: #ff9d26;"></i>
-                  <span style="color: #ff9d26;">4.7</span>
-                  <span>
-                    {{ 'home.review' | translate }}
-                    {{ 'home.booked' | translate }}
+        <div class="row row2 col-10 col-sm-0">
+          <div class="scCol col-lg-3 col-md-6" *ngFor="let city of Inspired">
+            <a>
+              <div class="card move" style="font-size: 14px; width: 105%;">
+                <img src="{{ city.Image }}" class="card-img-top" alt="..." />
+                <div class="top_left col-10">
+                  <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                  <span style="color: white;">
+                    {{ city.City }}
+                    <!-- {{ 'home.TaipeiCity' | translate }} -->
                   </span>
-                </div>
-              </div>
-              <div class="card-body">
-                <div>
-                  <span class="font-weight-bold">
-                    {{ 'home.price' | translate }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
-                </div>
-                <a href="#" class="card-link text-muted">
-                  {{ 'home.date' | translate }}
-                </a>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!--3-->
-        <div class="thCol">
-          <a>
-            <div class="card move" style="width: 100%; font-size: 14px;">
-              <img
-                src="./../../../assets/Home/peakTram.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="top_left">
-                <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">
-                  {{ 'home.Hong Kong City' | translate }}
-                </span>
-                <div class="btns">
-                  <div class="btn1 px-1">
-                    {{ 'home.bestSeller' | translate }}
+                  <div class="btns">
+                    <div class="btn1 px-1">
+                      {{ city.TourSectionInner }}
+                      <!-- {{ 'home.bestSeller' | translate }} -->
+                    </div>
+                    <div class="btn2 px-1">
+                      {{ city.TourDiscount }}
+                      {{ 'home.off' | translate }}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
-                  {{ 'home.tram' | translate }}
-                </div>
-                <div>
-                  <i class="fas fa-star" style="color: #ff9d26;"></i>
-                  <span style="color: #ff9d26;">4.5</span>
-                  <span>
-                    {{ 'home.tram review' | translate }}
-                    {{ 'home.tram booked' | translate }}
-                  </span>
-                </div>
-              </div>
-              <div class="card-body">
-                <div>
-                  <span class="font-weight-bold">
-                    {{ 'home.tram price' | translate }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
-                </div>
-                <a href="#" class="card-link text-muted">
-                  {{ 'home.tram date' | translate }}
-                </a>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!--4-->
-        <div class="frCol">
-          <a href="#">
-            <div class="card move" style="width: 100%; font-size: 14px;">
-              <img
-                src="./../../../assets/Home/artScience.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="top_left col-10">
-                <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">
-                  {{ 'home.Singapore City' | translate }}
-                </span>
-                <div class="btns">
-                  <div class="btn1 px-1">
-                    {{ 'home.bestSeller' | translate }}
+                <div class="card-body">
+                  <div class="card-title" style="font-weight: 600;">
+                    {{ city.Title }}
+                    <!-- {{ 'home.taipei' | translate }} -->
                   </div>
-                  <div class="btn2 px-1">
-                    {{ 'home.SingaporeOff' | translate }}
+                  <div>
+                    <i class="fas fa-star" style="color: #ff9d26;"></i>
+                    <span style="color: #ff9d26;">{{ city.Rate }}</span>
+                    <span>
+                      {{ city.Review }}
+                      {{ 'home.review' | translate }}
+                      <!-- {{ 'home.booked' | translate }} -->
+                    </span>
                   </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
-                  {{ 'home.ArtScience' | translate }}
-                </div>
-                <div>
-                  <i class="fas fa-star" style="color: #ff9d26;"></i>
-                  <span style="color: #ff9d26;">4.6</span>
-                  <span>
-                    {{ 'home.Singapore review' | translate }}
-                    {{ 'home.Singapore booked' | translate }}
-                  </span>
-                </div>
-              </div>
-              <div class="card-body">
-                <div>
-                  <span class="font-weight-bold">
-                    {{ 'home.Singapore price' | translate }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
-                </div>
-                <a href="#" class="card-link text-muted">
-                  {{ 'home.date' | translate }}
-                </a>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!--5-->
-        <div class="ffCol">
-          <a href="#">
-            <div class="card move" style="width: 100%; font-size: 14px;">
-              <img
-                src="./../../../assets/Home/siam.jpg"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="top_left col-10">
-                <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                <span style="color: white;">
-                  {{ 'home.Bangkok City' | translate }}
-                </span>
-                <div class="btns">
-                  <div class="btn1 px-1">
-                    {{ 'home.bestSeller' | translate }}
+                <div class="card-body">
+                  <div>
+                    <span class="font-weight-bold">
+                      {{ city.Price }}
+                      {{ 'home.price' | translate }}
+                    </span>
+                    <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                   </div>
-                  <div class="btn2 px-1">
-                    {{ 'home.BangkokOff' | translate }}
-                  </div>
+                  <a href="#" class="card-link text-muted">
+                    {{ 'home.date' | translate }}
+                    {{ city.Date }}
+                  </a>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
-                  {{ 'home.Bangkok food' | translate }}
-                </div>
-                <div>
-                  <i class="fas fa-star" style="color: #ff9d26;"></i>
-                  <span style="color: #ff9d26;">4.6</span>
-                  <span>1,869 reviews | 9K+ B...</span>
-                </div>
-              </div>
-              <div class="card-body">
-                <div>
-                  <span class="font-weight-bold">
-                    {{ 'home.Bangkok price' | translate }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
-                </div>
-                <a href="#" class="card-link text-muted">
-                  {{ 'home.date' | translate }}
-                </a>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -689,15 +552,17 @@
       </div>
     </div>
     <div class="row row2">
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12" routerLink="/blog">
         <div class="card text-white">
           <img
             src="./../../../assets/Home/blog.jpg"
             class="card-img"
             alt="blog"
           />
-          <div class="card-img-overlay card-mt">
-            <div class="card-title h4">{{ 'home.blog' | translate }}</div>
+          <div class="card-img-overlay card-mt blog">
+            <div class="card-title h4">
+              {{ 'home.blog' | translate }}
+            </div>
             <p class="card-text">
               {{ 'home.follow' | translate }}
             </p>
@@ -721,7 +586,7 @@
           </div>
         </div>
       </a>
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12" routerLink="/invite">
         <div class="card text-white">
           <img
             src="./../../../assets/Home/friends.jpg"

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-train.component.scss']
 })
 export class BookTrainComponent  {
+  currentMenuId = "";
 
   constructor() { }
 
@@ -16,18 +17,18 @@ export class BookTrainComponent  {
     console.log(sectionId)
   }
 
-  scrollTo(section) {
-  //   if(section == null){
-  //     document.querySelector('#' + this.currentSection)
+  // scrollTo(section) {
+  // //   if(section == null){
+  // //     document.querySelector('#' + this.currentSection)
+  // //   .scrollIntoView();
+  // //   } 
+  // //   else{
+  // //     document.querySelector('#' + section)
+  // //     .scrollIntoView();  
+  // //   }
+  //   document.querySelector('#' + section)
   //   .scrollIntoView();
-  //   } 
-  //   else{
-  //     document.querySelector('#' + section)
-  //     .scrollIntoView();  
-  //   }
-    document.querySelector('#' + section)
-    .scrollIntoView();
-  }
+  // }
 
 
   

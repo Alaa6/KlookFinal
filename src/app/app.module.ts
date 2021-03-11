@@ -55,7 +55,7 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
-import { CardDirective } from './directives/card.directive';
+import { CardDirective } from './Directives/card.directive';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 // import { SignComponent } from './Components/sign/sign.component';
 // import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -65,12 +65,25 @@ import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-transla
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
 import { ScrollSpyModule } from 'ngx-scrollspy';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
-import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+import { ScrollSpyDirective } from './Directives/scroll-spy.directive';
 
 import { ExperiencesModule } from './Components/experiences/experiences.module'
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BookingDialogComponent } from './Components/booking-dialog/booking-dialog.component';
+import { ConditionsComponent } from './Components/conditions/conditions.component';
+import { BlogComponent } from './Components/blog/blog.component';
+import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
+import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
+import { KlookCreditsComponent } from './Components/klook-credits/klook-credits.component';
+import { FindBookedComponent } from './Components/find-booked/find-booked.component';
+import { CancelComponentComponent } from './Components/cancel-component/cancel-component.component';
+import { ParticipantsComponent } from './Components/participants/participants.component';
+import { AmendComponent } from './Components/amend/amend.component';
+import { VoucherComponent } from './Components/voucher/voucher.component';
+import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
+import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -112,10 +125,31 @@ var firebaseConfig = {
     ActivityDetailsComponent,
     BookTrainComponent,
     ScrollSpyDirective,
-   
+
     CardDirective,
-   
+
     BookingDialogComponent,
+    ConditionsComponent,
+
+    BlogComponent,
+
+    InviteFriendsComponent,
+
+    KlookCreditsComponent,
+
+    FindBookedComponent,
+
+    CancelComponentComponent,
+
+    ParticipantsComponent,
+
+    AmendComponent,
+
+    VoucherComponent,
+
+    OpenTicketComponent,
+
+    BookBehalfComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
@@ -123,6 +157,7 @@ var firebaseConfig = {
   ],
   exports: [CardDirective],
   imports: [
+    SimpleScrollSpyModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

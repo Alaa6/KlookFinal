@@ -11,6 +11,7 @@ a.active {
   font-weight: 600;
   // text-decoration: underline #f44f1b;
 }
+
 .cover img {
   height: 31em;
 }
@@ -404,4 +405,7 @@ a:hover {
 .current-section {
   color: #f44f1b !important;
   font-weight: bold !important;
+}
+.all:lang(ar) {
+  direction: rtl;
 }

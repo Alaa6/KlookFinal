@@ -12,6 +12,9 @@ import { ICity } from 'src/app/viewModels/icity';
 import { ISubCategory } from 'src/app/viewModels/isub-category';
 import { filter } from 'rxjs/operators';
 import { User } from './../../../viewModels/user';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageServiceService } from 'src/app/services/language-service.service';
+
 
 @Component({
   selector: 'app-experieces-sub-category',
@@ -78,10 +81,12 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   constructor(private relaxService: RelaxServiceService,
     public dialog: MatDialog,
     private activatedRoute: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private translate: TranslateService,
+    private languageService: LanguageServiceService
+    ) {
     this.cityName = 'Cairo'
-
-
+    this.translate.use(languageService.getLanguage());
 
   }
 
