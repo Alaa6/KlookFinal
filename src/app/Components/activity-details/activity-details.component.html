@@ -73,7 +73,7 @@
       <!--End options-->
       <hr />
       <!--Start list-->
-      <div class="list">
+      <!-- <div class="list">
         <ul>
           <li>
             Immerse yourself Egypt's great ancient wonders and history on this
@@ -100,7 +100,7 @@
             trip transfer service from your hotel in the city
           </li>
         </ul>
-      </div>
+      </div> -->
       <!--End list-->
       <hr />
       <!--Start package-->
@@ -136,40 +136,43 @@
             Add on: Great Pyramids and Solar Boat Museum Fees
           </button>
           <div class="date mt-3">Quantity</div>
+
           <div class="bg mt-2 d-flex justify-content-between">
             <div>Adult</div>
             <div>
-              <i class="fas fa-minus p-2 mr-3"></i>
-              <span>0</span>
-              <i class="fas fa-plus p-2 ml-3"></i>
+              <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
+              <span [(ngModel)]="Adults" name="adults" id="adult">{{Adults}}</span>
+              <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
             </div>
           </div>
           <div class="bg mt-2 d-flex justify-content-between">
             <div>Child(6-11)</div>
             <div>
-              <i class="fas fa-minus p-2 mr-3"></i>
-              <span>0</span>
-              <i class="fas fa-plus p-2 ml-3"></i>
+              <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
+              <span [(ngModel)]="Children" name="children" id="child">{{Children}}</span>
+              <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
             </div>
           </div>
           <div class="bg mt-2 d-flex justify-content-between">
-            <div>Add on: 30 Minutes Camel Ride</div>
+            <div>Older</div>
             <div>
-              <i class="fas fa-minus p-2 mr-3"></i>
-              <span>0</span>
-              <i class="fas fa-plus p-2 ml-3"></i>
+              <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
+              <span [(ngModel)]="Olders" name="olders" id="older">{{Olders}}</span>
+              <i (click)="add2()" class="fas fa-plus p-2 ml-3"></i>
             </div>
           </div>
+
+
           <div class="d-flex justify-content-between mt-4">
             <div>
-              <div class="price">EGP 589</div>
+              <div class="price" name="price" id="pr">EGP 589</div>
               <div>Complete all required fields to continue</div>
             </div>
             <div>
               <button type="button" class="btn btn-warning warn mr-2 p-2 mb-2">
                 Add to cart
               </button>
-              <button type="button" class="btn orange p-2">Book now</button>
+              <button (click)="Booking()" type="button" class="btn orange p-2">Book now</button>
             </div>
           </div>
         </div>
@@ -199,17 +202,17 @@
       </div>
       <img src="./../../../assets/details/maps.gif" style="width: 100%;" class="mb-3" />
       <hr class="mb-5" />
-      <div class="FAQs">
+      <!-- <div class="FAQs">
         <span class="vl mr-2"></span>
         <span class="package mb-5">FAQs</span>
       </div>
       <button type="button" class="btn help mt-3 mb-3">
         Klook Help Center
       </button>
-      <hr class="mb-5" />
+      <hr class="mb-5" /> -->
       <!--End location-->
       <!--Start like-->
-      <div class="like mb-4">
+      <!-- <div class="like mb-4">
         <span class="vl mr-2"></span>
         <span class="package mb-5">You might also like...</span>
       </div>
@@ -231,7 +234,7 @@
           <br />
           <div class="Date">Book now for {{Card.Date}}</div>
         </div>
-      </div>
+      </div> -->
       <!--End like-->
     </div>
     <div class="col-lg-4 rightSection">
