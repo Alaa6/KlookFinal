@@ -22,13 +22,14 @@ export class SignComponent implements OnInit {
     'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
   ];
   loginFrm:FormGroup;
-list:User={Password:'',Email:'',Type:''}
+list:User[]=[]
 errorMsg:string=''
 loginBool:boolean = false;
 signbool:boolean = false;
 userType:string='user'
 users:User[]=[]
 Signn:string='Sign Up'
+userId:string=''
 
 
     Password=new FormControl('',[Validators.required,Validators.minLength(5)]);
@@ -38,34 +39,45 @@ Signn:string='Sign Up'
       return 'You must enter the right value';
     
   }
-  listadd:User={Email:'',Password:'',Type:''}
+  listadd:User={Email:'',Password:''}
   signupp(){
  
-    // console.log(this.list.Password)
-    // console.log(this.list.Email)
-    this.authSer.signup(this.Email.value,this.Password.value)
-      .then(result => {
-        // console.log(result.user?.uid)
-        this.errorMsg='';
-        this.authSer.addUser(result.user?.uid,this.Email.value,this.Password.value,"user")
-        .then(()=>{
-          this.router.navigate(['/']);
-        }).catch(errr=>console.log(errr))
-  
-        // console.log(result)
-      
+    ////old////
+    // this.authSer.signup(this.Email.value,this.Password.value)
+    //   .then(result => {
+    //     this.errorMsg='';
+    //     this.authSer.addUser(result.user?.uid,this.Email.value,this.Password.value,"user")
+    //     .then(()=>{
+    //       this.router.navigate(['/']);
+    //     }).catch(errr=>console.log(errr))      
+    //   })
+    //   .catch(err => {
+    //     this.errorMsg=err.message
+    //   } )
+    ////old////
+
+    ////// new ////////////
+    this.listadd.Email=this.Email.value;
+    this.listadd.Password=this.Password.value;
+    this.listadd.JoinDate=Date.now()
+    
+    console.log(this.listadd)
+
+    this.authSer.addUser(this.listadd).then(res=>{
+      this.userId=res;
+      // console.log(res)
+      this.router.navigate(['/']);
+
+    })
+    .catch(err =>
+      {
+        console.log("errrrrorrr"+err)
       })
-      .catch(err => {
-        
-        // console.log(err)
-        this.errorMsg=err.message
-      
-      } )
+    ////// new ////////////
+    
+
   
-    // console.log(this.listadd)
-    // console.log(this.Password.value)
-    // console.log(this.Email.value)
-    // this.userSer.adduser(this.listadd)
+
     
   }
   constructor(private router:Router,private authSer: AuthService,private fb: FormBuilder,private activatedRoute: ActivatedRoute) {
@@ -75,44 +87,65 @@ Signn:string='Sign Up'
     });
    }
 
-  ngOnInit(): void {
-
-    
-  }
+  ngOnInit(): void {}
   
   login(){
-    this.authSer.login(this.Email.value,this.Password.value)
-    .then(result=>
-      {
+
+
+    /////old ////
+    // this.authSer.login(this.Email.value,this.Password.value)
+    // .then(result=>
+    //   {
         
-        this.errorMsg='';
-        this.authSer.checkforAdmin(this.Email.value,this.Password.value).subscribe(items => {
-        this.users=items
-        // console.log(items)
-        // console.log(items[0].Type)
-        if(items[0].Type=="user"){
-        this.router.navigate(['/']);
-        // console.log("user  "+ items[0].Type)
+    //     this.errorMsg='';
+    //     this.authSer.checkforAdmin(this.Email.value,this.Password.value).subscribe(items => {
+    //     this.users=items
+    //     // console.log(items)
+    //     // console.log(items[0].Type)
+    //     if(items[0].Type=="user"){
+    //     this.router.navigate(['/']);
+    //     // console.log("user  "+ items[0].Type)
 
-        }
-        else
-        {
-          // console.log("admin")
-        this.router.navigate(['/sign/admin/dash']);
+    //     }
+    //     else
+    //     {
+    //       // console.log("admin")
+    //     this.router.navigate(['/sign/admin/dash']);
 
+    //     }
+    //   });
+    //     // console.log(result)
+        
+    //   })
+    // .catch(err=>
+    //   {
+    //     this.errorMsg=err.message
+
+    //   console.log(err)
+      
+      
+    //   }) 
+    /////old ////
+
+    this.authSer.login(this.Email.value,this.Password.value).subscribe((res) => {
+
+      this.list = res.map(data => {
+        this.userId=data.payload.doc.id
+        // console.log(this.userId)
+      this.router.navigate(['/']);
+      this.authSer.userLogin=true
+      console.log(this.authSer.userLogin)
+
+
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
         }
       });
-        // console.log(result)
-        
-      })
-    .catch(err=>
-      {
-        this.errorMsg=err.message
+      // this.loading = false
+    }, (err) => console.log(err))
 
-      console.log(err)
-      
-      
-      })  }
+   }
 
 
       subsign: string = '';

@@ -895,10 +895,10 @@ a {
 
 .has-search .form-control-feedback {
   position: absolute;
-  z-index: 2;
+  // z-index: 2;
   display: block;
   width: 2.375rem;
-  height: 2.375rem;
+  height: 3.00rem;
   line-height: 3.975rem;
   text-align: center;
   pointer-events: none;

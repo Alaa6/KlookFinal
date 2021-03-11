@@ -1,0 +1,36 @@
+
+<div class="divfrm">
+<form class="frm container m-4 p-4 w-50 col-5">
+
+    
+    <div>
+      <label>Email</label>
+      <mat-form-field appearance="outline">
+        <mat-label>Outline form field</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="Email" required>
+      <mat-error *ngIf="Email.invalid && (Email.dirty || Email.touched)">{{getErrorMessage()}}</mat-error>
+        <mat-icon matSuffix></mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Age</label>
+      <mat-form-field appearance="outline">
+        <mat-label>Outline form field</mat-label>
+        <input type="text" matInput placeholder="pat@example.com" [formControl]="Age" required>
+      <mat-error *ngIf="Age.invalid && (Age.dirty || Age.touched)">{{getErrorMessage()}}</mat-error>
+        <mat-icon matSuffix></mat-icon>
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+   
+   
+  
+<!-- <button class="w-100" type="submit"  (click)="signup()" mat-raised-button color="primary" >Add</button> -->
+  
+     
+  </form>
+<button class="btn" mat-raised-button  (click)="openadmin()">Add</button>
+
+
+</div>
