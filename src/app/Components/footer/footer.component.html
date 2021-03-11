@@ -1,16 +1,16 @@
 <footer>
   <div class="fOne row">
     <div class="col-lg-3 col-md-12 col-sm-12 firstPr">
-      <a href="#" class="col-3">
+      <a href="#" class="col-3" (click)="goToFacebook()">
         <i class="fab fa-facebook-f"></i>
       </a>
-      <a href="#" class="col-3">
+      <a href="#" class="col-3" (click)="goToTwitter()">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="#" class="col-3">
+      <!-- <a href="#" class="col-3">
         <i class="fas fa-comments"></i>
-      </a>
-      <a href="#" class="col-3">
+      </a> -->
+      <a href="#" class="col-3" (click)="goToInstagram()">
         <i class="fab fa-instagram"></i>
       </a>
     </div>
@@ -52,22 +52,22 @@
         <a href="#" class="site">International site</a>
       </div>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-8 titles">
+    <div class="col-lg-3 col-md-3 col-sm-8 titles">
       <h6 class="d-sm-none d-md-none d-lg-block title">ABOUT KLOOK</h6>
       <div>
         <a routerLink="/aboutUs">About Us</a>
       </div>
-      <div>
+      <!-- <div>
         <a href="#" class="d-sm-none d-md-none d-lg-block">Press Releases</a>
+      </div> -->
+      <div>
+        <a routerLink="/blog">Klook Blog</a>
       </div>
       <div>
-        <a href="#">Klook Blog</a>
-      </div>
-      <div>
-        <a href="#">careers</a>
+        <!-- <a href="#">careers</a> -->
       </div>
     </div>
-    <div class="col-lg-2 col-md-3 part titles">
+    <!-- <div class="col-lg-2 col-md-3 part titles">
       <h6 class="d-sm-none d-md-none d-lg-block title">PARTNERSHIPS</h6>
       <div>
         <a href="#" class="d-sm-none d-md-none d-lg-block">Merchant Login</a>
@@ -91,24 +91,24 @@
       <div>
         <a href="#">Partner With Us</a>
       </div>
-    </div>
-    <div class="col-2 d-sm-none d-md-none d-lg-block titles">
+    </div> -->
+    <div class="col-3 d-sm-none d-md-none d-lg-block titles">
       <h6 class="title">TERMS OF USE</h6>
       <div>
-        <a href="#">Terms And Conditions</a>
+        <a routerLink="/conditions">Terms And Conditions</a>
       </div>
       <div>
-        <a href="#">Privacy Policy</a>
+        <a routerLink="/conditions">Privacy Policy</a>
       </div>
       <div>
-        <a href="#">Cookie Policy</a>
+        <a routerLink="/conditions">Cookie Policy</a>
       </div>
       <div>
-        <a href="#">Bug Bounty Program</a>
+        <a routerLink="/conditions">Bug Bounty Program</a>
       </div>
     </div>
     <div class="col-3">
-      <a href="#">
+      <a routerLink="/help">
         <button
           type="button"
           class="btn btn1 btn-outline-secondary"

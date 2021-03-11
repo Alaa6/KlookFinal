@@ -108,7 +108,10 @@
         "cart":"Cart",
         "log in":"Log in",
         "log out":"Log out",
-        "sign up":"Sign up"
+        "sign up":"Sign up",
+        "download":"Download app",
+        "award":"Download Klook's Award",
+        "win":"Winning App"
     },
     "secondHeader":{
         "home":"Home",
