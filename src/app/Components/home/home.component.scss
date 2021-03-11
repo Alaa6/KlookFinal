@@ -1,3 +1,6 @@
+.all {
+  display: contents;
+}
 .h3 {
   display: block;
   font-size: 2em;
@@ -39,6 +42,10 @@
 //  * {
 //   font-size: 14px;
 // }
+.more .card {
+  padding-right: 0em;
+  padding-left: 0em;
+}
 .fBtn,
 .sBtn,
 .thBtn {
@@ -1181,6 +1188,13 @@ span {
   height: 21em;
   font-size: 14px;
 }
+@media only screen and (max-width: 1350px) {
+  .inspired .btns .btn1,
+  .btn2 {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 1080px) {
   .near_container {
     height: 65em;
@@ -1606,12 +1620,70 @@ span {
   .ins_container {
     height: 14em !important;
   }
+  .recommend .images .row {
+    margin-left: 10em !important;
+  }
+  .more .row1 {
+    // height: 10em !important;
+    display: none;
+  }
+  // .more .row1 .grd {
+  //   display: grid;
+  //   grid-template-columns: 50% 50% !important;
+  // }
+  // .more .row1 .grd .img1 {
+  //   grid-column-start: 1;
+  //   grid-column-end: 2;
+  // }
+  // .more .row1 .grd .img2 {
+  //   grid-column-start: 2;
+  //   grid-column-end: 3;
+  // }
+  .more .row2 .card {
+    margin: auto;
+    padding-left: 0em !important;
+    padding-right: 0em !important;
+  }
+  .more .row2 .card .card-title {
+    font-size: 1.2em;
+    font-weight: 500;
+    width: 28em;
+    padding-top: 10em;
+  }
 }
 @media only screen and (max-width: 705px) {
   .near_container {
     height: 114em;
   }
 }
+@media only screen and (max-width: 635px) {
+  .more .row2 .card .card-title {
+    padding-top: 8em;
+  }
+}
+@media only screen and (max-width: 604px) {
+  .logos .eight {
+    display: none;
+  }
+}
+@media only screen and (max-width: 602px) {
+  .logos .five {
+    display: none;
+  }
+  .header-text .explore {
+    width: 10em !important;
+  }
+  .header .tex-center {
+    margin-left: 2em !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .header .tex-center {
+    left: 5% !important;
+    margin-left: 0em !important;
+  }
+}
+
 @media only screen and (max-width: 479px) {
   body {
     // width: 200%;
@@ -1622,6 +1694,9 @@ span {
   //   width: 113%;
   // }
   /*Start carousel*/
+  .header-text .text-center {
+    top: -5em !important;
+  }
   .header-text .explore {
     display: none;
   }
@@ -1700,7 +1775,7 @@ span {
   /*End after slider*/
   /*Start near you*/
   .near_container {
-    height: 100em;
+    height: 106em;
   }
   .near_container .contain {
     margin-top: 1.2em;
@@ -1724,10 +1799,10 @@ span {
     padding-left: 1em;
     font-size: 1em;
   }
-  .near_container .firstview {
-    margin-top: 125em !important;
-    margin-left: 5em !important;
-  }
+  // .near_container .firstview {
+  //   // margin-top: 125em !important;
+  //   // margin-left: 5em !important;
+  // }
   /*End near you*/
   /*Start incredible destinations*/
 
@@ -1748,10 +1823,10 @@ span {
     margin-left: -1em;
   }
   .view2 {
-    margin-top: 143em !important;
+    // margin-top: 143em !important;
     font-size: 0.8em;
     width: 15em;
-    margin-left: 4em !important;
+    // margin-left: 4em !important;
     margin-bottom: 2em;
   }
 
@@ -1781,11 +1856,22 @@ span {
   // }
 
   .things .view3 {
-    margin-top: 215em !important;
+    // margin-top: 215em !important;
     padding-left: 1em !important;
     padding-right: 1em !important;
     font-size: 1em;
-    margin-left: 4em !important;
+    // margin-left: 4em !important;
+  }
+  .recommend .images {
+    margin-left: -5em;
+  }
+  .more .card {
+    margin-left: 0em !important;
+    margin-bottom: 0em !important;
+    height: 18em !important;
+  }
+  .more .card .card-title {
+    padding-top: 6em !important;
   }
 
   /*End top things to do */
