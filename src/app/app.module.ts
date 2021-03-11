@@ -82,6 +82,7 @@ import { AmendComponent } from './Components/amend/amend.component';
 import { VoucherComponent } from './Components/voucher/voucher.component';
 import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
+import { AboutComponent } from './Components/about/about.component';
 
 
 
@@ -148,6 +149,8 @@ var firebaseConfig = {
     OpenTicketComponent,
    
     BookBehalfComponent,
+   
+    AboutComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent

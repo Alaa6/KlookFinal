@@ -2,7 +2,7 @@
     "home":{
         "title":"Yours To Explore",
         "discover":"Discover and book amazing things to do at exclusive prices",
-        "search":"Search destinations or activities",
+        "search":"Search",
         "searchBtn":"Search",
         "more":"Explore more in Cairo",
         "go":"Go",
@@ -438,5 +438,15 @@
     "book":{
         "can":"Can I book on behalf of my family and friends?",
         "remember":"Yes, you can. But please remember to enter their details carefully when booking."
+    },
+    "about":{
+        "welcome":"Welcome to Klook",
+        "book":"Book your next adventure with Klook",
+        "about":" About us",
+        "offer":" At Klook, we offer a simple way to discover activities, attractions and things to do wherever you travel.",
+        "discover":"Discover and book in-destination services at the best prices. With a few taps or clicks, you can be ready to hop aboard the Hong Kong Airport Express, set your inner child free at Tokyo Disneyland, or marvel at the breathtaking world under the waves in Bali.",
+        "mission":"Our mission",
+        "empower":"Empowering travelers around the world to discover, book and experience the best things to do anywhere, anytime.",
+        "travel":"Travel should be all play and no hassle. With so many activities waiting to be discovered, our goal is to connect travelers with the experiences they want and need."
     }
 }

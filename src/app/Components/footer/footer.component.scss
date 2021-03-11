@@ -121,6 +121,12 @@ footer .titles a:hover {
 footer .ask {
   font-size: 1em;
 }
+@media only screen and (max-width: 990px) {
+  .pay,
+  .cards {
+    display: none;
+  }
+}
 @media only screen and (max-width: 768px) {
   footer {
     height: 20em;

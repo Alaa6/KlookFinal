@@ -197,7 +197,7 @@
   <!-- End Cards Body -->
   <div class="container">
     <div class="row">
-      <div class="col text-center">
+      <div class="col fBtn">
         <button type="button" class="btn view firstview">
           {{ 'home.view' | translate }}
         </button>
@@ -214,7 +214,7 @@
       <ng-container *ngFor="let destination of IncredibleDestinations">
         <ng-template carouselSlide>
           <div class="col-2">
-            <div class="txt">
+            <div class="txt incred_card">
               <a (click)="viewDetails(destination.id, 'Cities')">
                 <img src="{{ destination.Image1 }}" class="rounded" alt="..." />
               </a>
@@ -228,7 +228,7 @@
   <!--Button-->
   <div class="container">
     <div class="row">
-      <div class="col text-center">
+      <div class="col sBtn">
         <button type="button" class="btn view view2">
           {{ 'home.exploreAll' | translate }}
         </button>
@@ -242,18 +242,11 @@
       <div class="h3">{{ 'home.top' | translate }}</div>
     </div>
     <!--Carousel-->
-    <owl-carousel-o
-      [options]="TopThingsIn"
-      class="row owlOne"
-      style="width: 90em;"
-    >
+    <owl-carousel-o [options]="TopThingsIn" class="row owlOne">
       <ng-container *ngFor="let thing of TopThings">
         <ng-template carouselSlide>
           <a>
-            <div
-              class="card move"
-              style="width: 16rem; height: 21em; font-size: 14px;"
-            >
+            <div class="card move">
               <img
                 src="{{ thing.Image }}"
                 class="card-img-top"
@@ -304,7 +297,7 @@
     <!--Button-->
     <div class="container">
       <div class="row">
-        <div class="col text-center">
+        <div class="col thBtn">
           <button type="button" class="btn view view3">
             {{ 'home.viewAll' | translate }}
           </button>
@@ -331,13 +324,21 @@
         <div class="row row2 col-10 col-sm-0">
           <div class="scCol col-lg-3 col-md-6" *ngFor="let city of Inspired">
             <a>
-              <div class="card move" style="font-size: 14px; width: 105%;">
+              <div class="card move">
                 <img src="{{ city.Image }}" class="card-img-top" alt="..." />
                 <div class="top_left col-10">
                   <i class="fas fa-map-marker-alt" style="color: white;"></i>
-                  <span style="color: white;">
+
+                  <!-- <span style="color: white;">
                     {{ city.City }}
-                    <!-- {{ 'home.TaipeiCity' | translate }} -->
+                  </span> -->
+
+                  <span *ngIf="tr == 'en'" style="color: white;">
+                    {{ city.City }}
+                  </span>
+
+                  <span *ngIf="tr == 'ar'" style="color: white;">
+                    {{ city.CityAr }}
                   </span>
                   <div class="btns">
                     <div class="btn1 px-1">
@@ -355,10 +356,10 @@
                     {{ city.Title }}
                     <!-- {{ 'home.taipei' | translate }} -->
                   </div>
-                  <div>
+                  <div class="rates">
                     <i class="fas fa-star" style="color: #ff9d26;"></i>
                     <span style="color: #ff9d26;">{{ city.Rate }}</span>
-                    <span>
+                    <span class="review">
                       {{ city.Review }}
                       {{ 'home.review' | translate }}
                       <!-- {{ 'home.booked' | translate }} -->
@@ -373,7 +374,7 @@
                     </span>
                     <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                   </div>
-                  <a href="#" class="card-link text-muted">
+                  <a href="#" class="card-link text-muted date">
                     {{ 'home.date' | translate }}
                     {{ city.Date }}
                   </a>
@@ -455,7 +456,10 @@
                   <div class="text-muted">
                     <del>{{ recommend.OldPrice }}</del>
                   </div>
-                  <span class="font-weight-bold">{{ recommend.Price }}</span>
+                  <span class="font-weight-bold">
+                    {{ 'home.egp' | translate }}
+                    {{ recommend.Price }}
+                  </span>
                   <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                 </div>
                 <a href="#" class="card-link text-muted">
@@ -475,9 +479,9 @@
     <div class="row row1">
       <div class="col-lg-4 col-md-4 col-sm-12 col1">
         <div class="artc h3">{{ 'home.appBooking' | translate }}</div>
-        <div class="txt">
+        <!-- <div class="txt">
           {{ 'home.promo code' | translate }}
-        </div>
+        </div> -->
         <div class="grd">
           <img
             src="./../../../assets/Home/appStore.png"
@@ -489,11 +493,11 @@
             alt="googlePlay"
             class="img2"
           />
-          <img
+          <!-- <img
             src="./../../../assets/Home/qrCode.png"
             alt="QR Code"
             class="img3"
-          />
+          /> -->
         </div>
       </div>
       <div class="col-lg-8 col-md-8 d-sm-none d-md-block col2">
@@ -611,7 +615,7 @@
   <!------------------------->
   <!--Start partenership-->
   <div class="partener">
-    <div class="h3">{{ 'home.partnership' | translate }}</div>
+    <div class="h3">{{ 'home.partnerships' | translate }}</div>
     <div class="logos d-flex justify-content-between">
       <!--1-->
       <a href="#">
