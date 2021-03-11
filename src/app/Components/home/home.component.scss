@@ -202,6 +202,7 @@ a:hover {
   border-radius: 2em;
   margin-left: 2em;
   padding: 0.3em 0.5em 0.2em 0.5em;
+  margin-right: 1em;
 }
 .explore .brdr i {
   font-size: 0.8em;
@@ -1366,6 +1367,7 @@ span {
     padding-right: 3em;
     margin-bottom: 3em;
   }
+
   // .firstview {
   //   margin-top: 60em !important;
   // }
@@ -1993,4 +1995,9 @@ span {
   direction: rtl !important;
   width: 88%;
   margin: auto;
+}
+.fBtn:lang(ar),
+.sBtn:lang(ar),
+.thBtn:lang(ar) {
+  text-align: center;
 }
