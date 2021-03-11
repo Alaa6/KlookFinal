@@ -5,6 +5,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { User } from '../../../viewModels/user';
 import { FormGroup, FormBuilder ,FormControl, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { Guid } from "guid-typescript";
+
 
 @Component({
   selector: 'app-sign',
@@ -29,7 +31,8 @@ signbool:boolean = false;
 userType:string='user'
 users:User[]=[]
 Signn:string='Sign Up'
-userId:string=''
+userId: string='';
+
 
 
     Password=new FormControl('',[Validators.required,Validators.minLength(5)]);
@@ -65,6 +68,9 @@ userId:string=''
 
     this.authSer.addUser(this.listadd).then(res=>{
       this.userId=res;
+      this.authSer.userId=this.userId;
+      localStorage.setItem('currentUser', JSON.stringify(this.userId));
+
       // console.log(res)
       this.router.navigate(['/']);
 
@@ -131,6 +137,9 @@ userId:string=''
 
       this.list = res.map(data => {
         this.userId=data.payload.doc.id
+        this.authSer.userId=this.userId
+      localStorage.setItem('currentUser', this.userId);
+console.log(this.userId)
         // console.log(this.userId)
       this.router.navigate(['/']);
       this.authSer.userLogin=true

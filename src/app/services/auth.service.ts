@@ -17,11 +17,19 @@ export class AuthService {
 
   userLogin:boolean
   
-
+  
+userid:string=''
   // user:Observable<firebase.>
   constructor(private afAuth : AngularFireAuth,private fb:AngularFirestore) { 
+    if (localStorage.getItem("currentUser") === null) {
+      this.userLogin=true
+    }
+    else{
+      this.userLogin=false
+
+    }
     this.user = afAuth.user
-    this.userLogin=false
+    // this.userLogin=false
     // this.itemss=this.fb.collection<User>('user').valueChanges();
 
   }
