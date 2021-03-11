@@ -7,6 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { IBooking } from 'src/app/viewModels/ibooking';
 import { MatDialog } from '@angular/material/dialog';
 import { BookingDialogComponent } from '../booking-dialog/booking-dialog.component';
+import { CardDirective } from 'src/app/Directives/card.directive';
 
 
 @Component({
@@ -157,7 +158,7 @@ export class ActivityDetailsComponent implements OnInit {
       (err) => { console.log("error : " + err) }
     )
     this.dialog.open(BookingDialogComponent, {
-      width: '300px',
+      width: '350px',
       data: { Name: this.Name, Title: this.Card.Title, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
     });
   }
