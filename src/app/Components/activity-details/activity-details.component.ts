@@ -157,6 +157,7 @@ export class ActivityDetailsComponent implements OnInit {
       (err) => { console.log("error : " + err) }
     )
     this.dialog.open(BookingDialogComponent, {
+      width: '300px',
       data: { Name: this.Name, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
     });
   }

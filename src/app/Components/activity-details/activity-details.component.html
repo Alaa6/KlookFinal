@@ -141,7 +141,7 @@
             <div>Adult</div>
             <div>
               <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
-              <span [(ngModel)]="Adults" name="adults" id="adult">{{Adults}}</span>
+              <span [(ngModel)]="Adults" ngDefaultControl name="adults" id="adult">{{Adults}}</span>
               <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
             </div>
           </div>
@@ -149,7 +149,7 @@
             <div>Child(6-11)</div>
             <div>
               <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
-              <span [(ngModel)]="Children" name="children" id="child">{{Children}}</span>
+              <span [(ngModel)]="Children" ngDefaultControl name="children" id="child">{{Children}}</span>
               <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
             </div>
           </div>
@@ -157,7 +157,7 @@
             <div>Older</div>
             <div>
               <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
-              <span [(ngModel)]="Olders" name="olders" id="older">{{Olders}}</span>
+              <span [(ngModel)]="Olders" ngDefaultControl name="olders" id="older">{{Olders}}</span>
               <i (click)="add2()" class="fas fa-plus p-2 ml-3"></i>
             </div>
           </div>
