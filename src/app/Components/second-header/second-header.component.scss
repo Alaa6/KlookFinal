@@ -14,7 +14,13 @@ a {
   top: 4em !important;
   z-index: 2;
 }
-
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: white;
+}
+.dropdown-item:hover {
+  color: #ff5722 !important;
+}
 .navbar2 .dropdown:hover > .dropdown-menu {
   display: block;
 }

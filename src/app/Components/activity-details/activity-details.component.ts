@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { WifiService } from 'src/app/services/wifi.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivityDetailsService } from 'src/app/services/activity-details.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { IBooking } from 'src/app/viewModels/ibooking';
+import { MatDialog } from '@angular/material/dialog';
+import { BookingDialogComponent } from '../booking-dialog/booking-dialog.component';
+// import { CardDirective } from 'src/app/Directives/card.directive';
+
 
 @Component({
   selector: 'app-activity-details',
@@ -11,13 +17,15 @@ import { ActivityDetailsService } from 'src/app/services/activity-details.servic
 })
 export class ActivityDetailsComponent implements OnInit {
 
-  wifiDetail: any = {};
-  WifiCards: any = [];
   Card: any = "";
-  WifiID: string = "";
+  ID: string = "";
   section: string = "";
-  //wifi: Observable<Wifi[]>;
-  constructor(private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService, private wiService: WifiService) {
+  Name: string = "Dina";
+  Adults: number = 0;
+  Children: number = 0;
+  Olders: number = 0;
+  totalPrice: number = 0;
+  constructor(public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
 
   }
 
@@ -75,45 +83,85 @@ export class ActivityDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.activatedRoute.paramMap.subscribe((params) => {
-      let wifiDetail: string | null = params.get('id');
+      let Details: string | null = params.get('id');
       let sectioName: string | null = params.get('collectionName');
       this.section = (sectioName) ? sectioName : "";
-      this.WifiID = (wifiDetail) ? wifiDetail : "";
+      this.ID = (Details) ? Details : "";
 
-      this.getHotelById(this.WifiID, this.section);
+      this.getActivityById(this.ID, this.section);
 
-      console.log("id " + this.WifiID);
+      console.log("id " + this.ID);
     },
 
       (err) => { console.log(err) }
     );
-
+    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
   }
 
-  private getHomeById(ID: string, collection: string) {
+
+  private getActivityById(ID: string, collection: string) {
     this.activityDetails.getActivityDetails(ID, collection).then((res) => {
       this.Card = res;
+
     }).catch((err) => {
       console.log(err);
     });
   }
 
-  private getWifiById(ID: string, collection: string) {
-    this.activityDetails.getActivityDetails(ID, collection).then((res) => {
-      this.Card = res;
-    }).catch((err) => {
-      console.log(err);
-    });
+  add() {
+    this.Adults++;
+
   }
-  private getHotelById(ID: string, collection: string) {
-    this.activityDetails.getActivityDetails(ID, collection).then((res) => {
-      this.Card = res;
-    }).catch((err) => {
-      console.log(err);
-    });
+  add1() {
+    this.Children++;
+
+  }
+  add2() {
+    this.Olders++;
+
+  }
+  sub() {
+    if (this.Adults > 0) {
+      this.Adults--;
+    }
+
+  }
+  sub1() {
+    if (this.Children > 0) {
+      this.Children--;
+    }
+
+  }
+  sub2() {
+    if (this.Olders > 0) {
+
+      this.Olders--;
+    }
+
   }
 
 
+  Booking() {
+    let activity: IBooking = {
+      Adults: this.Adults,
+      Children: this.Children,
+      Olders: this.Olders,
+      Price: this.totalPrice,
+      Title: this.Card.Title
+    }
+    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
+
+    this.activityDetails.Booking(activity).then(
+      (res) => {
+        console.log("Done")
+      },
+      (err) => { console.log("error : " + err) }
+    )
+    this.dialog.open(BookingDialogComponent, {
+      width: '350px',
+      data: { Name: this.Name, Title: this.Card.Title, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
+    });
+  }
 }
 
 

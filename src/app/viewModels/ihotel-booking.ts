@@ -1,6 +1,8 @@
 export interface IHotelBooking {
-    id?:string,
-    City?:string,
-    Date?:string,
-    NumOfRooms?:string
+    id?: string,
+    City?: string,
+    Date?: string,
+    NumOfRooms?: string,
+
+
 }

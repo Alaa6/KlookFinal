@@ -12,7 +12,8 @@ export interface ITour {
     Section?: string,
     OldPrice?: string,
     Distance?: string,
-    Review?: string
+    Review?: string,
+    CityAr?:string
 
 
 }
