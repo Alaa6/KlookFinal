@@ -189,7 +189,8 @@
                 >
                   <img class="card-img-top" src="{{ i.Image }}" alt="" />
                   <div class="text-upon-img hidden-xs">
-                    <i class="fas fa-map-marker-alt"></i> {{ i.City }}
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ i.City }}
                   </div>
                   <div class="text-down-img hidden-xs p-1">Bestseller</div>
                   <div class="card-body">
@@ -202,12 +203,13 @@
                     <i class="flag-hot" style="color: #ff5746"></i>
                     <div class="card-text">
                       <div class="mb-5">
-                        <span style="color: #f5a623"
-                          ><i class="fas fa-star"></i>{{ i.Rate }}</span
-                        >
+                        <span style="color: #f5a623">
+                          <i class="fas fa-star"></i>
+                          {{ i.Rate }}
+                        </span>
                         <span style="color: #999999" style="font-size: 0.7em">
-                          {{ i.Review }} {{ i.Booked }}</span
-                        >
+                          {{ i.Review }} {{ i.Booked }}
+                        </span>
                       </div>
                       <div
                         class="mb-1"
@@ -226,7 +228,7 @@
                       </div>
 
                       <div class="mb-1">
-                        <span style="font-size: 1em">From </span>
+                        <span style="font-size: 1em">From</span>
                         <h6 class="font-weight-bold d-inline-block">
                           {{ i.Price | currency: "EGP" }}
                         </h6>

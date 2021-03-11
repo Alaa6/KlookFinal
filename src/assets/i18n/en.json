@@ -344,19 +344,7 @@
     "post": "Accordingly, Klook may amend these Terms and/or its policies at any time by posting a revised version on Klook's website. You accept the modified Terms if you continue to participate in the Bug Bounty Program after changes are made to the Terms.",
     "language": "The other language versions of this Agreement have been prepared solely for reference. If there is any conflict or inconsistency between the English version and the other language versions, the English text shall prevail."
   },
-  "blog": {
-    "guide": "Travel Guide to the world",
-    "discover": "Discover holiday ideas, guides, and stories unique to your next getaway",
-    "latest": "Latest Travel Inspiration",
-    "best": "Best Chinese New Year Goodies In Singapore.",
-    "find": "Find some of the best snacks in KELE.",
-    "bubble": "Hong Kong-Singapore Travel Bubble Confirmed To Start On Nov 22",
-    "residents": "Hong Kong and Singapore residents will be able to travel freely for any reason.",
-    "marina bay": "See The Best Of Singapore's Marina Bay In A Day!",
-    "central area": "There's just so much to do at the central area of Singapore - Marina Bay.",
-    "iSquare": "iSQUARE",
-    "situated": "Situated at the intersection of Nathan Road and Peking Road."
-  },
+
   "train": {
     "title": "Europe trains",
     "button": "Change destination",
@@ -386,7 +374,7 @@
     "Questions-4": " Can I reserve a Europe train ticket first and pay within 24-72 hours? ",
     "Questions-4-answer": " At the moment, it is not possible to reserve now and pay for a ticket later with Klook. To secure a ticket, please pay as soon as you have chosen your chosen route ",
     "Questions-5": " How early can I purchase a Europe train ticket? ",
-    "Questions-5-answer": " This varies depending on your selected train routes, and also ranges from countries and types of trains. Generally speaking, many of the European train tickets can be booked as early as 90 days before train departure. Below are some of the recommended timelines* for ticket booking according to train type and popular routes: \n \n == Domestic Trains == \n \n TGV (within France): 90 days in advance ICE (within Germany): 180 days in advance Railjet (within Austria): 90 days in advance Freccirarossa, Frecciaasgento, and Frecciabianca (within Itlay): 120 days in advance NTV (within Italy): 120 days in advance AVE (within Spain): 75 days in advance National Rail (UK): 75 days in advance `<br/><br/>` == International Trains == `<br/><br/>` Eurostar (London to/from Paris, Brussels, and Amsterdam): 180 days in advance Thalys (Paris to/from Brussels and Amsterdam): 90 days in advance ICE (Germany to/from neighboring countries): 180 days in advance TGV (France to/from neighboring countries): 90 to 120 days in advance TGV Lyria (Paris to/from Geneva and Zurich): 120 days in advance Berlin-Warsaw Express: 60 days `<br/><br/>` == Night Trains ==`<br/><br/>`  Intercites de Nuit (within France): 90 days in advance Italian night trains: 90 days in advance OBB Night Train (Austria to/from neighboring countries): 180 days in advance Thello (Paris to/from Milan and Venice): 120 days in advance Lusitania (Madrid to/from Lisbon): 60 days in advance `<br/><br/>`== Swiss Scenic Trains == `<br/><br/>` Glacier Express (Zermatt - Brig - Chur / St. Moritz): 90 days in advance GoldenPass Line (Luzern - Interlaken - Zweisimmen - Montreux): 90 days in advance Bernina Express (Chur/Davos - St. Moritz - Tirano - Lugano): 90 days in advance Gotthard Panorama Express (Luzern - Fluelen - Bellinzona - Lugano): 90 days in advance ",
+    "Questions-5-answer": " This varies depending on your selected train routes, and also ranges from countries and types of trains. Generally speaking, many of the European train tickets can be booked as early as 90 days before train departure. Below are some of the recommended timelines* for ticket booking according to train type and popular routes: \n\n == Domestic Trains == \n \n TGV (within France): 90 days in advance ICE (within Germany): 180 days in advance Railjet (within Austria): 90 days in advance Freccirarossa, Frecciaasgento, and Frecciabianca (within Itlay): 120 days in advance NTV (within Italy): 120 days in advance AVE (within Spain): 75 days in advance National Rail (UK): 75 days in advance `<br/><br/>` == International Trains == `<br/><br/>` Eurostar (London to/from Paris, Brussels, and Amsterdam): 180 days in advance Thalys (Paris to/from Brussels and Amsterdam): 90 days in advance ICE (Germany to/from neighboring countries): 180 days in advance TGV (France to/from neighboring countries): 90 to 120 days in advance TGV Lyria (Paris to/from Geneva and Zurich): 120 days in advance Berlin-Warsaw Express: 60 days `<br/><br/>` == Night Trains ==`<br/><br/>`  Intercites de Nuit (within France): 90 days in advance Italian night trains: 90 days in advance OBB Night Train (Austria to/from neighboring countries): 180 days in advance Thello (Paris to/from Milan and Venice): 120 days in advance Lusitania (Madrid to/from Lisbon): 60 days in advance `<br/><br/>`== Swiss Scenic Trains == `<br/><br/>` Glacier Express (Zermatt - Brig - Chur / St. Moritz): 90 days in advance GoldenPass Line (Luzern - Interlaken - Zweisimmen - Montreux): 90 days in advance Bernina Express (Chur/Davos - St. Moritz - Tirano - Lugano): 90 days in advance Gotthard Panorama Express (Luzern - Fluelen - Bellinzona - Lugano): 90 days in advance ",
     "button-help": "Klook help center"
   },
   "food": {
@@ -409,8 +397,108 @@
     "categories": "Categories",
     "button": "View all"
   },
+
+  "blog": {
+    "guide": "Travel Guide to the world",
+    "discover": "Discover holiday ideas, guides, and stories unique to your next getaway",
+    "latest": "Latest Travel Inspiration",
+    "best": "Best Chinese New Year Goodies In Singapore.",
+    "find": "Find some of the best snacks in KELE.",
+    "bubble": "Hong Kong-Singapore Travel Bubble Confirmed To Start On Nov 22",
+    "residents": "Hong Kong and Singapore residents will be able to travel freely for any reason.",
+    "marina bay": "See The Best Of Singapore's Marina Bay In A Day!",
+    "central area": "There's just so much to do at the central area of Singapore - Marina Bay.",
+    "iSquare": "iSQUARE",
+    "situated": "Situated at the intersection of Nathan Road and Peking Road."
+  },
+
   "invite": {
     "friends": "Invite your friends to Klook",
     "travel": "Invite your friends and travel together"
+  },
+
+  "experiences": {
+    "discover": "Discover the best theme parks, museums and more must-sees in"
+  },
+
+  "help": {
+    "how": "Hello. How can we help you?",
+    "faqs": "FAQs",
+    "credits": "How can I use Klook credits?",
+    "find": " Where can I find the directions to my booked activity?",
+    "cancel": "How can I cancel my booking and get a refund?",
+    "participants": "How do I add / remove participants from my booking?",
+    "amend": "How can I amend a booking?",
+    "voucher": "After I make a booking, when will I get the voucher?",
+    "ticket": "What is an 'Open ticket'?",
+    "book": "Can I book on behalf of my family and friends?"
+  },
+  "credits": {
+    "use": "How can I use Klook credits?",
+    "earn": " Once you've earned at least 10 credits, you can use them at the checkout page of any booking to get money off. And the more credits you have, the more discount you get!",
+    "payment": " When you're about to make the payment, select your credits to use them."
+  },
+  "find": {
+    "where": "Where can I find the directions to my booked activity?",
+    "find": "You can find the meeting point details under 'How to use' on the activity's page.",
+    "before": "Before booking",
+    "after": "After booking",
+    "details": " You can find the meeting point details on your voucher. Find this in the Bookings page on Klook or in your email inbox.",
+    "unsure": "If you're still unsure, feel free to directly contact the operator to find out more details (their contact info is on your voucher)."
+  },
+  "cancel": {
+    "how": "How can I cancel my booking and get a refund?",
+    "depend": " This depends on your activity's cancellation policy.",
+    "free": "Free cancellation",
+    "time": " You can cancel the booking yourself until the specified time listed in the cancellation policy by following these steps:",
+    "go": "Go to the Bookings page on Klook",
+    "find": "Find the booking you want to cancel and select 'View more'",
+    "select": "Select 'Apply for refund' under Booking details",
+    "conditional": "Conditional cancellation",
+    "check": " Please check the cancellation policy listed on the activity's page for details.",
+    "no": "No cancellatio",
+    "sorry": "Sorry, this activity cannot be refunded."
+  },
+  "participants": {
+    "how": "How do I add/remove participants from my booking?",
+    "add": "To add participants",
+    "sorry": "Sorry, participants cannot be added after a booking is confirmed.",
+    "refundable": "If the activity is refundable and still within the free-cancellation period, you can cancel your booking and book again. Please check the actvitiy's cancellation and refund policy first.",
+    "remove": "To remove participants",
+    "within free": "If the activity is refundable and still within the free-cancellation period, you can change your booking and apply for a partial refund for any participants you want to remove. Please check the actvitiy's cancellation and refund policy first.",
+    "contact": "If your booking is still within the free-cancellation period but you are unable to cancel, please contact Klook customer support."
+  },
+  "amend": {
+    "how": "How can I amend a booking?",
+    "activities": "For some activities, you can amend the booking details (e.g. participation date, passenger information, special requirements, etc.).",
+    "go": "Go to the Bookings page on Klook",
+    "find": "Find the booking you want to amend and select 'View more'",
+    "select": "Select 'Amend booking' under Booking details and make your changes",
+    "update": "You will get an updated voucher once your amendments are confirmed.",
+    "not applicable": "However, if 'Amendments not applicable' appears under your booking, it means that the booking cannot be amended.",
+    "help": " Still need help to amend a booking? Please contact us using Ask Klook and select 'Amend booking'."
+  },
+  "voucher": {
+    "book": "After I make a booking, when will I get the voucher?",
+    "depends": "This depends on the activity you've booked. You can find out whether your booking has instant confirmation or 24-48 hours confirmation on the activity's page.",
+    "confirm": "For activities with 'Instant confirmation', that means your booking will be confirmed within 5 minutes."
+  },
+  "ticket": {
+    "open": "What is an 'Open ticket'?",
+    "use": "Open tickets can be used any time before the expiration date. You can find the expiration date in the activity page or in the activity's terms and conditions."
+  },
+  "book": {
+    "can": "Can I book on behalf of my family and friends?",
+    "remember": "Yes, you can. But please remember to enter their details carefully when booking."
+  },
+  "about": {
+    "welcome": "Welcome to Klook",
+    "book": "Book your next adventure with Klook",
+    "about": " About us",
+    "offer": " At Klook, we offer a simple way to discover activities, attractions and things to do wherever you travel.",
+    "discover": "Discover and book in-destination services at the best prices. With a few taps or clicks, you can be ready to hop aboard the Hong Kong Airport Express, set your inner child free at Tokyo Disneyland, or marvel at the breathtaking world under the waves in Bali.",
+    "mission": "Our mission",
+    "empower": "Empowering travelers around the world to discover, book and experience the best things to do anywhere, anytime.",
+    "travel": "Travel should be all play and no hassle. With so many activities waiting to be discovered, our goal is to connect travelers with the experiences they want and need."
   }
 }
