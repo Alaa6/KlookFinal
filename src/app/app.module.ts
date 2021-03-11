@@ -46,11 +46,11 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
-import { CardDirective } from './Directives/card.directive';
+// import { CardDirective } from './Directives/card.directive';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
 import { ScrollSpyModule } from 'ngx-scrollspy';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
-import { ScrollSpyDirective } from './Directives/scroll-spy.directive';
+// import { ScrollSpyDirective } from './Directives/scroll-spy.directive';
 
 import { ExperiencesModule } from './Components/experiences/experiences.module'
 import { HttpClient } from '@angular/common/http';
@@ -68,6 +68,7 @@ import { AmendComponent } from './Components/amend/amend.component';
 import { VoucherComponent } from './Components/voucher/voucher.component';
 import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
+import { AboutComponent } from './Components/about/about.component';
 
 
 
@@ -107,9 +108,9 @@ var firebaseConfig = {
 
     ActivityDetailsComponent,
     BookTrainComponent,
-    ScrollSpyDirective,
+    // ScrollSpyDirective,
 
-    CardDirective,
+    // CardDirective,
 
     BookingDialogComponent,
     ConditionsComponent,
@@ -133,10 +134,15 @@ var firebaseConfig = {
     OpenTicketComponent,
 
     BookBehalfComponent,
+   
+    AboutComponent,
+    // // SignComponent,
+    // DashboardComponent,
+    // DetailsDashboardComponent
 
 
   ],
-  exports: [CardDirective],
+  // exports: [CardDirective],
   imports: [
     SimpleScrollSpyModule,
     TranslateModule.forRoot({

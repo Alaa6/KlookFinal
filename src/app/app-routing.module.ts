@@ -21,6 +21,7 @@ import { AmendComponent } from './Components/amend/amend.component';
 import { VoucherComponent } from './Components/voucher/voucher.component';
 import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
+import { AboutComponent } from './Components/about/about.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -42,6 +43,8 @@ const routes: Routes = [
   { path: 'voucher', component: VoucherComponent },
   { path: 'openTicket', component: OpenTicketComponent },
   { path: 'bookBehalf', component: BookBehalfComponent },
+  { path: 'aboutUs', component: AboutComponent },
+
 
 
 
