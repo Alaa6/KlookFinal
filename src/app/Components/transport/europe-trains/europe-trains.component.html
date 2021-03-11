@@ -1,132 +1,184 @@
-<!-- /////////////////////////////////////// header////////////////////////////////////////////////////////////////////////////////////////////////// -->
-<div class="header ">
-  <div class="container">
-
-    <div class="tx">
-      <h1>Europe Trains</h1><button class="btn  btn-lg" role="button"><i class="fas fa-stream"></i> change
-        Destination</button>
-      <!-- modal here -->
-    </div>
-    <div class="row">
-      <div class="card" style="background-color:#ffffff; ">
-        <!-- form here to add books of users-->
-        <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
-        <form [formGroup]="bookForm" class="card-body cardb col-12 d-flex p-3 justify-content-between">
-          <div class="plat col-12 col-sm-12  col-md-6  col-lg-4 col-xl-4">
-            <span style="background-color: #f5f5f5;">
-              <div class="key">From</div>
-              <!-- <input class="source" value="LONDON"> -->
-              <select class="form-control" id="des" name="name" formControlName="from" style="width: 10em;">
-                <option *ngFor="let i of f" value="{{i.from}}">{{i.from}}</option>
-              </select>
-            </span>
-            <i class="fas fa-exchange-alt mx-3"></i>
-            <span>
-              <div class="key">To</div>
-              <!-- <input -spm-item="__default" class="" value="PARIS"> -->
-              <select class="form-control" id="source" name="source" formControlName="to" style="width:10em;">
-                <option class="form-control" *ngFor="let i of t" value="{{i.to}}">{{i.to}}</option>
-              </select>
-            </span>
-          </div>
-          <div class="plat col-12 col-sm-12  col-md-6  col-lg-4 col-xl-4">
-            <span style="background-color: #f5f5f5;">
-              <div class="key">Departure date</div>
-              <input class="form-control" type="date" formControlName="depDate" readonly="false">
-            </span>
-            <i class="fas fa-exchange-alt mx-3"></i>
-            <span>
-              <div class="key">Departure time</div>
-              <input data-spm-item="__default" type="time" class="form-control" formControlName="depTime">
-            </span>
-          </div>
-          <div class="plat col-12 col-sm-12  col-md-4  col-lg-2 col-xl-2">
-            <span style="background-color: #f5f5f5;">
-
-              <div class="key" id="pass" data-toggle="dropdown">No. of passengers</div>
-              <!-- <select class="form-control" id="passenger" name="passenger" formControlName="NOfPassenger">
+<div class="all">
+  <!-- /////////////////////////////////////// header////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="header">
+    <div class="container">
+      <div class="tx">
+        <h1>{{ "train.title" | translate }}</h1>
+        <button class="btn btn-lg" role="button">
+          <i class="fas fa-stream"></i> {{ "food.button" | translate }}
+        </button>
+        <!-- modal here -->
+      </div>
+      <div class="row">
+        <div class="card" style="background-color: #ffffff">
+          <!-- form here to add books of users-->
+          <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+          <form
+            [formGroup]="bookForm"
+            class="card-body cardb col-12 d-flex p-3 justify-content-between"
+          >
+            <div class="plat col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <span style="background-color: #f5f5f5">
+                <div class="key">{{ "train.form-from" | translate }}</div>
+                <!-- <input class="source" value="LONDON"> -->
+                <select
+                  class="form-control"
+                  id="des"
+                  name="name"
+                  formControlName="from"
+                  style="width: 10em"
+                >
+                  <option *ngFor="let i of f" value="{{ i.from }}">
+                    {{ i.from }}
+                  </option>
+                </select>
+              </span>
+              <i class="fas fa-exchange-alt mx-3"></i>
+              <span>
+                <div class="key">{{ "train.form-to" | translate }}</div>
+                <!-- <input -spm-item="__default" class="" value="PARIS"> -->
+                <select
+                  class="form-control"
+                  id="source"
+                  name="source"
+                  formControlName="to"
+                  style="width: 10em"
+                >
+                  <option
+                    class="form-control"
+                    *ngFor="let i of t"
+                    value="{{ i.to }}"
+                  >
+                    {{ i.to }}
+                  </option>
+                </select>
+              </span>
+            </div>
+            <div class="plat col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <span style="background-color: #f5f5f5">
+                <div class="key">{{ "train.form-date" | translate }}</div>
+                <input
+                  class="form-control"
+                  type="date"
+                  formControlName="depDate"
+                  readonly="false"
+                />
+              </span>
+              <i class="fas fa-exchange-alt mx-3"></i>
+              <span>
+                <div class="key">{{ "train.form-time" | translate }}</div>
+                <input
+                  data-spm-item="__default"
+                  type="time"
+                  class="form-control"
+                  formControlName="depTime"
+                />
+              </span>
+            </div>
+            <!-- //////////////////////////// here add drop down //////////////////////////////////// -->
+            <div class="plat col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
+              <span style="background-color: #f5f5f5">
+                <div class="key" id="pass" data-toggle="dropdown">
+                  {{ "train.form-passengers" | translate }}
+                </div>
+                <!-- <select class="form-control" id="passenger" name="passenger" formControlName="NOfPassenger">
               <option *ngFor="let i of " value="{{i.id}}" >{{i.from}}</option>
             </select>   -->
-              <input formControlName="NOfPassenger" data-spm-item="__default" class="source2" type="text"
-                placeholder="please select No. of passengers">
-
-            </span>
-
-
-          </div>
-          <button class="btn col-12 col-sm-12  col-md-4  col-lg-2 col-xl-2" (click)=" bookTrip()">Search</button>
-          <!-- <h4 class="card-title">Title</h4>
+                <input
+                  formControlName="NOfPassenger"
+                  data-spm-item="__default"
+                  class="source2"
+                  type="text"
+                  placeholder="please select No. of passengers"
+                />
+              </span>
+            </div>
+            <button
+              class="btn col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2"
+              (click)="bookTrip()"
+            >
+              {{ "train.form-button" | translate }}
+            </button>
+            <!-- <h4 class="card-title">Title</h4>
     <p class="card-text">Text</p> -->
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-
-
-
-
   </div>
-</div>
-<!-- **********************************************************end of header ******************************************************************* -->
-<!-- //////////////////////////////////////////////////////////cards///////////////////////////////////////////////////////////// -->
-<div class="container mb-0 mt-3 pb-1 pt-5">
-  <div class="row mb-5 ">
-    <div class="col-sm-6 col-m-8 col-lg-10 col-xl-12 d-flex flex-wrap justify-content-start align-items-center">
+  <!-- **********************************************************end of header ******************************************************************* -->
+  <!-- //////////////////////////////////////////////////////////cards///////////////////////////////////////////////////////////// -->
+  <div class="container mb-0 mt-3 pb-1 pt-5">
+    <div class="row mb-5">
+      <h3 class="pt-5">{{ "train.You-might-also-like" | translate }}</h3>
+      <div
+        class="col-sm-6 col-m-8 col-lg-10 col-xl-12 d-flex flex-wrap justify-content-start align-items-center"
+      >
+        <!-- card1 -->
+        <div
+          *ngFor="let i of trainTrips; let k = index"
+          class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3"
+        >
+          <a (click)="viewDetails(i.id, 'train-sights')" class="crd">
+            <div class="crd1 card text-left">
+              <img
+                class="card-img-top"
+                src="{{ i.image }}"
+                alt=""
+                height="140em"
+              />
 
-      <!-- card1 -->
-      <div *ngFor="let i of trainTrips;let k=index  " class="col-12 col-sm-12  col-md-6  col-lg-3 col-xl-3 ">
-        <a (click)="viewDetails(i.id ,'train-sights')" class="crd">
-          <div class="crd1 card text-left">
-            <img class="card-img-top" src="{{i.image}}" alt="" height="140em">
+              <div class="card-body">
+                <h5 class="card-title mb-4">{{ i.name }}</h5>
+                <i class="flag-hot" style="color: #ff5746"></i>
+                <div class="card-text">
+                  <div class="mb-1">
+                    <span style="color: #f5a623"
+                      ><i class="fas fa-star"></i> {{ i.rate }}</span
+                    >
+                    <span style="color: #999999"> ({{ i.total }} reviews)</span>
+                  </div>
 
-            <div class="card-body">
-              <h5 class="card-title mb-4">{{i.name}}</h5><i class="flag-hot" style="color:#FF5746;"></i>
-              <div class="card-text">
-                <div class="mb-1">
-                  <span style="color: #f5a623;"><i class="fas fa-star"></i> {{i.rate}}</span>
-                  <span style="color: #999999;"> ({{i.total}} reviews)</span>
+                  <div class="mb-1">
+                    <h4 class="font-weight-bold d-inline-block mb-4 trips">
+                      {{ i.price | currency: "EGP" }}
+                    </h4>
+                    <i class="fas fa-bolt" style="color: #ff5746"></i>
+                  </div>
+                  <span style="color: #999">available {{ i.date }}</span>
                 </div>
-
-                <div class="mb-1">
-
-                  <h4 class="font-weight-bold d-inline-block mb-4 trips">{{i.price | currency:'EGP'}} </h4> <i
-                    class="fas fa-bolt" style="color:#FF5746;"></i>
-                </div>
-                <span style="color: #999;">available {{i.date}}</span>
               </div>
             </div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-<!-- *********************************************************************************************************************************end of cards****************************************************************************************************************************** -->
-<!-- ////////////////////////////////// reviews /////////////////////////// -->
-<div class="container my-1 py-2">
-  <div class="row mb-5">
-    <div class="col">
-
-      <h1 class="pt-5">Reviews</h1>
-      <div class="py-3 "><span class="text-warning"><span class="font-weight-bold"
-            style="font-size: 28px;">4.6</span>/5</span><span class="font-weight-bold mx-3 px-3"
-          style="font-size: 20px;">Good</span>
-        <button class="btn rounded-pill border-3 border-secondary mb-3">Read all 3034 reviews</button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="row ">
-    <div class="col-sm-12">
+  <!-- *********************************************************************************************************************************end of cards****************************************************************************************************************************** -->
+  <!-- ////////////////////////////////// reviews /////////////////////////// -->
+  <div class="container my-1 py-2">
+    <div class="row mb-5">
+      <div class="col">
+        <h3 class="pt-5">{{ "train.Reviews" | translate }}</h3>
+        <div class="py-3">
+          <span class="text-warning"
+            ><span class="font-weight-bold" style="font-size: 28px">4.6</span
+            >/5</span
+          ><span class="font-weight-bold mx-3 px-3" style="font-size: 20px">{{
+            "train.Reviews-rate" | translate
+          }}</span>
+          <button class="btn rounded-pill border-3 border-secondary mb-3">
+            {{ "train.Reviews-button" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
 
-      <!-- //////////////////////////// -->
-      <!-- <div id="carouselExampleControls" class="carousel slide col-12" data-ride="carousel">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- //////////////////////////// -->
+        <!-- <div id="carouselExampleControls" class="carousel slide col-12" data-ride="carousel">
       
       <div class="carousel-inner ">
         <div class="carousel-item active">
@@ -206,48 +258,60 @@
 </a>
 </div> -->
 
+        <!-- /////////////////////////////////////////////////// -->
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let i of trainReviews">
+            <ng-template carouselSlide>
+              <div
+                class="card bg-light d-flex flex-wrap justify-content-between align-items-center mx-2"
+                style="height: 20em"
+              >
+                <div class="card-body">
+                  <div class="card-title">
+                    <div class="row">
+                      <span
+                        class="rounded-circle p-2 align-content-start pb-4 text-center mb-3"
+                        style="background-color: #8dbd8b; height: 3px"
+                        >A</span
+                      >
 
-      <!-- /////////////////////////////////////////////////// -->
-      <owl-carousel-o [options]="customOptions">
-
-        <ng-container *ngFor="let i of trainReviews">
-          <ng-template carouselSlide>
-            <div class="card bg-light d-flex flex-wrap justify-content-between align-items-center mx-2"
-              style="height: 20em;">
-              <div class="card-body">
-                <div class="card-title">
-                  <div class="row ">
-
-                    <span class=" rounded-circle p-2 align-content-start pb-4 text-center  mb-3 "
-                      style="background-color: #8DBD8B;height: 3px;">A</span>
-
-                    <span class="col-8 col-sm-8  col-md-6  col-lg-7 col-xl-7"
-                      style="font-size: 0.8em;">{{i.name}}<br><span>{{i.date}}</span><br> <time>{{i.time}}</time></span>
-                    <span class="col-3 col-sm-3  col-md-6  col-lg-4 col-xl-4 text-right "
-                      style="font-size: 0.8em;"><span class="text-warning ">{{i.rate}} </span><span
-                        class="font-weight-bold "> {{i.eval}}</span></span>
-
+                      <span
+                        class="col-8 col-sm-8 col-md-6 col-lg-7 col-xl-7"
+                        style="font-size: 0.8em"
+                        >{{ i.name }}<br /><span>{{ i.date }}</span
+                        ><br />
+                        <time>{{ i.time }}</time></span
+                      >
+                      <span
+                        class="col-3 col-sm-3 col-md-6 col-lg-4 col-xl-4 text-right"
+                        style="font-size: 0.8em"
+                        ><span class="text-warning">{{ i.rate }} </span
+                        ><span class="font-weight-bold">
+                          {{ i.eval }}</span
+                        ></span
+                      >
+                    </div>
                   </div>
+                  <p
+                    class="card-text overflow-auto"
+                    style="
+                      background-color: #ffffff;
+                      height: 10em;
+                      overflow: scroll;
+                    "
+                  >
+                    {{ i.review }}
+                  </p>
                 </div>
-                <p class="card-text overflow-auto " style="background-color: #ffffff; height: 10em; overflow: scroll;">
-                  {{i.review}}</p>
-
               </div>
-            </div>
-          </ng-template>
-        </ng-container>
-
-      </owl-carousel-o>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
     </div>
   </div>
 
-
-
-
-</div>
-
-
-<!-- <div class="row d-flex flex-row justify-content-between">
+  <!-- <div class="row d-flex flex-row justify-content-between">
    
 
    
@@ -255,130 +319,144 @@
     
 </div> -->
 
+  <!-- ******************************************end of reviews ********************************************* -->
 
+  <!-- ///////////////////////////////////// Questions /////////////////////////////////////////////////// -->
+  <div class="container my-2 py-2 mb-5">
+    <div class="row mb-4">
+      <div class="col">
+        <h1 class="pt-5">{{ "train.Questions-title" | translate }}</h1>
+      </div>
+    </div>
 
-<!-- ******************************************end of reviews ********************************************* -->
+    <div class="row my-2">
+      <!-- <div class="col"> -->
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="font-weight-bold mb-3" style="font-size: 1.3em">
+          <i class="far fa-lightbulb"></i>
+          {{ "train.Questions-1" | translate }}
+        </div>
+        <p class="" style="font-size: 1.2em">
+          {{ "train.Questions-1-answer" | translate }}
+        </p>
+      </div>
 
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="font-weight-bold mb-3" style="font-size: 1.3em">
+          <i class="far fa-lightbulb"></i>
+          {{ "train.Questions-2" | translate }}
+        </div>
+        <p class=" " style="font-size: 1.2em">
+          {{ "train.Questions-2-answer" | translate }}
+        </p>
+        <!-- </div> -->
+      </div>
+    </div>
 
-<!-- ///////////////////////////////////// Questions /////////////////////////////////////////////////// -->
-<div class="container my-2 py-2 mb-5">
-  <div class="row mb-4">
-    <div class="col">
+    <!-- row2 -->
 
-      <h1 class="pt-5">Common Questions</h1>
+    <div class="row my-2">
+      <!-- <div class="col"> -->
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="font-weight-bold mb-3" style="font-size: 1.3em">
+          <i class="far fa-lightbulb"></i>
+          {{ "train.Questions-3" | translate }}
+        </div>
+        <p class="" style="font-size: 1.2em">
+          {{ "train.Questions-3-answer" | translate }}
+          <!-- There are several reasons why you might not find your desired
+          train:<br />
 
+          (1) Your desired train is full, or (2) Your desired train route is not
+          yet available for booking, or (3) Your desired train route is
+          temporarily closed for booking due to track maintenance works, or (4)
+          Your desired train journey might contain more than two changes (our
+          system is designed to filter out any train routes with more than two
+          exchanges to give you the most direct route) -->
+        </p>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="font-weight-bold mb-3" style="font-size: 1.3em">
+          <i class="far fa-lightbulb"></i>
+          {{ "train.Questions-4" | translate }}
+        </div>
+        <p class=" " style="font-size: 1.2em">
+          {{ "train.Questions-4-answer" | translate }}
+        </p>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <!-- row3 -->
+
+    <div class="row my-2">
+      <!-- <div class="col"> -->
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="font-weight-bold mb-3" style="font-size: 1.3em">
+          <i class="far fa-lightbulb"></i>
+          {{ "train.Questions-5" | translate }}
+        </div>
+        <p class="" style="font-size: 1.2em">
+          <!-- This varies depending on your selected train routes, and also ranges
+          from countries and types of trains. Generally speaking, many of the
+          European train tickets can be booked as early as 90 days before train
+          departure. Below are some of the recommended timelines* for ticket
+          booking according to train type and popular routes:
+
+          <br /><br />
+          == Domestic Trains ==<br /><br />
+
+          TGV (within France): 90 days in advance ICE (within Germany): 180 days
+          in advance Railjet (within Austria): 90 days in advance Freccirarossa,
+          Frecciaasgento, and Frecciabianca (within Itlay): 120 days in advance
+          NTV (within Italy): 120 days in advance AVE (within Spain): 75 days in
+          advance National Rail (UK): 75 days in advance
+
+          <br /><br />
+          == International Trains ==<br /><br />
+
+          Eurostar (London to/from Paris, Brussels, and Amsterdam): 180 days in
+          advance Thalys (Paris to/from Brussels and Amsterdam): 90 days in
+          advance ICE (Germany to/from neighboring countries): 180 days in
+          advance TGV (France to/from neighboring countries): 90 to 120 days in
+          advance TGV Lyria (Paris to/from Geneva and Zurich): 120 days in
+          advance Berlin-Warsaw Express: 60 days
+
+          <br /><br />
+          == Night Trains ==<br /><br />
+
+          Intercites de Nuit (within France): 90 days in advance Italian night
+          trains: 90 days in advance OBB Night Train (Austria to/from
+          neighboring countries): 180 days in advance Thello (Paris to/from
+          Milan and Venice): 120 days in advance Lusitania (Madrid to/from
+          Lisbon): 60 days in advance
+
+          <br /><br />== Swiss Scenic Trains ==<br /><br />
+
+          Glacier Express (Zermatt - Brig - Chur / St. Moritz): 90 days in
+          advance GoldenPass Line (Luzern - Interlaken - Zweisimmen - Montreux):
+          90 days in advance Bernina Express (Chur/Davos - St. Moritz - Tirano -
+          Lugano): 90 days in advance Gotthard Panorama Express (Luzern -
+          Fluelen - Bellinzona - Lugano): 90 days in advance -->
+          {{ "train.Questions-5-answer" | translate }}
+        </p>
+      </div>
+    </div>
+
+    <!-- row 4 -->
+    <div class="row">
+      <!-- <div class="col"> -->
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <button
+          class="btn border-dark font-weight-bold py-2 px-5"
+          style="font-size: 1.3em"
+        >
+          {{ "train.button-help" | translate }}
+        </button>
+      </div>
     </div>
   </div>
 
-  <div class="row my-2">
-    <!-- <div class="col"> -->
-    <div class="col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6">
-      <div class="font-weight-bold mb-3" style="font-size: 1.3em;">
-        <i class="far fa-lightbulb"></i> How to book a Europe train ticket with Klook?
-      </div>
-      <p class="" style="font-size: 1.2em;">
-        Simply enter your departure and arrival city, select a departure (and return) date & time, indicate the number
-        of passengers, then tap or click the search button. You will be provided with a list of train itineraries that
-        you can choose from
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6">
-      <div class="font-weight-bold mb-3" style="font-size: 1.3em;">
-        <i class="far fa-lightbulb"></i> What should I do if the booking is not open?
-      </div>
-      <p class=" " style="font-size: 1.2em;">
-        European train tickets are usually available for sale 90 days in advance, but if your preferred ticket is not
-        yet available for purchase, it is probably because your desired ticket is not yet available at that time
-      </p>
-      <!-- </div> -->
-    </div>
-  </div>
-
-  <!-- row2 -->
-
-  <div class="row my-2">
-    <!-- <div class="col"> -->
-    <div class="col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6">
-      <div class="font-weight-bold mb-3" style="font-size: 1.3em;">
-        <i class="far fa-lightbulb"></i> Why Can't I find the Europe train route I want to book?
-      </div>
-      <p class="" style="font-size: 1.2em;">
-        There are several reasons why you might not find your desired train:<br>
-
-        (1) Your desired train is full, or (2) Your desired train route is not yet available for booking, or (3) Your
-        desired train route is temporarily closed for booking due to track maintenance works, or (4) Your desired train
-        journey might contain more than two changes (our system is designed to filter out any train routes with more
-        than two exchanges to give you the most direct route)
-
-      </p>
-    </div>
-
-    <div class="col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6">
-      <div class="font-weight-bold mb-3" style="font-size: 1.3em;">
-        <i class="far fa-lightbulb"></i> Can I reserve a Europe train ticket first and pay within 24-72 hours?
-      </div>
-      <p class=" " style="font-size: 1.2em;">
-        At the moment, it is not possible to reserve now and pay for a ticket later with Klook. To secure a ticket,
-        please pay as soon as you have chosen your chosen route
-      </p>
-      <!-- </div> -->
-    </div>
-  </div>
-
-  <!-- row3 -->
-
-  <div class="row my-2">
-    <!-- <div class="col"> -->
-    <div class="col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6">
-      <div class="font-weight-bold mb-3" style="font-size: 1.3em;">
-        <i class="far fa-lightbulb"></i> How early can I purchase a Europe train ticket?
-      </div>
-      <p class="" style="font-size: 1.2em;">
-        This varies depending on your selected train routes, and also ranges from countries and types of trains.
-        Generally speaking, many of the European train tickets can be booked as early as 90 days before train departure.
-        Below are some of the recommended timelines* for ticket booking according to train type and popular routes:
-
-        <br><br> == Domestic Trains ==<br><br>
-
-        TGV (within France): 90 days in advance ICE (within Germany): 180 days in advance Railjet (within Austria): 90
-        days in advance Freccirarossa, Frecciaasgento, and Frecciabianca (within Itlay): 120 days in advance NTV (within
-        Italy): 120 days in advance AVE (within Spain): 75 days in advance National Rail (UK): 75 days in advance
-
-        <br><br> == International Trains ==<br><br>
-
-        Eurostar (London to/from Paris, Brussels, and Amsterdam): 180 days in advance Thalys (Paris to/from Brussels and
-        Amsterdam): 90 days in advance ICE (Germany to/from neighboring countries): 180 days in advance TGV (France
-        to/from neighboring countries): 90 to 120 days in advance TGV Lyria (Paris to/from Geneva and Zurich): 120 days
-        in advance Berlin-Warsaw Express: 60 days
-
-        <br><br> == Night Trains ==<br><br>
-
-        Intercites de Nuit (within France): 90 days in advance Italian night trains: 90 days in advance OBB Night Train
-        (Austria to/from neighboring countries): 180 days in advance Thello (Paris to/from Milan and Venice): 120 days
-        in advance Lusitania (Madrid to/from Lisbon): 60 days in advance
-
-        <br><br>== Swiss Scenic Trains ==<br><br>
-
-        Glacier Express (Zermatt - Brig - Chur / St. Moritz): 90 days in advance GoldenPass Line (Luzern - Interlaken -
-        Zweisimmen - Montreux): 90 days in advance Bernina Express (Chur/Davos - St. Moritz - Tirano - Lugano): 90 days
-        in advance Gotthard Panorama Express (Luzern - Fluelen - Bellinzona - Lugano): 90 days in advance</p>
-    </div>
-
-
-  </div>
-
-  <!-- row 4 -->
-  <div class="row ">
-    <!-- <div class="col"> -->
-    <div class="col-12 col-sm-12  col-md-12  col-lg-6 col-xl-6">
-      <button class="btn border-dark  font-weight-bold py-2 px-5" style="font-size: 1.3em;">Klook help center</button>
-    </div>
-  </div>
-
-
+  <!-- ******************************end of questions ************************************* -->
 </div>
-
-
-
-<!-- ******************************end of questions ************************************* -->

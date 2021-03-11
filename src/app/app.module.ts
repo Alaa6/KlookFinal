@@ -54,7 +54,7 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
- import { CardDirective } from './directives/card.directive';
+//import { CardDirective } from './directives/card.directive';
 import {
   TranslateModule,
   TranslateService,
@@ -68,7 +68,7 @@ import {
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
 import { ScrollSpyModule } from 'ngx-scrollspy';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
- import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+//import { ScrollSpyDirective } from './directives/scroll-spy.directive';
 
 import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { HttpClient } from '@angular/common/http';
@@ -76,6 +76,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
 import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
+//import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -90,6 +91,15 @@ var firebaseConfig = {
   messagingSenderId: '402072663413',
   appId: '1:402072663413:web:b045d045b9b5af218f8f3c',
   measurementId: 'G-SE1DJ8PYYC',
+};
+var firebaseConfig2 = {
+  apiKey: 'AIzaSyAAHACN73dKmMMXqdzg77rlPXs94ZKaPBk',
+  authDomain: 'klookarabic.firebaseapp.com',
+  projectId: 'klookarabic',
+  storageBucket: 'klookarabic.appspot.com',
+  messagingSenderId: '120468945976',
+  appId: '1:120468945976:web:f6673203cef2fd1c483acd',
+  measurementId: 'G-BX0JG4BMH5',
 };
 
 @NgModule({
@@ -119,14 +129,14 @@ var firebaseConfig = {
 
     // CardDirective,
 
-    ScrollSpyDirective,
-   
-    CardDirective,
-   
+    //  ScrollSpyDirective,
+
+    //CardDirective,
+
     ConditionsComponent,
-   
+
     BlogComponent,
-   
+
     InviteFriendsComponent,
 
     // // SignComponent,
@@ -137,6 +147,7 @@ var firebaseConfig = {
     // CardDirective
   ],
   imports: [
+    // SimpleScrollSpyModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -150,6 +161,7 @@ var firebaseConfig = {
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(firebaseConfig2),
     AngularFirestoreModule, // firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage

@@ -1,13 +1,15 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { FoodServiceService } from 'src/app/services/food-service.service';
+import { LanguageServiceService } from 'src/app/services/language-service.service';
 import { IFood } from 'src/app/viewModels/ifood';
 
 @Component({
   selector: 'app-food',
   templateUrl: './food.component.html',
-  styleUrls: ['./food.component.scss']
+  styleUrls: ['./food.component.scss'],
 })
 export class FoodComponent implements OnInit, OnDestroy {
   FoodList: IFood[] = [];
@@ -15,21 +17,29 @@ export class FoodComponent implements OnInit, OnDestroy {
   totalRecords: number = 0;
   page: number = 1;
 
-  constructor(private foodServics: FoodServiceService, private router: Router) { }
-
-  ngOnInit(): void {
-    this.subscribtion = this.foodServics.getFoodCards("Categories", "Section", "Food", "Other").subscribe(
-      (res) => {
-        this.FoodList = res;
-        this.totalRecords = res.length;
-        console.log("ll" + this.totalRecords);
-      },
-      (err) => { console.log("cant get food cards " + err) }
-    )
-
-
+  constructor(
+    private languageService: LanguageServiceService,
+    private translate: TranslateService,
+    private foodServics: FoodServiceService,
+    private router: Router
+  ) {
+    this.translate.use(languageService.getLanguage());
   }
 
+  ngOnInit(): void {
+    this.subscribtion = this.foodServics
+      .getFoodCards('Categories', 'Section', 'Food', 'Other')
+      .subscribe(
+        (res) => {
+          this.FoodList = res;
+          this.totalRecords = res.length;
+          console.log('ll' + this.totalRecords);
+        },
+        (err) => {
+          console.log('cant get food cards ' + err);
+        }
+      );
+  }
 
   ngOnDestroy(): void {
     this.subscribtion?.unsubscribe();
