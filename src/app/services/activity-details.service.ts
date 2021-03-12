@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { IBooking } from '../viewModels/ibooking';
+import { IHotelBooking } from '../viewModels/ihotel-booking';
 import { Wifi } from '../viewModels/wifi';
 
 @Injectable({
@@ -38,5 +40,10 @@ export class ActivityDetailsService {
     });
 
 
+  }
+  Booking(data: IBooking) {
+    return this.fs.collection<any>('Booking').add(data).then
+      ((res) => { console.log("Activity is booked ") },
+        (err) => { console.log(err) })
   }
 }

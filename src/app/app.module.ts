@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,7 +56,7 @@ import { DetailsComponent } from './Components/details/details.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
-//import { CardDirective } from './directives/card.directive';
+import { CardDirective } from './Directives/card.directive';
 import {
   TranslateModule,
   TranslateService,
@@ -73,6 +75,7 @@ import { LanguageInterceptor } from './interceptors/language.interceptor';
 import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BookingDialogComponent } from './Components/booking-dialog/booking-dialog.component';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
 import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
@@ -101,15 +104,15 @@ var firebaseConfig = {
   appId: '1:402072663413:web:b045d045b9b5af218f8f3c',
   measurementId: 'G-SE1DJ8PYYC',
 };
-var firebaseConfig2 = {
-  apiKey: 'AIzaSyAAHACN73dKmMMXqdzg77rlPXs94ZKaPBk',
-  authDomain: 'klookarabic.firebaseapp.com',
-  projectId: 'klookarabic',
-  storageBucket: 'klookarabic.appspot.com',
-  messagingSenderId: '120468945976',
-  appId: '1:120468945976:web:f6673203cef2fd1c483acd',
-  measurementId: 'G-BX0JG4BMH5',
-};
+// var firebaseConfig2 = {
+//   apiKey: 'AIzaSyAAHACN73dKmMMXqdzg77rlPXs94ZKaPBk',
+//   authDomain: 'klookarabic.firebaseapp.com',
+//   projectId: 'klookarabic',
+//   storageBucket: 'klookarabic.appspot.com',
+//   messagingSenderId: '120468945976',
+//   appId: '1:120468945976:web:f6673203cef2fd1c483acd',
+//   measurementId: 'G-BX0JG4BMH5',
+// };
 
 @NgModule({
   declarations: [
@@ -133,15 +136,11 @@ var firebaseConfig2 = {
     // DashboardComponent,
     ActivityDetailsComponent,
     BookTrainComponent,
-
-    // ScrollSpyDirective,
-
-    // CardDirective,
-
     //  ScrollSpyDirective,
 
-    //CardDirective,
+    CardDirective,
 
+    BookingDialogComponent,
     ConditionsComponent,
 
     BlogComponent,
@@ -179,13 +178,14 @@ var firebaseConfig2 = {
         deps: [HttpClient],
       },
     }),
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireModule.initializeApp(firebaseConfig2),
+    // AngularFireModule.initializeApp(firebaseConfig2),
     AngularFirestoreModule, // firestore
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
@@ -211,7 +211,8 @@ var firebaseConfig2 = {
     MatDatepickerModule,
     MatNativeDateModule,
     ExperiencesModule,
-  ], // ],
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -4,6 +4,8 @@ import {
   OnInit,
   ViewChild,
   Inject,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
 import { ICity } from 'src/app/viewModels/i-city';
@@ -29,7 +31,7 @@ import {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   NearYou: Tours[] = [];
   IncredibleDestinations: ICity[] = [];
   TopThings: Tours[] = [];
@@ -39,7 +41,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   Inspired: Tours[] = [];
   //x:AngularFirestoreDocument<unknown> | undefined =undefined;
   x: string = '';
-
+  tr: string = '';
   @ViewChild('hid') hid: any;
   @ViewChild('hid2') hid2: any;
   @ViewChild('demoVideo') demoVideo: any;
@@ -52,6 +54,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private languageService: LanguageServiceService
   ) {
     this.translate.use(languageService.getLanguage());
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.setLanguage();
+    throw new Error('Method not implemented.');
   }
 
   // getCityAr(){
@@ -73,6 +79,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // view.src = URL.createObjectURL(yourBlob);
   }
   ngOnInit(): void {
+    this.tr = 'en';
     this.homeService.getNearYou().subscribe((near) => {
       this.NearYou = near.map((data) => {
         return {
@@ -225,5 +232,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
+  }
+  setLanguage() {
+    this.languageService.setLanguage(
+      this.languageService.getLanguage() == 'ar'
+        ? (this.tr = 'en')
+        : (this.tr = 'ar')
+    );
+    this.translate.use(this.languageService.getLanguage());
+    return this.tr;
   }
 }

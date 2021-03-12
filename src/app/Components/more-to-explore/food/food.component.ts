@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { FoodServiceService } from 'src/app/services/food-service.service';
 import { LanguageServiceService } from 'src/app/services/language-service.service';
 import { IFood } from 'src/app/viewModels/ifood';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-food',
@@ -15,7 +16,23 @@ export class FoodComponent implements OnInit, OnDestroy {
   FoodList: IFood[] = [];
   subscribtion: Subscription | null = null;
   totalRecords: number = 0;
-  page: number = 1;
+  //page: number = 1;
+  // name = 'Angular';
+  // page = 1;
+  // //pageSize = 12;
+  // items = [];
+  // maxSize = 2;
+  // length = 24;
+  // pageSize = 12;
+  // pageIndex = 0;
+  // pageSizeOptions = [5, 10, 25];
+  // showFirstLastButtons = true;
+
+  // handlePageEvent(event: PageEvent) {
+  //   this.length = event.length;
+  //   this.pageSize = event.pageSize;
+  //   this.pageIndex = event.pageIndex;
+  // }
 
   constructor(
     private languageService: LanguageServiceService,
