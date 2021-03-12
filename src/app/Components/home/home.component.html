@@ -147,7 +147,7 @@
           style="height: 8em;"
           alt="Crad Image"
         />
-        <div class="top_left">
+        <div class="top_left" *ngIf="tr == 'en'">
           <i
             class="fas fa-map-marker-alt"
             style="color: white; font-size: 0.9em;"
@@ -163,24 +163,61 @@
             {{ near.City }}
           </span>
         </div>
+        <div
+          class="top_left"
+          *ngIf="tr == 'ar'"
+          style="direction: rtl; left: 0px; right: 20px;"
+        >
+          <i
+            class="fas fa-map-marker-alt"
+            style="color: white; font-size: 0.9em;"
+          ></i>
+          <span
+            style="
+              color: white;
+              font-size: 1.1em;
+              margin-left: 0.3em;
+              font-weight: 600;
+            "
+          >
+            {{ near.CityAr }}
+          </span>
+        </div>
         <div class="card-body">
           <div
             class="card-title"
             style="color: #d22320; font-weight: 600; font-size: 0.9em;"
+            *ngIf="tr == 'en'"
           >
             {{ near.Distance }}
+          </div>
+          <div
+            class="card-title"
+            style="color: #d22320; font-weight: 600; font-size: 0.9em;"
+            *ngIf="tr == 'ar'"
+          >
+            {{ near.DistanceAr }}
           </div>
 
           <p
             (click)="viewDetails(near.id, 'ToursCollection')"
             class="card-text"
             style="font-weight: 600; font-size: 1em;"
+            *ngIf="tr == 'en'"
           >
             {{ near.Title }}
           </p>
+          <p
+            (click)="viewDetails(near.id, 'ToursCollection')"
+            class="card-text"
+            style="font-weight: 600; font-size: 1em;"
+            *ngIf="tr == 'ar'"
+          >
+            {{ near.TitleAr }}
+          </p>
         </div>
         <div class="card-body">
-          <div>
+          <div *ngIf="tr == 'en'">
             <span class="font-weight-bold" style="font-size: 0.9em;">
               {{ 'home.egp' | translate }} {{ near.Price }}
             </span>
@@ -189,8 +226,32 @@
               style="color: #ff612f; font-size: 0.9em;"
             ></i>
           </div>
-          <a href="#" class="card-link text-muted" style="font-size: 0.9em;">
+
+          <div *ngIf="tr == 'ar'">
+            <span class="font-weight-bold" style="font-size: 0.9em;">
+              {{ near.Price }} {{ 'home.egp' | translate }}
+            </span>
+            <i
+              class="fas fa-fire ml-2"
+              style="color: #ff612f; font-size: 0.9em;"
+            ></i>
+          </div>
+
+          <a
+            href="#"
+            class="card-link text-muted"
+            style="font-size: 0.9em;"
+            *ngIf="tr == 'en'"
+          >
             {{ near.Date }}
+          </a>
+          <a
+            href="#"
+            class="card-link text-muted"
+            style="font-size: 0.9em;"
+            *ngIf="tr == 'ar'"
+          >
+            {{ near.DateAr }}
           </a>
         </div>
       </div>
@@ -223,7 +284,12 @@
                     alt="..."
                   />
                 </a>
-                <div class="bt_lf">{{ destination.City1 }}</div>
+                <div class="bt_lf" *ngIf="tr == 'en'">
+                  {{ destination.City1 }}
+                </div>
+                <div class="bt_lf" *ngIf="tr == 'ar'">
+                  {{ destination.CityAr }}
+                </div>
               </div>
             </div>
           </ng-template>
@@ -258,7 +324,7 @@
                   style="height: 10em;"
                   alt="..."
                 />
-                <div class="top_left">
+                <div class="top_left" *ngIf="tr == 'en'">
                   <i
                     class="fas fa-map-marker-alt"
                     style="color: white; font-size: 1.1em;"
@@ -275,22 +341,62 @@
                   </span>
                 </div>
                 <div
+                  class="top_left"
+                  *ngIf="tr == 'ar'"
+                  style="direction: rtl; left: 0px; right: 20px;"
+                >
+                  <i
+                    class="fas fa-map-marker-alt"
+                    style="color: white; font-size: 1.1em;"
+                  ></i>
+                  <span
+                    style="
+                      color: white;
+                      font-size: 1.3em;
+                      margin-left: 0.3em;
+                      font-weight: 600;
+                    "
+                  >
+                    {{ thing.CityAr }}
+                  </span>
+                </div>
+                <div
                   (click)="viewDetails(thing.id, 'ToursCollection')"
                   class="card-body"
                 >
-                  <div class="card-title" style="font-weight: 600;">
+                  <div
+                    class="card-title"
+                    style="font-weight: 600;"
+                    *ngIf="tr == 'en'"
+                  >
                     {{ thing.Title }}
+                  </div>
+                  <div
+                    class="card-title"
+                    style="font-weight: 600;"
+                    *ngIf="tr == 'ar'"
+                  >
+                    {{ thing.TitleAr }}
                   </div>
                 </div>
                 <div class="card-body">
-                  <div>
+                  <div *ngIf="tr == 'en'">
                     <span class="font-weight-bold">
                       {{ 'home.egp' | translate }} {{ thing.Price }}
                     </span>
                     <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
                   </div>
-                  <a href="#" class="card-link text-muted">
+                  <div *ngIf="tr == 'ar'">
+                    <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+                    <span class="font-weight-bold">
+                      {{ 'home.egp' | translate }} {{ thing.Price }}
+                    </span>
+                  </div>
+                  <a href="#" class="card-link text-muted" *ngIf="tr == 'en'">
                     {{ thing.Date }}
+                  </a>
+                  <a href="#" class="card-link text-muted" *ngIf="tr == 'ar'">
+                    {{ thing.DateAr }}
                   </a>
                 </div>
               </div>
@@ -331,19 +437,10 @@
               <a>
                 <div class="card move">
                   <img src="{{ city.Image }}" class="card-img-top" alt="..." />
-                  <div class="top_left col-10">
+                  <div class="top_left col-10" *ngIf="tr == 'en'">
                     <i class="fas fa-map-marker-alt" style="color: white;"></i>
-
-                    <!-- <span style="color: white;">
-                    {{ city.City }}
-                  </span> -->
-
-                    <span *ngIf="tr == 'en'" style="color: white;">
+                    <span style="color: white;">
                       {{ city.City }}
-                    </span>
-
-                    <span *ngIf="tr == 'ar'" style="color: white;">
-                      <!-- {{ city.CityAr }} -->
                     </span>
                     <div class="btns">
                       <div class="btn1 px-1">
@@ -356,7 +453,28 @@
                       </div>
                     </div>
                   </div>
-                  <div class="card-body">
+
+                  <div
+                    class="top_left col-10"
+                    *ngIf="tr == 'ar'"
+                    style="direction: rtl;"
+                  >
+                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                    <span style="color: white;">
+                      {{ city.CityAr }}
+                    </span>
+                    <div class="btns">
+                      <div class="btn1 px-1">
+                        {{ city.TourSectionInner }}
+                        <!-- {{ 'home.bestSeller' | translate }} -->
+                      </div>
+                      <div class="btn2 px-1">
+                        {{ city.TourDiscount }}
+                        {{ 'home.off' | translate }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body" *ngIf="tr == 'en'">
                     <div class="card-title" style="font-weight: 600;">
                       {{ city.Title }}
                       <!-- {{ 'home.taipei' | translate }} -->
@@ -371,7 +489,26 @@
                       </span>
                     </div>
                   </div>
-                  <div class="card-body">
+                  <div
+                    class="card-body"
+                    *ngIf="tr == 'ar'"
+                    style="direction: rtl;"
+                  >
+                    <div class="card-title" style="font-weight: 600;">
+                      {{ city.TitleAr }}
+                      <!-- {{ 'home.taipei' | translate }} -->
+                    </div>
+                    <div class="rates">
+                      <i class="fas fa-star" style="color: #ff9d26;"></i>
+                      <span style="color: #ff9d26;">{{ city.Rate }}</span>
+                      <span class="review">
+                        {{ city.Review }}
+                        {{ 'home.review' | translate }}
+                        <!-- {{ 'home.booked' | translate }} -->
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card-body" *ngIf="tr == 'en'">
                     <div>
                       <span class="font-weight-bold">
                         {{ city.Price }}
@@ -382,6 +519,23 @@
                     <a href="#" class="card-link text-muted date">
                       {{ 'home.date' | translate }}
                       {{ city.Date }}
+                    </a>
+                  </div>
+                  <div
+                    class="card-body"
+                    *ngIf="tr == 'ar'"
+                    style="direction: rtl;"
+                  >
+                    <div>
+                      <span class="font-weight-bold">
+                        {{ city.Price }}
+                        {{ 'home.price' | translate }}
+                      </span>
+                      <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+                    </div>
+                    <a href="#" class="card-link text-muted date">
+                      {{ 'home.date' | translate }}
+                      {{ city.DateAr }}
                     </a>
                   </div>
                 </div>
@@ -416,7 +570,7 @@
                   style="height: 10em;"
                   alt="..."
                 />
-                <div class="top_left">
+                <div class="top_left" *ngIf="tr == 'en'">
                   <i
                     class="fas fa-map-marker-alt"
                     style="color: white; font-size: 0.8em;"
@@ -431,18 +585,31 @@
                   >
                     {{ recommend.City }}
                   </span>
-                  <!-- <div class="btns">
-                  <div class="btn1 px-1">
-                    Best Seller
-                  </div>
-                  <div class="btn2 px-1 pb-1">
-                    25% OFF
-                  </div>
-                </div> -->
+                </div>
+                <div
+                  class="top_left"
+                  *ngIf="tr == 'ar'"
+                  style="direction: rtl; left: 0px; right: 20px;"
+                >
+                  <i
+                    class="fas fa-map-marker-alt"
+                    style="color: white; font-size: 0.8em;"
+                  ></i>
+                  <span
+                    style="
+                      color: white;
+                      font-size: 1em;
+                      margin-left: 0.3em;
+                      font-weight: 600;
+                    "
+                  >
+                    {{ recommend.CityAr }}
+                  </span>
                 </div>
                 <div
                   (click)="viewDetails(recommend.id, 'ToursCollection')"
                   class="card-body"
+                  *ngIf="tr == 'en'"
                 >
                   <div class="card-title" style="font-weight: 600;">
                     {{ recommend.Title }}
@@ -456,10 +623,32 @@
                     </span>
                   </div>
                 </div>
-                <div class="card-body">
+                <div
+                  (click)="viewDetails(recommend.id, 'ToursCollection')"
+                  class="card-body"
+                  *ngIf="tr == 'ar'"
+                  style="direction: rtl;"
+                >
+                  <div class="card-title" style="font-weight: 600;">
+                    {{ recommend.TitleAr }}
+                  </div>
+                  <div>
+                    <i class="fas fa-star mr-1" style="color: #ff9d26;"></i>
+                    <span style="color: #ff9d26;">{{ recommend.Rate }}</span>
+                    <span class="text-muted pl-1">
+                      {{ recommend.ReviewAr }}
+                    </span>
+                    <span class="text-muted pl-1">
+                      {{ recommend.BookedAr }}
+                    </span>
+                  </div>
+                </div>
+                <div class="card-body" *ngIf="tr == 'en'">
                   <div>
                     <div class="text-muted">
-                      <del>{{ recommend.OldPrice }}</del>
+                      <del>
+                        {{ 'home.egp' | translate }} {{ recommend.OldPrice }}
+                      </del>
                     </div>
                     <span class="font-weight-bold">
                       {{ 'home.egp' | translate }}
@@ -469,6 +658,27 @@
                   </div>
                   <a href="#" class="card-link text-muted">
                     {{ recommend.Date }}
+                  </a>
+                </div>
+                <div
+                  class="card-body"
+                  *ngIf="tr == 'ar'"
+                  style="direction: rtl;"
+                >
+                  <div>
+                    <div class="text-muted">
+                      <del>
+                        {{ recommend.OldPriceAr }}
+                      </del>
+                    </div>
+                    <span class="font-weight-bold">
+                      {{ 'home.egp' | translate }}
+                      {{ recommend.Price }}
+                    </span>
+                    <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+                  </div>
+                  <a href="#" class="card-link text-muted">
+                    {{ recommend.DateAr }}
                   </a>
                 </div>
               </div>

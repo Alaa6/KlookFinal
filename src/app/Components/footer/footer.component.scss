@@ -177,3 +177,40 @@ footer .ask {
 footer:lang(ar) {
   direction: rtl;
 }
+@media only screen and (max-width: 753px) {
+  .btn1 {
+    width: 10em !important;
+  }
+  .btn1 .ask {
+    margin-left: 1em !important;
+    margin-right: 1em !important;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .pay,
+  .cards {
+    display: none;
+  }
+  footer .fOne .thirdPr,
+  footer .fOne .secondPr {
+    display: none;
+  }
+  footer .travel,
+  .click {
+    display: none;
+  }
+  footer .d-sm-none {
+    display: none;
+  }
+  footer .d-sm-none {
+    display: none;
+  }
+  .btn1 {
+    width: 8em !important;
+  }
+  .btn1 .ask {
+    margin-left: 0.5em !important;
+    margin-right: 0.5em !important;
+  }
+}
