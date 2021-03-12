@@ -20,7 +20,7 @@ export interface Tours {
     CityAr?:string
     DateAr?: string,
     DescriptionAr?: string,
-    PriceAr: string,
+    PriceAr?: string,
     RateAr?: number,
     SectionAr?: string,
     OldPriceAr?: string,
