@@ -26,7 +26,6 @@ export interface Tours {
     OldPriceAr?: string,
     DistanceAr?: string,
     ReviewAr?: string,
-
     
 
 }

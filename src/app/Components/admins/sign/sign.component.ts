@@ -5,6 +5,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { User } from '../../../viewModels/user';
 import { FormGroup, FormBuilder ,FormControl, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { Guid } from "guid-typescript";
+
 
 @Component({
   selector: 'app-sign',
@@ -23,11 +25,12 @@ signbool:boolean = false;
 userType:string='user'
 users:User[]=[]
 Signn:string='Sign Up'
-userId:string=''
+userId: string='';
+
 
 
     Password=new FormControl('',[Validators.required,Validators.minLength(5)]);
-      Email= new FormControl('',[Validators.required,Validators.minLength(6),Validators.email,Validators.maxLength(100)]);
+    Email= new FormControl('',[Validators.required,Validators.minLength(6),Validators.email,Validators.maxLength(100)]);
 
   getErrorMessage() {
       return 'You must enter the right value';
@@ -59,6 +62,10 @@ userId:string=''
 
     this.authSer.addUser(this.listadd).then(res=>{
       this.userId=res;
+      this.authSer.userId=this.userId;
+      localStorage.setItem('currentUser', JSON.stringify(this.userId));
+      this.authSer.userLogin=false
+
       // console.log(res)
       this.router.navigate(['/']);
 
@@ -68,7 +75,6 @@ userId:string=''
         console.log("errrrrorrr"+err)
       })
     ////// new ////////////
-    
 
   
 
@@ -88,6 +94,8 @@ userId:string=''
     });
   }
   
+
+  username:User={}
   login(){
 
 
@@ -130,9 +138,18 @@ userId:string=''
 
       this.list = res.map(data => {
         this.userId=data.payload.doc.id
+        this.username=data.payload.doc.data()
+        this.authSer.userId=this.userId
+      localStorage.setItem('currentUser', this.userId);
+      localStorage.setItem('currentUserName', this.username.Name);
+      this.authSer.userLogin=false
+
+console.log(this.userId)
+console.log(this.username.Name)
+
         // console.log(this.userId)
       this.router.navigate(['/']);
-      this.authSer.userLogin=true
+      // this.authSer.userLogin=true
       console.log(this.authSer.userLogin)
 
 
@@ -143,10 +160,8 @@ userId:string=''
       });
       // this.loading = false
     }, (err) => console.log(err))
-
+    console.log(this.list)
    }
-
-
       subsign: string = '';
 
    routeSubscription: Subscription = this.activatedRoute.paramMap.subscribe((params: ParamMap) => {    //if  the route parameter value  changes  (Observable) 
