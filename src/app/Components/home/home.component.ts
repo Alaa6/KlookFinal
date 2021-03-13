@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   InspiredTaipei: Tours[] = []
   InspiredHong: Tours[] = []
   Inspired:Tours[] = []
+  collectionListName: string[] = []
 
   @ViewChild('hid') hid: any;
   @ViewChild('hid2') hid2: any;
@@ -52,9 +53,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
           ...data.payload.doc.data()
         }
       });
+
+      this.NearYou.map((tour) => {
+        this.collectionListName.push(tour.Title)
+
+      })
+
     })
 
     this.homeService.getIncredibleDestinations().subscribe((dis) => {
+      
       this.IncredibleDestinations = dis.map(data => {
         return {
           id: data.payload.doc.id,
@@ -100,7 +108,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       //       id: data.payload.doc.id,
       //       ...data.payload.doc.data()
       //     }
-      //   });
+      //   }); 
       // })
 
     this.homeService.getKlookRecommended()

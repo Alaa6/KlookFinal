@@ -10,6 +10,7 @@ import { IContinent } from 'src/app/viewModels/icontinent';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { ISubCategory } from 'src/app/viewModels/isub-category';
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 
 
 interface ExampleFlatNode {
@@ -142,30 +143,46 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
       this.activitesCategory = String(params.get('activitesCategory')).split('%20').join(" ")
 
 
-   console.log( this.searchkey , " this.searchkey search");
-   console.log( this.activitesCategory , " this.activitesCategory search");
+  
 
-   
-      
 
       if((this.searchkey !== 'null') ){
+   
+        
+        
 
+        if(this.city != undefined && this.subCatName != undefined || this.city != null || this.subCatName != null  ) {
+        
+          this.relaxService.searchForTours(this.city, this.subCatName).subscribe(res => {
 
-        this.relaxService.searchForTours(this.city, this.subCatName).subscribe(res => {
+            this.toursSearch = res
+            this.tourList = this.toursSearch.filter(res => {
+              return res.Title.trim().toLocaleLowerCase().match(this.searchkey.trim().toLocaleLowerCase());
+  
+            })
+  
+          
+  
+          })
+  
+     
+        } else {
+          this.relaxService.searchForTours().subscribe(res => {
 
-          this.toursSearch = res
-          this.tourList = this.toursSearch.filter(res => {
-            return res.Title.trim().toLocaleLowerCase().match(this.searchkey.trim().toLocaleLowerCase());
-
+            this.toursSearch = res
+            this.tourList = this.toursSearch.filter(res => {
+              return res.Title.trim().toLocaleLowerCase().match(this.searchkey.trim().toLocaleLowerCase());
+  
+            })
+  
+          
+  
           })
 
-          console.log(this.tourList , "this.tourList searchkey ");
-          console.log(res , "res searchkey ");
-
-        })
-
+        }
         this.activitesCategory ="search"
 
+     
       }  
      else  if( (this.activitesCategory !== 'null') && (this.activitesCategory !== undefined ) ){ 
       

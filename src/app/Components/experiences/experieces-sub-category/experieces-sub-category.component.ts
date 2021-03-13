@@ -13,7 +13,6 @@ import { ISubCategory } from 'src/app/viewModels/isub-category';
 import { filter } from 'rxjs/operators';
 import { User } from './../../../viewModels/user';
 import { FormControl } from '@angular/forms';
-
 import { map, startWith } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageServiceService } from 'src/app/services/language-service.service';
@@ -34,8 +33,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   categoryList: ICategory[] = []
   category$: Observable<ICategory[]> | undefined
   city: string = 'Cairo'
-  searchTerm: string = ''
-
   // @Input() city: string =''; 
   bestSellerList: ITour[] = [];
   subCatName: string = 'Experience';
@@ -51,7 +48,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   subCat: string = ''
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
-  TourListName: string[] = []
+  collectionListName: string[] = []
 
 
 
@@ -94,13 +91,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     private languageService: LanguageServiceService
     ) {
     this.cityName = 'Cairo'
-    this.filteredOptions = this.myControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
-
-
-
     this.translate.use(languageService.getLanguage());
 
   }
@@ -124,17 +114,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
 
-
-
-
-
-
     let test = localStorage.getItem('city')
-
     console.log(test, "onInit");
-
-
-
     this.relaxService.getAllCities().subscribe((wifi) => {
       this.cityList = wifi.map(data => {
         return {
@@ -193,7 +174,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           });
 
           this.bestSellerList.map((tour) => {
-            this.TourListName.push(tour.Title)
+            this.collectionListName.push(tour.Title)
 
           })
 
@@ -224,7 +205,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           });
 
           this.awsomeDealsList.map((tour) => {
-            this.TourListName.push(tour.Title)
+            this.collectionListName.push(tour.Title)
 
           })
 
@@ -241,7 +222,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           });
 
           this.forKidsList.map((tour) => {
-            this.TourListName.push(tour.Title)
+            this.collectionListName.push(tour.Title)
 
           })
           this.loading = false
@@ -258,7 +239,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
             }
           });
           this.bestSellerList.map((tour) => {
-            this.TourListName.push(tour.Title)
+            this.collectionListName.push(tour.Title)
 
           })
 
@@ -287,7 +268,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
           });
           this.awsomeDealsList.map((tour) => {
-            this.TourListName.push(tour.Title)
+            this.collectionListName.push(tour.Title)
 
           })
 
@@ -303,7 +284,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
             }
           });
           this.forKidsList.map((tour) => {
-            this.TourListName.push(tour.Title)
+            this.collectionListName.push(tour.Title)
 
           })
 
@@ -376,20 +357,16 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   toursSearch: ITour[] = []
 
-  goToActivites(catEvent?: MouseEvent, activityCat?: ICategory, searchTerm?: string) {
-    console.log(searchTerm, "searchTerm goToActivites");
+  goToActivites(catEvent?: MouseEvent, activityCat?: ICategory) {
+
     console.log(activityCat, "activityCat goToActivites");
 
 
     if(activityCat && activityCat !== undefined)
     this.router.navigate(['/experiences/activities', this.city, this.subCatName, { activitesCategory: activityCat?.name }])
-    else if(searchTerm && searchTerm !== undefined)
-    this.router.navigate(['/experiences/activities', this.city, this.subCatName, {searchKey : searchTerm}])
-  }
+    }
 
-  search (){
-
-  }
+  
   goToSubCategory(subCatName?: string) {
     if (subCatName != undefined) {
       this.router.navigateByUrl(this.router.url.replace(this.subCatName.split(" ").join("%20"), subCatName));
@@ -403,7 +380,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.TourListName.filter(tourName => tourName.toLowerCase().indexOf(filterValue) === 0);
+    return this.collectionListName.filter(tourName => tourName.toLowerCase().indexOf(filterValue) === 0);
   }
 
 }

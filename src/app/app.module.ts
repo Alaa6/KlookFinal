@@ -83,6 +83,9 @@ import { VoucherComponent } from './Components/voucher/voucher.component';
 import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
 
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {SearchModule} from './Components/search/search.module'
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -148,6 +151,7 @@ var firebaseConfig = {
     OpenTicketComponent,
    
     BookBehalfComponent,
+   
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
@@ -193,7 +197,9 @@ var firebaseConfig = {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ExperiencesModule
+    ExperiencesModule ,
+    MatAutocompleteModule ,
+    SearchModule
   ],  // ],
   providers: [],
   bootstrap: [AppComponent]
