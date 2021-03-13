@@ -1,16 +1,14 @@
 <!-- start first section (header of page )   -->
-<article class="allCat">
-  <section
-    id="tour-header"
-    *ngFor="let subCat of subCategory"
-    class="d-flex flex-column align-items-center row"
-  >
-    <div class="cover row">
-      <img class="bg" src="{{ subCat.Background }}" alt="" />
+<article>
 
-      <div
-        class="tl ml-5 col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12 d-flex flex-column justify-content-center"
-      >
+  <section id="tour-header" 
+  *ngFor="let subCat of subCategory" 
+  class="d-flex flex-column align-items-center row">
+    <div class="cover row">
+      <img class="bg  " src="{{ subCat.Background }}" alt="" />
+
+
+      <div class="tl ml-5 col-7 col-sm-7 col-md-12 col-lg-12 col-xl-12 d-flex flex-column  justify-content-center">
         <div class="dropdown">
           <button
             class="btn dropdown-toggle attrc"
@@ -24,65 +22,25 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <div *ngFor="let subCat of allSubCategorey">
-              <a
-                routerLinkActive="active"
-                class="dropdown-item mt-2 p-3"
-                (click)="goToSubCategory(subCat.Name)"
-                [ngClass]="{ checkedSubCat: subCatName === subCat.Name }"
-              >
-                {{ subCat.Name }}
-                <i
-                  class="fas fa-check ml-5"
-                  [ngClass]="{ checkedSubCat: subCatName === subCat.Name }"
-                ></i>
+              <a routerLinkActive="active" class=" dropdown-item mt-2 p-3" (click)="goToSubCategory(subCat.Name)"
+                [ngClass]="{'checkedSubCat':subCatName === subCat.Name }">
+                {{subCat.Name}}
+                <i class="fas fa-check  ml-5" [ngClass]="{'checkedSubCat':subCatName === subCat.Name }"></i>
               </a>
             </div>
           </div>
         </div>
 
         <div class="disc mt-3">
-          Discover the best theme parks, museums and more must-sees in
-          {{ city }}
+          Discover the best theme parks, museums and more must-sees in {{city}}
           {{ 'experiences.discover' | translate }}
           {{ city }}
         </div>
 
-        <!-- <div class="row ml-2">
-          <div
-            id="search"
-            class="rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7"
-          >
-            <div class="input-group mr-3 rounded pl-3">
-              <svg class="mt-2" viewBox="0 0 24 24" width="24" height="24">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M10.5 2a8.5 8.5 0 016.4 14.095l3.842 3.843a.6.6 0 01-.766.918l-.083-.07-3.845-3.846A8.5 8.5 0 1110.5 2zm0 1.2a7.3 7.3 0 100 14.6 7.3 7.3 0 000-14.6z"
-                ></path>
-              </svg>
-
-              <input
-                class="form-control rounded pt-2 mr-3"
-                [(ngModel)]="searchTerm"
-                type="search"
-                placeholder="what do you want to do in cairo ?"
-                id="tour-search"
-              />
-            </div>
-
-            <button class="rounded ml-2" (click)="search()">Search</button>
-          </div>
-        </div> -->
         <!-- location -->
 
-        <div
-          class="destination d-flex p-2 mt-3 col-1 justify-content-center align-items-center"
-          (click)="openPopup()"
-        >
-          <i
-            class="fas fa-map-marker-alt pr-1"
-            style="font-size: 1.2em; color: gray;"
-          ></i>
+        <div class="destination d-flex p-2  mt-3 col-1 justify-content-center align-items-center" (click)="openPopup()">
+          <i class="fas fa-map-marker-alt pr-1" style="font-size: 1.2em; color: gray;"></i>
           <span>{{ city }}</span>
         </div>
 
@@ -92,10 +50,9 @@
 
 
         <app-search  [city]="city" [subCatName]="subCatName" [collectionListName] ="collectionListName" [collectionName] ="collectionName"></app-search>
-       
+        <!---->
       </div>
     </div>
-
     <!-- End cover -->
   </section>
 
@@ -108,30 +65,33 @@
   ></ngx-skeleton-loader>
 
   <!-- start Categories   section  -->
+  <div class="options container">
+    <section class="row">
+      <div class="m-5 col-12">
+        <!-- <a id="card-link" href="./walking&biking.html" class="mt-2  col-12 col-sm-12  col-md-12   col-lg-3 col-xl-3" *ngFor="let cat of categoryList"> -->
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let cat of categoryList" class="row">
+            <mat-card class="m-1 mt-2 col-10" routerLinkActive="active" (click)="goToActivites($event ,cat)"
+              style="height: 12em">
+              <!-- <mat-card  id="card" class="card " onmouseover="moreShadow(this)" onmouseout="lessShadow(this)"> -->
+
+              <div class="card-body text-center d-flex flex-column align-items-center">
+                <!-- <i class="fas fa-hiking " style="color:  #009d8b; font-size: 32px; "></i> -->
+                <img id="card-icon" class="mb-2" src="{{ cat?.image }}" />
+                <p class="card-text">{{ cat?.name }}</p>
+              </div>
+              <!-- </mat-card > -->
+            </mat-card>
+            <!-- </a> -->
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+
+      <!-- <input type="text" [(ngModel)]="city" #testCity  name="city" > -->
+    </section>
+  </div>
 
   <!-- end body section -->
-  <!--Start options-->
-  <div class="options container">
-    <div class="row contain">
-      <!-- <a
-        href="#"
-        class="col-lg-2 col-md-4 col-sm-4 card"
-        (click)="search()"
-        *ngFor="let cat of categoryList"
-      >  -->
-      <a
-        href="#"
-        class="col-lg-2 col-md-4 col-sm-4 card"
-        *ngFor="let cat of categoryList"
-      >
-        <div class="svg">
-          <img src="{{ cat?.image }}" alt="" />
-        </div>
-        <div class="word">{{ cat?.name }}</div>
-      </a>
-    </div>
-  </div>
-  <!--End options-->
 
   <!-- start Bestsellers section  -->
 
@@ -147,47 +107,67 @@
         <p id="best-title" class="font-weight-bold pt-3">Bestsellers</p>
       </div>
 
-      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 unmissable">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
           <ng-template
             carouselSlide
             *ngFor="let tour of bestSellerList"
             class="row"
           >
-            <div
-              class="card move fr"
+            <mat-card
               (click)="viewDetails(tour.id, 'ToursCollection')"
               id="cat-card"
+              class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10"
+              style="height: 350px;"
             >
               <img
+                class="card-img-top"
                 src="{{ tour.Image }}"
-                class="card-img-top tourImg"
-                alt="..."
+                alt="Card image"
               />
-              <div class="top_left col-10">
-                <i class="fas fa-map-marker-alt mr-1" style="color: white;"></i>
-                <span style="color: white;">{{ tour.City }}</span>
+
+              <div
+                class="card-img-overlay d-flex flex-column justify-content-between"
+              >
+                <div
+                  id="location"
+                  class="d-flex p-2 m-1 col-1"
+                  style="color: #fff;"
+                >
+                  <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                  <p>{{ tour.City }}</p>
+                </div>
               </div>
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
+                <h4
+                  class="card-title font-weight-bold"
+                  style="font-size: medium;"
+                >
                   {{ tour.Title }}
-                </div>
-                <div>
-                  <span class="sm">{{ tour.Booked }}+ Booked</span>
-                </div>
-              </div>
-              <div class="card-body card-body2">
-                <div>
-                  <span class="font-weight-bold black">
+                </h4>
+                <p class="card-text" style="color: #a0a0a0;">
+                  {{ tour.Booked }}+ Booked
+                </p>
+                <div class="d-flex">
+                  <h4
+                    class="card-text font-weight-bold"
+                    style="font-size: medium;"
+                  >
                     EGP {{ tour.Price }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+                  </h4>
+                  <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#FF5722"
+                      fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z"
+                    ></path>
+                  </svg>
                 </div>
-                <a href="#" class="card-link text-muted sm">
+                <p class="card-text" style="color: #a0a0a0;">
                   Book now for {{ tour.Date }}
-                </a>
+                </p>
               </div>
-            </div>
+            </mat-card>
           </ng-template>
         </owl-carousel-o>
       </div>
@@ -200,7 +180,7 @@
 
   <section id="awsomeDeals" class="m-5" *ngIf="awsomeDealsList.length > 0">
     <div
-      class="row rounded-lg m-2 pt-4 pb-4"
+      class="row rounded-lg m-2"
       style="background-color: rgba(255, 244, 237, 0.7);"
     >
       <div class="col-2 col-lg-2 col-xl-2 col-md-0 icoTextCars">
@@ -209,47 +189,49 @@
           <h4 class="mt-3" style="color: #ff5722;">Awesome deals</h4>
         </div>
       </div>
-      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 unmissable">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
-          <ng-template
-            carouselSlide
-            *ngFor="let tour of awsomeDealsList"
-            class="row"
-          >
-            <div
-              class="card move fr"
-              (click)="viewDetails(tour.id, 'ToursCollection')"
-              id="cat-card"
-            >
-              <img
-                src="{{ tour.Image }}"
-                class="card-img-top tourImg"
-                alt="..."
-              />
-              <div class="top_left col-10">
-                <i class="fas fa-map-marker-alt mr-1" style="color: white;"></i>
-                <span style="color: white;">{{ tour.City }}</span>
+          <ng-template carouselSlide *ngFor="let tour of awsomeDealsList" class="row">
+            <mat-card id="cat-card" (click)="viewDetails(tour.id,'ToursCollection')"
+              class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10" style="height: 350px;">
+              <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
+
+              <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <div id="location" class="d-flex p-2 m-1 col-1" style="color: #fff;">
+                  <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                  <p>{{ tour.City }}</p>
+                </div>
               </div>
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
+                <h4
+                  class="card-title font-weight-bold"
+                  style="font-size: medium;"
+                >
                   {{ tour.Title }}
-                </div>
-                <div>
-                  <span class="sm">{{ tour.Booked }}+ Booked</span>
-                </div>
-              </div>
-              <div class="card-body card-body2">
-                <div>
-                  <span class="font-weight-bold black">
+                </h4>
+                <p class="card-text" style="color: #a0a0a0;">
+                  {{ tour.Booked }}+ Booked
+                </p>
+                <div class="d-flex">
+                  <h4
+                    class="card-text font-weight-bold"
+                    style="font-size: medium;"
+                  >
                     EGP {{ tour.Price }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+                  </h4>
+                  <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#FF5722"
+                      fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z"
+                    ></path>
+                  </svg>
                 </div>
-                <a href="#" class="card-link text-muted sm">
+                <p class="card-text" style="color: #a0a0a0;">
                   Book now for {{ tour.Date }}
-                </a>
+                </p>
               </div>
-            </div>
+            </mat-card>
           </ng-template>
         </owl-carousel-o>
       </div>
@@ -257,7 +239,6 @@
       <div class="col-1 col-lg-1 col-xl-1 col-md-0"></div>
     </div>
   </section>
-
   <!-- //////////////////////////// awsome /////////////// -->
 
   <!-- //////////////////////////// for Kids /////////////// -->
@@ -275,45 +256,47 @@
 
       <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9">
         <owl-carousel-o [options]="customOptions">
-          <ng-template
-            carouselSlide
-            *ngFor="let tour of forKidsList"
-            class="row"
-          >
-            <div
-              class="card move fr"
-              (click)="viewDetails(tour.id, 'ToursCollection')"
-              id="cat-card"
-            >
-              <img
-                src="{{ tour.Image }}"
-                class="card-img-top tourImg"
-                alt="..."
-              />
-              <div class="top_left col-10">
-                <i class="fas fa-map-marker-alt mr-1" style="color: white;"></i>
-                <span style="color: white;">{{ tour.City }}</span>
+          <ng-template carouselSlide *ngFor="let tour of forKidsList" class="row">
+            <mat-card id="cat-card" (click)="viewDetails(tour.id,'ToursCollection')"
+              class="m-1 mt-2 col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10" style="height: 350px;">
+              <img class="card-img-top" src="{{ tour.Image }}" alt="Card image" />
+
+              <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <div id="location" class="d-flex p-2 m-1 col-1" style="color: #fff;">
+                  <i class="fas fa-map-marker-alt mt-1 mr-2"></i>
+                  <p>{{ tour.City }}</p>
+                </div>
               </div>
               <div class="card-body">
-                <div class="card-title" style="font-weight: 600;">
+                <h4
+                  class="card-title font-weight-bold"
+                  style="font-size: medium;"
+                >
                   {{ tour.Title }}
-                </div>
-                <div>
-                  <span class="sm">{{ tour.Booked }}+ Booked</span>
-                </div>
-              </div>
-              <div class="card-body card-body2">
-                <div>
-                  <span class="font-weight-bold black">
+                </h4>
+                <p class="card-text" style="color: #a0a0a0;">
+                  {{ tour.Booked }}+ Booked
+                </p>
+                <div class="d-flex">
+                  <h4
+                    class="card-text font-weight-bold"
+                    style="font-size: medium;"
+                  >
                     EGP {{ tour.Price }}
-                  </span>
-                  <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+                  </h4>
+                  <svg class="ml-1" viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      fill="#FF5722"
+                      fill-rule="evenodd"
+                      d="M13.612 2.327L4.29 12.14c-.4.42-.383 1.085.038 1.484.195.186.454.29.723.29h5.608a.35.35 0 01.328.471l-2.309 6.197a1.05 1.05 0 001.746 1.09l9.323-9.814a1.05 1.05 0 00-.762-1.774h-5.607a.35.35 0 01-.328-.471l2.309-6.197a1.05 1.05 0 00-1.746-1.09z"
+                    ></path>
+                  </svg>
                 </div>
-                <a href="#" class="card-link text-muted sm">
+                <p class="card-text" style="color: #a0a0a0;">
                   Book now for {{ tour.Date }}
-                </a>
+                </p>
               </div>
-            </div>
+            </mat-card>
           </ng-template>
         </owl-carousel-o>
       </div>
@@ -325,35 +308,53 @@
 
   <!-- start nearby section  -->
 
-  <!-- <section id="nearby" class="m-5 mb-5" *ngIf="nearbyList.length > 0">
+  <section id="nearby" class="m-5" *ngIf="nearbyList.length > 0">
     <h2 class="font-weight-bold ml-4 mt-1">Nearby destinations</h2>
 
-    <div class="row ml-4">
-      <div
-        class="card text-white h-1 card1 mr-4"
-        style="width: 16em;"
-        *ngFor="let tour of nearbyList"
-        (click)="viewDestination(tour.id, 'Cities')"
-      >
-        <img
-          src="{{ tour.Image }}"
-          style="height: 20em;"
-          class="card-img"
-          alt="Macau"
-        />
-        <div class="card-img-overlay d-flex flex-column">
-          <h6 class="card-title h4" style="font-weight: 200;">Distance of</h6>
-          <h4 class="card-title h4" style="font-weight: 700;">
-            {{ tour.Distance }} KM
-          </h4>
-          <h4 class="card-title mt-auto h4">{{ tour.Title }}</h4>
-        </div>
+    <div class="row">
+      <div class="container col-lg-7 col-xl-7 col-7 carsolCard col-md-12">
+        <!-- <div class="row mt-5 " style="width: 70%;"  style="background-color: #ff5722;"> -->
+
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let tour of nearbyList">
+            <div class="mt-2 card mb-2 ml-3"
+              (click)="setCityName(tour.Title)">
+              <div id="cat-card" class="card rounded-lg m-1">
+                <img
+                  id="img-baground"
+                  class="card-img-top"
+                  src="{{ tour.Image }}"
+                  alt="Card image"
+                />
+
+                <div
+                  class="card-img-overlay d-flex flex-column justify-content-between"
+                >
+                  <div>
+                    <p>Distance of</p>
+
+                    <span class="font-weight-bold">
+                      {{ tour.Distance }}
+                    </span> km
+                  </div>
+
+                  <p
+                    class="card-text font-weight-bold"
+                    style="font-size: 20px;"
+                  >
+                    {{ tour.Title }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- start nearby section  -->
-  <mat-spinner *ngIf="loading"></mat-spinner>
+  <!-- <mat-spinner *ngIf="loading"></mat-spinner> -->
 
   <ngx-skeleton-loader
     *ngIf="loading"
@@ -378,7 +379,6 @@
       No Tours of {{ subCatName }} available now in {{ city }}
     </p>
   </div>
-<<<<<<< HEAD
 
   <!-- <section class="m-5">
     <h2 class="font-weight-bold ml-4 mt-1">Recommended</h2>
@@ -456,6 +456,4 @@
       View More
     </div>
   </section> -->
-=======
->>>>>>> b5737aab5fb950c2f0e26436f5dce915c8678386
 </article>

@@ -375,6 +375,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   
   goToSubCategory(subCatName?: string) {
+    console.log(subCatName);
+    
     if (subCatName != undefined) {
       this.router.navigateByUrl(this.router.url.replace(this.subCatName.split(" ").join("%20"), subCatName));
     }
