@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   InspiredTaipei: Tours[] = [];
   InspiredHong: Tours[] = [];
   Inspired: Tours[] = [];
+  collectionListName: string[] = [];
   tr: string = 'en';
 
   @ViewChild('hid') hid: any;
@@ -88,6 +89,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
           id: data.payload.doc.id,
           ...data.payload.doc.data(),
         };
+      });
+
+      this.NearYou.map((tour) => {
+        this.collectionListName.push(tour.Title);
       });
     });
 

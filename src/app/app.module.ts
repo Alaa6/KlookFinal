@@ -89,6 +89,9 @@ import { OpenTicketComponent } from './Components/open-ticket/open-ticket.compon
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
 import { AboutComponent } from './Components/about/about.component';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SearchModule } from './Components/search/search.module';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
@@ -134,8 +137,9 @@ var firebaseConfig = {
     ActivityDetailsComponent,
     BookTrainComponent,
     //  ScrollSpyDirective,
+    //ScrollSpyDirective,
 
-    // CardDirective,
+    // ScrollSpyDirective,
 
     BookingDialogComponent,
     ConditionsComponent,
@@ -165,9 +169,7 @@ var firebaseConfig = {
     // DashboardComponent,
     // DetailsDashboardComponent
   ],
-  exports: [
-    // CardDirective
-  ],
+  exports: [NotFoundComponent],
   imports: [
     // SimpleScrollSpyModule,
     TranslateModule.forRoot({
@@ -209,8 +211,9 @@ var firebaseConfig = {
     MatDatepickerModule,
     MatNativeDateModule,
     ExperiencesModule,
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    MatAutocompleteModule,
+    SearchModule,
+  ], // ],
   providers: [],
   bootstrap: [AppComponent],
 })

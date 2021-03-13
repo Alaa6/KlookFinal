@@ -13,6 +13,7 @@ import { ISubCategory } from '../viewModels/isub-category';
 import { ITrainDetails } from '../viewModels/itrain-details';
 import { ITrainBook } from '../viewModels/itrain-book';
 import { City } from './../viewModels/city';
+import { IContinent } from '../viewModels/icontinent';
 import { IEuropeTrains } from './../viewModels/ieurope-trains';
 
 
@@ -57,20 +58,28 @@ export class RelaxServiceService {
     return this.afs.collection<ICategory>('categories', ref => ref.where('city', '==', _city).where('section', '==', _section)).snapshotChanges()
   }
 
-  getAllCities() {
-    return this.afs.collection<ICity>('Cities').snapshotChanges()
+  getAllCities(continent?: string) {
+    if (continent == undefined)
+      return this.afs.collection<ICity>('Cities').snapshotChanges()
+    return this.afs.collection<ICity>('Cities', ref => ref.where('continent', '==', continent)).snapshotChanges()
+
+
   }
 
   // getAllTours(_city: string, _category: string, _section: string) {
 
-  getAllTours(_city: string, _section?: string, _category?: string) {
+  getAllTours(_city: string, _section?: string, _subCategory?: string, _activitiesCat?: string) {
 
-    if (_category == undefined)
+    if (_subCategory == undefined)
       return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Section', '==', _section)).snapshotChanges()
-    if (_section == undefined)
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category)).snapshotChanges()
+    if (_section == undefined) {
+      if (_activitiesCat == undefined)
+        return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _subCategory)).snapshotChanges()
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _subCategory).where('SubCategories', '==', _activitiesCat)).snapshotChanges()
+
+    }
     else {
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _category).where('Section', '==', _section)).snapshotChanges()
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city).where('Categories', '==', _subCategory).where('Section', '==', _section)).snapshotChanges()
     }
 
 
@@ -102,28 +111,43 @@ export class RelaxServiceService {
       });
   }
 
-  searchForTours(_city: string, _category: string): Observable<ITour[]> {
+  searchForTours(_city?: string, _category?: string): Observable<ITour[]> {
 
-    return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city)
-      .where('Categories', '==', _category)).valueChanges()
+    if (_city != undefined && _category != undefined) {
+      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city)
+        .where('Categories', '==', _category)).valueChanges()
+    }
+    else {
+      return this.afs.collection<ITour>('ToursCollection').valueChanges()
+
+    }
+
+
 
   }
-      updatetour(){
-        const tutorialsRef = this.afs.collection('ToursCollection');
-tutorialsRef.doc('id').set({ title: 'zkoder Tut#1', url: 'bezkoder.com/zkoder-tut-1' });
-      }
+  updatetour() {
+    const tutorialsRef = this.afs.collection('ToursCollection');
+    tutorialsRef.doc('id').set({ title: 'zkoder Tut#1', url: 'bezkoder.com/zkoder-tut-1' });
+  }
 
-      gettour(){
+  gettour() {
     return this.afs.collection<Tours>('ToursCollection').snapshotChanges()
 
-      }
+  }
   itemDoc?: AngularFirestoreDocument<Tours>;
 
-      updateItem(item: Tours){
-        
-        this.itemDoc = this.afs.doc(`ToursCollection/${item.id}`);
-        this.itemDoc.update(item);
-      }
+  updateItem(item: Tours) {
+
+    this.itemDoc = this.afs.doc(`ToursCollection/${item.id}`);
+    this.itemDoc.update(item);
+  }
+  getContinentList() {
+    return this.afs.collection<IContinent>('Continents').snapshotChanges();
+  }
 
 }
+
+
+
+
 
