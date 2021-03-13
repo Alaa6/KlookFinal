@@ -111,14 +111,14 @@ export class RelaxServiceService {
       });
   }
 
-  searchForTours(_city?: string, _category?: string): Observable<ITour[]> {
+  searchForTours(_city?: string, _category?: string , _collectionName?: string): Observable<ITour[]> {
 
     if (_city != undefined && _category != undefined) {
-      return this.afs.collection<ITour>('ToursCollection', ref => ref.where('City', '==', _city)
+      return this.afs.collection<ITour>(_collectionName, ref => ref.where('City', '==', _city)
         .where('Categories', '==', _category)).valueChanges()
     }
     else {
-      return this.afs.collection<ITour>('ToursCollection').valueChanges()
+      return this.afs.collection<ITour>(_collectionName).valueChanges()
 
     }
 

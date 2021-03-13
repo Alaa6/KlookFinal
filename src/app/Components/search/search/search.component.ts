@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   @Input() city: string; 
   @Input() subCatName: string;
   @Input() collectionListName: string[] = []; 
+  @Input() collectionName : string 
 
  
 
@@ -74,9 +75,9 @@ console.log(this.subCatName , 'search');
   
   
     if(this.city !=undefined && this.subCatName != undefined)
-    this.router.navigate(['/experiences/activities',{city : city , supCatName : supCatName ,searchKey : searchTerm}])
+    this.router.navigate(['/experiences/activities',{city : city , supCatName : supCatName ,searchKey : searchTerm ,collectionName :this.collectionName}])
     else 
-    this.router.navigate(['/experiences/activities', {searchKey : searchTerm}])
+    this.router.navigate(['/experiences/activities', {searchKey : searchTerm ,collectionName :this.collectionName}])
     
 
   }

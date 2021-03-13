@@ -58,9 +58,11 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
   continentName: string = ''
   showCity: Boolean = false
   activitesCategory: string = ''
-  cityName : string =''
-  activCatName : string =''
- 
+  cityName: string = ''
+  activCatName: string = ''
+  collectionListName: string[] = []
+  collectionName : string = ''
+
 
   treeControl: any = new FlatTreeControl<ExampleFlatNode>(
     node => node.level, node => node.expandable);
@@ -72,7 +74,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
   treeFlattenerCategories: any = new MatTreeFlattener(
     this._transformerCategories, node => node.level, node => node.expandable, node => node.ActivCategories);
 
-    
+
 
 
 
@@ -83,8 +85,8 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
 
 
 
-  constructor(private activatedRoute: ActivatedRoute, 
-    private relaxService: RelaxServiceService ,
+  constructor(private activatedRoute: ActivatedRoute,
+    private relaxService: RelaxServiceService,
     private router: Router) {
 
 
@@ -111,29 +113,29 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-   
+
 
     this.relaxService.getContinentList().subscribe((res) => {
-    this.dataSourceCities.data = res.map(data => {
-      return {
-        id: data.payload.doc.id,
-        ...data.payload.doc.data()
-      }
-    });
+      this.dataSourceCities.data = res.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
     })
 
-      this.relaxService.getSubCategory().subscribe((res) => {
-        this.dataSourceCatefories.data = res.map(data => {
-          return {
-            id: data.payload.doc.id,
-            ...data.payload.doc.data()
-          }
-        });
-        })
+    this.relaxService.getSubCategory().subscribe((res) => {
+      this.dataSourceCatefories.data = res.map(data => {
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data()
+        }
+      });
+    })
 
-    
-  
-  
+
+
+
 
     let routeSubscription: Subscription = this.activatedRoute.paramMap.subscribe((params: ParamMap) => {    //if  the route parameter value  changes  (Observable) 
 
@@ -141,51 +143,51 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
       this.city = String(params.get('city')).split('%20').join(" ")
       this.searchkey = String(params.get('searchKey')).split('%20').join(" ")
       this.activitesCategory = String(params.get('activitesCategory')).split('%20').join(" ")
+      this.collectionName = String(params.get('collectionName')).split('%20').join(" ") 
 
 
-  
 
 
-      if((this.searchkey !== 'null') ){
-   
-        
-        
+      if ((this.searchkey !== 'null')) {
 
-        if(this.city != undefined && this.subCatName != undefined || this.city != null || this.subCatName != null  ) {
-        
-          this.relaxService.searchForTours(this.city, this.subCatName).subscribe(res => {
+
+
+
+        if (this.city != undefined && this.subCatName != undefined || this.city != null || this.subCatName != null) {
+
+          this.relaxService.searchForTours(this.city, this.subCatName ,this.collectionName).subscribe(res => {
 
             this.toursSearch = res
             this.tourList = this.toursSearch.filter(res => {
               return res.Title.trim().toLocaleLowerCase().match(this.searchkey.trim().toLocaleLowerCase());
-  
+
             })
-  
-          
-  
+
+
+
           })
-  
-     
+
+
         } else {
           this.relaxService.searchForTours().subscribe(res => {
 
             this.toursSearch = res
             this.tourList = this.toursSearch.filter(res => {
               return res.Title.trim().toLocaleLowerCase().match(this.searchkey.trim().toLocaleLowerCase());
-  
+
             })
-  
-          
-  
+
+
+
           })
 
         }
-        this.activitesCategory ="search"
+        this.activitesCategory = "search"
 
-     
-      }  
-     else  if( (this.activitesCategory !== 'null') && (this.activitesCategory !== undefined ) ){ 
-      
+
+      }
+      else if ((this.activitesCategory !== 'null') && (this.activitesCategory !== undefined)) {
+
         this.relaxService.getAllTours(this.city, undefined, this.subCatName, this.activitesCategory).subscribe((res) => {
           this.tourList = res.map(data => {
             return {
@@ -193,8 +195,8 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
               ...data.payload.doc.data()
             }
           });
-          console.log(this.tourList , "this.tourList activitesCategory");
-          console.log(res , "res activitesCategory ");
+          console.log(this.tourList, "this.tourList activitesCategory");
+          console.log(res, "res activitesCategory ");
         })
       }
 
@@ -203,8 +205,8 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
 
 
 
-     
-   
+
+
 
 
     this.relaxService.getAllCities().subscribe((res) => {
@@ -216,13 +218,13 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
         }
       });
       // this.cityList  =  [... new Set(cities)];
-      let continentName: string[] = []
-      this.cityList.map((city) => {
-        continentName.push(city.continent)
+      // let continentName: string[] = []
+      // this.cityList.map((city) => {
+      //   continentName.push(city.continent)
 
-      })
+      // })
 
-      this.continentNameList = [... new Set(continentName)]
+      // this.continentNameList = [... new Set(continentName)]
 
     })
 
@@ -235,7 +237,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
 
   }
 
-  search(searchTerm : string) {
+  search(searchTerm: string) {
 
     // this.relaxService.searchForTours(this.city, this.subCatName).subscribe(res => {
     //   this.toursSearch = res
@@ -244,22 +246,25 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
     //   })
     // })
 
-    this.router.navigate(['/experiences/activities/', this.city, this.subCatName, {searchKey : searchTerm}]) 
 
 
+    this.router.navigate(['/experiences/activities/', { city: this.city, supCatName: this.subCatName, searchKey: searchTerm  ,collectionName :this.collectionName}])
 
 
   }
 
   setCityName(cityName: string) {
-    this.router.navigate(['/experiences/activities/', cityName, this.subCatName, {activitesCategory : this.activitesCategory} ]) 
+    this.router.navigate(['/experiences/activities/', { city: cityName, supCatName: this.subCatName, activitesCategory: this.activitesCategory ,collectionName :this.collectionName }])
   }
 
-  setActivCategoryName(activCate :string){
+  setActivCategoryName(activCate: string) {
+    console.log(activCate);
+    
 
-    this.router.navigate(['/experiences/activities/', this.city, this.subCatName, {activitesCategory : activCate} ]) 
-
-
+    this.router.navigate(['/experiences/activities/', { city: this.city, supCatName: this.subCatName, activitesCategory: activCate , collectionName :this.collectionName }])
+  }
+  viewDetails(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/activityDetails', collectionName, ID]);
   }
 
 }

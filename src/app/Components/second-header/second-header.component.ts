@@ -92,5 +92,13 @@ export class SecondHeaderComponent implements OnInit {
   //   $('#CatModal').modal('hide')
   // }
 
+  // goToActivites(catEvent?: MouseEvent, activityCat?: ICategory , collectionName?: string) {
+
+  //   console.log(activityCat, "activityCat goToActivites");
+
+  //   if(activityCat && activityCat !== undefined)
+  //   this.router.navigate(['/experiences/activities',{city : this.city , supCatName : this.subCatName ,activitesCategory: activityCat?.name }])
+  //   }
+
 
 }

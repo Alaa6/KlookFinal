@@ -236,6 +236,16 @@ setLanguage() {
   return this.tr;
 }
 
+search( searchTerm?:string) {
+  
+  
+
+  this.router.navigate(['/experiences/activities', {searchKey : searchTerm}])
+  
+
+}
+
+
 
 
 

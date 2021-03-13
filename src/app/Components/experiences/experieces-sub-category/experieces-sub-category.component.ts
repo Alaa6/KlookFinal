@@ -49,6 +49,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
   collectionListName: string[] = []
+  collectionName : string = "ToursCollection"
 
 
 
@@ -357,13 +358,12 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   toursSearch: ITour[] = []
 
-  goToActivites(catEvent?: MouseEvent, activityCat?: ICategory) {
+  goToActivites(catEvent?: MouseEvent, activityCat?: ICategory , collectionName?: string) {
 
     console.log(activityCat, "activityCat goToActivites");
 
-
     if(activityCat && activityCat !== undefined)
-    this.router.navigate(['/experiences/activities', this.city, this.subCatName, { activitesCategory: activityCat?.name }])
+    this.router.navigate(['/experiences/activities',{city : this.city , supCatName : this.subCatName ,activitesCategory: activityCat?.name }])
     }
 
   

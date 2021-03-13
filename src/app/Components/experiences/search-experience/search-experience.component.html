@@ -23,6 +23,8 @@
 
     </div>
 </div>
+<!-- <app-search  [city]="city" [subCatName]="subCatName" [collectionListName] ="collectionListName"></app-search> -->
+
 
 
 <!-- end section -->
@@ -119,20 +121,20 @@
                     <div class="d-flex flex-wrap mb-4">
                         <div id="selected-items" class=" rounded m-2  pl-2 pr-2 pt-1 pb-1 ">
                             <span class="mr-1">{{city}}</span>
-                            <svg viewBox="0 0 14 14" width="12" height="12">
+                            <!-- <svg viewBox="0 0 14 14" width="12" height="12">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M11.243 11.95a.5.5 0 10.707-.707L7.707 7l4.243-4.243a.5.5 0 10-.707-.707L7 6.293 2.757 2.05a.5.5 0 10-.707.707L6.293 7 2.05 11.243a.5.5 0 10.707.707L7 7.707l4.243 4.243z">
                                 </path>
-                            </svg>
+                            </svg> -->
                         </div>
 
                         <div id="selected-items" class=" rounded m-2  pl-2 pr-2 pt-1 pb-1">
                             <span class="mr-1">{{activitesCategory}}</span>
-                            <svg viewBox="0 0 14 14" width="12" height="12">
+                            <!-- <svg viewBox="0 0 14 14" width="12" height="12">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M11.243 11.95a.5.5 0 10.707-.707L7.707 7l4.243-4.243a.5.5 0 10-.707-.707L7 6.293 2.757 2.05a.5.5 0 10-.707.707L6.293 7 2.05 11.243a.5.5 0 10.707.707L7 7.707l4.243 4.243z">
                                 </path>
-                            </svg>
+                            </svg> -->
                         </div>
                     </div>
 
@@ -249,7 +251,7 @@
 
                 <p id="title-count" class="font-weight-bold "> {{tourList.length}} activities found</p>
 
-                <div class="d-flex flex-wrap mt-3 justify-content-between">
+                <!-- <div class="d-flex flex-wrap mt-3 justify-content-between">
 
 
                     <div class="d-flex flex-wrap ">
@@ -281,16 +283,16 @@
                             </div>
                         </div>
 
-                        <!---->
+                    
 
 
                     </div>
 
 
-                    <!---->
+                    
 
 
-                </div>
+                </div> -->
 
             </div>
 
@@ -322,12 +324,12 @@
                 <div class="row m-2 mt-3">
 
 
-
                     <div *ngIf="tourList.length > 0; then thenBlock else elseBlock"></div>
                     <ng-template #thenBlock>
                         <a id="card-link" *ngFor="let tour of tourList"
+                         (click) = "viewDetails(tour.id,'ToursCollection')"
                             class=" col-12 col-sm-12  col-md-12   col-lg-4 col-xl-4 mt-4">
-                            <div class="card" *ngIf="tour.Section !== 'Nearby'">
+                            <div  id =" cat-card " class=" card p-2 m-2" *ngIf="tour.Section !== 'Nearby'">
                                 <img class="card-img-top" src={{tour.Image}} alt="Card image"
                                     style="filter: brightness(0.8);">
                                 <div class="card-img-overlay d-flex flex-column justify-content-between">
@@ -362,7 +364,7 @@
                             style="width: 100%;">
                             <img src="../../../assets/NotFound/search_noResult.webp"
                                 class="col-12 col-sm-12  col-md-12   col-lg-4 col-xl-4 mt-5">
-                            <p style="font-size: medium;">Sorry, we can't find this activity in {{subCatName}} in
+                            <p style="font-size: medium;">Sorry, we can't find this activity in {{subCatName}} ({{activitesCategory}}) in
                                 {{city}}</p>
                         </div>
                     </ng-template>
