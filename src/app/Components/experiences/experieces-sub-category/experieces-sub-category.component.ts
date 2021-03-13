@@ -16,6 +16,7 @@ import { FormControl } from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageServiceService } from 'src/app/services/language-service.service';
+import { HomeService } from 'src/app/services/home.service';
 
 
 @Component({
@@ -45,6 +46,9 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   forKidsList: ITour[] = []
   loading: boolean = true
   count: number = 5
+  // section: string = "";
+  // ID: string = "";
+  // Card: any = "";
   subCat: string = ''
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
@@ -76,7 +80,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         items: 3
       },
       940: {
-        items: 4
+        items: 5
       }
 
 
@@ -89,7 +93,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private translate: TranslateService,
-    private languageService: LanguageServiceService
+    private languageService: LanguageServiceService,
+    private homeService: HomeService,
     ) {
     this.cityName = 'Cairo'
     this.translate.use(languageService.getLanguage());
@@ -114,6 +119,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
   ngOnInit(): void {
+    
+    
 
     let test = localStorage.getItem('city')
     console.log(test, "onInit");
@@ -377,6 +384,11 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
 
+  viewDestination(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/destination', collectionName, ID]);
+  }
+
+  
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 

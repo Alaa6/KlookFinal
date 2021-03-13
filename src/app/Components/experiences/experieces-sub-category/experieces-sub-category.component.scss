@@ -6,7 +6,138 @@ $gray-color: #ccc;
 $simple-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
 $more-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
 $txt-color: #333;
+// .contain {
+//   // display: flex;
+//   align-items: center;
+//   // justify-content: center;
+// }
+/*Start options*/
+.options {
+  margin-top: 3em;
+  margin-bottom: 4em;
+}
+.options .row .card {
+  /* box-shadow: 3px 3px 3px 3px #888888; */
+  margin: 1em;
+  transition: 0.4s;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.options .row {
+  width: 90%;
+  text-align: center;
+}
+.options .row .card:hover {
+  text-decoration: none;
+  transform: translateY(-0.6em);
+}
+.options .row .svg {
+  display: block;
+  margin: auto;
+  margin-top: 2em;
+}
+.options .row .card .svg img {
+  width: 2.5em;
+}
+.options .row .card .word {
+  color: black;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
 
+/*End options*/
+.unmissable .card {
+  /* margin-right: 0.5em; */
+  width: 80%;
+}
+.unmissable .card a {
+  color: #333333;
+}
+.unmissable .tourImg {
+  height: 10em;
+}
+.unmissable .card a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+.unmissable .card:hover {
+  transform: translate(0, -10px);
+}
+.unmissable .top_left {
+  position: absolute;
+  top: 8px;
+  left: 2px;
+}
+.unmissable .move {
+  margin-left: 2em;
+  height: 25em !important;
+}
+.unmissable .btns {
+  display: flex;
+  justify-content: space-between;
+}
+.unmissable .btn1,
+.btn2 {
+  color: white;
+  height: 1.5em;
+  font-weight: 500;
+  border-radius: 0.2em;
+  margin-top: 4.5em;
+  font-size: 0.9em;
+}
+.unmissable .btn1 {
+  margin-right: 1em;
+  background-color: #ff5722;
+  border: 0.1em solid #ff5722;
+}
+.unmissable .btn2 {
+  background: linear-gradient(to right, #ff9557 0%, #ff6b3d 100%);
+  border: 0.1em solid #ff9557;
+}
+.unmissable .carousel-next-icon {
+  border: 0.15em white solid;
+  border-radius: 50%;
+  padding: 0.5em;
+  color: gray;
+  margin-left: 10em;
+  background-color: white;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 5em;
+}
+.unmissable .carousel-prev-icon {
+  padding: 0.5em;
+  color: gray;
+  margin-right: 8.5em;
+  border: 0.15em white solid !important;
+  border-radius: 55%;
+  background-color: white;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+  margin-bottom: 5em;
+}
+.unmissable .card-title {
+  font-weight: 700 !important;
+  font-size: 0.9em;
+  color: black;
+}
+.unmissable .bg {
+  background-color: #fff7f2;
+}
+.unmissable .sm {
+  font-size: 0.85em;
+}
+.unmissable .black {
+  color: black;
+  font-size: 0.9em;
+  margin-top: -1em;
+}
+.unmissable .card-body2 {
+  margin-top: -2em;
+}
+.unmissable .move {
+  height: 20em;
+}
 /*Start options*/
 .options {
   margin-top: 3em;
@@ -71,7 +202,6 @@ article {
       font-size: 16px;
       line-height: 24px;
     }
-
 
     div {
       #arrow-down {
@@ -167,8 +297,6 @@ article {
 #cat-card {
   transition: all 0.5s ease-in-out;
   overflow: auto;
- 
-  
 }
 
 #cat-card:hover {
@@ -215,10 +343,9 @@ article {
   // background-size: cover;
 }
 
-.tl {
-  position: absolute;
-  top: 15em;
-}
+// .tl {
+//   margin-top: -32em;
+// }
 
 .tl .dropdown:hover > .dropdown-menu {
   display: block;
@@ -446,7 +573,7 @@ article {
   height: 350px !important;
 }
 
-// dropdown start 
+// dropdown start
 
 .dropdown-menu:after {
   content: '';
@@ -455,61 +582,95 @@ article {
   left: 143px;
   border-right: 7px solid transparent;
   border-bottom: 7px solid #ffffff;
-  border-left: 7px solid transparent; 
+  border-left: 7px solid transparent;
 }
 .dropdown-menu {
   padding: 30px;
   border-radius: 10px;
-
 }
 
 .dropdown-item {
-
   background: #eee;
   // padding: 20px;
   border-radius: 7px;
-
- 
-
-  
 }
 
-  .dropdown-item:hover {
-    color: #ff5722;
-    background: #eee;
-    cursor: pointer;
+.dropdown-item:hover {
+  color: #ff5722;
+  background: #eee;
+  cursor: pointer;
+}
 
-  }
+.fa-check {
+  color: #eee;
+}
 
-  .fa-check {
-    color: #eee;
-    
-  }
+.checkedSubCat {
+  color: #ff5722;
+}
 
-  .checkedSubCat {
-    color: #ff5722;
-
- }
-
-//  scroll style 
- /* width */
+//  scroll style
+/* width */
 ::-webkit-scrollbar {
   width: 2px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:  #fff; 
+  background: #fff;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+.must-visit .row {
+  margin-left: 0.2em;
+}
+.must-visit .card {
+  margin-top: 2.5em;
+}
+.must-visit .card1 {
+  margin-right: 1.5em;
+  transition: 0.4s;
+}
+.must-visit .card1:hover {
+  transform: translateY(-0.6em);
+}
+.h3 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.h4 {
+  display: block;
+  font-size: 1.1em;
+
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
- 
+.h5 {
+  display: block;
+  font-size: 0.83em;
+
+  font-weight: bold;
+}
+.h6 {
+  display: block;
+  font-size: 0.67em;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}

@@ -133,4 +133,9 @@ export class HotelsComponent implements OnInit, AfterViewInit, OnChanges {
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
+
+  helpNav(){
+    this.router.navigate(['/help']);
+
+  }
 }

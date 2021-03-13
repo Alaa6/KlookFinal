@@ -1,159 +1,131 @@
 <!-- Start Header -->
 <header>
   <div class="container">
-    <p id="p1">{{'hotel.title'|translate}}</p>
-    <p id="p2">{{'hotel.subTitle'|translate}} </p>
-    <div class="shadow col-12 bg-white" style="height:150px; border-radius: 8px;">
+    <p id="p1">{{ 'hotel.title' | translate }}</p>
+    <p id="p2">{{ 'hotel.subTitle' | translate }}</p>
+    <!-- <div
+      class="shadow col-12 bg-white"
+      style="height: 127px; border-radius: 8px;"
+    >
       <form [formGroup]="HotelForm" class="borderContet">
         <div class="row pt-4 pl-3">
-          <div class="col-3 border border-light bg-light pt-2 mr-2" style="height: 75px;">
+          <div
+            class="col-3 border border-light bg-light pt-2 mr-2"
+            style="height: 75px;"
+          >
             <div>
-              {{'hotel.where'|translate}}
+              {{ 'hotel.where' | translate }}
             </div>
-            <select class="mt-2 form-control" id="city" name="name" formControlName="City">
-              <option *ngFor="let c of Cities" [value]="c.City1">{{c.City1}}</option>
+            <select
+              class="mt-2 form-control"
+              id="city"
+              name="name"
+              formControlName="City"
+            >
+              <option *ngFor="let c of Cities" [value]="c.City1">
+                {{ c.City1 }}
+              </option>
             </select>
           </div>
           <div class="col-4 border border-light bg-light pt-2 mr-1">
             <div class="row">
               <div class="col-4">
-                {{'hotel.checkIn'|translate}}
+                {{ 'hotel.checkIn' | translate }}
               </div>
               <div class="days">
-                {{'hotel.days'|translate}}
-
+                {{ 'hotel.days' | translate }}
               </div>
               <div class="col-4">
-                {{'hotel.checkOut'|translate}}
+                {{ 'hotel.checkOut' | translate }}
               </div>
             </div>
-
           </div>
 
-          <div class="col-md-3 col-2 border border-light bg-light pt-2 " id="rooms">
-            {{'hotel.rooms'|translate}}
+          <div
+            class="col-md-3 col-2 border border-light bg-light pt-2"
+            id="rooms"
+          >
+            {{ 'hotel.rooms' | translate }}
 
-            <!-- <ul class="dropdown-menu" style="width: 400px;">
-              <div class="row">
-                <div class="col-6">
-                  <li>
-                    Rooms
-                  </li>
-                </div>
-                <div class="col-2">
-                  <button class="btn">+</button>
-                </div>
-                <div class="col-2">
-                  <div id="room">1</div>
-                </div>
-                <div class="col-2">
-                  <button class="btn">-</button>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-6">
-                  <li>
-                    Adults
-                  </li>
-                </div>
-                <div class="col-2">
-                  <button class="btn">+</button>
-                </div>
-                <div class="col-2">
-                  <div id="adult">1</div>
-                </div>
-                <div class="col-2">
-                  <button class="btn">-</button>
-                </div>
-              </div>
-              <hr>
-
-              <div class="row">
-                <div class="col-6">
-                  <li>
-                    Children
-                  </li>
-                </div>
-                <div class="col-2">
-                  <button class="btn">+</button>
-                </div>
-                <div class="col-2">
-                  <div id="child">1</div>
-                </div>
-                <div class="col-2">
-                  <button class="btn">-</button>
-                </div>
-              </div>
-
-
-            </ul> -->
-            <input class="form-control mt-2" data-spm-item="__default" formControlName="NumOfRooms" type="text"
-              name="rooms" id="guests" placeholder="Enter number of rooms" autocomplete="off" />
+          
+            <input
+              class="form-control mt-2"
+              data-spm-item="__default"
+              formControlName="NumOfRooms"
+              type="text"
+              name="rooms"
+              id="guests"
+              placeholder="Enter number of rooms"
+              autocomplete="off"
+            />
           </div>
           <div class="col-1 mt-1">
-            <button (click)="hotelBooking()" class="btn mt-2" style="background-color: #ff5722; color:white">
-              {{'hotel.search'|translate}}
+            <button
+              (click)="hotelBooking()"
+              class="btn mt-2"
+              style="background-color: #ff5722; color: white;"
+            >
+              {{ 'hotel.search' | translate }}
             </button>
           </div>
         </div>
-
       </form>
-      <div class="form-check mt-4">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="">{{'hotel.checkBox'|translate}}
-
-        </label>
-      </div>
-
-    </div>
+     
+    </div> -->
   </div>
 </header>
 
 <!-- End Header -->
 
-
-
 <!-- start rows with icons -->
 <div class="container rows">
-  <div class="row ">
-    <div class="col-md-4 mt-5">
-      <div class="row">
-        <div class="col-md-2 ">
-          <i class="fas fa-globe-europe" style="font-size: 30px; color:#FF5722  ;"></i>
-        </div>
-        <div class="col-md-10">
-          <div class="titles">
-            {{'hotel.special'|translate}}</div>
-          <div class="description">
-            {{'hotel.great'|translate}}</div>
-        </div>
-      </div>
-
-    </div>
+  <div class="row">
     <div class="col-md-4 mt-5">
       <div class="row">
         <div class="col-md-2">
-          <i class="fas fa-award" style="color:#FF5722; font-size: 30px;"></i>
+          <i
+            class="fas fa-globe-europe"
+            style="font-size: 30px; color: #ff5722;"
+          ></i>
         </div>
         <div class="col-md-10">
           <div class="titles">
-            {{'hotel.customer'|translate}}</div>
-          <div class="description">
-            {{'hotel.need'|translate}}</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4  mt-5">
-      <div class="row">
-        <div class="col-md-2">
-          <i class="fas fa-language" style="color:#FF5722; font-size: 30px;"></i>
-        </div>
-        <div class="col-md-10">
-          <div class="titles">
-            {{'hotel.travel'|translate}}</div>
-          <div class="description">{{'hotel.desc'|translate}}
+            {{ 'hotel.special' | translate }}
           </div>
+          <div class="description">
+            {{ 'hotel.great' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-5">
+      <div class="row">
+        <div class="col-md-2">
+          <i class="fas fa-award" style="color: #ff5722; font-size: 30px;"></i>
+        </div>
+        <div class="col-md-10">
+          <div class="titles">
+            {{ 'hotel.customer' | translate }}
+          </div>
+          <div class="description">
+            {{ 'hotel.need' | translate }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mt-5">
+      <div class="row">
+        <div class="col-md-2">
+          <i
+            class="fas fa-language"
+            style="color: #ff5722; font-size: 30px;"
+          ></i>
+        </div>
+        <div class="col-md-10">
+          <div class="titles">
+            {{ 'hotel.travel' | translate }}
+          </div>
+          <div class="description">{{ 'hotel.desc' | translate }}</div>
         </div>
       </div>
     </div>
@@ -161,158 +133,212 @@
 </div>
 <!-- start rows with icons -->
 
-
-<hr>
-
-
-
+<hr />
 
 <div class="container">
-
-
   <!-- Start popular stays -->
   <h2 class="h2 mt-5 pt-5 pb-3 mb-3">
-    {{'hotel.popular'|translate}}
+    {{ 'hotel.popular' | translate }}
   </h2>
 
-  <div class="row ">
+  <div class="row">
     <div class="col">
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let slide of popular">
-          <div class="moves ">
-            <div (click)="viewDetails(slide.id,'Hotel-')" class="card" style="width: 17rem;">
-              <img src="{{slide.Image}}" class="card-img-top" style="height: 10em;" alt="...">
+          <div class="moves">
+            <div
+              (click)="viewDetails(slide.id, 'Hotel-')"
+              class="card"
+              style="width: 17rem;"
+            >
+              <img
+                src="{{ slide.Image }}"
+                class="card-img-top"
+                style="height: 10em;"
+                alt="..."
+              />
               <div class="top_left">
                 <i class="fas fa-map-marker-alt"></i>
-                <span> {{slide.CityHotel}}</span>
+                <span>{{ slide.CityHotel }}</span>
               </div>
               <div class="card-body">
-                <div class="card-title" style="color: #7d1e00;font-size: 12px;line-height: 12px;font-weight: 400;">
-                  {{slide.Premium}}</div>
-                <p class="card-text" style="font-weight: 600;">{{slide.TitleHotel}}
+                <div
+                  class="card-title"
+                  style="
+                    color: #7d1e00;
+                    font-size: 12px;
+                    line-height: 12px;
+                    font-weight: 400;
+                  "
+                >
+                  {{ slide.Premium }}
+                </div>
+                <p class="card-text" style="font-weight: 600;">
+                  {{ slide.TitleHotel }}
                 </p>
 
-                <span style="color: #ffa628;font-size: 14px;font-weight: 700;line-height: 14px;">
-                  {{slide.RateHotel}}
+                <span
+                  style="
+                    color: #ffa628;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 14px;
+                  "
+                >
+                  {{ slide.RateHotel }}
                 </span>
-                <span style="color: #ffa628;font-size: 12px;font-weight: 400;line-height: 14px;">
+                <span
+                  style="
+                    color: #ffa628;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                  "
+                >
                   /5
                 </span>
-                <span style="font-size: 12px;line-height: 14px;color: #666;">
-                  {{slide.Degree}}
+                <span style="font-size: 12px; line-height: 14px; color: #666;">
+                  {{ slide.Degree }}
                 </span>
-
-
               </div>
               <div class="card-body">
                 <div>
-                  <span style="color:#999;">
+                  <span style="color: #999;">
                     From
                   </span>
-                  <span class="font-weight-bold">EGP {{slide.PriceHotel}}</span>
+                  <span class="font-weight-bold">
+                    EGP {{ slide.PriceHotel }}
+                  </span>
                 </div>
               </div>
             </div>
           </div>
-
         </ng-template>
       </owl-carousel-o>
     </div>
-
   </div>
   <!-- End popular stays -->
 
-
-
-
-
   <!-- start staycation  -->
-  <h2 class="h2 mt-5 pt-5 ">
-    {{'hotel.staycation'|translate}}
+  <h2 class="h2 mt-5 pt-5">
+    {{ 'hotel.staycation' | translate }}
   </h2>
   <p>
-    {{'hotel.stayDesc'|translate}}
-
+    {{ 'hotel.stayDesc' | translate }}
   </p>
-  <div class="navs pb-3">
+  <!-- <div class="navs pb-3">
     <ul>
       <li id="hongKong">
-        {{'hotel.hong'|translate}}
-
+        {{ 'hotel.hong' | translate }}
       </li>
 
       <li>
-        {{'hotel.malaysia'|translate}}
-
+        {{ 'hotel.malaysia' | translate }}
       </li>
       <li>
-        {{'hotel.thailand'|translate}}
-
+        {{ 'hotel.thailand' | translate }}
       </li>
       <li>
-        {{'hotel.indonesia'|translate}}
-
+        {{ 'hotel.indonesia' | translate }}
       </li>
       <li>
-        {{'hotel.vietnam'|translate}}
-
+        {{ 'hotel.vietnam' | translate }}
       </li>
       <li>
-        {{'hotel.singapore'|translate}}
-
+        {{ 'hotel.singapore' | translate }}
       </li>
       <li>
-        {{'hotel.other'|translate}}
-
+        {{ 'hotel.other' | translate }}
       </li>
     </ul>
-
-  </div>
-
+  </div> -->
 
   <div class="row">
     <div class="col">
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let sl of staycation">
           <div class="moves">
-            <div (click)="viewDetails(sl.id ,'Hotel-')" class="card" style="width: 17rem;">
-              <img src="{{sl.Image}}" class="card-img-top" style="height: 10em;" alt="...">
+            <div
+              (click)="viewDetails(sl.id, 'Hotel-')"
+              class="card"
+              style="width: 17rem;"
+            >
+              <img
+                src="{{ sl.Image }}"
+                class="card-img-top"
+                style="height: 10em;"
+                alt="..."
+              />
               <div class="top_left">
                 <i class="fas fa-map-marker-alt"></i>
-                <span> {{sl.CityHotel}} </span>
+                <span>{{ sl.CityHotel }}</span>
               </div>
               <div class="card-body">
-
-                <p class="card-text" style="font-weight: 600;">{{sl.TitleHotel}}
+                <p class="card-text" style="font-weight: 600;">
+                  {{ sl.TitleHotel }}
                 </p>
                 <span>
-                  <i class="fas fa-star" style="font-weight: 500;color: #f5a623;"></i>
+                  <i
+                    class="fas fa-star"
+                    style="font-weight: 500; color: #f5a623;"
+                  ></i>
                 </span>
-                <span style="color: #ffa628;font-size: 14px;font-weight: 700;line-height: 14px;">
-                  {{sl.RateHotel}}
+                <span
+                  style="
+                    color: #ffa628;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 14px;
+                  "
+                >
+                  {{ sl.RateHotel }}
                 </span>
-                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
-                  {{sl.ReviewHotel}} reviews
+                <span
+                  style="
+                    color: #666;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                  "
+                >
+                  {{ sl.ReviewHotel }} reviews
                 </span>
-                <span style="font-size: 12px;line-height: 14px;color: #666;">
-                  {{sl.BookedHotel}} + Booked
+                <span style="font-size: 12px; line-height: 14px; color: #666;">
+                  {{ sl.BookedHotel }} + Booked
                 </span>
-
-
               </div>
 
               <div class="card-body">
                 <div>
-                  <del style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">EGP
-                    {{sl.Oldprice}}</del>
+                  <del
+                    style="
+                      color: #666;
+                      font-size: 12px;
+                      font-weight: 400;
+                      line-height: 14px;
+                    "
+                  >
+                    EGP {{ sl.Oldprice }}
+                  </del>
                 </div>
                 <div>
-
-                  <span class="font-weight-bold">EGP {{sl.PriceHotel}}</span>
-                  <span><i class="mt-2 fas fa-bolt" style="color: #ff5722;font-size: 16px;"></i></span>
+                  <span class="font-weight-bold">EGP {{ sl.PriceHotel }}</span>
+                  <span>
+                    <i
+                      class="mt-2 fas fa-bolt"
+                      style="color: #ff5722; font-size: 16px;"
+                    ></i>
+                  </span>
                 </div>
-                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
-                  Book now for {{sl.DateHotel}}
+                <span
+                  style="
+                    color: #666;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                  "
+                >
+                  Book now for {{ sl.DateHotel }}
                 </span>
               </div>
             </div>
@@ -323,88 +349,120 @@
   </div>
   <!-- End staycation -->
 
-
-  <div class="btnHongKong mt-5 mb-5">
+  <!-- <div class="btnHongKong mt-5 mb-5">
     <button class="btn">
-      {{'hotel.btn'|translate}}
-
+      {{ 'hotel.btn' | translate }}
     </button>
-  </div>
-
-
+  </div> -->
 
   <!-- start vouchers -->
-  <h2 class="h2 mt-5 pt-5 ">
-    {{'hotel.voucher'|translate}}
-
+  <h2 class="h2 mt-5 pt-5">
+    {{ 'hotel.voucher' | translate }}
   </h2>
   <p>
-    {{'hotel.subVoucher'|translate}}
-
+    {{ 'hotel.subVoucher' | translate }}
   </p>
-  <div class="navs pb-3">
+  <!-- <div class="navs pb-3">
     <ul>
       <li id="hongKong">
-        {{'hotel.philippines'|translate}}
-
+        {{ 'hotel.philippines' | translate }}
       </li>
 
       <li>
-        {{'hotel.thailand'|translate}}
-
+        {{ 'hotel.thailand' | translate }}
       </li>
       <li>
-        {{'hotel.indonesia'|translate}}
-
+        {{ 'hotel.indonesia' | translate }}
       </li>
-
     </ul>
-
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col">
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let sl of vouchers">
           <div class="moves">
-            <div (click)="viewDetails(sl.id ,'Hotel-')" class="card" style="width: 17rem;">
-              <img src="{{sl.Image}}" class="card-img-top" style="height: 10em;" alt="...">
+            <div
+              (click)="viewDetails(sl.id, 'Hotel-')"
+              class="card"
+              style="width: 17rem;"
+            >
+              <img
+                src="{{ sl.Image }}"
+                class="card-img-top"
+                style="height: 10em;"
+                alt="..."
+              />
               <div class="top_left">
                 <i class="fas fa-map-marker-alt"></i>
-                <span> {{sl.CityHotel}} </span>
+                <span>{{ sl.CityHotel }}</span>
               </div>
               <div class="card-body">
-
-                <p class="card-text" style="font-weight: 600;">{{sl.TitleHotel}}
+                <p class="card-text" style="font-weight: 600;">
+                  {{ sl.TitleHotel }}
                 </p>
                 <span>
-                  <i class="fas fa-star" style="font-weight: 500;color: #f5a623;"></i>
+                  <i
+                    class="fas fa-star"
+                    style="font-weight: 500; color: #f5a623;"
+                  ></i>
                 </span>
-                <span style="color: #ffa628;font-size: 14px;font-weight: 700;line-height: 14px;">
-                  {{sl.RateHotel}}
+                <span
+                  style="
+                    color: #ffa628;
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 14px;
+                  "
+                >
+                  {{ sl.RateHotel }}
                 </span>
-                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
-                  {{sl.ReviewHotel}} reviews
+                <span
+                  style="
+                    color: #666;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                  "
+                >
+                  {{ sl.ReviewHotel }} reviews
                 </span>
-                <span style="font-size: 12px;line-height: 14px;color: #666;">
-                  {{sl.BookedHotel}} + Booked
+                <span style="font-size: 12px; line-height: 14px; color: #666;">
+                  {{ sl.BookedHotel }} + Booked
                 </span>
-
-
               </div>
 
               <div class="card-body">
                 <div>
-                  <del style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">EGP
-                    {{sl.Oldprice}}</del>
+                  <del
+                    style="
+                      color: #666;
+                      font-size: 12px;
+                      font-weight: 400;
+                      line-height: 14px;
+                    "
+                  >
+                    EGP {{ sl.Oldprice }}
+                  </del>
                 </div>
                 <div>
-
-                  <span class="font-weight-bold">EGP {{sl.PriceHotel}}</span>
-                  <span><i class="mt-2 fas fa-bolt" style="color: #ff5722;font-size: 16px;"></i></span>
+                  <span class="font-weight-bold">EGP {{ sl.PriceHotel }}</span>
+                  <span>
+                    <i
+                      class="mt-2 fas fa-bolt"
+                      style="color: #ff5722; font-size: 16px;"
+                    ></i>
+                  </span>
                 </div>
-                <span style="color:  #666;font-size: 12px;font-weight: 400;line-height: 14px;">
-                  Book now for {{sl.DateHotel}}
+                <span
+                  style="
+                    color: #666;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 14px;
+                  "
+                >
+                  Book now for {{ sl.DateHotel }}
                 </span>
               </div>
             </div>
@@ -415,158 +473,190 @@
   </div>
   <!-- End vouchers -->
 
-  <div class="btnHongKong mt-5 mb-5">
+  <!-- <div class="btnHongKong mt-5 mb-5">
     <button class="btn">
-      {{'hotel.subPhilippines'|translate}}
-
+      {{ 'hotel.subPhilippines' | translate }}
     </button>
-  </div>
+  </div> -->
 
   <!-- start FAQS section -->
-  <div class="shadow pl-2 pt-1">
-    <div class="mt-5 mb-4 ">
-      <div class="row img1">
+  <div class="shadow pl-2 pt-1 brdr mt-5">
+    <div class="mt-5 mb-4">
+      <div class="row img1 p-3">
         <div class="col-7">
           <!-- ---------------1---------------------- -->
           <div class="row">
             <div class="col-12 icons">
               <h2 class="h2header">
-                {{'hotel.FAQS'|translate}}
+                {{ 'hotel.FAQS' | translate }}
               </h2>
-              <hr class="mb-5 mt-5">
-
+              <hr class="mb-5 mt-5" />
             </div>
-
           </div>
           <!-- -----------------------------2------------------------------------------------------------------ -->
           <div class="row">
             <div class="col-12 icons">
-              <h2 class="h2toggle" (click)="isCollapsed1 = !isCollapsed1" [attr.aria-expanded]="!isCollapsed1"
-                aria-controls="navbarContent" aria-expanded="false">{{'hotel.frstQues'|translate}}
-                <i class="fas fa-chevron-down float-right icon1"></i></h2>
-              <div class="collapse " [ngbCollapse]="isCollapsed1" style="background-color: #f5f5f5;">
-                {{'hotel.frstAns'|translate}}
-
+              <h2
+                class="h2toggle"
+                (click)="isCollapsed1 = !isCollapsed1"
+                [attr.aria-expanded]="!isCollapsed1"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+              >
+                {{ 'hotel.frstQues' | translate }}
+                <i class="fas fa-chevron-down float-right icon1"></i>
+              </h2>
+              <div
+                class="collapse p-1"
+                [ngbCollapse]="isCollapsed1"
+                style="background-color: #f5f5f5;"
+              >
+                {{ 'hotel.frstAns' | translate }}
               </div>
             </div>
-
           </div>
-          <hr class="mb-5 mt-5">
+          <hr class="mb-5 mt-5" />
 
           <!-- 3-------------------------------------------------------------------------- -->
 
           <div class="row">
             <div class="col-12 icons">
-              <h2 class="h2toggle" (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2"
-                aria-controls="navbarContent" aria-expanded="false">{{'hotel.sndQues'|translate}}
-                <i class="fas fa-chevron-down float-right icon1"></i></h2>
-              <div class="collapse" [ngbCollapse]="isCollapsed2" style="background-color: #f5f5f5; ">
-                {{'hotel.sndAns'|translate}}
+              <h2
+                class="h2toggle"
+                (click)="isCollapsed2 = !isCollapsed2"
+                [attr.aria-expanded]="!isCollapsed2"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+              >
+                {{ 'hotel.sndQues' | translate }}
+                <i class="fas fa-chevron-down float-right icon1"></i>
+              </h2>
+              <div
+                class="collapse p-1"
+                [ngbCollapse]="isCollapsed2"
+                style="background-color: #f5f5f5;"
+              >
+                {{ 'hotel.sndAns' | translate }}
               </div>
             </div>
           </div>
 
-          <hr class="mb-5 mt-5">
+          <hr class="mb-5 mt-5" />
 
           <!-- 4-------------------------------------------------------------------------- -->
 
           <div class="row">
             <div class="col-12 icons">
-              <h2 class="h2toggle" (click)="isCollapsed3 = !isCollapsed3" [attr.aria-expanded]="!isCollapsed2"
-                aria-controls="navbarContent" aria-expanded="false">
-                {{'hotel.thrdQues'|translate}}
-                <i class="fas fa-chevron-down float-right icon1"></i></h2>
-              <div class="collapse" [ngbCollapse]="isCollapsed3" style="background-color: #f5f5f5;">
-                {{'hotel.thrdAns'|translate}}
+              <h2
+                class="h2toggle"
+                (click)="isCollapsed3 = !isCollapsed3"
+                [attr.aria-expanded]="!isCollapsed2"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+              >
+                {{ 'hotel.thrdQues' | translate }}
+                <i class="fas fa-chevron-down float-right icon1"></i>
+              </h2>
+              <div
+                class="collapse p-1"
+                [ngbCollapse]="isCollapsed3"
+                style="background-color: #f5f5f5;"
+              >
+                {{ 'hotel.thrdAns' | translate }}
               </div>
             </div>
           </div>
 
-          <hr class="mb-5 mt-5">
+          <hr class="mb-5 mt-5" />
 
           <!-- 5-------------------------------------------------------------------------- -->
 
           <div class="row">
             <div class="col-12 icons">
-              <h2 class="h2toggle" (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4"
-                aria-controls="navbarContent" aria-expanded="false">
-                {{'hotel.frthQues'|translate}}
-                <i class="fas fa-chevron-down float-right icon1"></i></h2>
+              <h2
+                class="h2toggle"
+                (click)="isCollapsed4 = !isCollapsed4"
+                [attr.aria-expanded]="!isCollapsed4"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+              >
+                {{ 'hotel.frthQues' | translate }}
+                <i class="fas fa-chevron-down float-right icon1"></i>
+              </h2>
 
-              <div class="collapse" [ngbCollapse]="isCollapsed4" style="background-color: #f5f5f5;">
-                {{'hotel.frthAns'|translate}}
-
+              <div
+                class="collapse p-1"
+                [ngbCollapse]="isCollapsed4"
+                style="background-color: #f5f5f5;"
+              >
+                {{ 'hotel.frthAns' | translate }}
               </div>
             </div>
           </div>
-          <hr class="mb-5 mt-5">
+          <hr class="mb-5 mt-5" />
 
-          <button class="klookbtn mb-2">
-            {{'hotel.btnKlook'|translate}}
-
+          <button class="klookbtn mb-2" routerLink="/help">
+            {{ 'hotel.btnKlook' | translate }}
           </button>
         </div>
 
         <div class="col-5">
-          <img src="../../../../assets/Hotel/hotel-1330846_1920.jpg" class="img-fluid">
+          <img
+            src="../../../../assets/Hotel/hotel-1330846_1920.jpg"
+            class="img-fluid"
+          />
         </div>
       </div>
 
       <!-- End FAQS Section -->
     </div>
-
-
-
   </div>
 
   <!-- ------------------------------------------------------------------------------- -->
 
-
   <!-- start Terms & conditions -->
   <div class="dir">
     <h2 class="h2 mt-5 pt-5">
-      {{'hotel.terms'|translate}}
-
+      {{ 'hotel.terms' | translate }}
     </h2>
     <p>
-      {{'hotel.terms1'|translate}}
-      <a href="#">{{'hotel.terms2'|translate}}</a>
-      {{'hotel.terms3'|translate}}
-      <a href="#">{{'hotel.terms4'|translate}}
-      </a>{{'hotel.terms5'|translate}}<a href="#">{{'hotel.terms6'|translate}}</a>{{'hotel.terms7'|translate}}
+      {{ 'hotel.terms1' | translate }}
+      <a routerLink="/conditions">{{ 'hotel.terms2' | translate }}</a>
+      {{ 'hotel.terms3' | translate }}
+      <a routerLink="/conditions">{{ 'hotel.terms4' | translate }}</a>
+      {{ 'hotel.terms5' | translate }}
+      <a routerLink="/home">{{ 'hotel.terms6' | translate }}</a>
+      {{ 'hotel.terms7' | translate }}
     </p>
     <ul>
       <li>
-        {{'hotel.terms8'|translate}}
+        {{ 'hotel.terms8' | translate }}
       </li>
       <li>
-        {{'hotel.terms9'|translate}}
-
+        {{ 'hotel.terms9' | translate }}
       </li>
       <li>
-        {{'hotel.terms10'|translate}}
-
+        {{ 'hotel.terms10' | translate }}
       </li>
       <ng-container *ngIf="show">
         <li>
-          {{'hotel.terms11'|translate}}
-
+          {{ 'hotel.terms11' | translate }}
         </li>
         <li>
-          {{'hotel.terms12'|translate}}
-
+          {{ 'hotel.terms12' | translate }}
         </li>
         <li>
-          {{'hotel.terms13'|translate}}
-
+          {{ 'hotel.terms13' | translate }}
         </li>
       </ng-container>
     </ul>
     <div (click)="show = !show" class="viewmore mb-4">
-      {{ show ? 'View less': 'View More' }}
-      <i class="iconShow" [ngClass]="{ 'btn-add': show, 'btn-remove': !show  }"
-        class="fas fa-chevron-down viewmore"></i>
+      {{ show ? 'View less' : 'View More' }}
+      <i
+        class="iconShow"
+        [ngClass]="{ 'btn-add': show, 'btn-remove': !show }"
+        class="fas fa-chevron-down viewmore"
+      ></i>
     </div>
   </div>
-
 </div>

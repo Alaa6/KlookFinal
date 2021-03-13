@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnChanges {
   public isMenuCollapsed = true;
 
   isuser: boolean = true
@@ -18,6 +18,13 @@ export class HeaderComponent implements OnInit {
 // 
 
 ngOnInit() {
+  if(this.authser.userLogin==true){
+    this.isuser=true
+  }
+  else{
+    this.isuser=false
+
+  }
   // this.authser.user.subscribe(user => {
   //   if (user) {
   //     this.isuser = false
@@ -68,6 +75,15 @@ ngOnInit() {
     
     this.translate.use(languageService.getLanguage());
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if(this.authser.userLogin==true){
+      this.isuser=true
+    }
+    else{
+      this.isuser=false
+  
+    }
+  }
 
   // ngOnInit() {
   
@@ -76,8 +92,10 @@ ngOnInit() {
   logout() {
     localStorage.removeItem('currentUser');
     localStorage.removeItem('currentUserName');
-
+console.log(this.authser.userLogin)
     this.authser.userLogin=true
+console.log(this.authser.userLogin)
+
     this.router.navigate(['/']);
 
   }
