@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ICity } from '../viewModels/i-city';
-import { Tours } from '../viewModels/tours';
+import { Hotels } from './../viewModels/hotels';
+import { Tours } from './../viewModels/tours';
 
 @Injectable({
   providedIn: 'root'
@@ -57,4 +58,40 @@ export class HomeService {
       ref => ref.where('Categories', '==', 'Home')
         .where('Section', '==', 'Klook Recommended')).snapshotChanges();
   }
+
+  getAttractionsDestinations(){
+    return this.fs.collection<Tours>('ToursCollection',
+    ref => ref.where('Categories', '==', 'Attractions')
+      ).snapshotChanges();
+  }
+  getHotelDestinations(){
+    return this.fs.collection<Hotels>('Hotel-',
+    ref => ref.where('CityHotel', '==', 'singapore')
+      ).snapshotChanges();
+  }
+  getFoodDestinations(){
+    return this.fs.collection<Tours>('ToursCollection',
+    ref => ref.where('Categories', '==', 'Food')
+    // .where('Section','==','Other')
+      ).snapshotChanges();
+  }
+
+  getDestinationDetails(ID: string, collection: string) {
+
+    return this.fs.collection(collection).doc(ID).get().toPromise().then((doc) => {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+        return doc.data();
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+
+    }).catch((error) => {
+      console.log("Error getting document:", error);
+    });
+
+
+  }
+ 
 }

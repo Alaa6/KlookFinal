@@ -14,6 +14,7 @@ import { filter } from 'rxjs/operators';
 import { User } from './../../../viewModels/user';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageServiceService } from 'src/app/services/language-service.service';
+import { HomeService } from 'src/app/services/home.service';
 
 
 @Component({
@@ -45,7 +46,9 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   forKidsList: ITour[] = []
   loading: boolean = true
   count: number = 5
-
+  // section: string = "";
+  // ID: string = "";
+  // Card: any = "";
 
   // ay 7aga bngrb 3shan a7na bwzna l code 3nd dena
 
@@ -70,7 +73,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         items: 3
       },
       940: {
-        items: 4
+        items: 5
       }
 
 
@@ -83,7 +86,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private translate: TranslateService,
-    private languageService: LanguageServiceService
+    private languageService: LanguageServiceService,
+    private homeService: HomeService,
     ) {
     this.cityName = 'Cairo'
     this.translate.use(languageService.getLanguage());
@@ -108,6 +112,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
   ngOnInit(): void {
+    
+    
 
 
 
@@ -338,5 +344,11 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
+
+  viewDestination(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/destination', collectionName, ID]);
+  }
+
+  
 
 }

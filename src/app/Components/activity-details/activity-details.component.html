@@ -1,16 +1,15 @@
 <div class="container">
-
   <div class="cover mb-3">
     <ngb-carousel>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper slider">
-          <img src="{{Card.Image}}" alt="first slide" />
+          <img src="{{ Card.Image }}" alt="first slide" />
         </div>
         <div class="carousel-caption firstSlider"></div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper slider">
-          <img src="{{Card.Image}}" alt="second slide" />
+          <img src="{{ Card.Image }}" alt="second slide" />
         </div>
         <div class="carousel-caption"></div>
       </ng-template>
@@ -18,17 +17,26 @@
   </div>
   <div>
     <a class="blue" href="">Klook Travel</a>
-    <i class="fas fa-chevron-right blue ml-2 mr-2" style="font-size: 0.8em;"></i>
+    <i
+      class="fas fa-chevron-right blue ml-2 mr-2"
+      style="font-size: 0.8em;"
+    ></i>
     <a class="blue" href="">Cairo</a>
   </div>
   <!--Start spliting-->
   <div class="row">
     <div class="col-lg-8">
-      <div class="h3 pyramids" [(ngModel)]="Card.Title" ngDefaultControl name="title" id="tit">
-        {{Card.Title}}
+      <div
+        class="h3 pyramids"
+        [(ngModel)]="Card.Title"
+        ngDefaultControl
+        name="title"
+        id="tit"
+      >
+        {{ Card.Title }}
       </div>
       <div class="d-flex justify-content-between">
-        <div class="text-muted">{{Card.Booked}}+ Booked</div>
+        <div class="text-muted">{{ Card.Booked }}+ Booked</div>
         <div class="highlight">
           <i class="far fa-heart mr-2" style="font-size: 1.2em;"></i>
           <span>Wishlist</span>
@@ -118,9 +126,17 @@
           <div class="date">Please select a tour date</div>
           <!--Datepicker-->
           <mat-form-field>
-            <input class="btn available" matInput [matDatepicker]="myDatePicker" value="Check availability" />
+            <input
+              class="btn available"
+              matInput
+              [matDatepicker]="myDatePicker"
+              value="Check availability"
+            />
             <!--Add check-->
-            <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker-toggle
+              [for]="myDatePicker"
+              matSuffix
+            ></mat-datepicker-toggle>
             <mat-datepicker #myDatePicker></mat-datepicker>
           </mat-form-field>
           <!--End check-->
@@ -137,42 +153,91 @@
           </button>
           <div class="date mt-3">Quantity</div>
 
-          <div class="bg mt-2 d-flex justify-content-between">
-            <div>Adult</div>
-            <div>
-              <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
-              <span [(ngModel)]="Adults" ngDefaultControl name="adults" id="adult">{{Adults}}</span>
-              <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
+          <div *ngIf="sectionName != 'Wifi_&_SimCards'">
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Adult</div>
+              <div>
+                <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Adults"
+                  ngDefaultControl
+                  name="adults"
+                  id="adult"
+                >
+                  {{ Adults }}
+                </span>
+                <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Child(6-11)</div>
+              <div>
+                <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Children"
+                  ngDefaultControl
+                  name="children"
+                  id="child"
+                >
+                  {{ Children }}
+                </span>
+                <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Older</div>
+              <div>
+                <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Olders"
+                  ngDefaultControl
+                  name="olders"
+                  id="older"
+                >
+                  {{ Olders }}
+                </span>
+                <i (click)="add2()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
             </div>
           </div>
-          <div class="bg mt-2 d-flex justify-content-between">
-            <div>Child(6-11)</div>
-            <div>
-              <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
-              <span [(ngModel)]="Children" ngDefaultControl name="children" id="child">{{Children}}</span>
-              <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
+          <div *ngIf="sectionName == 'Wifi_&_SimCards'" class="mt-5 mb-5">
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Number of SIM Cards</div>
+              <div>
+                <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Adults"
+                  ngDefaultControl
+                  name="adults"
+                  id="adult"
+                >
+                  {{ Adults }}
+                </span>
+                <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
             </div>
           </div>
-          <div class="bg mt-2 d-flex justify-content-between">
-            <div>Older</div>
-            <div>
-              <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
-              <span [(ngModel)]="Olders" ngDefaultControl name="olders" id="older">{{Olders}}</span>
-              <i (click)="add2()" class="fas fa-plus p-2 ml-3"></i>
-            </div>
-          </div>
-
 
           <div class="d-flex justify-content-between mt-4">
             <div>
-              <div class="price" [(ngModel)]="Card.Price" ngDefaultControl name="price" id="pr">{{Card.Price}}</div>
+              <div
+                class="price"
+                [(ngModel)]="Card.Price"
+                ngDefaultControl
+                name="price"
+                id="pr"
+              >
+                {{ Card.Price }}
+              </div>
               <div>Complete all required fields to continue</div>
             </div>
             <div>
               <button type="button" class="btn btn-warning warn mr-2 p-2 mb-2">
                 Add to cart
               </button>
-              <button (click)="Booking()" type="button" class="btn orange p-2">Book now</button>
+              <button (click)="Booking()" type="button" class="btn orange p-2">
+                Book now
+              </button>
             </div>
           </div>
         </div>
@@ -185,7 +250,11 @@
         <span class="vl mr-2"></span>
         <span class="package">What to expect</span>
       </div>
-      <img src="./../../../assets/Home/slider1.jpg" style="width: 100%;" class="mb-3" />
+      <img
+        src="./../../../assets/Home/slider1.jpg"
+        style="width: 100%;"
+        class="mb-3"
+      />
       <div>
         <i class="fas fa-caret-up mb-3"></i>
         <span class="mb-3">
@@ -200,7 +269,11 @@
         <span class="vl mr-2"></span>
         <span class="package mb-5">Location</span>
       </div>
-      <img src="./../../../assets/details/maps.gif" style="width: 100%;" class="mb-3" />
+      <img
+        src="./../../../assets/details/maps.gif"
+        style="width: 100%;"
+        class="mb-3"
+      />
       <hr class="mb-5" />
       <!-- <div class="FAQs">
         <span class="vl mr-2"></span>
@@ -245,18 +318,21 @@
         </div>
         <div>
           <span>From</span>
-          <Span class="bld">EGP {{Card.Price}}</Span>
+          <Span class="bld">EGP {{ Card.Price }}</Span>
         </div>
         <div>
           <i class="far fa-clock mr-1"></i>
-          <span>Book now for {{Card.Date}}</span>
+          <span>Book now for {{ Card.Date }}</span>
         </div>
         <div>
           <i class="fas fa-fire mr-1" style="width: 0.8em; color: #ff5722;"></i>
           <span>Instant Confirmation</span>
         </div>
         <div>
-          <img src="./../../../assets/details/secure_connection.png" width="18px" />
+          <img
+            src="./../../../assets/details/secure_connection.png"
+            width="18px"
+          />
           <span>
             Add
             <u>Klook Flex</u>
@@ -323,7 +399,10 @@
             <!--4-->
             <div class="row">
               <div class="col-1">
-                <img src="./../../../assets/details/secure_connection.png" width="18px" />
+                <img
+                  src="./../../../assets/details/secure_connection.png"
+                  width="18px"
+                />
               </div>
               <div class="col-10">
                 Cancellation flexibility with

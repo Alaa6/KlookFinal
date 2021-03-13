@@ -26,6 +26,7 @@ export class ActivityDetailsComponent implements OnInit {
   Children: number = 0;
   Olders: number = 0;
   totalPrice: number = 0;
+  sectionName: string | null;
   constructor(private router: Router, private authSer: AuthService,public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
 
   }
@@ -85,8 +86,8 @@ export class ActivityDetailsComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe((params) => {
       let Details: string | null = params.get('id');
-      let sectioName: string | null = params.get('collectionName');
-      this.section = (sectioName) ? sectioName : "";
+      this.sectionName = params.get('collectionName');
+      this.section = (this.sectionName) ? this.sectionName : "";
       this.ID = (Details) ? Details : "";
 
       this.getActivityById(this.ID, this.section);
@@ -96,7 +97,7 @@ export class ActivityDetailsComponent implements OnInit {
 
       (err) => { console.log(err) }
     );
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
+    // this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
   }
 
 

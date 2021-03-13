@@ -277,7 +277,7 @@
           <ng-template carouselSlide>
             <div class="col-2">
               <div class="txt incred_card">
-                <a (click)="viewDetails(destination.id, 'Cities')">
+                <a (click)="viewDestination(destination.id, 'Cities')">
                   <img
                     src="{{ destination.Image1 }}"
                     class="rounded"
@@ -435,7 +435,7 @@
           <div class="row row2 col-10 col-sm-0">
             <div class="scCol col-lg-3 col-md-6" *ngFor="let city of Inspired">
               <a>
-                <div class="card move">
+                <div class="card move" (click)="viewDetails(city.id, 'ToursCollection')">
                   <img src="{{ city.Image }}" class="card-img-top" alt="..." />
                   <div class="top_left col-10" *ngIf="tr == 'en'">
                     <i class="fas fa-map-marker-alt" style="color: white;"></i>
@@ -694,12 +694,12 @@
       <div class="row row1">
         <!-- <div class="col-lg-4 col-md-4 col-sm-12 col1"> -->
 
-        <div class="col-lg-4 col-md-4 col1">
-          <!-- <div class="artc h3">{{ 'home.appBooking' | translate }}</div> -->
-          <!-- <div class="txt">
+        <!-- <div class="col-lg-4 col-md-4 col1"> -->
+        <!-- <div class="artc h3">{{ 'home.appBooking' | translate }}</div> -->
+        <!-- <div class="txt">
           {{ 'home.promo code' | translate }}
         </div> -->
-          <div class="grd">
+        <!-- <div class="grd">
             <img
               src="./../../../assets/Home/appStore.png"
               alt="appStore"
@@ -709,19 +709,19 @@
               src="./../../../assets/Home/googlePlay.png"
               alt="googlePlay"
               class="img2"
-            />
-            <!-- <img
+            /> -->
+        <!-- <img
             src="./../../../assets/Home/qrCode.png"
             alt="QR Code"
             class="img3"
           /> -->
-          </div>
-        </div>
+        <!-- </div> -->
+        <!-- </div> -->
         <div class="col-lg-8 col-md-8 d-sm-none d-md-block col2">
           <img
             src="./../../../assets/Home/rowing.jpg"
             alt="Rowing"
-            style="width: 103%; height: 25em;"
+            style="width: 103%; height: 25em; border-radius: 0.5em;"
           />
           <!--Resume icon-->
           <!-- Button trigger modal -->

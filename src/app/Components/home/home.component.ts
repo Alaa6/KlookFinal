@@ -216,6 +216,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
+  viewDestination(ID: string | undefined, collectionName: string) {
+    this.router.navigate(['/destination', collectionName, ID]);
+  }
   
 setLanguage() {
   // this.languageService.setLanguage(

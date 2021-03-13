@@ -691,9 +691,10 @@ a:hover {
 .more .row1 {
   width: 100%;
   margin: auto;
-  height: 25em;
+  height: 30em;
   border-radius: 2em;
-  background-color: #ffdac4;
+  // background-color: #ffdac4;
+  // background-color: #d8d6d4;
   border-radius: 0.3em;
 }
 
@@ -1614,10 +1615,10 @@ span {
   .recommend .images .row {
     margin-left: 10em !important;
   }
-  .more .row1 {
-    // height: 10em !important;
-    display: none;
-  }
+  // .more .row1 {
+  //   // height: 10em !important;
+  //   display: none;
+  // }
   // .more .row1 .grd {
   //   display: grid;
   //   grid-template-columns: 50% 50% !important;

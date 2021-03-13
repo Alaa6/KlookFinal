@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { User } from '../../../viewModels/user';
 import { FormGroup, FormBuilder ,FormControl, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Guid } from "guid-typescript";
+// import { Guid } from "guid-typescript";
 
 
 @Component({

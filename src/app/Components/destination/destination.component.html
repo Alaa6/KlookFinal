@@ -1,0 +1,169 @@
+<section id="tour-header" class="d-flex flex-column align-items-center row">
+  <div class="cover row">
+    <img class="bg img-fluid" src="{{ Card.Image }}" alt="" />
+
+    <div class="tl">
+      <div class="text">{{ Card.City1 }}</div>
+    </div>
+  </div>
+  <!-- End cover -->
+</section>
+<!--attractions -->
+<section class="m-5" *ngIf="AttractionsList.length > 0">
+  <div id="best-backhround" class="m-2 rounded-lg row">
+    <div class="mt-2 col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <img
+        src="https://res.klook.com/image/upload/v1604053241/ued/ttd/recommended%20section/icon_ttd_recommend_bestseller_fill_sxl_colorful.png"
+        style="width: 46px;"
+      />
+      <p id="best-title" class="font-weight-bold pt-3">Attractions</p>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 unmissable">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template
+          carouselSlide
+          *ngFor="let tour of AttractionsList"
+          class="row"
+        >
+          <div
+            class="card move fr"
+            (click)="viewDetails(tour.id, 'ToursCollection')"
+            id="cat-card"
+          >
+            <img
+              src="{{ tour.Image }}"
+              class="card-img-top tourImg"
+              alt="..."
+            />
+            <div class="top_left col-10">
+              <i class="fas fa-map-marker-alt mr-1" style="color: white;"></i>
+              <span style="color: white;">{{ Card.City1 }}</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title" style="font-weight: 600;">
+                {{ tour.Title }}
+              </div>
+              <div>
+                <span class="sm">{{ tour.Booked }} + Booked</span>
+              </div>
+            </div>
+            <div class="card-body card-body2">
+              <div>
+                <span class="font-weight-bold black">EGP {{ tour.Price }}</span>
+                <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+              </div>
+              <a href="#" class="card-link text-muted sm">
+                Book now for {{ tour.Date }}
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+<!-- hotels -->
+<section class="m-5" *ngIf="HotelsList.length > 0">
+  <div id="best-backhround" class="m-2 rounded-lg row">
+    <div class="mt-2 col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <img
+        src="https://res.klook.com/image/upload/v1604053241/ued/ttd/recommended%20section/icon_ttd_recommend_bestseller_fill_sxl_colorful.png"
+        style="width: 46px;"
+      />
+      <p id="best-title" class="font-weight-bold pt-3">Hotels</p>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-12 col-xl-9 unmissable">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let hotel of HotelsList" class="row">
+          <div
+            class="card move fr"
+            (click)="viewDetails(hotel.id, 'ToursCollection')"
+            id="cat-card"
+          >
+            <img
+              src="{{ hotel.Image }}"
+              class="card-img-top tourImg"
+              alt="..."
+            />
+            <div class="top_left col-10">
+              <i class="fas fa-map-marker-alt mr-1" style="color: white;"></i>
+              <span style="color: white;">{{ Card.City1 }}</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title" style="font-weight: 600;">
+                {{ hotel.TitleHotel }}
+              </div>
+              <div>
+                <span class="sm">{{ hotel.BookedHotel }} + Booked</span>
+              </div>
+            </div>
+            <div class="card-body card-body2">
+              <div>
+                <span class="font-weight-bold black">
+                  EGP {{ hotel.PriceHotel }}
+                </span>
+                <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+              </div>
+              <a href="#" class="card-link text-muted sm">
+                Book now for {{ hotel.DateHotel }}
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>
+<!-- Food -->
+<section class="m-5" *ngIf="FoodList.length > 0">
+  <div id="best-backhround" class="m-2 rounded-lg row">
+    <div class="mt-2 col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <img
+        src="https://res.klook.com/image/upload/v1604053241/ued/ttd/recommended%20section/icon_ttd_recommend_bestseller_fill_sxl_colorful.png"
+        style="width: 46px;"
+      />
+      <p id="best-title" class="font-weight-bold pt-3">Food & dinning</p>
+    </div>
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9 unmissable">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide *ngFor="let food of FoodList" class="row">
+          <div
+            class="card move fr"
+            (click)="viewDetails(food.id, 'ToursCollection')"
+            id="cat-card"
+          >
+            <img
+              src="{{ food.Image }}"
+              class="card-img-top tourImg"
+              alt="..."
+            />
+            <div class="top_left col-10">
+              <i class="fas fa-map-marker-alt mr-1" style="color: white;"></i>
+              <span style="color: white;">{{ Card.City1 }}</span>
+            </div>
+            <div class="card-body">
+              <div class="card-title" style="font-weight: 600;">
+                {{ food.Title }}
+              </div>
+              <div>
+                <span class="sm">{{ food.Booked }} + Booked</span>
+              </div>
+            </div>
+            <div class="card-body card-body2">
+              <div>
+                <span class="font-weight-bold black">EGP {{ food.Price }}</span>
+                <i class="fas fa-fire ml-2" style="color: #ff612f;"></i>
+              </div>
+              <a href="#" class="card-link text-muted sm">
+                Book now for {{ food.Date }}
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</section>

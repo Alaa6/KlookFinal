@@ -11,7 +11,7 @@ header :lang(ar) {
   // background-image: url('/../assets/Hotel/hotel.jpg');
   direction: rtl;
 }
-.rows:lang(ar){
+.rows:lang(ar) {
   direction: rtl !important;
 }
 .days {
@@ -87,10 +87,9 @@ header :lang(ar) {
   padding-right: 20px;
   justify-content: center;
 }
-.navs:lang(ar){
+.navs:lang(ar) {
   direction: rtl;
 }
-
 
 #hongKong {
   color: #ff5722;
@@ -125,10 +124,10 @@ header :lang(ar) {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
     Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-.h2header:lang(ar){
+.h2header:lang(ar) {
   direction: rtl;
 }
-.h2toggle:lang(ar){
+.h2toggle:lang(ar) {
   direction: rtl;
 }
 .h2toggle {
@@ -140,17 +139,16 @@ header :lang(ar) {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
     Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-.klookbtn:lang(ar){
+.klookbtn:lang(ar) {
   direction: rtl;
 }
-.icon1:lang(ar){
+.icon1:lang(ar) {
   float: left !important;
-  
 }
-.img1:lang(ar){
+.img1:lang(ar) {
   direction: rtl;
 }
-.dir:lang(ar){
+.dir:lang(ar) {
   direction: rtl;
 }
 .klookbtn {
@@ -178,27 +176,22 @@ header :lang(ar) {
   transform: rotate(360deg);
 }
 
-
-
-
-
-
-#p1:lang(ar){
+#p1:lang(ar) {
   // padding-top: 150px;
   // font-size: 46px;
   // font-weight: bold;
   // line-height: 1.2;
   // color: white;
-direction: rtl;
+  direction: rtl;
 }
-#p2:lang(ar){
+#p2:lang(ar) {
   // font-size: 16px;
   // font-weight: normal;
   //color: white;
   direction: rtl;
 }
 
-.titles:lang(ar){
+.titles:lang(ar) {
   // font-weight: 700;
   // line-height: 22px;
   // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
@@ -221,4 +214,13 @@ direction: rtl;
   // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Droid Sans,
   //   Helvetica Neue, Helvetica, Arial, sans-serif;
   direction: rtl;
+}
+.card {
+  height: 25em;
+}
+a:hover {
+  text-decoration: none;
+}
+.brdr {
+  border-radius: 1em;
 }
