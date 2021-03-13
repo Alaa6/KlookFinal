@@ -4,5 +4,6 @@ export interface City {
     Distance: number,
     Image1: string,
     Image:string
+    CityAr?: string
 
 }

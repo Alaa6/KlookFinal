@@ -1,0 +1,167 @@
+.firstPart {
+  background-color: #fafafa;
+}
+
+// Start cover
+.cover {
+  background-image: url(./../../../assets/About/about.jpg);
+  height: 340px;
+  background-size: cover;
+}
+.cover .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 340px;
+  flex-direction: column;
+}
+.cover h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: 500;
+}
+.cover .book {
+  color: white;
+  font-size: 1.4em;
+}
+.cover .search {
+  width: 50%;
+  height: 3em;
+}
+.cover .search input {
+  height: 3em;
+}
+.cover .icon {
+  background-color: #ff5722;
+  width: 8em;
+}
+.cover .icon i {
+  margin-left: 1.5em;
+  color: white;
+  font-size: 1.5em;
+}
+//End cover
+//--------------------------
+//Start about
+.about {
+  width: 80%;
+  margin: auto;
+  line-height: 2.5em;
+  height: 20em;
+}
+.about h1 {
+  font-size: 2.2em;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #f44f1b;
+}
+.about .how a {
+  color: #4f4b4b;
+  font-size: 1.1em;
+}
+.about .how a:hover {
+  color: #f44f1b;
+  text-decoration: none;
+}
+.offer {
+  font-size: 1.5em;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.discover {
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+//End about
+//Start mission
+.mission {
+  background-image: url(./../../../assets/About/mission.png);
+  height: 340px;
+  background-size: cover;
+  line-height: 2em;
+}
+.mission .text {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.mission h1 {
+  color: #f44f1b;
+  font-size: 2.2em;
+}
+.mission .book {
+  color: white;
+  font-size: 1.4em;
+}
+.empower {
+  width: 60%;
+  margin: auto;
+}
+.travel {
+  width: 65%;
+  margin: auto;
+}
+//End mission
+@media only screen and (max-width: 768px) {
+  .about {
+    height: 30em;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .about {
+    width: 95%;
+    line-height: 2em;
+    height: 25em;
+  }
+  .about h1 {
+    font-size: 1.2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+  .about .how a {
+    color: #4f4b4b;
+    font-size: 1.1em;
+  }
+  .offer {
+    font-size: 1.1em;
+  }
+  .discover {
+    font-size: 1em;
+  }
+  //End about
+  //Start mission
+  .mission {
+    background-image: url(./../../../assets/About/mission.png);
+    height: 340px;
+    background-size: cover;
+  }
+  .mission .text {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .mission h1 {
+    color: #f44f1b;
+    font-size: 2.2em;
+  }
+  .mission .book {
+    color: white;
+    font-size: 1.4em;
+  }
+  .empower {
+    width: 60%;
+    margin: auto;
+  }
+}
+.all:lang(ar) {
+  direction: rtl;
+}

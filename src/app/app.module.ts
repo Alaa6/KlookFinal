@@ -11,26 +11,20 @@ import { HomeComponent } from './Components/home/home.component';
 
 import { AttractionsHongKongComponent } from './Components/attractions-hong-kong/attractions-hong-kong.component';
 import { LoginComponent } from './Components/login/login.component';
-// import { SignUpComponent } from './Components/sign-up/sign-up.component';
-// import { AdminComponent } from './Components/admin/admin.component';
+
 import { SecondHeaderComponent } from './Components/second-header/second-header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-// import { RouterModule } from '@angular/router';
+
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-// import { JwPaginationComponent } from 'jw-angular-pagination';
 import { from } from 'rxjs';
-
 import { PopupComponent } from './Components/popup/popup.component';
-
-// import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { NotFoundComponent } from './Components/not-found/not-found.component';
@@ -68,9 +62,13 @@ import {
 // import { SignComponent } from './admin/sign/sign.component';
 // import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
 // import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
+
+//import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+// import { CardDirective } from './Directives/card.directive';
+
 import { ScrollSpyModule } from 'ngx-scrollspy';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
-//import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+// import { ScrollSpyDirective } from './Directives/scroll-spy.directive';
 
 import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { HttpClient } from '@angular/common/http';
@@ -89,6 +87,7 @@ import { AmendComponent } from './Components/amend/amend.component';
 import { VoucherComponent } from './Components/voucher/voucher.component';
 import { OpenTicketComponent } from './Components/open-ticket/open-ticket.component';
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
+import { AboutComponent } from './Components/about/about.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -122,23 +121,21 @@ var firebaseConfig = {
     HomeComponent,
     AttractionsHongKongComponent,
     LoginComponent,
-    // SignUpComponent,
-    // AdminComponent,
+
     SecondHeaderComponent,
-    // JwPaginationComponent,
+
     PopupComponent,
     NotFoundComponent,
     ModalComponent,
     HelpComponent,
     KlookCreditComponent,
     DetailsComponent,
-    // SignComponent,
-    // DashboardComponent,
+
     ActivityDetailsComponent,
     BookTrainComponent,
     //  ScrollSpyDirective,
 
-    CardDirective,
+    // CardDirective,
 
     BookingDialogComponent,
     ConditionsComponent,
@@ -162,6 +159,8 @@ var firebaseConfig = {
     OpenTicketComponent,
 
     BookBehalfComponent,
+
+    AboutComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
@@ -190,8 +189,7 @@ var firebaseConfig = {
     // AngularFireAuthModule, // auth
     // AngularFireStorageModule // storage
     MatDialogModule,
-    // AngularFireAuthModule, // auth
-    // AngularFireStorageModule // storage
+
     RouterModule,
     // BrowserAnimationsModule,
     TranslateModule,

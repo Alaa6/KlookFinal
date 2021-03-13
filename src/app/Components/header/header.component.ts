@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Pipe, PipeTransform } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { LanguageServiceService } from 'src/app/services/language-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -25,37 +26,46 @@ ngOnInit() {
   //   else
   //     this.isuser = true;
   // })
-  if(this.authser.userLogin==true){
-    console.log("trueeeee")
-    this.isuser=true
+  // if(this.authser.userLogin==true){
+  //   console.log("trueeeee")
+  //   this.isuser=true
 
-  }
-  else
-  {
-    console.log("falseee")
-    this.isuser=false;
+  // }
+  // else
+  // {
+  //   console.log("falseee")
+  //   this.isuser=false;
 
 
-  }
-  this.authser.user.subscribe(user => {
-    if(user){
-    this.isuser=false
+  // }
+  // this.authser.user.subscribe(user => {
+  //   if(user){
+  //   this.isuser=false
 
-  }
-    else
-    this.isuser=true;
-  })
+  // }
+  //   else
+  //   this.isuser=true;
+  // })
 }
-  constructor(private authser: AuthService, private languageService: LanguageServiceService, private translate: TranslateService
+  constructor(private router:Router,private authser: AuthService, private languageService: LanguageServiceService, private translate: TranslateService
   ) {
+
+    // if (localStorage.getItem("currentUser") === null) {
+    //   this.isuser=true
+    // }
+    // else{
+    //   this.isuser=false
+
+    // }
     if(this.authser.userLogin==true){
-      console.log("trueeeee")
+      this.isuser=true
     }
-    else
-    {
-      console.log("falseee")
+    else{
+      this.isuser=false
+
+    }
   
-    }
+    
     this.translate.use(languageService.getLanguage());
   }
 
@@ -64,7 +74,12 @@ ngOnInit() {
   // }
 
   logout() {
-    this.authser.logout()
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentUserName');
+
+    this.authser.userLogin=true
+    this.router.navigate(['/']);
+
   }
   changeLanguage() {
     window.location.reload();

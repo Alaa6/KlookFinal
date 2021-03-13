@@ -7,6 +7,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { IBooking } from 'src/app/viewModels/ibooking';
 import { MatDialog } from '@angular/material/dialog';
 import { BookingDialogComponent } from '../booking-dialog/booking-dialog.component';
+import { AuthService } from 'src/app/services/auth.service';
+// import { CardDirective } from 'src/app/Directives/card.directive';
 
 
 @Component({
@@ -19,13 +21,12 @@ export class ActivityDetailsComponent implements OnInit {
   Card: any = "";
   ID: string = "";
   section: string = "";
-  Name: string = "Dina";
+  // Name: string = "Dina";
   Adults: number = 0;
   Children: number = 0;
   Olders: number = 0;
   totalPrice: number = 0;
-
-  constructor(public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
+  constructor(private router: Router, private authSer: AuthService,public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
 
   }
 
@@ -95,7 +96,7 @@ export class ActivityDetailsComponent implements OnInit {
 
       (err) => { console.log(err) }
     );
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * 589;
+    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
   }
 
 
@@ -141,24 +142,42 @@ export class ActivityDetailsComponent implements OnInit {
   }
 
 
+  UserNAme:string=''
   Booking() {
+    this.UserNAme= localStorage.getItem('currentUserName') 
     let activity: IBooking = {
       Adults: this.Adults,
       Children: this.Children,
       Olders: this.Olders,
-      Price: this.totalPrice
+      Price: this.totalPrice,
+      Title: this.Card.Title,
+      Name:this.UserNAme
     }
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * 589;
+    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
+
+    if (this.authSer.userLogin) {
+      this.router.navigate(['/sign/login'])
+console.log(this.authSer.userLogin)
+      // return false;
+    } else {
+      // return true;
+
+      console.log(this.authSer.userLogin)
+
 
     this.activityDetails.Booking(activity).then(
       (res) => {
         console.log("Done")
+        console.log(typeof(this.totalPrice))
+
       },
       (err) => { console.log("error : " + err) }
     )
     this.dialog.open(BookingDialogComponent, {
-      data: { Name: this.Name, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
+      width: '350px',
+      data: { Name: this.UserNAme, Title: this.Card.Title, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
     });
+  }
   }
 }
 

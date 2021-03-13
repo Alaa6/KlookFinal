@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges, SimpleChanges } from '@angular/core';
 import { FirebaseApp } from '@angular/fire';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
@@ -11,19 +11,36 @@ import { BooleanInput } from '@angular/cdk/coercion';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnChanges {
   // itemss: Observable<User[]>;
   user:Observable<firebase.User|null>
 
   userLogin:boolean
   
-
+  
+userid:string=''
   // user:Observable<firebase.>
   constructor(private afAuth : AngularFireAuth,private fb:AngularFirestore) { 
+    if (localStorage.getItem("currentUser") === null) {
+      this.userLogin=true
+    }
+    else{
+      this.userLogin=false
+
+    }
     this.user = afAuth.user
-    this.userLogin=false
+    // this.userLogin=false
     // this.itemss=this.fb.collection<User>('user').valueChanges();
 
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (localStorage.getItem("currentUser") === null) {
+      this.userLogin=true
+    }
+    else{
+      this.userLogin=false
+
+    }
   }
 
   signup(email:string , password:string){

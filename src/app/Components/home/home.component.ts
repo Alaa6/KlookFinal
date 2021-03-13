@@ -39,9 +39,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   InspiredTaipei: Tours[] = [];
   InspiredHong: Tours[] = [];
   Inspired: Tours[] = [];
-  //x:AngularFirestoreDocument<unknown> | undefined =undefined;
-  x: string = '';
-  tr: string = '';
+  tr: string = 'en';
+
   @ViewChild('hid') hid: any;
   @ViewChild('hid2') hid2: any;
   @ViewChild('demoVideo') demoVideo: any;
@@ -58,6 +57,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.setLanguage();
     throw new Error('Method not implemented.');
+    // this.setLanguage();
   }
 
   // getCityAr(){
@@ -80,6 +80,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   }
   ngOnInit(): void {
     this.tr = 'en';
+    this.setLanguage();
+
     this.homeService.getNearYou().subscribe((near) => {
       this.NearYou = near.map((data) => {
         return {
@@ -195,6 +197,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
       479: {
         items: 1,
       },
+      705: {
+        items: 3,
+      },
       740: {
         items: 3,
       },
@@ -202,6 +207,19 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
         items: 3,
       },
       940: {
+        items: 4,
+      },
+      800: {
+        items: 3,
+      },
+      // 940: {
+      //   items: 4
+      // },
+
+      970: {
+        items: 3,
+      },
+      1080: {
         items: 4,
       },
     },
@@ -233,13 +251,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
+
   setLanguage() {
-    this.languageService.setLanguage(
-      this.languageService.getLanguage() == 'ar'
-        ? (this.tr = 'en')
-        : (this.tr = 'ar')
-    );
-    this.translate.use(this.languageService.getLanguage());
+    // this.languageService.setLanguage(
+    this.languageService.getLanguage() == 'ar'
+      ? (this.tr = 'ar')
+      : (this.tr = 'en');
+    // );
+    // this.translate.use(this.languageService.getLanguage());
+    console.log('tr' + this.tr);
     return this.tr;
   }
 }

@@ -12,7 +12,20 @@ export interface ITour {
     Section?: string,
     OldPrice?: string,
     Distance?: string,
-    Review?: string
+    Review?: string,
+
+
+    TitleAr?: string,
+    BookedAr?: number,
+    CityAr?:string
+    DateAr?: string,
+    DescriptionAr?: string,
+    PriceAr: string,
+    RateAr?: number,
+    SectionAr?: string,
+    OldPriceAr?: string,
+    DistanceAr?: string,
+    ReviewAr?: string,
 
 
 }
