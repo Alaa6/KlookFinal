@@ -216,15 +216,15 @@ console.log(this.authSer.userLogin)
       console.log("activity.Price: "+activity.Price)
 
 
-    // this.activityDetails.Booking(activity).then(
-    //   (res) => {
-    //     console.log("Done")
+    this.activityDetails.Booking(activity).then(
+      (res) => {
+        console.log("Done")
 
-    //     console.log(typeof(this.totalPrice))
+        console.log(typeof(this.totalPrice))
 
-    //   },
-    //   (err) => { console.log("error : " + err) }
-    // )
+      },
+      (err) => { console.log("error : " + err) }
+    )
     this.dialog.open(BookingDialogComponent, {
       width: '350px',
       data: { Email: this.UserNAme, Title: this.Card.Title,Date:this.Card.Date,Image:this.Card.Image ,Adults: this.Adults, Children: this.Children, Olders: this.Olders,SIM: this.SIM, Price: this.totalPrice, sectionName: this.sectionName }    });
