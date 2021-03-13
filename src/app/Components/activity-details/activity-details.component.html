@@ -160,9 +160,12 @@
           </button> -->
           <div class="date mt-3">Quantity</div>
 
-          <div *ngIf="sectionName != 'Wifi_&_SimCards'">
+          <div *ngIf="sectionName == 'ToursCollection'">
             <div class="bg mt-2 d-flex justify-content-between">
-              <div>Adult</div>
+              <div>
+                Adult
+                <small>Price * 3</small>
+              </div>
               <div>
                 <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
                 <span
@@ -177,7 +180,11 @@
               </div>
             </div>
             <div class="bg mt-2 d-flex justify-content-between">
-              <div>Child(6-11)</div>
+              <div>
+                Child(6-11)
+                <small>Price * 2</small>
+              </div>
+
               <div>
                 <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
                 <span
@@ -193,6 +200,7 @@
             </div>
             <div class="bg mt-2 d-flex justify-content-between">
               <div>Older</div>
+
               <div>
                 <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
                 <span
@@ -207,6 +215,63 @@
               </div>
             </div>
           </div>
+
+          <div *ngIf="sectionName == 'Hotel-'">
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>
+                Adult
+                <small>Price * 3</small>
+              </div>
+
+              <div>
+                <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Adults"
+                  ngDefaultControl
+                  name="adults"
+                  id="adult"
+                >
+                  {{ Adults }}
+                </span>
+                <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>
+                Child(6-11)
+                <small>Price * 2</small>
+              </div>
+
+              <div>
+                <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Children"
+                  ngDefaultControl
+                  name="children"
+                  id="child"
+                >
+                  {{ Children }}
+                </span>
+                <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Rooms</div>
+              <div>
+                <i (click)="sub5()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Rooms"
+                  ngDefaultControl
+                  name="Rooms"
+                  id="Rooms"
+                >
+                  {{ Rooms }}
+                </span>
+                <i (click)="add5()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+          </div>
+
           <div *ngIf="sectionName == 'Wifi_&_SimCards'" class="mt-5 mb-5">
             <div class="bg mt-2 d-flex justify-content-between">
               <div>Number of SIM Cards</div>

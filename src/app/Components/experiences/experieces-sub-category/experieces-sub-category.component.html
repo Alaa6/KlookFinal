@@ -123,7 +123,7 @@
         *ngFor="let cat of categoryList"
       >  -->
       <a
-        href="#"
+        (click)="goToActivites($event, cat)"
         class="col-lg-2 col-md-4 col-sm-4 card"
         *ngFor="let cat of categoryList"
       >

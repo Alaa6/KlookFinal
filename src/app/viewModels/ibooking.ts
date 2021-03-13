@@ -9,5 +9,6 @@ export interface IBooking {
     Price?: string,
     SIM?: number,
     sectionName?: string ,
-    noPerson?: string
+    noPerson?: string,
+    Rooms?: number
 }

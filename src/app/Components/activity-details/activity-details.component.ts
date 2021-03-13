@@ -29,6 +29,7 @@ export class ActivityDetailsComponent implements OnInit {
   totalPrice: number = 0;
   sectionName: string | null;
   noPerson:number=0;
+  Rooms: number=0;
 
   x :string= "32.2";
   y: number =+this.x;
@@ -137,6 +138,10 @@ export class ActivityDetailsComponent implements OnInit {
     this.SIM++;
 
   }
+  add5() {
+    this.Rooms++;
+
+  }
   sub() {
     if (this.Adults > 0) {
       this.Adults--;
@@ -163,6 +168,13 @@ export class ActivityDetailsComponent implements OnInit {
     }
 
   }
+  sub5() {
+    if (this.Rooms > 0) {
+
+      this.Rooms--;
+    }
+
+  }
   priceNumber: number
   UserNAme:string=''
   Booking() {
@@ -178,7 +190,8 @@ export class ActivityDetailsComponent implements OnInit {
       Date:this.Card.Date,
       Image:this.Card.Image,
       sectionName: this.sectionName,
-      noPerson: this.noPerson.toString()
+      noPerson: this.noPerson.toString(),
+      Rooms: this.Rooms
     }
     // x :string= "32.2";
   // y: number =+this.x;
@@ -227,7 +240,7 @@ console.log(this.authSer.userLogin)
     )
     this.dialog.open(BookingDialogComponent, {
       width: '350px',
-      data: { Email: this.UserNAme, Title: this.Card.Title,Date:this.Card.Date,Image:this.Card.Image ,Adults: this.Adults, Children: this.Children, Olders: this.Olders,SIM: this.SIM, Price: this.totalPrice, sectionName: this.sectionName }    });
+      data: { Email: this.UserNAme, Title: this.Card.Title,Date:this.Card.Date,Image:this.Card.Image ,Adults: this.Adults, Children: this.Children, Olders: this.Olders,SIM: this.SIM, Price: this.totalPrice, sectionName: this.sectionName, Rooms: this.Rooms }    });
   }
   }
 }
