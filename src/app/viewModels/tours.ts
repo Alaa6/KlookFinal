@@ -14,8 +14,18 @@ export interface Tours {
     TourDiscount?:string,
     TourSectionInner?:string,
     Distance?: number,
-    SubCategories?:string
-
+    SubCategories?:string,
+    TitleAr?: string,
+    BookedAr?: number,
+    CityAr?:string
+    DateAr?: string,
+    DescriptionAr?: string,
+    PriceAr?: string,
+    RateAr?: number,
+    SectionAr?: string,
+    OldPriceAr?: string,
+    DistanceAr?: string,
+    ReviewAr?: string,
     
 
 }

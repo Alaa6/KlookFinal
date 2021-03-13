@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild, Inject } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, Inject, OnChanges, SimpleChanges } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
 import { ICity } from 'src/app/viewModels/i-city';
 import { Tours } from 'src/app/viewModels/tours';
@@ -20,7 +20,7 @@ import { LanguageServiceService } from 'src/app/services/language-service.servic
 
 
 
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
 
   NearYou: Tours[] = []
   IncredibleDestinations: ICity[] = []
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   InspiredHong: Tours[] = []
   Inspired:Tours[] = []
   collectionListName: string[] = []
+  tr: string='en';
 
   @ViewChild('hid') hid: any;
   @ViewChild('hid2') hid2: any;
@@ -38,6 +39,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private homeService: HomeService, private router: Router, private translate: TranslateService, private languageService: LanguageServiceService) {
     this.translate.use(languageService.getLanguage());
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    // this.setLanguage();
+  }
 
 
   ngAfterViewInit(): void {
@@ -45,6 +49,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     // view.src = URL.createObjectURL(yourBlob);
   }
   ngOnInit(): void {
+    this.setLanguage();
+
 
     this.homeService.getNearYou().subscribe((near) => {
       this.NearYou = near.map(data => {
@@ -165,13 +171,26 @@ export class HomeComponent implements OnInit, AfterViewInit {
       479: {
         items: 1
       },
+      705:{
+        items:3
+      },
       740: {
         items: 3
       },
       768: {
         items: 3
       },
-      940: {
+      800:{
+        items:3
+      },
+      // 940: {
+      //   items: 4
+      // },
+     
+      970:{
+        items:3
+      },
+      1080:{
         items: 4
       }
     },
@@ -205,6 +224,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
+  
+setLanguage() {
+  // this.languageService.setLanguage(
+    this.languageService.getLanguage() == 'ar'
+      ? (this.tr = 'ar')
+      : (this.tr = 'en')
+  // );
+  // this.translate.use(this.languageService.getLanguage());
+  console.log("tr"+ this.tr);
+  return this.tr;
+}
+
+
 
 
 }
