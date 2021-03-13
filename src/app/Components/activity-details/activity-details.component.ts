@@ -25,10 +25,21 @@ export class ActivityDetailsComponent implements OnInit {
   Adults: number = 0;
   Children: number = 0;
   Olders: number = 0;
+  SIM: number =0;
   totalPrice: number = 0;
   sectionName: string | null;
+  noPerson:number=0;
+
+  x :string= "32.2";
+  y: number =+this.x;
   constructor(private router: Router, private authSer: AuthService,public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
 
+
+   
+    console.log(this.y)
+    console.log(typeof(this.x))
+    console.log(typeof(this.y))
+ 
   }
 
   best: OwlOptions = {
@@ -122,6 +133,10 @@ export class ActivityDetailsComponent implements OnInit {
     this.Olders++;
 
   }
+  add4() {
+    this.SIM++;
+
+  }
   sub() {
     if (this.Adults > 0) {
       this.Adults--;
@@ -141,20 +156,50 @@ export class ActivityDetailsComponent implements OnInit {
     }
 
   }
+  sub4() {
+    if (this.SIM > 0) {
 
+      this.SIM--;
+    }
 
+  }
+  priceNumber: number
   UserNAme:string=''
   Booking() {
-    this.UserNAme= localStorage.getItem('currentUserName') 
+    this.UserNAme= localStorage.getItem('currentUserEmail') 
     let activity: IBooking = {
       Adults: this.Adults,
       Children: this.Children,
       Olders: this.Olders,
-      Price: this.totalPrice,
+      SIM: this.SIM,
+      Price: this.totalPrice.toString(),
       Title: this.Card.Title,
-      Name:this.UserNAme
+      Email:this.UserNAme,
+      Date:this.Card.Date,
+      Image:this.Card.Image,
+      sectionName: this.sectionName,
+      noPerson: this.noPerson.toString()
     }
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
+    // x :string= "32.2";
+  // y: number =+this.x;
+  this.Card.Price=this.Card.Price.replace(',','')
+  console.log('before this.Card.Price',this.Card.Price)
+
+  this.priceNumber=+this.Card.Price
+  console.log('after this.Card.Price',this.Card.Price)
+
+  console.log('this.numberPrice',this.priceNumber)
+  console.log('this.numberPrice',typeof(this.priceNumber))
+  console.log('before this.total',this.totalPrice)
+  console.log(' this.Adults',this.Adults)
+  console.log(' this.Adults',typeof(this.Adults))
+  console.log(' this.Adults',this.Adults*50)
+
+    this.totalPrice = ((this.Adults * 3) + (this.Children * 2) + (this.Olders * 1)) * this.priceNumber;
+    console.log('after this.total',this.totalPrice)
+    this.noPerson=this.Adults + this.Children + this.Olders
+    activity.noPerson = this.noPerson.toString()
+
 
     if (this.authSer.userLogin) {
       this.router.navigate(['/sign/login'])
@@ -164,20 +209,25 @@ console.log(this.authSer.userLogin)
       // return true;
 
       console.log(this.authSer.userLogin)
+      console.log(activity.Price)
+      activity.Price=this.totalPrice.toString()
+      activity.noPerson=this.noPerson.toString()
+      console.log("type of price: "+ typeof(activity.Price))
+      console.log("activity.Price: "+activity.Price)
 
 
-    this.activityDetails.Booking(activity).then(
-      (res) => {
-        console.log("Done")
-        console.log(typeof(this.totalPrice))
+    // this.activityDetails.Booking(activity).then(
+    //   (res) => {
+    //     console.log("Done")
 
-      },
-      (err) => { console.log("error : " + err) }
-    )
+    //     console.log(typeof(this.totalPrice))
+
+    //   },
+    //   (err) => { console.log("error : " + err) }
+    // )
     this.dialog.open(BookingDialogComponent, {
       width: '350px',
-      data: { Name: this.UserNAme, Title: this.Card.Title, Adults: this.Adults, Children: this.Children, Olders: this.Olders, Price: this.totalPrice }
-    });
+      data: { Email: this.UserNAme, Title: this.Card.Title,Date:this.Card.Date,Image:this.Card.Image ,Adults: this.Adults, Children: this.Children, Olders: this.Olders,SIM: this.SIM, Price: this.totalPrice, sectionName: this.sectionName }    });
   }
   }
 }

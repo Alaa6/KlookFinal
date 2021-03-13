@@ -1,6 +1,6 @@
 .header {
   // background-image: url("99.webp");
-  background-image: url('../../../../assets/99.webp');
+  background-image: url("../../../../assets/99.webp");
   background-position: center;
   background-size: cover;
   height: 445px;
@@ -174,3 +174,7 @@
 /* /////////////////////////////////////////// Questions ////////////////////////////////////////////////////////////////// */
 
 /* *****************************************Questions **************************************************************** */
+.all:lang(ar) {
+  direction: rtl;
+  text-align: right;
+}

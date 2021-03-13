@@ -1,0 +1,32 @@
+  <!-- search -->
+
+  <div class="row ml-2">
+    <div
+      id="search"
+      class="rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7"
+    >
+      <div class="input-group mr-3 rounded pl-3">
+        <svg class="mt-2" viewBox="0 0 24 24" width="24" height="24">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M10.5 2a8.5 8.5 0 016.4 14.095l3.842 3.843a.6.6 0 01-.766.918l-.083-.07-3.845-3.846A8.5 8.5 0 1110.5 2zm0 1.2a7.3 7.3 0 100 14.6 7.3 7.3 0 000-14.6z"
+          ></path>
+        </svg>
+
+          <input class="form-control rounded pt-2 mr-3" type="search"
+            placeholder="what do you want to do in cairo ?" id="tour-search" [matAutocomplete]="auto" matInput  [formControl]="myControl" >
+            <!-- <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"> -->
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let tour of filteredOptions | async  " [value]="tour">
+              {{tour}}
+            </mat-option>
+          </mat-autocomplete>
+       
+      </div>
+
+      <button class="rounded ml-2" (click)="search( city , subCatName , searchTerm)">Search</button>
+    </div>
+  </div>
+
+  <!---->

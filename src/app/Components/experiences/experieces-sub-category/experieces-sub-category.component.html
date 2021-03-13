@@ -41,22 +41,13 @@
         </div>
 
         <div class="disc mt-3">
+          Discover the best theme parks, museums and more must-sees in
+          {{ city }}
           {{ 'experiences.discover' | translate }}
           {{ city }}
         </div>
 
-        <div
-          class="destination d-flex p-2 mt-3 col-1 justify-content-center align-items-center"
-          (click)="openPopup()"
-        >
-          <i
-            class="fas fa-map-marker-alt pr-1"
-            style="font-size: 1.2em; color: gray;"
-          ></i>
-          <span>{{ city }}</span>
-        </div>
-
-        <div class="row ml-2">
+        <!-- <div class="row ml-2">
           <div
             id="search"
             class="rounded-lg d-flex col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7"
@@ -81,7 +72,30 @@
 
             <button class="rounded ml-2" (click)="search()">Search</button>
           </div>
+        </div> -->
+        <!-- location -->
+
+        <div
+          class="destination d-flex p-2 mt-3 col-1 justify-content-center align-items-center"
+          (click)="openPopup()"
+        >
+          <i
+            class="fas fa-map-marker-alt pr-1"
+            style="font-size: 1.2em; color: gray;"
+          ></i>
+          <span>{{ city }}</span>
         </div>
+
+        <!--  -->
+
+        <!-- search -->
+
+        <app-search
+          [city]="city"
+          [subCatName]="subCatName"
+          [collectionListName]="collectionListName"
+        ></app-search>
+        <!---->
       </div>
     </div>
 
@@ -102,10 +116,15 @@
   <!--Start options-->
   <div class="options container">
     <div class="row contain">
-      <a
+      <!-- <a
         href="#"
         class="col-lg-2 col-md-4 col-sm-4 card"
         (click)="search()"
+        *ngFor="let cat of categoryList"
+      >  -->
+      <a
+        href="#"
+        class="col-lg-2 col-md-4 col-sm-4 card"
         *ngFor="let cat of categoryList"
       >
         <div class="svg">

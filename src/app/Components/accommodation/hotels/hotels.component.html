@@ -3,9 +3,9 @@
   <div class="container">
     <p id="p1">{{ 'hotel.title' | translate }}</p>
     <p id="p2">{{ 'hotel.subTitle' | translate }}</p>
-    <div
+    <!-- <div
       class="shadow col-12 bg-white"
-      style="height: 150px; border-radius: 8px;"
+      style="height: 127px; border-radius: 8px;"
     >
       <form [formGroup]="HotelForm" class="borderContet">
         <div class="row pt-4 pl-3">
@@ -47,61 +47,7 @@
           >
             {{ 'hotel.rooms' | translate }}
 
-            <!-- <ul class="dropdown-menu" style="width: 400px;">
-              <div class="row">
-                <div class="col-6">
-                  <li>
-                    Rooms
-                  </li>
-                </div>
-                <div class="col-2">
-                  <button class="btn">+</button>
-                </div>
-                <div class="col-2">
-                  <div id="room">1</div>
-                </div>
-                <div class="col-2">
-                  <button class="btn">-</button>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-6">
-                  <li>
-                    Adults
-                  </li>
-                </div>
-                <div class="col-2">
-                  <button class="btn">+</button>
-                </div>
-                <div class="col-2">
-                  <div id="adult">1</div>
-                </div>
-                <div class="col-2">
-                  <button class="btn">-</button>
-                </div>
-              </div>
-              <hr>
-
-              <div class="row">
-                <div class="col-6">
-                  <li>
-                    Children
-                  </li>
-                </div>
-                <div class="col-2">
-                  <button class="btn">+</button>
-                </div>
-                <div class="col-2">
-                  <div id="child">1</div>
-                </div>
-                <div class="col-2">
-                  <button class="btn">-</button>
-                </div>
-              </div>
-
-
-            </ul> -->
+          
             <input
               class="form-control mt-2"
               data-spm-item="__default"
@@ -124,13 +70,8 @@
           </div>
         </div>
       </form>
-      <div class="form-check mt-4">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" value="" />
-          {{ 'hotel.checkBox' | translate }}
-        </label>
-      </div>
-    </div>
+     
+    </div> -->
   </div>
 </header>
 
@@ -285,7 +226,7 @@
   <p>
     {{ 'hotel.stayDesc' | translate }}
   </p>
-  <div class="navs pb-3">
+  <!-- <div class="navs pb-3">
     <ul>
       <li id="hongKong">
         {{ 'hotel.hong' | translate }}
@@ -310,7 +251,7 @@
         {{ 'hotel.other' | translate }}
       </li>
     </ul>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col">
@@ -408,11 +349,11 @@
   </div>
   <!-- End staycation -->
 
-  <div class="btnHongKong mt-5 mb-5">
+  <!-- <div class="btnHongKong mt-5 mb-5">
     <button class="btn">
       {{ 'hotel.btn' | translate }}
     </button>
-  </div>
+  </div> -->
 
   <!-- start vouchers -->
   <h2 class="h2 mt-5 pt-5">
@@ -421,7 +362,7 @@
   <p>
     {{ 'hotel.subVoucher' | translate }}
   </p>
-  <div class="navs pb-3">
+  <!-- <div class="navs pb-3">
     <ul>
       <li id="hongKong">
         {{ 'hotel.philippines' | translate }}
@@ -434,7 +375,7 @@
         {{ 'hotel.indonesia' | translate }}
       </li>
     </ul>
-  </div>
+  </div> -->
 
   <div class="row">
     <div class="col">
@@ -532,16 +473,16 @@
   </div>
   <!-- End vouchers -->
 
-  <div class="btnHongKong mt-5 mb-5">
+  <!-- <div class="btnHongKong mt-5 mb-5">
     <button class="btn">
       {{ 'hotel.subPhilippines' | translate }}
     </button>
-  </div>
+  </div> -->
 
   <!-- start FAQS section -->
-  <div class="shadow brdr pl-2 pt-1">
-    <div class="mt-5 mb-4 p-2">
-      <div class="row img1">
+  <div class="shadow pl-2 pt-1 brdr mt-5">
+    <div class="mt-5 mb-4">
+      <div class="row img1 p-3">
         <div class="col-7">
           <!-- ---------------1---------------------- -->
           <div class="row">
@@ -566,7 +507,7 @@
                 <i class="fas fa-chevron-down float-right icon1"></i>
               </h2>
               <div
-                class="collapse p-2"
+                class="collapse p-1"
                 [ngbCollapse]="isCollapsed1"
                 style="background-color: #f5f5f5;"
               >
@@ -591,7 +532,7 @@
                 <i class="fas fa-chevron-down float-right icon1"></i>
               </h2>
               <div
-                class="collapse p-2"
+                class="collapse p-1"
                 [ngbCollapse]="isCollapsed2"
                 style="background-color: #f5f5f5;"
               >
@@ -617,7 +558,7 @@
                 <i class="fas fa-chevron-down float-right icon1"></i>
               </h2>
               <div
-                class="collapse p-2"
+                class="collapse p-1"
                 [ngbCollapse]="isCollapsed3"
                 style="background-color: #f5f5f5;"
               >
@@ -644,7 +585,7 @@
               </h2>
 
               <div
-                class="collapse p-2"
+                class="collapse p-1"
                 [ngbCollapse]="isCollapsed4"
                 style="background-color: #f5f5f5;"
               >
@@ -654,7 +595,7 @@
           </div>
           <hr class="mb-5 mt-5" />
 
-          <button class="klookbtn mb-2">
+          <button class="klookbtn mb-2" routerLink="/help">
             {{ 'hotel.btnKlook' | translate }}
           </button>
         </div>

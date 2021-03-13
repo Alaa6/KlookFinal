@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./sign.component.scss']
 })
 export class SignComponent implements OnInit {
-  insertForm: any;
+  insertForm: FormGroup;
 
   
   loginFrm:FormGroup;
@@ -36,44 +36,73 @@ userId: string='';
       return 'You must enter the right value';
     
   }
-  listadd:User={Email:'',Password:''}
+  listadd:User={Email:'',Password:'',Name:''}
   signupp(){
  
     ////old////
-    // this.authSer.signup(this.Email.value,this.Password.value)
-    //   .then(result => {
-    //     this.errorMsg='';
-    //     this.authSer.addUser(result.user?.uid,this.Email.value,this.Password.value,"user")
-    //     .then(()=>{
-    //       this.router.navigate(['/']);
-    //     }).catch(errr=>console.log(errr))      
-    //   })
-    //   .catch(err => {
-    //     this.errorMsg=err.message
-    //   } )
-    ////old////
-
-    ////// new ////////////
-    this.listadd.Email=this.Email.value;
-    this.listadd.Password=this.Password.value;
+    this.listadd=this.insertForm.value;
+    // this.listadd.Email=this.Email.value;
+    // this.listadd.Password=this.Password.value;
+    // this.listadd.Name=this.Password.value;
     this.listadd.JoinDate=Date.now()
     
     console.log(this.listadd)
+    console.log(this.listadd.Email)
+    console.log(this.listadd.Password)
+    console.log(this.listadd.Name)
+    this.authSer.signup(this.listadd)
+      .then(result => {
+        this.errorMsg='';
+          // localStorage.setItem('currentUser',result.user?.uid);
 
-    this.authSer.addUser(this.listadd).then(res=>{
-      this.userId=res;
-      this.authSer.userId=this.userId;
-      localStorage.setItem('currentUser', JSON.stringify(this.userId));
+// localStorage.setItem('currentUserName', this.listadd.Name);
+      // this.authSer.userLogin=false
+          // this.router.navigate(['/']);
+        this.authSer.addUser(result.user?.uid,this.listadd)
+        
+        .then(()=>{
+          localStorage.setItem('currentUser',result.user?.uid);
+      localStorage.setItem('currentUserName', this.listadd.Name);
+      localStorage.setItem('currentUserEmail', this.listadd.Email);
+
       this.authSer.userLogin=false
-
-      // console.log(res)
-      this.router.navigate(['/']);
-
-    })
-    .catch(err =>
-      {
-        console.log("errrrrorrr"+err)
+          this.router.navigate(['/']);
+        }
+        ).catch(errr=>console.log(errr))      
       })
+      .catch(err => {
+        this.errorMsg=err.message
+      } )
+    ////old////
+
+    ////// new ////////////
+    // this.listadd=this.insertForm.value;
+    // // this.listadd.Email=this.Email.value;
+    // // this.listadd.Password=this.Password.value;
+    // // this.listadd.Name=this.Password.value;
+    // this.listadd.JoinDate=Date.now()
+    
+    // console.log(this.listadd)
+    // console.log(this.listadd.Email)
+    // console.log(this.listadd.Password)
+    // console.log(this.listadd.Name)
+
+    // this.authSer.addUser(this.listadd).then(res=>{
+    //   this.userId=res;
+    //   this.authSer.userId=this.userId;
+    //   localStorage.setItem('currentUser',this.userId);
+    //   localStorage.setItem('currentUserName', this.listadd.Name);
+    //   this.authSer.userLogin=false
+    //   // this.authSer.userLogin=false
+
+    //   // console.log(res)
+    //   this.router.navigate(['/']);
+
+    // })
+    // .catch(err =>
+    //   {
+    //     console.log("errrrrorrr"+err)
+    //   })
     ////// new ////////////
 
   
@@ -89,8 +118,9 @@ userId: string='';
 
   ngOnInit(): void {
     this.insertForm = this.fb.group({
-      email:["", Validators.required],
-      password:["", [Validators.required, Validators.minLength(4)]]
+      Email:["", Validators.required],
+      Password:["", [Validators.required, Validators.minLength(4)]],
+      Name:["", [Validators.required, Validators.minLength(4)]]
     });
   }
   
@@ -100,68 +130,104 @@ userId: string='';
 
 
     /////old ////
-    // this.authSer.login(this.Email.value,this.Password.value)
-    // .then(result=>
-    //   {
+    this.listadd=this.insertForm.value;
+
+    this.authSer.login(this.listadd.Email,this.listadd.Password)
+    .then(result=>
+      {
         
-    //     this.errorMsg='';
-    //     this.authSer.checkforAdmin(this.Email.value,this.Password.value).subscribe(items => {
-    //     this.users=items
-    //     // console.log(items)
-    //     // console.log(items[0].Type)
-    //     if(items[0].Type=="user"){
-    //     this.router.navigate(['/']);
-    //     // console.log("user  "+ items[0].Type)
+        this.errorMsg='';
+        this.authSer.loginUser(this.listadd.Email,this.listadd.Password).subscribe((res) => {
+          // test@tset.com
+          console.log(res.length<1)
+          this.errorMsg='this user is no longer Exist'
 
-    //     }
-    //     else
-    //     {
-    //       // console.log("admin")
-    //     this.router.navigate(['/sign/admin/dash']);
+                this.list = res.map(data => {
+                  this.userId=data.payload.doc.id
+                  this.username=data.payload.doc.data()
+                  console.log(this.username.Name)
+                  this.authSer.userId=this.userId
+                localStorage.setItem('currentUser', this.userId);
+                localStorage.setItem('currentUserName', this.username.Name);
+                localStorage.setItem('currentUserEmail', this.username.Email);
 
-    //     }
-    //   });
-    //     // console.log(result)
-        
-    //   })
-    // .catch(err=>
-    //   {
-    //     this.errorMsg=err.message
+                this.authSer.userLogin=false
+          
+          console.log(this.userId)
+          console.log(this.username.Name)
+          
+                  // console.log(this.userId)
+                this.router.navigate(['/']);
+                this.authSer.userLogin=false
+          
+                // this.authSer.userLogin=true
+                console.log(this.authSer.userLogin)
+          
+          
+                  return {
+                    id: data.payload.doc.id,
+                    ...data.payload.doc.data()
+                  }
+                });
+                // this.loading = false
+              }, (err) => {console.log(err)
+              
+                this.errorMsg='this user is no longer Exist'
+              
+              });
+              // console.log(this.list)
+            })
+    .catch(err=>
+      {
+        this.errorMsg=err.message
 
-    //   console.log(err)
+      console.log(err)
       
       
-    //   }) 
+      })
+      
     /////old ////
+//     this.listadd=this.insertForm.value;
+//     // this.listadd.Email=this.Email.value;
+//     // this.listadd.Password=this.Password.value;
+//     // this.listadd.Name=this.Password.value;
+//     this.listadd.JoinDate=Date.now()
+    
+//     console.log(this.listadd)
+//     console.log(this.listadd.Email)
+//     console.log(this.listadd.Password)
+//     console.log(this.listadd.Name)
 
-    this.authSer.login(this.Email.value,this.Password.value).subscribe((res) => {
+//     this.authSer.login(this.listadd.Email,this.listadd.Password).subscribe((res) => {
 
-      this.list = res.map(data => {
-        this.userId=data.payload.doc.id
-        this.username=data.payload.doc.data()
-        this.authSer.userId=this.userId
-      localStorage.setItem('currentUser', this.userId);
-      localStorage.setItem('currentUserName', this.username.Name);
-      this.authSer.userLogin=false
+//       this.list = res.map(data => {
+//         this.userId=data.payload.doc.id
+//         this.username=data.payload.doc.data()
+//         this.authSer.userId=this.userId
+//       localStorage.setItem('currentUser', this.userId);
+//       localStorage.setItem('currentUserName', this.username.Name);
+//       this.authSer.userLogin=false
 
-console.log(this.userId)
-console.log(this.username.Name)
+// console.log(this.userId)
+// console.log(this.username.Name)
 
-        // console.log(this.userId)
-      this.router.navigate(['/']);
-      // this.authSer.userLogin=true
-      console.log(this.authSer.userLogin)
+//         // console.log(this.userId)
+//       this.router.navigate(['/']);
+//       this.authSer.userLogin=false
+
+//       // this.authSer.userLogin=true
+//       console.log(this.authSer.userLogin)
 
 
-        return {
-          id: data.payload.doc.id,
-          ...data.payload.doc.data()
-        }
-      });
-      // this.loading = false
-    }, (err) => console.log(err))
-    console.log(this.list)
-   }
+//         return {
+//           id: data.payload.doc.id,
+//           ...data.payload.doc.data()
+//         }
+//       });
+//       // this.loading = false
+//     }, (err) => console.log(err))
+//     console.log(this.list)
+    }
       subsign: string = '';
 
    routeSubscription: Subscription = this.activatedRoute.paramMap.subscribe((params: ParamMap) => {    //if  the route parameter value  changes  (Observable) 

@@ -17,7 +17,7 @@
 
   <!-- Text over Image -->
   <div class="header-text hidden-xs">
-    <div class="col-md-12 text-center">
+    <div class="col-md-12 text-center mt-5">
       <h2>
         <span id="title">{{ 'home.title' | translate }}</span>
       </h2>
@@ -29,7 +29,7 @@
       </div>
       <br />
       <!--Add search-->
-      <div class="s007">
+      <!-- <div class="s007">
         <form>
           <div class="inner-form">
             <div class="basic-search">
@@ -55,7 +55,6 @@
                   style="border-radius: 0.5em;"
                 />
                 <div class="result-count searchBtn">
-                  <!-- <span>108 </span>results</div> -->
                   <button
                     class="btn btn-outline-success my-2 my-sm-0 searchBtn"
                     type="submit"
@@ -76,15 +75,15 @@
             </div>
           </div>
         </form>
-      </div>
+      </div> -->
       <!--Start button 'Explore'-->
-      <div class="explore">
+      <!-- <div class="explore">
         <span class="ex">{{ 'home.more' | translate }}</span>
         <span class="brdr">
           <span class="go">{{ 'home.go' | translate }}</span>
           <i class="fas fa-chevron-right ml-1"></i>
         </span>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- End Carousel -->
@@ -128,10 +127,10 @@
   <div class="near_container">
     <div class="contain d-flex justify-content-between">
       <div class="h3">{{ 'home.near' | translate }}</div>
-      <div class="exp">
+      <!-- <div class="exp">
         <a href="#">{{ 'home.explore' | translate }}</a>
         <i class="fas fa-chevron-right"></i>
-      </div>
+      </div> -->
     </div>
 
     <!-- Start Cards Body -->
@@ -435,7 +434,10 @@
           <div class="row row2 col-10 col-sm-0">
             <div class="scCol col-lg-3 col-md-6" *ngFor="let city of Inspired">
               <a>
-                <div class="card move" (click)="viewDetails(city.id, 'ToursCollection')">
+                <div
+                  class="card move"
+                  (click)="viewDetails(city.id, 'ToursCollection')"
+                >
                   <img src="{{ city.Image }}" class="card-img-top" alt="..." />
                   <div class="top_left col-10" *ngIf="tr == 'en'">
                     <i class="fas fa-map-marker-alt" style="color: white;"></i>
@@ -647,7 +649,7 @@
                   <div>
                     <div class="text-muted">
                       <del>
-                        {{ 'home.egp' | translate }} {{ recommend.OldPrice }}
+                        {{ recommend.OldPrice }}
                       </del>
                     </div>
                     <span class="font-weight-bold">
@@ -694,34 +696,13 @@
       <div class="row row1">
         <!-- <div class="col-lg-4 col-md-4 col-sm-12 col1"> -->
 
-        <!-- <div class="col-lg-4 col-md-4 col1"> -->
-        <!-- <div class="artc h3">{{ 'home.appBooking' | translate }}</div> -->
-        <!-- <div class="txt">
-          {{ 'home.promo code' | translate }}
-        </div> -->
-        <!-- <div class="grd">
-            <img
-              src="./../../../assets/Home/appStore.png"
-              alt="appStore"
-              class="img1"
-            />
-            <img
-              src="./../../../assets/Home/googlePlay.png"
-              alt="googlePlay"
-              class="img2"
-            /> -->
-        <!-- <img
-            src="./../../../assets/Home/qrCode.png"
-            alt="QR Code"
-            class="img3"
-          /> -->
-        <!-- </div> -->
-        <!-- </div> -->
-        <div class="col-lg-8 col-md-8 d-sm-none d-md-block col2">
+        <div
+          class="col-lg-8 col-md-8 d-md-block col2 d-flex justify-content-center"
+        >
           <img
             src="./../../../assets/Home/rowing.jpg"
             alt="Rowing"
-            style="width: 103%; height: 25em; border-radius: 0.5em;"
+            style="width: 103%; height: 25em; border-radius: 1em;"
           />
           <!--Resume icon-->
           <!-- Button trigger modal -->
@@ -1536,7 +1517,6 @@
           {{ 'home.view more' | translate }}
         </a>
       </p>
-
       <div class="collapse" id="collapseExample">
         <div class="spans">
           <a href="#">{{ 'home.rome tours' | translate }}</a>

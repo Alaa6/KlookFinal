@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +30,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
+// import { AngularFireStorageModule } from '@angular/fire/storage';
+// import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
@@ -47,19 +51,34 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BookTrainComponent } from './Components/book-train/book-train.component';
 // import { CardDirective } from './Directives/card.directive';
-import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
+import {
+  TranslateModule,
+  TranslateService,
+  TranslateLoader,
+} from '@ngx-translate/core';
+// import { SignComponent } from './Components/sign/sign.component';
+// import { DashboardComponent } from './Components/dashboard/dashboard.component';
+// import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
+// import { SignComponent } from './admin/sign/sign.component';
+// import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
+// import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
+
+//import { ScrollSpyDirective } from './directives/scroll-spy.directive';
+// import { CardDirective } from './Directives/card.directive';
+
 import { ScrollSpyModule } from 'ngx-scrollspy';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
 // import { ScrollSpyDirective } from './Directives/scroll-spy.directive';
 
-import { ExperiencesModule } from './Components/experiences/experiences.module'
+import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BookingDialogComponent } from './Components/booking-dialog/booking-dialog.component';
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
 import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
-import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
+//import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
+//import { SimpleScrollSpyModule } from 'angular-simple-scroll-spy';
 import { KlookCreditsComponent } from './Components/klook-credits/klook-credits.component';
 import { FindBookedComponent } from './Components/find-booked/find-booked.component';
 import { CancelComponentComponent } from './Components/cancel-component/cancel-component.component';
@@ -71,23 +90,45 @@ import { BookBehalfComponent } from './Components/book-behalf/book-behalf.compon
 import { AboutComponent } from './Components/about/about.component';
 import { DestinationComponent } from './Components/destination/destination.component';
 
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SearchModule } from './Components/search/search.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 
 var firebaseConfig = {
-  apiKey: "AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk",
-  authDomain: "friendlychat-e399d.firebaseapp.com",
-  databaseURL: "https://friendlychat-e399d-default-rtdb.firebaseio.com",
-  projectId: "friendlychat-e399d",
-  storageBucket: "friendlychat-e399d.appspot.com",
-  messagingSenderId: "402072663413",
-  appId: "1:402072663413:web:b045d045b9b5af218f8f3c",
-  measurementId: "G-SE1DJ8PYYC"
+  apiKey: 'AIzaSyANt9EaAeiNpKJTFH577SVmvPItb8OTAmk',
+  authDomain: 'friendlychat-e399d.firebaseapp.com',
+  databaseURL: 'https://friendlychat-e399d-default-rtdb.firebaseio.com',
+  projectId: 'friendlychat-e399d',
+  storageBucket: 'friendlychat-e399d.appspot.com',
+  messagingSenderId: '402072663413',
+  appId: '1:402072663413:web:b045d045b9b5af218f8f3c',
+  measurementId: 'G-SE1DJ8PYYC',
 };
 
+
+// var firebaseConfig = {
+//   apiKey: "AIzaSyAzBJKDiRHQ0pgh52rSMCh_jvV5CBRwdCI",
+//   authDomain: "klooktest-520cb.firebaseapp.com",
+//   projectId: "klooktest-520cb",
+//   storageBucket: "klooktest-520cb.appspot.com",
+//   messagingSenderId: "486005586729",
+//   appId: "1:486005586729:web:7ced86ac11b96f1c9ad538"
+// };
+
+// =======
+// var firebaseConfig2 = {
+//   apiKey: 'AIzaSyAAHACN73dKmMMXqdzg77rlPXs94ZKaPBk',
+//   authDomain: 'klookarabic.firebaseapp.com',
+//   projectId: 'klookarabic',
+//   storageBucket: 'klookarabic.appspot.com',
+//   messagingSenderId: '120468945976',
+//   appId: '1:120468945976:web:f6673203cef2fd1c483acd',
+//   measurementId: 'G-BX0JG4BMH5',
+// };
+// >>>>>>> cfd75ed1b9f3a7229a227a5c1dd969ad65b63b27
 
 @NgModule({
   declarations: [
@@ -109,9 +150,10 @@ var firebaseConfig = {
 
     ActivityDetailsComponent,
     BookTrainComponent,
-    // ScrollSpyDirective,
+    //  ScrollSpyDirective,
+    //ScrollSpyDirective,
 
-    // CardDirective,
+    // ScrollSpyDirective,
 
     BookingDialogComponent,
     ConditionsComponent,
@@ -135,38 +177,39 @@ var firebaseConfig = {
     OpenTicketComponent,
 
     BookBehalfComponent,
-   
+
     AboutComponent,
    
     DestinationComponent,
     // // SignComponent,
     // DashboardComponent,
     // DetailsDashboardComponent
-
-
   ],
-  // exports: [CardDirective],
+  exports: [NotFoundComponent],
   imports: [
-    SimpleScrollSpyModule,
+    // SimpleScrollSpyModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
+    MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,// firestore
-
+    // AngularFireModule.initializeApp(firebaseConfig2),
+    AngularFirestoreModule, // firestore
+    // AngularFireAuthModule, // auth
+    // AngularFireStorageModule // storage
     MatDialogModule,
 
     RouterModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     TranslateModule,
 
     FormsModule,
@@ -183,9 +226,11 @@ var firebaseConfig = {
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    ExperiencesModule
-  ],  // ],
+    ExperiencesModule,
+    MatAutocompleteModule,
+    SearchModule,
+  ], // ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

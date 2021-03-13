@@ -1,4 +1,5 @@
 export interface ISubCategory {
     Background ?: string ,
-    Name       ?: string
+    Name       ?: string ,
+    ActivCategories ?: ISubCategory[] 
 }
