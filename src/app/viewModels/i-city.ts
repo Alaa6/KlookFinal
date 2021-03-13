@@ -4,4 +4,5 @@ export interface ICity {
     Distance?: string,
     Image1?: string,
     CityAr?: string
+
 }

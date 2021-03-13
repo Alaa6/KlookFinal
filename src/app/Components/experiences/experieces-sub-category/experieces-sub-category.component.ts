@@ -12,6 +12,8 @@ import { ICity } from 'src/app/viewModels/icity';
 import { ISubCategory } from 'src/app/viewModels/isub-category';
 import { filter } from 'rxjs/operators';
 import { User } from './../../../viewModels/user';
+import { FormControl } from '@angular/forms';
+import { map, startWith } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageServiceService } from 'src/app/services/language-service.service';
 
@@ -31,8 +33,6 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   categoryList: ICategory[] = []
   category$: Observable<ICategory[]> | undefined
   city: string = 'Cairo'
-  searchTerm: string = ''
-
   // @Input() city: string =''; 
   bestSellerList: ITour[] = [];
   subCatName: string = 'Experience';
@@ -45,6 +45,11 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   forKidsList: ITour[] = []
   loading: boolean = true
   count: number = 5
+  subCat: string = ''
+  myControl = new FormControl();
+  filteredOptions: Observable<string[]>;
+  collectionListName: string[] = []
+
 
 
   // ay 7aga bngrb 3shan a7na bwzna l code 3nd dena
@@ -109,13 +114,8 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
 
-
-
     let test = localStorage.getItem('city')
-
     console.log(test, "onInit");
-
-
     this.relaxService.getAllCities().subscribe((wifi) => {
       this.cityList = wifi.map(data => {
         return {
@@ -165,12 +165,20 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
       if (this.subCatName == 'Experiences') {
         this.relaxService.getAllTours(this.city, "BestSeller").subscribe((res) => {
+
           this.bestSellerList = res.map(data => {
             return {
               id: data.payload.doc.id,
               ...data.payload.doc.data()
             }
           });
+
+          this.bestSellerList.map((tour) => {
+            this.collectionListName.push(tour.Title)
+
+          })
+
+
           this.loading = false
 
         }, (err) => console.log(err))
@@ -188,22 +196,35 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
         this.relaxService.getAllTours(this.city, "AwsomeDeals").subscribe((res) => {
+
           this.awsomeDealsList = res.map(data => {
             return {
               id: data.payload.doc.id,
               ...data.payload.doc.data()
             }
           });
+
+          this.awsomeDealsList.map((tour) => {
+            this.collectionListName.push(tour.Title)
+
+          })
+
           this.loading = false
         }, (err) => console.log(err))
 
         this.relaxService.getAllTours(this.city, "ForKids").subscribe((res) => {
+
           this.forKidsList = res.map(data => {
             return {
               id: data.payload.doc.id,
               ...data.payload.doc.data()
             }
           });
+
+          this.forKidsList.map((tour) => {
+            this.collectionListName.push(tour.Title)
+
+          })
           this.loading = false
         }, (err) => console.log(err))
 
@@ -217,6 +238,10 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
               ...data.payload.doc.data()
             }
           });
+          this.bestSellerList.map((tour) => {
+            this.collectionListName.push(tour.Title)
+
+          })
 
         }, (err) => console.log(err))
 
@@ -240,7 +265,13 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
               id: data.payload.doc.id,
               ...data.payload.doc.data()
             }
+
           });
+          this.awsomeDealsList.map((tour) => {
+            this.collectionListName.push(tour.Title)
+
+          })
+
           this.loading = false
         }, (err) => console.log(err))
 
@@ -252,16 +283,17 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
               ...data.payload.doc.data()
             }
           });
+          this.forKidsList.map((tour) => {
+            this.collectionListName.push(tour.Title)
+
+          })
+
+
           this.loading = false
         }, (err) => console.log(err))
 
 
       }
-
-      // ngAfterViewInit(): void {
-
-
-
 
 
 
@@ -277,6 +309,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
       }, (err) => console.log(err))
 
       this.relaxService.getSubCategory().subscribe((res) => {
+
         this.allSubCategorey = res.map(data => {
           return {
             id: data.payload.doc.id,
@@ -306,9 +339,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     const dialogRef = this.dialog.open(PopupComponent, { disableClose: true });
 
     console.log(this.city.split(" ").join("%20"), " on popup");
-
     dialogRef.afterClosed().subscribe(city => {
-
       this.router.navigateByUrl(this.router.url.replace(this.city.split(" ").join("%20"), city));
       this.city = city
       // this.router.navigateByUrl(this.router.url.replace(this.city , city));
@@ -325,10 +356,17 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
   }
 
   toursSearch: ITour[] = []
-  search() {
 
-    this.router.navigate(['/experiences/search/', this.city, this.subCatName, this.searchTerm])
-  }
+  goToActivites(catEvent?: MouseEvent, activityCat?: ICategory) {
+
+    console.log(activityCat, "activityCat goToActivites");
+
+
+    if(activityCat && activityCat !== undefined)
+    this.router.navigate(['/experiences/activities', this.city, this.subCatName, { activitesCategory: activityCat?.name }])
+    }
+
+  
   goToSubCategory(subCatName?: string) {
     if (subCatName != undefined) {
       this.router.navigateByUrl(this.router.url.replace(this.subCatName.split(" ").join("%20"), subCatName));
@@ -337,6 +375,12 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.collectionListName.filter(tourName => tourName.toLowerCase().indexOf(filterValue) === 0);
   }
 
 }

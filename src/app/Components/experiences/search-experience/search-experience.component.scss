@@ -795,7 +795,7 @@ a {
 }
 
 .dropdown:hover>.dropdown-menu {
-    display: block;
+    // display: block;
   }
 
   
@@ -914,4 +914,12 @@ a {
   width:20%;
   color:white;
   background-color: #ff5722;
+}
+
+
+
+
+.disabled  {
+  pointer-events:none;
+  opacity:0.5;
 }
