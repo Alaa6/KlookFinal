@@ -87,6 +87,15 @@ var firebaseConfig = {
   measurementId: "G-SE1DJ8PYYC"
 };
 
+// var firebaseConfig = {
+//   apiKey: "AIzaSyAzBJKDiRHQ0pgh52rSMCh_jvV5CBRwdCI",
+//   authDomain: "klooktest-520cb.firebaseapp.com",
+//   projectId: "klooktest-520cb",
+//   storageBucket: "klooktest-520cb.appspot.com",
+//   messagingSenderId: "486005586729",
+//   appId: "1:486005586729:web:7ced86ac11b96f1c9ad538"
+// };
+
 
 @NgModule({
   declarations: [

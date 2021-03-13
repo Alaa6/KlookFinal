@@ -26,8 +26,17 @@ export class ActivityDetailsComponent implements OnInit {
   Children: number = 0;
   Olders: number = 0;
   totalPrice: number = 0;
+
+  x :string= "32.2";
+  y: number =+this.x;
   constructor(private router: Router, private authSer: AuthService,public dialog: MatDialog, private activatedRoute: ActivatedRoute, private activityDetails: ActivityDetailsService,) {
 
+
+   
+    console.log(this.y)
+    console.log(typeof(this.x))
+    console.log(typeof(this.y))
+ 
   }
 
   best: OwlOptions = {
@@ -96,7 +105,7 @@ export class ActivityDetailsComponent implements OnInit {
 
       (err) => { console.log(err) }
     );
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
+    // this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
   }
 
 
@@ -140,8 +149,7 @@ export class ActivityDetailsComponent implements OnInit {
     }
 
   }
-
-
+  priceNumber: number
   UserNAme:string=''
   Booking() {
     this.UserNAme= localStorage.getItem('currentUserName') 
@@ -153,7 +161,24 @@ export class ActivityDetailsComponent implements OnInit {
       Title: this.Card.Title,
       Name:this.UserNAme
     }
-    this.totalPrice = (this.Adults * 3) + (this.Children * 2) + (this.Olders * 1) * this.Card.Price;
+    // x :string= "32.2";
+  // y: number =+this.x;
+  this.Card.Price=this.Card.Price.replace(',','')
+  console.log('before this.Card.Price',this.Card.Price)
+
+  this.priceNumber=+this.Card.Price
+  console.log('after this.Card.Price',this.Card.Price)
+
+  console.log('this.numberPrice',this.priceNumber)
+  console.log('this.numberPrice',typeof(this.priceNumber))
+  console.log('before this.total',this.totalPrice)
+  console.log(' this.Adults',this.Adults)
+  console.log(' this.Adults',typeof(this.Adults))
+  console.log(' this.Adults',this.Adults*50)
+
+    this.totalPrice = ((this.Adults * 3) + (this.Children * 2) + (this.Olders * 1)) * this.priceNumber;
+    console.log('after this.total',this.totalPrice)
+
 
     if (this.authSer.userLogin) {
       this.router.navigate(['/sign/login'])
@@ -163,11 +188,15 @@ console.log(this.authSer.userLogin)
       // return true;
 
       console.log(this.authSer.userLogin)
+      console.log(activity.Price)
+      activity.Price=this.totalPrice
+      console.log(activity.Price)
 
 
     this.activityDetails.Booking(activity).then(
       (res) => {
         console.log("Done")
+
         console.log(typeof(this.totalPrice))
 
       },

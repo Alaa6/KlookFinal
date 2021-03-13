@@ -28,6 +28,7 @@ userid:string=''
       this.userLogin=false
 
     }
+    console.log(this.userLogin)
     this.user = afAuth.user
     // this.userLogin=false
     // this.itemss=this.fb.collection<User>('user').valueChanges();
@@ -43,27 +44,31 @@ userid:string=''
     }
   }
 
-  signup(email:string , password:string){
-    ////old////
-    // return this.afAuth.createUserWithEmailAndPassword(email,password)
-    ////old////
+  signup(user:User){
+    //old////
+    return this.afAuth.createUserWithEmailAndPassword(user.Email,user.Password)
+    //old////
 
 
   }
 
   login(email:string,password:string){
-    ////old////
-    // return this.afAuth.signInWithEmailAndPassword(email,password)
-    ////old////
+    //old////
+    return this.afAuth.signInWithEmailAndPassword(email,password);
+    //old////
 
-    // this.userLogin=true;
+   
+  }
+
+  loginUser(email:string,password:string){
+   
     // console.log("auth",email,password);
+    this.userLogin=false;
+
     return this.fb.collection<User>('users', ref => ref.where('Email', '==', email).where('Password', '==', password))
-    .snapshotChanges()
+    .snapshotChanges();
     
-
-
-
+     
   }
   
   checkforAdmin(email:string,password:string){
@@ -75,27 +80,29 @@ userid:string=''
   
   userId:string=''
   
-  addUser(itemm:User){
+  addUser(id:string,itemm:User){
 
     ////old////
 
-    // return this.fb.doc('user/'+id).set({
-    //   Password : Password,
-    //   Email : Email,
-    //   Type:type,
-    //   JoinDate:Date.now()
-  // })
+    return this.fb.doc('users/'+id).set({
+      Password : itemm.Password,
+      Email : itemm.Email,
+      Date:itemm.JoinDate,
+      Name:itemm.Name
+      // Type:type,
+      // JoinDate:Date.now()
+  })
 
     ////old////
 
-    return this.fb.collection('users').add(itemm).then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-     return docRef.id;
-    })
-      .catch(function (error) {
-        console.error("Error adding document: ", error);
-        return "error"
-      });
+    // return this.fb.collection('users').add(itemm).then(function (docRef) {
+    //   console.log("Document written with ID: ", docRef.id);
+    //  return docRef.id;
+    // })
+    //   .catch(function (error) {
+    //     console.error("Error adding document: ", error);
+    //     return "error"
+    //   });
 
       
 
