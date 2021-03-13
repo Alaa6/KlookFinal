@@ -64,4 +64,14 @@ export class FoodComponent implements OnInit, OnDestroy {
   viewDetails(ID: string | undefined, collectionName: string) {
     this.router.navigate(['/activityDetails', collectionName, ID]);
   }
+  filterByCity() {
+    this.foodServics.searchForFood('Bangkook', 'Food').subscribe(
+      (res) => {
+        this.FoodList = res;
+      },
+      (e) => {
+        console.log('cant find ' + e);
+      }
+    );
+  }
 }
