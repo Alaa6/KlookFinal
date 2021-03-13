@@ -150,11 +150,8 @@ var firebaseConfig = {
 
     ActivityDetailsComponent,
     BookTrainComponent,
-    //  ScrollSpyDirective,
-    //ScrollSpyDirective,
-
     // ScrollSpyDirective,
-
+  
     BookingDialogComponent,
     ConditionsComponent,
 

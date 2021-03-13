@@ -586,20 +586,31 @@ article {
 
 
 
-#card {
+.card {
     border: none;
     box-shadow: $simple-shadow;
     color: #212121;
     transition: all 0.5s ease-in-out;
+  overflow: auto;
+  height: 350px;
    
 
 }
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 5px #aaaaaa;
+  cursor: pointer;
+
+}
+
 
 
 
 #card-icon {
     height: 32px;
 }
+
 
 #checkbox {
     border: 1px solid #b2b2b2;
@@ -922,4 +933,26 @@ a {
 .disabled  {
   pointer-events:none;
   opacity:0.5;
+
+}
+
+//  scroll style 
+ /* width */
+ ::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:  #fff; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

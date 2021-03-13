@@ -264,10 +264,24 @@ setLanguage() {
   // this.languageService.setLanguage(
     this.languageService.getLanguage() == 'ar'
       ? (this.tr = 'ar')
-      : (this.tr = 'en');
-    // );
-    // this.translate.use(this.languageService.getLanguage());
-    console.log('tr' + this.tr);
-    return this.tr;
-  }
+      : (this.tr = 'en')
+  // );
+  // this.translate.use(this.languageService.getLanguage());
+  console.log("tr"+ this.tr);
+  return this.tr;
+}
+
+search( searchTerm?:string) {
+  
+  
+
+  this.router.navigate(['/experiences/activities', {searchKey : searchTerm}])
+  
+
+}
+
+
+
+
+
 }
