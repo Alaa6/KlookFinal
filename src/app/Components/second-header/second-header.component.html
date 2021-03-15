@@ -21,79 +21,85 @@
     [ngbCollapse]="isMenuCollapsed"
     id="navbarSupportedContent"
   >
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a
-          class="nav-link hd1 home"
-          routerLink="/home"
-          routerLinkActive="active"
-          (click)="isMenuCollapsed = true"
-        >
-          <i class="fas fa-home home clr"></i>
-          <span class="home hd1">{{ 'secondHeader.home' | translate }}</span>
-        </a>
-      </li>
+    <div
+      style="background-color: white;"
+      [ngClass]="{
+        inceaseHeight: !isMenuCollapsed,
+        decreaseHeight: isMenuCollapsed
+      }"
+    >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" style="margin-left: 1em;">
+          <a
+            class="nav-link hd1 home"
+            routerLink="/home"
+            routerLinkActive="active"
+            (click)="isMenuCollapsed = true"
+          >
+            <i class="fas fa-home home clr"></i>
+            <span class="home hd1">{{ 'secondHeader.home' | translate }}</span>
+          </a>
+        </li>
 
-      <span class="line"></span>
+        <span class="line"></span>
 
-      <!--1-->
-      <li class="nav-item dropdown">
-        <a
-          id="b1"
-          data-toggle="modal"
-          data-target="#CatModal"
-          class="nav-link"
-          href="#"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          (click)="open()"
-          (click)="isMenuCollapsed = true"
-        >
-          <!-- <div class="hd1" (mouseover)="show()" (mouseout)="hide()">
-          <i class="fas fa-bars clr"></i>
-          <span class="hd1">All Categories</span>
-        </div> -->
-          <div class="hd1">
-            <i class="fas fa-bars clr"></i>
-            <span class="hd1">{{ 'secondHeader.categories' | translate }}</span>
-          </div>
-        </a>
-      </li>
+        <!--1-->
+        <!-- <li class="nav-item dropdown" style="margin-left: 1.5em;">
+          <a
+            id="b1"
+            data-toggle="modal"
+            data-target="#CatModal"
+            class="nav-link"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)="open()"
+            (click)="isMenuCollapsed = true"
+          >
+           
+            <div class="hd1">
+              <i class="fas fa-bars clr"></i>
+              <span class="hd1">
+                {{ 'secondHeader.categories' | translate }}
+              </span>
+            </div>
+          </a>
+        </li> -->
 
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          routerLinkActive="active"
-          (click)="goToExperiencesSubCategory('Experiences')"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          (click)="isMenuCollapsed = true"
-        >
-          <i class="fas fa-parachute-box"></i>
-          <span class="hd1">
-            <a class="mmain experience">
-              {{ 'secondHeader.experience' | translate }}
-            </a>
-          </span>
-          <!-- <span></span> -->
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div *ngFor="let subCat of allSubCategorey">
-            <a
-              class="dropdown-item"
-              routerLinkActive="active"
-              (click)="goToExperiencesSubCategory(subCat.Name)"
-              [ngClass]="{ 'display-none': subCat.Name === 'Experiences' }"
-            >
-              {{ subCat.Name }}
-            </a>
-          </div>
-          <!-- <a class="dropdown-item" (click)="setsubCategoryName('Tours')"  >
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            routerLinkActive="active"
+            (click)="goToExperiencesSubCategory('Experiences')"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)="isMenuCollapsed = true"
+          >
+            <i class="fas fa-parachute-box"></i>
+            <span class="hd1">
+              <a class="mmain experience">
+                {{ 'secondHeader.experience' | translate }}
+              </a>
+            </span>
+            <!-- <span></span> -->
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div *ngFor="let subCat of allSubCategorey">
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                (click)="goToExperiencesSubCategory(subCat.Name)"
+                [ngClass]="{ 'display-none': subCat.Name === 'Experiences' }"
+              >
+                {{ subCat.Name }}
+              </a>
+            </div>
+            <!-- <a class="dropdown-item" (click)="setsubCategoryName('Tours')"  >
             Tours
           </a>
           <a
@@ -110,7 +116,7 @@
           >
             Relaxation & beauty
           </a> -->
-          <!-- <a
+            <!-- <a
             class="dropdown-item"
             routerLink="/experiences/attractions"
             routerLinkActive="active"
@@ -118,7 +124,7 @@
             Attractions
           </a> -->
 
-          <!-- <a
+            <!-- <a
             class="dropdown-item"
             (click)="setsubCategoryName('Cultural experiences')"
           >
@@ -131,121 +137,122 @@
           >
             Fun & nightlife
           </a> -->
-        </div>
-      </li>
-      <!--3-->
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          (click)="isMenuCollapsed = true"
-        >
-          <i class="fas fa-subway"></i>
-          <span class="hd1">{{ 'secondHeader.transport' | translate }}</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <!-- <a
+          </div>
+        </li>
+        <!--3-->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)="isMenuCollapsed = true"
+          >
+            <i class="fas fa-subway"></i>
+            <span class="hd1">{{ 'secondHeader.transport' | translate }}</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- <a
             class="dropdown-item"
             routerLink="/transport/carRental"
             routerLinkActive="active"
           > -->
-          <!-- {{ 'secondHeader.car rental' | translate }}
+            <!-- {{ 'secondHeader.car rental' | translate }}
           </a> -->
-          <!-- <a class="dropdown-item" href="#">Mainland China trains</a> -->
-          <a
-            class="dropdown-item"
-            routerLink="/transport/europeTrains"
-            routerLinkActive="active"
-          >
-            {{ 'secondHeader.europe trains' | translate }}
-          </a>
-          <!-- <a
+            <!-- <a class="dropdown-item" href="#">Mainland China trains</a> -->
+            <a
+              class="dropdown-item"
+              routerLink="/transport/europeTrains"
+              routerLinkActive="active"
+            >
+              {{ 'secondHeader.europe trains' | translate }}
+            </a>
+            <!-- <a
             class="dropdown-item"
             href="../Europe train/Europe train/train.html"
           >
             
           </a> -->
-          <!-- <a class="dropdown-item" href="#">Japan trains</a>
+            <!-- <a class="dropdown-item" href="#">Japan trains</a>
           <a class="dropdown-item" href="#">Taiwan intercity buses</a>
           <a class="dropdown-item" href="#">Europe intercity buses</a>
           <a class="dropdown-item" href="#">Thailand intercity buses</a>
           <a class="dropdown-item" href="#">Thailand ferries</a> -->
-        </div>
-      </li>
-      <!--4-->
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          (click)="isMenuCollapsed = true"
-        >
-          <i class="fas fa-hotel"></i>
-          <span class="hd1">
-            {{ 'secondHeader.accommodation' | translate }}
-          </span>
-        </a>
-        <div
-          class="dropdown-menu ml-5 accommodation"
-          aria-labelledby="navbarDropdown"
-        >
+          </div>
+        </li>
+        <!--4-->
+        <li class="nav-item dropdown">
           <a
-            class="dropdown-item"
-            routerLink="/accommodation/hotels&more"
-            routerLinkActive="active"
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)="isMenuCollapsed = true"
           >
-            {{ 'secondHeader.hotel' | translate }}
+            <i class="fas fa-hotel"></i>
+            <span class="hd1">
+              {{ 'secondHeader.accommodation' | translate }}
+            </span>
           </a>
-          <!-- <a class="dropdown-item" href="#">
+          <div
+            class="dropdown-menu ml-5 accommodation"
+            aria-labelledby="navbarDropdown"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/accommodation/hotels&more"
+              routerLinkActive="active"
+            >
+              {{ 'secondHeader.hotel' | translate }}
+            </a>
+            <!-- <a class="dropdown-item" href="#">
             {{ 'secondHeader.staycation' | translate }}
           </a> -->
-        </div>
-      </li>
-      <!--5-->
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-          (click)="isMenuCollapsed = true"
-        >
-          <i class="far fa-circle"></i>
-          <span class="hd1">{{ 'secondHeader.more' | translate }}</span>
-        </a>
-        <div
-          class="dropdown-menu ml-5 foodWifi"
-          aria-labelledby="navbarDropdown"
-        >
+          </div>
+        </li>
+        <!--5-->
+        <li class="nav-item dropdown">
           <a
-            class="dropdown-item"
-            routerLink="/moreToExplore/food&dining"
-            routerLinkActive="active"
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)="isMenuCollapsed = true"
           >
-            {{ 'secondHeader.food' | translate }}
+            <i class="far fa-circle"></i>
+            <span class="hd1">{{ 'secondHeader.more' | translate }}</span>
           </a>
+          <div
+            class="dropdown-menu ml-5 foodWifi"
+            aria-labelledby="navbarDropdown"
+          >
+            <a
+              class="dropdown-item"
+              routerLink="/moreToExplore/food&dining"
+              routerLinkActive="active"
+            >
+              {{ 'secondHeader.food' | translate }}
+            </a>
 
-          <a
-            class="dropdown-item"
-            routerLink="/moreToExplore/wifi&simcards"
-            routerLinkActive="active"
-          >
-            {{ 'secondHeader.wifi' | translate }}
-          </a>
-        </div>
-      </li>
-      <!-- </li> -->
-    </ul>
+            <a
+              class="dropdown-item"
+              routerLink="/moreToExplore/wifi&simcards"
+              routerLinkActive="active"
+            >
+              {{ 'secondHeader.wifi' | translate }}
+            </a>
+          </div>
+        </li>
+        <!-- </li> -->
+      </ul>
+    </div>
   </div>
 </nav>

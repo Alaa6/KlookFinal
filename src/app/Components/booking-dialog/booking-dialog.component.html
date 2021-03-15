@@ -1,10 +1,20 @@
 <h1 mat-dialog-title>Booked Successfully</h1>
 <img mat-dialog-content width="70%" height="50%" src="{{ data.Image }}" />
-<h3 mat-dialog-content>{{ data.Title }}</h3>
+<div mat-dialog-content class="pt-3">{{ data.Title }}</div>
 
-<h4 mat-dialog-content>{{ data.Date }}</h4>
+<div mat-dialog-content class="pt-3" *ngIf="data.sectionName != 'Hotel-'">
+  {{ data.Date | date: 'mediumDate' }}
+</div>
+<div *ngIf="data.sectionName == 'Hotel-'">
+  <div mat-dialog-content class="pt-3">
+    Check-in date: {{ data.Date | date: 'mediumDate' }}
+  </div>
+  <div mat-dialog-content class="pt-3">
+    Check-out date: {{ data.Date | date: 'mediumDate' }}
+  </div>
+</div>
+<div mat-dialog-content class="pt-3">{{ data.Email }}</div>
 
-<div mat-dialog-content>{{ data.Email }}</div>
 <hr />
 <div *ngIf="data.sectionName == 'ToursCollection'">
   <div mat-dialog-content>Number of Adults :{{ data.Adults }}</div>
@@ -12,8 +22,14 @@
   <div mat-dialog-content>Number of Children :{{ data.Children }}</div>
   <hr />
   <div mat-dialog-content>Number of Olders :{{ data.Olders }}</div>
+</div>
+
+<div *ngIf="data.sectionName == 'train-sights'">
+  <div mat-dialog-content>Number of Adults :{{ data.Adults }}</div>
   <hr />
-  <div mat-dialog-content>Total price :{{ data.Price }}</div>
+  <div mat-dialog-content>Number of Children :{{ data.Children }}</div>
+  <hr />
+  <div mat-dialog-content>Number of Olders :{{ data.Olders }}</div>
 </div>
 
 <div *ngIf="data.sectionName == 'Hotel-'">
@@ -22,14 +38,15 @@
   <div mat-dialog-content>Number of Children :{{ data.Children }}</div>
   <hr />
   <div mat-dialog-content>Number of Rooms :{{ data.Rooms }}</div>
-  <hr />
-  <div mat-dialog-content>Total price :{{ data.Price }}</div>
 </div>
 
 <div *ngIf="data.sectionName == 'Wifi_&_SimCards'">
   <div mat-dialog-content>Number of SIM Cards :{{ data.SIM }}</div>
-  <hr />
 </div>
+
+<hr />
+<div mat-dialog-content>Total price :{{ data.Price }} EGP</div>
+<hr />
 
 <div mat-dialog-actions>
   <button

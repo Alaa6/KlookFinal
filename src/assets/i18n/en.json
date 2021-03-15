@@ -97,7 +97,7 @@
         "roller":"High Roller Las Vegas",
         "shanghi":"Shanghi Tower",
         "categories":"Travel Categories",
-        "europe train":"Europe Train Tickets",
+        "europe train":"Train Tickets",
         "hotel":"Hotel",
         "wifi":"Wifi & Sim Card",
         "egp":"EGP",
@@ -121,7 +121,7 @@
         "accommodation":"Accommodation",
         "more":"More to explore",
         "car rental":"Car rentals",
-        "europe trains":"Europe trains",
+        "europe trains":"Trains",
         "hotel":"Hotels & more",
         "staycation":"Staycations",
         "food":"Food & dining",
@@ -377,10 +377,7 @@
     "experiences":{
         "discover":"Discover the best theme parks, museums and more must-sees in"
     },
-    "food":{
-        "previous":"Previous",
-        "food":"Food & dining"
-    },
+    
     "help":{
         "how":"Hello. How can we help you?",
         "faqs":"FAQs",
@@ -460,5 +457,66 @@
         "mission":"Our mission",
         "empower":"Empowering travelers around the world to discover, book and experience the best things to do anywhere, anytime.",
         "travel":"Travel should be all play and no hassle. With so many activities waiting to be discovered, our goal is to connect travelers with the experiences they want and need."
-    }
+    },
+    "food": {
+        "title": "Food & dining",
+        "sub-title": "Discover and book amazing to do at exclusive Prices",
+        "total-activities": "1212 activities found",
+        "search": "Search filtered results",
+        "Availability": "Availability",
+        "price-range": "Price Range",
+        "instant-confirmation": "Instant confirmation",
+        "sort": "sort by",
+        "sort-type1": "Most relevant",
+        "sort-type2": "Most popular",
+        "sort-type3": "Best reviewed",
+        "sort-type4": "price (low to high)",
+        "sort-type5": "Recently added",
+        "selected": "selected",
+        "option": "Food & dining",
+        "destinations": "Destinations",
+        "categories": "Categories",
+        "button": "View all"
+      },
+      "train": {
+        "title": "Europe trains",
+        "button": "Change destination",
+        "form-from": "From",
+        "form-to": "To",
+        "form-date": "Departure date",
+        "form-time": "Departure time",
+        "form-passengers": "No. of passengers",
+    
+        "form-button": "Search",
+        "form-dropdown-status": "You can select up to 9 passengers",
+        "form-dropdown-type-adult": "Adult",
+        "form-dropdown-type-child": "Child",
+        "form-dropdown-type-youth": "Youth",
+        "form-dropdown-type-senior": "Senior",
+        "You-might-also-like": "You might also like",
+        "Reviews": "Reviews",
+        "Reviews-rate": "Good",
+        "Reviews-button": "Read all 3069 reviews",
+        "Questions-title": "Common Questions",
+        "Questions-1": "How to book a Europe train ticket with Klook?",
+        "Questions-1-answer": "Simply enter your departure and arrival city, select a departure (and return) date & time, indicate the number of passengers, then tap or click the search button. You will be provided with a list of train itineraries that you can choose from",
+        "Questions-2": " What should I do if the booking is not open? ",
+        "Questions-2-answer": " European train tickets are usually available for sale 90 days in advance, but if your preferred ticket is not yet available for purchase, it is probably because your desired ticket is not yet available at that time ",
+        "Questions-3": "Why Can't I find the Europe train route I want to book?",
+        "Questions-3-answer": " There are several reasons why you might not find your desired train: (1) Your desired train is full, or (2) Your desired train route is not yet available for booking, or (3) Your desired train route is temporarily closed for booking due to track maintenance works, or (4) Your desired train journey might contain more than two changes (our system is designed to filter out any train routes with more than two exchanges to give you the most direct route) ",
+        "Questions-4": " Can I reserve a Europe train ticket first and pay within 24-72 hours? ",
+        "Questions-4-answer": " At the moment, it is not possible to reserve now and pay for a ticket later with Klook. To secure a ticket, please pay as soon as you have chosen your chosen route ",
+        "Questions-5": " How early can I purchase a Europe train ticket? ",
+    
+        "Questions-5-answerA": "This varies depending on your selected train routes, and also ranges from countries and types of trains. Generally speaking, many of the European train tickets can be booked as early as 90 days before train departure. Below are some of the recommended timelines for ticket booking according to train type and popular routes:",
+        "Questions-5-answerB": "== Domestic Trains ==",
+        "Questions-5-answerC": "TGV (within France): 90 days in advance ICE (within Germany): 180 days in advance Railjet (within Austria): 90 days in advance Freccirarossa, Frecciaasgento, and Frecciabianca (within Itlay): 120 days in advance NTV (within Italy): 120 days in advance AVE (within Spain): 75 days in advance National Rail (UK): 75 days in advance ",
+        "Questions-5-answerD": " == International Trains ==",
+        "Questions-5-answerE": "Eurostar (London to/from Paris, Brussels, and Amsterdam): 180 days in advance Thalys (Paris to/from Brussels and Amsterdam): 90 days in advance ICE (Germany to/from neighboring countries): 180 days in advance TGV (France to/from neighboring countries): 90 to 120 days in advance TGV Lyria (Paris to/from Geneva and Zurich): 120 days in advance Berlin-Warsaw Express: 60 days ",
+        "Questions-5-answerF": "== Night Trains ==",
+        "Questions-5-answerG": "Intercites de Nuit (within France): 90 days in advance Italian night trains: 90 days in advance OBB Night Train (Austria to/from neighboring countries): 180 days in advance Thello (Paris to/from Milan and Venice): 120 days in advance Lusitania (Madrid to/from Lisbon): 60 days in advance ",
+        "Questions-5-answerH": "== Swiss Scenic Trains ==",
+        "Questions-5-answerI": "Glacier Express (Zermatt - Brig - Chur / St. Moritz): 90 days in advance GoldenPass Line (Luzern - Interlaken - Zweisimmen - Montreux): 90 days in advance Bernina Express (Chur/Davos - St. Moritz - Tirano - Lugano): 90 days in advance Gotthard Panorama Express (Luzern - Fluelen - Bellinzona - Lugano): 90 days in advance ",
+        "button-help": "Klook help center"
+      }
 }
