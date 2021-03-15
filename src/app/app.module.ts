@@ -1,7 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+/////// angular material
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import {MatIconModule} from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { DetailsComponent } from './Components/details/details.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+///////
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +39,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { PopupComponent } from './Components/popup/popup.component';
-import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -38,17 +52,7 @@ import { KlookCreditComponent } from './Components/klook-credit/klook-credit.com
 import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { MatCardModule } from '@angular/material/card';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSelectModule } from '@angular/material/select';
-import { DetailsComponent } from './Components/details/details.component';
-import { MatNativeDateModule } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+
 import { BookTrainComponent } from './Components/book-train/book-train.component';
 // import { CardDirective } from './Directives/card.directive';
 import {
@@ -226,6 +230,7 @@ var firebaseConfig = {
     ExperiencesModule,
     MatAutocompleteModule,
     SearchModule,
+    MatIconModule
   ], // ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EuropeTrainsComponent } from './europe-trains/europe-trains.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import {MatIconModule} from '@angular/material/icon';
 
 import {
   TranslateModule,
@@ -39,6 +40,7 @@ const routes: Routes = [
     NgbModule,
     ReactiveFormsModule,
     CarouselModule,
+    MatIconModule ,
     RouterModule.forChild(routes),
   ],
 })

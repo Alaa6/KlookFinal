@@ -60,7 +60,6 @@
                   d="M10.5 2a8.5 8.5 0 016.4 14.095l3.842 3.843a.6.6 0 01-.766.918l-.083-.07-3.845-3.846A8.5 8.5 0 1110.5 2zm0 1.2a7.3 7.3 0 100 14.6 7.3 7.3 0 000-14.6z"
                 ></path>
               </svg>
-
               <input
                 class="form-control rounded pt-2 mr-3"
                 [(ngModel)]="searchTerm"
@@ -69,7 +68,6 @@
                 id="tour-search"
               />
             </div>
-
             <button class="rounded ml-2" (click)="search()">Search</button>
           </div>
         </div> -->
@@ -90,9 +88,12 @@
 
         <!-- search -->
 
-
-        <app-search  [city]="city" [subCatName]="subCatName" [collectionListName] ="collectionListName" [collectionName] ="collectionName"></app-search>
-       
+        <app-search
+          [city]="city"
+          [subCatName]="subCatName"
+          [collectionListName]="collectionListName"
+        ></app-search>
+        <!---->
       </div>
     </div>
 
@@ -120,7 +121,7 @@
         *ngFor="let cat of categoryList"
       >  -->
       <a
-        href="#"
+        (click)="goToActivites($event, cat)"
         class="col-lg-2 col-md-4 col-sm-4 card"
         *ngFor="let cat of categoryList"
       >
@@ -327,7 +328,6 @@
 
   <!-- <section id="nearby" class="m-5 mb-5" *ngIf="nearbyList.length > 0">
     <h2 class="font-weight-bold ml-4 mt-1">Nearby destinations</h2>
-
     <div class="row ml-4">
       <div
         class="card text-white h-1 card1 mr-4"
@@ -378,84 +378,4 @@
       No Tours of {{ subCatName }} available now in {{ city }}
     </p>
   </div>
-<<<<<<< HEAD
-
-  <!-- <section class="m-5">
-    <h2 class="font-weight-bold ml-4 mt-1">Recommended</h2>
-    <p class="font-weight-bold ml-4 mt-4" style="font-size: 16px;">
-      {{ city }}
-    </p>
-
-    <div class="d-flex flex-wrap ml-3 mt-4">
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Attraction & Show</span>
-  
-
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Tours & Sightseeing</span>
-      </a>
-
-   
-
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Activities & Experiences</span>
-      </a>
-    
-
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Theme Parks</span>
-      </a>
-
-  
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Exhibits & Installations</span>
-      </a>
-  
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Popular Attractions</span>
-      </a>
-   
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Museums & Galleries</span>
-      </a>
-   
-
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Overnight Tours & Experiences</span>
-      </a>
-   
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Local Sightseeing</span>
-      </a>
-    
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Art & Culture</span>
-      </a>
-     
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Beyond the City</span>
-      </a>
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Adrenaline Junkies</span>
-      </a>
-    
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Fun With Kids</span>
-      </a>
-    
-
-      <a id="recomended-txt" class="mb-2 mr-2 p-2">
-        <span>Outdoor Adventure</span>
-      </a>
-    </div>
-
-    <div
-      class="font-weight-bold ml-4 mt-4"
-      style="font-size: 14px; color: #4985e6;"
-    >
-      View More
-    </div>
-  </section> -->
-=======
->>>>>>> b5737aab5fb950c2f0e26436f5dce915c8678386
 </article>

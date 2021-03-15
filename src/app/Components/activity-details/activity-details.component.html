@@ -28,7 +28,12 @@
       class="fas fa-chevron-right blue ml-2 mr-2"
       style="font-size: 0.8em;"
     ></i>
-    <a class="blue" href="">Cairo</a>
+    <a class="blue" *ngIf="sectionName == 'train-sights'">{{ Card.name }}</a>
+    <a class="blue" *ngIf="sectionName == 'ToursCollection'">{{ Card.City }}</a>
+    <a class="blue" *ngIf="sectionName == 'Hotel-'">{{ Card.CityHotel }}</a>
+    <a class="blue" *ngIf="sectionName == 'Wifi_&_SimCards'">
+      {{ Card.Location }}
+    </a>
   </div>
   <!--Start spliting-->
   <div class="row">
@@ -130,22 +135,47 @@
             <div class="selectDate">Select date and package options</div>
             <!-- <button type="button" class="btn btn-light clear">Clear all</button> -->
           </div>
-          <div class="date">Please select a tour date</div>
+          <div class="date pt-3" *ngIf="sectionName != 'Hotel-'">
+            Please select a date
+          </div>
+          <div class="row" *ngIf="sectionName == 'Hotel-'">
+            <div class="date pt-3 col-4">Please select Check-in date</div>
+            <div class="date pt-3 col-4">Please select Check-out date</div>
+          </div>
+
           <!--Datepicker-->
-          <mat-form-field>
-            <input
-              class="btn available"
-              matInput
-              [matDatepicker]="myDatePicker"
-              value="Check availability"
-            />
-            <!--Add check-->
-            <mat-datepicker-toggle
-              [for]="myDatePicker"
-              matSuffix
-            ></mat-datepicker-toggle>
-            <mat-datepicker #myDatePicker></mat-datepicker>
-          </mat-form-field>
+          <div class="row">
+            <mat-form-field class="col-4">
+              <input
+                class="btn available"
+                matInput
+                [matDatepicker]="myDatePicker"
+                [(ngModel)]="Date"
+                value="Check availability"
+              />
+              <mat-datepicker-toggle
+                [for]="myDatePicker"
+                matSuffix
+              ></mat-datepicker-toggle>
+              <mat-datepicker #myDatePicker></mat-datepicker>
+            </mat-form-field>
+            <!------>
+            <mat-form-field class="col-4" *ngIf="sectionName == 'Hotel-'">
+              <input
+                class="btn available"
+                matInput
+                [matDatepicker]="hotelDatePicker"
+                [(ngModel)]="hotelDate"
+                value="Check"
+              />
+              <mat-datepicker-toggle
+                [for]="hotelDatePicker"
+                matSuffix
+              ></mat-datepicker-toggle>
+              <mat-datepicker #hotelDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
           <!--End check-->
           <!-- <div class="date">Package Type</div>
           <button type="button" class="btn btn-light mb-2 mt-2 firstbtn">
@@ -160,9 +190,12 @@
           </button> -->
           <div class="date mt-3">Quantity</div>
 
-          <div *ngIf="sectionName != 'Wifi_&_SimCards'">
+          <div *ngIf="sectionName == 'ToursCollection'">
             <div class="bg mt-2 d-flex justify-content-between">
-              <div>Adult</div>
+              <div>
+                Adult
+                <small>Price * 3</small>
+              </div>
               <div>
                 <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
                 <span
@@ -177,7 +210,11 @@
               </div>
             </div>
             <div class="bg mt-2 d-flex justify-content-between">
-              <div>Child(6-11)</div>
+              <div>
+                Child(6-11)
+                <small>Price * 2</small>
+              </div>
+
               <div>
                 <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
                 <span
@@ -193,6 +230,7 @@
             </div>
             <div class="bg mt-2 d-flex justify-content-between">
               <div>Older</div>
+
               <div>
                 <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
                 <span
@@ -207,6 +245,118 @@
               </div>
             </div>
           </div>
+          <div *ngIf="sectionName == 'train-sights'">
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>
+                Adult
+                <small>Price * 3</small>
+              </div>
+              <div>
+                <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Adults"
+                  ngDefaultControl
+                  name="adults"
+                  id="adult"
+                >
+                  {{ Adults }}
+                </span>
+                <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>
+                Child(6-11)
+                <small>Price * 2</small>
+              </div>
+
+              <div>
+                <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Children"
+                  ngDefaultControl
+                  name="children"
+                  id="child"
+                >
+                  {{ Children }}
+                </span>
+                <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Older</div>
+
+              <div>
+                <i (click)="sub2()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Olders"
+                  ngDefaultControl
+                  name="olders"
+                  id="older"
+                >
+                  {{ Olders }}
+                </span>
+                <i (click)="add2()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="sectionName == 'Hotel-'">
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>
+                Adult
+                <small>Price * 3</small>
+              </div>
+
+              <div>
+                <i (click)="sub()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Adults"
+                  ngDefaultControl
+                  name="adults"
+                  id="adult"
+                >
+                  {{ Adults }}
+                </span>
+                <i (click)="add()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>
+                Child(6-11)
+                <small>Price * 2</small>
+              </div>
+
+              <div>
+                <i (click)="sub1()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Children"
+                  ngDefaultControl
+                  name="children"
+                  id="child"
+                >
+                  {{ Children }}
+                </span>
+                <i (click)="add1()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+            <div class="bg mt-2 d-flex justify-content-between">
+              <div>Rooms</div>
+              <div>
+                <i (click)="sub5()" class="fas fa-minus p-2 mr-3"></i>
+                <span
+                  [(ngModel)]="Rooms"
+                  ngDefaultControl
+                  name="Rooms"
+                  id="Rooms"
+                >
+                  {{ Rooms }}
+                </span>
+                <i (click)="add5()" class="fas fa-plus p-2 ml-3"></i>
+              </div>
+            </div>
+          </div>
+
           <div *ngIf="sectionName == 'Wifi_&_SimCards'" class="mt-5 mb-5">
             <div class="bg mt-2 d-flex justify-content-between">
               <div>Number of SIM Cards</div>
@@ -234,7 +384,7 @@
                 name="price"
                 id="pr"
               >
-                {{ Card.Price }}
+                {{ Card.Price }} EGP
               </div>
               <div>Complete all required fields to continue</div>
             </div>
@@ -325,9 +475,7 @@
         </div>
         <div>
           <i class="far fa-clock mr-1"></i>
-          <span [(ngModel)]="Card.Date" ngDefaultControl name="date" id="datee">
-            Book now for {{ Card.Date }}
-          </span>
+          <span>Book now for {{ Card.Date }}</span>
         </div>
         <!-- <div>
           <i class="fas fa-fire mr-1" style="width: 0.8em; color: #ff5722;"></i>

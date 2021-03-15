@@ -21,7 +21,7 @@
 /* text over carousel */
 .header-text {
   position: absolute;
-  top: 20%;
+  top: 28%;
   left: 1.8%;
   right: auto;
   width: 96.66666666666666%;
@@ -180,8 +180,12 @@
   /* border: 1px solid #c5c5c5   ; */
   box-shadow: 2px 2px 2px 2px #c5c5c5;
 }
+.crd1:hover {
+  transform: translate(0, -10px);
+}
 .crd {
   color: #333333;
+  margin-top: 30em !important;
 }
 
 .text-upon-img {
@@ -239,6 +243,8 @@
 }
 .recommend .images .row .card {
   margin-right: 1em;
+  height: 30em;
+  margin-top: 20em !important;
 }
 .recommend .images .row .card a {
   color: #333333;
@@ -334,3 +340,29 @@
 //     }
 
 //   }
+@media only screen and (max-width: 1250px) {
+  .text-down-img {
+    top: 5.5em;
+  }
+}
+
+@media only screen and (max-width: 1110px) {
+  .text-down-img {
+    top: 4.5em;
+  }
+}
+
+@media only screen and (max-width: 1097px) {
+  .crd1 {
+    height: 31em;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .crd1 {
+    height: 35em !important;
+  }
+  .changeCard {
+    margin-top: 6em !important;
+  }
+}
