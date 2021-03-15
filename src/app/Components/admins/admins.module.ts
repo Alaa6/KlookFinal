@@ -33,6 +33,9 @@ import { DialogAdminComponent } from './dialog-admin/dialog-admin.component';
 import { AdminSignComponent } from './admin-sign/admin-sign.component';
 import { DashboardControlCardsComponent } from './dashboard-control-cards/dashboard-control-cards.component';
 // import { DashboardParentComponent } from './dashboardPages/';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 const routes: Routes = [
 
@@ -78,6 +81,7 @@ const routes: Routes = [
     MatMenuModule,
     MatSelectModule,
     MatTableModule,
+    MatIconModule ,
   ]
 })
 export class AdminsModule { }
