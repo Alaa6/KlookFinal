@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 /////// angular material
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -39,7 +39,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
 import { PopupComponent } from './Components/popup/popup.component';
-
 
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -93,7 +92,9 @@ import { OpenTicketComponent } from './Components/open-ticket/open-ticket.compon
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
 import { AboutComponent } from './Components/about/about.component';
 import { DestinationComponent } from './Components/destination/destination.component';
-
+import { MatTreeModule } from '@angular/material/tree';
+//import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchModule } from './Components/search/search.module';
 
@@ -111,7 +112,6 @@ var firebaseConfig = {
   appId: '1:402072663413:web:b045d045b9b5af218f8f3c',
   measurementId: 'G-SE1DJ8PYYC',
 };
-
 
 // var firebaseConfig = {
 //   apiKey: "AIzaSyAzBJKDiRHQ0pgh52rSMCh_jvV5CBRwdCI",
@@ -155,7 +155,7 @@ var firebaseConfig = {
     ActivityDetailsComponent,
     BookTrainComponent,
     // ScrollSpyDirective,
-  
+
     BookingDialogComponent,
     ConditionsComponent,
 
@@ -180,7 +180,7 @@ var firebaseConfig = {
     BookBehalfComponent,
 
     AboutComponent,
-   
+
     DestinationComponent,
     // // SignComponent,
     // DashboardComponent,
@@ -196,6 +196,9 @@ var firebaseConfig = {
         deps: [HttpClient],
       },
     }),
+    MatTreeModule,
+    //MatIconModule,
+    MatRadioModule,
     MatPaginatorModule,
     BrowserModule,
     AppRoutingModule,
@@ -230,7 +233,7 @@ var firebaseConfig = {
     ExperiencesModule,
     MatAutocompleteModule,
     SearchModule,
-    MatIconModule
+    MatIconModule,
   ], // ],
   providers: [],
   bootstrap: [AppComponent],
