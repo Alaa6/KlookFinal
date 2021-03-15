@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-/////// angular material
+
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -37,51 +37,33 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
-import { from } from 'rxjs';
+
 import { PopupComponent } from './Components/popup/popup.component';
 
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { RouterModule, Routes } from '@angular/router';
 
-// import { AngularFireStorageModule } from '@angular/fire/storage';
-// import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ModalComponent } from './Components/modal/modal.component';
 import { HelpComponent } from './Components/help/help.component';
 import { KlookCreditComponent } from './Components/klook-credit/klook-credit.component';
 import { ActivityDetailsComponent } from './Components/activity-details/activity-details.component';
 
-import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { BookTrainComponent } from './Components/book-train/book-train.component';
-// import { CardDirective } from './Directives/card.directive';
+
 import {
   TranslateModule,
   TranslateService,
   TranslateLoader,
 } from '@ngx-translate/core';
-// import { SignComponent } from './Components/sign/sign.component';
-// import { DashboardComponent } from './Components/dashboard/dashboard.component';
-// import { DetailsDashboardComponent } from './Components/details-dashboard/details-dashboard.component';
-// import { SignComponent } from './admin/sign/sign.component';
-// import { DashboardComponent } from './Components/admins/dashboard/dashboard.component';
-// import { DetailsDashboardComponent } from './Components/admins/details-dashboard/details-dashboard.component';
-
-//import { ScrollSpyDirective } from './directives/scroll-spy.directive';
-// import { CardDirective } from './Directives/card.directive';
-
-import { ScrollSpyModule } from 'ngx-scrollspy';
-import { LanguageInterceptor } from './interceptors/language.interceptor';
-// import { ScrollSpyDirective } from './Directives/scroll-spy.directive';
 
 import { ExperiencesModule } from './Components/experiences/experiences.module';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { BookingDialogComponent } from './Components/booking-dialog/booking-dialog.component';
+
 import { ConditionsComponent } from './Components/conditions/conditions.component';
 import { BlogComponent } from './Components/blog/blog.component';
 import { InviteFriendsComponent } from './Components/invite-friends/invite-friends.component';
-//import { SimpleScrollSpyModule } from "angular-simple-scroll-spy";
-//import { SimpleScrollSpyModule } from 'angular-simple-scroll-spy';
+
 import { KlookCreditsComponent } from './Components/klook-credits/klook-credits.component';
 import { FindBookedComponent } from './Components/find-booked/find-booked.component';
 import { CancelComponentComponent } from './Components/cancel-component/cancel-component.component';
@@ -95,6 +77,7 @@ import { DestinationComponent } from './Components/destination/destination.compo
 import { MatTreeModule } from '@angular/material/tree';
 //import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+import { BookingDialogComponent } from './Components/booking-dialog/booking-dialog.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchModule } from './Components/search/search.module';
 
@@ -142,9 +125,8 @@ var firebaseConfig = {
     HomeComponent,
     AttractionsHongKongComponent,
     LoginComponent,
-
     SecondHeaderComponent,
-
+    BookingDialogComponent,
     PopupComponent,
     NotFoundComponent,
     ModalComponent,
@@ -157,6 +139,7 @@ var firebaseConfig = {
     // ScrollSpyDirective,
 
     BookingDialogComponent,
+
     ConditionsComponent,
 
     BlogComponent,
@@ -182,13 +165,10 @@ var firebaseConfig = {
     AboutComponent,
 
     DestinationComponent,
-    // // SignComponent,
-    // DashboardComponent,
-    // DetailsDashboardComponent
   ],
-  exports: [NotFoundComponent],
+  entryComponents: [BookingDialogComponent],
+  exports: [NotFoundComponent, BookingDialogComponent],
   imports: [
-    // SimpleScrollSpyModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -206,14 +186,12 @@ var firebaseConfig = {
     CarouselModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    // AngularFireModule.initializeApp(firebaseConfig2),
+
     AngularFirestoreModule, // firestore
-    // AngularFireAuthModule, // auth
-    // AngularFireStorageModule // storage
+
     MatDialogModule,
 
     RouterModule,
-    // BrowserAnimationsModule,
     TranslateModule,
 
     FormsModule,

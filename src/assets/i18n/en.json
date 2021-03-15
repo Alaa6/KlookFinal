@@ -479,7 +479,7 @@
         "button": "View all"
       },
       "train": {
-        "title": "Europe trains",
+        "title": "Trains",
         "button": "Change destination",
         "form-from": "From",
         "form-to": "To",
