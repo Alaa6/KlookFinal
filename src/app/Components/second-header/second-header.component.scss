@@ -5,6 +5,12 @@
 a {
   cursor: pointer;
 }
+.inceaseHeight {
+  height: 15em;
+}
+.decreaseHeight {
+  height: 2em;
+}
 
 .navbar2 {
   font-weight: 500;
@@ -40,9 +46,9 @@ a {
   color: #333333;
   font-size: 1em;
 }
-.navbar2 .navbar-collapse {
-  padding-bottom: 0.5em;
-}
+// .navbar2 .navbar-collapse {
+//   padding-bottom: 0.5em;
+// }
 .navbar2 #navbarDropdown:hover .hd1 {
   color: #ff5722;
 }
