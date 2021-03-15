@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { FoodServiceService } from 'src/app/services/food-service.service';
@@ -14,6 +14,7 @@ import {
   MatTreeFlattener,
 } from '@angular/material/tree';
 import { RelaxServiceService } from 'src/app/services/relax-service.service';
+import { ITour } from 'src/app/viewModels/itour';
 interface ExampleFlatNode {
   expandable: boolean;
   name: string;
@@ -28,17 +29,7 @@ export class FoodComponent implements OnInit, OnDestroy {
   FoodList: IFood[] = [];
   subscribtion: Subscription | null = null;
   totalRecords: number = 0;
-  //page: number = 1;
-  // name = 'Angular';
-  // page = 1;
-  // //pageSize = 12;
-  // items = [];
-  // maxSize = 2;
-  // length = 24;
-  // pageSize = 12;
-  // pageIndex = 0;
-  // pageSizeOptions = [5, 10, 25];
-  // showFirstLastButtons = true;
+  p: number = 1;
 
   // handlePageEvent(event: PageEvent) {
   //   this.length = event.length;
@@ -46,17 +37,17 @@ export class FoodComponent implements OnInit, OnDestroy {
   //   this.pageIndex = event.pageIndex;
   // }
   searchkey: string = '';
-  subCatName: string = '';
+  subCatName: string = 'Food';
   city: string = '';
-  // toursSearch: ITour[] = []
+  //toursSearch: ITour[] = []
   // jsoon: ICategory[] = []
   searchTerm: string = '';
   // toursSearchdisplay: ITour[] = []
   priceRangeValue: number;
   priceRangeMax: number;
   priceRangeMin: number;
-  // tourList: ITour[] = []
-  subCat: string = '';
+  tourList: ITour[] = [];
+  subCat: string = 'Food';
   // cityList: ICity[] = []
   continentNameList: string[] = [];
   continentName: string = '';
@@ -140,6 +131,92 @@ export class FoodComponent implements OnInit, OnDestroy {
       });
     });
 
+    ////////////////////////////////////////////////////
+    let routeSubscription: Subscription = this.activatedRoute.paramMap.subscribe(
+      (params: ParamMap) => {
+        //if  the route parameter value  changes  (Observable)
+
+        this.subCatName = String(params.get('supCatName'));
+        this.city = String(params.get('city')).split('%20').join(' ');
+        this.searchkey = String(params.get('searchKey')).split('%20').join(' ');
+        this.activitesCategory = String(params.get('activitesCategory'))
+          .split('%20')
+          .join(' ');
+        this.collectionName = String(params.get('collectionName'))
+          .split('%20')
+          .join(' ');
+        ////////////////////////////////////////////
+
+        if (
+          this.activitesCategory !== 'null' &&
+          this.activitesCategory !== undefined
+        ) {
+          //  this.relaxService.getFoodCards(this.city,undefined,'Food',this.activitesCategory).subscribe(
+
+          //  )
+          this.relaxService.getFoodCards(this.city, 'Food').subscribe((res) => {
+            this.FoodList = res.map((data) => {
+              return {
+                id: data.payload.doc.id,
+                ...data.payload.doc.data(),
+              };
+            });
+            //console.log(this.FoodList, "this.FoodList activitesCategory");
+            console.log(res, 'res activitesCategory ');
+          });
+        }
+
+        // if (this.searchkey !== 'null') {
+        //   if (
+        //     (this.city != undefined && this.subCatName != undefined) ||
+        //     this.city != null ||
+        //     this.subCatName != null
+        //   ) {
+        //     this.relaxService
+        //       .searchForTours(this.city, this.subCatName, this.collectionName)
+        //       .subscribe((res) => {
+        //         this.toursSearch = res;
+        //         this.tourList = this.toursSearch.filter((res) => {
+        //           return res.Title.trim()
+        //             .toLocaleLowerCase()
+        //             .match(this.searchkey.trim().toLocaleLowerCase());
+        //         });
+        //       });
+        //   } else {
+        //     this.relaxService.searchForTours().subscribe((res) => {
+        //       this.toursSearch = res;
+        //       this.tourList = this.toursSearch.filter((res) => {
+        //         return res.Title.trim()
+        //           .toLocaleLowerCase()
+        //           .match(this.searchkey.trim().toLocaleLowerCase());
+        //       });
+        //     });
+        //   }
+        //   this.activitesCategory = 'search';
+        // } else if (
+        //   this.activitesCategory !== 'null' &&
+        //   this.activitesCategory !== undefined
+        // ) {
+        //   this.relaxService
+        //     .getAllTours(
+        //       this.city,
+        //       undefined,
+        //       this.subCatName,
+        //       this.activitesCategory
+        //     )
+        //     .subscribe((res) => {
+        //       this.tourList = res.map((data) => {
+        //         return {
+        //           id: data.payload.doc.id,
+        //           ...data.payload.doc.data(),
+        //         };
+        //       });
+        //       console.log(this.tourList, 'this.tourList activitesCategory');
+        //       console.log(res, 'res activitesCategory ');
+        //     });
+        // }
+      }
+    );
     this.subscribtion = this.foodServics
       .getFoodCards('Categories', 'Section', 'Food', 'Other')
       .subscribe(
@@ -173,12 +250,12 @@ export class FoodComponent implements OnInit, OnDestroy {
 
   setCityName(cityName: string) {
     this.router.navigate([
-      '/experiences/activities/',
+      '/moreToExplore/food&dining',
       {
         city: cityName,
         supCatName: this.subCatName,
-        activitesCategory: this.activitesCategory,
-        collectionName: this.collectionName,
+        // activitesCategory: this.activitesCategory,
+        // collectionName: this.collectionName,
       },
     ]);
   }
@@ -187,12 +264,12 @@ export class FoodComponent implements OnInit, OnDestroy {
     console.log(activCate);
 
     this.router.navigate([
-      '/experiences/activities/',
+      '/moreToExplore/food&dining',
       {
         city: this.city,
         supCatName: this.subCatName,
-        activitesCategory: activCate,
-        collectionName: this.collectionName,
+        // activitesCategory: activCate,
+        //collectionName: this.collectionName,
       },
     ]);
   }
