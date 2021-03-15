@@ -190,8 +190,7 @@ export class ActivityDetailsComponent implements OnInit {
       noPerson: this.noPerson.toString(),
       Rooms: this.Rooms,
     }
-    // x :string= "32.2";
-    // y: number =+this.x;
+
     if (this.Card.Price.includes(',')) {
       this.Card.Price = this.Card.Price.replace(',', '')
     }
@@ -236,14 +235,14 @@ export class ActivityDetailsComponent implements OnInit {
       console.log(activity.Price)
       activity.Price = this.totalPrice.toString()
       activity.noPerson = this.noPerson.toString()
-      console.log('type of price: ' + typeof activity.Price)
+      console.log('type of price: ' + typeof (activity.Price))
       console.log('activity.Price: ' + activity.Price)
 
       this.activityDetails.Booking(activity).then(
         (res) => {
           console.log('Done')
 
-          console.log(typeof this.totalPrice)
+          console.log(typeof (this.totalPrice))
         },
         (err) => {
           console.log('error : ' + err)
