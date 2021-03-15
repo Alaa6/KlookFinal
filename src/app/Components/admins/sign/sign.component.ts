@@ -120,9 +120,9 @@ export class SignComponent implements OnInit {
 
   ngOnInit(): void {
     this.insertForm = this.fb.group({
-      Email: ['', Validators.required],
-      Password: ['', [Validators.required, Validators.minLength(4)]],
-      Name: ['', [Validators.required, Validators.minLength(4)]],
+      Email: new FormControl('',[Validators.required,Validators.email]),
+      Password: new FormControl('',[Validators.required, Validators.minLength(6)]),
+      Name: new FormControl('',[Validators.required, Validators.minLength(6)]),
     })
   }
 
