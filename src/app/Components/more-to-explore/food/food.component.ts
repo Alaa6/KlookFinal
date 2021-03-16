@@ -1,4 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
@@ -25,7 +32,7 @@ interface ExampleFlatNode {
   templateUrl: './food.component.html',
   styleUrls: ['./food.component.scss'],
 })
-export class FoodComponent implements OnInit, OnDestroy {
+export class FoodComponent implements OnInit, OnDestroy, OnChanges {
   FoodList: IFood[] = [];
   subscribtion: Subscription | null = null;
   totalRecords: number = 0;
@@ -37,7 +44,7 @@ export class FoodComponent implements OnInit, OnDestroy {
   //   this.pageIndex = event.pageIndex;
   // }
   searchkey: string = '';
-  subCatName: string = 'Food';
+  // subCatName: string = 'Food';
   city: string = '';
   //toursSearch: ITour[] = []
   // jsoon: ICategory[] = []
@@ -57,7 +64,7 @@ export class FoodComponent implements OnInit, OnDestroy {
   activCatName: string = '';
   collectionListName: string[] = [];
   collectionName: string = '';
-
+  records: number;
   private _transformerCities = (node: IContinent, level: number) => {
     return {
       expandable: !!node.Cities && node.Cities.length > 0,
@@ -110,9 +117,17 @@ export class FoodComponent implements OnInit, OnDestroy {
     private relaxService: RelaxServiceService
   ) {
     this.translate.use(languageService.getLanguage());
+    this.records = this.FoodList.length;
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.filteredCard();
+    throw new Error('Method not implemented.');
+  }
+
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
   ngOnInit(): void {
+    console.log('Len ' + this.FoodList.length);
+    //this.records = this.FoodList.length;
     this.relaxService.getContinentList().subscribe((res) => {
       this.dataSourceCities.data = res.map((data) => {
         return {
@@ -136,7 +151,7 @@ export class FoodComponent implements OnInit, OnDestroy {
       (params: ParamMap) => {
         //if  the route parameter value  changes  (Observable)
 
-        this.subCatName = String(params.get('supCatName'));
+        //  this.subCatName = String(params.get('supCatName'));
         this.city = String(params.get('city')).split('%20').join(' ');
         this.searchkey = String(params.get('searchKey')).split('%20').join(' ');
         this.activitesCategory = String(params.get('activitesCategory'))
@@ -147,74 +162,15 @@ export class FoodComponent implements OnInit, OnDestroy {
           .join(' ');
         ////////////////////////////////////////////
 
-        if (
-          this.activitesCategory !== 'null' &&
-          this.activitesCategory !== undefined
-        ) {
-          //  this.relaxService.getFoodCards(this.city,undefined,'Food',this.activitesCategory).subscribe(
-
-          //  )
-          this.relaxService.getFoodCards(this.city, 'Food').subscribe((res) => {
-            this.FoodList = res.map((data) => {
-              return {
-                id: data.payload.doc.id,
-                ...data.payload.doc.data(),
-              };
-            });
-            //console.log(this.FoodList, "this.FoodList activitesCategory");
-            console.log(res, 'res activitesCategory ');
-          });
-        }
-
-        // if (this.searchkey !== 'null') {
-        //   if (
-        //     (this.city != undefined && this.subCatName != undefined) ||
-        //     this.city != null ||
-        //     this.subCatName != null
-        //   ) {
-        //     this.relaxService
-        //       .searchForTours(this.city, this.subCatName, this.collectionName)
-        //       .subscribe((res) => {
-        //         this.toursSearch = res;
-        //         this.tourList = this.toursSearch.filter((res) => {
-        //           return res.Title.trim()
-        //             .toLocaleLowerCase()
-        //             .match(this.searchkey.trim().toLocaleLowerCase());
-        //         });
-        //       });
-        //   } else {
-        //     this.relaxService.searchForTours().subscribe((res) => {
-        //       this.toursSearch = res;
-        //       this.tourList = this.toursSearch.filter((res) => {
-        //         return res.Title.trim()
-        //           .toLocaleLowerCase()
-        //           .match(this.searchkey.trim().toLocaleLowerCase());
-        //       });
-        //     });
-        //   }
-        //   this.activitesCategory = 'search';
-        // } else if (
+        // if (
         //   this.activitesCategory !== 'null' &&
         //   this.activitesCategory !== undefined
         // ) {
-        //   this.relaxService
-        //     .getAllTours(
-        //       this.city,
-        //       undefined,
-        //       this.subCatName,
-        //       this.activitesCategory
-        //     )
-        //     .subscribe((res) => {
-        //       this.tourList = res.map((data) => {
-        //         return {
-        //           id: data.payload.doc.id,
-        //           ...data.payload.doc.data(),
-        //         };
-        //       });
-        //       console.log(this.tourList, 'this.tourList activitesCategory');
-        //       console.log(res, 'res activitesCategory ');
-        //     });
+
+        //   //  this.relaxService.getFoodCards(this.city,undefined,'Food',this.activitesCategory).subscribe(
+        //   //  )
         // }
+        this.filteredCard();
       }
     );
     this.subscribtion = this.foodServics
@@ -222,7 +178,8 @@ export class FoodComponent implements OnInit, OnDestroy {
       .subscribe(
         (res) => {
           this.FoodList = res;
-          this.totalRecords = res.length;
+          this.totalRecords = this.setLength(this.FoodList);
+          // this.totalRecords = this.FoodList.length;
           console.log('ll' + this.totalRecords);
         },
         (err) => {
@@ -241,6 +198,7 @@ export class FoodComponent implements OnInit, OnDestroy {
     this.foodServics.searchForFood('Bangkook', 'Food').subscribe(
       (res) => {
         this.FoodList = res;
+        this.totalRecords = this.setLength(this.FoodList);
       },
       (e) => {
         console.log('cant find ' + e);
@@ -253,7 +211,7 @@ export class FoodComponent implements OnInit, OnDestroy {
       '/moreToExplore/food&dining',
       {
         city: cityName,
-        supCatName: this.subCatName,
+        //supCatName: this.subCatName,
         // activitesCategory: this.activitesCategory,
         // collectionName: this.collectionName,
       },
@@ -267,10 +225,29 @@ export class FoodComponent implements OnInit, OnDestroy {
       '/moreToExplore/food&dining',
       {
         city: this.city,
-        supCatName: this.subCatName,
+        // supCatName: this.subCatName,
         // activitesCategory: activCate,
         //collectionName: this.collectionName,
       },
     ]);
+  }
+
+  filteredCard() {
+    console.log('inside filtered');
+    this.relaxService.getFood(this.city).subscribe((res) => {
+      this.FoodList = res.map((data) => {
+        this.totalRecords = this.setLength(this.FoodList);
+        return {
+          id: data.payload.doc.id,
+          ...data.payload.doc.data(),
+        };
+      });
+      //console.log(this.FoodList, "this.FoodList activitesCategory");
+      console.log(res, 'res activitesCategory ');
+    });
+  }
+
+  setLength(list: IFood[]) {
+    return list.length;
   }
 }

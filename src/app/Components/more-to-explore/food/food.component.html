@@ -96,143 +96,106 @@
     </div>
 
     <div class="vl"></div> -->
-       <!-- start left aside -->
+      <!-- start left aside -->
 
-       <aside id="left" class="col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3 ">
+      <aside id="left" class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+        <div style="overflow-y: auto; height: 400px" class="rounded-lg p-2">
+          <!-- start select -->
+          <div class="mt-3 ml-2">
+            <div id="left-title" class="font-weight-bold">
+              {{ "food.selected" | translate }}
+            </div>
 
-        <div style="overflow-y: auto; height:400px;" class="  rounded-lg p-2">
-            <!-- start select -->
-            <div class="mt-3 ml-2">
-                <div id="left-title" class="font-weight-bold ">Selected</div>
-
-                <div class="d-flex flex-wrap mb-4">
-                    <div id="selected-items" class=" rounded m-2  pl-2 pr-2 pt-1 pb-1 ">
-                        <span class="mr-1">{{city}}</span>
-                        <!-- <svg viewBox="0 0 14 14" width="12" height="12">
+            <div class="d-flex flex-wrap mb-4">
+              <div id="selected-items" class="rounded m-2 pl-2 pr-2 pt-1 pb-1">
+                <span class="mr-1"> {{ "food.option" | translate }}</span>
+                <!-- <svg viewBox="0 0 14 14" width="12" height="12">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M11.243 11.95a.5.5 0 10.707-.707L7.707 7l4.243-4.243a.5.5 0 10-.707-.707L7 6.293 2.757 2.05a.5.5 0 10-.707.707L6.293 7 2.05 11.243a.5.5 0 10.707.707L7 7.707l4.243 4.243z">
                             </path>
                         </svg> -->
-                    </div>
-
-                    <div id="selected-items" class=" rounded m-2  pl-2 pr-2 pt-1 pb-1">
-                        <span class="mr-1">{{activitesCategory}}</span>
-                        <!-- <svg viewBox="0 0 14 14" width="12" height="12">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M11.243 11.95a.5.5 0 10.707-.707L7.707 7l4.243-4.243a.5.5 0 10-.707-.707L7 6.293 2.757 2.05a.5.5 0 10-.707.707L6.293 7 2.05 11.243a.5.5 0 10.707.707L7 7.707l4.243 4.243z">
-                            </path>
-                        </svg> -->
-                    </div>
-                </div>
-
-                <span id="clear-select" class="font-weight-bold"> Clear selection </span>
-
-                <!---->
-                <hr class="m-1 mt-4 mb-4">
-                <!---->
-                <div id="left-title" class="font-weight-bold "> Where are you going?</div>
-
-                <!-- start select item -->
-                <mat-tree [dataSource]="dataSourceCities" [treeControl]="treeControl">
-                    <!-- This is the tree node template for leaf nodes -->
-
-                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-                        <!-- use a disabled button to provide padding for tree leaf -->
-
-                        <mat-radio-group class="radio-group" [(ngModel)]="cityName">
-                            <mat-radio-button color="warn" class="radio-btn " (click)="setCityName(node.name)"
-                                [value]="node.name">
-                                {{node.name}}
-                            </mat-radio-button>
-                        </mat-radio-group>
-
-                    </mat-tree-node>
-                    <!-- This is the tree node template for expandable nodes -->
-                    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name"
-                            style="background-color: #fff; border: none;">
-                            <mat-icon class="mat-icon-rtl-mirror">
-                                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                            </mat-icon>
-                        </button>
-                        {{node.name}}
-                    </mat-tree-node>
-                </mat-tree>
-
-                <!-- end to select items -->
-
-            
-
-
-                <!---->
-                <hr class="m-1 mt-4 mb-4">
-                <!---->
-
-            </div>
-            <!-- end select -->
-
-            <!-- start category -->
-            <div class="mt-3 ml-2">
-                <div id="left-title" class="font-weight-bold ">Category</div>
-           
-
-
-
-                <!-- to select items -->
-                <mat-tree [dataSource]="dataSourceCatefories" [treeControl]="treeControl">
-                    <!-- This is the tree node template for leaf nodes -->
-
-                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-                        <!-- use a disabled button to provide padding for tree leaf -->
-                        <div  [ngClass]="{'disabled':node.name === 'Experiences'  }">
-                            <mat-radio-group class="radio-group" [(ngModel)]="activCatName">
-                                <mat-radio-button color="warn" class="radio-btn " (click)="setActivCategoryName(node.name)"
-                                    [value]="node.name">
-                                    {{node.name}}
-                                </mat-radio-button>
-                            </mat-radio-group>
-                        </div>
-
-
-                    </mat-tree-node>
-                    <!-- This is the tree node template for expandable nodes -->
-                    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-                        <div >
-                     
-                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name"
-                            style="background-color: #fff; border: none;"
-                            (click)="subCatName =node.name">
-                            <mat-icon class="mat-icon-rtl-mirror">
-                                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                            </mat-icon>
-                        </button>
-                        {{node.name}}
-                        </div>
-                    </mat-tree-node>
-                </mat-tree>
-
-
-             
-
-                <!--end select items-->
-
-
-                <!-- end category -->
-
+              </div>
             </div>
 
+            <span id="clear-select" class="font-weight-bold">
+              {{ "food.Clear-selection" | translate }}
+            </span>
+
+            <!---->
+            <hr class="m-1 mt-4 mb-4" />
+            <!---->
+            <div id="left-title" class="font-weight-bold">
+              {{ "food.left-question" | translate }}
+            </div>
+
+            <!-- start select item -->
+            <mat-tree
+              [dataSource]="dataSourceCities"
+              [treeControl]="treeControl"
+            >
+              <!-- This is the tree node template for leaf nodes -->
+
+              <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                <!-- use a disabled button to provide padding for tree leaf -->
+
+                <mat-radio-group class="radio-group" [(ngModel)]="cityName">
+                  <mat-radio-button
+                    color="warn"
+                    class="radio-btn"
+                    (click)="setCityName(node.name)"
+                    [value]="node.name"
+                  >
+                    {{ node.name }}
+                  </mat-radio-button>
+                </mat-radio-group>
+              </mat-tree-node>
+              <!-- This is the tree node template for expandable nodes -->
+              <mat-tree-node
+                *matTreeNodeDef="let node; when: hasChild"
+                matTreeNodePadding
+              >
+                <button
+                  mat-icon-button
+                  matTreeNodeToggle
+                  [attr.aria-label]="'Toggle ' + node.name"
+                  style="background-color: #fff; border: none"
+                >
+                  <mat-icon class="mat-icon-rtl-mirror">
+                    {{
+                      treeControl.isExpanded(node)
+                        ? "expand_more"
+                        : "chevron_right"
+                    }}
+                  </mat-icon>
+                </button>
+                {{ node.name }}
+              </mat-tree-node>
+            </mat-tree>
+
+            <!-- end to select items -->
+
+            <!---->
+            <hr class="m-1 mt-4 mb-4" />
+            <!---->
+          </div>
+          <!-- end select -->
+
+          <!-- start category -->
         </div>
 
         <!-- </div> -->
+      </aside>
 
-    </aside>
-
-    <!-- end left aside -->
+      <!-- end left aside -->
       <!-- +++++++++++++++++++++++++++++++++++++++++ right column +++++++++++++++++++++++++++++++++++++++++++++++ -->
       <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
         <div style="height: auto">
           <div class="row ml-4 pt-4">
-            <h3>{{ "food.total-activities" | translate }}</h3>
+            <h3>
+              {{ totalRecords
+              }}<span>{{ "food.total-activities" | translate }}</span>
+              <!-- {{ "food.total-activities" | translate }} -->
+            </h3>
           </div>
           <!-- <div class="row ml-2 pt-4"> -->
           <!-- <div class="input-group col-md-4">

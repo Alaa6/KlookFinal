@@ -166,7 +166,7 @@ var firebaseConfig = {
 
     DestinationComponent,
   ],
-  entryComponents: [BookingDialogComponent],
+  entryComponents: [BookingDialogComponent, PopupComponent],
   exports: [NotFoundComponent, BookingDialogComponent],
   imports: [
     TranslateModule.forRoot({
