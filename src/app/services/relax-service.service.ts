@@ -155,13 +155,21 @@ export class RelaxServiceService {
   //       .snapshotChanges();
   //   }
   // }
-  getFoodCards(city: string, category: string) {
+
+  getFood(city: string) {
     return this.afs
       .collection<IFood>('ToursCollection', (ref) =>
-        ref.where('City', '==', city).where('Categories', '==', category)
+        ref.where('City', '==', city).where('Categories', '==', 'Food')
       )
       .snapshotChanges();
   }
+  // getFoodCards(city: string, category: string) {
+  //   return this.afs
+  //     .collection<IFood>('ToursCollection', (ref) =>
+  //       ref.where('City', '==', city).where('Categories', '==', category)
+  //     )
+  //     .snapshotChanges();
+  // }
 
   getSubCategory(_catName?: string) {
     if (_catName == undefined) {

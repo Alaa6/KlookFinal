@@ -36,6 +36,7 @@
   width: 90%;
   margin: auto;
   margin-top: 2em;
+  margin-bottom: 5em;
 }
 .get {
   font-size: 2em;
@@ -44,4 +45,7 @@
 }
 .invite:lang(ar) {
   direction: rtl;
+}
+.invite {
+  padding-bottom: em;
 }
