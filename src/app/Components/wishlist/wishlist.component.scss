@@ -1,0 +1,2014 @@
+.all {
+    display: contents;
+    margin-bottom: -1em;
+  }
+  .h3 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  .h4 {
+    display: block;
+    font-size: 1.1em;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  
+  .h5 {
+    display: block;
+    font-size: 0.83em;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  .h6 {
+    display: block;
+    font-size: 0.67em;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  
+  //  * {
+  //   font-size: 14px;
+  // }
+  .more .card {
+    padding-right: 0em;
+    padding-left: 0em;
+  }
+  .fBtn,
+  .sBtn,
+  .thBtn {
+    text-align: center;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  
+  .slider img {
+    width: 100%;
+    height: 33em;
+  }
+  .inspired .scCol .card {
+    width: 105% !important;
+    font-size: 14px;
+  }
+  /* text over carousel */
+  .header-text {
+    position: absolute;
+    top: 30%;
+    left: 1.8%;
+    right: auto;
+    width: 96.66666666666666%;
+    color: #fff;
+  }
+  
+  .header-text h2 {
+    font-size: 40px;
+  }
+  
+  .header-text h2 span {
+    font-size: 1.3em;
+    color: white;
+  }
+  
+  .header-text .h3 span {
+    color: white;
+    font-size: 0.8em;
+  }
+  // Search
+  /*Search*/
+  .s007 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  
+  .s007 form {
+    width: 100%;
+    max-width: 790px;
+    margin: 0;
+  }
+  
+  .s007 form .inner-form .input-field {
+    position: relative;
+  }
+  
+  .s007 form .inner-form .input-field input {
+    height: 100%;
+    border: 0;
+    background: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px 32px 10px 70px;
+    font-size: 18px;
+    color: #666;
+    border-radius: 3px;
+    height: 70px;
+    color: #555;
+  }
+  
+  .s007 form .inner-form .input-field input.placeholder {
+    color: #999;
+    font-size: 18px;
+  }
+  
+  .s007 form .inner-form .input-field input:-moz-placeholder {
+    color: #999;
+    font-size: 18px;
+  }
+  
+  .s007 form .inner-form .input-field input::-webkit-input-placeholder {
+    color: #999;
+    font-size: 18px;
+  }
+  
+  .s007 form .inner-form .input-field input:hover,
+  .s007 form .inner-form .input-field input:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+  
+  .s007 form .inner-form .basic-search .input-field .icon-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+  }
+  
+  .s007 form .inner-form .basic-search .input-field .icon-wrap svg {
+    width: 34px;
+    height: 34px;
+    fill: #ccc;
+  }
+  
+  .s007 form .inner-form .basic-search .input-field .result-count {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 110px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    font-weight: bold;
+    color: #555;
+    height: 100%;
+    font-size: 14px;
+  }
+  // Explore
+  /*Explore*/
+  .explore {
+    border: 0.1em solid #f19d28;
+    border-radius: 2em;
+    background-color: rgba(241, 157, 40, 1);
+    width: 23%;
+    height: 3em;
+    line-height: 3em;
+    margin: auto;
+    margin-top: 4em;
+    opacity: 0.8;
+  }
+  .explore .ex,
+  .go {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: white;
+  }
+  .explore .brdr {
+    border: 0.1em white solid;
+    border-radius: 2em;
+    margin-left: 2em;
+    padding: 0.3em 0.5em 0.2em 0.5em;
+    margin-right: 1em;
+  }
+  .explore .brdr i {
+    font-size: 0.8em;
+    color: white;
+  }
+  /*Start After Slider */
+  .afterSlider {
+    background-color: #f5f5f5;
+    overflow: hidden;
+    height: 10em;
+  }
+  .afterSlider .row1 {
+    display: grid;
+    grid-template-columns: 33.333% 33.333% 33.333%;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+    margin-left: 6em;
+  }
+  .afterSlider .row1 .grd1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: grid;
+    grid-template-columns: 15% 85%;
+  }
+  .afterSlider .row1 .grd2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 15% 85%;
+  }
+  .afterSlider .row1 .grd3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: 15% 85%;
+  }
+  .afterSlider i {
+    font-size: 2.5em;
+    color: #ff5722;
+    margin-top: 0.2em;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .afterSlider .grdf {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .afterSlider .b {
+    font-weight: bold;
+    font-size: 1.15em;
+    margin-bottom: 0.5em;
+  }
+  .afterSlider .s {
+    font-size: 1em;
+    color: #888896;
+  }
+  /*End after slider*/
+  /*Start near you */
+  .near_container {
+    height: 44em;
+    background-color: #eceff3;
+    overflow: hidden;
+    // font-size: 14px;
+  }
+  .near_container .contain {
+    width: 90%;
+    margin: auto;
+    margin-top: 5em;
+  }
+  .near_container .h3 {
+    font-weight: bold;
+    color: #333333;
+  }
+  .near_container .exp {
+    color: #3b75d9;
+    font-weight: bold;
+  }
+  .near_container .exp a:hover {
+    text-decoration: none;
+    color: #3b75d9;
+  }
+  .near_container .exp i {
+    font-size: 0.8em;
+    margin-left: 1em;
+  }
+  /*Images: */
+  .near_container .images {
+    overflow: hidden;
+    margin-left: 4.5em;
+    margin-top: 2em;
+  }
+  .near_container .images .card {
+    margin-right: 1em;
+    transition: 0.3s;
+  }
+  .near_container .images .card:hover {
+    transform: translate(0, -10px);
+  }
+  .near_container .top_left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  .near_container .view {
+    margin-top: 3em;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #4a4a4a;
+    border: 0.1em solid #4a4a4a;
+    padding-right: 5em;
+    padding-left: 5em;
+  }
+  .near_container .view:hover {
+    color: #4a4a4a;
+  }
+  /*End near you */
+  /* Start incredible destinations */
+  
+  .incred {
+    background-color: #f5f5f5;
+  }
+  .incred_container {
+    width: 90%;
+    margin: auto;
+  }
+  // .incred_container .carousel-next-icon i {
+  //   border: 0.15em white solid;
+  //   border-radius: 50%;
+  //   padding: 0.5em;
+  // }
+  
+  // .incred_container .carousel-prev-icon i {
+  //   border: 0.15em white solid;
+  //   border-radius: 50%;
+  //   padding: 0.5em;
+  //   /* background-color: white; */
+  // }
+  // .incred_container .carousel-inner .carousel-item img {
+  //   width: 12em;
+  //   height: 18em;
+  // }
+  .incred .incred_container .col-2 img {
+    margin-top: 2em;
+    width: 11em;
+    height: 16em;
+  }
+  .incred_container .h3 {
+    padding-top: 2em;
+    font-weight: bold;
+    color: #333333;
+    margin-block-start: 0em;
+  }
+  // .incred_container .row {
+  //   margin-left: 0.2em;
+  //   transition: 3s;
+  // }
+  // .incred_container .row img {
+  //   margin-top: 2.2em;
+  //   margin-right: 1.5em;
+  // }
+  // .incred_container .txt {
+  //   position: relative;
+  // }
+  // .incred_container .txt:hover {
+  //   transform: translate(0, -5px);
+  // }
+  .incred .incred_container .col-2 .bt_lf {
+    position: absolute;
+    bottom: 8px;
+    left: 1.5em;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 600;
+    width: 7em;
+  }
+  // .incred .incred_container .arr {
+  //   border-radius: 50%;
+  //   height: 3.5em;
+  //   width: 3.5em;
+  //   background-color: white;
+  //   margin-top: 10em;
+  //   margin-left: -3em;
+  //   z-index: 5;
+  //   padding: 1em;
+  //   opacity: 0.95;
+  // }
+  // .incred_container .arr:hover {
+  //   opacity: 1;
+  // }
+  // .incred .incred_container i {
+  //   color: #666666;
+  //   position: relative;
+  //   top: calc(50% - 10px);
+  //   margin-left: 0.2em;
+  //   font-size: 1.5em;
+  // }
+  .incred .view {
+    margin-top: 2em;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #4a4a4a;
+    border: 0.1em solid #4a4a4a;
+    padding-right: 3em;
+    padding-left: 3em;
+  }
+  .incred_container .view:hover {
+    color: #4a4a4a;
+  }
+  /* End incredible destinations */
+  /*Start things to do */
+  .incred .things {
+    margin: auto;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .incred .things .h3 {
+    font-weight: bold;
+    color: #333333;
+    margin-top: 3em;
+    margin-left: 2.7em;
+  }
+  .incred .things .view {
+    padding-right: 4em;
+    padding-left: 4em;
+    margin-top: 0em;
+  }
+  /*Images: */
+  .things .row {
+    overflow: hidden;
+    margin-left: 4.5em;
+    margin-top: 2em;
+  }
+  // .things .carousel-control-next,
+  // .things .carousel-control-prev {
+  //   margin-top: -5em;
+  // }
+  // .things .carousel-next i,
+  // .carousel-prev i {
+  //   border: 0.15em white solid;
+  //   border-radius: 50%;
+  //   padding: 0.5em;
+  // }
+  .things .row .card {
+    margin-right: 1em;
+  }
+  .things .row .card:hover {
+    transform: translate(0, -10px);
+  }
+  .things .top_left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  .things .view {
+    margin-top: 2em;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #4a4a4a;
+    border: 0.1em solid #4a4a4a;
+    padding-right: 8em;
+    padding-left: 8em;
+  }
+  .things .view:hover {
+    color: #4a4a4a;
+  }
+  .things a {
+    color: #212529;
+  }
+  .things a:hover {
+    color: #4a4a4a;
+    text-decoration: none;
+  }
+  /*End things to do*/
+  /* Start get inspired */
+  .incred .inspired {
+    margin: auto;
+    overflow: hidden;
+    transition: 0.3s;
+    margin-bottom: 5em;
+  }
+  
+  .incred .inspired .mleft {
+    font-weight: bold;
+    color: #333333;
+    margin-top: 2.5em;
+    margin-left: 2.7em;
+  }
+  
+  .incred .inspired .scCol a:hover,
+  .thCol a:hover,
+  .frCol a:hover,
+  .ffCol a:hover {
+    text-decoration: none;
+  }
+  .incred .inspired .scCol .card,
+  .thCol .card,
+  .frCol .card,
+  .ffCol .card {
+    height: 22em;
+  }
+  .incred .inspired .card-title {
+    color: #212529;
+  }
+  .incred .inspired .scCol i,
+  .thCol i,
+  .frCol i,
+  .ffCol i {
+    font-size: 1.1em;
+  }
+  .incred .inspired .scCol span,
+  .thCol span,
+  .frCol span,
+  .ffCol span {
+    font-size: 0.9em;
+    margin-left: 0.3em;
+    font-weight: 600;
+  }
+  .incred .inspired .ins_container {
+    height: 28em;
+    background-image: linear-gradient(to top right, #194433, #776f4b);
+    width: 90%;
+    margin: auto;
+    border-radius: 0.3em;
+    position: relative;
+  }
+  .incred .inspired .ins_container .row1 {
+    margin: auto;
+    // display: grid;
+    // grid-template-columns: 19% 78%;
+    grid-gap: 0.7em;
+  }
+  .incred .inspired .ins_container .row1 .fsCol {
+    color: white;
+    // position: absolute;
+    // bottom: 1em;
+    // left: 2em;
+    // width: 15%;
+    margin-top: 18em;
+    margin-left: 1em;
+    font-size: 0.95em;
+  }
+  .incred .inspired .ins_container .row2 .scCol {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  
+  .incred .inspired .ins_container .row {
+    overflow: hidden;
+    margin-top: 2em;
+  }
+  .incred .inspired .ins_container .row .card {
+    margin-right: 1em;
+    margin-top: 2em;
+  }
+  .incred .inspired .ins_container .row .card a {
+    color: #333333;
+  }
+  .incred .inspired .ins_container .row .card a:hover {
+    color: #333333;
+    text-decoration: none;
+  }
+  .incred .inspired .ins_container .row .card:hover {
+    transform: translate(0, -10px);
+  }
+  .incred .inspired .ins_container .top_left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  .inspired .card-img-top {
+    height: 10em;
+  }
+  .incred .inspired .ins_container .row .btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  .incred .inspired .ins_container .row .btn1,
+  .btn2 {
+    color: white;
+    height: 1.5em;
+    font-weight: 500;
+    border-radius: 0.2em;
+    margin-top: 5.3em;
+  }
+  .incred .inspired .ins_container .row .btn1 {
+    margin-right: 1em;
+    background-color: #ff5722;
+    border: 0.1em solid #ff5722;
+  }
+  .incred .inspired .ins_container .row .btn2 {
+    background: linear-gradient(to right, #ff9557 0%, #ff6b3d 100%);
+    border: 0.1em solid #ff9557;
+  }
+  /* End Get Inspired */
+  /*-----------------------*/
+  /*Start klook recommended */
+  .incred .recommend {
+    /* width: 90%; */
+    margin: auto;
+    overflow: hidden;
+    transition: 0.3s;
+    // font-size: 14px;
+    margin-bottom: 4em;
+  }
+  .incred .recommend .h3 {
+    font-weight: bold;
+    color: #333333;
+    margin-left: 2.7em;
+  }
+  .incred .recommend .inc {
+    margin-left: 4.4em;
+    font-size: 1.1em;
+  }
+  /*Images: */
+  .recommend .cont {
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+  }
+  .recommend .images .row {
+    overflow: hidden;
+    margin-top: 2em;
+  }
+  .recommend .images .row .card {
+    margin-right: 1em;
+  }
+  .recommend .images .row .card-body del {
+    color: #666666;
+  }
+  .recommend .images .row .card a {
+    color: #333333;
+  }
+  .recommend .images .row .card a:hover {
+    color: #333333;
+    text-decoration: none;
+  }
+  .recommend .images .row .card:hover {
+    transform: translate(0, -10px);
+  }
+  .recommend .images .top_left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  .recommend .images .row .btns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .recommend .images .row .btn1,
+  .btn2 {
+    color: white;
+    height: 1.5em;
+    border-radius: 0.2em;
+    margin-top: 6em;
+    padding-bottom: 0.5em;
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+  .recommend .images .row .btn1 {
+    margin-right: 1em;
+    font-weight: 500;
+    background-color: #ff5722;
+    border: 0.1em solid #ff5722;
+  }
+  .recommend .images .row .btn2 {
+    background: linear-gradient(to right, #ff9557 0%, #ff6b3d 100%);
+    border: 0.1em solid #ff9557;
+  }
+  
+  /*End klook recommended */
+  /*Start more to explore */
+  .more {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5em;
+    // font-size: 14px;
+  }
+  .more .ttl {
+    font-weight: bold;
+    color: #333333;
+    // margin-top: 4em;
+    margin-bottom: 1em;
+  }
+  .more .row1 {
+    width: 100%;
+    margin: auto;
+    height: 30em;
+    border-radius: 2em;
+    // background-color: #ffdac4;
+    // background-color: #d8d6d4;
+    border-radius: 0.3em;
+  }
+  
+  .more .row1 .col2 {
+    margin: auto;
+  }
+  .more .row1 .artc {
+    width: 90%;
+    margin: auto;
+    padding-top: 2em;
+    color: #333333;
+    padding-bottom: 0.8em;
+    font-weight: 600;
+  }
+  .more .row1 .txt {
+    color: #555;
+    width: 90%;
+    margin: auto;
+  }
+  .more .row1 .col1 .grd {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 1.2em;
+    height: 5em;
+    width: 20em;
+    margin-left: 1em;
+    margin-top: 4em;
+  }
+  .more .card {
+    overflow: hidden;
+  }
+  .more .card-img {
+    transition: transform 0.2s;
+  }
+  .more .card-img:hover {
+    transform: scale(1.15);
+  }
+  .more .row1 .col1 .grd .img1 {
+    width: 90%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+  .more .row1 .col1 .grd .img2 {
+    width: 90%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .more .row1 .col1 .grd .img3 {
+    width: 65%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .more .row1 .col2 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .more .row1 .col2 i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    opacity: 0.6;
+    border: 0.05em solid rgb(252, 252, 252);
+    border-radius: 50%;
+  }
+  .more .modal-dialog {
+    max-width: 70em;
+    margin: 30px auto;
+  }
+  .more .modal-body {
+    position: relative;
+    padding: 0px;
+  }
+  .more .close {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    opacity: 1;
+  }
+  .more .row2 {
+    padding-top: 3em;
+    width: 103.3%;
+    // font-size: 14px;
+  }
+  .more .row2 .card-mt {
+    margin-top: 10em;
+    width: 90%;
+  }
+  .more .row2 .card-mt2,
+  .card-mt3 {
+    margin-top: 8em;
+    width: 90%;
+  }
+  .more .row2 .card-mt2 .card-text {
+    font-size: 13px;
+  }
+  
+  /*End more to Explore */
+  /*-------------------*/
+  /*Strat partenership */
+  .partener {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5em;
+  }
+  .partener .h3 {
+    font-weight: bold;
+    color: #333333;
+  }
+  .partener .logos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #333;
+  }
+  /*logo*/
+  /* .partener .one:hover {
+      fill: rgb(73.298645%, 59.199524%, 32.499695%);
+    } */
+  .partener .st0:hover {
+    fill: black;
+  }
+  
+  /*End partenership*/
+  /*---------------------------*/
+  /*Start in the media */
+  .media {
+    width: 90%;
+    margin: auto;
+    /* margin-bottom: 1em; */
+  }
+  .media .h3 {
+    font-weight: bold;
+    color: #333333;
+  }
+  .media .logos {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #333;
+    margin-left: -13em;
+  }
+  .media .last {
+    margin-top: 3em;
+    margin-left: 1.5em;
+  }
+  /*End in the media */
+  /*------------------*/
+  /*------------------*/
+  /*Start top & travel catg. */
+  .city,
+  .dothings,
+  .activity,
+  .catg {
+    width: 90%;
+    margin: auto;
+    margin-top: 4em;
+    // font-size: 14px;
+  }
+  .city .spans a,
+  span,
+  .dothings .spans a,
+  span,
+  .activity .spans a,
+  span,
+  .catg .spans a,
+  span {
+    color: #666666;
+  }
+  .city .spans a:hover,
+  .dothings .spans a:hover,
+  .activity .spans a:hover,
+  .catg .spans a:hover {
+    color: #3b75d9;
+    text-decoration: none;
+  }
+  .city .spans span,
+  .dothings .spans span,
+  .activity .spans span,
+  .catg .spans span {
+    font-weight: 200;
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+  }
+  .city .spans div,
+  .dothings .spans div,
+  .activity .spans div,
+  .catg .spans {
+    margin-top: 0.6em;
+  }
+  .dothings .viw,
+  .activity .viw {
+    margin-top: 0.6em;
+  }
+  .dothings .vw,
+  .activity .vw {
+    font-weight: 700;
+    color: #3b75d9;
+  }
+  .dothings .vw:hover,
+  .activity .vw:hover {
+    color: #3b75d9;
+    text-decoration: none;
+  }
+  .catg {
+    padding-bottom: 5em;
+    margin-bottom: -5em;
+  }
+  /*End top & travel catg.*/
+  // @media only screen and (max-width: 768px) {
+  //   body {
+  //     height: 600em;
+  //   }
+  //   .slider {
+  //     height: 23em;
+  //   }
+  //   .text-center {
+  //     margin-top: -7em;
+  //   }
+  //   .header-text h2 {
+  //     font-size: 1.5em;
+  //     margin-top: -0.9em;
+  //   }
+  //   .carousel-inner .carousel-item img {
+  //     position: relative;
+  //     text-align: center;
+  //   }
+  //   .header-text .text-center {
+  //     margin-left: 6em !important;
+  //   }
+  //   .result-count button {
+  //     margin-left: 1.3em;
+  //   }
+  //   .text-center {
+  //     position: absolute;
+  //     top: 70%;
+  //     left: 40%;
+  //     transform: translate(-50%, -30%);
+  //   }
+  //   .header-text h3 {
+  //     font-size: 1.3em;
+  //     margin-top: -1.5em;
+  //   }
+  //   .s007 {
+  //     width: 50%;
+  //     margin: auto;
+  //     height: 20%;
+  //   }
+  //   .s007 form .inner-form .basic-search .input-field .icon-wrap {
+  //     left: 1em;
+  //     width: 1.8em;
+  //   }
+  //   .s007 form .inner-form .input-field input {
+  //     height: 2.3em;
+  //   }
+  //   .s007 form .inner-form .basic-search .input-field .result-count {
+  //     right: -28px;
+  //     font-size: 0.6em;
+  //   }
+  //   .explore {
+  //     margin-top: 1em;
+  //     height: 2em;
+  //     line-height: 2em;
+  //   }
+  //   .explore .ex {
+  //     font-size: 0.8em;
+  //   }
+  //   .explore .brdr {
+  //     display: none;
+  //   }
+  //   /*Start After slider*/
+  
+  //   .afterSlider .row1 {
+  //     margin-top: 2.5em;
+  //   }
+  //   .afterSlider .row1 .grd1 {
+  //     grid-template-columns: 25% 70%;
+  //   }
+  //   .afterSlider .row1 .grd2 {
+  //     grid-template-columns: 25% 70%;
+  //   }
+  //   .afterSlider .row1 .grd3 {
+  //     grid-template-columns: 20% 71%;
+  //     margin-left: 2em;
+  //   }
+  //   /*End after slider*/
+  //   /*Start near to you*/
+  //   .near_container {
+  //     height: 65em;
+  //     /* width: 80%; */
+  //   }
+  //   .near_container h3 {
+  //     margin-left: 1.3em;
+  //   }
+  //   .near_container .exp {
+  //     margin-right: 2em;
+  //   }
+  //   .near_container .images .card {
+  //     margin-bottom: 2em;
+  //     margin-right: 8em;
+  //   }
+  //   .near_container .view {
+  //     padding-left: 5em;
+  //     padding-right: 5em;
+  //     margin-left: 6em;
+  //     margin-bottom: 3em;
+  //   }
+  //   /*End near to you*/
+  //   /*Start incredible destinations*/
+  
+  //   .incred_container {
+  //     width: 100%;
+  //   }
+  //   .incred_container h3 {
+  //     margin-left: 1.2em;
+  //   }
+  //   .incred_container .row .bt_lf {
+  //     font-size: 1em;
+  //   }
+  //   .incred .carousel {
+  //     width: 98%;
+  //   }
+  //   .carousel.pointer-event {
+  //     margin-bottom: 2em;
+  //   }
+  //   .incred_container .btn {
+  //     margin-left: 5em;
+  //     padding-left: 2em;
+  //     padding-right: 2em;
+  //   }
+  //   .incred_container .row .tex-center {
+  //     margin-top: 2em;
+  //   }
+  //   .incred_container .carousel-inner .carousel-item img {
+  //     width: 8em;
+  //     height: 16em;
+  //   }
+  //   /*End incredible destinations*/
+  //   /*Start things to do*/
+  //   .things .row .card {
+  //     margin-right: 4em;
+  //     margin-bottom: 2em;
+  //   }
+  //   .things .view {
+  //     padding-left: 5em;
+  //     padding-right: 5em;
+  //   }
+  //   /*End things to do*/
+  //   /*Start get inspired*/
+  //   .incred .inspired .ins_container .row .scCol,
+  //   .thCol {
+  //     display: none;
+  //   }
+  //   .incred .inspired .ins_container .move {
+  //     margin-left: -10em;
+  //   }
+  //   .incred .inspired .ins_container .row .frCol {
+  //     margin-left: -10em;
+  //     margin-right: 10em;
+  //   }
+  //   .incred .inspired .ins_container .row .frCol,
+  //   .ffCol {
+  //     width: 180%;
+  //   }
+  //   .incred .inspired .ins_container .row .fsCol {
+  //     bottom: 9em;
+  //   }
+  
+  //   /*End get inspired*/
+  //   /*Start Klook recommended*/
+  //   .recommend .images .row {
+  //     margin-top: 0em;
+  //     margin-left: 1em;
+  //   }
+  //   .recommend .images .row .card {
+  //     margin-bottom: 2em;
+  //     height: 25em;
+  //   }
+  //   .incred .recommend {
+  //     margin-bottom: 0em;
+  //   }
+  //   .incred .recommend .col-md-5 {
+  //     margin-right: 4em;
+  //   }
+  //   /*End klook recommended*/
+  //   /*Start more to explore*/
+  //   .more .ttl {
+  //     margin-top: 2em;
+  //     margin-left: 1.3em;
+  //   }
+  //   .more .row1 .artc {
+  //     font-size: 1.5em;
+  //   }
+  //   .more .row1 .col1 .grd {
+  //     margin-top: 1em;
+  //     grid-template-columns: 25% 25%;
+  //   }
+  //   .more .row1 .col1 .grd .img1 {
+  //     width: 100%;
+  //   }
+  //   .more .row1 .col1 .grd .img2 {
+  //     width: 100%;
+  //   }
+  //   .more .row1 .col1 .grd .img3 {
+  //     width: 100%;
+  //   }
+  //   .more .modal-dialog {
+  //     max-width: 45em;
+  //     margin: 130px auto;
+  //   }
+  //   .more .row2 .card-mt {
+  //     margin-top: 1em;
+  //   }
+  //   .more .row2 .card-mt2 {
+  //     margin-top: 0em;
+  //   }
+  //   .more .row2 h4 {
+  //     font-size: 1em;
+  //   }
+  //   .more .row2 .card-text:last-child {
+  //     font-size: 0.8em;
+  //   }
+  //   /*End more to explore*/
+  //   /*Start partner*/
+  //   .partener .six,
+  //   .nine,
+  //   .eight {
+  //     margin-top: -6em;
+  //   }
+  //   .partener .eight {
+  //     margin-left: 0em;
+  //   }
+  //   .partener .nine {
+  //     margin-right: 15em;
+  //   }
+  //   /*End partner*/
+  //   /*Start in the media*/
+  //   .media h3 {
+  //     width: 40%;
+  //   }
+  //   .media .logos {
+  //     margin-left: -17em;
+  //   }
+  //   .media .last {
+  //     margin-top: -5em;
+  //     margin-left: -1em;
+  //   }
+  //   /*End the media*/
+  //   /*Start top cities to visit*/
+  //   .city .spans a,
+  //   span,
+  //   .dothings .spans a,
+  //   span,
+  //   .activity .spans a,
+  //   span,
+  //   .catg .spans a,
+  //   span {
+  //     font-size: 0.8em;
+  //   }
+  //   .city .spans div {
+  //     display: inline-block;
+  //   }
+  //   .city .spans span,
+  //   .dothings .spans span,
+  //   .activity .spans span,
+  //   .catg .spans span {
+  //     margin-left: 0.1em;
+  //     margin-right: 0.1em;
+  //   }
+  
+  //   /*End top cities to visit*/
+  // }
+  .blog {
+    margin-top: 8em !important;
+  }
+  .things .card {
+    width: 16rem;
+    height: 21em;
+    font-size: 14px;
+  }
+  @media only screen and (max-width: 1350px) {
+    .inspired .btns .btn1,
+    .btn2 {
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 1080px) {
+    .near_container {
+      height: 65em;
+    }
+    .near_container .card {
+      margin-top: 1em;
+    }
+    .inspired .btns .btn1,
+    .btn2 {
+      display: none;
+    }
+    .inspired .date {
+      font-size: 0.8em;
+    }
+    .inspired .review {
+      font-size: 0.7em !important;
+    }
+  }
+  @media only screen and (max-width: 1037px) {
+    .inspired .review {
+      display: none;
+    }
+    .inspired .rates {
+      display: none;
+    }
+    .inspired .fsCol {
+      margin-top: 15em !important;
+    }
+  }
+  @media only screen and (max-width: 1031px) {
+    .inspired .scCol .card {
+      height: 23em !important;
+    }
+    .explore {
+      width: 19em;
+    }
+  }
+  @media only screen and (max-width: 1020px) {
+    .more .card-title {
+      margin-top: 1em;
+    }
+  }
+  @media only screen and (max-width: 990px) {
+    .more .card-img-overlay {
+      margin-top: 7.2em !important;
+    }
+  }
+  @media only screen and (max-width: 920px) {
+    .things .card {
+      width: 12rem !important;
+    }
+    .inspired .fsCol {
+      margin-top: 13em !important;
+    }
+  }
+  @media only screen and (max-width: 890px) {
+    .more .card-img-overlay {
+      margin-top: 6.2em !important;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .inspired .fsCol {
+      margin-top: 12em !important;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    body {
+      height: 1000em;
+    }
+    .header-text h2 {
+      font-size: 1.5em;
+      margin-top: -0.9em;
+    }
+    .carousel-inner .carousel-item img {
+      position: relative;
+      text-align: center;
+    }
+    .header-text .text-center {
+      left: 50% !important;
+    }
+    .header-text {
+      top: 50% !important;
+    }
+    .result-count button {
+      margin-left: 1.3em;
+    }
+    .fBtn {
+      text-align: center;
+    }
+    .text-center {
+      position: absolute;
+      top: 70%;
+      left: 40%;
+      transform: translate(-50%, -30%);
+    }
+    .header-text .h3 {
+      font-size: 1.3em;
+      margin-top: -1.5em;
+    }
+    .s007 {
+      width: 50%;
+      margin: auto;
+      height: 20%;
+    }
+    .s007 form .inner-form .basic-search .input-field .icon-wrap {
+      left: 1em;
+      width: 1.8em;
+    }
+    .s007 form .inner-form .input-field input {
+      height: 2.3em;
+    }
+    .s007 form .inner-form .basic-search .input-field .result-count {
+      right: -28px;
+      font-size: 0.6em;
+    }
+    .explore {
+      margin-top: 1em;
+      height: 2em;
+      line-height: 2em;
+    }
+    .explore .ex {
+      font-size: 0.8em;
+    }
+    .explore .brdr {
+      display: none;
+    }
+    /*Start After slider*/
+  
+    .afterSlider .row1 {
+      margin-top: 2.5em;
+      margin-left: 3em;
+    }
+    .afterSlider .row1 .grd1 {
+      grid-template-columns: 25% 70%;
+    }
+    .afterSlider .row1 .grd2 {
+      grid-template-columns: 25% 70%;
+    }
+    .afterSlider .row1 .grd3 {
+      grid-template-columns: 20% 71%;
+      margin-left: 2em;
+    }
+    .afterSlider .b,
+    .afterSlider .s {
+      font-size: smaller;
+    }
+    /*End after slider*/
+    /*Start near to you*/
+    .near_container {
+      height: 68em;
+      /* width: 80%; */
+    }
+    .near_container .h3 {
+      margin-left: 1.3em;
+    }
+    .near_container .exp {
+      margin-right: 2em;
+    }
+    .near_container .images {
+      margin-left: 8em;
+    }
+    .near_container .images .card {
+      margin-bottom: 2em;
+      margin-right: 4em;
+    }
+    .near_container .view {
+      padding-left: 3em;
+      padding-right: 3em;
+      margin-bottom: 3em;
+    }
+  
+    // .firstview {
+    //   margin-top: 60em !important;
+    // }
+    /*End near to you*/
+    /*Start incredible destinations*/
+  
+    .incred_container {
+      width: 100%;
+    }
+    .incred_container .h3 {
+      margin-left: 1.2em;
+    }
+    .incred_container .row .bt_lf {
+      font-size: 1em;
+    }
+    // .incred .carousel {
+    //   width: 98%;
+    // }
+  
+    .carousel.pointer-event {
+      margin-bottom: 2em;
+    }
+    .incred_container .btn {
+      margin-left: 5em;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+    .incred_container .row .tex-center {
+      margin-top: 2em;
+    }
+    .incred_container .carousel-inner .carousel-item img {
+      width: 8em;
+      height: 16em;
+    }
+    .sBtn {
+      text-align: center;
+    }
+    .incred .view2 {
+      padding-right: 1em;
+      padding-left: 1em;
+    }
+    /*End incredible destinations*/
+    /*Start things to do*/
+    .things .contain .h3 {
+      margin-left: 1.2em;
+    }
+    .things .row {
+      // margin-left: 4.2em;
+      margin-top: 2em;
+      // width: 67.5em !important;
+      // margin: auto;
+    }
+    .things .row .card {
+      // margin-right: 4em;
+      margin-bottom: 2em;
+      width: 14em !important;
+      // margin-left: 2em;
+    }
+    .things .view {
+      padding-left: 5em;
+      padding-right: 5em;
+    }
+    .thBtn {
+      text-align: center;
+    }
+    .things .view3 {
+      // margin-top: 150em !important;
+      // margin-left: 8em;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  
+    /*End things to do*/
+    /*Start get inspired*/
+    .incred .inspired .mleft {
+      margin-left: 1.2em;
+    }
+    .incred .inspired .ins_container {
+      height: 54em;
+    }
+    // .incred .inspired .ins_container .row .scCol,
+    // .thCol {
+    //   display: none;
+    // }
+    .incred .inspired .ins_container .move {
+      margin-left: -10em;
+      width: 95% !important;
+    }
+    .incred .inspired .ins_container .row .frCol {
+      margin-left: -10em;
+      margin-right: 10em;
+    }
+    .incred .inspired .ins_container .row .frCol,
+    .ffCol {
+      width: 180%;
+    }
+    .incred .inspired .ins_container .row .fsCol {
+      bottom: 9em;
+    }
+    .incred .inspired .ins_container .row .scCol {
+      display: block;
+      // margin-left: 2em !important;
+    }
+    .incred .inspired .ins_container .row .scCol .card {
+      width: 100%;
+      margin-left: 0em !important;
+    }
+  
+    /*End get inspired*/
+    /*Start Klook recommended*/
+    .recommend .contain .h3 {
+      margin-left: 1.2em;
+    }
+    .recommend .contain .inc {
+      margin-left: 2.4em;
+    }
+    .recommend .images .row {
+      margin-top: 0em;
+      margin-left: 1em;
+    }
+    .recommend .images .row .card {
+      margin-bottom: 2em;
+      height: 25em;
+    }
+    .incred .recommend {
+      margin-bottom: 0em;
+    }
+    .incred .recommend .col-md-5 {
+      margin-right: 4em;
+    }
+    /*End klook recommended*/
+    /*Start more to explore*/
+    .more .ttl {
+      margin-top: 2em;
+      margin-left: 0.2em !important;
+    }
+    .more .row1 .artc {
+      font-size: 1.5em;
+    }
+    .more .row1 .col1 .grd {
+      margin-top: 1em;
+      grid-template-columns: 25% 25%;
+    }
+    .more .row1 .col1 .grd .img1 {
+      width: 100%;
+    }
+    .more .row1 .col1 .grd .img2 {
+      width: 100%;
+    }
+    .more .row1 .col1 .grd .img3 {
+      width: 100%;
+    }
+    .more .modal-dialog {
+      max-width: 45em;
+      margin: 130px auto;
+    }
+    .more .row2 .card-mt {
+      margin-top: 1em;
+    }
+    .more .row2 .card-title {
+      margin-top: 4em;
+    }
+    // .more .row2 .card-mt2 .bld {
+    //   font-size: 0.8em;
+    // }
+    .more .row2 .card-mt2 {
+      margin-top: 0em;
+    }
+    .more .row2 .card-mt3 {
+      margin-top: 1em;
+    }
+    .more .row2 .card-text {
+      display: none;
+    }
+    .more .row2 .h4 {
+      font-size: 1em;
+    }
+    .more .row2 .card-text:last-child {
+      font-size: 0.8em;
+    }
+    /*End more to explore*/
+    /*Start partner*/
+    .partener .six,
+    .nine,
+    .eight {
+      margin-top: -6em;
+    }
+    .partener .eight {
+      margin-right: 25em;
+    }
+    .partener .nine {
+      margin-right: 15em;
+    }
+    /*End partner*/
+    /*Start in the media*/
+    .media .h3 {
+      width: 40%;
+    }
+    .media .logos {
+      margin-left: -17em;
+    }
+    .media .last {
+      margin-top: -5em;
+      margin-left: -1em;
+    }
+    /*End the media*/
+    /*Start top cities to visit*/
+    .city .spans a,
+    span,
+    .dothings .spans a,
+    span,
+    .activity .spans a,
+    span,
+    .catg .spans a,
+    span {
+      font-size: 0.8em;
+    }
+    .city .spans div {
+      display: inline-block;
+    }
+    .city .spans span,
+    .dothings .spans span,
+    .activity .spans span,
+    .catg .spans span {
+      margin-left: 0.4em;
+      margin-right: 0.4em;
+    }
+    .blog {
+      margin-top: 1em !important;
+    }
+    .more .card-img-overlay {
+      margin-top: 0.2em !important;
+    }
+  
+    //   /*End top cities to visit*/
+  }
+  @media only screen and (max-width: 767px) {
+    .inspired .scCol .card {
+      display: none;
+    }
+    .ins_container {
+      height: 14em !important;
+    }
+    .recommend .images .row {
+      margin-left: 10em !important;
+    }
+    // .more .row1 {
+    //   // height: 10em !important;
+    //   display: none;
+    // }
+    // .more .row1 .grd {
+    //   display: grid;
+    //   grid-template-columns: 50% 50% !important;
+    // }
+    // .more .row1 .grd .img1 {
+    //   grid-column-start: 1;
+    //   grid-column-end: 2;
+    // }
+    // .more .row1 .grd .img2 {
+    //   grid-column-start: 2;
+    //   grid-column-end: 3;
+    // }
+    .more .row2 .card {
+      margin: auto;
+      padding-left: 0em !important;
+      padding-right: 0em !important;
+    }
+    .more .row2 .card .card-title {
+      font-size: 1.2em;
+      font-weight: 500;
+      width: 28em;
+      padding-top: 10em;
+    }
+  }
+  @media only screen and (max-width: 705px) {
+    .near_container {
+      height: 114em;
+    }
+  }
+  @media only screen and (max-width: 635px) {
+    .more .row2 .card .card-title {
+      padding-top: 8em;
+    }
+  }
+  @media only screen and (max-width: 604px) {
+    .logos .eight {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 602px) {
+    .logos .five {
+      display: none;
+    }
+    .header-text .explore {
+      width: 10em !important;
+    }
+    .header .tex-center {
+      margin-left: 2em !important;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .header .tex-center {
+      left: 5% !important;
+      margin-left: 0em !important;
+    }
+  }
+  
+  @media only screen and (max-width: 479px) {
+    body {
+      // width: 200%;
+      // margin: auto;
+      height: 800em;
+    }
+    // article {
+    //   width: 113%;
+    // }
+    /*Start carousel*/
+    .header-text .text-center {
+      top: -5em !important;
+    }
+    .header-text .explore {
+      display: none;
+    }
+    .blog {
+      margin-top: 1em !important;
+    }
+  
+    /*End carousel*/
+    /*Start add text on image*/
+  
+    .slider img {
+      height: 15em;
+    }
+    // .header-text .text-center h2,
+    // h3 {
+    //   display: none;
+    // }
+    .header-text .text-center h2 span {
+      margin-left: -3em !important;
+    }
+    .header-text .text-center .h3 span {
+      margin-left: -7em;
+      font-size: 0.65em;
+    }
+    .s007 {
+      display: none;
+    }
+    // .s007 form .inner-form .basic-search .input-field .icon-wrap {
+    //   width: 1em;
+    // }
+    // .s007 form .inner-form .input-field {
+    //   right: 3em;
+    // }
+    // .s007 form .inner-form .input-field input {
+    //   height: 1.3em;
+    // }
+    // .s007 .btn {
+    //   display: none;
+    // }
+    /*End add text on image*/
+  
+    /*Start after slider*/
+    .afterSlider {
+      height: 17em;
+    }
+    .afterSlider .row1 {
+      grid-template-columns: 100% 100% 100%;
+    }
+    .afterSlider .row1 .grd2 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-top: 2em;
+    }
+    .afterSlider .row1 .grd3 {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-top: 2em;
+      margin-left: 1em;
+    }
+    .afterSlider .b,
+    .s {
+      font-size: 0.9em;
+    }
+    .grd1 i {
+      font-size: 2.2em;
+      margin-left: 1em;
+    }
+    .grd2 i {
+      font-size: 2em;
+      margin-left: 1em;
+    }
+    .grd3 i {
+      font-size: 2.2em;
+      margin-left: 0.7em;
+    }
+    /*End after slider*/
+    /*Start near you*/
+    .near_container {
+      height: 106em;
+    }
+    .near_container .contain {
+      margin-top: 1.2em;
+    }
+    .near_container .h3 {
+      font-size: 1.2em;
+    }
+    .near_container .exp {
+      font-size: 0.7em;
+      margin-right: 1em;
+    }
+    .near_container .images {
+      margin-left: 4.5em;
+    }
+    // .near_container .images .card {
+    //   /* width: 20em !important; */
+    //   // margin-right: 5em;
+    // }
+    .near_container .view {
+      padding-right: 1em;
+      padding-left: 1em;
+      font-size: 1em;
+    }
+    // .near_container .firstview {
+    //   // margin-top: 125em !important;
+    //   // margin-left: 5em !important;
+    // }
+    /*End near you*/
+    /*Start incredible destinations*/
+  
+    .incred .incred_container .h3 {
+      padding-top: 1em;
+      font-size: 1.2em;
+    }
+    // .incred .incred_container .view {
+    //   padding-left: 0.5em;
+    //   padding-right: 0.5em;
+    // }
+    .incred_container .carousel-inner .carousel-item img {
+      width: 6em;
+      height: 10em;
+    }
+    .incred_container .row .bt_lf {
+      font-size: 0.8em;
+      margin-left: -1em;
+    }
+    .view2 {
+      // margin-top: 143em !important;
+      font-size: 0.8em;
+      width: 15em;
+      // margin-left: 4em !important;
+      margin-bottom: 2em;
+    }
+  
+    /*End incredible destinations*/
+    /*Start top things to do*/
+    .things .contain .h3 {
+      font-size: 1.2em;
+      margin-top: 5em;
+      margin-left: 1em;
+    }
+    .things .card {
+      width: 20em !important;
+      margin-left: 2em;
+    }
+    .things .row {
+      width: 90em !important;
+      // margin-left: 5em !important;
+    }
+    .things .owl-nav {
+      width: 18em !important;
+    }
+    .things .ng-star-inserted {
+      width: 18em !important;
+    }
+    // .things .owl-carousel .owl-item {
+    //   width: 302px !important;
+    // }
+  
+    .things .view3 {
+      // margin-top: 215em !important;
+      padding-left: 1em !important;
+      padding-right: 1em !important;
+      font-size: 1em;
+      // margin-left: 4em !important;
+    }
+    .recommend .images {
+      margin-left: -5em;
+    }
+    .more .card {
+      margin-left: 0em !important;
+      margin-bottom: 0em !important;
+      height: 18em !important;
+    }
+    .more .card .card-title {
+      padding-top: 6em !important;
+    }
+  
+    /*End top things to do */
+    /*Start get inspired*/
+    .incred .inspired .ins_container {
+      height: 9em;
+    }
+    .inspired .mleft {
+      font-size: 1.2em;
+      margin-top: 1em !important;
+    }
+    .inspired .card {
+      display: none;
+    }
+    .incred .inspired .ins_container .row {
+      grid-template-columns: 100%;
+    }
+    .incred .inspired .ins_container .row .fsCol {
+      width: 70%;
+      margin-top: 8.5em !important;
+      margin: auto;
+    }
+    .incred .inspired .ins_container .row .fsCol .h4 {
+      font-size: 1.2em;
+    }
+  
+    /*End get inspired*/
+    /*Start klook recommended*/
+    .incred .recommend .h3 {
+      font-size: 1.2em;
+    }
+    .incred .recommend .inc {
+      margin-left: 2em;
+      font-size: 0.9em;
+      width: 80%;
+    }
+    .incred .images .col-lg-3 {
+      margin-right: 1.5em;
+    }
+    /*End klook recommended*/
+    /*Start more to explore*/
+    .more .ttl {
+      margin-top: 0em;
+      font-size: 1.2em;
+    }
+    .more .row1 {
+      height: 15em;
+    }
+    .more .row1 .artc {
+      font-size: 1em;
+    }
+    .more .row1 .txt {
+      font-size: 0.9em;
+    }
+    .more .col2 {
+      display: none;
+    }
+    .more .row2 .card {
+      margin-left: 2em;
+      margin-bottom: 0.5em;
+      height: 9em;
+    }
+  
+    /*End more to explore*/
+    .partener {
+      display: none;
+    }
+    .media {
+      display: none !important;
+    }
+    /*Start top cities to visit*/
+    .city .spans .scnd {
+      display: none;
+    }
+    .dothings .spans .scnd {
+      display: none;
+    }
+    .activity .spans .scnd {
+      display: none;
+    }
+  
+    /*Start top cities to visit*/
+  }
+  /*Start translation*/
+  *:lang(ar) {
+    text-align: right;
+  }
+  
+  // *:lang(ar) {
+  //   direction: rtl;
+  // }
+  #title:lang(ar),
+  #titleDiscover:lang(ar) {
+    display: block !important;
+    margin: auto !important;
+    text-align: center;
+  }
+  #search:lang(ar) {
+    text-align: center;
+  }
+  .searchBtn:lang(ar) {
+    text-align: center !important;
+  }
+  .brdr i:lang(ar) {
+    text-align: center;
+  }
+  // .afterSlider:lang(ar) {
+  //   text-align: right;
+  // }
+  .near_container .contain h3:lang(ar) {
+    text-align: right !important;
+  }
+  .things .contain .h3:lang(ar) {
+    text-align: right !important;
+  }
+  .inspired .h3:lang(ar) {
+    margin-right: 2.5em;
+  }
+  .recommend .contain:lang(ar) {
+    margin-right: 5em;
+  }
+  .near_container:lang(ar) {
+    direction: rtl;
+  }
+  .near_container #cards:lang(ar) {
+    width: 92%;
+    margin: auto;
+  }
+  .things .contain:lang(ar) {
+    direction: rtl !important;
+    width: 88%;
+    margin: auto;
+  }
+  .fBtn:lang(ar),
+  .sBtn:lang(ar),
+  .thBtn:lang(ar) {
+    text-align: center;
+  }
+
+  .wishp{
+      font-size: 25px;
+      font-family: cursive;
+      font-weight: bold;
+      color: rgb(219, 67, 11);
+      
+  }
+  

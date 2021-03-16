@@ -87,6 +87,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   logout() {
     localStorage.removeItem('currentUser')
     localStorage.removeItem('currentUserName')
+    localStorage.removeItem('currentUserEmail')
     console.log(this.authser.userLogin)
     this.authser.userLogin = true
     console.log(this.authser.userLogin)

@@ -1,0 +1,76 @@
+<p class="wishp container">WishList</p>
+
+<div id="cards" class="images row container">
+    <div (click)="viewDetails(near.id, 'ToursCollection')"
+      class="card move ml-2 mb-4"
+      *ngFor="let near of NearYou"
+      style="width: 15rem; height: 20em;"
+    >
+      <img
+        src="{{ near.Image }}"
+        class="card-img-top"
+        style="height: 8em;"
+        alt="Crad Image"
+      />
+      <div class="top_left" *ngIf="tr == 'en'">
+        <i
+          class="fas fa-map-marker-alt"
+          style="color: white; font-size: 0.9em;"
+        ></i>
+        <span
+          style="
+            color: white;
+            font-size: 1.1em;
+            margin-left: 0.3em;
+            font-weight: 600;
+          "
+        >
+          {{ near.City }}
+        </span>
+      </div>
+   
+      <div class="card-body">
+        <div
+          class="card-title"
+          style="color: #d22320; font-weight: 600; font-size: 0.9em;"
+          
+        >
+          {{ near.Distance }}
+        </div>
+     
+
+        <p
+          
+          class="card-text"
+          style="font-weight: 600; font-size: 1em;"
+          
+        >
+          {{ near.Title }}
+        </p>
+      
+      </div>
+      <div class="card-body">
+        <div >
+          <span class="font-weight-bold" style="font-size: 0.9em;">
+            {{ 'home.egp' | translate }} {{ near.Price }}
+          </span>
+          <i
+            class="fas fa-fire ml-2"
+            style="color: #ff612f; font-size: 0.9em;"
+          ></i>
+        </div>
+
+      
+
+        <a
+          href="#"
+          class="card-link text-muted"
+          style="font-size: 0.9em;"
+         
+        >
+          {{ near.Date }}
+        </a>
+      
+      </div>
+    </div>
+  </div>

@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { BookingDialogComponent } from '../booking-dialog/booking-dialog.component'
 import { AuthService } from 'src/app/services/auth.service'
 // import { CardDirective } from 'src/app/Directives/card.directive';
+import { IWish } from './../../viewModels/iwish';
 
 @Component({
   selector: 'app-activity-details',
@@ -267,4 +268,76 @@ export class ActivityDetailsComponent implements OnInit {
       })
     }
   }
+
+
+  ////////////////////////wishlist///////////////////////////
+
+  wishBool:boolean=false
+  iconControl:string='far fa-heart';
+
+   wishlist: IWish = {
+    // Adults: this.Adults,
+    // Children: this.Children,
+    // Olders: this.Olders,
+    // SIM: this.SIM,
+    Price: this.Card.Price,
+    Title: this.Card.Title,
+    Email: localStorage.getItem('currentUserEmail'),
+    Date: this.Card.Date,
+    // checkOutDate: this.hotelDate.toString(),
+    Image: this.Card.Image,
+    // sectionName: this.sectionName,
+    // noPerson: this.noPerson.toString(),
+    // Rooms: this.Rooms,
+  }
+  wish(){
+    this.wishlist= {
+      // Adults: this.Adults,
+      // Children: this.Children,
+      // Olders: this.Olders,
+      // SIM: this.SIM,
+      Price: this.Card.Price,
+      Title: this.Card.Title,
+      Email: localStorage.getItem('currentUserEmail'),
+      Date: this.Card.Date,
+      // checkOutDate: this.hotelDate.toString(),
+      Image: this.Card.Image,
+      // sectionName: this.sectionName,
+      // noPerson: this.noPerson.toString(),
+      // Rooms: this.Rooms,
+    }
+    if (this.authSer.userLogin) {
+      this.router.navigate(['/sign/login'])
+      console.log(this.authSer.userLogin)
+      // return false;
+    } else {
+    if(this.wishBool==false){
+      this.iconControl='fas fa-heart';
+
+      this.wishBool=true
+      this.activityDetails.WishList(this.wishlist).then(
+        (res) => {
+          console.log('Done')
+
+          console.log(typeof (this.totalPrice))
+        },
+        (err) => {
+          console.log('error : ' + err)
+        },
+      )
+    console.log(this.Card,localStorage.getItem('currentUserEmail'))
+    console.log(this.wishlist)
+
+    }
+    else{
+  this.iconControl='far fa-heart';
+
+      this.wishBool=false
+
+    }
+
+  }
+
+  }
+
 }

@@ -24,7 +24,7 @@
           >
             <small
               class="text-danger"
-              *ngIf="insertForm.get('Email').hasError('required')"
+              *ngIf="insertForm.get('Email').hasError('email')"
             >
               Please enter an Email address
             </small>
@@ -48,12 +48,12 @@
               (insertForm.get('Name').dirty || insertForm.get('Name').touched)
             "
           >
-            <small
-              class="text-danger"
-              *ngIf="insertForm.get('Name').hasError('required')"
-            >
-              Please enter an Name
-            </small>
+          <small
+          class="text-danger"
+          *ngIf="insertForm.controls['Name'].errors?.minlength"
+        >
+        Password must be atleast 5
+                  </small>
           </div>
         </div>
 
@@ -76,9 +76,9 @@
           >
             <small
               class="text-danger"
-              *ngIf="insertForm.get('Password').hasError('required')"
+              *ngIf="insertForm.controls['Password'].errors?.minlength"
             >
-              Please enter your Password
+              Password must be atleast 5 
             </small>
           </div>
         </div>
