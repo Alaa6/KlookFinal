@@ -49,10 +49,11 @@
       </div>
       <div class="d-flex justify-content-between">
         <div class="text-muted">{{ Card.Booked }}</div>
-        <!-- <div class="highlight">
-          <i class="far fa-heart mr-2" style="font-size: 1.2em;"></i>
+        <div class="highlight" (click)='wish()'>
+          <!-- <i class="fas fa-heart mr-2" style="font-size: 1.2em;"></i> -->
+          <i class="{{iconControl}} mr-2" style="font-size: 1.2em;"></i>
           <span>Wishlist</span>
-        </div> -->
+        </div>
       </div>
       <!-- <hr /> -->
       <!--Start options-->
