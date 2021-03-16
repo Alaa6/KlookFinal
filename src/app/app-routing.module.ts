@@ -23,12 +23,14 @@ import { OpenTicketComponent } from './Components/open-ticket/open-ticket.compon
 import { BookBehalfComponent } from './Components/book-behalf/book-behalf.component';
 import { AboutComponent } from './Components/about/about.component';
 import { DestinationComponent } from './Components/destination/destination.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 // import { SignComponent } from './Components/admins/sign/sign.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   // { path  : 'sign/:subsign'  , component : SignComponent},
   // {path :'dash' , component : DashboardComponent} ,
   { path: 'help', component: HelpComponent },
+  { path: 'wish', component: WishlistComponent },
   { path: 'credits', component: KlookCreditComponent },
   { path: 'details', component: DetailsComponent },
   { path: 'blog', component: BlogComponent },

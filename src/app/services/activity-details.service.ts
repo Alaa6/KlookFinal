@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { IBooking } from '../viewModels/ibooking';
 import { IHotelBooking } from '../viewModels/ihotel-booking';
 import { Wifi } from '../viewModels/wifi';
+import { IWish } from './../viewModels/iwish';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,12 @@ export class ActivityDetailsService {
   }
   Booking(data: IBooking) {
     return this.fs.collection<any>('Booking').add(data).then
+      ((res) => { console.log("Activity is booked ") },
+        (err) => { console.log(err) })
+  }
+
+  WishList(data: IWish) {
+    return this.fs.collection<any>('wishlist').add(data).then
       ((res) => { console.log("Activity is booked ") },
         (err) => { console.log(err) })
   }

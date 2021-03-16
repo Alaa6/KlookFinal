@@ -34,6 +34,17 @@ export class HomeService {
       .snapshotChanges();
   }
 
+  getwish(email:string) {
+    return this.fs
+      .collection<Tours>('wishlist', (ref) =>
+        ref
+          .where('Email', '==', email)
+          // .where('Categories', '==', 'Home')
+          // .where('Section', '==', 'Near in cairo')
+      )
+      .snapshotChanges();
+  }
+
   // getNearYou() {
   //   return this.fs.collection<Tours>('ToursCollection',
   //     ref => ref.where('City', '==', 'Cairo')).snapshotChanges;

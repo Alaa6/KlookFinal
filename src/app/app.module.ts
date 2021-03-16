@@ -80,6 +80,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { BookingDialogComponent } from './Components/booking-dialog/booking-dialog.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchModule } from './Components/search/search.module';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -165,6 +166,8 @@ var firebaseConfig = {
     AboutComponent,
 
     DestinationComponent,
+
+    WishlistComponent,
   ],
   entryComponents: [BookingDialogComponent],
   exports: [NotFoundComponent, BookingDialogComponent],

@@ -129,7 +129,7 @@
 
     <!-- Start Cards Body -->
     <div id="cards" class="images row">
-      <div
+      <div (click)="viewDetails(near.id, 'ToursCollection')"
         class="card move"
         *ngFor="let near of NearYou"
         style="width: 15rem; height: 20em;"
@@ -193,7 +193,7 @@
           </div>
 
           <p
-            (click)="viewDetails(near.id, 'ToursCollection')"
+            
             class="card-text"
             style="font-weight: 600; font-size: 1em;"
             *ngIf="tr == 'en'"
@@ -201,7 +201,7 @@
             {{ near.Title }}
           </p>
           <p
-            (click)="viewDetails(near.id, 'ToursCollection')"
+           
             class="card-text"
             style="font-weight: 600; font-size: 1em;"
             *ngIf="tr == 'ar'"

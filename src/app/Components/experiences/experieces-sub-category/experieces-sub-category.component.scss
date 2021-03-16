@@ -73,6 +73,7 @@ $txt-color: #333;
 .unmissable .move {
   margin-left: 2em;
   height: 25em !important;
+  width: 20em !important;
 }
 .unmissable .btns {
   display: flex;
@@ -673,4 +674,9 @@ article {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   font-weight: bold;
+}
+
+.fr{
+
+  width: 300px;
 }
