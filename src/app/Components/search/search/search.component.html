@@ -15,7 +15,7 @@
         </svg>
 
           <input class="form-control rounded pt-2 mr-3" type="search"
-            placeholder="what do you want to do in cairo ?" id="tour-search" [matAutocomplete]="auto" matInput  [formControl]="myControl" >
+            placeholder="what do you want to do in {{city}} ?" id="tour-search" [matAutocomplete]="auto" matInput  [formControl]="myControl" >
             <!-- <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"> -->
           <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
             <mat-option *ngFor="let tour of filteredOptions | async  " [value]="tour">

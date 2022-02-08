@@ -3,7 +3,7 @@ import { ICategory } from 'src/app/viewModels/icategory';
 import { Observable, Subscription } from 'rxjs';
 import { IActivity } from 'src/app/viewModels/iactivity';
 import { PopupComponent } from '../../popup/popup.component';
-import { RelaxServiceService } from 'src/app/services/relax-service.service';
+import {ExperiencesService} from 'src/app/services/experiences.service'
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, ParamMap, Router, NavigationEnd } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o/ngx-owl-carousel-o';
@@ -88,7 +88,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
     nav: true
   }
 
-  constructor(private relaxService: RelaxServiceService,
+  constructor(private experienceService: ExperiencesService,
     public dialog: MatDialog,
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -124,7 +124,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
     let test = localStorage.getItem('city')
     console.log(test, "onInit");
-    this.relaxService.getAllCities().subscribe((wifi) => {
+    this.experienceService.getAllCities().subscribe((wifi) => {
       this.cityList = wifi.map(data => {
         return {
           id: data.payload.doc.id,
@@ -146,7 +146,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
       if (this.subCatName == 'Experiences') {
-        this.relaxService.getCategories(this.city).subscribe((res) => {
+        this.experienceService.getCategories(this.city).subscribe((res) => {
           this.categoryList = res.map(data => {
             return {
               id: data.payload.doc.id,
@@ -157,7 +157,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
       } else {
-        this.relaxService.getCategories(this.city, this.subCatName).subscribe((wifi) => {
+        this.experienceService.getCategories(this.city, this.subCatName).subscribe((wifi) => {
           this.categoryList = wifi.map(data => {
             return {
               id: data.payload.doc.id,
@@ -172,7 +172,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
       if (this.subCatName == 'Experiences') {
-        this.relaxService.getAllTours(this.city, "BestSeller").subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "BestSeller").subscribe((res) => {
 
           this.bestSellerList = res.map(data => {
             return {
@@ -192,7 +192,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
 
-        this.relaxService.getAllTours(this.city, "Nearby").subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "Nearby").subscribe((res) => {
 
           this.nearbyList = res.map(data => {
             return {
@@ -203,7 +203,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           this.loading = false
         }, (err) => console.log(err))
 
-        this.relaxService.getAllTours(this.city, "AwsomeDeals").subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "AwsomeDeals").subscribe((res) => {
 
           this.awsomeDealsList = res.map(data => {
             return {
@@ -220,7 +220,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           this.loading = false
         }, (err) => console.log(err))
 
-        this.relaxService.getAllTours(this.city, "ForKids").subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "ForKids").subscribe((res) => {
 
           this.forKidsList = res.map(data => {
             return {
@@ -238,7 +238,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
       } else {
-        this.relaxService.getAllTours(this.city, "BestSeller", this.subCatName).subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "BestSeller", this.subCatName).subscribe((res) => {
 
           this.bestSellerList = res.map(data => {
             return {
@@ -254,7 +254,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         }, (err) => console.log(err))
 
 
-        this.relaxService.getAllTours(this.city, "Nearby", this.subCatName).subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "Nearby", this.subCatName).subscribe((res) => {
 
           this.nearbyList = res.map(data => {
             return {
@@ -266,7 +266,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           this.loading = false
         }, (err) => console.log(err))
 
-        this.relaxService.getAllTours(this.city, "AwsomeDeals", this.subCatName).subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "AwsomeDeals", this.subCatName).subscribe((res) => {
 
           this.awsomeDealsList = res.map(data => {
             return {
@@ -283,7 +283,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
           this.loading = false
         }, (err) => console.log(err))
 
-        this.relaxService.getAllTours(this.city, "ForKids", this.subCatName).subscribe((res) => {
+        this.experienceService.getAllTours(this.city, "ForKids", this.subCatName).subscribe((res) => {
 
           this.forKidsList = res.map(data => {
             return {
@@ -305,7 +305,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
 
 
 
-      this.relaxService.getSubCategory(this.subCatName).subscribe((res) => {
+      this.experienceService.getSubCategory(this.subCatName).subscribe((res) => {
 
         this.subCategory = res.map(data => {
           return {
@@ -316,7 +316,7 @@ export class ExperiecesSubCategoryComponent implements OnInit, OnChanges {
         this.loading = false
       }, (err) => console.log(err))
 
-      this.relaxService.getSubCategory().subscribe((res) => {
+      this.experienceService.getSubCategory().subscribe((res) => {
 
         this.allSubCategorey = res.map(data => {
           return {

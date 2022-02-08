@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { RelaxServiceService } from 'src/app/services/relax-service.service';
+import {ExperiencesService} from 'src/app/services/experiences.service'
 import { ITour } from 'src/app/viewModels/itour';
 import { Tours } from './../../../viewModels/tours';
 import { ICategory } from './../../../viewModels/icategory';
@@ -95,13 +95,13 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private relaxService: RelaxServiceService,
+    private experienceService: ExperiencesService,
     private router: Router
   ) {
     this.priceRangeValue = 6000;
     this.priceRangeMax = 6000;
     this.priceRangeMin = 0;
-    this.relaxService.getall().subscribe((res) => {
+    this.experienceService.getall().subscribe((res) => {
       // this.jsoon=res
       console.log(this.jsoon);
     });
@@ -110,7 +110,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
   ngOnInit(): void {
-    this.relaxService.getContinentList().subscribe((res) => {
+    this.experienceService.getContinentList().subscribe((res) => {
       this.dataSourceCities.data = res.map((data) => {
         return {
           id: data.payload.doc.id,
@@ -119,7 +119,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
       });
     });
 
-    this.relaxService.getSubCategory().subscribe((res) => {
+    this.experienceService.getSubCategory().subscribe((res) => {
       this.dataSourceCatefories.data = res.map((data) => {
         return {
           id: data.payload.doc.id,
@@ -148,7 +148,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
             this.city != null ||
             this.subCatName != null
           ) {
-            this.relaxService
+            this.experienceService
               .searchForTours(this.city, this.subCatName, this.collectionName)
               .subscribe((res) => {
                 this.toursSearch = res;
@@ -159,7 +159,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
                 });
               });
           } else {
-            this.relaxService.searchForTours().subscribe((res) => {
+            this.experienceService.searchForTours().subscribe((res) => {
               this.toursSearch = res;
               this.tourList = this.toursSearch.filter((res) => {
                 return res.Title.trim()
@@ -173,7 +173,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
           this.activitesCategory !== 'null' &&
           this.activitesCategory !== undefined
         ) {
-          this.relaxService
+          this.experienceService
             .getAllTours(
               this.city,
               undefined,
@@ -194,7 +194,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
       }
     );
 
-    this.relaxService.getAllCities().subscribe((res) => {
+    this.experienceService.getAllCities().subscribe((res) => {
       this.cityList = res.map((data) => {
         return {
           id: data.payload.doc.id,
@@ -215,7 +215,7 @@ export class SearchExperienceComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {}
 
   search(searchTerm: string) {
-    // this.relaxService.searchForTours(this.city, this.subCatName).subscribe(res => {
+    // this.experienceService.searchForTours(this.city, this.subCatName).subscribe(res => {
     //   this.toursSearch = res
     //   this.toursSearchdisplay = this.toursSearch.filter(res => {
     //     return res.Title.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase());

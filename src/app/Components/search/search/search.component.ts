@@ -72,8 +72,7 @@ console.log(this.subCatName , 'search');
   }
 
   search(city?:string , supCatName?:string, searchTerm?:string) {
-  
-  
+
     if(this.city !=undefined && this.subCatName != undefined)
     this.router.navigate(['/experiences/activities',{city : city , supCatName : supCatName ,searchKey : searchTerm ,collectionName :this.collectionName}])
     else 
